@@ -1,45 +1,27 @@
-# TODO replace Pleasantville stuff with your city stuff
 
 template:
     url: https://github.com/LaunchCodeEducation/Template-Light
 
 # Base URL of the published website
-baseUrl: http://education.launchcode.org/cs50x-pleasantville
+baseUrl: http://education.launchcode.org/web-fundamentals
 
 
 # Used to link to the GitHub project
 github:
-    user: LaunchCodeEducation 
-    repo: cs50x-pleasantville 
+    user: LaunchCodeEducation
+    repo: web-fundamentals
 
-title: LaunchCode's CS50x - Pleasantville 
+title: LaunchCode Web Fundamentdals
 
 # The left menu bar
 menu:
     items:
-        calendar:
-            text: Calendar 
-            # You can use relative urls
-            relativeUrl: calendar/ 
-        howtotake:
-            text: How To Take This Class
-            relativeUrl: how-to-take-this-class/    
-        helpfulresources:
-            text: Helpful Resources
-            relativeUrl: helpful-resources/
-        ide:
-            text: CS50 IDE
-            absoluteUrl: http://cs50.io/
-            attributes: target="_blank"
-        vocareum:
-            text: Vocareum
-            absoluteUrl: https://labs.vocareum.com/home/login.php
-            attributes: target="_blank"
+        schedule:
+            text: Schedule
+            relativeUrl: schedule/
+        overview:
+            text: Course Overview
+            relativeUrl: course-overview/
         piazza:
-            text: Piazza
-            absoluteUrl: http://piazza.com/link-to-pleasantville-piazza-page
-            attributes: target="_blank"
-        studentguide:  
-            text: Student Guide
-            absoluteUrl: https://docs.google.com/document/d/link-to-pleasantville-student-guide
-            attributes: target="_blank"
+            text: Discussion Forum
+            absoluteUrl: https://piazza.com/class/ir5gdd8ddd76k7
