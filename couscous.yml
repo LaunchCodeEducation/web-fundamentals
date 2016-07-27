@@ -20,7 +20,7 @@ menu:
             text: Schedule
             relativeUrl: schedule/
         overview:
-            text: Syllabus/
+            text: Syllabus
             relativeUrl: syllabus/
         piazza:
             text: Discussion Forum
