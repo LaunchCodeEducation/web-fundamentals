@@ -20,8 +20,8 @@ menu:
             text: Schedule
             relativeUrl: schedule/
         overview:
-            text: Course Overview
-            relativeUrl: course-overview/
+            text: Syllabus/
+            relativeUrl: syllabus/
         piazza:
             text: Discussion Forum
             absoluteUrl: https://piazza.com/class/ir5gdd8ddd76k7
