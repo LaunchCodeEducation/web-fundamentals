@@ -17,9 +17,9 @@ The goal of this course is to give you a high-level overview of what is going on
 
 You will also learn about something called *version control*, essentially a sophisticated way of "saving your work", which pretty much every professional programmer uses. We will use a particular version control system called Git.
 
-----
+### Curriculum
 
-This course is built around an online class on Udacity (a learning site similar to codecademy) called [CS253: Web Development][udacity-course]. We will also provide links to additional supplementary resources where appropriate.
+The curriculum for this course is built around an online class on Udacity (a learning site similar to codecademy) called [CS253: Web Development][udacity-course]. We will also provide links to additional supplementary resources where appropriate.
 
 
 [udacity-course]: https://www.udacity.com/course/web-development--cs253
