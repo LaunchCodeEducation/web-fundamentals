@@ -17,7 +17,7 @@ The goal of this course is to give you a high-level overview of what is going on
 
 ... and a lot more! 
 
-Our goal is that by the end of the course you will be able to build a very simple web-app yourself.
+Our goal is that by the end of the course you will be able to build a very simple web app yourself.
 
 You will also learn how to use a *version control system* (VCS), essentially a sophisticated way of "saving your work", which pretty much every professional programmer uses. You will submit all your assignments using a VCS called Git.
 
