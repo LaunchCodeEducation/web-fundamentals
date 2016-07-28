@@ -4,7 +4,7 @@ Welcome to the LaunchCode Web Fundamentals course!
 
 ### How Does a Web App work?
 
-The goal of this course is to give you a high-level overview of what is going on behind the scenes when you interact with a web application like Facebook or launchcode.org. To make the magic happen requires a large "stack" of technologies and programming languages, working in tandem and communicating with each other. We will touch briefly on some of the most important parts of this dance, including:
+The goal of this course is to give you a high-level overview of what is going on behind the scenes when you interact with a web application like Facebook or launchcode.org. To make the magic happen requires a large "stack" of technologies and programming languages working in tandem and communicating with each other. We will touch briefly on some of the most important parts of this dance, including:
 
 * HTML
 * CSS
