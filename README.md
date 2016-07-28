@@ -23,7 +23,7 @@ You will also learn how to use a *version control system* (VCS), essentially a s
 
 ### Curriculum
 
-The curriculum for this course is built around an online class on Udacity (a learning site similar to codecademy) called [CS253: Web Development][udacity-course]. We will also provide links to additional supplementary resources where appropriate.
+The curriculum for this course centers primarily around an online class on Udacity--a learning site similar to Codecademy--called [CS253: Web Development][udacity-course]. We will also provide links to additional supplementary resources where appropriate.
 
 
 [udacity-course]: https://www.udacity.com/course/web-development--cs253
