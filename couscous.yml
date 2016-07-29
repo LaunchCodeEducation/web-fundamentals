@@ -19,9 +19,12 @@ menu:
         schedule:
             text: Schedule
             relativeUrl: schedule/
-        overview:
+        syllabus:
             text: Syllabus
             relativeUrl: syllabus/
+        udacity:
+            text: CS253: Web Development
+            absoluteUrl:
         piazza:
             text: Discussion Forum
             absoluteUrl: https://piazza.com/class/ir5gdd8ddd76k7
