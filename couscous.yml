@@ -23,7 +23,7 @@ menu:
             text: Syllabus
             relativeUrl: syllabus/
         udacity:
-            text: CS253: Web Development
+            text: CS253
             absoluteUrl: https://www.udacity.com/course/web-development--cs253
         piazza:
             text: Discussion Forum
