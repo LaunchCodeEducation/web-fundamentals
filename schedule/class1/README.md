@@ -1,8 +1,6 @@
 # Class 1
 
-Welcome to the first day of class!
-
-Today will be split into three parts:
+Welcome to the first day of class! Today will be split into three parts:
 
 ### 1. Lecture
 
