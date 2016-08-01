@@ -26,3 +26,6 @@ The first assignment, [Getting Started][getting-started], is essentially a step-
 ### Requirements
 
 To pass the class you must complete every assignment. You may submit up to 2 assignments after the specified due date. To pass with honors, you must complete every assignment on time.
+
+
+[getting-started]: ../assignments/getting-started
