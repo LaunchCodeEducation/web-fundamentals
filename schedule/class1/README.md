@@ -25,3 +25,9 @@ If you have no questions or loose ends, you can work on the first homework assig
 Remember that Hackerrank test you took back at the beginning of Unit 1? We know you love tests, and you've been itching to give it another try. Well, [here you go!][hackerrank] (You're welcome.)
 
 As a reminder, the results of this test **will not affect your grade in any way**. We are using it simply as an internal tool to test the effectiveness of our curricula. Obviously you should try to get the best score you can, but there are no consequences of scoring low or high.
+
+
+[syllabus]: ../../syllabus
+[class2-prep]: ../class2-prep
+[getting-started]: ../../assignments/getting-started
+[hackerrank]: ../..
