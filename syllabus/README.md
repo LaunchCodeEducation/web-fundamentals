@@ -20,3 +20,9 @@ Each assignment is different, but the process for submitting your work is always
 2. `commit` and `push` your work to a repository on your Github profile.
 3. On Vocareum, click on the approriate assignment and then `clone` the repository into your work environment.
 4. Find a TF and demo your project for them.
+
+The first assignment, [Getting Started][getting-started], is essentially a step-by-step guide through the entire process.
+
+### Requirements
+
+To pass the class you must complete every assignment. You may submit up to 2 assignments after the specified due date. To pass with honors, you must complete every assignment on time.
