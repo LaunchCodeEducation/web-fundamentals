@@ -11,7 +11,7 @@ Do | Interactive Tutorial | Choose by OS: <br> [Git It: Mac][git-it-mac] <br> [G
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
 Do | Create an account | [Udacity Registration][sign-up] | Time to start this Udacity course. <br> If you have not already, go ahead and sign up for a Udacity account. <br> Then go to the [CS253 homepage][cs253] and click the *Start Free Course* button.
-Do | Interactive Course | [Lesson 1 (first half)][lesson-1] | Do the first 17 items. Stop when you get to the item called *Document Structure*
+Do | Interactive Course | [Lesson 1 (first half)][lesson-1] | Do the first 18 items. Stop when you get to the item called *Introducing URLs*.
 
 
 [what-is-version-control]: https://www.atlassian.com/git/tutorials/what-is-version-control
