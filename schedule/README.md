@@ -11,9 +11,10 @@ Date | Prep Work | In Class | Topics | Assignment(s) | Assignments Due
 8/25 | [Class 7 Prep](./class7-prep) | [Class 7](./class7) | | | |
 8/29 | [Class 8 Prep](./class8-prep) | [Class 8](./class8) | | | |
 9/1 | [Class 9 Prep](./class9-prep) | [Class 9](./class9) | | | |
-9/5 | [Class 10 Prep](./class10-prep) | [Class 10](./class10) | | | |
-9/8 | [Class 11 Prep](./class11-prep) | [Class 11](./class11) | | | |
-9/12 | [Class 12 Prep](./class12-prep) | [Class 12](./class12) | | | |
+9/5 | L | A | B | O | R Day |
+9/8 | [Class 10 Prep](./class10-prep) | [Class 10](./class10) | | | |
+9/12 | [Class 11 Prep](./class11-prep) | [Class 11](./class11) | | | |
+9/15 | [Class 12 Prep](./class12-prep) | [Class 12](./class12) | | | |
 
 
 [getting-started]: ../assignments/getting-started
