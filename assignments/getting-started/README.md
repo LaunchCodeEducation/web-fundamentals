@@ -150,12 +150,16 @@ Carry out each of the following tasks. Start by opening a terminal and navigatin
 	$ git clone [URL]
 	```
 
+    > Note that on the Vocareum terminal you might not be able to use a keyboard shortcut (e.g. `cmd-v`) to paste your url. But you can right-click on the screen inside the terminal prompt, and paste that way.
+
 	You should see your repo appear inside your `work/` directory on the left.
 
 	Finally, click Submit!
 
 
 ## Notes
+
+A few other things to take note of:
 
 * **No Auto-grader script.** This assignment -- and all assignments going forward -- will be manually graded, so you won't see the output of a check script. In most cases, you'll need to demo your work for your TF after submitting via Vocareum. For this assignment, there's no need to demo your work.
 
