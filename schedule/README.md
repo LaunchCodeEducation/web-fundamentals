@@ -2,7 +2,6 @@
 
 Date | Prep Work | In Class | Topics | Assignment(s) | Assignments Due
 -----|-----------|----------|--------|---------------|----------------
-
 8/4 | [Class 1 Prep](./class1-prep) | [Class 1](./class1) | Git; Github; HTML; Setup stuff | [Getting Started][getting-started] | (none)
 8/8 | [Class 2 Prep](./class2-prep) | [Class 2](./class2) | HTML; CSS | [HTML Me Something][html-me-something] | [Getting Started][getting-started]
 8/11 | [Class 3 Prep](./class3-prep) | [Class 3](./class3) | HTTP / how the web works | (none) | [HTML Me Something][html-me-something]
