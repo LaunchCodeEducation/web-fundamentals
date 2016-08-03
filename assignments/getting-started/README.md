@@ -87,12 +87,12 @@ Carry out each of the following tasks. Start by opening a terminal and navigatin
     $ git add index.html
     ```
 
-    > In general, on future assignments, you will want to add multiple changes at once, without having to type each file name individually. This can be achieved by using: 
-    
+    > In general, on future assignments, you will want to add multiple changes at once, without having to type each file name individually. This can be achieved by using:
+
     > ```
     > $ git add .
-    > ``` 
-    
+    > ```
+
     > The `.` here stands for "all files." When doing this, it is advised to run `git status` first, to see the current list of changes and make sure you really do want to batch all of them together into one commit.
 
 1. **Commit.** Now you are ready to commit. If you check your status again, you should see that your change is staged to be committed:
@@ -117,12 +117,20 @@ Carry out each of the following tasks. Start by opening a terminal and navigatin
     ```
 
     > Note that you'll be asked to authenticate with GitHub. If you get tired of this, you can [set up your computer and your GitHub account to use SSH keys](https://help.github.com/articles/generating-an-ssh-key/).
-    
-    If you 
 
-    
+    Now that you have committed, your status should be "clean":
 
-1. **Push to GitHub.** The commit command will commit your changes to the *local* Git repo on your computer. Your local repo is now ahead of your remote repo (the one hosted on github.com) by 1 commit. At this point, if you go back and visit your repository page on GitHub, you will not yet see the new index.html file. In order to sync up your remote repo with your local one, push your local changes up to GitHub:
+	```
+   $ git status
+   On branch gh-pages
+	nothing to commit, working directory clean
+   ```
+
+
+
+1. **Push to GitHub.** The commit command will commit your changes to the *local* Git repo on your computer. Your local repo is now ahead of your remote repo (the one hosted on github.com) by 1 commit. At this point, if you go back and visit your repository page on GitHub, you will not yet see the new index.html file.
+
+	In order to sync up your remote repo with your local one, you must *push* your local changes up to GitHub:
 
     ```
     $ git push origin master
@@ -130,23 +138,34 @@ Carry out each of the following tasks. Start by opening a terminal and navigatin
 
     You should read this command as: "Push all of my commits to the 'origin' repository (on its master branch)". The name "origin" is typically used to refer to a remote Git repo, often on a platform such as GitHub or Bitbucket.
 
-1. **Submit via Vocareum** Now your code is up in GitHub. Time to submit it to Vocareum! Open Vocareum and navigate to the "My Work" view for the "Getting Started" assignment. From the Actions menu, select Connect Git and fill out the form appropriately.
+1. **Submit via Vocareum** Now your code is up in GitHub. Time to submit it to Vocareum! Open Vocareum and navigate to the "My Work" view for the "Getting Started" assignment.
 
-    ![Connect Git](images/connect-git.png)
+	In the My Work environment, you should see a terminal at the bottom of your screen:
 
-    ![Connect Git Form](images/connect-git-form.png)
+	![Vocareum Terminal](images/vocareum-terminal.png)
 
-    Submit the form, and after you receive a notification of successful notification, you can submit your assignment for grading using the Submit from GitHub button.
+	This is a terminal just like the one on your computer. Clone your repo, just like you did on step 2:
 
-    ![Submit from GitHub](images/submit-from-github.png)
+	```
+	$ git clone [URL]
+	```
+
+	You should see your repo appear inside your `work/` directory on the left.
+
+	Finally, click Submit!
+
 
 ## Notes
 
-* This assignment -- and all assignments going forward -- will be manually graded, so you won't see the output of a check script. In most cases, you'll need to demo your work for your TF after submitting via Vocareum. For this assignment, there's no need to demo your work.
-* You will repeat each of the steps in this walk-through for each assignment in Unit 2, with a unique repository and Vocareum assignment for each. We'll remind of you of the steps to take as you go, but if you need a detailed refresher at any point, revisit this walkthrough.
-* If you make changes to your project after copying it into Vocareum, those changes *will not* be reflected in Vocareum. To resubmit, you should follow these stesps:
-    1. Disconnect Git
+* **No Auto-grader script.** This assignment -- and all assignments going forward -- will be manually graded, so you won't see the output of a check script. In most cases, you'll need to demo your work for your TF after submitting via Vocareum. For this assignment, there's no need to demo your work.
 
-        ![Disconnect Git](images/disconnect-git.png)
+* **Use this page as a reference.** Except for a few minor differences here and there, you will repeat this same proccess for every assignment in Unit 2, using a unique repository and Vocareum assignment for each. We'll remind of you of the steps to take as you go, but if you need a detailed refresher at any point, revisit this walkthrough.
 
-    1. Repeat steps 4-7 above.
+* **What if I want to change my code?** If you make changes to your project after cloning it into Vocareum, and you want to submit your latest version, then you will need to use one more Git command, the `pull`.
+
+	In your Vocareum terminal, `cd` into your project folder, and then `pull` the latest changes down from your remote GitHub repo:
+
+	```
+	$ cd getting-started
+	$ git pull origin master
+	```
