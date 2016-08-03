@@ -8,11 +8,11 @@ Carry out each of the following tasks. Start by opening a terminal and navigatin
 
 *Note:* For terminal commands displayed below, we don't always included the resulting output. Output is displayed when we think it will be valuable to confirm that your output matches ours.
 
-1. **Create a repo** Visit your profile page on github.com and select the *Repositories* tab. Create a new repository called `getting-started`.
+1. **Create a repo.** Visit your profile page on github.com and select the *Repositories* tab. Create a new repository by clicking the green "New" button. In the resulting dialogue, give your repo the name `getting-started`.
 
     ![New repository](images/new-repo.png)
 
-1. **Clone the repo to your machine** GitHub will redirect you a a new page after creating the repository. On this page, copy the repository URL for your repo:
+1. **Clone the repo to your machine.** GitHub will redirect you to a new page after creating the repository. On this page, copy the repository URL for your repo:
 
     ![Repository URL](images/copy-url-post-create.png)
 
@@ -38,7 +38,8 @@ Carry out each of the following tasks. Start by opening a terminal and navigatin
 
     nothing to commit (create/copy files and use "git add" to track)
     ```
-1. **Do some work** In Atom, create a new file named `index.html` and save it to the `getting-started/` directory. Add the minimal markup needed to make a well-formed HTML file:
+1. **Do some work.** In Atom, create a new file named `index.html` and save it to the `getting-started/` directory. Add the minimal markup needed to make a well-formed HTML file:
+
     ```
     <!DOCTYPE html>
 
@@ -51,19 +52,51 @@ Carry out each of the following tasks. Start by opening a terminal and navigatin
         </body>
     </html>
     ```
-    Then, add your name in an `h1` element in the body of the file and save. Open the file in a browser to make sure everything looks good.
 
-1. **Add your work to the repo** Back in the terminal, track the new file so it will be staged for your next commit:
+   Next, add an `<h1>` element as a child inside the `<body>` element:
+
+    ```html
+    ...
+        </head>
+        <body>
+            <!-- Page content goes here -->
+            <h1>Johnny Appleseed!</h1>
+        </body>
+    </html>
+    ...
+    ```
+
+    Save your file, and open the file in a browser to make sure everything looks good. You should see your name.
+
+1. **Add your work to the repo.** Back in the terminal, check your status:
+
+    ```
+    $ git status
+    Untracked files:
+    (use "git add <file>..." to include in what will be committed)
+
+        index.html
+
+    nothing added to commit but untracked files present (use "git add" to track)
+    ```
+    The message indicates that you have created 1 new file, index.html. This represents a "change" since last time. We want to commit that change.
+
+    Track the new file, using the `git add` command, so it will be staged for your next commit:
+
     ```
     $ git add index.html
     ```
-    In general, on future assignments, you will want to add multiple files for tracking at once. This can be achieved by using:
-    ```
-    $ git add .
-    ```
-    The `.` here stands for "all files." When doing this, it is advised to run `git status` first, to avoid adding unwanted files to the repository.
 
-1. **Commit** Check that your file is ready to commit:
+    > In general, on future assignments, you will want to add multiple changes at once, without having to type each file name individually. This can be achieved by using: 
+    
+    > ```
+    > $ git add .
+    > ``` 
+    
+    > The `.` here stands for "all files." When doing this, it is advised to run `git status` first, to see the current list of changes and make sure you really do want to batch all of them together into one commit.
+
+1. **Commit.** Now you are ready to commit. If you check your status again, you should see that your change is staged to be committed:
+
     ```
     $ git status
     On branch master
@@ -76,20 +109,26 @@ Carry out each of the following tasks. Start by opening a terminal and navigatin
     	new file:   index.html
 
     ```
-    Commit your changes, with an appropraite commit message:
+
+    Go ahead and commit your changes, with an appropriate commit message, describing what you have changed:
+
     ```
     $ git commit -m "Adding index.html"
     ```
 
-    Note that you'll be asked to authenticate with GitHub. If you get tired of this, you can [set up your computer and your GitHub account to use SSH keys](https://help.github.com/articles/generating-an-ssh-key/).
+    > Note that you'll be asked to authenticate with GitHub. If you get tired of this, you can [set up your computer and your GitHub account to use SSH keys](https://help.github.com/articles/generating-an-ssh-key/).
+    
+    If you 
 
-    This commits your changes to your *local* Git repo. If you were to visit your repository page on GitHub, you would still see an empty repo.
+    
 
-1. **Push** Push your changes up to GitHub:
+1. **Push to GitHub.** The commit command will commit your changes to the *local* Git repo on your computer. Your local repo is now ahead of your remote repo (the one hosted on github.com) by 1 commit. At this point, if you go back and visit your repository page on GitHub, you will not yet see the new index.html file. In order to sync up your remote repo with your local one, push your local changes up to GitHub:
+
     ```
     $ git push origin master
     ```
-    You should read this command as: "Push all of my commits in the master branch to the origin repository". The name "origin" is typically used to refer to a *remote* Git repo, often on a platform such as GitHub or Bitbucket.
+
+    You should read this command as: "Push all of my commits to the 'origin' repository (on its master branch)". The name "origin" is typically used to refer to a remote Git repo, often on a platform such as GitHub or Bitbucket.
 
 1. **Submit via Vocareum** Now your code is up in GitHub. Time to submit it to Vocareum! Open Vocareum and navigate to the "My Work" view for the "Getting Started" assignment. From the Actions menu, select Connect Git and fill out the form appropriately.
 
