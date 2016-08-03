@@ -12,6 +12,8 @@ Do | Interactive Course | [Codecademy: Build Your Own Webpage][byowp] | Here you
 Do | Interactive Course | [Codecademy: HTML Basics II][html-basics-2] | In this section you will learn some new HTML tags like lists.
 Do | Interactive Course | [Codecademy: Social Netowrking Profile][social-networking-profile] | Here you will apply the concepts from the previous section into a small project.
 
+---
+
 ### CSS
 
 CSS is a language for customizing the visual style of your HTML content. In this course we will not be focusing very heavily on CSS, but it is important to at least know what it is and get a quick taste for how it works.
