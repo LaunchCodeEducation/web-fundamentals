@@ -1,3 +1,110 @@
 # Assignment: Getting Started
 
-*Coming Soon*
+The purpose of this aassignment is to provide you with more practice with Git and GitHub, and with the process of turning in your problem sets using both GitHub and Vocareum.
+
+One of the best ways to become familiar and comfortable with Git is to use the same commands repeatedly, and build Git into your coding workflow. This will develop your "muscle memory" so that you learn both the mechanics and principles at the same time.
+
+Carry out each of the following tasks. Start by opening a terminal and navigating to the directory where you store your code. Windows users will open a PowerShell window; from now on we'll just say "terminal" for Windows/Mac/Linux when we really mean the specific terminal program for your operating system.
+
+*Note:* For terminal commands displayed below, we don't always included the resulting output. Output is displayed when we think it will be valuable to confirm that your output matches ours.
+
+1. Visit your profile page on github.com and select the *Repositories* tab. Create a new repository called `getting-started`.
+
+    ![New repository](images/new-repo.png)
+
+1. GitHub will redirect you a a new page after creating the repository. On this page, copy the repository URL for your repo:
+
+    ![Repository URL](images/copy-url-post-create.png)
+
+    Back in your terminal, type:
+    ```
+    $ git clone [URL]
+    Cloning into 'getting-started'...
+    warning: You appear to have cloned an empty repository.
+    Checking connectivity... done.
+    ```
+    where you paste in your project URL in place of [URL].
+1. Move into your new directory:
+    ```
+    $ cd getting-started
+    ```
+    Check the status, to make sure everything is set up properly.
+    ```
+    $ git status
+    On branch master
+
+    Initial commit
+
+    nothing to commit (create/copy files and use "git add" to track)
+    ```
+1. In Atom, create a new file named `index.html` and save it to the `getting-started/` directory. Add the minimal markup needed to make a well-formed HTML file:
+    ```
+    <!DOCTYPE html>
+
+    <html>
+        <head>
+            <title>Page Title</title>
+        </head>
+        <body>
+            <!-- Page content goes here -->
+        </body>
+    </html>
+    ```
+    Then, add your name in an `h1` element in the body of the file and save. Open the file in a browser to make sure everything looks good.
+1. Back in the terminal, track the new file so it will be staged for your next commit:
+    ```
+    $ git add index.html
+    ```
+    In general, on future assignments, you will want to add multiple files for tracking at once. This can be achieved by using:
+    ```
+    $ git add .
+    ```
+    The `.` here stands for "all files." When doing this, it is advised to run `git status` first, to avoid adding unwanted files to the repository.
+1. Check that your file is ready to commit:
+    ```
+    $ git status
+    On branch master
+
+    Initial commit
+
+    Changes to be committed:
+      (use "git rm --cached <file>..." to unstage)
+
+    	new file:   index.html
+
+    ```
+1. Commit your changes, with an appropraite commit message:
+    ```
+    $ git commit -m "Adding index.html"
+    ```
+
+    Note that you'll be asked to authenticate with GitHub. If you get tired of this, you can [set up your computer and your GitHub account to use SSH keys](https://help.github.com/articles/generating-an-ssh-key/).
+
+    This commits your changes to your *local* Git repo. If you were to visit your repository page on GitHub, you would still see an empty repo.
+
+1. Push your changes up to GitHub:
+    ```
+    $ git push origin master
+    ```
+    You should read this command as: "Push all of my commits in the master branch to the origin repository". The name "origin" is typically used to refer to a *remote* Git repo, often on a platform such as GitHub or Bitbucket.
+
+1. Now your code is up in GitHub. Time to submit it to Vocareum! Open Vocareum and navigate to the "My Work" view for the "Getting Started" assignment. From the Actions menu, select Connect Git and fill out the form appropriately.
+
+    ![Connect Git](images/connect-git.png)
+
+    ![Connect Git Form](images/connect-git-form.png)
+
+    Submit the form, and after you receive a notification of successful notification, you can submit your assignment for grading using the Submit from GitHub button.
+
+    ![Submit from GitHub](images/submit-from-github.png)
+
+## Notes
+
+* This assignment -- and all assignments going forward -- will be manually graded. So you won't see the output of a check script. In most cases, you'll need to demo your work for your TF after submitting via Vocareum. For this assignment, there's no need to demo your work.
+* You will repeat each of the steps in this walk-through for each assignment in Unit 2, with a unique repository and Vocareum assignment for each. We'll remind of you of the steps to take as you go, but if you need a detailed refresher at any point, revisit this walkthrough.
+* If you make changes to your project after copying it into Vocareum, those changes *will not* be reflected in Vocareum. To resubmit, you should follow these stesps:
+    1. Disconnect Git
+
+        ![Disconnect Git](images/disconnect-git.png)
+
+    1. Repeat steps 5-9 above.
