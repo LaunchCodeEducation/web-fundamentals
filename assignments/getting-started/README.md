@@ -4,9 +4,11 @@ The purpose of this aassignment is to provide you with more practice with Git an
 
 One of the best ways to become familiar and comfortable with Git is to use the same commands repeatedly, and build Git into your coding workflow. This will develop your "muscle memory" so that you learn both the mechanics and principles at the same time.
 
+## The Process
+
 Carry out each of the following tasks. Start by opening a terminal and navigating to the directory where you store your code. Windows users will open a PowerShell window; from now on we'll just say "terminal" for Windows/Mac/Linux when we really mean the specific terminal program for your operating system.
 
-*Note:* For terminal commands displayed below, we don't always included the resulting output. Output is displayed when we think it will be valuable to confirm that your output matches ours.
+    > *Note:* For terminal commands displayed below, we don't always included the resulting output. Output is displayed when we think it will be valuable to confirm that your output matches ours.
 
 1. **Create a repo.** Visit your profile page on github.com and select the *Repositories* tab. Create a new repository by clicking the green "New" button. In the resulting dialogue, give your repo the name `getting-started`.
 
