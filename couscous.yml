@@ -28,3 +28,6 @@ menu:
         piazza:
             text: Discussion Forum
             absoluteUrl: https://piazza.com/class/ir5gdd8ddd76k7
+        python2vs3:
+            text: Python 2 vs. 3
+            relativeUrl: python2vs3/
