@@ -8,7 +8,7 @@ One of the best ways to become familiar and comfortable with Git is to use the s
 
 Carry out each of the following tasks. Start by opening a terminal and navigating to the directory where you store your code. Windows users will open a PowerShell window; from now on we'll just say "terminal" for Windows/Mac/Linux when we really mean the specific terminal program for your operating system.
 
-    > *Note:* For terminal commands displayed below, we don't always included the resulting output. Output is displayed when we think it will be valuable to confirm that your output matches ours.
+    > Note that for some of the example terminal commands displayed below, we don't always included the resulting output. Output is displayed when we think it will be valuable to confirm that your output matches ours. Otherwise, we just show you the command you should type, but not the result.
 
 1. **Create a repo.** Visit your profile page on github.com and select the *Repositories* tab. Create a new repository by clicking the green "New" button. In the resulting dialogue, give your repo the name `getting-started`.
 
