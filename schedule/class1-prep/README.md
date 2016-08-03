@@ -7,6 +7,8 @@ Read | Article | [What is Version Control?][what-is-version-control] | This arti
 Read | Article | [A Short Introduction to Git][a-short-introduction-to-git] | This article talks in detail about a particular version control system called Git, which we will be using heavily throughout this class.
 Do | Interactive Tutorial | Choose by OS: <br> [Git It: Mac][git-it-mac] <br> [Git It: Linux][git-it-linux] <br> [Git It: Windows][git-it-windows] | Download and work through this tutorial, which runs on your desktop and gives you practice using Git, as well as a website called GitHub, which is a place where you can store your Git projects online and collaborate with others on shared projects. <br> **Note:** If you are on Windows, you should use PowerShell instead of the "Git Shell" that the tutorial refers to.
 
+---
+
 ### Setup, HTML
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|

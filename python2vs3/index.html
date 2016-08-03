@@ -54,84 +54,46 @@
 
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                    <h1 id="class-2-prep">Class 2 Prep</h1>
-<h3 id="html">HTML</h3>
-<p>In the previous lesson of CS253, you learned a bit about HTML. Now get some more practice and reinforcement by going through these Codecademy tutorials:</p>
-<table>
-<thead>
-<tr>
-<th>Task</th>
-<th>Resource Type</th>
-<th>Link</th>
-<th>Instructions</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Do</td>
-<td>Interactive Course</td>
-<td><a href="https://www.codecademy.com/en/courses/web-beginner-en-HZA3b/resume?curriculum_id=50579fb998b470000202dc8b">Codecademy: HTML Basics</a></td>
-<td>This section covers the very basics. You will already be familiar with most of it from your previous homework.</td>
-</tr>
-<tr>
-<td>Do</td>
-<td>Interactive Course</td>
-<td><a href="https://www.codecademy.com/en/courses/web-beginner-en-LceTK/resume?curriculum_id=50579fb998b470000202dc8b">Codecademy: Build Your Own Webpage</a></td>
-<td>Here you will apply the concepts from the previous section into a small project.</td>
-</tr>
-<tr>
-<td>Do</td>
-<td>Interactive Course</td>
-<td><a href="https://www.codecademy.com/en/courses/web-beginner-en-y2Yjd/resume?curriculum_id=50579fb998b470000202dc8b">Codecademy: HTML Basics II</a></td>
-<td>In this section you will learn some new HTML tags like lists.</td>
-</tr>
-<tr>
-<td>Do</td>
-<td>Interactive Course</td>
-<td><a href="https://www.codecademy.com/en/courses/web-beginner-en-9x6JW/resume?curriculum_id=50579fb998b470000202dc8b">Codecademy: Social Netowrking Profile</a></td>
-<td>Here you will apply the concepts from the previous section into a small project.</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3 id="css">CSS</h3>
-<p>CSS is a language for customizing the visual style of your HTML content. In this course we will not be focusing very heavily on CSS, but it is important to at least know what it is and get a quick taste for how it works.</p>
-<table>
-<thead>
-<tr>
-<th>Task</th>
-<th>Resource Type</th>
-<th>Link</th>
-<th>Instructions</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Do</td>
-<td>Interactive Course</td>
-<td><a href="https://www.codecademy.com/en/courses/web-beginner-en-TlhFi/resume?curriculum_id=50579fb998b470000202dc8b">Codecademy: CSS -- An Overview</a></td>
-<td>Here you will get a brief intro into how to use CSS and apply your styles to an HTML document.</td>
-</tr>
-<tr>
-<td>Do</td>
-<td>Interactive Course</td>
-<td><a href="https://www.codecademy.com/en/courses/web-beginner-en-UuBLw/resume?curriculum_id=50579fb998b470000202dc8b">Codecademy: Design a Button for Your Website</a></td>
-<td>Here you will apply the concepts from the previous section into a small project.</td>
-</tr>
-<tr>
-<td>Do</td>
-<td>Interactive Course</td>
-<td><a href="https://www.codecademy.com/en/courses/web-beginner-en-WF0CF/resume?curriculum_id=50579fb998b470000202dc8b">Codecademy: CSS Selectors</a></td>
-<td>This section shows some additional ways to &quot;select&quot; certain sets of elements to receive the styles you specify.</td>
-</tr>
-<tr>
-<td>Do</td>
-<td>Interactive Course</td>
-<td><a href="https://www.codecademy.com/en/courses/web-beginner-en-jNuXw/resume?curriculum_id=50579fb998b470000202dc8b">Codecademy: Sorting Your Friends</a></td>
-<td>Here you will apply the concepts from the previous section into a small project.</td>
-</tr>
-</tbody>
-</table>
+                    <h1 id="python-2-versus-python-3">Python 2 versus Python 3</h1>
+<p>To date, we've used Python 3 in this course. However, Unit 2 makes use of Python 2. The reason for this is that much of our work will be done using Google App Engine, and it uses Python 2. There are quite a few differences between the two versions, but you won't encounter most of them.</p>
+<p>Here, we highlight the two that will impact you the most. Thankfully, they're relatively easy to get used to. If you're curious about the other differences, <a href="http://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html">Sebastian Raschka's article</a> on the topic lays them out nicely.</p>
+<h2 id="using">Using <code>print</code></h2>
+<p>In Python 2, <code>print</code> is a statement, while in Python 3, <code>print</code> is a function. Practically, this means that in Python 2 you can do things like:</p>
+<pre><code class="language-python"># using Python 2
+print "Hello, World!"
+print "LaunchCode", "is great"</code></pre>
+<p>Output:</p>
+<pre><code>Hello, World!
+LaunchCode is great</code></pre>
+<p>In Python 3, the equivalent code would be</p>
+<pre><code class="language-python"># using Python 3
+print("Hello, World!")
+print("LaunchCode", "is great")</code></pre>
+<p>For most intents and purposes, you can see that Python 2 print statements don't use parentheses, but Python 3 print statements do. That said, you can do the following in Python 2:</p>
+<pre><code class="language-python"># using Python 2
+print("Hello, World!")
+print("LaunchCode", "is great")</code></pre>
+<p>with output:</p>
+<pre><code>Hello, World!
+(LaunchCode, is great)</code></pre>
+<p>Hence, Python 2 will accept print statements with parentheses, but with potentially unexpected output. Conversely, if you try to use <code>print</code> without parentheses in Python 3, you'll get a syntax error.</p>
+<pre><code class="language-python"># using Python 3
+print "please print me"</code></pre>
+<p>Output:</p>
+<pre><code>  File "&lt;stdin&gt;", line 1
+    print "please print me"
+                          ^
+SyntaxError: Missing parentheses in call to 'print'</code></pre>
+<h2 id="prompting-for-input">Prompting for input</h2>
+<p>In Python 3, you've used the <code>input</code> function to prompt for user input.</p>
+<pre><code class="language-python"># using Python 3
+name = input("What's your name? ") # name is a string
+age = input("How old are you? ") # age is a string</code></pre>
+<p>In Python 2, to get the same behavior we have to use the <code>raw_input</code> function.</p>
+<pre><code class="language-python"># using Python 2
+name = raw_input("What's your name? ") # name is a string
+age = raw_input("How old are you? ") # age is a string</code></pre>
+<p><code>input</code> is available as a function in Python 2, but it behaves differently than in Python 3. For more details, see the article linked above.</p>
                 </section>
 
             </div>
