@@ -28,4 +28,4 @@ As a reminder, the results of this test **will not affect your grade in any way*
 [syllabus]: ../../syllabus
 [class2-prep]: ../class2-prep
 [getting-started]: ../../assignments/getting-started
-[hackerrank]: ../..
+[hackerrank]: http://hr.gs/launchcore2
