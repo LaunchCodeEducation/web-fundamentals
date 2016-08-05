@@ -55,7 +55,7 @@ Carry out each of the following tasks. Start by opening a terminal and navigatin
     </html>
     ```
 
-   Next, add an `<h1>` element as a child inside the `<body>` element:
+   Next, add an `<h1>` element as a child inside the `<body>` element. Inside the `<h1>`, put your own name:
 
     ```html
     ...
@@ -163,7 +163,7 @@ Carry out each of the following tasks. Start by opening a terminal and navigatin
 
 A few other things to take note of:
 
-* **No Auto-grader script.** This assignment -- and all assignments going forward -- will be manually graded, so you still won't have a grade after you've submitted on Vocareum. In order to receive credit, you'll need to demo your work for a TF during class time. 
+* **No Auto-grader script.** This assignment -- and all assignments going forward -- will be manually graded, so you still won't have a grade after you've submitted on Vocareum. In order to receive credit, you'll need to demo your work for a TF during class time.
 
 * **Use this page as a reference.** Except for a few minor differences here and there, you will repeat this same proccess for every assignment in Unit 2, using a unique repository and Vocareum assignment for each. We'll remind of you of the steps to take as you go, but if you need a detailed refresher at any point, revisit this walkthrough.
 
