@@ -47,7 +47,7 @@ Carry out each of the following tasks. Start by opening a terminal and navigatin
 
     <html>
         <head>
-            <title>Page Title</title>
+            <title>My First Web Assignment</title>
         </head>
         <body>
             <!-- Page content goes here -->
