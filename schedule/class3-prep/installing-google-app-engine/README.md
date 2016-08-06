@@ -1,4 +1,4 @@
-# Google App Engine Setup
+# Installing Google App Engine
 
 As we learn how web apps work, and how to build our own web apps, we'll be using Google App Engine. This tool will help us create and run web apps on our computers.
 
@@ -16,9 +16,9 @@ For Linux systems, follow [this walkthrough][gae-on-linux] to install and run GA
 
 Now that you have GAE installed on your laptop, let's learn how to use it by walking through a Hello, World! app.
 
-If you're using Linux, much of the video will not be precisely applicable since there isn't a GUI tool for using Google App Engine. However, you may find some value in the discussion of common errors messages.
+If you're using Linux, much of the video will not be precisely applicable since there isn't a GUI tool for using GAE. However, you may find some value in the discussion of common errors messages.
 
-<iframe width="420" height="315" src="https://www.youtube.com/embed/KSFaeLRZNE8" frameborder="0" allowfullscreen></iframe>
+[Watch: Google App Engine Walkthrough](https://www.youtube.com/watch?v=KSFaeLRZNE8)
 
 [gae-install]: https://cloud.google.com/appengine/downloads#Google_App_Engine_SDK_for_Python
 [gae-on-linux]: http://archive.oreilly.com/pub/a/web-services/excerpts/9780596800697/run-google-app-linux.html
