@@ -1,6 +1,14 @@
 # Class 2 Prep
 
 
+### Survey
+
+Task | Resource Type | Link | Instructions
+|----|---------------|------|-------------|
+Do  | Survey | [Unit 1 Survey][unit-1-survey] | Please take a sec to give us some feedback on your experience with Unit 1. Thanks!
+
+---
+
 ### HTML
 
 In the previous lesson of CS253, you learned a bit about HTML. Now get some more practice and reinforcement by going through these Codecademy tutorials:
@@ -36,3 +44,6 @@ Do | Interactive Course | [Codecademy: Sorting Your Friends][sorting-your-friend
 
 [design-button]: https://www.codecademy.com/en/courses/web-beginner-en-UuBLw/resume?curriculum_id=50579fb998b470000202dc8b
 [sorting-your-friends]: https://www.codecademy.com/en/courses/web-beginner-en-jNuXw/resume?curriculum_id=50579fb998b470000202dc8b
+
+
+[unit-1-survey]: https://docs.google.com/a/launchcode.org/forms/d/e/1FAIpQLScb1ooCxuyOJUpO0fztwiY_tfTxjuWY4QpExA25Ytzyb5mQjQ/viewform
