@@ -10,10 +10,10 @@
 ## Vocareum Walkthrough (with pictures!)
 
 1. **Navigate to the appropriate assignment.**
-    ![navigating][./images/navigating.png]
+    ![navigating](./images/navigating.png)
 2. **Find your student.**
-    ![find-student][./images/find-student.png]
+    ![find-student](./images/find-student.png)
 3. **Look at their submission.**
-    ![click-view][./images/click-view.png]
+    ![click-view](./images/click-view.png)
 4. **Give them credit.**
-    ![give-credit][./images/give-credit.png]
+    ![give-credit](./images/give-credit.png)
