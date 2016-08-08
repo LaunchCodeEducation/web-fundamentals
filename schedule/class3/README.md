@@ -18,6 +18,7 @@ Let's do some setup work to get our project ready. We'll only have to do this on
 
 #### Clone the repository
 
+
 In a terminal, navigate to whichever directory you use to store your code projects. Leave the terminal open, and visit the [Flicklist repository page on GitHub](https://github.com/LaunchCodeEducation/flicklist-python). Copy the clone URL from the "Clone or download" dropdown.
 
 Back in your terminal:
