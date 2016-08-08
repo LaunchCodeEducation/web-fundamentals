@@ -7,8 +7,8 @@ Date | Prep Work | In Class | Topics | Assignment(s) | Assignments Due
 8/11 | [Class 3 Prep](./class3-prep) | [Class 3](./class3) | HTTP / how the web works | (none) | (none)
 8/15 | [Class 4 Prep](./class4-prep) | [Class 4](./class4) | HTML forms and inputs | (none) | [HTML Me Something][html-me-something] |
 8/18 | [Class 5 Prep](./class5-prep) | [Class 5](./class5) | validating forms; redirecting; HTML escaping | [Formation][formation] | (none) |
-8/22 | [Class 6 Prep](./class6-prep) | [Class 6](./class6) | | | |
-8/25 | [Class 7 Prep](./class7-prep) | [Class 7](./class7) | | | |
+8/22 | [Class 6 Prep](./class6-prep) | [Class 6](./class6) | (no new topics) | (none) | (none) |
+8/25 | [Class 7 Prep](./class7-prep) | [Class 7](./class7) | templates | (none) | [Formation][formation] |
 8/29 | [Class 8 Prep](./class8-prep) | [Class 8](./class8) | | | |
 9/1 | [Class 9 Prep](./class9-prep) | [Class 9](./class9) | | | |
 9/5 | No | Class | Labor | Day | ! |
