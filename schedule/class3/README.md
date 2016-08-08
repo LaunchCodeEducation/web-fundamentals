@@ -4,7 +4,10 @@ This is the first of many classes focused on the mechanics and ideas involved in
 
 Starting today, the majority of in-class sessions will revolve around building a class project together. Each day of class, we will add a little bit more onto the project: your instructor will live-code some new feature, and then for Studio you will be asked to add a little more.
 
-Our app is called FlickList, as in: a list of "flicks" or movies. It'll start out small, but within a few weeks it will have a bunch of useful functionality that will allow users to create a list of movies they want to see, edit the list, mark movies as watched, and rate the movies they have watched.
+
+### FlickList
+
+Our app will be called *FlickList*, as in: a list of "flicks" or movies. It'll start out small, but within a few weeks it will have a bunch of useful functionality that will allow users to create a list of movies they want to see, edit the list, mark movies as watched, and rate the movies they have watched.
 
 The mechanics of how this works will be the same for nearly every class going forward, so we'll cover them in a bit more detail this time, as a proper introduction to this strategy.
 
