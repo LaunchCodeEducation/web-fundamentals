@@ -10,4 +10,3 @@ Do | Interactive Course | [CS253: Lesson 2 (first half)][lesson-2] | Do the firs
 
 
 [lesson-2]: https://classroom.udacity.com/courses/cs253/lessons/48736183/concepts/3150565890923#
-[fake]: fakething.com
