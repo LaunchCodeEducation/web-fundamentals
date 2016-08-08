@@ -59,7 +59,67 @@
 
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                    <p><em>Coming Soon</em></p>
+                    <h1 id="class-3">Class 3</h1>
+<p>This is the first of many classes focused on the mechanics and ideas involved in building full-stack web applications. The term <strong>full-stack</strong> simply means that we'll look at every aspect of web applications, from the pages that a user views and interacts with, to the Python code that decides how to handle user submissions and requests, to the database that stores information.</p>
+<p>In the Udacity lectures that you'll work through, you'll build several example web applications. We'll also build an application of our own, for in-class review and studios. This will be a single app that we add to in each class meeting. The mechanics of how this works will be the same for nearly every class going forward, so we'll cover them in a bit more detail this time, as a proper introduction to this strategy.</p>
+<h2 id="flicklist">Flicklist</h2>
+<p>Our app is called Flicklist. It'll start out small, but eventually will have a bunch of useful functionality that will allow users to create a list of movies they want to see, edit the list, mark movies as watched, and rate the movies they have watched.</p>
+<h3 id="project-setup">Project setup</h3>
+<p>Let's do some setup work to get our project ready. We'll only have to do this once.</p>
+<h4 id="clone-the-repository">Clone the repository</h4>
+<p>In a terminal, navigate to whichever directory you use to store your code projects. Leave the terminal open, and visit the <a href="https://github.com/LaunchCodeEducation/flicklist-python">Flicklist repository page on GitHub</a>. Copy the clone URL from the &quot;Clone or download&quot; dropdown.</p>
+<p>Back in your terminal:</p>
+<pre><code>$ git clone [URL]</code></pre>
+<p>Where [URL] is replaced with the repository URL.</p>
+<p>This creates a copy of the repository on your laptop.</p>
+<h4 id="create-new-app-engine-app">Create new App Engine app</h4>
+<p>Now, open the Google App Engine Launcher. Create a new app using the app ID <code>flicklist-python</code>. The application directory should be <em>one level above</em> the repository directory that was just created by cloning the repository. So, if your copy of the repository is in <code>/home/student/code-projects/flicklist-python</code>, then you would set the application directory to <code>/home/student/code-projects/</code>. In previous usage of Google App Engine Launcher, the tool created a new directory for us using the specified project ID. In this case, however, we want to use the directory that is already there. If we get the application ID and directory settings correct, Google App Engine will do this just like we want.</p>
+<p><img src="images/flicklist-gae.png" alt="flicklist-python in GAE" /></p>
+<p>Recall that you can set the port settings in the dialog to almost anything you like, as long as you know to access your app in the browser using the correct port. Here, we uses 8000 and 8080 for admin and application ports, respectively.</p>
+<h3 id="checking-out-the-walkthrough-code">Checking out the Walkthrough code</h3>
+<p>This step is only necessary if you wish to code along with the walkthrough that is done in class. <em>It is not required that you code along with class walkthroughs.</em> The code that we add to our application during the walkthrough will be available to you when you check out the code for the studio.</p>
+<p>We include these steps for those that do want to code along, and to give you a better overall picture of how we're using Git for this step-by-step project. If you don't want to code along in class, you can skip ahead to <strong>Checking out the Studio code</strong>.</p>
+<p>From the repository directory in your terminal, run the following command:</p>
+<pre><code>$ git checkout -b walkthrough3-work walkthrough3</code></pre>
+<p>This checks out a specific version of the code in the repository named <code>walkthrough3</code> (called a <strong>tag</strong>) into a new <strong>branch</strong> named <code>walkthrough3-work</code>. You can think of a branch as a parallel version of the main code base in the repository. We can work here, make changes, and check them in without affecting the main code base (usually called the <code>master</code> branch).</p>
+<h3 id="walkthrough-3-hello-movies">Walkthrough 3: Hello, Movies!</h3>
+<p>In class, we'll walk through the steps to set up our new application that are outlined above. We'll discuss the dynamics of web applications:</p>
+<ul>
+<li>How do HTTP requests and responses work?</li>
+<li>What exactly is the application, and how does it &quot;run&quot;?</li>
+<li>GET and POST requests types</li>
+<li>Review of Python class syntax, and the <code>self</code> parameter</li>
+<li>Routes in a web appliction (i.e. how does a specific request get matched with a specific handler class based on the URL?)</li>
+</ul>
+<p>We'll also add a bit of code to display a new heading and a &quot;Movie of the Day&quot;, which is really just a hard-coded string. We'll make this more interesting in the studio.</p>
+<p>If you follow along with the walkthrough, do the following to store your code in your local repository:</p>
+<pre><code>$ git add .
+$ git commit -m "USEFUL MESSAGE"</code></pre>
+<h3 id="checking-out-the-studio-code">Checking out the Studio code</h3>
+<p>In a terminal, navigate to the repository directory, if you're not already there.</p>
+<p>If you checked out the code for the walkthrough, switch back to the <code>master</code> branch:</p>
+<pre><code>$ git checkout master</code></pre>
+<p>Now, let's make sure we have the most up-to-date version of the code from the main repository:</p>
+<pre><code>$ git pull origin master</code></pre>
+<p>Great! Now we're ready to get the starter code for the studio:</p>
+<pre><code>$ git checkout -b studio3-work studio3</code></pre>
+<h3 id="studio-3-movie-of-the-day">Studio 3: Movie of the Day</h3>
+<p>Before you get started, fire up the Flicklist app using Google App Engine Launcher and visit the home page in a browser. You should see a page that looks like this.</p>
+<p><img src="images/walkthrough3-flicklist.png" alt="Walkthrough 3 version of Flicklist" /></p>
+<p>If you don't, make sure the app is running and check the URL.</p>
+<p>In Atom, open up the <code>flicklist-python</code> folder, and then the <code>main.py</code> file. Notice that you have a couple of TODOs, noted by comments. Completing these will upgrade our app from returing the same movie each time to a random movie from a list. Here are some more details on what you need to do.</p>
+<ol>
+<li>At the top of the <code>getRandomMovie</code> method, create a Python list that contains at least 5 movie title strings.</li>
+<li>In the same method, choose one of the titles randomly, and modify the return statement so that it returns the random selection instead of the hard-coded value &quot;The Big Lebowski.&quot; Here are some tips:
+<ul>
+<li>Recall that we can generate random numbers in Python with the <a href="https://docs.python.org/2/library/random.html"><code>random</code> module</a>. Add <code>import random</code> to the top of <code>main.py</code> to make this module available to our code. Read the module documentation to determine which method within the module is best for the task at hand.</li>
+<li>Write your code so that if you want to add a movie to your list, the only thing you need to do is modify the Python list storing the movie title strings. In other words, you <em>should not</em> use a specific number when generating the random list index.</li>
+</ul></li>
+</ol>
+<p>When you're done with your studio code, check it in and switch back to the <code>master</code> branch.</p>
+<pre><code>$ git add .
+$ git commit -m "USEFUL MESSAGE"
+$ git checkout master</code></pre>
                 </section>
 
             </div>
