@@ -7,3 +7,6 @@ We have seen how to use HTML to display content to a user. But what if our site 
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
 Do | Interactive Course | [CS253: Lesson 2 (first half)][lesson-2] | Do the first 26 items of Lesson 2. Stop when you get to the item titled *Validation*.
+
+
+[lesson-2]: https://classroom.udacity.com/courses/cs253/lessons/48736183/concepts/3150565890923#
