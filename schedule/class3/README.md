@@ -4,20 +4,18 @@ This is the first of many classes focused on the mechanics and ideas involved in
 
 Starting today, the majority of in-class sessions will revolve around building a class project together. Each day of class, we will add a little bit more onto the project: your instructor will live-code some new feature, and then for Studio you will be asked to add a little more.
 
+The mechanics of how you will work on Studios will be the same for nearly every class going forward, so we'll cover them in a bit more detail this time, as a proper introduction to this strategy.
+
 
 ### FlickList
 
 Our app will be called *FlickList*, as in: a list of "flicks" or movies. It'll start out small, but within a few weeks it will have a bunch of useful functionality that will allow users to create a list of movies they want to see, edit the list, mark movies as watched, and rate the movies they have watched.
-
-The mechanics of how this works will be the same for nearly every class going forward, so we'll cover them in a bit more detail this time, as a proper introduction to this strategy.
-
 
 ### Project setup
 
 Let's do some setup work to get our project ready. We'll only have to do this once.
 
 #### Clone the repository
-
 
 In a terminal, navigate to whichever directory you use to store your code projects. Leave the terminal open, and visit the [Flicklist repository page on GitHub](https://github.com/LaunchCodeEducation/flicklist-python). Copy the clone URL from the "Clone or download" dropdown.
 
@@ -54,13 +52,14 @@ This checks out a specific version of the code in the repository named `walkthro
 ### Walkthrough 3: Hello, Movies!
 
 In class, we'll walk through the steps to set up our new application that are outlined above. We'll discuss the dynamics of web applications:
-* How do HTTP requests and responses work?
+* How is a dynamic web application different form a static website, and what can a dynamic web app do that a static site cannot?
 * What exactly is the application, and how does it "run"?
+* How do HTTP requests and responses work?
 * GET and POST requests types
 * Review of Python class syntax, and the `self` parameter
 * Routes in a web appliction (i.e. how does a specific request get matched with a specific handler class based on the URL?)
 
-We'll also add a bit of code to display a new heading and a "Movie of the Day", which is really just a hard-coded string. We'll make this more interesting in the studio.
+We'll also add a bit of code to display a new heading and a "Movie of the Day", which is really just a hard-coded string. You will make this more interesting during the studio.
 
 If you follow along with the walkthrough, do the following to store your code in your local repository:
 ```
@@ -78,7 +77,7 @@ If you checked out the code for the walkthrough, switch back to the `master` bra
 $ git checkout master
 ```
 
-Now, let's make sure we have the most up-to-date version of the code from the main repository:
+Now, let's make sure we have the most up-to-date version of the code from the remote repository:
 ```
 $ git pull origin master
 ```
@@ -97,12 +96,20 @@ Before you get started, fire up the Flicklist app using Google App Engine Launch
 
 If you don't, make sure the app is running and check the URL.
 
-In Atom, open up the `flicklist-python` folder, and then the `main.py` file. Notice that you have a couple of TODOs, noted by comments. Completing these will upgrade our app from returing the same movie each time to a random movie from a list. Here are some more details on what you need to do.
+##### Your Task
 
-1. At the top of the `getRandomMovie` method, create a Python list that contains at least 5 movie title strings.
-1. In the same method, choose one of the titles randomly, and modify the return statement so that it returns the random selection instead of the hard-coded value "The Big Lebowski." Here are some tips:
+Currently, this app is kind of boring, because the movie of the day is always *The Big Lebowski*. What if, each time you visit the page, it randomly surprises you with a different movie? That would be much more exciting. Your job is to implement this random movie feature.
+
+In Atom, open up the `flicklist-python` folder, and then the `main.py` file. Notice that you have a couple of TODOs, noted by comments. Completing these will upgrade our app so that rather than displaying the same movie each time, instead it displays a random movie from a list. Here are some more details on what you need to do.
+
+1. Inside the `getRandomMovie` method, create a Python list that contains at least 5 movie title strings.
+1. In the same method, choose one of the titles randomly, and modify the return statement so that instead of the hard-coded value "The Big Lebowski", it returns the randomly selected title. Here are some tips:
     * Recall that we can generate random numbers in Python with the [`random` module](https://docs.python.org/2/library/random.html). Add `import random` to the top of `main.py` to make this module available to our code. Read the module documentation to determine which method within the module is best for the task at hand.
     * Write your code so that if you want to add a movie to your list, the only thing you need to do is modify the Python list storing the movie title strings. In other words, you *should not* use a specific number when generating the random list index.
+
+If you complete the steps above, you should see that the "movie of the day" changes each time you refresh the page!
+
+Hopefully this gives you some sense for the difference between a static web site and a dynamic web app running on a server. Even something as simple as our "random movie of the day" page would be impossible to implement as a static site. In order to dynamically build HTML content "on the fly", like we did here, you need a programming language like Python running on the back-end.
 
 When you're done with your studio code, check it in and switch back to the `master` branch.
 ```
