@@ -42,12 +42,14 @@ This step is only necessary if you wish to code along with the walkthrough that 
 
 We include these steps for those that do want to code along, and to give you a better overall picture of how we're using Git for this step-by-step project. If you don't want to code along in class, you can skip ahead to **Checking out the Studio code**.
 
-From the repository directory in your terminal, run the following command:
+From within the `flicklist-python` directory in your terminal, run the following command:
 ```
-$ git checkout -b walkthrough3-work walkthrough3
+$ git checkout -b walkthrough3 origin/walkthrough3
 ```
 
-This checks out a specific version of the code in the repository named `walkthrough3` (called a **tag**) into a new **branch** named `walkthrough3-work`. You can think of a branch as a parallel version of the main code base in the repository. We can work here, make changes, and check them in without affecting the main code base (usually called the `master` branch).
+This checks out a specific version of the code (called a **branch**) from the remote origin repository. The remote branch is named `walkthrough3`, and we are checking it out into a new, local branch, also named `walkthrough3`. You can think of a branch as a parallel version of the main codebase in the repository. We can work here, make changes, and check them in without affecting the main codebase (usually called the `master` branch).
+
+It's rare we say this, but don't worry about fully understanding what is happening here. Knowing how to do branching in Git is certainly an important concept to learn eventually, but for now, the only reason we are using it is because it is the best way to distribute different versions of starter code at various points along the timeline of our running class project.
 
 ### Walkthrough 3: Hello, Movies!
 
@@ -69,24 +71,15 @@ $ git commit -m "USEFUL MESSAGE"
 
 ### Checking out the Studio code
 
-In a terminal, navigate to the repository directory, if you're not already there.
-
-If you checked out the code for the walkthrough, switch back to the `master` branch:
+In a terminal, navigate to the repository directory, if you're not already there. Now grab the starter code for the studio:
 
 ```
-$ git checkout master
+$ git checkout -b studio3 origin/studio3
 ```
 
-Now, let's make sure we have the most up-to-date version of the code from the remote repository:
-```
-$ git pull origin master
-```
+This checks out a specific version of the code (called a **branch**) from the remote origin repository. The remote branch is named `studio3`, and we are checking it out into a new, local branch, also named `studio3`. You can think of a branch as a parallel version of the main codebase in the repository. We can work here, make changes, and check them in without affecting the main codebase (usually called the `master` branch).
 
-Great! Now we're ready to get the starter code for the studio:
-
-```
-$ git checkout -b studio3-work studio3
-```
+It's rare we say this, but don't worry about fully understanding what is happening here. Knowing how to do branching in Git is certainly an important concept to learn eventually, but for now, the only reason we are using it is because it is the best way to distribute different version of starter code at various points along the timeline of our running class project.
 
 ### Studio 3: Movie of the Day
 
@@ -104,16 +97,15 @@ In Atom, open up the `flicklist-python` folder, and then the `main.py` file. Not
 
 1. Inside the `getRandomMovie` method, create a Python list that contains at least 5 movie title strings.
 1. In the same method, choose one of the titles randomly, and modify the return statement so that instead of the hard-coded value "The Big Lebowski", it returns the randomly selected title. Here are some tips:
-    * Recall that we can generate random numbers in Python with the [`random` module](https://docs.python.org/2/library/random.html). Add `import random` to the top of `main.py` to make this module available to our code. Read the module documentation to determine which method within the module is best for the task at hand.
-    * Write your code so that if you want to add a movie to your list, the only thing you need to do is modify the Python list storing the movie title strings. In other words, you *should not* use a specific number when generating the random list index.
+    * Recall that we can generate random numbers in Python with [the `random` module](https://docs.python.org/2/library/random.html). Add `import random` to the top of `main.py` to make this module available to our code. Read the module documentation to determine which method within the module is best for the task at hand.
+    * Write your code so that if you were to add or remove some movies from your list, it will still randomly choose one, no matter how many items are in the list. In other words, your code should not contain a "magic number" like `5`.
 
 If you complete the steps above, you should see that the "movie of the day" changes each time you refresh the page!
 
 Hopefully this gives you some sense for the difference between a static web site and a dynamic web app running on a server. Even something as simple as our "random movie of the day" page would be impossible to implement as a static site. In order to dynamically build HTML content "on the fly", like we did here, you need a programming language like Python running on the back-end.
 
-When you're done with your studio code, check it in and switch back to the `master` branch.
+When you're done with your studio code (or even if you're not done, but you are about to pack up your computer), make sure to commit your changes:
 ```
 $ git add .
 $ git commit -m "USEFUL MESSAGE"
-$ git checkout master
 ```
