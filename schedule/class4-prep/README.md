@@ -4,7 +4,7 @@
 
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
-Do | Quick assignment | [Hello Google App Engine][hello-gae] | This is a guide through the mechanics of creating a Google App Engine project, then initializing it as a Git repo, and then pushing your local repo to a remote on GitHub.
+Do | Setup | [Hello Google App Engine][hello-gae] | This is a guide through the mechanics of creating a Google App Engine project, then initializing it as a Git repo, and then pushing your local repo to a remote on GitHub.
 
 ---
 
