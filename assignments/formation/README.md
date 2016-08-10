@@ -18,17 +18,17 @@ If you did the *Crypto* problem set from the ThinkPython Unit 1, then the words 
 
 > NOTE: If you did not do the Crypto problem set, don't worry. Your instructor will provide you with a working `caesar.py` file that you can use.
 
-##### Setting up
+#### Setting up
 
 Create a new Google App Engine app called `caesar`, and then set up a local Git repository and a remote repository on GitHub. See [Hello Google App Engine][hello-gae] for a refresher on that process.
 
-##### Part 1a: Rot13
+#### Part 1a: Rot13
 
 First, go ahead and implement the Rot13 web app as specified on on the quiz.
 
 > Remember that you should ignore any Udacity instructions about hosting your app out on the internet and posting the link so they can grade it. You don't have to submit your work to Udacity, you just have to submit to LaunchCode on Vocareum.
 
-##### Part 1b: Caesar
+#### Part 1b: Caesar
 
 Rotating by 13 all the time is fine, but let's spice it up and let the user rotate by any amount they want.
 
@@ -40,11 +40,11 @@ Notice that in our example, if the user types a rotation amount that is not a nu
 
 ## Part 2: User Signup
 
-##### Setting Up
+#### Setting Up
 
 Create a new Google App Engine app called `caesar`, and then set up a local Git repository and a remote repository on GitHub. See [Hello Google App Engine][hello-gae] for a refresher on that process.
 
-##### Doin Work
+#### Doin Work
 
 This one has no extra extension work-- just do the assignment described on Udacity for the item called [Quiz: User Signup][user-signup].
 
