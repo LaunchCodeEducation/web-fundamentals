@@ -2,7 +2,7 @@
 
 You do not have to submit this assignment on Vocareum, or demo it to a TF. But if you get stuck, you should make sure to ask for help in class and get the problem resolved. You will need to know how to go through this process for all your future assignments using Google App Engine.
 
-### Step A: Create a Google App Engine app*.
+### Step A: Create a Google App Engine app.
 
 1. Open up Google App Engine, and click the little `+` button to create a new app.
 1. Under "Application Directory", choose the place where you keep your coding projects for this class.
