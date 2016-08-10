@@ -6,6 +6,8 @@ Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
 Do | Quick assignment | [Hello Google App Engine][hello-gae] | This is a guide through the mechanics of creating a Google App Engine project, then initializing it as a Git repo, and then pushing your local repo to a remote on GitHub.
 
+---
+
 ### Forms and Inputs
 
 We have seen how to use HTML to display content to a user. But what if our site needs to *receive* information *from* the user? Using the `<form>` element and its child `<input>` elements, you can build user-interface components such as text fields, drop-downs, and check-boxes that allow the user to provide input to your web app. This next section of the course examines how to create these forms, and also how to handle the user's input on the back-end and respond to it.
