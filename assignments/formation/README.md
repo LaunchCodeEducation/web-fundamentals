@@ -2,7 +2,7 @@
 
 This assignment is all about incorporating forms into your web apps.
 
-We will mostly build off of CS253's [Problem Set 2][pset-2], but we will add onto it a little bit.
+We will mostly build off of CS253's [Problem Set 2][pset2], but we will add onto it a little bit.
 
 Are you excited, Beyonce?
 
@@ -74,3 +74,5 @@ When demoing for a TF, please wait until you have submitted both assignments, an
 
 [pset2]: https://classroom.udacity.com/courses/cs253/lessons/48756009/concepts/485384170923#
 [user-signup]: https://classroom.udacity.com/courses/cs253/lessons/48756009/concepts/485384170923#
+[caesar-example]: https://launchcode-demos.appspot.com/caesar
+[signup-example]: https://launchcode-demos.appspot.com/signup
