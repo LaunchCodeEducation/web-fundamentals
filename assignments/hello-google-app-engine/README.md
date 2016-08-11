@@ -14,7 +14,7 @@ You do not have to submit this assignment on Vocareum, or demo it to a TF. But i
     app.yaml     favicon.ico     index.yaml      main.py
     ```
 
-### Step B: Initialize your project as a local Git repo, and sync it to a remote repo on GitHub*.
+### Step B: Initialize your project as a local Git repo, and sync it to a remote repo on GitHub.
 
 Just follow [these instructions][github-instructions] from GitHub. Essentially, what you will do is:
 - Initialize your project as a Git repository
