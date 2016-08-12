@@ -1,5 +1,7 @@
 # Schedule
 
+Please note that you should do the Prep Work **before** coming to class!
+
 Date | Prep Work | In Class | Topics | Assignment(s) | Assignments Due
 -----|-----------|----------|--------|---------------|----------------
 8/4 | [Class 1 Prep](./class1-prep) | [Class 1](./class1) | Git; Github; HTML; Setup stuff | [Getting Started][getting-started] | (none)
