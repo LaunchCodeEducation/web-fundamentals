@@ -24,4 +24,8 @@ Just follow [these instructions][github-instructions] from GitHub. Essentially, 
 - Push your changes so that the remote repo is synced with the local one
 
 
+**What's the difference between this process and the *Getting Started* assignment I already did?**
+
+Good question. The only difference is that this time, you create your local repository using `git init`, and then add the GitHub.com repository as a remote by using the `git remote add` command; whereas previously, in the *Getting Started* assignment, you created your local repository by cloning the remote repo, using the `git clone` command. We switched to this new way because it works better with the Google App Engine workflow-- you can let GAE create your project for you, with all the boilerplate files, and then convert that project to a Git repo.
+
 [github-instructions]: https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
