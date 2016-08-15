@@ -43,7 +43,18 @@ nothing to commit, working directory clean
 
 If you do have some uncommitted changes, go ahead and commit them now.
 
-Next, checkout a new branch from the remote `origin/studio4` branch:
+Next, use `git fetch` to fetch new changes from the remote:
+
+```
+$ git fetch
+remote: Counting objects: 9, done.
+remote: Total 9 (delta 3), reused 3 (delta 3), pack-reused 6
+Unpacking objects: 100% (9/9), done.
+From https://github.com/LaunchCodeEducation/flicklist-python
+ * [new branch]      studio4    -> origin/studio4
+```
+
+Finally, checkout a new branch from the remote `origin/studio4` branch:
 
 ```
 $ git checkout -b studio4 origin/studio4
@@ -69,11 +80,11 @@ Open up `main.py` in your text editor. You should see 4 `# TODO` comments in the
 
 4. **Extra Credit: Use a dropdown instead of a text box.** For deleting a movie from a pre-existing list, a text box does not really make sense, because the user could theoretically type anything, even something that is not even on her watchlist in the first place. A more sensible UI component would a dropdown, which only allows the user to choose from among a limited set of choices.
 
-  Use the `<select>` and `<option>` tags to create a dropdown component where the only available choices are the movies that are currently in the user's Watchlist. 
+  Use the `<select>` and `<option>` tags to create a dropdown component where the only available choices are the movies that are currently in the user's Watchlist.
 
   Thus far, of course, there is no such thing as the user's "real" Watchlist, so you can just pretend. Simply hard-code a few of your favorite movies into the dropdown *as if* those movies make up the user's current watchlist.
-  
-#### Check in Your Changes 
+
+#### Check in Your Changes
 
 Before you leave, as always, you should `add` and `commit` your changes:
 
