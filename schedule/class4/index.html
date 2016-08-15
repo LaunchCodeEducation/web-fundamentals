@@ -98,7 +98,14 @@
 On branch studio3
 nothing to commit, working directory clean</code></pre>
 <p>If you do have some uncommitted changes, go ahead and commit them now.</p>
-<p>Next, checkout a new branch from the remote <code>origin/studio4</code> branch:</p>
+<p>Next, use <code>git fetch</code> to fetch new changes from the remote:</p>
+<pre><code>$ git fetch
+remote: Counting objects: 9, done.
+remote: Total 9 (delta 3), reused 3 (delta 3), pack-reused 6
+Unpacking objects: 100% (9/9), done.
+From https://github.com/LaunchCodeEducation/flicklist-python
+ * [new branch]      studio4    -&gt; origin/studio4</code></pre>
+<p>Finally, checkout a new branch from the remote <code>origin/studio4</code> branch:</p>
 <pre><code>$ git checkout -b studio4 origin/studio4
 Branch studio4 set up to track remote branch studio4 from origin.
 Switched to a new branch 'studio4'</code></pre>
@@ -121,7 +128,7 @@ Switched to a new branch 'studio4'</code></pre>
 </li>
 <li>
 <p><strong>Extra Credit: Use a dropdown instead of a text box.</strong> For deleting a movie from a pre-existing list, a text box does not really make sense, because the user could theoretically type anything, even something that is not even on her watchlist in the first place. A more sensible UI component would a dropdown, which only allows the user to choose from among a limited set of choices.</p>
-<p>Use the <code>&lt;select&gt;</code> and <code>&lt;option&gt;</code> tags to create a dropdown component where the only available choices are the movies that are currently in the user's Watchlist. </p>
+<p>Use the <code>&lt;select&gt;</code> and <code>&lt;option&gt;</code> tags to create a dropdown component where the only available choices are the movies that are currently in the user's Watchlist.</p>
 <p>Thus far, of course, there is no such thing as the user's &quot;real&quot; Watchlist, so you can just pretend. Simply hard-code a few of your favorite movies into the dropdown <em>as if</em> those movies make up the user's current watchlist.</p>
 </li>
 </ol>
