@@ -42,7 +42,7 @@ Notice that in our example, if the user types a rotation amount that is not a nu
 
 #### Setting Up
 
-Create a new Google App Engine app called `caesar`, and then set up a local Git repository and a remote repository on GitHub. See [Hello Google App Engine][hello-gae] for a refresher on that process.
+Create a new Google App Engine app called `signup`, and then set up a local Git repository and a remote repository on GitHub. See [Hello Google App Engine][hello-gae] for a refresher on that process.
 
 #### Doin Work
 
