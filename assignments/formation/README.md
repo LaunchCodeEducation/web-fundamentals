@@ -28,6 +28,8 @@ First, go ahead and implement the Rot13 web app as specified on on the quiz.
 
 > Remember that you should ignore any Udacity instructions about hosting your app out on the internet and posting the link so they can grade it. You don't have to submit your work to Udacity, you just have to submit to LaunchCode on Vocareum.
 
+> Also note that Udacity provides a "solution" to the problem... you are free to look at their solution, but you will not find it very helpful. They make use of templates, which you have not learned about yet.
+
 #### Part 1b: Caesar
 
 Rotating by 13 all the time is fine, but let's spice it up and let the user rotate by any amount they want.
@@ -59,6 +61,8 @@ Again, your page does not have to look exactly the same as their example (here's
 1. For the username and email fields, you should preserve what the user typed, so they don't have to retype it. With the password fields, you should clear them, for security.
 
 > Remember that you should ignore any Udacity instructions about hosting your app out on the internet and posting the link so they can grade it. You don't have to submit your work to Udacity, you just have to submit to LaunchCode on Vocareum.
+
+> Also note that Udacity provides a "solution" to the problem... you are free to look at their solution, but you will not find it very helpful. They make use of templates, which you have not learned about yet.
 
 
 ## Submitting Your Work
