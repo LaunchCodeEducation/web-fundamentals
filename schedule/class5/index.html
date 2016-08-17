@@ -60,6 +60,81 @@
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
                     <h1 id="class-5">Class 5</h1>
+<p>Today continues our discussion about processing forms in our web apps. The big new concept is that of <em>validation</em>. Sometimes, the user submits a form that, for one reason or another, is not acceptable. In that case, we must tell them what they did wrong, and give them a chance to try again.</p>
+<h2 id="walkthrough-5">Walkthrough 5</h2>
+<p>The main things we will do during today's walkthrough are:</p>
+<ol>
+<li>
+<p>First, we will write a function via which we can fetch the user's (pretend) current watchlist.  </p>
+<ul>
+<li>And then, rather than hard-code the movie titles directly into our dropdown menu, we will dynamically build the dropdown based on the  current list.</li>
+<li>In the proccess, we will see a new Python function, the <code>string.format</code> method.</li>
+</ul>
+</li>
+<li>
+<p>The main feature we will add is the inclusion of some validation on the <code>cross-off/</code> route handler:</p>
+<ul>
+<li>When the user wants to cross a movie off, we will make sure the movie is actually on the user's list in the first place.</li>
+<li>If not, we will <em>redirect</em> the user back to the home page.
+<ul>
+<li>And we will pass along a helpful error message as a <em>query parameter</em> in the URL
+<ul>
+<li>But spaces aren't allowed in URLs! So we'll need to <em>escape</em> the error message</li>
+</ul></li>
+</ul></li>
+<li>Back on the homepage, we will display the error message, if it exists.</li>
+</ul>
+</li>
+<li>We will also answer the following question: Why is this back-end validation necessary? Doesn't the dropdown menu on the front-end already prevent the user from choosing a movie that isn't on their list?</li>
+</ol>
+<h2 id="studio-5">Studio 5</h2>
+<p>For Studio, your job is to include some validation on the <code>/add</code> route, to make sure the app responds appropriately no matter what the user has typed into that form.</p>
+<h3 id="checking-out-the-code">Checking Out the Code</h3>
+<ol>
+<li>
+<p>In a terminal window, navigate so that you are inside your <code>flicklist-python/</code> folder.</p>
+</li>
+<li>
+<p>Use <code>git status</code> to make sure you don't have any uncommitted changes. If you do, commit them now.</p>
+</li>
+<li>
+<p>Use <code>git fetch</code> to fetch new changes from the remote:</p>
+<pre><code>$ git fetch
+remote: Counting objects: 27, done.
+remote: Compressing objects: 100% (27/27), done.
+remote: Total 27 (delta 16), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (27/27), done.
+From https://github.com/LaunchCodeEducation/flicklist-python
+ * [new branch]      studio5    -&gt; origin/studio5
+ * [new branch]      walkthrough5 -&gt; origin/walkthrough5</code></pre>
+</li>
+<li>
+<p>Checkout a new branch from the remote <code>origin/studio5</code> branch:</p>
+<pre><code>$ git checkout -b studio5 origin/studio5
+Branch studio5 set up to track remote branch studio5 from origin.
+Switched to a new branch 'studio5'</code></pre>
+</li>
+</ol>
+<h3 id="your-task">Your Task</h3>
+<p>There are three things that might go wrong:</p>
+<ol>
+<li>
+<p>The user might try to add a so-called &quot;movie&quot; whose title is something like <code>"&lt;button&gt;Hacker Apocalypse&lt;/button&gt;"</code>. You can try this now and see for yourself what happens... the confirmation page will actually contain a real button! That's not good.</p>
+<p>Use the <code>escape</code> function from the <code>cgi</code> module in order to ensure that the user's input is properly escaped from the HMTL context.</p>
+</li>
+<li>
+<p>The user might fail to type anything at all, and then click the <code>Add It</code> button. If the user does not specify a movie, then you should reject their form submission, and redirect them back to the home page, with an error message that says something like</p>
+<blockquote>
+<p>Please specify the name of the movie you want to add</p>
+</blockquote>
+</li>
+<li>
+<p>The user might try to add a movie that <a href="https://www.youtube.com/watch?v=dPxI4yOKdgc">sucks</a>. Indeed, your users don't always know what's in their best interest, and there are times when it is best to intervene. Near the top of your <code>main.py</code> file you will see a variable called <code>terrible_movies</code>, which defines a list of movies that should be absolutely forbidden. If the user tries to add one of the movies in that list, you should redirect them back to the homepage with an error message that says something like:</p>
+<blockquote>
+<p>Trust me, you don't want to add 'Nine Lives' to your Watchlist.</p>
+</blockquote>
+</li>
+</ol>
                 </section>
 
             </div>
