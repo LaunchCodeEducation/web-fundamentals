@@ -76,10 +76,18 @@
 <td>Do</td>
 <td>Interactive Course</td>
 <td><a href="https://classroom.udacity.com/courses/cs253/lessons/48538421/concepts/487274210923#">CS253: Lesson 2a</a></td>
-<td>Do the entire lesson, 18 items in all.</td>
+<td>Do the entire lesson, 18 items in all. Be sure to read the notes below for tips on new and/or potentially confusing concepts.</td>
 </tr>
 </tbody>
 </table>
+<h4 id="notes">Notes</h4>
+<ul>
+<li>In the first lesson, &quot;Quiz: Writing a Basic Form,&quot; the isntructor casually introduces some Python syntax that we haven't encountered before. In the <code>Handler</code> class, the first method looks like this:
+<pre><code class="language-python">def write(self, *a, **kw):
+    self.response.out.write(*a, **kw)</code></pre>
+<p>The arguments <code>*a</code> and <code>**kw</code> look different than anything we've seen, don't they? In Python, the symbols <code>*</code> and <code>**</code> can be used to represent <em>sets of arguments</em>, rather than just a single argument. We're goint to avoid using this new syntax in our studios, and you won't need it to complete studios or assignment. If you want to learn a bit about these special types of arguments, read the article <a href="https://pythontips.com/2013/08/04/args-and-kwargs-in-python-explained/"><code>*args and **kwargs in Python Explained</code></a>. (Note that the symbols <code>*</code> and <code>**</code> are the only important things here; we can use either <code>*a</code> or <code>*args</code> with the same result.)</p></li>
+<li>In the setup for &quot;Quiz: FizzBuzz,&quot; the instructor quickly explains the expression <code>n = n and int(n)</code> which is likely confusing. What he says is that this expression is the same as saying: if <code>n</code> exists and is not <code>None</code>, then set <code>n = int(n)</code>. Why do we do this? If we were to try something like <code>int("")</code> or <code>int(None)</code>, then Python would thrown an error. So this check avoids that situation. But how does the check actually work? Read section 9.5 of the article, <a href="http://www.thomas-cokelaer.info/tutorials/python/boolean.html">Notes about booleans and logical operators</a> for a quick overview, and as your instructor or TF if it's still confusing.</li>
+</ul>
                 </section>
 
             </div>
