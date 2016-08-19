@@ -4,14 +4,14 @@
 
 Up to now, you may have had the feeling that the apps we're building in the lessons, studios, and assignments don't seem that useful. If you thought harder about it, you may have determined that this is true because we don't have a way to store data over long periods of time. Actually, we haven't been able to store data for more than the duration of a single HTTP request, say, by adding and element to a list.
 
-We're going to plug this functional hole across the next two lessons by learning how to store data in databases. In this lesson, we'll learn about **relational databases**, the most common way store data. We'll learn about tables, rows, and queries.
+We're going to plug this functional hole across the next two lessons by learning how to store data in databases. In this lesson, we'll learn about **relational databases**, the most common way store data. We'll learn about tables, rows, and queries. We'll also learn how to read data from such databases in our web apps.
 
-In the next lesson, we'll learn how to write code that allows our data to be stored in a database *without* using queries. Why go the trouble, then? Aside from the fact that understanding relational databases is considered a fundamental concept for programmers, we also want to avoid hiding major concepts behind a curtain. After you learn how to write code that stores data without writing queries, you'll know what's going on in the background, and you'll be able to write a query yourself, if needed.
+In the next lesson, we'll learn how to write code that allows our data to be stored in a database *without* using queries. We'll still need SQL to read data, though.
 
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
 Do | Exercises | [SQL Bolt][sql-bolt] | Complete exercises 1-5 (Lesson 5 is called "SQL Review: Simple SELECT Queries") at SQL Bolt. This will give you some basic practice with common queries. You'll learn a bit about SQL in an isolated setting, and then see how it can work in the context of a web application in the Udacity portion of the prep work.
-Do | Interactive Course | [CS253: Lesson 3][lesson-3] | Do the first 25 items of Lesson 3. Stop when you get to the item titled *Google App Engine Datastore*. Be sure to read the notes below for tips on new and/or potentially confusing concepts.<br>This lesson teaches database concepts by showing you first how the analogous operations -- such as selecting and indexing -- would work in Python code, and then discussing these oprations in the context of a relational database. The quizzes that you'll complete using Python are *not* representative of how you'll interact with databases going forward; this is simply a useful pedagogical way to present the concepts.
+Do | Interactive Course | [CS253: Lesson 3][lesson-3] | Do the first 25 items of Lesson 3. Stop when you get to the item titled *Google App Engine Datastore*. Be sure to read the notes below for tips on new and/or potentially confusing concepts.
 
 #### Notes
 
