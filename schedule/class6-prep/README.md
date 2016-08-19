@@ -17,9 +17,12 @@ The more specific, the better. For example, if you just write down "Git", or som
 > - . . .
 > 
 > - Git
-    - Why do I have to `add` and also `commit`? What's the difference?
-    - What's the difference between Git and GitHub?
-    - . . . etc
+>
+>    - Why do I have to `add` and also `commit`? What's the difference?
+> 
+>    - What's the difference between Git and GitHub?
+> 
+>    - . . . etc
 > - . . . etc
 
 Finally, in addition to answering questions, another thing your instructor can do during the review session is walk through some example demonstrations of whatever you want. So think about what sorts of problems you would like to see a walkthrough on:
