@@ -4,7 +4,7 @@
 
 In the last lesson, we learned about relational databases, and while we interacted with data a little bit in our Python code, we mostly did so to illustrate database *concepts* rather than to illustrate how we'll work with databases going forward.
 
-That's where this lesson comes in. We're going to learn how to store data from our web application in a database, and how to query the Google App Engine Datastore to retrieve our data.
+That's where this lesson comes in. We're going to learn how to store data from our web application in a database, and how to query the Google App Engine Datastore to retrieve our data. The techniques you'll learn here will be used in studios and assignments going forward.
 
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
