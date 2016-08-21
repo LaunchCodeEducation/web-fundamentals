@@ -8,7 +8,7 @@ In this lesson and the next, we'll learn the fundamentals of making websites and
 
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
-Do | Interactive Course | [CS253: Lesson 4][lesson-4] | Do the first 25 items of Lesson 4. Stop when you get to the item *Cookie Hashing*. Be sure to read the notes below for tips on new and/or potentially confusing concepts.
+Do | Interactive Course | [CS253: Lesson 4][lesson-4] | Do the first 21 items of Lesson 4. Stop when you get to the item *Quiz: Hashlib and SHA256*. Be sure to read the notes below for tips on new and/or potentially confusing concepts.
 
 
 #### Notes
