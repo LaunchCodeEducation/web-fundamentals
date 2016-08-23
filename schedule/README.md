@@ -11,7 +11,7 @@ Date | Prep Work | In Class | Topics | Assignment(s) | Assignments Due
 8/18 | [Class 5 Prep](./class5-prep) | [Class 5](./class5) | validating forms; redirecting; HTML escaping | [Formation][formation] | (none) |
 8/22 | [Class 6 Prep](./class6-prep) | [Class 6](./class6) | (no new topics) | (none) | (none) |
 8/25 | [Class 7 Prep](./class7-prep) | [Class 7](./class7) | templates | (none) | [Formation][formation] |
-8/29 | [Class 8 Prep](./class8-prep) | [Class 8](./class8) | Databases, SQL | | (none) |
+8/29 | [Class 8 Prep](./class8-prep) | [Class 8](./class8) | Databases, SQL | (none) | (none) |
 9/1 | [Class 9 Prep](./class9-prep) | [Class 9](./class9) | GQL, Google App Engine Datastores | [Build-a-blog][build-a-blog] | (none)  |
 9/5 | No | Class | Labor | Day | ! |
 9/8 | [Class 10 Prep](./class10-prep) | [Class 10](./class10) | cookies, hashing | (none) | (none) |
