@@ -61,11 +61,14 @@
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
                     <h1 id="assignment-build-a-blog">Assignment: Build-a-blog</h1>
 <p>This assignment will closely follow <a href="https://classroom.udacity.com/courses/cs253/lessons/48198869/concepts/485084250923#">Problem Set 3</a> from CS253. We'll provide more structured guidance than the problem set overview at Udacity, which is rather brief. So while you may find the overview useful, you only need to follow the instructions given here.</p>
+<p><em>Note</em>: As with other problem sets for the Udacity course, an instructor's solution is provided within the course. If you are tempted use the provided solution as a shortcut to finishing this assignment, consider the following:</p>
+<ul>
+<li>The instructor's solution uses several concepts we haven't learned yet, so not only will significant parts of it not make sense to you, but we'll easily be able to tell that you didn't write the code yourself.</li>
+<li>We'll know if you copy the code from the instructor's solution, even if you go to pains to change parts of it. We're quick detectives when it comes to this kind of thing. We've provided a detailed guide below, covering the most difficult parts of the problem set. Let us be your guide, and you'll learn the material well without undue struggle.</li>
+</ul>
 <p>Throughout the assignment, refer to the <a href="http://launchcode-build-a-blog.appspot.com/blog">demo app</a>.</p>
 <h4 id="setting-up">Setting up</h4>
 <p>Create a new Google App Engine app called <code>build-a-blog</code>, and then set up a local Git repository and a remote repository on GitHub. See <a href="../../assignments/hello-google-app-engine">Hello Google App Engine</a> for a refresher on that process.</p>
-<p>When creating a repository on GitHub, you have the option of adding a <code>.gitignore</code> file to your repository. This special file specifies files that Git should ignore, either by name, or by pattern. For example, all files with a <code>.pyc</code> extension can be ignored by adding <code>*.pyc</code> to <code>.gitignore</code>. We recommend doing this to keep unwanted files from cluttering up your repository.</p>
-<p><img src="python-gitignore.png" alt="Python .gitignore" /></p>
 <h4 id="list-and-create-blog-posts">List and Create Blog Posts</h4>
 <p>If you think about it for a minute, the behavior of creating a blog post with a title and body, saving it to the database, and displaying posts is essentially what we did in the AsciiChan example app. The main difference between the two is that the post submission form and post listings will be on separate pages. Go back to your code for AsciiChan and use it as a model to set up the beginnings of your blog.</p>
 <p>First, set up the blog so that the new post form and the post listing are on the same page, as with AsciiChan, and then separate those portions into separate routes, handler classes, and templates. For now, when a user submits a new post, redirect them to the main blog page.</p>
