@@ -56,7 +56,7 @@ class ViewPostHandler(webapp2.RequestHandler):
     def get(self, id):
         pass #replace this with some code to handle the request
 ```
-This routing technique allows for dynamic routing, so that a GET request that looks like `/blog/6` is mapped to the `ViewPostHandler` and the `id` value 6 is passed into it's `get` method. Note that the name of the `id` parameter in the `get` method matches the name that we gave the dynamic portion of the route above. If these don't match up, the value of the `id` won't be passed to the `get` method properly.
+This routing technique allows for dynamic routing, so that a GET request that looks like `/blog/6` is mapped to the `ViewPostHandler` and the `id` value 6 is passed into its `get` method. Note that the name of the `id` parameter in the `get` method matches the name that we gave the dynamic portion of the route above. If these don't match up, the value of the `id` won't be passed to the `get` method properly.
 
 You can read more about complex routing in the [`webapp2` documentation][complex-routing].
 
