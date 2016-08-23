@@ -60,7 +60,7 @@ This routing technique allows for dynamic routing, so that a GET request that lo
 
 You can read more about complex routing in the [`webapp2` documentation][complex-routing].
 
-Once you have set up this new dynamic route, and the corresponding handler and `get` method, you are ready to do simple test. In the `get` method, simply print the value of the `id` parameter to the response. No need to use a template, or even any HTML. Test it out in your browser. You should see something like this:
+Once you have set up this new dynamic route, and the corresponding handler and `get` method, you are ready to do a simple test. In the `get` method, simply print the value of the `id` parameter to the response. No need to use a template, or even any HTML (just `self.response.write()`). Test it out in your browser. You should see something like this:
 
 ![simple route test](route-test.png)
 
