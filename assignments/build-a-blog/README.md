@@ -2,15 +2,15 @@
 
 This assignment will closely follow [Problem Set 3][pset3] from CS253. We'll provide more structured guidance than the problem set overview at Udacity, which is rather brief. So while you may find the overview useful, you only need to follow the instructions given here.
 
+*Note*: As with other problem sets for the Udacity course, an instructor's solution is provided within the course. If you are tempted use the provided solution as a shortcut to finishing this assignment, consider the following:
+* The instructor's solution uses several concepts we haven't learned yet, so not only will significant parts of it not make sense to you, but we'll easily be able to tell that you didn't write the code yourself.
+* We'll know if you copy the code from the instructor's solution, even if you go to pains to change parts of it. We're quick detectives when it comes to this kind of thing. We've provided a detailed guide below, covering the most difficult parts of the problem set. Let us be your guide, and you'll learn the material well without undue struggle.
+
 Throughout the assignment, refer to the [demo app][build-a-blog].
 
 #### Setting up
 
 Create a new Google App Engine app called `build-a-blog`, and then set up a local Git repository and a remote repository on GitHub. See [Hello Google App Engine][hello-gae] for a refresher on that process.
-
-When creating a repository on GitHub, you have the option of adding a `.gitignore` file to your repository. This special file specifies files that Git should ignore, either by name, or by pattern. For example, all files with a `.pyc` extension can be ignored by adding `*.pyc` to `.gitignore`. We recommend doing this to keep unwanted files from cluttering up your repository.
-
-![Python .gitignore](python-gitignore.png)
 
 #### List and Create Blog Posts
 
