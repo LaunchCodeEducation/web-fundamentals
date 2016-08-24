@@ -8,6 +8,8 @@ We're going to plug this functional hole across the next two lessons by learning
 
 In the next lesson, we'll learn how to write code that allows our data to be stored in a database *without* using queries. We'll still need SQL to read data, though.
 
+*Note*: While we've suggested that you code along with the course videos already, we want to emphasize this point for the database lessons. Coding along with the examples in the videos will be essential to being able to properly tackle the next assignment. If you don't code along, you will be at an extreme disadvantage.
+
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
 Do | Exercises | [SQL Bolt][sql-bolt] | Complete exercises 1-5 (Lesson 5 is called "SQL Review: Simple SELECT Queries") at SQL Bolt. This will give you some basic practice with common queries. You'll learn a bit about SQL in an isolated setting, and then see how it can work in the context of a web application in the Udacity portion of the prep work.
