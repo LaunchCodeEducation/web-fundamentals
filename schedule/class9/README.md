@@ -41,3 +41,5 @@ Follow [the same process][checkout-process] as usual to checkout the `studio8` b
 2. In `MovieRatings.post`, use the `Movie.get_by_id` ORM method to find the movie with the id specified by the form submission.
 3. In `MovieRatings.post`, update the movie's rating to the new rating specified by the form submission.
 4. In `rating-confirmation.html`, update the code so that it still works now that it is being given a movie *object*.
+
+[checkout-process]: ../class5/index.html#checking-out-the-code
