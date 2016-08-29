@@ -32,7 +32,7 @@ Now that we have some database functionality wired into our application, let's c
 
 #### Checking Out the Code
 
-Follow [the same process][checkout-process] as usual to checkout the `studio8` branch of the repo.
+Follow [the same process][checkout-process] as usual to checkout the `studio9` branch of the repo.
 
 #### Your tasks
 
