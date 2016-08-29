@@ -28,7 +28,13 @@ During the walkthrough, we will lay the groundwork for storing data, and begin t
 
 ## Studio
 
-Implement persistent rating.
+Now that we have some database functionality wired into our application, let's continue to convert our app to use the database. Our next task is to implement persistent ratings, so a user can rate a movie and the information is stored in the database for later.
+
+#### Checking Out the Code
+
+Follow [the same process][checkout-process] as usual to checkout the `studio8` branch of the repo.
+
+#### Your tasks
 
 1. In `MovieRatings.get` write a GQL query to select all the movies that have been watched
   - Extra credit: sort by creation date (most recent first).
