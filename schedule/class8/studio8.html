@@ -59,9 +59,37 @@
 
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                    <h1 id="class-8">Class 8</h1>
-<p>During the prep work for this class you got your first taste of databases, including Structured Query Language (SQL) and how queries can be run within Python code. We are not quite ready to integrate databases into our applications yet, though. During the prep work and in-class portions of Class 9, we'll learn how to do this.</p>
-<p>For this class, we'll briefly review databases and SQL, along with templates. After the lecture and review, in lieu of a new studio, you should complete <a href="../class7/index.html#studio">studio 7</a>, if you didn't last time. Templates will be essential for the remainder of the unit, so be sure that you are comfortable with the mechanics of including and using templates in an application.</p>
+                    <h1 id="studio-8">Studio 8</h1>
+<p>You have started to learn about databases, but you haven't yet seen how to incorporate them into an app. So today, we'll simply add a few features onto our project, and get everything teed up for next class, when we will finally start persisting user data in a database.</p>
+<p>Today we will expand our project so that users can actually view their list of movies. We will also introduce a second list view, representing the movies that the user has watched (crossed off). In this second view, users will be able to give each movie a rating between 1 and 5 stars.</p>
+<h2 id="walkthrough">Walkthrough</h2>
+<p>Between the last studio and this one, we have modified our application in a few minor ways.</p>
+<ul>
+<li>Responding to bad requests with a 400 error
+<ul>
+<li>We don't bother giving a nice error message to a malicious user that submits a bad request, such as a request to cross off a movie that doesn't exist in our system. Instead, we send back and <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_Error">HTTP 400 status code</a> and a very brief error message. We'll use this pattern going forward, only resonding to errors with helpful messages when it's the case that a well-meaning user made a mistake.</li>
+</ul></li>
+<li>We have changed &quot;cross off&quot; semantics to &quot;watched it&quot; semantics. Instead of &quot;crossing off a movie from your list&quot;, user is reporting that they &quot;finished watching&quot; that movie
+<ul>
+<li>Rename <code>CrossOffMovie</code> handler to <code>WatchedMovie</code>, change route to <code>"/watched-it"</code></li>
+<li>Change a bunch of variable names in <code>WatchedMovie.post</code> method and the <code>edit.html</code> template</li>
+<li>Change the confirmation template to <code>watched-it-confirmation.html</code></li>
+<li>Change name of <code>getCurrentWatchlist()</code> function to <code>getUnwatwchedMovies()</code></li>
+</ul></li>
+</ul>
+<p>During the walkthrough, we will implement these features:</p>
+<ul>
+<li>A listing on the main page to display all unwatched movies.</li>
+<li>Modify the &quot;wathced-it&quot; form so that instead of a dropdown, a button on each list item is displayed. Clicking the button will result in a confirmation message that the movie has been watched.</li>
+<li>New list view for movies that have been watched. This will require us to create a new method <code>getWatchedMovies()</code> to return a (for now) hard-coded list of watched movies.</li>
+</ul>
+<h2 id="studio">Studio</h2>
+<p>Implement the feature where users can rate the movies they have watched.</p>
+<ol>
+<li>Make a confirmation template, to be displayed when the user rates a movie.</li>
+<li>Add a handler for form submission so that it renders the template. This should got in a <code>post</code> method in the <code>MovieRatings</code> handler class.</li>
+<li>Add forms for rating movies, one on each list item in the <code>ratings.html</code> template</li>
+</ol>
                 </section>
 
             </div>
