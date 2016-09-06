@@ -17,8 +17,8 @@ Mon 9/5 | No | Class | Labor | Day | ! |
 Thurs 9/8 | [Class 10 Prep](./class10-prep) | [Class 10](./class10) | cookies, hashing | (none) | (none) |
 Mon 9/12 | [Class 11 Prep](./class11-prep) | [Class 11](./class11) | user authentication, password hashing | [Blogz](../assignments/blogz) | [Build-a-blog][build-a-blog] |
 Thurs 9/15 | [Class 12 Prep](./class12-prep) | [Class 12](./class12) | (no new topics) | (none) | (none) |
-Mon 9/19 | (none) | Catch-up Day | (no new topics) | (none) | (none) |
-Thurs 9/22 | (none) | Catch-up Day | (no new topics) | (none) | [Blogz](../assignments/blogz) |
+Mon 9/19 | (none) | Catch-up Day! | (no new topics) | (none) | (none) |
+Thurs 9/22 | (none) | Catch-up Day! | (no new topics) | (none) | [Blogz](../assignments/blogz) |
 
 [getting-started]: ../assignments/getting-started
 [html-me-something]: ../assignments/html-me-something
