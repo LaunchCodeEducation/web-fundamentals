@@ -14,10 +14,10 @@ Thurs 8/25 | [Class 7 Prep](./class7-prep) | [Class 7](./class7) | templates | (
 Mon 8/29 | [Class 8 Prep](./class8-prep) | [Class 8](./class8) | Databases, SQL | (none) | (none) |
 Thurs 9/1 | [Class 9 Prep](./class9-prep) | [Class 9](./class9) | GQL, Google App Engine Datastores | [Build-a-blog][build-a-blog] | (none)  |
 Mon 9/5 | No | Class | Labor | Day | ! |
-Thurs 9/8 | [Class 10 Prep](./class10-prep) | [Class 10](./class10) | cookies, hashing | (none) | (none) |
-Mon 9/12 | [Class 11 Prep](./class11-prep) | [Class 11](./class11) | user authentication, password hashing | [Blogz](../assignments/blogz) | [Build-a-blog][build-a-blog] |
-Thurs 9/15 | [Class 12 Prep](./class12-prep) | [Class 12](./class12) | (no new topics) | (none) | (none) |
-Mon 9/19 | (none) | Catch-up Day! | (no new topics) | (none) | (none) |
+Thurs 9/8 | No | Class | Mentor Center Closed | (none) | (none) |
+Mon 9/12 | [Class 10 Prep](./class10-prep) | [Class 10](./class10) | cookies, hashing | (none) | (none) |
+Thurs 9/15 | [Class 11 Prep](./class11-prep) | [Class 11](./class11) | user authentication, password hashing | [Blogz](../assignments/blogz) | [Build-a-blog][build-a-blog] |
+Mon 9/19 | [Class 12 Prep](./class12-prep) | [Class 12](./class12) | (no new topics) | (none) | (none) |
 Thurs 9/22 | (none) | Catch-up Day! | (no new topics) | (none) | [Blogz](../assignments/blogz) |
 
 [getting-started]: ../assignments/getting-started
