@@ -4,12 +4,17 @@
 
 - a ton of new stuff, infrastructure for user accounts
   - `User` model
+    - just two fields, username and password hash
+  - `hashutils.py`, a bunch of helper functions for hashing and salting stuff
+  - Add more methods to the base `Handler` class
+    - helpers for logging in and out and managing cookies
+    - the `initialize` method, which comes from the parent class `webapp2.RequestHandler`. We use it to create a login wall around any pages that require login.
   - Registration
     - `/registration` route and `Registration` handler
+    - the handler is kind of complicated, has a bunch of helpers for veryifying password and such
   - Login / Logout
     - `/login` route and `Login` handler
     - `/logout` route and `Logout` handler
-    - put most content behind login-wall
 
 ## During Walkthrough 11
   - First, we definitely do want to spend a little time going over the changes listed above.
