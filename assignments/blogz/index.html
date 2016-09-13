@@ -79,17 +79,15 @@
 <p>That's a very quick, high-level introduction to the starter code. Spend some time with it, and when you're ready, dive into your tasks below.</p>
 <h3 id="add-login-form">Add login form</h3>
 <p>Start up the app and visit the path <code>/signup</code>. Go ahead and fill out the form to create an account for yourself. There are two ways to verify that this worked:</p>
-<ol>
-<li>You are redirected to the <code>/blog/newpost</code> page, and if you look at the cookies stored in your browser, you'll see one with the name <code>user_id</code>. To view your cookies, open up the developer tools in your browser, and type <code>document.cookie</code> in the console (you may see other cookies too).
-<img src="document-cookies.png" alt="document.cookies" /></li>
-<li>Visit the SDK Console for Google App Engine. Here's how to launch it from the GAE Launcher:
-<img src="sdk-launcher.png" alt="SDK Launcher" />
-Then visit the &quot;Datastore Viewer&quot; link and select User from the Entity Kind dropdown, and hit List Entities to display all users. You should see a row for the user you just created.
-<img src="user-entities.png" alt="User entities" /></li>
-</ol>
-<p>If you then visit the path <code>/logout</code>, you'll be logged out. To allow users to log in and out conviently, do the following:</p>
+<p><strong>Method 1:</strong> You are redirected to the <code>/blog/newpost</code> page, and if you look at the cookies stored in your browser, you'll see one with the name <code>user_id</code>. To view your cookies, open up the developer tools in your browser, and type <code>document.cookie</code> in the console (you may see other cookies too).</p>
+<p><img src="document-cookies.png" alt="document.cookies" /></p>
+<p><strong>Method 2:</strong> Visit the SDK Console for Google App Engine. Here's how to launch it from the GAE Launcher:</p>
+<p><img src="sdk-launcher.png" alt="SDK Launcher" /></p>
+<p>Then visit the &quot;Datastore Viewer&quot; link and select User from the Entity Kind dropdown, and hit List Entities to display all users. You should see a row for the user you just created.</p>
+<p><img src="user-entities.png" alt="User entities" /></p>
+<p>If you then visit the path <code>/logout</code>, you'll be logged out. To allow users to log in and out conveniently, do the following:</p>
 <ul>
-<li>Create a <code>login.html</code> template that extends <code>base.html</code>. It should contain a form with a username and password field, and a submit button. To figure out exactly what the field names should be, and how the form should be submitted, look at <code>LoginHandler</code> and note that its route is set up to be <code>/login</code>. The template will be passed a parameter named <code>error</code> in the case of a login error, such as incorrect password or username. Make sure to display this error somewhere in your template.</li>
+<li>Create a <code>login.html</code> template that extends <code>base.html</code>. It should contain a form with a username and password field, and a submit button. To figure out exactly what the field names should be, and how the form should be submitted, look at <code>LoginHandler</code> and note that its route is set up to be <code>/login</code>. The template will be passed a parameter named <code>error</code> in the case of a login error, such as incorrect password or username. Make sure to display this error somewhere in your template. You may use the CSS class <code>error</code> to have this message styled appropriately.</li>
 <li>In <code>base.html</code> add links for logging in and logging out. The login link should take the user to the login form. The logout link should take the user to <code>/logout</code>, which will log the user out and redirect them to another page. You don't need to worry about only displaying these when a user is logged in, as many sites behave. These links will be visible for all site visitors, regardless of whether or not they are logged in.</li>
 </ul>
 <p>Note that we have a <code>login.html</code> template and a <code>signup.html</code> template, but no <code>logout.html</code> template. It turns out that we don't need a template for logging out. Think about why this is the case. What makes logging out different from logging in, or creating an account?</p>
