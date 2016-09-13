@@ -37,16 +37,22 @@ That's a very quick, high-level introduction to the starter code. Spend some tim
 ### Add login form
 
 Start up the app and visit the path `/signup`. Go ahead and fill out the form to create an account for yourself. There are two ways to verify that this worked:
-1. You are redirected to the `/blog/newpost` page, and if you look at the cookies stored in your browser, you'll see one with the name `user_id`. To view your cookies, open up the developer tools in your browser, and type `document.cookie` in the console (you may see other cookies too).
-    ![document.cookies](document-cookies.png)
-2. Visit the SDK Console for Google App Engine. Here's how to launch it from the GAE Launcher:
-    ![SDK Launcher](sdk-launcher.png)
-    Then visit the "Datastore Viewer" link and select User from the Entity Kind dropdown, and hit List Entities to display all users. You should see a row for the user you just created.
-    ![User entities](user-entities.png)
 
-If you then visit the path `/logout`, you'll be logged out. To allow users to log in and out conviently, do the following:
+**Method 1:** You are redirected to the `/blog/newpost` page, and if you look at the cookies stored in your browser, you'll see one with the name `user_id`. To view your cookies, open up the developer tools in your browser, and type `document.cookie` in the console (you may see other cookies too).
 
-* Create a `login.html` template that extends `base.html`. It should contain a form with a username and password field, and a submit button. To figure out exactly what the field names should be, and how the form should be submitted, look at `LoginHandler` and note that its route is set up to be `/login`. The template will be passed a parameter named `error` in the case of a login error, such as incorrect password or username. Make sure to display this error somewhere in your template.
+![document.cookies](document-cookies.png)
+
+**Method 2:** Visit the SDK Console for Google App Engine. Here's how to launch it from the GAE Launcher:
+
+![SDK Launcher](sdk-launcher.png)
+
+Then visit the "Datastore Viewer" link and select User from the Entity Kind dropdown, and hit List Entities to display all users. You should see a row for the user you just created.
+
+![User entities](user-entities.png)
+
+If you then visit the path `/logout`, you'll be logged out. To allow users to log in and out conveniently, do the following:
+
+* Create a `login.html` template that extends `base.html`. It should contain a form with a username and password field, and a submit button. To figure out exactly what the field names should be, and how the form should be submitted, look at `LoginHandler` and note that its route is set up to be `/login`. The template will be passed a parameter named `error` in the case of a login error, such as incorrect password or username. Make sure to display this error somewhere in your template. You may use the CSS class `error` to have this message styled appropriately.
 * In `base.html` add links for logging in and logging out. The login link should take the user to the login form. The logout link should take the user to `/logout`, which will log the user out and redirect them to another page. You don't need to worry about only displaying these when a user is logged in, as many sites behave. These links will be visible for all site visitors, regardless of whether or not they are logged in.
 
 Note that we have a `login.html` template and a `signup.html` template, but no `logout.html` template. It turns out that we don't need a template for logging out. Think about why this is the case. What makes logging out different from logging in, or creating an account?
