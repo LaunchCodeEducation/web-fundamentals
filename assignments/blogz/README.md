@@ -12,7 +12,7 @@ LaunchCode staff has done a bit of work to get started on this project, so you'l
 
 Then, clone your fork/copy to your machine and make a new App Engine app. This process is the same as the "Clone the repository" and "Create new App Engine app" sections of [Class 3 setup][class-3-setup], with your blogz page in place of the flicklist-python page, and with the app ID `blogz` in place of `flicklist-python`.
 
-If you try to run the app at this point, you'll enounter errors. We've left out some important code, which you'll be writing for this assignment.
+If you try to run the app at this point, you will enounter errors. We have left out some important code, which you'll be writing for this assignment.
 
 ### Starter code
 

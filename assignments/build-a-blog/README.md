@@ -28,7 +28,7 @@ When you can check each of these off, you're ready to dive in to the next step. 
 
 #### Display Individual Entry
 
-There are a few more behaviours that we need to implement:
+There are a few more behaviours that we need to implement. We'll go into details on each of these below.
 
 1. Display a single blog post. When a URL of the form `/blog/[id]` (e.g. `/blog/42`) is requested, display the post with that `id`. Recall that every entity in the Google App Engine Datastore has a unique numeric ID; it's this ID that we're referring to here. A URL of this form is often referred to as a **permalink**.
 1. After a new post is created, redirect to the page for that post.
@@ -46,7 +46,7 @@ The Python web application frameowork we're building our applications within, `w
 ```python
 webapp2.Route('/blog/<id:\d+>', ViewPostHandler)
 ```
-You can put this route next to your other routes in `main.py`. Note the use of the `webapp2.Route` class.
+You can put this route next to your other routes in `main.py`. Note the use of the `webapp2.Route` class to enable this new behavior.
 
 This bit of code says that our route expects a URL path that starts with `/blog/` and ends with one or more digits (i.e. 0-9), and that we want to refer to the numeric portion as `id`. The `\d+` portion of the route is what specifies that we want one or more digits (`\d` means digit, `+` means "at least one"), and is an example of a **regular expression**. Regular expressions pop up all over programming, and while they can seem intimidating at first, they're incredibly useful. [Read a bit more about them][regex-wiki], if you're curious, and expect to see them again.
 
@@ -60,33 +60,35 @@ This routing technique allows for dynamic routing, so that a GET request that lo
 
 You can read more about complex routing in the [`webapp2` documentation][complex-routing].
 
-Once you have set up this new dynamic route, and the corresponding handler and `get` method, you are ready to do a simple test. In the `get` method, simply print the value of the `id` parameter to the response. No need to use a template, or even any HTML (just `self.response.write()`). Test it out in your browser. You should see something like this:
+Once you have set up this new dynamic route, and the corresponding handler and `get` method, you are ready to do a simple test. In the `get` method, simply print the value of the `id` parameter to the response. No need to use a template, or even any HTML, just `self.response.write()`. Then visit such a route in your browser (e.g. `/blog/42`). You should see something like this:
 
 ![simple route test](route-test.png)
 
-If you don't, use any error messages (including those in the GAE logs) to debug the issue.
+If you don't, use any error messages to debug the issue, including those in the GAE logs.
 
 Now you can add code to `ViewPostHandler` to display a single post. Rather than use a query to fetch the post from the database, you can use `Post.get_by_id` to retrieve the post. Refer to the [GAE documentation on this method][get_by_id]. Be sure to check that there actually *is* a post with the given ID, and if not, display a helpful error message.
 
-In order to test your single post display, you'll need to know the ID of a post that you have created. A handy way to find out this info is to use the GAE console. From the GAE Launcher application, click on the "SDK Console" button. Alternatively, you can go to `http://localhost:8000/` in your browser. If your blog app has an **Admin Port* value other than 8000, use that instead (note that this is the Admin Port, not the regular application port; refer to the GAE Launcher to see the port values you set up for your app). From the GAE console, select "Datastore Viewer" from the menu, and you'll see a list of Post entities that you have created. Use one of the ID values to test your single post view.
+In order to test your single post display, you'll need to know the ID of a post that you have created. A handy way to find out this info is to use the GAE console. From the GAE Launcher application, click on the "SDK Console" button. Alternatively, you can go to `http://localhost:8000/` in your browser. If your blog app has an *Admin Port* value other than 8000, use that instead (note that this is the Admin Port, not the regular application port; refer to the GAE Launcher to see the port values you set up for your build-a-blog app). From the GAE console, select "Datastore Viewer" from the menu, and you'll see a list of Post entities that you have created. Use one of the ID values to test your single post view.
 
 For example, with the entities in the screenshot below, you could test using the URL `http://localhost:8080/blog/5066549580791808`.
 
 ![gae console](gae-console.png)
 
+Once you have the single post display working in conjunction with the permalinks (i.e. dynamic routes), you can proceed.
+
 ##### Adding permalinks and redirect
 
-Let's go back to our main blog page and add permalinks for each post that is displayed. To add a permalink to the post title, you'll only need to alter the template for the main blog display. The snipped `post.key().id()` will return the integer ID of the post, where `post` is a variable holding a `Post` entity.
+Let's go back to our main blog page -- the one that lists every post -- and add permalinks for each post that is displayed. To add a permalink to the post title, you'll only need to alter the template for the main blog display. The command `post.key().id()` will return the integer ID of the post, where `post` is a variable holding a `Post` entity. Use this to create the correct `href` value for the link.
 
-Next, modify the new post handler so that it redirects to the new post's permalink after the post is created. You'll need to use `post.key().id()` again. Be careful to only call this *after* adding the newly-created post to the database with `post.put()`. If you don't, you'll get a nasty error.
+Next, modify the new post handler so that it redirects to the new post's permalink after the post is created. You'll need to use `post.key().id()` again. Be careful to only call this command *after* adding the newly-created post to the database with `post.put()`. If you don't, you'll get a nasty error.
 
 #### Hacker Features
 
-*Note*: This section is optional, and is intended for those looking for an additional challenge. If you decide to tackle these extra challenges, be sure to commit and push your code before diving in, so you have a snapshot of your progress to this point.
-
-Our blog has some great features, but it isn't easy to navigate, as you've probably noticed. Let's fix that.
+> This section is optional, and is intended for those looking for an additional challenge. If you decide to tackle these extra challenges, be sure to commit and push your code before diving in, so you have a snapshot of your progress to this point.
 
 As you go, refer to the [demo hacker edition app][build-a-blog-hacker].
+
+Our blog has some great features, but it isn't easy to navigate, as you've probably noticed. Let's fix that.
 
 ##### Navigation
 
