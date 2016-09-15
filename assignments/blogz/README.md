@@ -14,6 +14,8 @@ Then, clone your fork/copy to your machine and make a new App Engine app. This p
 
 If you try to run the app at this point, you will enounter errors. We have left out some important code, which you'll be writing for this assignment.
 
+For an in-depth look at the starter code, watch the [walkthrough][starter-code-walkthrough].
+
 ### Starter code
 
 Review the starter code in the project. It is essentially the solution to the build-a-blog assignment, with a few notable additions. In particular, we've added most of the code necessary to allow users to create accounts and log in and out.
@@ -119,3 +121,4 @@ On Vocareum, clone your repository into your `work/` folder and then Click submi
 [class-3-setup]: ../class3/
 [gae-query-class]: https://cloud.google.com/appengine/docs/python/datastore/queryclass
 [gae-query-filter]: https://cloud.google.com/appengine/docs/python/datastore/queryclass#Query_filter
+[starter-code-walkthrough]: https://youtu.be/KtPNiBUlqA0
