@@ -81,7 +81,7 @@
 </ul>
 <p>When you can check each of these off, you're ready to dive in to the next step. Nice work!</p>
 <h4 id="display-individual-entry">Display Individual Entry</h4>
-<p>There are a few more behaviours that we need to implement:</p>
+<p>There are a few more behaviours that we need to implement. We'll go into details on each of these below.</p>
 <ol>
 <li>Display a single blog post. When a URL of the form <code>/blog/[id]</code> (e.g. <code>/blog/42</code>) is requested, display the post with that <code>id</code>. Recall that every entity in the Google App Engine Datastore has a unique numeric ID; it's this ID that we're referring to here. A URL of this form is often referred to as a <strong>permalink</strong>.</li>
 <li>After a new post is created, redirect to the page for that post.</li>
@@ -93,7 +93,7 @@
 <p>You might be thinking that we haven't learned how to create such &quot;dynamic&quot; routes, and you'd be right. Let's learn how to do it now.</p>
 <p>The Python web application frameowork we're building our applications within, <code>webapp2</code>, has some utilities for creating more complex routing scenarios. In our situation, we can set up a route like this:</p>
 <pre><code class="language-python">webapp2.Route('/blog/&lt;id:\d+&gt;', ViewPostHandler)</code></pre>
-<p>You can put this route next to your other routes in <code>main.py</code>. Note the use of the <code>webapp2.Route</code> class.</p>
+<p>You can put this route next to your other routes in <code>main.py</code>. Note the use of the <code>webapp2.Route</code> class to enable this new behavior.</p>
 <p>This bit of code says that our route expects a URL path that starts with <code>/blog/</code> and ends with one or more digits (i.e. 0-9), and that we want to refer to the numeric portion as <code>id</code>. The <code>\d+</code> portion of the route is what specifies that we want one or more digits (<code>\d</code> means digit, <code>+</code> means &quot;at least one&quot;), and is an example of a <strong>regular expression</strong>. Regular expressions pop up all over programming, and while they can seem intimidating at first, they're incredibly useful. <a href="https://en.wikipedia.org/wiki/Regular_expression">Read a bit more about them</a>, if you're curious, and expect to see them again.</p>
 <p>Then, we can create our handler like this:</p>
 <pre><code class="language-python">class ViewPostHandler(webapp2.RequestHandler):
@@ -101,20 +101,23 @@
         pass #replace this with some code to handle the request</code></pre>
 <p>This routing technique allows for dynamic routing, so that a GET request that looks like <code>/blog/6</code> is mapped to the <code>ViewPostHandler</code> and the <code>id</code> value 6 is passed into its <code>get</code> method. Note that the name of the <code>id</code> parameter in the <code>get</code> method matches the name that we gave the dynamic portion of the route above. If these don't match up, the value of the <code>id</code> won't be passed to the <code>get</code> method properly.</p>
 <p>You can read more about complex routing in the <a href="http://webapp2.readthedocs.io/en/latest/guide/routing.html#extended-routes"><code>webapp2</code> documentation</a>.</p>
-<p>Once you have set up this new dynamic route, and the corresponding handler and <code>get</code> method, you are ready to do a simple test. In the <code>get</code> method, simply print the value of the <code>id</code> parameter to the response. No need to use a template, or even any HTML (just <code>self.response.write()</code>). Test it out in your browser. You should see something like this:</p>
+<p>Once you have set up this new dynamic route, and the corresponding handler and <code>get</code> method, you are ready to do a simple test. In the <code>get</code> method, simply print the value of the <code>id</code> parameter to the response. No need to use a template, or even any HTML, just <code>self.response.write()</code>. Then visit such a route in your browser (e.g. <code>/blog/42</code>). You should see something like this:</p>
 <p><img src="route-test.png" alt="simple route test" /></p>
-<p>If you don't, use any error messages (including those in the GAE logs) to debug the issue.</p>
+<p>If you don't, use any error messages to debug the issue, including those in the GAE logs.</p>
 <p>Now you can add code to <code>ViewPostHandler</code> to display a single post. Rather than use a query to fetch the post from the database, you can use <code>Post.get_by_id</code> to retrieve the post. Refer to the <a href="https://cloud.google.com/appengine/docs/python/datastore/modelclass#Model_get_by_id">GAE documentation on this method</a>. Be sure to check that there actually <em>is</em> a post with the given ID, and if not, display a helpful error message.</p>
-<p>In order to test your single post display, you'll need to know the ID of a post that you have created. A handy way to find out this info is to use the GAE console. From the GAE Launcher application, click on the &quot;SDK Console&quot; button. Alternatively, you can go to <code>http://localhost:8000/</code> in your browser. If your blog app has an *<em>Admin Port</em> value other than 8000, use that instead (note that this is the Admin Port, not the regular application port; refer to the GAE Launcher to see the port values you set up for your app). From the GAE console, select &quot;Datastore Viewer&quot; from the menu, and you'll see a list of Post entities that you have created. Use one of the ID values to test your single post view.</p>
+<p>In order to test your single post display, you'll need to know the ID of a post that you have created. A handy way to find out this info is to use the GAE console. From the GAE Launcher application, click on the &quot;SDK Console&quot; button. Alternatively, you can go to <code>http://localhost:8000/</code> in your browser. If your blog app has an <em>Admin Port</em> value other than 8000, use that instead (note that this is the Admin Port, not the regular application port; refer to the GAE Launcher to see the port values you set up for your build-a-blog app). From the GAE console, select &quot;Datastore Viewer&quot; from the menu, and you'll see a list of Post entities that you have created. Use one of the ID values to test your single post view.</p>
 <p>For example, with the entities in the screenshot below, you could test using the URL <code>http://localhost:8080/blog/5066549580791808</code>.</p>
 <p><img src="gae-console.png" alt="gae console" /></p>
+<p>Once you have the single post display working in conjunction with the permalinks (i.e. dynamic routes), you can proceed.</p>
 <h5 id="adding-permalinks-and-redirect">Adding permalinks and redirect</h5>
-<p>Let's go back to our main blog page and add permalinks for each post that is displayed. To add a permalink to the post title, you'll only need to alter the template for the main blog display. The snipped <code>post.key().id()</code> will return the integer ID of the post, where <code>post</code> is a variable holding a <code>Post</code> entity.</p>
-<p>Next, modify the new post handler so that it redirects to the new post's permalink after the post is created. You'll need to use <code>post.key().id()</code> again. Be careful to only call this <em>after</em> adding the newly-created post to the database with <code>post.put()</code>. If you don't, you'll get a nasty error.</p>
+<p>Let's go back to our main blog page -- the one that lists every post -- and add permalinks for each post that is displayed. To add a permalink to the post title, you'll only need to alter the template for the main blog display. The command <code>post.key().id()</code> will return the integer ID of the post, where <code>post</code> is a variable holding a <code>Post</code> entity. Use this to create the correct <code>href</code> value for the link.</p>
+<p>Next, modify the new post handler so that it redirects to the new post's permalink after the post is created. You'll need to use <code>post.key().id()</code> again. Be careful to only call this command <em>after</em> adding the newly-created post to the database with <code>post.put()</code>. If you don't, you'll get a nasty error.</p>
 <h4 id="hacker-features">Hacker Features</h4>
-<p><em>Note</em>: This section is optional, and is intended for those looking for an additional challenge. If you decide to tackle these extra challenges, be sure to commit and push your code before diving in, so you have a snapshot of your progress to this point.</p>
-<p>Our blog has some great features, but it isn't easy to navigate, as you've probably noticed. Let's fix that.</p>
+<blockquote>
+<p>This section is optional, and is intended for those looking for an additional challenge. If you decide to tackle these extra challenges, be sure to commit and push your code before diving in, so you have a snapshot of your progress to this point.</p>
+</blockquote>
 <p>As you go, refer to the <a href="http://launchcode-build-a-blog-hacker.appspot.com/blog">demo hacker edition app</a>.</p>
+<p>Our blog has some great features, but it isn't easy to navigate, as you've probably noticed. Let's fix that.</p>
 <h5 id="navigation">Navigation</h5>
 <p>In your <code>base.html</code> template, add some navigation links that link to the blog home, and the new post page.</p>
 <h5 id="pagination">Pagination</h5>
