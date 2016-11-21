@@ -18,7 +18,7 @@ Class # | Prep Work | In Class | Topics | Assignment(s) | Assignments Due
 12 | [Class 12 Prep](./class12-prep) | [Class 12](./class12) | (no new topics) | |  [Blogz](../assignments/blogz) |
 
 [getting-started]: ../assignments/getting-started
-[hello-gae]: ../assignments/hello-gae
+[hello-gae]: ../assignments/hello-google-app-engine
 [html-me-something]: ../assignments/html-me-something
 [formation]: ../assignments/formation
 [build-a-blog]: ../assignments/build-a-blog
