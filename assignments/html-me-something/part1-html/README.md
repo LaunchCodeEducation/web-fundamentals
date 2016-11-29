@@ -6,16 +6,22 @@ This is the first of two exercises, which build off of each other. You'll get co
 
 ## Tasks
 
-1. Stub out `index.html` with these basic elements: the HTML5 doctype, `<html>`, `<head>`, `<title>`, and `<body>`, and fill each element with some appropriate content. You can start by removing the snippet of HTML that you added during setup.
+1. Stub out `index.html` with these basic elements:
+
+    - the HTML5 doctype
+    - `<html>`
+    - `<head>`
+    - `<title>`
+    - `<body>`
+
+    and fill each element with some appropriate content. You can start by removing the snippet of HTML that you added during setup.
 
 1. Build a page that...
 
 	* Tells a story. This can be personal, or not. Funny, serious or neither. You can do whatever you like, but generally, it should be something in the range of 3-10 paragraphs or sections. [Here is an example](http://education.launchcode.org/html-me-something/submissions/chrisbay/index-nocss.html), and here are some other ideas:
 
 		- Create a resume page that tells the story of your professional journey to-date, and where you want to go as a coder.
-
 		- Tell the story of a trip that you took.
-
 		- Talk about some hobby or passion of yours.
 
 	* Does each of the following:
