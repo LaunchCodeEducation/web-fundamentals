@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>LaunchCode Web Fundamentals</title>
+
+        <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/font-awesome.min.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/highlight.dark.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/main.css">
+    </head>
+    <body>
+
+        <header class="navbar navbar-default navbar-fixed-top">
+
+            <a class="navbar-brand" href="http://education.launchcode.org/web-fundamentals/">
+                LaunchCode Web Fundamentals
+            </a>
+
+        </header>
+
+        <main class="container-fluid">
+            <div class="row">
+
+                
+                    <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+
+                        <ul class="nav nav-pills nav-stacked">
+                                                            <li class="">
+                                    <a href="http://education.launchcode.org/web-fundamentals/schedule/">
+                                        Schedule
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="http://education.launchcode.org/web-fundamentals/syllabus/">
+                                        Syllabus
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="https://www.udacity.com/course/web-development--cs253">
+                                        CS253
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="https://piazza.com/class/ir5gdd8ddd76k7">
+                                        Discussion Forum
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="http://education.launchcode.org/web-fundamentals/python2vs3/">
+                                        Python 2 vs. 3
+                                    </a>
+                                </li>
+                                                    </ul>
+
+                    </nav>
+
+                
+                <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+                    <p><a href="..">&lt; Back to Assignment page</a></p>
+<h1 id="part-2-css">Part 2: CSS</h1>
+<p>This is the second of two exercises, which build off of each other. You'll get comfortable with using CSS selectors and rules to dictate display, while keeping your styles separate from your content.</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>You've completed <a href="https://github.com/LaunchCodeEducation/html-me-something/tree/gh-pages/html">Part 1: HTML</a></li>
+<li>Familiarity with the basics of CSS: where style rules can go, basic syntax, and a few rules</li>
+<li>You know how to use your browser's developer tools</li>
+</ul>
+<h3 id="tasks">Tasks</h3>
+<ol>
+<li>Create a file named <code>styles.css</code> in your submission directory (<code>html-me-something/submissions/[USERNAME]</code>)</li>
+<li>(Optional) Add a normalization stylesheet (see the Resources section below; either of those will work). You can either put these normalization rules at the top of your <code>styles.css</code> or you can add another file in the same directory and link it in to your HTML doc. This will &quot;reset&quot; some of your browser's built-in (and often unsightly) styles so that you are starting with a cleaner slate when you add your own styles.</li>
+<li>Start adding styles in your <code>styles.css</code> file, being sure to link the stylesheet to your main document. Check out our <a href="http://education.launchcode.org/html-me-something/submissions/chrisbay/index.html">styled example</a>. Use &quot;View Source&quot;, or inspect the example page with your browser's developer tools to learn how we did things. And be sure to use the References section below as you go. Here are some specific tasks you should complete:
+<ul>
+<li>Use <a href="http://www.w3schools.com/css/css_margin.asp">margin</a> and <a href="http://www.w3schools.com/css/css_padding.asp">padding</a> to space your elements in a visually pleasing way.</li>
+<li>Use at least one of each of the following types of selectors: <a href="http://www.w3schools.com/cssref/sel_element.asp">element</a>, <a href="http://www.w3schools.com/cssref/sel_class.asp">class</a>, <a href="http://www.w3schools.com/cssref/sel_id.asp">id</a>.</li>
+<li>Don't break these rules:
+<ul>
+<li>Use document-level and inline styles sparingly, and only when absolutely necessary.</li>
+<li>At all costs, avoid adding HTML elements in order to achieve a specific visual effect.</li>
+</ul></li>
+<li>As before, be creative! Make your page look great, and don't settle for checking off the items above. Have a look at <a href="http://www.csszengarden.com">CSS Zen Garden</a> for inspiration (use your browser's dev tools to see how those pages' styles are built).</li>
+</ul></li>
+<li>
+<p>Commit your code to your fork and push (commands are below). Then, go back to the <a href="https://github.com/LaunchCodeEducation/html-me-something">main page</a> and follow the submission instructions.</p>
+<pre><code>$ git add .
+$ git commit -m "Added some killer CSS styling to my page"
+$ git push origin gh-pages</code></pre>
+</li>
+</ol>
+<h3 id="resources">Resources</h3>
+<h4 id="general-css">General CSS</h4>
+<ul>
+<li><a href="http://www.w3schools.com/css/default.asp">w3schools CSS Reference</a></li>
+<li><a href="http://www.csszengarden.com">CSS Zen Garden</a></li>
+<li>(Advanced) <a href="https://css-tricks.com/specifics-on-css-specificity/">Specifics on CSS Specificity</a></li>
+<li>(Advanced) <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity">Specificity (MDN)</a></li>
+</ul>
+<h4 id="css-normalization">CSS Normalization</h4>
+<ul>
+<li><a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyer's reset.css</a></li>
+<li><a href="http://necolas.github.io/normalize.css/">normalize.css</a></li>
+</ul>
+                </section>
+
+            </div>
+        </main>
+
+        <footer>
+            <div class="container-fluid">
+                <p class="text-muted">
+                    website generated with <a href="http://couscous.io" title="Markdown website generator">Couscous</a>
+                </p>
+            </div>
+        </footer>
+
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="//yastatic.net/highlightjs/8.2/highlight.min.js"></script>
+
+        <script>
+            $(function() {
+                $("section>h1").wrap('<div class="page-header" />');
+                // Syntax highlighting
+                hljs.initHighlightingOnLoad();
+            });
+        </script>
+
+    </body>
+</html>
