@@ -60,13 +60,136 @@
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
                     <h1 id="assignment-getting-started">Assignment: Getting Started</h1>
-<p>The purpose of this aassignment is to provide you with more practice with Git and GitHub, and with the process of turning in your problem sets using both GitHub and Vocareum.</p>
-<p>One of the best ways to become familiar and comfortable with Git is to use the same commands repeatedly, and build Git into your coding workflow. This will develop your &quot;muscle memory&quot; so that you learn both the mechanics and principles at the same time.</p>
+<p>The purpose of this assignment is to provide you with more practice with Git and GitHub, as well as a dry-run through the process of using Github to turn in your assignments on Vocareum.</p>
+<p>One of the best ways to become familiar and comfortable with Git and Github is to use the same commands repeatedly, and build Git into your coding workflow. This will develop your &quot;muscle memory&quot; so that you learn both the mechanics and principles at the same time.</p>
 <h2 id="the-process">The Process</h2>
-<p>Carry out each of the following tasks. Start by opening a terminal and navigating to the directory where you store your code. Windows users will open a PowerShell window; from now on we'll just say &quot;terminal&quot; for Windows/Mac/Linux when we really mean the specific terminal program for your operating system.</p>
+<p>Work through the steps below, one by one.</p>
+<ol>
+<li>
+<p><strong>Open up your terminal.</strong> (or PowerShell if you are on Windows).</p>
 <blockquote>
 <p>Note that for some of the example terminal commands displayed below, we don't always included the resulting output. Output is displayed when we think it will be valuable to confirm that your output matches ours. Otherwise, we just show you the command you should type, but not the result.</p>
 </blockquote>
+</li>
+<li>
+<p><strong>Create a folder for this assignment.</strong> Navigate into the parent folder where you keep your course materials (e.g. <code>lc101</code> or <code>code</code>), and make a new subfolder for this assignment:</p>
+<pre><code class="language-nohighlight">$ cd lc101
+$ mkdir getting-started</code></pre>
+<p>Your directory structure should look something like:</p>
+<pre><code class="language-nohighlight">lc101/
+    |
+    +------- using-python-locally/
+    |
+    +------- crypto/
+    |
+    +------- getting-started/
+    |
+    ... etc</code></pre>
+</li>
+<li>
+<p><strong>Initialize your project as a Git repository.</strong> In your terminal, use the <code>git init</code> command to initialize your <code>getting-started/</code> folder as a Git repository:</p>
+<pre><code class="language-nohighlight">$ cd getting-started/
+$ git init
+Initialized empty Git repository in /Users/johnnyappleseed/lc101/getting-started/.git/</code></pre>
+<blockquote>
+<p>Note that your name is (probably) something other than <strong>johnnyappleseed</strong>.</p>
+</blockquote>
+<p>Now your project is a Git repository, which will enable you to to do all the magic git powers:</p>
+<pre><code>- using version-control to manage your changes
+- syncing your local repository with a remote repository on Github.com.</code></pre>
+<p>You only ever have to do this step once, at the beginning.</p>
+</li>
+<li>
+<p><strong>Do some work.</strong> Now you are all set up to start working on the actual content of your project. This step will normally take you many hours, but in this case we are just going to do something very simple.</p>
+<p>In Atom, create a new file named <code>index.html</code> and save it to the <code>getting-started/</code> directory. Add to that file the minimal markup needed to make a well-formed HTML document:</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;My First Web Assignment&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;!-- Page content goes here --&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>Next, add an <code>&lt;h1&gt;</code> element as a child inside the <code>&lt;body&gt;</code> element. Inside the <code>&lt;h1&gt;</code>, put your own name:</p>
+<pre><code class="language-html">...
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;!-- Page content goes here --&gt;
+        &lt;h1&gt;Johnny Appleseed!&lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+...</code></pre>
+<p>Save your file, and open the file in a browser to make sure everything looks good. You should see your name.</p>
+</li>
+<li>
+<p><strong>Add your work to the repo.</strong> You finished the assignment! Now you just have to do a few steps to submit it. First you will <code>add</code> the changes you have made.</p>
+<p>Back in the terminal, check your status:</p>
+<pre><code class="language-nohighlight">$ git status
+Untracked files:
+(use "git add &lt;file&gt;..." to include in what will be committed)
+
+    index.html
+
+nothing added to commit but untracked files present (use "git add" to track)</code></pre>
+<p>The message indicates that you have created 1 new file, index.html. This represents a &quot;change&quot; since last time. We want to commit that change.</p>
+<p>Track the new file, using the <code>git add</code> command, so it will be staged for your next commit:</p>
+<pre><code class="language-nohighlight">$ git add index.html</code></pre>
+<blockquote>
+<p>In general, on future assignments, you will want to add multiple changes at once, without having to type each file name individually. This can be achieved by using:</p>
+<pre><code class="language-nohighlight">$ git add .</code></pre>
+<p>The <code>.</code> here stands for &quot;all files.&quot; When doing this, it is advised to run <code>git status</code> first, to see the current list of changes and make sure you really do want to batch all of them together into one commit.</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Commit.</strong> Now you are ready to <code>commit</code> the changes you have staged. If you check your status again, you should see that your change is staged to be committed:</p>
+<pre><code>$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached &lt;file&gt;..." to unstage)
+
+    new file:   index.html
+</code></pre>
+<p>Go ahead and commit your changes, with an appropriate commit message, describing what you have changed:</p>
+<pre><code>$ git commit -m "Adding index.html"</code></pre>
+<blockquote>
+<p>Note that you'll be asked to authenticate with GitHub. If you get tired of this, you can <a href="https://help.github.com/articles/generating-an-ssh-key/">set up your computer and your GitHub account to use SSH keys</a>.</p>
+</blockquote>
+<p>Now that you have committed, your status should be &quot;clean&quot;:</p>
+<pre><code>$ git status
+On branch gh-pages
+nothing to commit, working directory clean</code></pre>
+</li>
+<li>
+<p><strong>Create a remote repository on Github.</strong> In the previous step, you committed your changes to the <em>local</em> Git repo on your computer.</p>
+</li>
+<li>
+<p><strong>Give your local repository a reference to your Github repository.</strong></p>
+</li>
+<li>
+<p><strong>Push to GitHub.</strong>  Your local repo is now ahead of your remote repo (the one hosted on github.com) by 1 commit. At this point, if you go back and visit your repository page on GitHub, you will not yet see the new index.html file.</p>
+<p>In order to sync up your remote repo with your local one, you must <em>push</em> your local changes up to GitHub:</p>
+<pre><code>$ git push origin master</code></pre>
+<p>You should read this command as: &quot;Push all of my commits to the 'origin' repository (on its master branch)&quot;. The name &quot;origin&quot; is typically used to refer to a remote Git repo, often on a platform such as GitHub or Bitbucket.</p>
+</li>
+<li>
+<p><strong>Submit via Vocareum</strong> Now your code is up in GitHub. Time to submit it to Vocareum! Open Vocareum and navigate to the &quot;My Work&quot; view for the &quot;Getting Started&quot; assignment.</p>
+<p>In the My Work environment, you should see a terminal at the bottom of your screen:</p>
+<p><img src="images/vocareum-terminal.png" alt="Vocareum Terminal" /></p>
+<p>This is a terminal just like the one on your computer. Clone your repo, just like you did on step 2:</p>
+<pre><code>$ git clone [URL]</code></pre>
+<blockquote>
+<p>Note that on the Vocareum terminal you might not be able to use a keyboard shortcut (e.g. <code>cmd-v</code>) to paste your url. But you can right-click on the screen inside the terminal prompt, and paste that way.</p>
+</blockquote>
+<p>You should see your repo appear inside your <code>work/</code> directory on the left.</p>
+<p>Finally, click Submit!</p>
+</li>
+</ol>
+<h2 id="old-steps-todo-incorporate-these">OLD STEPS (TODO incorporate these)</h2>
 <ol>
 <li>
 <p><strong>Create a repo.</strong> Visit your profile page on github.com and select the <em>Repositories</em> tab. Create a new repository by clicking the green &quot;New&quot; button. In the resulting dialogue, give your repo the name <code>getting-started</code>.</p>
@@ -90,87 +213,6 @@ On branch master
 Initial commit
 
 nothing to commit (create/copy files and use "git add" to track)</code></pre>
-</li>
-<li>
-<p><strong>Do some work.</strong> In Atom, create a new file named <code>index.html</code> and save it to the <code>getting-started/</code> directory. Add the minimal markup needed to make a well-formed HTML file:</p>
-<pre><code>&lt;!DOCTYPE html&gt;
-
-&lt;html&gt;
-    &lt;head&gt;
-        &lt;title&gt;My First Web Assignment&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;!-- Page content goes here --&gt;
-    &lt;/body&gt;
-&lt;/html&gt;</code></pre>
-<p>Next, add an <code>&lt;h1&gt;</code> element as a child inside the <code>&lt;body&gt;</code> element. Inside the <code>&lt;h1&gt;</code>, put your own name:</p>
-<pre><code class="language-html">...
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;!-- Page content goes here --&gt;
-        &lt;h1&gt;Johnny Appleseed!&lt;/h1&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
-...</code></pre>
-<p>Save your file, and open the file in a browser to make sure everything looks good. You should see your name.</p>
-</li>
-<li>
-<p><strong>Add your work to the repo.</strong> Back in the terminal, check your status:</p>
-<pre><code>$ git status
-Untracked files:
-(use "git add &lt;file&gt;..." to include in what will be committed)
-
-    index.html
-
-nothing added to commit but untracked files present (use "git add" to track)</code></pre>
-<p>The message indicates that you have created 1 new file, index.html. This represents a &quot;change&quot; since last time. We want to commit that change.</p>
-<p>Track the new file, using the <code>git add</code> command, so it will be staged for your next commit:</p>
-<pre><code>$ git add index.html</code></pre>
-<blockquote>
-<p>In general, on future assignments, you will want to add multiple changes at once, without having to type each file name individually. This can be achieved by using:</p>
-<pre><code>$ git add .</code></pre>
-<p>The <code>.</code> here stands for &quot;all files.&quot; When doing this, it is advised to run <code>git status</code> first, to see the current list of changes and make sure you really do want to batch all of them together into one commit.</p>
-</blockquote>
-</li>
-<li>
-<p><strong>Commit.</strong> Now you are ready to commit. If you check your status again, you should see that your change is staged to be committed:</p>
-<pre><code>$ git status
-On branch master
-
-Initial commit
-
-Changes to be committed:
-  (use "git rm --cached &lt;file&gt;..." to unstage)
-
-    new file:   index.html
-</code></pre>
-<p>Go ahead and commit your changes, with an appropriate commit message, describing what you have changed:</p>
-<pre><code>$ git commit -m "Adding index.html"</code></pre>
-<blockquote>
-<p>Note that you'll be asked to authenticate with GitHub. If you get tired of this, you can <a href="https://help.github.com/articles/generating-an-ssh-key/">set up your computer and your GitHub account to use SSH keys</a>.</p>
-</blockquote>
-<p>Now that you have committed, your status should be &quot;clean&quot;:</p>
-<pre><code>$ git status
-On branch gh-pages
-nothing to commit, working directory clean</code></pre>
-</li>
-<li>
-<p><strong>Push to GitHub.</strong> The commit command will commit your changes to the <em>local</em> Git repo on your computer. Your local repo is now ahead of your remote repo (the one hosted on github.com) by 1 commit. At this point, if you go back and visit your repository page on GitHub, you will not yet see the new index.html file.</p>
-<p>In order to sync up your remote repo with your local one, you must <em>push</em> your local changes up to GitHub:</p>
-<pre><code>$ git push origin master</code></pre>
-<p>You should read this command as: &quot;Push all of my commits to the 'origin' repository (on its master branch)&quot;. The name &quot;origin&quot; is typically used to refer to a remote Git repo, often on a platform such as GitHub or Bitbucket.</p>
-</li>
-<li>
-<p><strong>Submit via Vocareum</strong> Now your code is up in GitHub. Time to submit it to Vocareum! Open Vocareum and navigate to the &quot;My Work&quot; view for the &quot;Getting Started&quot; assignment.</p>
-<p>In the My Work environment, you should see a terminal at the bottom of your screen:</p>
-<p><img src="images/vocareum-terminal.png" alt="Vocareum Terminal" /></p>
-<p>This is a terminal just like the one on your computer. Clone your repo, just like you did on step 2:</p>
-<pre><code>$ git clone [URL]</code></pre>
-<blockquote>
-<p>Note that on the Vocareum terminal you might not be able to use a keyboard shortcut (e.g. <code>cmd-v</code>) to paste your url. But you can right-click on the screen inside the terminal prompt, and paste that way.</p>
-</blockquote>
-<p>You should see your repo appear inside your <code>work/</code> directory on the left.</p>
-<p>Finally, click Submit!</p>
 </li>
 </ol>
 <h2 id="notes">Notes</h2>
