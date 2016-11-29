@@ -4,7 +4,7 @@ Please note that you should do the Prep Work **before** coming to class!
 
 Class # | Prep Work | In Class | Topics | Assignment(s) | Assignments Due
 -----|-----------|----------|--------|---------------|----------------
-1 | [Class 1 Prep](./class1-prep) | [Class 1](./class1) | Git; Github; HTML; Setup stuff | [HTML Me Something][html-me-something] |
+1 | [Class 1 Prep](./class1-prep) | [Class 1](./class1) | Git; Github; HTML; Setup stuff | [HTML Me Something][html-me-something] |  ,
 2 | [Class 2 Prep](./class2-prep) | [Class 2](./class2) | HTML; CSS | |
 3 | [Class 3 Prep](./class3-prep) | [Class 3](./class3) | HTTP / how the web works | [Hello Google App Engine][hello-gae] |
 4 | [Class 4 Prep](./class4-prep) | [Class 4](./class4) | HTML forms and inputs | [Formation][formation] | [HTML Me Something][html-me-something] <br><br> [Hello Google App Engine][hello-gae] |
