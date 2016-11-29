@@ -2,9 +2,11 @@
 
 # Part I: HTML
 
-This is the first of two exercises, which build off of each other. You'll get comfortable with writing markup, and with separating content from design and layout.
+In Pat 1, you will get comfortable with writing markup, and with separating content from design and layout.
 
 ## Tasks
+
+Work your way through the following tasks:
 
 1. Stub out `index.html` with these basic elements:
 
@@ -24,6 +26,7 @@ This is the first of two exercises, which build off of each other. You'll get co
 		- Tell the story of a trip that you took.
 		- Talk about some hobby or passion of yours.
 
+
 	* Does each of the following:
 
 		- Uses each of the following structural HTML5 tags: `<p>`, `<header>`, `<footer>`, `<main>`, `<article>`. If you need to brush up on what each of these tags is used for, or if any of them are new to you, check out the [HTML tag reference](http://www.w3schools.com/tags/default.asp) at w3schools.
@@ -33,6 +36,7 @@ This is the first of two exercises, which build off of each other. You'll get co
 		- Uses at least one [HTML entity](http://www.w3schools.com/html/html_entities.asp). Hint: putting a copyright notice in your footer will afford you the opportunity to use &copy;, but you should also try to get creative here.
 
 		- Gets creative. Don't stop with these items or tags. Have some ideas for your page, and make it great. And dig into the [w3schools HTML reference](http://www.w3schools.com/tags/default.asp) to learn more about other tags, their usage and attributes!
+
 
 1. Don't add any CSS yet. Really, we mean it! If you think your page looks boring now, that's okay. We'll get there soon enough.
 
