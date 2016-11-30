@@ -171,7 +171,7 @@ When you are ready to submit, complete the following steps:
 
 ### Github
 
-Github.com is website that hosts Git repositories "in the cloud". A repository that is up on Github often functions as the central hub for a project, so that a developer can do work across multiple machines, or multiple develoeprs can work collaboratively on the same project.
+Github.com is website that hosts Git repositories "in the cloud". A repository that is up on Github often functions as the central hub for a project, so that a developer can do work across multiple machines, or multiple developers can work collaboratively on the same project.
 
 For the remainder of this course, you will use Github to submit your work on Vocareum. Here's how:
 
