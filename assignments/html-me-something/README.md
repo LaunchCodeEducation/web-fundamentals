@@ -142,7 +142,7 @@ Now let's incorporate Git into the picture.
     Go ahead and commit your changes, along with an appropriate message describing what you have changed:
 
     ```nohighlight
-    $ git commit -m "Create index.html file"
+    $ git commit -m "Created index.html file"
     ```
 
 	#### 3a. Check your status
