@@ -2,12 +2,7 @@
 
 # Part I: HTML
 
-In Pat 1, you will get comfortable with writing markup, and with separating content from design and layout.
-
-## Tasks
-
-Work your way through the following tasks:
-
+In Part 1, you will get comfortable with writing markup, and with separating content from design and layout.
 
 ## Getting Started
 
@@ -91,7 +86,7 @@ So let's now go ahead and do that. From within your root `html-me-something/` di
 
 ```nohighlight
 $ git add index.html
-$ git commit -m "Finish work on HTML page"
+$ git commit -m "Finished work on HTML page"
 ```
 
 You might be wondering: *How do I know when it's time to pause working and do another commit?*
