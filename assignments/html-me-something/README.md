@@ -61,11 +61,9 @@ First, follow the steps below to create a folder for your project and initialize
 
 1. Save your file.
 
-1. Finally, open up the file in a web browser. You can do this by selecting *File > Open File* in your web browser, and navigating to the location of your new HTML file. If you're stuck, [here's a video][open-in-browser].
+1. Finally, open up the file in a web browser. You can do this by selecting *File > Open File* in your web browser, and navigating to the location of your new HTML file. If you get stuck on this, [here's a video][open-in-browser].
 
     You should see a blank white page with your name in the top-left corner.
-
-    > *NOTE:* Throughout the assignment, you will obviously want to continuously make small changes to your code and then see the result. To do so, simply re-save the file in your text editor, and then, over in your browser window, click Refresh.
 
 [open-in-browser]: https://www.youtube.com/watch?v=It5P1hg44MQ
 
@@ -93,8 +91,8 @@ Now let's incorporate Git into the picture.
 
     > *Note:* You only ever have to do the `git init` step once, at the beginning.
 
-	#### 1a. Check your status 
-	
+	#### 1a. Check your status
+
 	Back in the terminal, use the `git status` command to check the status of your newly created repo:
 
     ```nohighlight
@@ -121,8 +119,8 @@ Now let's incorporate Git into the picture.
     $ git add index.html
     ```
 
-	#### 2a. Check your status 
-	
+	#### 2a. Check your status
+
 	If you check your status again, you should see that your change (the creation of the new file) is staged to be committed:
 
     ```nohighlight
@@ -156,7 +154,7 @@ Now let's incorporate Git into the picture.
     On branch master
 	nothing to commit, working directory clean
     ```
-    
+
 Congrats! You are officially up and running with a version-controlled project.
 
 ## Getting to Work
@@ -173,62 +171,62 @@ When you are ready to submit, complete the following steps:
 
 ### Github
 
-Github.com is website that hosts Git repositories "in the cloud". A repository that is up on Github often functions as the central hub for a project, so that a developer can do work across multiple machines, or multiple develoeprs can work collaboratively on the same project. 
+Github.com is website that hosts Git repositories "in the cloud". A repository that is up on Github often functions as the central hub for a project, so that a developer can do work across multiple machines, or multiple develoeprs can work collaboratively on the same project.
 
 For the remainder of this course, you will use Github to submit your work on Vocareum. Here's how:
 
 1. #### Create a repo on Github
 
     In a browser, visit [Github's website](http://github.com). Make sure you are logged onto your Github account (or create an account now if you have not already done so.)
-    
+
     On your profile page, create a new repository by clicking the green `New` button on the right side of the screen:
-    
+
     <img src="images/new-repo.png"/>
-    
+
     Give your repository the same name as your folder, `html-me-something`, and toggle the rest of the options as specified here:
-    
+
     <img src="images/repo-name.png"/>
-    
+
     > *NOTE:* Instead of `LaunchCodeEducation`, you will see your own username.
-    
-    
+
+
 1. #### Inform your local repo about the existence of your remote repo
 
-	Now you have two repositories: the local one on your computer, and the remote one on Github. The next step is to sync them up. 
-	
-	The first step to syncing them is to give your local repo a *reference to* the remote repo. Using the `git remote` command, you can inform your local repo about the existence of the remote one. 
-	
+	Now you have two repositories: the local one on your computer, and the remote one on Github. The next step is to sync them up.
+
+	The first step to syncing them is to give your local repo a *reference to* the remote repo. Using the `git remote` command, you can inform your local repo about the existence of the remote one.
+
 	Use the command below, **but (keep reading below)** :
-	
+
 	```nohighlight
 	$ git remote add origin URL
 	```
-	
+
 	**...but** replace `URL` with the actual url for your remote Github repo, which you can obtain by clicking the `Clone or Download` button and then copying and pasting the associated url:
-	
+
 	<img src="images/clone.png"/>
-	
+
 	> *NOTE:* Alternatively, you can just type out `https://github.com/YOURUSERNAME/html-me-something` at the terminal.
-	
+
 	By running this command on the terminal, you are basically saying: *Hey local repo. Please meet your new friend, `origin`, a remote repo, whose url is `https://github...`*
-	
+
 	> *NOTE* The name "origin" is simply a standard naming convention for the main remote repo associated with a local repo.
-	
+
 
 1. #### Push your local changes up to the remote
 
 	Your local repo is currently *ahead of* your remote repo by a few commits. Your remote is totally empty, while locally, on the other hand, you have added and edited a few files, and committed all those changes.
-	
+
 	Use the `git push` command to "push" all your local changes up to the remote:
-	
+
 	```nohighlight
 	$ git push origin master
 	```
-	
+
 	This command says: *Hey Git, please push all my local changes to the remote repo called `origin` (specifically, to its `master` branch).*
-	
+
 	> *NOTE:* We will talk about branches later, but for now, don't worry about it.
-	
+
 	If you now refresh the browser window on your Github page, you should see that your HTML and CSS files have appeared!
 
 ### Vocareum
@@ -242,7 +240,7 @@ Now that your code is up on Github, you are ready to clone it down into Vocareum
 	```nohighlight
 	$ git clone https://github.com/YOURUSERNAME/html-me-something
 	```
-	
+
 	You should now see in your workspace that your `html-me-something/` folder has appeared.
 
 1. Click *Submit*.
@@ -253,7 +251,7 @@ Last but not least, **in order to receive credit, you must demo your project in-
 
 ### Extra Credit: Host your Page using Github Pages
 
-If you want to show off your hard work to all your friends, Github has a cool feature called *Github Pages* that makes this really easy. 
+If you want to show off your hard work to all your friends, Github has a cool feature called *Github Pages* that makes this really easy.
 
 Github provides free hosting for any "static" web content (like this project). All you have to do is create a branch with the special designated name `gh-pages`.
 
@@ -262,7 +260,7 @@ Github provides free hosting for any "static" web content (like this project). A
 1. Create a new branch called `gh-pages`:
 
 	<img src="images/create-gh-pages.png"/>
-	
+
 1. In any browser, you should now be able to visit `YOURUSERNAME.github.io/html-me-something` and see your web page!
 
 1. Note that if you want to continue making edits and improvements to your page, and see those changes reflected at this url, you will need to make sure to `push` your changes to the `gh-pages` branch rather than `master`. So whenever you push, it should look like:
@@ -270,4 +268,3 @@ Github provides free hosting for any "static" web content (like this project). A
 	```nohighlight
 	$ git push origin gh-pages
 	```
-	
