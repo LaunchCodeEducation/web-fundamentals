@@ -8,20 +8,22 @@ In Part 2, you'll get comfortable with using CSS selectors and rules to dictate 
 
 1. Create a file named `styles.css` in your `html-me-something/` directory.
 
-2. **(Optional)** Add a normalization stylesheet (see the Resources section below; either of those will work). You can either put these normalization rules at the top of your `styles.css` or you can add another file in the same directory and link it in to your HTML doc. This will "reset" some of your browser's built-in (and often unsightly) styles so that you are starting with a cleaner slate when you add your own styles.
+2. **(This is optional.)** Add a normalization stylesheet (see the Resources section below; either of those will work). You can either put these normalization rules at the top of your `styles.css` or you can add another file in the same directory and link it in to your HTML doc. This will "reset" some of your browser's built-in (and often unsightly) styles so that you are starting with a cleaner slate when you add your own styles.
 
 ## Getting to Work
 
-Start adding styles in your `styles.css` file.
+Not much to say here; go ahead and start adding styles in your `styles.css` file!
 
-#### Notes:
+### Notes:
 
 * In order to see any visible change, make sure to link the stylesheet to your main document.
-* Feel free to check out our [styled example][styled-example] to see how we did things. Use "View Source" (right-click anywhere on the page and select *View Source*).
+* Feel free to check out our [styled example][styled-example] to see how we did things. Use "View Source" (by right-clicking anywhere on the page and selecting *View Source*).
 * Another thing you might find useful is your browser's [developer tools][dev-tools].
 * And be sure to use the [References](#references) section below as you go.
 
-Here are some specific tasks you should complete:
+### Requirements:
+
+Here are some specific requirements you should fulfill:
     * Use [margin](http://www.w3schools.com/css/css_margin.asp) and [padding](http://www.w3schools.com/css/css_padding.asp) to space your elements in a visually pleasing way.
     * Use at least one of each of the following types of selectors: [element](http://www.w3schools.com/cssref/sel_element.asp), [class](http://www.w3schools.com/cssref/sel_class.asp), [id](http://www.w3schools.com/cssref/sel_id.asp).
     * Don't break these rules:
