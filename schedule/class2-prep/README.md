@@ -1,14 +1,6 @@
 # Class 2 Prep
 
 
-### Survey
-
-Task | Resource Type | Link | Instructions
-|----|---------------|------|-------------|
-Do  | Survey | [Unit 1 Survey][unit-1-survey] | Please take a sec to give us some feedback on your experience with Unit 1. Thanks!
-
----
-
 ### HTML
 
 In the previous lesson of CS253, you learned a bit about HTML. Now get some more practice and reinforcement by going through these Codecademy tutorials:
@@ -32,6 +24,16 @@ Do | Interactive Course | [Codecademy: CSS -- An Overview][css-overview] | Here 
 Do | Interactive Course | [Codecademy: Design a Button for Your Website][design-button] | Here you will apply the concepts from the previous section into a small project.
 Do | Interactive Course | [Codecademy: CSS Selectors][css-selectors] | This section shows some additional ways to "select" certain sets of elements to receive the styles you specify.
 Do | Interactive Course | [Codecademy: Sorting Your Friends][sorting-your-friends] | Here you will apply the concepts from the previous section into a small project.
+
+---
+
+### Git Branches
+
+In this class, you won't be required to do extensive work with branches in Git. We will use branches during studios as a way of managing different versions of the same running class project, but this is not a typical workflow. Despite the fact that branches will not feature heavily during your class work, they are an integral part of Git, and something you should know about now, because you will be using them once you become a Certified Pro in the near future.
+
+Task | Resource Type | Link | Instructions
+|----|---------------|------|-------------|
+Read | eBook | [Tower Git: Part 2 - Branches][tower-branches] | Read all 6 sections associated with Part 2. Following along here is encouraged, but optional. Just make sure you understand the high-level concept of branches, why they are useful, and how merging works.
 
 [html-basics]: https://www.codecademy.com/en/courses/web-beginner-en-HZA3b/resume?curriculum_id=50579fb998b470000202dc8b
 [html-basics-2]: https://www.codecademy.com/en/courses/web-beginner-en-y2Yjd/resume?curriculum_id=50579fb998b470000202dc8b
