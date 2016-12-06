@@ -26,7 +26,7 @@ Git is a "version control" system to help you manage your coding projects. These
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
 Follow Along | eBook | [Tower Git: Appendix B - Command Line 101][tower-command-line] | Before getting started with Git, quickly go through this tutorial on using the command-line.
-Follow Along | eBook | [Tower Git: Part 1 - The Basics][tower-wivc] <br><br> You might also find the [Video Series][tower-vids] helpful. | Read and follow along to all 7 sections of Part 1 of this eBook, starting with [What is Version Control?][tower-wivc] and finishing with [Working on Your Project][tower-woyp]. <br><br> Make sure you follow along on your own computer as you go. By the end, you should have Git installed on your computer, you should have a vague idea of what Git is, and you should have gotten some practice creating a repository and committing changes to it.
+Follow Along | eBook | [Tower Git: Part 1 - The Basics][tower-wivc] <br><br> You might also find the [Video Series][tower-vids] helpful. | Read and code along to all 7 articles within Part 1, starting with [What is Version Control?][tower-wivc] and finishing with [Working on Your Project][tower-woyp]. <br><br> Make sure you follow along on your own computer as you go. By the end, you should have Git installed on your computer, you should have a vague idea of what Git is, and you should have gotten some practice creating a repository and committing changes to it.
 Do | Quiz | [Flatiron: Git Basics Quiz][flatiron-quiz] | Take this 2-minute quiz to test your understanding of the Git concepts you have learned so far.
 
 [tower-command-line]: https://www.git-tower.com/learn/git/ebook/en/command-line/appendix/command-line-101#start
