@@ -29,7 +29,7 @@ Do | Interactive Course | [Codecademy: Sorting Your Friends][sorting-your-friend
 
 ### Git Branches
 
-In this class, you won't be required to do extensive work with branches in Git. We will use branches during studios as a way of managing different versions of the same running class project, but this is not a typical workflow. Despite the fact that branches will not feature heavily during your class work, they are an integral part of Git, and something you should know about now, because you will be using them once you become a Certified Pro in the near future.
+Another important feature of Git is *branches*. In the upcoming in-class Studios, we will use Git branches as a way of managing different versions of the same running class project. That workflow, however, is not a typical use of branches. You actually will not be required to do extensive work with branches in this course, beyond the studios. But branches are an integral part of Git, and something you should know about now, because you will be using them once you become a Certified Pro in the near future.
 
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
