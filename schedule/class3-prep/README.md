@@ -12,13 +12,13 @@ Read | Articles | - [The Web][how-the-web-works] <br> - [Servers][what-is-a-web-
 Do | Setup | [Installing Google App Engine][installing-google-app-engine] | We will show you how to set up Google App Engine, a web app platform, and how to build a Hello World web app inside Google App Engine using a Python module called `webapp2`.
 Read | More Articles (optional) | - [The Internet][how-does-the-internet-work] <br> - [Domain Names][what-is-a-domain-name] <br> - [Project Structure][dealing-with-files] | This is optional, but if you are itching to learn more, these topics are also important.
 
-### Remote Git Repositories
+### Git: Remote Repositories
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
 Follow Along | eBook | [Tower Git: Introduction to Remote Repositories][tower-intro-remotes] | Just read this one article, not the entire *Part 3* chapter.
 Read | Article | [Flatiron: Git Remotes][flatiron-remotes] |
 Follow Along | Tutorial | [Flatiron: Git Remotes Codealong][flatiron-remotes-codealong] |
-Read | Article | (Optional) [Flatiron: Git Collaboration][flatiron-collab] | This article gives a good sense for the sorts of complex collaboration scenarios that you can maneuver by leveraging a good workflow with branches and remote repositories. 
+Read | Article | (Optional) [Flatiron: Git Collaboration][flatiron-collab] | This article gives a good sense for the sorts of complex collaboration scenarios that you can maneuver by leveraging a good workflow with branches and remote repositories.
 
 [tower-intro-remotes]: https://www.git-tower.com/learn/git/ebook/en/command-line/remote-repositories/introduction#start
 [flatiron-remotes]: https://learn.co/lessons/git-remotes-with-github-readme

@@ -19,7 +19,7 @@ Do | Interactive Course | [Lesson 1 (first half)][lesson-1] | Do the first 18 it
 
 ---
 
-### Git
+### Git: Basics
 
 Git is a "version control" system to help you manage your coding projects. These days, most professional programmers consider Git to be an essential aspect of their skill set. Throughout the rest of this course, we will try to integrate Git into your workflows to help you build up your comfort using this powerful tool. You will learn the basics of Git following along with an eBook, and you will use Git (and a website called Github) to submit your assignments.
 

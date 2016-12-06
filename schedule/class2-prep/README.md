@@ -27,7 +27,7 @@ Do | Interactive Course | [Codecademy: Sorting Your Friends][sorting-your-friend
 
 ---
 
-### Git Branches
+### Git: Branches
 
 Another important feature of Git is *branches*. In the upcoming in-class Studios, we will use Git branches as a way of managing different versions of the same running class project. That workflow, however, is not a typical use of branches. You actually will not be required to do extensive work with branches in this course, beyond the studios. But branches are an integral part of Git, and something you should know about now, because you will be using them once you become a Certified Pro in the near future.
 
