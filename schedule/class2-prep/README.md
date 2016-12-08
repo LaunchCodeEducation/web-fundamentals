@@ -49,3 +49,5 @@ Read | eBook | [Tower Git: Part 2 - Branches][tower-branches] | Read all 6 secti
 
 
 [unit-1-survey]: https://docs.google.com/a/launchcode.org/forms/d/e/1FAIpQLScb1ooCxuyOJUpO0fztwiY_tfTxjuWY4QpExA25Ytzyb5mQjQ/viewform
+
+[tower-branches]: https://www.git-tower.com/learn/git/ebook/en/command-line/branching-merging/branching-can-change-your-life#start
