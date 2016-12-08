@@ -12,7 +12,13 @@ Read | Articles | - [The Web][how-the-web-works] <br> - [Servers][what-is-a-web-
 Do | Setup | [Installing Google App Engine][installing-google-app-engine] | We will show you how to set up Google App Engine, a web app platform, and how to build a Hello World web app inside Google App Engine using a Python module called `webapp2`.
 Read | More Articles (optional) | - [The Internet][how-does-the-internet-work] <br> - [Domain Names][what-is-a-domain-name] <br> - [Project Structure][dealing-with-files] | This is optional, but if you are itching to learn more, these topics are also important.
 
+[gae-walkthrough]: https://www.youtube.com/watch?v=KSFaeLRZNE8
+
+
 ### Git: Remote Repositories
+
+So far you have been using Git locally on your own computer. We will now introduce the concept of a "remote" repository, a Git repository that lives "in the cloud". A remote repo, hosted on a website such as Github.com, often functions as the central hub for a project, so that a developer can do work across multiple machines, or multiple developers can work collaboratively on the same project. In your upcoming assignments, you will use Github.com to submit your work on Vocareum.
+
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
 Follow Along | eBook | [Tower Git: Introduction to Remote Repositories][tower-intro-remotes] | Just read this one article, not the entire *Part 3* chapter.
