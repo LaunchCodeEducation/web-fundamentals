@@ -1,4 +1,6 @@
-# Assignment: User Signup
+---
+title: User Signup
+---
 
 This assignment is all about incorporating forms into your web app, validating the user's input and providing useful feedback to the user when their input is rejected.
 
