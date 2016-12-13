@@ -59,118 +59,39 @@
 
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                    <h1 id="schedule">Schedule</h1>
-<p>Please note that you should do the Prep Work <strong>before</strong> coming to class!</p>
-<table>
-<thead>
-<tr>
-<th>Class #</th>
-<th>Prep Work</th>
-<th>In Class</th>
-<th>Topics</th>
-<th>Assignment(s)</th>
-<th>Assignments Due</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td><a href="./class1-prep">Class 1 Prep</a></td>
-<td><a href="./class1">Class 1</a></td>
-<td>Git; Github; HTML; Setup stuff</td>
-<td><a href="../assignments/html-me-something">HTML Me Something</a></td>
-<td></td>
-</tr>
-<tr>
-<td>2</td>
-<td><a href="./class2-prep">Class 2 Prep</a></td>
-<td><a href="./class2">Class 2</a></td>
-<td>HTML; CSS</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>3</td>
-<td><a href="./class3-prep">Class 3 Prep</a></td>
-<td><a href="./class3">Class 3</a></td>
-<td>HTTP / how the web works</td>
-<td><a href="../assignments/fortune-cookie">Fortune Cookie</a></td>
-<td><a href="../assignments/html-me-something">HTML Me Something</a></td>
-</tr>
-<tr>
-<td>4</td>
-<td><a href="./class4-prep">Class 4 Prep</a></td>
-<td><a href="./class4">Class 4</a></td>
-<td>HTML forms and inputs</td>
-<td><a href="../assignments/web-crypto">Web Crypto</a></td>
-<td><a href="../assignments/fortune-cookie">Fortune Cookie</a></td>
-</tr>
-<tr>
-<td>5</td>
-<td><a href="./class5-prep">Class 5 Prep</a></td>
-<td><a href="./class5">Class 5</a></td>
-<td>validating forms; redirecting; HTML escaping</td>
-<td><a href="../assignments/user-signup">User Signup</a></td>
-<td><a href="../assignments/web-crypto">Web Crypto</a></td>
-</tr>
-<tr>
-<td>6</td>
-<td><a href="./class6-prep">Class 6 Prep</a></td>
-<td><a href="./class6">Class 6</a></td>
-<td>(no new topics)</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>7</td>
-<td><a href="./class7-prep">Class 7 Prep</a></td>
-<td><a href="./class7">Class 7</a></td>
-<td>templates</td>
-<td></td>
-<td><a href="../assignments/user-signup">User Signup</a></td>
-</tr>
-<tr>
-<td>8</td>
-<td><a href="./class8-prep">Class 8 Prep</a></td>
-<td><a href="./class8">Class 8</a></td>
-<td>Databases, SQL</td>
-<td><a href="../assignments/build-a-blog">Build-a-blog</a></td>
-<td></td>
-</tr>
-<tr>
-<td>9</td>
-<td><a href="./class9-prep">Class 9 Prep</a></td>
-<td><a href="./class9">Class 9</a></td>
-<td>GQL, Google App Engine Datastores</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>10</td>
-<td><a href="./class10-prep">Class 10 Prep</a></td>
-<td><a href="./class10">Class 10</a></td>
-<td>cookies, hashing</td>
-<td><a href="../assignments/blogz">Blogz</a></td>
-<td><a href="../assignments/build-a-blog">Build-a-blog</a></td>
-</tr>
-<tr>
-<td>11</td>
-<td><a href="./class11-prep">Class 11 Prep</a></td>
-<td><a href="./class11">Class 11</a></td>
-<td>user authentication, password hashing</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>12</td>
-<td><a href="./class12-prep">Class 12 Prep</a></td>
-<td><a href="./class12">Class 12</a></td>
-<td>(no new topics)</td>
-<td></td>
-<td><a href="../assignments/blogz">Blogz</a></td>
-</tr>
-</tbody>
-</table>
+                    <h1 id="assignment-user-signup">Assignment: User Signup</h1>
+<p>This assignment is all about incorporating forms into your web app, validating the user's input and providing useful feedback to the user when their input is rejected.</p>
+<h2 id="setting-up">Setting Up</h2>
+<p>Create a new Google App Engine app called <code>user-signup</code>, and then initialize a local Git repository.</p>
+<h2 id="doin-work">Doin Work</h2>
+<p>Your assignment is simply to complete Part 2 of CS253's Problem Set 2, specifically the item called <a href="https://classroom.udacity.com/courses/cs253/lessons/48756009/concepts/485384170923#">Quiz: User Signup</a>.</p>
+<p>Your page does not have to look exactly the same as their example (here's <a href="https://launchcode-demos.appspot.com/signup">our version</a>, by the way), but you must have all the same functionality. The notes underneath the video spell out exactly what is required, but here's a summary:</p>
+<ol>
+<li>If the user's form submission is not valid, you should reject it and display some feedback to inform them of what they did wrong. The following things should trigger an error:
+<ul>
+<li>The user does not enter a username</li>
+<li>The user's username is not valid -- for example, contains a space character. Full spec is included in the notes underneath the video.</li>
+<li>The user's password and password-confirmation do not match</li>
+<li>The user provides an email, but it's not a valid email.</li>
+</ul></li>
+<li>Each feedback message should be next to the field that it refers to.</li>
+<li>For the username and email fields, you should preserve what the user typed, so they don't have to retype it. With the password fields, you should clear them, for security.</li>
+</ol>
+<blockquote>
+<p>Note that Udacity provides a &quot;solution&quot; to the problem... you are free to look at their solution, but obviously you should not try copy it. In any case you will not find it very helpful, as they make use of templates, which you have not learned about yet.</p>
+</blockquote>
+<h2 id="submitting-your-work">Submitting Your Work</h2>
+<p>When you are ready to submit, follow this process:</p>
+<ol>
+<li>Make sure you <code>add</code> and <code>commit</code> all the changes you have made.</li>
+<li>Create a remote repo on Github, and use the <code>git remote</code> command so that your local repo has a reference to your remote one.</li>
+<li>Use the <code>git push</code> command so that your remote repo is up to date with the work you have done locally.</li>
+<li>On Vocareum, click on the <em>User Signup</em> assignment, and then <code>clone</code> your repository into your <code>work/</code> folder, and finally, click Submit.</li>
+<li>Demo your project with your TF.</li>
+</ol>
+<blockquote>
+<p>Remember that you should ignore any Udacity instructions about hosting your app out on the internet and posting the link so they can grade it. You don't have to submit your work to Udacity, you just have to submit to LaunchCode on Vocareum.</p>
+</blockquote>
                 </section>
 
             </div>
