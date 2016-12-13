@@ -1,4 +1,6 @@
-# Installing Google App Engine
+---
+title: Installing Google App Engine
+---
 
 As we learn how web apps work, and how to build our own web apps, we'll be using Google App Engine. This tool will help us create and run web apps on our computers.
 

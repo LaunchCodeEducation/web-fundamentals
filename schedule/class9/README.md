@@ -1,4 +1,6 @@
-# Class 9
+---
+title: Class 9
+---
 
 Today we will build persistance into our app. Finally, our hypothetical user will be able to add a new movie to the list, close the window and go eat a sandwich, forget what movie she wanted to watch, and then come running back to our site, and the same movie will still be faithfully sitting in her list so she can go stream it on our other awesome website, FlixNet.
 

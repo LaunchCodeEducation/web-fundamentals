@@ -1,4 +1,6 @@
-# Assignment: Formation
+---
+title: 'Assignment: Formation'
+---
 
 This assignment is all about incorporating forms into your web apps.
 

@@ -1,6 +1,8 @@
 [< Back to Assignment page](..)
 
-# Part 2: CSS
+---
+title: 'HTML Me Something, Part 2: CSS'
+---
 
 In Part 2, you'll get comfortable with using CSS selectors and rules to dictate display, while keeping your styles separate from your content.
 

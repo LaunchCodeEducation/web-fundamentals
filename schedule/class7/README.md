@@ -1,4 +1,6 @@
-# Class 7
+---
+title: Class 7
+---
 
 Welcome to Class 7!
 

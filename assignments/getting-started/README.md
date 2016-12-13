@@ -1,4 +1,6 @@
-# Assignment: Getting Started
+---
+title: 'Assignment: Getting Started'
+---
 
 The purpose of this assignment is to provide you with more practice with Git and GitHub, as well as a dry-run through the process of using Github to turn in your assignments on Vocareum.
 

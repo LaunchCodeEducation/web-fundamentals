@@ -1,5 +1,6 @@
-# Class 3 Prep
-
+---
+title: Class 3 Prep
+---
 
 ### HTTP and the Internet
 

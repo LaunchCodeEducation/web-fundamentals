@@ -1,4 +1,6 @@
-# Class 11 Prep
+---
+title: Class 11 Prep
+---
 
 ### User Accounts and Security, Part II
 

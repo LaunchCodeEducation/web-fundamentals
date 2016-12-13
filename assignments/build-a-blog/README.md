@@ -1,4 +1,6 @@
-# Assignment: Build-a-blog
+---
+title: 'Assignment: Build-a-blog'
+---
 
 This assignment will closely follow [Problem Set 3][pset3] from CS253. We'll provide more structured guidance than the problem set overview at Udacity, which is rather brief. So while you may find the overview useful, you only need to follow the instructions given here.
 

@@ -1,4 +1,6 @@
-# Class 11
+---
+title: Class 11
+---
 
 Thus far, our webapp does not have a concept of user accounts built in. As a result, there is only one communal movie list, and all the users who visit our site work collaboratively on that list. That's kind of cool maybe, but our goal is a site where each user manages her own list, without interference from other users. That is exactly what we will do today!
 
@@ -6,7 +8,7 @@ Thus far, our webapp does not have a concept of user accounts built in. As a res
 
 Today's Walkthrough starts with a significant amount of new code already written. At a high level, what the new code does is implement the existence of user accounts and registration, and ensure that users cannot see the main pages of the site unless they are logged in.
 
-That's a lot! We would have liked to write this code during the Walkthrough itself, but there is not enough time. Luckily, your upcoming Assignment will give you a similar chunk of starter code, so you won't be expected to write all this code yourself. 
+That's a lot! We would have liked to write this code during the Walkthrough itself, but there is not enough time. Luckily, your upcoming Assignment will give you a similar chunk of starter code, so you won't be expected to write all this code yourself.
 
 Here is the agenda:
 
@@ -21,7 +23,7 @@ Here is the agenda:
 - We will also start to implement a new page, `/recently-watched`, where users can see a list of "trending" movies, showing the most recent movies that people have been watching. Unlike the other page, this will not be individualized. It will be the same for everyone, showing the most recently watched movies by *any* user.
 
 
-## Studio 11 
+## Studio 11
 
 Your task today is to fill a few of the small holes we have left, and to finish implementing the new "recently watched movies" page that we started during Walkthrough.
 

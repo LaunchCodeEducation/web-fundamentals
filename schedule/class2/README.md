@@ -1,4 +1,6 @@
-# Class 2
+---
+title: Class 2
+---
 
 Today in class, we will go over HTML and CSS, and learn how to use your browser's *developer tools* to debug your code on the web. After lecture, you will break into groups to work on Studio.
 

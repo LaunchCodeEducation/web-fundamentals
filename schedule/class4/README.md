@@ -1,4 +1,6 @@
-# Class 4
+---
+title: Class 4
+---
 
 Welcome to Class 4! Today we will talk about incorporating forms into your app, so that users can provide input and your app can respond to their input.
 
@@ -17,7 +19,7 @@ In our FlickList app, we will delete much of the previous "Movie of the Day" cod
 
 **Responding to a form submission:**
   - making a new `RequestHandler` subclass
-  - mapping it to a route on our app  
+  - mapping it to a route on our app
     - this should match the `action` attribute on our form
     - tuples
   - accessing the data in the incoming request

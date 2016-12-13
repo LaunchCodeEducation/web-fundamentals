@@ -1,4 +1,6 @@
-# Schedule
+---
+title: Schedule
+---
 
 Please note that you should do the Prep Work **before** coming to class!
 

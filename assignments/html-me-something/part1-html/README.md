@@ -1,6 +1,8 @@
 [< Back to Assignment page](..)
 
-# Part I: HTML
+---
+title: 'HTML Me Something, Part I: HTML'
+---
 
 In Part 1, you will get comfortable with writing markup, and with separating content from design and layout.
 

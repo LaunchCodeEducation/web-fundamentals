@@ -1,4 +1,6 @@
-# Studio 8
+---
+title: Studio 8
+---
 
 You have started to learn about databases, but you haven't yet seen how to incorporate them into an app. So today, we'll simply add a few features onto our project, and get everything teed up for next class, when we will finally start persisting user data in a database.
 

@@ -1,4 +1,6 @@
-# Syllabus
+---
+title: Syllabus
+---
 
 ### Class Rhythm
 

@@ -1,4 +1,6 @@
-# How to Grade a Student's Demo
+---
+title: "How to Grade a Student's Demo"
+---
 
 ### The Procedure:
 

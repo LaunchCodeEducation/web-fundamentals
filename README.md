@@ -1,6 +1,8 @@
-# Web Fundamentals
+---
+title: 'Welcome to Unit 2: Web Fundamentals'
+---
 
-Welcome to the LaunchCode Web Fundamentals course!
+Welcome to the LaunchCode Web Fundamentals unit!
 
 ### How Does a Web App work?
 
@@ -11,11 +13,11 @@ The goal of this course is to give you a high-level overview of what is going on
 * HTTP
 * Servers
 * The back-end vs the front-end
-* Templating systems 
+* Templating systems
 * Databases and languages for querying them
 * Cookies
 
-... and a lot more! 
+... and a lot more!
 
 Our goal is that by the end of the course you will be able to build a very simple web app yourself.
 
@@ -27,9 +29,3 @@ The curriculum for this course centers primarily around an online class called [
 
 
 [udacity-course]: https://www.udacity.com/course/web-development--cs253
-
-
-
-
-
-

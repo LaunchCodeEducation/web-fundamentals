@@ -1,5 +1,6 @@
-# Class 2 Prep
-
+---
+title: Class 2 Prep
+---
 
 ### HTML
 

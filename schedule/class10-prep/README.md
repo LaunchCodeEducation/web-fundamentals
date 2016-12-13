@@ -1,4 +1,6 @@
-# Class 10 Prep
+---
+title: Class 10 Prep
+---
 
 ### User Accounts and Security, Part I
 

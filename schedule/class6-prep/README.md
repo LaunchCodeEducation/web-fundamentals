@@ -1,4 +1,6 @@
-# Class 6 Prep
+---
+title: Class 6 Prep
+---
 
 ### Keep Workin'
 

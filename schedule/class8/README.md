@@ -1,4 +1,6 @@
-# Class 8
+---
+title: Class 8
+---
 
 During the prep work for this class you got your first taste of databases, including Structured Query Language (SQL) and how queries can be run within Python code. We are not quite ready to integrate databases into our applications yet, though. During the prep work and in-class portions of Class 9, we'll learn how to do this.
 

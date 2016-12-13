@@ -1,4 +1,6 @@
-# Class 5
+---
+title: Class 5
+---
 
 Today continues our discussion about processing forms in our web apps. The big new concept is that of *validation*. Sometimes, the user submits a form that, for one reason or another, is not acceptable. In that case, we must tell them what they did wrong, and give them a chance to try again.
 
@@ -6,7 +8,7 @@ Today continues our discussion about processing forms in our web apps. The big n
 
 The main things we will do during today's walkthrough are:
 
-1. First, we will write a function via which we can fetch the user's (pretend) current watchlist.  
+1. First, we will write a function via which we can fetch the user's (pretend) current watchlist.
 	- And then, rather than hard-code the movie titles directly into our dropdown menu, we will dynamically build the dropdown based on the  current list.
 	- In the process, we will see a new Python function, the `string.format` method.
 

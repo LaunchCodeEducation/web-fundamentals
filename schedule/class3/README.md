@@ -1,4 +1,6 @@
-# Class 3
+---
+title: Class 3
+---
 
 This is the first of many classes focused on the mechanics and ideas involved in building full-stack web applications. The term **full-stack** simply means that we'll look at every aspect of web applications, from the pages that a user views and interacts with, to the Python code that decides how to handle user submissions and requests, to the database that stores information.
 

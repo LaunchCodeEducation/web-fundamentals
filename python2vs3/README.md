@@ -1,4 +1,6 @@
-# Python 2 versus Python 3
+---
+title: Python 2 versus Python 3
+---
 
 To date, we've used Python 3 in this course. However, Unit 2 makes use of Python 2. The reason for this is that much of our work will be done using Google App Engine, and it uses Python 2. There are quite a few differences between the two versions, but you won't encounter most of them.
 

@@ -1,4 +1,6 @@
-# Class 1 Prep
+---
+title: Class 1 Prep
+---
 
 
 ### Setup

@@ -1,4 +1,6 @@
-# Class 11 Notes
+---
+title: 'Class 11 Notes'
+---
 
 ## Before Walkthrough 11
 

@@ -1,4 +1,6 @@
-# Class 12 Prep
+---
+title: Class 12 Prep
+---
 
 ### Keep Workin'
 

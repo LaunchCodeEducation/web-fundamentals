@@ -1,4 +1,6 @@
-# Assignment: Hello Google App Engine
+---
+title: 'Assignment: Hello Google App Engine'
+---
 
 You do not have to submit this assignment on Vocareum, or demo it to a TF. But if you get stuck, you should make sure to ask for help in class and get the problem resolved. You will need to know how to go through this process for all your future assignments using Google App Engine.
 

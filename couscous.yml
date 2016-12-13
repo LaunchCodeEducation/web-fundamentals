@@ -1,6 +1,7 @@
 
 template:
-    url: https://github.com/LaunchCodeEducation/Template-Light
+    # url: https://github.com/LaunchCodeEducation/Template-Light
+    directory: ../Template-Light
 
 # Base URL of the published website
 baseUrl: http://education.launchcode.org/web-fundamentals
@@ -11,7 +12,9 @@ github:
     user: LaunchCodeEducation
     repo: web-fundamentals
 
-title: LaunchCode Web Fundamentals
+siteTitle: LaunchCode Web Fundamentals
+
+cseId: 014657181352409571810:wecoswt6tpe
 
 # The left menu bar
 menu:
@@ -25,9 +28,6 @@ menu:
         udacity:
             text: CS253
             absoluteUrl: https://www.udacity.com/course/web-development--cs253
-        piazza:
-            text: Discussion Forum
-            absoluteUrl: https://piazza.com/class/ir5gdd8ddd76k7
         python2vs3:
             text: Python 2 vs. 3
             relativeUrl: python2vs3/
