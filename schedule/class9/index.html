@@ -4,7 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>LaunchCode Web Fundamentals</title>
+        <title>Class 9 :: LaunchCode Web Fundamentals</title>
+
+        <script src="http://education.launchcode.org/web-fundamentals/js/bootstrap.min.js"></script>
 
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/font-awesome.min.css">
@@ -19,7 +21,47 @@
                 LaunchCode Web Fundamentals
             </a>
 
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">
+                      <span id="searchGlyph" class="glyphicon glyphicon-search"></span> <span class="hidden-sm hidden-md hidden-lg">Search</span>
+                    </a>
+                </li>
+            </ul>
+
         </header>
+
+        <!-- Search Modal -->
+        <div id="modalSearch" class="modal fade" role="dialog">
+           <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   <h4 class="modal-title">Search LaunchCode Web Fundamentals</h4>
+                </div>
+                <div class="modal-body">
+                    <script>
+                      (function() {
+                        var cx = "014657181352409571810:wecoswt6tpe";
+                        var gcse = document.createElement('script');
+                        gcse.type = 'text/javascript';
+                        gcse.async = true;
+                        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(gcse, s);
+                      })();
+                    </script>
+                    <gcse:search></gcse:search>
+                </div>
+                <div class="modal-footer">
+                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+           </div>
+        </div>
 
         <main class="container-fluid">
             <div class="row">
@@ -44,11 +86,6 @@
                                     </a>
                                 </li>
                                                             <li class="">
-                                    <a href="https://piazza.com/class/ir5gdd8ddd76k7">
-                                        Discussion Forum
-                                    </a>
-                                </li>
-                                                            <li class="">
                                     <a href="http://education.launchcode.org/web-fundamentals/python2vs3/">
                                         Python 2 vs. 3
                                     </a>
@@ -59,8 +96,8 @@
 
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                    <h1 id="class-9">Class 9</h1>
-<p>Today we will build persistance into our app. Finally, our hypothetical user will be able to add a new movie to the list, close the window and go eat a sandwich, forget what movie she wanted to watch, and then come running back to our site, and the same movie will still be faithfully sitting in her list so she can go stream it on our other awesome website, FlixNet.</p>
+                    <h1>Class 9</h1>
+                    <p>Today we will build persistance into our app. Finally, our hypothetical user will be able to add a new movie to the list, close the window and go eat a sandwich, forget what movie she wanted to watch, and then come running back to our site, and the same movie will still be faithfully sitting in her list so she can go stream it on our other awesome website, FlixNet.</p>
 <p>We'll start using a term and associated acronym that is common when connecting applications to databases, but isn't used in the Udactiy course: <strong>object-relational mapping (ORM)</strong>. Applications store information in the form of <em>objects</em> and databases store data in the form of <em>relational data</em> (in tables). An ORM library or module will often so much of the heavy lifting for us, when it comes to translating back and forth between these differing contexts.</p>
 <h2 id="walkthrough">Walkthrough</h2>
 <p>Between the last class and this one, we've made an important update to our app.</p>
@@ -110,14 +147,6 @@
 
             </div>
         </main>
-
-        <footer>
-            <div class="container-fluid">
-                <p class="text-muted">
-                    website generated with <a href="http://couscous.io" title="Markdown website generator">Couscous</a>
-                </p>
-            </div>
-        </footer>
 
         <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>

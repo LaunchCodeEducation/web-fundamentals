@@ -4,7 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>LaunchCode Web Fundamentals</title>
+        <title>Class 8 :: LaunchCode Web Fundamentals</title>
+
+        <script src="http://education.launchcode.org/web-fundamentals/js/bootstrap.min.js"></script>
 
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/font-awesome.min.css">
@@ -19,7 +21,47 @@
                 LaunchCode Web Fundamentals
             </a>
 
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">
+                      <span id="searchGlyph" class="glyphicon glyphicon-search"></span> <span class="hidden-sm hidden-md hidden-lg">Search</span>
+                    </a>
+                </li>
+            </ul>
+
         </header>
+
+        <!-- Search Modal -->
+        <div id="modalSearch" class="modal fade" role="dialog">
+           <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   <h4 class="modal-title">Search LaunchCode Web Fundamentals</h4>
+                </div>
+                <div class="modal-body">
+                    <script>
+                      (function() {
+                        var cx = "014657181352409571810:wecoswt6tpe";
+                        var gcse = document.createElement('script');
+                        gcse.type = 'text/javascript';
+                        gcse.async = true;
+                        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(gcse, s);
+                      })();
+                    </script>
+                    <gcse:search></gcse:search>
+                </div>
+                <div class="modal-footer">
+                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+           </div>
+        </div>
 
         <main class="container-fluid">
             <div class="row">
@@ -44,11 +86,6 @@
                                     </a>
                                 </li>
                                                             <li class="">
-                                    <a href="https://piazza.com/class/ir5gdd8ddd76k7">
-                                        Discussion Forum
-                                    </a>
-                                </li>
-                                                            <li class="">
                                     <a href="http://education.launchcode.org/web-fundamentals/python2vs3/">
                                         Python 2 vs. 3
                                     </a>
@@ -59,21 +96,13 @@
 
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                    <h1 id="class-8">Class 8</h1>
-<p>During the prep work for this class you got your first taste of databases, including Structured Query Language (SQL) and how queries can be run within Python code. We are not quite ready to integrate databases into our applications yet, though. During the prep work and in-class portions of Class 9, we'll learn how to do this.</p>
+                    <h1>Class 8</h1>
+                    <p>During the prep work for this class you got your first taste of databases, including Structured Query Language (SQL) and how queries can be run within Python code. We are not quite ready to integrate databases into our applications yet, though. During the prep work and in-class portions of Class 9, we'll learn how to do this.</p>
 <p>For this class, we'll briefly review databases and SQL, along with templates. After the lecture and review, in lieu of a new studio, you should complete <a href="../class7/index.html#studio">studio 7</a>, if you didn't last time. Templates will be essential for the remainder of the unit, so be sure that you are comfortable with the mechanics of including and using templates in an application.</p>
                 </section>
 
             </div>
         </main>
-
-        <footer>
-            <div class="container-fluid">
-                <p class="text-muted">
-                    website generated with <a href="http://couscous.io" title="Markdown website generator">Couscous</a>
-                </p>
-            </div>
-        </footer>
 
         <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
