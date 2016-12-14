@@ -6,7 +6,7 @@ title: Class 1 Prep
 ### Setup
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
-Do | Create an account | [Udacity Registration][sign-up] | Time to start this Udacity course. <br> If you have not already, go ahead and sign up for a Udacity account. <br> Then go to the [CS253 homepage][cs253] and click the *Start Free Course* button.
+Do | Create an account (Optional) | [Udacity Registration][sign-up] | **This is optional**. You might want to register for an account on Udacity, so that when you interact with the course content on [CS253: Web Development], the site remembers your progress.
 
 ---
 
