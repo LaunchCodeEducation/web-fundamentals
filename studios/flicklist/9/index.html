@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>HTML Me Something, Part I: HTML :: Unit 2: Web Fundamentals</title>
+        <title>Studio: Flicklist 9 :: Unit 2: Web Fundamentals</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/highlight.dark.css">
@@ -75,7 +75,7 @@
                                         Classes
                                     </a>
                                 </li>
-                                                            <li class=" lc-button">
+                                                            <li class="active lc-button">
                                     <a href="http://education.launchcode.org/web-fundamentals/studios/">
                                         Studios
                                     </a>
@@ -111,95 +111,53 @@
 
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                                        <h1>HTML Me Something, Part I: HTML</h1>
-                    <p><a href="..">&lt; Back to Assignment page</a></p>
-<p>In Part 1, you will get comfortable with writing markup, and with separating content from design and layout.</p>
-<h2 id="getting-started">Getting Started</h2>
-<p>Stub out <code>index.html</code> with these basic elements:</p>
+                                        <h1>Studio: Flicklist 9</h1>
+                    <p>In this studio we will build persistance into our app. Finally, our hypothetical user will be able to add a new movie to the list, close the window and go eat a sandwich, forget what movie she wanted to watch, and then come running back to our site, and the same movie will still be faithfully sitting in her list so she can go stream it on our other awesome website, FlixNet.</p>
+<p>We'll start using a term and associated acronym that is common when connecting applications to databases, but isn't used in the Udactiy course: <strong>object-relational mapping (ORM)</strong>. Applications store information in the form of <em>objects</em> and databases store data in the form of <em>relational data</em> (in tables). An ORM library or module will often so much of the heavy lifting for us, when it comes to translating back and forth between these differing contexts.</p>
+<h2 id="walkthrough">Walkthrough</h2>
+<p>Between the last class and this one, we've made an important update to our app.</p>
 <ul>
-<li>the HTML5 doctype</li>
-<li><code>&lt;html&gt;</code></li>
-<li><code>&lt;head&gt;</code></li>
-<li><code>&lt;title&gt;</code></li>
-<li><code>&lt;body&gt;</code></li>
-</ul>
-<p>...and fill each element with some appropriate content. You can start by removing the snippet of HTML that you added during setup.</p>
-<h2 id="getting-to-work">Getting to Work</h2>
-<p>Your mission: Build a page that...</p>
+<li>Base <code>Handler</code> class
 <ul>
-<li>
-<p>Tells a story. This can be personal, or not. Funny, serious or neither. You can do whatever you like, but generally, it should be something in the range of 3-10 paragraphs or sections. <a href="http://education.launchcode.org/html-me-something/submissions/chrisbay/index-nocss.html">Here is an example</a>, and here are some other ideas:</p>
+<li>All handler classes that previously inherited from <code>webapp2.RequestHandler</code> now inherit from a base class called <code>Handler</code> (which itself inherits from <code>webapp2.RequestHandler</code>). We have dropped one method in there, <code>renderError</code>. This is nice because any of the subclasses can now use that method. And in the future we might add more methods here.</li>
+</ul></li>
+</ul>
+<h3 id="during-walkthrough-9">During Walkthrough 9</h3>
+<p>During the walkthrough, we will lay the groundwork for storing data, and begin to adapt our app to use data from the database. Here are some of the tasks that will be carried out.</p>
 <ul>
-<li>Create a resume page that tells the story of your professional journey to-date, and where you want to go as a coder.</li>
-<li>Tell the story of a trip that you took.</li>
-<li>Talk about some hobby or passion of yours.</li>
-</ul>
-</li>
-<li>
-<p>Does each of the following:</p>
+<li>Import the <code>db</code> class from the <code>google.appengine.ext</code> module</li>
+<li>Create <code>Movie</code> model object
 <ul>
-<li>
-<p>Uses each of the following structural HTML5 tags: <code>&lt;p&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>. If you need to brush up on what each of these tags is used for, or if any of them are new to you, check out the <a href="http://www.w3schools.com/tags/default.asp">HTML tag reference</a> at w3schools.</p>
-</li>
-<li>
-<p>Use at least one <code>&lt;img&gt;</code> tag (and hopefully more). When placing images in your page, put them in a new subfolder called <code>images</code> within your <code>html-me-something</code> directory.</p>
-</li>
-<li>
-<p>Uses at least one <a href="http://www.w3schools.com/html/html_entities.asp">HTML entity</a>. Hint: putting a copyright notice in your footer will afford you the opportunity to use &copy;, but you should also try to get creative here.</p>
-</li>
-<li>Gets creative. Don't stop with these items or tags. Have some ideas for your page, and make it great. And dig into the <a href="http://www.w3schools.com/tags/default.asp">w3schools HTML reference</a> to learn more about other tags, their usage and attributes!</li>
-</ul>
-</li>
-</ul>
-<h3 id="notes-and-tips">Notes and Tips</h3>
+<li>with <code>db</code> properties <code>title</code>, <code>watched</code>, <code>rating</code> and <code>created</code></li>
+</ul></li>
+<li>On <code>AddMovie</code> handler, create a movie object, and use <code>put</code> ORM method to save it to the datastore
 <ul>
-<li>
-<p>Don't add any CSS yet. Really, we mean it! If you think your page looks boring now, that's okay. We'll get there soon enough.</p>
-</li>
-<li>
-<p>As you make changes, you will obviously want to see the results. To do so, simply re-save the file in your text editor, and then, over in your browser window, click Refresh.</p>
-</li>
-<li>
-<p>Use your browser developer tools to troubleshoot things that don't look right. You can also use the <em>View Source</em> option on your page and other pages on the web, to see what HTML is being used, and to get ideas.</p>
-</li>
-<li>Rely on reference sites linked on this page, and elsewhere online. We haven't taught you every detail about every tag here that you may want or need to use, and you're free to use tags that haven't been explicitly introduced in class. We've given you enough background to get started, and are intentionally leaving some of the learning up to you.</li>
-</ul>
-<h2 id="add-and-commit-your-changes-on-git">Add and Commit Your Changes on Git</h2>
-<p>Once you are finished, use Git once again to <code>add</code> and <code>commit</code> your <code>index.html</code> changes.</p>
-<p><em>Why again?</em></p>
-<p>The reason is that, since you have added a bunch of new HTML code, your <code>index.html</code> file is now in a very different state from how it looked the first time you committed it. You can see this by checking your status:</p>
-<pre><code class="language-nohighlight">$ git status
-On branch gh-pages
-Changes not staged for commit:
-  (use "git add &lt;file&gt;..." to update what will be committed)
-  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
-
-    modified:   index.html
-
-no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
-<p>Git is telling us: <em>I see that you have modified <code>index.html</code>. Use <code>git add</code> if you want this file's changes to be included in your next commit.</em></p>
-<p>At the risk of oversimplifying a bit, the Git workflow more or less comes down to this:</p>
+<li>From the admin panel, observe that it was indeed saved</li>
+</ul></li>
+<li>On <code>Index</code> handler, don't use <code>getUnwatchedMovies()</code> function. Instead use a GqlQuery on the database
 <ul>
-<li>Create some initial stuff</li>
-<li><code>init</code></li>
-<li><code>add</code> and <code>commit</code></li>
-<li>make some changes</li>
-<li><code>add</code> and <code>commit</code></li>
-<li>make some more changes</li>
-<li><code>add</code> and <code>commit</code></li>
-<li>... etc</li>
+<li>Result should be one item in the list, but with no title. Why not? Gotta go to the <code>frontpage.html</code> template and adjust to use <code>movie.title</code> instead of just <code>movie</code>.</li>
+</ul></li>
+<li>Implement persistant &quot;watching&quot;
+<ul>
+<li>In the <code>WatchedMovie</code> handler, update <code>movie.watched</code> property to <code>True</code></li>
+<li>On the <code>frontpage.html</code> template, use <code>movie.key().id()</code> as the value for each hidden input</li>
+</ul></li>
 </ul>
-<p>The general rule is that <strong>whenever you make any changes, you must add and commit those changes to Git.</strong></p>
-<p>So let's now go ahead and do that. From within your root <code>html-me-something/</code> directory:</p>
-<pre><code class="language-nohighlight">$ git add index.html
-$ git commit -m "Finished work on HTML page"</code></pre>
-<p>You might be wondering: <em>How do I know when it's time to pause working and do another commit?</em></p>
-<p>This is somewhat subjective, and ultimately up to you. The basic guiding principle is that you should pause and commit any time you have reached a natural stopping point and completed a coherent &quot;chunk of work&quot;.</p>
-<blockquote>
-<p><em>NOTE:</em> For assignments such as these, we lean on the side of very large &quot;chunks of work&quot;, so that you aren't overwhelmed with Git and can spend most of your time focusing on your code. But a more experienced Git user probably would have broken down this <em>Part 1</em> into a handful of smaller commits.</p>
-</blockquote>
-<h2 id="done">Done!</h2>
-<p>Well done! Time to <a href="../part2-css">dive into some CSS</a>.</p>
+<h2 id="studio">Studio</h2>
+<p>Now that we have some database functionality wired into our application, let's continue to convert our app to use the database. Our next task is to implement persistent ratings, so a user can rate a movie and the information is stored in the database for later.</p>
+<h3 id="checking-out-the-studio-code">Checking out the Studio code</h3>
+<p>Follow the <a href="../getting-the-code/">instructions for getting the code</a> in order to get the starter code for <code>studio3</code>.</p>
+<h4 id="your-tasks">Your tasks</h4>
+<ol>
+<li>In <code>MovieRatings.get</code> write a GQL query to select all the movies that have been watched
+<ul>
+<li>Extra credit: sort by creation date (most recent first).</li>
+</ul></li>
+<li>In <code>MovieRatings.post</code>, use the <code>Movie.get_by_id</code> ORM method to find the movie with the id specified by the form submission.</li>
+<li>In <code>MovieRatings.post</code>, update the movie's rating to the new rating specified by the form submission.</li>
+<li>In <code>rating-confirmation.html</code>, update the code so that it still works now that it is being given a movie <em>object</em>.</li>
+</ol>
                                     </section>
 
             </div>

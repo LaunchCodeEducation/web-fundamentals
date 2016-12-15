@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>HTML Me Something, Part I: HTML :: Unit 2: Web Fundamentals</title>
+        <title>Studio: Flicklist 11 :: Unit 2: Web Fundamentals</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/highlight.dark.css">
@@ -75,7 +75,7 @@
                                         Classes
                                     </a>
                                 </li>
-                                                            <li class=" lc-button">
+                                                            <li class="active lc-button">
                                     <a href="http://education.launchcode.org/web-fundamentals/studios/">
                                         Studios
                                     </a>
@@ -111,95 +111,51 @@
 
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                                        <h1>HTML Me Something, Part I: HTML</h1>
-                    <p><a href="..">&lt; Back to Assignment page</a></p>
-<p>In Part 1, you will get comfortable with writing markup, and with separating content from design and layout.</p>
-<h2 id="getting-started">Getting Started</h2>
-<p>Stub out <code>index.html</code> with these basic elements:</p>
+                                        <h1>Studio: Flicklist 11</h1>
+                    <p>Thus far, our webapp does not have a concept of user accounts built in. As a result, there is only one communal movie list, and all the users who visit our site work collaboratively on that list. That's kind of cool maybe, but our goal is a site where each user manages her own list, without interference from other users. That is exactly what we will do today!</p>
+<h2 id="walkthrough-11">Walkthrough 11</h2>
+<p>Today's Walkthrough starts with a significant amount of new code already written. At a high level, what the new code does is implement the existence of user accounts and registration, and ensure that users cannot see the main pages of the site unless they are logged in.</p>
+<p>That's a lot! We would have liked to write this code during the Walkthrough itself, but there is not enough time. Luckily, your upcoming Assignment will give you a similar chunk of starter code, so you won't be expected to write all this code yourself.</p>
+<p>Here is the agenda:</p>
 <ul>
-<li>the HTML5 doctype</li>
-<li><code>&lt;html&gt;</code></li>
-<li><code>&lt;head&gt;</code></li>
-<li><code>&lt;title&gt;</code></li>
-<li><code>&lt;body&gt;</code></li>
-</ul>
-<p>...and fill each element with some appropriate content. You can start by removing the snippet of HTML that you added during setup.</p>
-<h2 id="getting-to-work">Getting to Work</h2>
-<p>Your mission: Build a page that...</p>
+<li>We will spend a little time going over the new pieces of code:
 <ul>
-<li>
-<p>Tells a story. This can be personal, or not. Funny, serious or neither. You can do whatever you like, but generally, it should be something in the range of 3-10 paragraphs or sections. <a href="http://education.launchcode.org/html-me-something/submissions/chrisbay/index-nocss.html">Here is an example</a>, and here are some other ideas:</p>
+<li>a <code>User</code> class to represent and save users in our database</li>
+<li>new routes and handlers: <code>Login</code>, <code>Logout</code>, and <code>Registration</code></li>
+<li>some new helper functions in our base parent <code>Handler</code> class</li>
+<li>some more lower-level helper functions in a separate file called <code>hashutils.py</code></li>
+</ul></li>
+<li>Next we will start coding. Our app at this point has user accounts and login, but users are still collaboratively editing the same list of movies. We need to fix that:
 <ul>
-<li>Create a resume page that tells the story of your professional journey to-date, and where you want to go as a coder.</li>
-<li>Tell the story of a trip that you took.</li>
-<li>Talk about some hobby or passion of yours.</li>
+<li>We'll add a <code>.owner</code> field to the <code>Movie</code> class, so that each movie &quot;belongs to&quot; a specific user.</li>
+<li>We will update the <code>/ratings</code> page so that a user only sees a list of movies of which she is the owner.</li>
+</ul></li>
+<li>We will also start to implement a new page, <code>/recently-watched</code>, where users can see a list of &quot;trending&quot; movies, showing the most recent movies that people have been watching. Unlike the other page, this will not be individualized. It will be the same for everyone, showing the most recently watched movies by <em>any</em> user.</li>
 </ul>
+<h2 id="studio-11">Studio 11</h2>
+<p>Your task today is to fill a few of the small holes we have left, and to finish implementing the new &quot;recently watched movies&quot; page that we started during Walkthrough.</p>
+<h3 id="checking-out-the-studio-code">Checking out the Studio code</h3>
+<p>Follow the <a href="../getting-the-code/">instructions for getting the code</a> in order to get the starter code for <code>studio3</code>.</p>
+<h3 id="your-tasks">Your Tasks</h3>
+<p>Below are 5 tasks. Most are just one or two lines of code, but the last one is a bit more involved.</p>
+<ol>
+<li>
+<p><strong>Fix the Index handler</strong>. When the user visits the home page, she still sees <em>everybody's</em> unwatched movies. Fix it so that she only sees her own movies. Instead of a <code>GqlQuery</code>, you will need to use ORM methods like <code>all</code> and <code>filter</code>. For an example to reference, look at what we did during Walkthrough in <code>MovieRatings.get</code>.</p>
 </li>
 <li>
-<p>Does each of the following:</p>
-<ul>
-<li>
-<p>Uses each of the following structural HTML5 tags: <code>&lt;p&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>. If you need to brush up on what each of these tags is used for, or if any of them are new to you, check out the <a href="http://www.w3schools.com/tags/default.asp">HTML tag reference</a> at w3schools.</p>
+<p><strong>Add a Logout link</strong>. The user needs a way of logging out when she is logged in. Simply add another link to our &quot;navigation menu&quot; at the top of <code>base.html</code></p>
 </li>
 <li>
-<p>Use at least one <code>&lt;img&gt;</code> tag (and hopefully more). When placing images in your page, put them in a new subfolder called <code>images</code> within your <code>html-me-something</code> directory.</p>
+<p><strong>Add a route for recently watched movies</strong>. This is the first of three tasks involved in finishing the implementation of the &quot;recently watched movies&quot; page. First, simply add to our app another route that hooks up to the <code>RecentlyWatchedMovies</code> handler we started during Walkthrough.</p>
 </li>
 <li>
-<p>Uses at least one <a href="http://www.w3schools.com/html/html_entities.asp">HTML entity</a>. Hint: putting a copyright notice in your footer will afford you the opportunity to use &copy;, but you should also try to get creative here.</p>
+<p><strong>Render the template</strong>. Our current implementation simply responds with a raw string containing the titles of all the movies. Let's return some real HTML. Notice that we have created a new template called <code>recently-watched.html</code>. Edit the <code>RecentlyWatchedMovies.get</code> method so that it renders that template. Make sure you pass the list of movies into the template.</p>
 </li>
-<li>Gets creative. Don't stop with these items or tags. Have some ideas for your page, and make it great. And dig into the <a href="http://www.w3schools.com/tags/default.asp">w3schools HTML reference</a> to learn more about other tags, their usage and attributes!</li>
-</ul>
-</li>
-</ul>
-<h3 id="notes-and-tips">Notes and Tips</h3>
-<ul>
-<li>
-<p>Don't add any CSS yet. Really, we mean it! If you think your page looks boring now, that's okay. We'll get there soon enough.</p>
-</li>
-<li>
-<p>As you make changes, you will obviously want to see the results. To do so, simply re-save the file in your text editor, and then, over in your browser window, click Refresh.</p>
-</li>
-<li>
-<p>Use your browser developer tools to troubleshoot things that don't look right. You can also use the <em>View Source</em> option on your page and other pages on the web, to see what HTML is being used, and to get ideas.</p>
-</li>
-<li>Rely on reference sites linked on this page, and elsewhere online. We haven't taught you every detail about every tag here that you may want or need to use, and you're free to use tags that haven't been explicitly introduced in class. We've given you enough background to get started, and are intentionally leaving some of the learning up to you.</li>
-</ul>
-<h2 id="add-and-commit-your-changes-on-git">Add and Commit Your Changes on Git</h2>
-<p>Once you are finished, use Git once again to <code>add</code> and <code>commit</code> your <code>index.html</code> changes.</p>
-<p><em>Why again?</em></p>
-<p>The reason is that, since you have added a bunch of new HTML code, your <code>index.html</code> file is now in a very different state from how it looked the first time you committed it. You can see this by checking your status:</p>
-<pre><code class="language-nohighlight">$ git status
-On branch gh-pages
-Changes not staged for commit:
-  (use "git add &lt;file&gt;..." to update what will be committed)
-  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
-
-    modified:   index.html
-
-no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
-<p>Git is telling us: <em>I see that you have modified <code>index.html</code>. Use <code>git add</code> if you want this file's changes to be included in your next commit.</em></p>
-<p>At the risk of oversimplifying a bit, the Git workflow more or less comes down to this:</p>
-<ul>
-<li>Create some initial stuff</li>
-<li><code>init</code></li>
-<li><code>add</code> and <code>commit</code></li>
-<li>make some changes</li>
-<li><code>add</code> and <code>commit</code></li>
-<li>make some more changes</li>
-<li><code>add</code> and <code>commit</code></li>
-<li>... etc</li>
-</ul>
-<p>The general rule is that <strong>whenever you make any changes, you must add and commit those changes to Git.</strong></p>
-<p>So let's now go ahead and do that. From within your root <code>html-me-something/</code> directory:</p>
-<pre><code class="language-nohighlight">$ git add index.html
-$ git commit -m "Finished work on HTML page"</code></pre>
-<p>You might be wondering: <em>How do I know when it's time to pause working and do another commit?</em></p>
-<p>This is somewhat subjective, and ultimately up to you. The basic guiding principle is that you should pause and commit any time you have reached a natural stopping point and completed a coherent &quot;chunk of work&quot;.</p>
-<blockquote>
-<p><em>NOTE:</em> For assignments such as these, we lean on the side of very large &quot;chunks of work&quot;, so that you aren't overwhelmed with Git and can spend most of your time focusing on your code. But a more experienced Git user probably would have broken down this <em>Part 1</em> into a handful of smaller commits.</p>
-</blockquote>
-<h2 id="done">Done!</h2>
-<p>Well done! Time to <a href="../part2-css">dive into some CSS</a>.</p>
+<li><strong>Implement the template</strong>. Currently the template simply renders a header. Use your Jinja ninja skills to show the list of movies. Each list item should look something like this:
+<ul><li>
+    <strong>Jesse</strong> watched <strong>The Big Green</strong> and gave it a rating of <strong>*****</strong> stars.
+</li></ul></li>
+</ol>
                                     </section>
 
             </div>

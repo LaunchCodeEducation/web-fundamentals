@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>HTML Me Something, Part I: HTML :: Unit 2: Web Fundamentals</title>
+        <title>Studio: Flicklist 4 :: Unit 2: Web Fundamentals</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/highlight.dark.css">
@@ -75,7 +75,7 @@
                                         Classes
                                     </a>
                                 </li>
-                                                            <li class=" lc-button">
+                                                            <li class="active lc-button">
                                     <a href="http://education.launchcode.org/web-fundamentals/studios/">
                                         Studios
                                     </a>
@@ -111,95 +111,68 @@
 
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                                        <h1>HTML Me Something, Part I: HTML</h1>
-                    <p><a href="..">&lt; Back to Assignment page</a></p>
-<p>In Part 1, you will get comfortable with writing markup, and with separating content from design and layout.</p>
-<h2 id="getting-started">Getting Started</h2>
-<p>Stub out <code>index.html</code> with these basic elements:</p>
+                                        <h1>Studio: Flicklist 4</h1>
+                    <p>In this studio we will talk about incorporating forms into your app, so that users can provide input and your app can respond to their input.</p>
+<h2 id="walkthrough-4">Walkthrough 4</h2>
+<p>In our FlickList app, we will delete much of the previous &quot;Movie of the Day&quot; code, and start something new. Remember that ultimately our goal is to allow the user to keep a running &quot;watchlist&quot; of movies she plans on seeing. Today, we will create an app with a form that allows the user to &quot;add a movie&quot; to her watchlist. In the process, we will talk about:</p>
+<p><strong>Creating an HTML form</strong></p>
 <ul>
-<li>the HTML5 doctype</li>
-<li><code>&lt;html&gt;</code></li>
-<li><code>&lt;head&gt;</code></li>
-<li><code>&lt;title&gt;</code></li>
-<li><code>&lt;body&gt;</code></li>
-</ul>
-<p>...and fill each element with some appropriate content. You can start by removing the snippet of HTML that you added during setup.</p>
-<h2 id="getting-to-work">Getting to Work</h2>
-<p>Your mission: Build a page that...</p>
+<li>the <code>&lt;input&gt;</code> tag
 <ul>
-<li>
-<p>Tells a story. This can be personal, or not. Funny, serious or neither. You can do whatever you like, but generally, it should be something in the range of 3-10 paragraphs or sections. <a href="http://education.launchcode.org/html-me-something/submissions/chrisbay/index-nocss.html">Here is an example</a>, and here are some other ideas:</p>
+<li>the <code>type</code> attribute</li>
+<li>the <code>name</code> attribute</li>
+</ul></li>
+<li>the <code>action</code> attribute</li>
+<li>the <code>method</code> attribute
 <ul>
-<li>Create a resume page that tells the story of your professional journey to-date, and where you want to go as a coder.</li>
-<li>Tell the story of a trip that you took.</li>
-<li>Talk about some hobby or passion of yours.</li>
+<li>GET vs POST</li>
+</ul></li>
+<li>the <code>&lt;label&gt;</code> tag</li>
 </ul>
-</li>
-<li>
-<p>Does each of the following:</p>
+<p><strong>Responding to a form submission:</strong></p>
 <ul>
-<li>
-<p>Uses each of the following structural HTML5 tags: <code>&lt;p&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>. If you need to brush up on what each of these tags is used for, or if any of them are new to you, check out the <a href="http://www.w3schools.com/tags/default.asp">HTML tag reference</a> at w3schools.</p>
-</li>
-<li>
-<p>Use at least one <code>&lt;img&gt;</code> tag (and hopefully more). When placing images in your page, put them in a new subfolder called <code>images</code> within your <code>html-me-something</code> directory.</p>
-</li>
-<li>
-<p>Uses at least one <a href="http://www.w3schools.com/html/html_entities.asp">HTML entity</a>. Hint: putting a copyright notice in your footer will afford you the opportunity to use &copy;, but you should also try to get creative here.</p>
-</li>
-<li>Gets creative. Don't stop with these items or tags. Have some ideas for your page, and make it great. And dig into the <a href="http://www.w3schools.com/tags/default.asp">w3schools HTML reference</a> to learn more about other tags, their usage and attributes!</li>
-</ul>
-</li>
-</ul>
-<h3 id="notes-and-tips">Notes and Tips</h3>
+<li>making a new <code>RequestHandler</code> subclass</li>
+<li>mapping it to a route on our app
 <ul>
-<li>
-<p>Don't add any CSS yet. Really, we mean it! If you think your page looks boring now, that's okay. We'll get there soon enough.</p>
-</li>
-<li>
-<p>As you make changes, you will obviously want to see the results. To do so, simply re-save the file in your text editor, and then, over in your browser window, click Refresh.</p>
-</li>
-<li>
-<p>Use your browser developer tools to troubleshoot things that don't look right. You can also use the <em>View Source</em> option on your page and other pages on the web, to see what HTML is being used, and to get ideas.</p>
-</li>
-<li>Rely on reference sites linked on this page, and elsewhere online. We haven't taught you every detail about every tag here that you may want or need to use, and you're free to use tags that haven't been explicitly introduced in class. We've given you enough background to get started, and are intentionally leaving some of the learning up to you.</li>
+<li>this should match the <code>action</code> attribute on our form</li>
+<li>tuples</li>
+</ul></li>
+<li>accessing the data in the incoming request</li>
+<li>sending an appropriate response</li>
 </ul>
-<h2 id="add-and-commit-your-changes-on-git">Add and Commit Your Changes on Git</h2>
-<p>Once you are finished, use Git once again to <code>add</code> and <code>commit</code> your <code>index.html</code> changes.</p>
-<p><em>Why again?</em></p>
-<p>The reason is that, since you have added a bunch of new HTML code, your <code>index.html</code> file is now in a very different state from how it looked the first time you committed it. You can see this by checking your status:</p>
-<pre><code class="language-nohighlight">$ git status
-On branch gh-pages
-Changes not staged for commit:
-  (use "git add &lt;file&gt;..." to update what will be committed)
-  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
-
-    modified:   index.html
-
-no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
-<p>Git is telling us: <em>I see that you have modified <code>index.html</code>. Use <code>git add</code> if you want this file's changes to be included in your next commit.</em></p>
-<p>At the risk of oversimplifying a bit, the Git workflow more or less comes down to this:</p>
-<ul>
-<li>Create some initial stuff</li>
-<li><code>init</code></li>
-<li><code>add</code> and <code>commit</code></li>
-<li>make some changes</li>
-<li><code>add</code> and <code>commit</code></li>
-<li>make some more changes</li>
-<li><code>add</code> and <code>commit</code></li>
-<li>... etc</li>
-</ul>
-<p>The general rule is that <strong>whenever you make any changes, you must add and commit those changes to Git.</strong></p>
-<p>So let's now go ahead and do that. From within your root <code>html-me-something/</code> directory:</p>
-<pre><code class="language-nohighlight">$ git add index.html
-$ git commit -m "Finished work on HTML page"</code></pre>
-<p>You might be wondering: <em>How do I know when it's time to pause working and do another commit?</em></p>
-<p>This is somewhat subjective, and ultimately up to you. The basic guiding principle is that you should pause and commit any time you have reached a natural stopping point and completed a coherent &quot;chunk of work&quot;.</p>
+<p>Our app won't <em>really</em> be able to keep track of the user's movie list at this point. We will need a database to do that (coming up in a few weeks!). But for now, we'll just <em>pretend</em> the list exists.</p>
+<h2 id="studio-4">Studio 4</h2>
+<p>For Studio, your job is to provide another form that allows the user to &quot;cross off&quot; an item from her  Watchlist.</p>
+<h3 id="checking-out-the-studio-code">Checking out the Studio code</h3>
+<p>Follow the <a href="../getting-the-code/">instructions for getting the code</a> in order to get the starter code for <code>studio4</code>.</p>
+<h4 id="your-task">Your Task</h4>
+<p>As mentioned above, your task is to implement a new feature for &quot;crossing off&quot; movies from the user's watchlist.</p>
+<p>Open up <code>main.py</code> in your text editor. You should see 4 <code># TODO</code> comments in the code:</p>
+<ol>
+<li>
+<p><strong>Add a form</strong>. On the <code>Index</code> handler, include another <code>&lt;form&gt;</code> below the previous one. It should say something like <code>"I want to cross off ___ from my Watchlist."</code>, where the blank is a text box in which the user can type to specify the movie she wants to cross off.</p>
+</li>
+<li>
+<p><strong>Handle the form Submission.</strong> Make another <code>RequestHandler</code> subclass called <code>CrossOffMovie</code>, and implement your subclass with the necessary code to handle incoming submissions and respond appropriately. You should display a confirmation message like:</p>
 <blockquote>
-<p><em>NOTE:</em> For assignments such as these, we lean on the side of very large &quot;chunks of work&quot;, so that you aren't overwhelmed with Git and can spend most of your time focusing on your code. But a more experienced Git user probably would have broken down this <em>Part 1</em> into a handful of smaller commits.</p>
+<p><strike>Star Wars</strike> has been crossed off your Watchlist.</p>
 </blockquote>
-<h2 id="done">Done!</h2>
-<p>Well done! Time to <a href="../part2-css">dive into some CSS</a>.</p>
+<p>You can use the <code>&lt;strike&gt;</code> tag to get that cool <strike>Strikethrough</strike> style of text.</p>
+</li>
+<li>
+<p><strong>Register your handler with the app.</strong> You will need to add a new url route for your app, and register your new handler as the one that should respond to incoming requests at that route.</p>
+</li>
+<li>
+<p><strong>Extra Credit: Use a dropdown instead of a text box.</strong> For deleting a movie from a pre-existing list, a text box does not really make sense, because the user could theoretically type anything, even something that is not even on her watchlist in the first place. A more sensible UI component would a dropdown, which only allows the user to choose from among a limited set of choices.</p>
+<p>Use the <code>&lt;select&gt;</code> and <code>&lt;option&gt;</code> tags to create a dropdown component where the only available choices are the movies that are currently in the user's Watchlist.</p>
+<p>Thus far, of course, there is no such thing as the user's &quot;real&quot; Watchlist, so you can just pretend. Simply hard-code a few of your favorite movies into the dropdown <em>as if</em> those movies make up the user's current watchlist.</p>
+</li>
+</ol>
+<h4 id="check-in-your-changes">Check in Your Changes</h4>
+<p>Before you leave, as always, you should <code>add</code> and <code>commit</code> your changes:</p>
+<pre><code>$ git add .
+$ git commit -m "implemented TODOs 1 and 2"</code></pre>
+<p>Obviously your commit message might be something different. The goal of the commit message is just to provide a useful description of the changes you have made. This will make it easier for collaborators and/or your future self to understand your project's development progress.</p>
                                     </section>
 
             </div>

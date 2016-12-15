@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>HTML Me Something, Part I: HTML :: Unit 2: Web Fundamentals</title>
+        <title>Studio: Flicklist 5 :: Unit 2: Web Fundamentals</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/highlight.dark.css">
@@ -75,7 +75,7 @@
                                         Classes
                                     </a>
                                 </li>
-                                                            <li class=" lc-button">
+                                                            <li class="active lc-button">
                                     <a href="http://education.launchcode.org/web-fundamentals/studios/">
                                         Studios
                                     </a>
@@ -111,95 +111,58 @@
 
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                                        <h1>HTML Me Something, Part I: HTML</h1>
-                    <p><a href="..">&lt; Back to Assignment page</a></p>
-<p>In Part 1, you will get comfortable with writing markup, and with separating content from design and layout.</p>
-<h2 id="getting-started">Getting Started</h2>
-<p>Stub out <code>index.html</code> with these basic elements:</p>
-<ul>
-<li>the HTML5 doctype</li>
-<li><code>&lt;html&gt;</code></li>
-<li><code>&lt;head&gt;</code></li>
-<li><code>&lt;title&gt;</code></li>
-<li><code>&lt;body&gt;</code></li>
-</ul>
-<p>...and fill each element with some appropriate content. You can start by removing the snippet of HTML that you added during setup.</p>
-<h2 id="getting-to-work">Getting to Work</h2>
-<p>Your mission: Build a page that...</p>
-<ul>
+                                        <h1>Studio: Flicklist 5</h1>
+                    <p>The big new concept for this studio is that of <em>validation</em>. Sometimes, the user submits data through a form that, for one reason or another, is not acceptable. In that case, we must tell them what they did wrong, and give them a chance to try again.</p>
+<h2 id="walkthrough-5">Walkthrough 5</h2>
+<p>The main things we will do during today's walkthrough are:</p>
+<ol>
 <li>
-<p>Tells a story. This can be personal, or not. Funny, serious or neither. You can do whatever you like, but generally, it should be something in the range of 3-10 paragraphs or sections. <a href="http://education.launchcode.org/html-me-something/submissions/chrisbay/index-nocss.html">Here is an example</a>, and here are some other ideas:</p>
+<p>First, we will write a function via which we can fetch the user's (pretend) current watchlist.</p>
 <ul>
-<li>Create a resume page that tells the story of your professional journey to-date, and where you want to go as a coder.</li>
-<li>Tell the story of a trip that you took.</li>
-<li>Talk about some hobby or passion of yours.</li>
+<li>And then, rather than hard-code the movie titles directly into our dropdown menu, we will dynamically build the dropdown based on the  current list.</li>
+<li>In the process, we will see a new Python function, the <code>string.format</code> method.</li>
 </ul>
 </li>
 <li>
-<p>Does each of the following:</p>
+<p>The main feature we will add is the inclusion of some validation on the <code>cross-off/</code> route handler:</p>
 <ul>
-<li>
-<p>Uses each of the following structural HTML5 tags: <code>&lt;p&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>. If you need to brush up on what each of these tags is used for, or if any of them are new to you, check out the <a href="http://www.w3schools.com/tags/default.asp">HTML tag reference</a> at w3schools.</p>
-</li>
-<li>
-<p>Use at least one <code>&lt;img&gt;</code> tag (and hopefully more). When placing images in your page, put them in a new subfolder called <code>images</code> within your <code>html-me-something</code> directory.</p>
-</li>
-<li>
-<p>Uses at least one <a href="http://www.w3schools.com/html/html_entities.asp">HTML entity</a>. Hint: putting a copyright notice in your footer will afford you the opportunity to use &copy;, but you should also try to get creative here.</p>
-</li>
-<li>Gets creative. Don't stop with these items or tags. Have some ideas for your page, and make it great. And dig into the <a href="http://www.w3schools.com/tags/default.asp">w3schools HTML reference</a> to learn more about other tags, their usage and attributes!</li>
-</ul>
-</li>
-</ul>
-<h3 id="notes-and-tips">Notes and Tips</h3>
+<li>When the user wants to cross a movie off, we will make sure the movie is actually on the user's list in the first place.</li>
+<li>If not, we will <em>redirect</em> the user back to the home page.
 <ul>
-<li>
-<p>Don't add any CSS yet. Really, we mean it! If you think your page looks boring now, that's okay. We'll get there soon enough.</p>
-</li>
-<li>
-<p>As you make changes, you will obviously want to see the results. To do so, simply re-save the file in your text editor, and then, over in your browser window, click Refresh.</p>
-</li>
-<li>
-<p>Use your browser developer tools to troubleshoot things that don't look right. You can also use the <em>View Source</em> option on your page and other pages on the web, to see what HTML is being used, and to get ideas.</p>
-</li>
-<li>Rely on reference sites linked on this page, and elsewhere online. We haven't taught you every detail about every tag here that you may want or need to use, and you're free to use tags that haven't been explicitly introduced in class. We've given you enough background to get started, and are intentionally leaving some of the learning up to you.</li>
-</ul>
-<h2 id="add-and-commit-your-changes-on-git">Add and Commit Your Changes on Git</h2>
-<p>Once you are finished, use Git once again to <code>add</code> and <code>commit</code> your <code>index.html</code> changes.</p>
-<p><em>Why again?</em></p>
-<p>The reason is that, since you have added a bunch of new HTML code, your <code>index.html</code> file is now in a very different state from how it looked the first time you committed it. You can see this by checking your status:</p>
-<pre><code class="language-nohighlight">$ git status
-On branch gh-pages
-Changes not staged for commit:
-  (use "git add &lt;file&gt;..." to update what will be committed)
-  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
-
-    modified:   index.html
-
-no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
-<p>Git is telling us: <em>I see that you have modified <code>index.html</code>. Use <code>git add</code> if you want this file's changes to be included in your next commit.</em></p>
-<p>At the risk of oversimplifying a bit, the Git workflow more or less comes down to this:</p>
+<li>And we will pass along a helpful error message as a <em>query parameter</em> in the URL
 <ul>
-<li>Create some initial stuff</li>
-<li><code>init</code></li>
-<li><code>add</code> and <code>commit</code></li>
-<li>make some changes</li>
-<li><code>add</code> and <code>commit</code></li>
-<li>make some more changes</li>
-<li><code>add</code> and <code>commit</code></li>
-<li>... etc</li>
+<li>But spaces aren't allowed in URLs! So we'll need to <em>escape</em> the error message</li>
+</ul></li>
+</ul></li>
+<li>Back on the homepage, we will display the error message, if it exists.</li>
 </ul>
-<p>The general rule is that <strong>whenever you make any changes, you must add and commit those changes to Git.</strong></p>
-<p>So let's now go ahead and do that. From within your root <code>html-me-something/</code> directory:</p>
-<pre><code class="language-nohighlight">$ git add index.html
-$ git commit -m "Finished work on HTML page"</code></pre>
-<p>You might be wondering: <em>How do I know when it's time to pause working and do another commit?</em></p>
-<p>This is somewhat subjective, and ultimately up to you. The basic guiding principle is that you should pause and commit any time you have reached a natural stopping point and completed a coherent &quot;chunk of work&quot;.</p>
+</li>
+<li>We will also answer the following question: Why is this back-end validation necessary? Doesn't the dropdown menu on the front-end already prevent the user from choosing a movie that isn't on their list?</li>
+</ol>
+<h2 id="studio-5">Studio 5</h2>
+<p>For Studio, your job is to include some validation on the <code>/add</code> route, to make sure the app responds appropriately no matter what the user has typed into that form.</p>
+<h3 id="checking-out-the-studio-code">Checking out the Studio code</h3>
+<p>Follow the <a href="../getting-the-code/">instructions for getting the code</a> in order to get the starter code for <code>studio5</code>.</p>
+<h3 id="your-task">Your Task</h3>
+<p>There are three things that might go wrong:</p>
+<ol>
+<li>
+<p>The user might try to add a so-called &quot;movie&quot; whose title is something like <code>"&lt;button&gt;Hacker Apocalypse&lt;/button&gt;"</code>. You can try this now and see for yourself what happens... the confirmation page will actually contain a real button! That's not good.</p>
+<p>Use the <code>escape</code> function from the <code>cgi</code> module in order to ensure that the user's input is properly escaped from the HMTL context.</p>
+</li>
+<li>
+<p>The user might fail to type anything at all, and then click the <code>Add It</code> button. If the user does not specify a movie, then you should reject their form submission, and redirect them back to the home page, with an error message that says something like</p>
 <blockquote>
-<p><em>NOTE:</em> For assignments such as these, we lean on the side of very large &quot;chunks of work&quot;, so that you aren't overwhelmed with Git and can spend most of your time focusing on your code. But a more experienced Git user probably would have broken down this <em>Part 1</em> into a handful of smaller commits.</p>
+<p>Please specify the name of the movie you want to add</p>
 </blockquote>
-<h2 id="done">Done!</h2>
-<p>Well done! Time to <a href="../part2-css">dive into some CSS</a>.</p>
+</li>
+<li>
+<p>The user might try to add a movie that <a href="https://www.youtube.com/watch?v=dPxI4yOKdgc">sucks</a>. Indeed, your users don't always know what's in their best interest, and there are times when it is best to intervene. Near the top of your <code>main.py</code> file you will see a variable called <code>terrible_movies</code>, which defines a list of movies that should be absolutely forbidden. If the user tries to add one of the movies in that list, you should redirect them back to the homepage with an error message that says something like:</p>
+<blockquote>
+<p>Trust me, you don't want to add 'Nine Lives' to your Watchlist.</p>
+</blockquote>
+</li>
+</ol>
                                     </section>
 
             </div>

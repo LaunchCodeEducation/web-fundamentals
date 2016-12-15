@@ -4,19 +4,21 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Assignment: Blogz :: LaunchCode Web Fundamentals</title>
+        <title>Assignment: Blogz :: Unit 2: Web Fundamentals</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/bootstrap.min.css">
-        <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/font-awesome.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/highlight.dark.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/main.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/custom.css">
     </head>
     <body>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
-            <a class="navbar-brand" href="http://education.launchcode.org/web-fundamentals/">
-                LaunchCode Web Fundamentals
+            <a class="navbar-brand dabomb" href="http://education.launchcode.org/web-fundamentals/"></a>
+
+            <a class="navbar-brand site-title" href="http://education.launchcode.org/web-fundamentals/">
+                <h1>Unit 2: Web Fundamentals</h1>
             </a>
 
             <ul class="nav navbar-nav navbar-right">
@@ -37,7 +39,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                   <h4 class="modal-title">Search LaunchCode Web Fundamentals</h4>
+                   <h4 class="modal-title">Search Unit 2: Web Fundamentals</h4>
                 </div>
                 <div class="modal-body">
                     <script>
@@ -68,24 +70,39 @@
                     <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
 
                         <ul class="nav nav-pills nav-stacked">
-                                                            <li class="">
-                                    <a href="http://education.launchcode.org/web-fundamentals/schedule/">
-                                        Schedule
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/classes/">
+                                        Classes
                                     </a>
                                 </li>
-                                                            <li class="">
-                                    <a href="http://education.launchcode.org/web-fundamentals/syllabus/">
-                                        Syllabus
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/studios/">
+                                        Studios
                                     </a>
                                 </li>
-                                                            <li class="">
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/assignments/">
+                                        Assignments
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
                                     <a href="https://www.udacity.com/course/web-development--cs253">
-                                        CS253
+                                        Udacity CS253
                                     </a>
                                 </li>
-                                                            <li class="">
-                                    <a href="http://education.launchcode.org/web-fundamentals/python2vs3/">
-                                        Python 2 vs. 3
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/cheatsheets/">
+                                        Cheatsheets
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/issues/">
+                                        Issues
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/about/">
+                                        About this Unit
                                     </a>
                                 </li>
                                                     </ul>
@@ -94,7 +111,7 @@
 
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                    <h1>Assignment: Blogz</h1>
+                                        <h1>Assignment: Blogz</h1>
                     <p>For the last problem set, we built a blog. We were able to persist data in the datastore and retrieve that data for display. However, there are still some serious feature gaps. We're going to fill those in during this problem set.</p>
 <p>We'll add authentication, so that users have to log in to create posts. Additionally, users will have their own blogs, and visitors will be able to view an individual's blog on it's own, or a listing of all blog posts on the site. Finally, our site will be usable by the rest of the world!</p>
 <p>Throughout the assignment, refer to the <a href="http://blogz-demo.appspot.com/">demo app</a>. Feel free to create an account, make a post or two, and poke around.</p>
@@ -156,13 +173,12 @@
 <h4 id="author-links-below-individual-post-pages">Author links below individual post pages</h4>
 <p>Like in the Build-a-blog assignment, post titles have permalinks which link to the unique page for each post. A path for such a link might look like <code>/blog/6192449487634432</code>. These pages use the <code>post.html</code> template and are handled by <code>ViewPostHandler</code>, and they currently display only the date that the post was written on, just below the post body. As above, modify this template to display the author, and link back to the author's blog page.</p>
 <p>When you're done with this task, you're ready to submit.</p>
-<h2 id="submitting-your-work">Submitting Your Work</h2>
-<p>When you are ready to submit, make sure you <code>add</code>, <code>commit</code> and <code>push</code> all the changes you have made, so that your remote repo is up to date with the work you have done locally.</p>
-<p>On Vocareum, clone your repository into your <code>work/</code> folder and then Click submit.</p>
+<h3 id="submit">Submit</h3>
+<p>To turn in your assignment and get credit, follow the [submission instructions][submission-instructions].</p>
 <blockquote>
-<p>Remember that you should ignore any Udacity instructions about hosting your app out on the internet and posting the link so they can grade it. You don't have to submit your work to Udacity, you just have to submit to LaunchCode on Vocareum.</p>
+<p>Remember that you should ignore any Udacity instructions about hosting your app out on the internet and posting the link so they can grade it. You don't have to submit your work to Udacity.</p>
 </blockquote>
-                </section>
+                                    </section>
 
             </div>
         </main>
@@ -177,6 +193,17 @@
                 // Syntax highlighting
                 hljs.initHighlightingOnLoad();
             });
+        </script>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', "UA-78748330-3", 'auto');
+            ga('send', 'pageview');
+
         </script>
 
     </body>

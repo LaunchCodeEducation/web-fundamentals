@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Studio: Flicklist 3 :: Unit 2: Web Fundamentals</title>
+
+        <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/highlight.dark.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/main.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/custom.css">
+    </head>
+    <body>
+
+        <header class="navbar navbar-default navbar-fixed-top">
+
+            <a class="navbar-brand dabomb" href="http://education.launchcode.org/web-fundamentals/"></a>
+
+            <a class="navbar-brand site-title" href="http://education.launchcode.org/web-fundamentals/">
+                <h1>Unit 2: Web Fundamentals</h1>
+            </a>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">
+                      <span id="searchGlyph" class="glyphicon glyphicon-search"></span> <span class="hidden-sm hidden-md hidden-lg">Search</span>
+                    </a>
+                </li>
+            </ul>
+
+        </header>
+
+        <!-- Search Modal -->
+        <div id="modalSearch" class="modal fade" role="dialog">
+           <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   <h4 class="modal-title">Search Unit 2: Web Fundamentals</h4>
+                </div>
+                <div class="modal-body">
+                    <script>
+                      (function() {
+                        var cx = "014657181352409571810:wecoswt6tpe";
+                        var gcse = document.createElement('script');
+                        gcse.type = 'text/javascript';
+                        gcse.async = true;
+                        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(gcse, s);
+                      })();
+                    </script>
+                    <gcse:search></gcse:search>
+                </div>
+                <div class="modal-footer">
+                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+           </div>
+        </div>
+
+        <main class="container-fluid">
+            <div class="row">
+
+                
+                    <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+
+                        <ul class="nav nav-pills nav-stacked">
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/classes/">
+                                        Classes
+                                    </a>
+                                </li>
+                                                            <li class="active lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/studios/">
+                                        Studios
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/assignments/">
+                                        Assignments
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="https://www.udacity.com/course/web-development--cs253">
+                                        Udacity CS253
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/cheatsheets/">
+                                        Cheatsheets
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/issues/">
+                                        Issues
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/about/">
+                                        About this Unit
+                                    </a>
+                                </li>
+                                                    </ul>
+
+                    </nav>
+
+                
+                <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+                                        <h1>Studio: Flicklist 3</h1>
+                    <p>This studio marks the beginning of our exploration of the mechanics and ideas involved in building full-stack web applications. The term <strong>full-stack</strong> simply means that we'll look at every aspect of web applications, from the pages that a user views and interacts with, to the Python code that decides how to handle user submissions and requests, to the database that stores information.</p>
+<p>Starting today, the majority of in-class sessions will revolve around building a class project together. Each day of class, we will add a little bit more onto the project: your instructor will live-code some new feature, and then for Studio you will be asked to add a little more.</p>
+<p>The mechanics of how you will work on Studios will be the same for nearly every class going forward, so we'll cover them in a bit more detail this time, as a proper introduction to this strategy.</p>
+<h3 id="flicklist">FlickList</h3>
+<p>Our app will be called <em>FlickList</em>, as in: a list of &quot;flicks&quot; or movies. It'll start out small, but within a few weeks it will have a lot of useful functionality that will allow users to create a list of movies they want to see, edit the list, mark movies as watched, and rate the movies they have watched.</p>
+<h3 id="project-setup">Project setup</h3>
+<p>Let's do some setup work to get our project ready. We'll only have to do this once.</p>
+<h4 id="clone-the-repository">Clone the repository</h4>
+<p>In a terminal, navigate to whichever directory you use to store your code projects. Leave the terminal open, and visit the <a href="https://github.com/LaunchCodeEducation/flicklist-python">Flicklist repository page on GitHub</a>. Copy the clone URL from the &quot;Clone or download&quot; dropdown.</p>
+<p>Back in your terminal:</p>
+<pre><code>$ git clone [URL]</code></pre>
+<p>Where [URL] is replaced with the repository URL.</p>
+<p>This creates a copy of the repository on your laptop.</p>
+<h4 id="create-new-app-engine-app">Create new App Engine app</h4>
+<p>Now, open the Google App Engine Launcher. Create a new app using the app ID <code>flicklist-python</code>. The application directory should be <em>one level above</em> the repository directory that was just created by cloning the repository. So, if your copy of the repository is in <code>/home/student/code-projects/flicklist-python</code>, then you would set the application directory to <code>/home/student/code-projects/</code>. In previous usage of Google App Engine Launcher, the tool created a new directory for us using the specified project ID. In this case, however, we want to use the directory that is already there. If we get the application ID and directory settings correct, Google App Engine will do this just like we want.</p>
+<p><img src="images/flicklist-gae.png" alt="flicklist-python in GAE" /></p>
+<p>Recall that you can set the port settings in the dialog to almost anything you like, as long as you know to access your app in the browser using the correct port. Here, we uses 8000 and 8080 for admin and application ports, respectively.</p>
+<h3 id="walkthrough-3-hello-movies">Walkthrough 3: Hello, Movies!</h3>
+<p>In class, we'll walk through the steps to set up our new application that are outlined above. We'll discuss the dynamics of web applications:</p>
+<ul>
+<li>How is a dynamic web application different form a static website, and what can a dynamic web app do that a static site cannot?</li>
+<li>What exactly is the application, and how does it &quot;run&quot;?</li>
+<li>How do HTTP requests and responses work?</li>
+<li>GET and POST requests types</li>
+<li>Review of Python class syntax, and the <code>self</code> parameter</li>
+<li>Routes in a web appliction (i.e. how does a specific request get matched with a specific handler class based on the URL?)</li>
+</ul>
+<p>We'll also add a bit of code to display a new heading and a &quot;Movie of the Day&quot;, which is really just a hard-coded string. You will make this more interesting during the studio.</p>
+<h3 id="checking-out-the-studio-code">Checking out the Studio code</h3>
+<p>Follow the <a href="../getting-the-code/">instructions for getting the code</a> in order to get the starter code for <code>studio3</code>.</p>
+<h3 id="studio-3-movie-of-the-day">Studio 3: Movie of the Day</h3>
+<p>Before you get started, fire up the Flicklist app using Google App Engine Launcher and visit the home page in a browser. You should see a page that looks like this.</p>
+<p><img src="images/walkthrough3-flicklist.png" alt="Walkthrough 3 version of Flicklist" /></p>
+<p>If you don't, make sure the app is running and check the URL.</p>
+<h5 id="your-task">Your Task</h5>
+<p>Currently, this app is kind of boring, because the movie of the day is always <em>The Big Lebowski</em>. What if, each time you visit the page, it randomly surprises you with a different movie? That would be much more exciting. Your job is to implement this random movie feature.</p>
+<p>In Atom, open up the <code>flicklist-python</code> folder, and then the <code>main.py</code> file. Notice that you have a couple of TODOs, noted by comments. Completing these will upgrade our app so that rather than displaying the same movie each time, instead it displays a random movie from a list. Here are some more details on what you need to do.</p>
+<ol>
+<li>Inside the <code>getRandomMovie</code> method, create a Python list that contains at least 5 movie title strings.</li>
+<li>In the same method, choose one of the titles randomly, and modify the return statement so that instead of the hard-coded value &quot;The Big Lebowski&quot;, it returns the randomly selected title. Here are some tips:
+<ul>
+<li>Recall that we can generate random numbers in Python with <a href="https://docs.python.org/2/library/random.html">the <code>random</code> module</a>. Add <code>import random</code> to the top of <code>main.py</code> to make this module available to our code. Read the module documentation to determine which method within the module is best for the task at hand.</li>
+<li>Write your code so that if you were to add or remove some movies from your list, it will still randomly choose one, no matter how many items are in the list. In other words, your code should not contain a &quot;magic number&quot; like <code>5</code>.</li>
+</ul></li>
+<li>In addition to today's movie, add another section of the page that informs people what tomorrow's movie will be. Back in your <code>get</code> method, add another chunk of HTML to your response string. You can do the same basic thing again: an <code>&lt;h1&gt;</code> element, with a <code>&lt;p&gt;</code> element underneath it.</li>
+</ol>
+<p>If you complete the steps above, you should see that the &quot;movie of the day&quot; changes each time you refresh the page!</p>
+<p>Hopefully this gives you some sense for the difference between a static web site and a dynamic web app running on a server. Even something as simple as our &quot;random movie of the day&quot; page would be impossible to implement as a static site. In order to dynamically build HTML content &quot;on the fly&quot;, like we did here, you need a programming language like Python running on the back-end.</p>
+<p>When you're done with your studio code (or even if you're not done, but you are about to pack up your computer), make sure to commit your changes:</p>
+<pre><code>$ git add .
+$ git commit -m "USEFUL MESSAGE"</code></pre>
+                                    </section>
+
+            </div>
+        </main>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="http://education.launchcode.org/web-fundamentals/js/bootstrap.min.js"></script>
+        <script src="//yastatic.net/highlightjs/8.2/highlight.min.js"></script>
+
+        <script>
+            $(function() {
+                $("section>h1").wrap('<div class="page-header" />');
+                // Syntax highlighting
+                hljs.initHighlightingOnLoad();
+            });
+        </script>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', "UA-78748330-3", 'auto');
+            ga('send', 'pageview');
+
+        </script>
+
+    </body>
+</html>
