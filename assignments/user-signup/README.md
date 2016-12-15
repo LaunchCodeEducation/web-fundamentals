@@ -29,7 +29,7 @@ Your page does not have to look exactly the same as their example (here's [our v
 
 To turn in your assignment and get credit, follow the [submission instructions][submission-instructions].
 
-> Remember that you should ignore any Udacity instructions about hosting your app out on the internet and posting the link so they can grade it. You don't have to submit your work to Udacity, you just have to submit to LaunchCode on Vocareum.
+> Remember that you should ignore any Udacity instructions about hosting your app out on the internet and posting the link so they can grade it. You don't have to submit your work to Udacity, you just have to submit to LaunchCode by demoing your code to your TF.
 
 
 [pset2]: https://classroom.udacity.com/courses/cs253/lessons/48756009/concepts/485384170923#

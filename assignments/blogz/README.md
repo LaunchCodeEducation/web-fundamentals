@@ -113,7 +113,7 @@ When you're done with this task, you're ready to submit.
 
 To turn in your assignment and get credit, follow the [submission instructions][submission-instructions].
 
-> Remember that you should ignore any Udacity instructions about hosting your app out on the internet and posting the link so they can grade it. You don't have to submit your work to Udacity, you just have to submit to LaunchCode on Vocareum.
+> Remember that you should ignore any Udacity instructions about hosting your app out on the internet and posting the link so they can grade it. You don't have to submit your work to Udacity.
 
 [blogz-demo]: http://blogz-demo.appspot.com/
 [blogz-demo-blog]: http://blogz-demo.appspot.com/blog

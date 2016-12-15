@@ -119,7 +119,7 @@ Note that `posts.count()` returns the *total* number of entities, not just those
 
 To turn in your assignment and get credit, follow the [submission instructions][submission-instructions].
 
-> Remember that you should ignore any Udacity instructions about hosting your app out on the internet and posting the link so they can grade it. You don't have to submit your work to Udacity, you just have to submit to LaunchCode on Vocareum.
+> Remember that you should ignore any Udacity instructions about hosting your app out on the internet and posting the link so they can grade it. You don't have to submit your work to Udacity.
 
 
 [pset3]: https://classroom.udacity.com/courses/cs253/lessons/48198869/concepts/485084250923#
