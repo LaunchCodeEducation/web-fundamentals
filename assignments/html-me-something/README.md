@@ -175,7 +175,7 @@ When you are ready to submit, complete the following steps:
 
 Github.com is website that hosts Git repositories "in the cloud". A repository that is up on Github often functions as the central hub for a project, so that a developer can do work across multiple machines, or multiple developers can work collaboratively on the same project.
 
-For the remainder of this course, you will use Github to submit your work on Vocareum. Here's how:
+For the remainder of this course, you will use Github to submit your work. Here's how:
 
 1. #### Create a repo on Github
 
@@ -231,25 +231,9 @@ For the remainder of this course, you will use Github to submit your work on Voc
 
 	If you now refresh the browser window on your Github page, you should see that your HTML and CSS files have appeared!
 
-### Vocareum
+### Submit
 
-Now that your code is up on Github, you are ready to clone it down into Vocareum and submit.
-
-1. In Vocareum, go to the assignment titled *Html Me Something* and click the *My Work* button.
-
-1. You should have a terminal at the bottom of your Vocareum workspace. In the terminal, use the `git clone` command to clone your remote repo down into your vocareum workspace:
-
-	```nohighlight
-	$ git clone https://github.com/YOURUSERNAME/html-me-something
-	```
-
-	You should now see in your workspace that your `html-me-something/` folder has appeared.
-
-1. Click *Submit*.
-
-### Demo
-
-Last but not least, **in order to receive credit, you must demo your project in-person with your TF.** To "demo" simply means you open up your pretty webpage in a browser and show it off, so your TF can see it in all its glory. You should also be prepared to show your sourcecode as well.
+To turn in your assignment and get credit, follow the [submission instructions][submission-instructions].
 
 ### Extra Credit: Host your Page using Github Pages
 
@@ -270,3 +254,5 @@ Github provides free hosting for any "static" web content (like this project). A
 	```nohighlight
 	$ git push origin gh-pages
 	```
+
+[submission-instructions]: ../

@@ -25,15 +25,9 @@ Your page does not have to look exactly the same as their example (here's [our v
 > Note that Udacity provides a "solution" to the problem... you are free to look at their solution, but obviously you should not try copy it. In any case you will not find it very helpful, as they make use of templates, which you have not learned about yet.
 
 
-## Submitting Your Work
+### Submit
 
-When you are ready to submit, follow this process:
-
-1. Make sure you `add` and `commit` all the changes you have made.
-1. Create a remote repo on Github, and use the `git remote` command so that your local repo has a reference to your remote one.
-1. Use the `git push` command so that your remote repo is up to date with the work you have done locally.
-1. On Vocareum, click on the *User Signup* assignment, and then `clone` your repository into your `work/` folder, and finally, click Submit.
-1. Demo your project with your TF.
+To turn in your assignment and get credit, follow the [submission instructions][submission-instructions].
 
 > Remember that you should ignore any Udacity instructions about hosting your app out on the internet and posting the link so they can grade it. You don't have to submit your work to Udacity, you just have to submit to LaunchCode on Vocareum.
 

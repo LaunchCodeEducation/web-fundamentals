@@ -1,8 +1,8 @@
-[< Back to Assignment page](..)
-
 ---
 title: 'HTML Me Something, Part I: HTML'
 ---
+
+[< Back to Assignment page](..)
 
 In Part 1, you will get comfortable with writing markup, and with separating content from design and layout.
 
@@ -22,22 +22,22 @@ Stub out `index.html` with these basic elements:
 
 Your mission: Build a page that...
 
-	* Tells a story. This can be personal, or not. Funny, serious or neither. You can do whatever you like, but generally, it should be something in the range of 3-10 paragraphs or sections. [Here is an example](http://education.launchcode.org/html-me-something/submissions/chrisbay/index-nocss.html), and here are some other ideas:
+* Tells a story. This can be personal, or not. Funny, serious or neither. You can do whatever you like, but generally, it should be something in the range of 3-10 paragraphs or sections. [Here is an example](http://education.launchcode.org/html-me-something/submissions/chrisbay/index-nocss.html), and here are some other ideas:
 
-		- Create a resume page that tells the story of your professional journey to-date, and where you want to go as a coder.
-		- Tell the story of a trip that you took.
-		- Talk about some hobby or passion of yours.
+	- Create a resume page that tells the story of your professional journey to-date, and where you want to go as a coder.
+	- Tell the story of a trip that you took.
+	- Talk about some hobby or passion of yours.
 
 
-	* Does each of the following:
+* Does each of the following:
 
-		- Uses each of the following structural HTML5 tags: `<p>`, `<header>`, `<footer>`, `<main>`, `<article>`. If you need to brush up on what each of these tags is used for, or if any of them are new to you, check out the [HTML tag reference](http://www.w3schools.com/tags/default.asp) at w3schools.
+	- Uses each of the following structural HTML5 tags: `<p>`, `<header>`, `<footer>`, `<main>`, `<article>`. If you need to brush up on what each of these tags is used for, or if any of them are new to you, check out the [HTML tag reference](http://www.w3schools.com/tags/default.asp) at w3schools.
 
-		- Use at least one `<img>` tag (and hopefully more). When placing images in your page, put them in a new subfolder called `images` within your `html-me-something` directory.
+	- Use at least one `<img>` tag (and hopefully more). When placing images in your page, put them in a new subfolder called `images` within your `html-me-something` directory.
 
-		- Uses at least one [HTML entity](http://www.w3schools.com/html/html_entities.asp). Hint: putting a copyright notice in your footer will afford you the opportunity to use &copy;, but you should also try to get creative here.
+	- Uses at least one [HTML entity](http://www.w3schools.com/html/html_entities.asp). Hint: putting a copyright notice in your footer will afford you the opportunity to use &copy;, but you should also try to get creative here.
 
-		- Gets creative. Don't stop with these items or tags. Have some ideas for your page, and make it great. And dig into the [w3schools HTML reference](http://www.w3schools.com/tags/default.asp) to learn more about other tags, their usage and attributes!
+	- Gets creative. Don't stop with these items or tags. Have some ideas for your page, and make it great. And dig into the [w3schools HTML reference](http://www.w3schools.com/tags/default.asp) to learn more about other tags, their usage and attributes!
 
 ### Notes and Tips
 

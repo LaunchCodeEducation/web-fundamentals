@@ -1,33 +1,40 @@
 
 template:
-    url: https://github.com/LaunchCodeEducation/Template-Light
-    # directory: ../Template-Light
+    # url: https://github.com/LaunchCodeEducation/Template-Light
+    directory: ../Template-Light
 
 # Base URL of the published website
 baseUrl: http://education.launchcode.org/web-fundamentals
 
+siteTitle: Web Fundamentals
 
-# Used to link to the GitHub project
-github:
-    user: LaunchCodeEducation
-    repo: web-fundamentals
-
-siteTitle: LaunchCode Web Fundamentals
-
+# Google Custom Search Engine ID
 cseId: 014657181352409571810:wecoswt6tpe
+
+# Google Analytics ID
+gaId: UA-78748330-3
 
 # The left menu bar
 menu:
     items:
-        schedule:
-            text: Schedule
-            relativeUrl: schedule/
-        syllabus:
-            text: Syllabus
-            relativeUrl: syllabus/
+        classes:
+            text: Classes
+            relativeUrl: class/
+        studios:
+            text: Studios
+            relativeUrl: studios/
+        assignments:
+            text: Assignments
+            relativeUrl: assignments/
         udacity:
-            text: CS253
+            text: Udacity CS253
             absoluteUrl: https://www.udacity.com/course/web-development--cs253
-        python2vs3:
-            text: Python 2 vs. 3
-            relativeUrl: python2vs3/
+        cheatsheets:
+            text: Cheatsheets
+            relativeUrl: cheatsheets/
+        issues:
+            text: Issues
+            relativeUrl: issues/
+        about:
+            text: About this Unit
+            relativeUrl: about/

@@ -115,11 +115,9 @@ posts.count(offset=offset, limit=page_size)
 ```
 Note that `posts.count()` returns the *total* number of entities, not just those queried.
 
-## Submitting Your Work
+### Submit
 
-When you are ready to submit, make sure you `add`, `commit` and `push` all the changes you have made, so that your remote repo is up to date with the work you have done locally.
-
-On Vocareum, clone your repository into your `work/` folder and then Click submit.
+To turn in your assignment and get credit, follow the [submission instructions][submission-instructions].
 
 > Remember that you should ignore any Udacity instructions about hosting your app out on the internet and posting the link so they can grade it. You don't have to submit your work to Udacity, you just have to submit to LaunchCode on Vocareum.
 

@@ -1,5 +1,6 @@
 ---
 title: Schedule
+currentMenu: schedule
 ---
 
 Please note that you should do the Prep Work **before** coming to class!
