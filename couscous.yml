@@ -19,7 +19,7 @@ menu:
     items:
         classes:
             text: Classes
-            relativeUrl: class/
+            relativeUrl: classes/
         studios:
             text: Studios
             relativeUrl: studios/
