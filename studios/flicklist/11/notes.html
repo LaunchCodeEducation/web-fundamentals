@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>HTML Me Something, Part I: HTML :: Unit 2: Web Fundamentals</title>
+        <title>Class 11 Notes :: Unit 2: Web Fundamentals</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/highlight.dark.css">
@@ -111,95 +111,80 @@
 
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                                        <h1>HTML Me Something, Part I: HTML</h1>
-                    <p><a href="..">&lt; Back to Assignment page</a></p>
-<p>In Part 1, you will get comfortable with writing markup, and with separating content from design and layout.</p>
-<h2 id="getting-started">Getting Started</h2>
-<p>Stub out <code>index.html</code> with these basic elements:</p>
+                                        <h1>Class 11 Notes</h1>
+                    <h2 id="before-walkthrough-11">Before Walkthrough 11</h2>
 <ul>
-<li>the HTML5 doctype</li>
-<li><code>&lt;html&gt;</code></li>
-<li><code>&lt;head&gt;</code></li>
-<li><code>&lt;title&gt;</code></li>
-<li><code>&lt;body&gt;</code></li>
-</ul>
-<p>...and fill each element with some appropriate content. You can start by removing the snippet of HTML that you added during setup.</p>
-<h2 id="getting-to-work">Getting to Work</h2>
-<p>Your mission: Build a page that...</p>
+<li>a ton of new stuff, infrastructure for user accounts
 <ul>
-<li>
-<p>Tells a story. This can be personal, or not. Funny, serious or neither. You can do whatever you like, but generally, it should be something in the range of 3-10 paragraphs or sections. <a href="http://education.launchcode.org/html-me-something/submissions/chrisbay/index-nocss.html">Here is an example</a>, and here are some other ideas:</p>
+<li><code>User</code> model
 <ul>
-<li>Create a resume page that tells the story of your professional journey to-date, and where you want to go as a coder.</li>
-<li>Tell the story of a trip that you took.</li>
-<li>Talk about some hobby or passion of yours.</li>
-</ul>
-</li>
-<li>
-<p>Does each of the following:</p>
+<li>just two fields, username and password hash</li>
+</ul></li>
+<li>Registration
 <ul>
-<li>
-<p>Uses each of the following structural HTML5 tags: <code>&lt;p&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>. If you need to brush up on what each of these tags is used for, or if any of them are new to you, check out the <a href="http://www.w3schools.com/tags/default.asp">HTML tag reference</a> at w3schools.</p>
-</li>
-<li>
-<p>Use at least one <code>&lt;img&gt;</code> tag (and hopefully more). When placing images in your page, put them in a new subfolder called <code>images</code> within your <code>html-me-something</code> directory.</p>
-</li>
-<li>
-<p>Uses at least one <a href="http://www.w3schools.com/html/html_entities.asp">HTML entity</a>. Hint: putting a copyright notice in your footer will afford you the opportunity to use &copy;, but you should also try to get creative here.</p>
-</li>
-<li>Gets creative. Don't stop with these items or tags. Have some ideas for your page, and make it great. And dig into the <a href="http://www.w3schools.com/tags/default.asp">w3schools HTML reference</a> to learn more about other tags, their usage and attributes!</li>
-</ul>
-</li>
-</ul>
-<h3 id="notes-and-tips">Notes and Tips</h3>
+<li><code>/registration</code> route and <code>Registration</code> handler</li>
+<li>the handler is kind of complicated, has a bunch of helpers for veryifying password and such</li>
+</ul></li>
+<li>Login / Logout
 <ul>
-<li>
-<p>Don't add any CSS yet. Really, we mean it! If you think your page looks boring now, that's okay. We'll get there soon enough.</p>
-</li>
-<li>
-<p>As you make changes, you will obviously want to see the results. To do so, simply re-save the file in your text editor, and then, over in your browser window, click Refresh.</p>
-</li>
-<li>
-<p>Use your browser developer tools to troubleshoot things that don't look right. You can also use the <em>View Source</em> option on your page and other pages on the web, to see what HTML is being used, and to get ideas.</p>
-</li>
-<li>Rely on reference sites linked on this page, and elsewhere online. We haven't taught you every detail about every tag here that you may want or need to use, and you're free to use tags that haven't been explicitly introduced in class. We've given you enough background to get started, and are intentionally leaving some of the learning up to you.</li>
-</ul>
-<h2 id="add-and-commit-your-changes-on-git">Add and Commit Your Changes on Git</h2>
-<p>Once you are finished, use Git once again to <code>add</code> and <code>commit</code> your <code>index.html</code> changes.</p>
-<p><em>Why again?</em></p>
-<p>The reason is that, since you have added a bunch of new HTML code, your <code>index.html</code> file is now in a very different state from how it looked the first time you committed it. You can see this by checking your status:</p>
-<pre><code class="language-nohighlight">$ git status
-On branch gh-pages
-Changes not staged for commit:
-  (use "git add &lt;file&gt;..." to update what will be committed)
-  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
-
-    modified:   index.html
-
-no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
-<p>Git is telling us: <em>I see that you have modified <code>index.html</code>. Use <code>git add</code> if you want this file's changes to be included in your next commit.</em></p>
-<p>At the risk of oversimplifying a bit, the Git workflow more or less comes down to this:</p>
+<li><code>/login</code> route and <code>Login</code> handler</li>
+<li><code>/logout</code> route and <code>Logout</code> handler</li>
+</ul></li>
+<li>Add more methods to the base <code>Handler</code> class
 <ul>
-<li>Create some initial stuff</li>
-<li><code>init</code></li>
-<li><code>add</code> and <code>commit</code></li>
-<li>make some changes</li>
-<li><code>add</code> and <code>commit</code></li>
-<li>make some more changes</li>
-<li><code>add</code> and <code>commit</code></li>
-<li>... etc</li>
+<li>helpers for logging in and out and managing cookies</li>
+<li>the <code>initialize</code> method, which comes from the parent class <code>webapp2.RequestHandler</code>. We use it to create a login wall around any pages that require login.</li>
+</ul></li>
+<li><code>hashutils.py</code>, a bunch of helper functions for hashing and salting stuff</li>
+</ul></li>
 </ul>
-<p>The general rule is that <strong>whenever you make any changes, you must add and commit those changes to Git.</strong></p>
-<p>So let's now go ahead and do that. From within your root <code>html-me-something/</code> directory:</p>
-<pre><code class="language-nohighlight">$ git add index.html
-$ git commit -m "Finished work on HTML page"</code></pre>
-<p>You might be wondering: <em>How do I know when it's time to pause working and do another commit?</em></p>
-<p>This is somewhat subjective, and ultimately up to you. The basic guiding principle is that you should pause and commit any time you have reached a natural stopping point and completed a coherent &quot;chunk of work&quot;.</p>
-<blockquote>
-<p><em>NOTE:</em> For assignments such as these, we lean on the side of very large &quot;chunks of work&quot;, so that you aren't overwhelmed with Git and can spend most of your time focusing on your code. But a more experienced Git user probably would have broken down this <em>Part 1</em> into a handful of smaller commits.</p>
-</blockquote>
-<h2 id="done">Done!</h2>
-<p>Well done! Time to <a href="../part2-css">dive into some CSS</a>.</p>
+<h2 id="during-walkthrough-11">During Walkthrough 11</h2>
+<ul>
+<li>First, we definitely do want to spend a little time going over the changes listed above.</li>
+<li>Integrate &quot;user accounts&quot; concept into the the rest of the app
+<ul>
+<li>Add <code>owner</code> field to the <code>Movie</code> class</li>
+<li>Update the <code>AddMovie</code> handler
+<ul>
+<li>When the new movie object is created, set its <code>.owner</code> to the current user</li>
+</ul></li>
+<li>Update the <code>MovieRatings</code> handler
+<ul>
+<li>When querying for watched movies, we need to filter for only the movies that belong to the currently logged-in user. We switch from using <code>GqlQuery("SELECT ... ")</code> to using ORM methods <code>all()</code> and <code>filter()</code>. I chained a few such method calls together into one line, but you might want to break it up into a few lines for clarity.</li>
+</ul></li>
+<li>Update <code>Index</code> handler
+<ul>
+<li>Actually, don't. Talk about how we are leaving a small hole for the students to fill during studio: namely, don't update the database query. So visiting <code>/</code> will still show a list of <em>everyone's</em> movies combined. The student will need to filter the query so that the user only sees their own movie list.</li>
+</ul></li>
+</ul></li>
+<li>Start to create another page at <code>/recently-watched</code> which will show the most recent ratings of <em>everyone</em> combined
+<ul>
+<li>Add <code>datetime_watched</code> field to <code>Movie</code> object
+<ul>
+<li>Need to do an import: <code>from datetime import datetime</code></li>
+</ul></li>
+<li>Update the <code>WatchedMovie</code> handler:
+<ul>
+<li>A movie has been watched, so set its <code>datetime_watched</code> field to <code>datetime.now()</code></li>
+</ul></li>
+<li>Create new handler <code>RecentlyWatchedMovies</code>
+<ul>
+<li>Implement <code>RecentlyWatchedMovies.get</code>. Query for all the watched movies, and sort by <code>datetime_watched</code>. Then run the query, but limit the result-set to 20 items.</li>
+<li>Display the titles of the movies in a rudimentary way, without using a template (student will have to do that).</li>
+<li>Leave a few other holes:</li>
+<li>Dont wire in the new <code>/recently-watched</code> route</li>
+<li>Don't implement the template</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="during-studio-11">During Studio 11</h2>
+<ol>
+<li>Fill the hole from walkthrough on the <code>Index</code> handler: replace the old GQL query with a new ORM query that only gives back the unwatched movies of <em>the current user</em>.</li>
+<li>Add a navigation link in <code>base.html</code> so that a logged-in user can log out.</li>
+<li>Add the <code>/recently-watched</code> route to your app</li>
+<li>In <code>RecentlyWatchedMovies.get</code> render the <code>recently-watched.html</code> template.</li>
+<li>Actually implement the <code>recently-watched.html</code> template.</li>
+</ol>
                                     </section>
 
             </div>
