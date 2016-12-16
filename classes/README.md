@@ -5,7 +5,7 @@ currentMenu: classes
 
 Class # | Prep Work | Studio | Topics
 -----|-----------|----------|--------
-1 | [Prep Work](../class-prep/1/) | | Git; Github; HTML; Setup stuff
+1 | [Prep Work](../class-prep/1/) | | <span class="tag">Git</span>; Github; HTML; Setup stuff
 2 | [Prep Work](../class-prep/2/) | [Headline News](../studios/headline-news/) | HTML; CSS
 3 | [Prep Work](../class-prep/3/) | [Flicklist 3](../studios/flicklist/3/) | HTTP / how the web works
 4 | [Prep Work](../class-prep/4/) | [Flicklist 4](../studios/flicklist/4/) | HTML forms and inputs
