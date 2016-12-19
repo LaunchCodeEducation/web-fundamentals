@@ -5,7 +5,7 @@ currentMenu: about
 
 This curriculum module was built to be Unit 2 of LaunchCode's LC101 course, though it may be learned independently assuming you have the prerequisite knowledge (see below).
 
-## How does a web app work?
+## How does a web application work?
 
 The goal of this unit is to give you a high-level overview of what is going on behind the scenes when you interact with a web application like Facebook or launchcode.org. To make the magic happen requires a large "stack" of technologies and programming languages working in tandem and communicating with each other. Some of these operations occur on separate physical computers -- potentially in different parts of the world -- from others. We will touch briefly on many of the most fundamental pieces of this dance, including:
 
