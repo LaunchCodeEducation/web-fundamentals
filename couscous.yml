@@ -6,6 +6,11 @@ template:
 # Base URL of the published website
 baseUrl: http://education.launchcode.org/web-fundamentals
 
+# Used to link to the GitHub project
+github:
+    user: LaunchCodeEducation
+    repo: web-fundamentals
+
 metaTitle: LC101
 siteTitle: 'Unit 2: Web Fundamentals'
 
