@@ -12,11 +12,11 @@ As we learn how web apps work, and how to build our own web apps, we'll be using
 
 #### Windows
 
-[Windows Installer](https://www.dropbox.com/s/ev9ln5o2krriy3t/GoogleAppEngine-1.9.40.msi?dl=0)
+[Windows Installer](https://www.dropbox.com/s/ev9ln5o2krriy3t/GoogleAppEngine-1.9.40.msi?dl=1)
 
 #### Mac
 
-[Mac Installer](https://www.dropbox.com/s/peh4xfcs2a7vqlb/GoogleAppEngineLauncher-1.9.38.dmg?dl=0)
+[Mac Installer](https://www.dropbox.com/s/peh4xfcs2a7vqlb/GoogleAppEngineLauncher-1.9.38.dmg?dl=1)
 
 #### Linux
 
