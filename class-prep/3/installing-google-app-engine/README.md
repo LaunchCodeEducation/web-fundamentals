@@ -10,7 +10,15 @@ As we learn how web apps work, and how to build our own web apps, we'll be using
 
 ### Install Google App Engine (GAE)
 
-For Windows and Mac OS X, follow [Google's instructions][gae-install] for your particular operating system. Be sure to only download and read the section "Google App Engine SDK for Python."
+#### Windows
+
+[Windows Installer](GoogleAppEngine-1.9.40.msi)
+
+#### Mac
+
+[Mac Installer](GoogleAppEngineLauncher-1.9.38.dmg)
+
+#### Linux
 
 For Linux systems, follow [this walkthrough][gae-on-linux] to install and run GAE on your machine.
 
@@ -22,5 +30,4 @@ If you're using Linux, much of the video will not be precisely applicable since 
 
 [Watch: Google App Engine Walkthrough](https://www.youtube.com/watch?v=KSFaeLRZNE8)
 
-[gae-install]: https://cloud.google.com/appengine/downloads#Google_App_Engine_SDK_for_Python
 [gae-on-linux]: http://archive.oreilly.com/pub/a/web-services/excerpts/9780596800697/run-google-app-linux.html
