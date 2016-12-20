@@ -40,4 +40,4 @@ If you're using Linux, much of the video will not be precisely applicable since 
 
 [Watch: Google App Engine Walkthrough](https://www.youtube.com/watch?v=KSFaeLRZNE8)
 
-[gae-on-linux]: http://archive.oreilly.com/pub/a/web-services/excerpts/9780596800697/run-google-app-linux.html
+[gae-on-linux]: linux.html
