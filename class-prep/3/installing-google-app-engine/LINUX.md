@@ -2,13 +2,15 @@
 title: Installing Google App Engine on Linux
 ---
 
-## Installing Google App Engine
+## Installing and Running Google App Engine
 
-1. Download the correct package from [Google Cloud SDK Documentation site](https://cloud.google.com/sdk/docs/#linux). **Do not follow the rest of the instructions on that page.** Instead, come back here and follow the steps below.
+1. Download the correct package from [Google Cloud SDK Documentation site](https://cloud.google.com/sdk/docs/#linux). **Do not follow the rest of the instructions on that page. Instead, come back here and follow the steps below.**
 2. From a Terminal, browse to the directory where the package is located and run:
     ```nohighlight
-    $ tar xvzf file
+    $ tar xzf google-cloud-sdk-138.0.0-linux-x86.tar.gz
     ```
+    (Your filename may vary slightly. Use tab-completion when typing this command.)
+
     Move the app files to your home directory, and then change to that directory:
     ```nohighlight
     $ mv google-cloud-sdk ~/
@@ -29,6 +31,7 @@ You will need to follow these steps for each application that you create. This w
     ```nohighlight
     $ mkdir my-app
     ```
+    Here, `my-app` is the name of our application. Change it accordingly when making additional apps in the future.
 2. **Create `app.yaml`** - From the same directory, run:
     ```nohighlight
     $ touch my-app/app.yaml
@@ -53,7 +56,7 @@ You will need to follow these steps for each application that you create. This w
     - name: webapp2
       version: "2.5.2"
     ```
-    This file is the configuration file for your application. You should replace the value `my-app` in the first line with the corresponding name for your application.
+    This file is the configuration file for your application. You should replace the value `my-app` in the first line with the corresponding name for your application when making additional apps in the future.
 3. **Create `main.py`** - From the same directory, run:
     ```nohighlight
     $ touch my-app/main.py
@@ -70,7 +73,7 @@ You will need to follow these steps for each application that you create. This w
         ('/', MainHandler)
     ], debug=True)
     ```
-    This is the main file that your code will live in. It creates a simple web application that only allows users to to visit the main URL `/` and only responds with a simple messge, `"Hello world!"`. There is no HTML, no other pages, nothing. We'll learn about making the application more complex as we move through the unit.
+    This is the main file that your code will live in. It creates a simple web application that only allows users to to visit the main URL `/` and only responds with a simple message, `"Hello world!"`. There is no HTML, no other pages, nothing. We'll learn about making the application more complex as we move through the unit.
 4. **Start local development server** - Again, from the `code` directory, run:
     ```nohighlight
     $ dev_appserver.py my-app
@@ -82,4 +85,4 @@ You will need to follow these steps for each application that you create. This w
     ```
     This command starts a server that runs on your laptop, and is accessible only for you for testing.
 5. **Test in a browser** - In a browser, visit `http://localhost:8080`. You should see the message `Hello world!`
-6. **Terminate the application** - To terminate your application, from teh terminal in which is is running, type `CTRL-C`.
+6. **Terminate the application** - To terminate your application, from the terminal in which it is running, type `CTRL-C`.
