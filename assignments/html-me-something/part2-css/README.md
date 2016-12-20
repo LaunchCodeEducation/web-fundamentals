@@ -1,5 +1,6 @@
 ---
 title: 'HTML Me Something, Part 2: CSS'
+currentMenu: assignments
 ---
 
 [< Back to Assignment page](..)

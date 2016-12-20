@@ -1,5 +1,6 @@
 ---
 title: 'Assignment: Fortune Cookie'
+currentMenu: assignments
 ---
 
 For this assignment, please follow along with the video tutorials below, and produce the same project yourself. The videos also include detailed explanations and digressions about what is happening.

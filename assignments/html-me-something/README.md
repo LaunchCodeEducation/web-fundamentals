@@ -1,5 +1,6 @@
 ---
 title: 'Assignment: HTML Me Something'
+currentMenu: assignments
 ---
 
 You've learned a bit of HTML and some CSS, but you have likely only used it in bits and pieces so far, adding or modifying content in exercises or pre-existing files. Here, you are going to take another step forward by building an entire page from scratch. You will also get some practice using Git.

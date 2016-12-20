@@ -1,5 +1,6 @@
 ---
 title: 'Assignment: Blogz'
+currentMenu: assignments
 ---
 
 For the last problem set, we built a blog. We were able to persist data in the datastore and retrieve that data for display. However, there are still some serious feature gaps. We're going to fill those in during this problem set.
