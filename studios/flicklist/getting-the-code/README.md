@@ -21,25 +21,14 @@ On branch studioM
 nothing to commit, working directory clean
 ```
 
-If you do have some uncommitted changes, go ahead and commit them now.
-
-Next, use `git fetch` to fetch new changes from the remote (your output will not always look exactly like this):
-
-```nohighlight
-$ git fetch
-remote: Counting objects: 9, done.
-remote: Total 9 (delta 3), reused 3 (delta 3), pack-reused 6
-Unpacking objects: 100% (9/9), done.
-From https://github.com/LaunchCodeEducation/flicklist-python
- * [new branch]      studioN    -> origin/studioN
-```
-
 Finally, checkout a new branch from the remote `origin/studioN` branch:
 
 ```nohighlight
-$ git checkout -b studioN origin/studioN
+$ git checkout studioN
 Branch studioN set up to track remote branch studioN from origin.
 Switched to a new branch 'studioN'
 ```
 
-This checks out a specific version of the code (called a **branch**) from the remote origin repository. The remote branch is named `studioN`, and we are checking it out into a new, local branch, also named `studioN`. You can think of a branch as a parallel version of the main codebase in the repository. We can work here, make changes, and check them in without affecting the main codebase (usually called the `master` branch).
+This checks out a specific version of the code (called a **branch**) from the remote origin repository. The remote branch is named `studioN`, and we are checking it out into a new, local branch, also named `studioN`.
+
+Think of a branch as a parallel version of the main codebase in the repository. We can work here, make changes, and check them in without affecting the main codebase (usually called the `master` branch).

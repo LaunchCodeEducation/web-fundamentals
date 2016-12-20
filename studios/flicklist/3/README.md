@@ -21,7 +21,7 @@ Let's do some setup work to get our project ready. We'll only have to do this on
 
 #### Clone the repository
 
-In a terminal, navigate to whichever directory you use to store your code projects. Leave the terminal open, and visit the [Flicklist repository page on GitHub](https://github.com/LaunchCodeEducation/flicklist-python). Copy the clone URL from the "Clone or download" dropdown.
+In a terminal, navigate to whichever directory you use to store your code projects. Leave the terminal open, and visit the [FlickList repository page on GitHub](https://github.com/LaunchCodeEducation/flicklist-python). Copy the clone URL from the "Clone or download" dropdown.
 
 Back in your terminal:
 ```
@@ -54,15 +54,37 @@ We'll also add a bit of code to display a new heading and a "Movie of the Day", 
 
 ### Checking out the Studio code
 
-Follow the [instructions for getting the code][get-the-code] in order to get the starter code for `studio3`.
+First, make sure you are in your `lc101/` folder. Then, clone our repository:
+
+```nohighlight
+git clone https://github.com/LaunchCodeEducation/flicklist-python.git
+```
+
+You should now have a new folder in your directory called `flicklist-python/`. Navigate into that folder:
+
+```nohighlight
+cd flicklist-python
+```
+
+We have already set up a bunch of "jumping off" points within this repository, one for each studio you will do.
+
+For today's studio, checkout the `studio3` branch:
+
+```nohighlight
+$ git checkout studio3
+Branch studio3 set up to track remote branch studio3 from origin.
+Switched to a new branch 'studio3'
+```
+
+This checks out a specific version of the code (called a **branch**) from the remote origin repository. Think of a branch as a parallel version of the main codebase in the repository. We can work here, make changes, and check them in without affecting the main codebase (usually called the `master` branch). The nice thing about this workflow is that you can work on today's studio without messing up your "starting point" for the next class, which is safely contained in a different branch called `studio4`.
 
 ### Studio 3: Movie of the Day
 
-Before you get started, fire up the Flicklist app using Google App Engine Launcher and visit the home page in a browser. You should see a page that looks like this.
+Before you get started, fire up the FlickList app using Google App Engine Launcher and visit the home page in a browser. You should see a page that looks like this.
 
-![Walkthrough 3 version of Flicklist](images/walkthrough3-flicklist.png)
+![Walkthrough 3 version of FlickList](images/walkthrough3-flicklist.png)
 
-If you don't, make sure the app is running and check the URL.
+If you don't see something like the above, make sure the app is running and check the URL.
 
 ##### Your Task
 
