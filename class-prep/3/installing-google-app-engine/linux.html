@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Installing Google App Engine :: Unit 2: Web Fundamentals</title>
+        <title>Installing Google App Engine on Linux :: Unit 2: Web Fundamentals</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/highlight.dark.css">
@@ -111,33 +111,66 @@
 
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                                        <h1>Installing Google App Engine</h1>
-                    <p>As we learn how web apps work, and how to build our own web apps, we'll be using Google App Engine. This tool will help us create and run web apps on our computers.</p>
-<p><em>Note 1</em>: <strong>Do not</strong> watch or follow the video &quot;Quiz: Google App Engine&quot; under the heading &quot;Problem Set 1 - Creating Your First Site&quot; on the Udacity course. This video is a bit out-of-date and therefore likely to confuse you. Skip this video, follow the instructions here, and you'll be set.</p>
-<p><em>Note 2</em>: If you read any information from Udacity or Google that makes it seem like you need to <em>publish</em> or <em>host</em> your site on the Google App Engine platform, or that you need to sign up for a Google App Engine account with a credit card, <strong>ignore it</strong>. We'll only use Google App Engine to run our apps locally on our computers, and you do not need to publish your work remotely to the Google App Engine platform. When Udactiy prompts you to do so, and to submit your URL to them for grading, ignore it. We'll do our own grading. And we'll remind you of this a few more times.</p>
-<h3 id="install-google-app-engine-gae">Install Google App Engine (GAE)</h3>
-<h4 id="windows">Windows</h4>
-<p><a href="https://www.dropbox.com/s/ev9ln5o2krriy3t/GoogleAppEngine-1.9.40.msi?dl=1">Windows Installer</a></p>
+                                        <h1>Installing Google App Engine on Linux</h1>
+                    <h2 id="installing-google-app-engine">Installing Google App Engine</h2>
 <ol>
-<li>Download and run the installer</li>
-<li>Click the install screen, using all default options</li>
-<li>After the installer finishes running, select <strong>Run the Installer</strong> and <strong>Finish</strong></li>
+<li>Download the correct package from <a href="https://cloud.google.com/sdk/docs/#linux">Google Cloud SDK Documentation site</a>. <strong>Do not follow the rest of the instructions on that page.</strong> Instead, come back here and follow the steps below.</li>
+<li>From a Terminal, browse to the directory where the package is located and run:
+<pre><code>$ tar xvzf file</code></pre>
+<p>Move the app files to your home directory, and then change to that directory:</p>
+<pre><code>$ mv google-cloud-sdk ~/
+$ cd</code></pre></li>
+<li>Run the package's install script:
+<pre><code>$ cd google-cloud-sdk
+$ ./install.sh</code></pre>
+<p>The script will ask you several questions. Answer <code>n</code> when asked to report usage to Google. Answer <code>Y</code> when asked to set up your <code>$PATH</code>, and accept the default bash profile location (unless you know that you have moved it).</p></li>
 </ol>
-<h4 id="mac">Mac</h4>
-<p><a href="https://www.dropbox.com/s/peh4xfcs2a7vqlb/GoogleAppEngineLauncher-1.9.38.dmg?dl=1">Mac Installer</a></p>
+<h2 id="creating-and-running-a-basic-application">Creating and running a basic application</h2>
+<p>You will need to follow these steps for each application that you create. This will be done several times throughout the unit, and differs quite a bit from the process for Windows and Mac.</p>
 <ol>
-<li>Download the installer file</li>
-<li>Open the installer .dmg file, and in the window that opens drag the Google App Engine Launcher icon to the Applications folder</li>
-<li>Visit your Applications folder, and open the GoogleAppEngineLaunchder application</li>
-<li>When prompted to &quot;Make Command Symlinks?&quot; select OK and enter the credentials for an admin on your computer</li>
-<li>Once the application fully loads, we recommend right-clicking on its icon in the dock and select <strong>Options &gt; Keep in Dock</strong></li>
+<li><strong>Make a new application folder</strong> - From your development directory (likely <code>/home/username/code/</code>):
+<pre><code>$ mkdir my-app</code></pre></li>
+<li>
+<p><strong>Create <code>app.yaml</code></strong> - From the same directory, run:</p>
+<pre><code>$ touch my-app/app.yaml</code></pre>
+<p>Open <code>app.yaml</code> in an editor and add the following contents:</p>
+<pre><code class="language-yaml">application: my-app
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: .*
+  script: main.app
+
+libraries:
+- name: webapp2
+  version: "2.5.2"</code></pre>
+</li>
+<li>
+<p><strong>Create <code>main.py</code></strong> - From the same directory, run:</p>
+<pre><code>$ touch my-app/main.py</code></pre>
+<p>Open <code>main.py</code> in an editor and add the following contents:</p>
+<pre><code class="language-python">import webapp2
+
+class MainHandler(webapp2.RequestHandler):
+    def get(self):
+        self.response.write('Hello world!')
+
+app = webapp2.WSGIApplication([
+    ('/', MainHandler)
+], debug=True)</code></pre>
+</li>
+<li><strong>Start local development server</strong> - Again, from the <code>code</code> directory, run:
+<pre><code>$ dev_appserver.py my-app</code></pre></li>
+<li><strong>Test in a browser</strong> - In a browser, visit <code>http://localhost:8080</code>. You should see the message <code>Hello world!</code></li>
+<li><strong>Terminate the application</strong> - To terminate your application, from teh terminal in which is is running, type <code>CTRL-C</code>.</li>
 </ol>
-<h4 id="linux">Linux</h4>
-<p>For Linux systems, follow <a href="linux.html">this walkthrough</a> to install and run GAE on your machine.</p>
-<h3 id="using-google-app-engine">Using Google App Engine</h3>
-<p>Now that you have GAE installed on your laptop, let's learn how to use it by walking through a Hello, World! app.</p>
-<p>If you're using Linux, much of the video will not be precisely applicable since there isn't a GUI tool for using GAE. However, you may find some value in the discussion of common errors messages.</p>
-<p><a href="https://www.youtube.com/watch?v=KSFaeLRZNE8">Watch: Google App Engine Walkthrough</a></p>
                                     </section>
 
             </div>
