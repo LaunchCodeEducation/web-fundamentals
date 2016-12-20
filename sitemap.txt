@@ -7,6 +7,7 @@ http://education.launchcode.org/web-fundamentals/assignments/html-me-something/p
 http://education.launchcode.org/web-fundamentals/assignments/html-me-something/part2-css/index.html
 http://education.launchcode.org/web-fundamentals/assignments/index.html
 http://education.launchcode.org/web-fundamentals/assignments/user-signup/index.html
+http://education.launchcode.org/web-fundamentals/assignments/web-caesar/index.html
 http://education.launchcode.org/web-fundamentals/cheatsheets/index.html
 http://education.launchcode.org/web-fundamentals/class-prep/1/index.html
 http://education.launchcode.org/web-fundamentals/class-prep/2/index.html
