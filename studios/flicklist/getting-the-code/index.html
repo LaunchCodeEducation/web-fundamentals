@@ -121,19 +121,12 @@
 <pre><code class="language-nohighlight">$ git status
 On branch studioM
 nothing to commit, working directory clean</code></pre>
-<p>If you do have some uncommitted changes, go ahead and commit them now.</p>
-<p>Next, use <code>git fetch</code> to fetch new changes from the remote (your output will not always look exactly like this):</p>
-<pre><code class="language-nohighlight">$ git fetch
-remote: Counting objects: 9, done.
-remote: Total 9 (delta 3), reused 3 (delta 3), pack-reused 6
-Unpacking objects: 100% (9/9), done.
-From https://github.com/LaunchCodeEducation/flicklist-python
- * [new branch]      studioN    -&gt; origin/studioN</code></pre>
 <p>Finally, checkout a new branch from the remote <code>origin/studioN</code> branch:</p>
-<pre><code class="language-nohighlight">$ git checkout -b studioN origin/studioN
+<pre><code class="language-nohighlight">$ git checkout studioN
 Branch studioN set up to track remote branch studioN from origin.
 Switched to a new branch 'studioN'</code></pre>
-<p>This checks out a specific version of the code (called a <strong>branch</strong>) from the remote origin repository. The remote branch is named <code>studioN</code>, and we are checking it out into a new, local branch, also named <code>studioN</code>. You can think of a branch as a parallel version of the main codebase in the repository. We can work here, make changes, and check them in without affecting the main codebase (usually called the <code>master</code> branch).</p>
+<p>This checks out a specific version of the code (called a <strong>branch</strong>) from the remote origin repository. The remote branch is named <code>studioN</code>, and we are checking it out into a new, local branch, also named <code>studioN</code>.</p>
+<p>Think of a branch as a parallel version of the main codebase in the repository. We can work here, make changes, and check them in without affecting the main codebase (usually called the <code>master</code> branch).</p>
                                     </section>
 
             </div>

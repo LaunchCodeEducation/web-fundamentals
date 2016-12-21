@@ -120,7 +120,7 @@
 <h3 id="project-setup">Project setup</h3>
 <p>Let's do some setup work to get our project ready. We'll only have to do this once.</p>
 <h4 id="clone-the-repository">Clone the repository</h4>
-<p>In a terminal, navigate to whichever directory you use to store your code projects. Leave the terminal open, and visit the <a href="https://github.com/LaunchCodeEducation/flicklist-python">Flicklist repository page on GitHub</a>. Copy the clone URL from the &quot;Clone or download&quot; dropdown.</p>
+<p>In a terminal, navigate to whichever directory you use to store your code projects. Leave the terminal open, and visit the <a href="https://github.com/LaunchCodeEducation/flicklist-python">FlickList repository page on GitHub</a>. Copy the clone URL from the &quot;Clone or download&quot; dropdown.</p>
 <p>Back in your terminal:</p>
 <pre><code>$ git clone [URL]</code></pre>
 <p>Where [URL] is replaced with the repository URL.</p>
@@ -141,11 +141,20 @@
 </ul>
 <p>We'll also add a bit of code to display a new heading and a &quot;Movie of the Day&quot;, which is really just a hard-coded string. You will make this more interesting during the studio.</p>
 <h3 id="checking-out-the-studio-code">Checking out the Studio code</h3>
-<p>Follow the <a href="../getting-the-code/">instructions for getting the code</a> in order to get the starter code for <code>studio3</code>.</p>
+<p>First, make sure you are in your <code>lc101/</code> folder. Then, clone our repository:</p>
+<pre><code class="language-nohighlight">git clone https://github.com/LaunchCodeEducation/flicklist-python.git</code></pre>
+<p>You should now have a new folder in your directory called <code>flicklist-python/</code>. Navigate into that folder:</p>
+<pre><code class="language-nohighlight">cd flicklist-python</code></pre>
+<p>We have already set up a bunch of &quot;jumping off&quot; points within this repository, one for each studio you will do.</p>
+<p>For today's studio, checkout the <code>studio3</code> branch:</p>
+<pre><code class="language-nohighlight">$ git checkout studio3
+Branch studio3 set up to track remote branch studio3 from origin.
+Switched to a new branch 'studio3'</code></pre>
+<p>This checks out a specific version of the code (called a <strong>branch</strong>) from the remote origin repository. Think of a branch as a parallel version of the main codebase in the repository. We can work here, make changes, and check them in without affecting the main codebase (usually called the <code>master</code> branch). The nice thing about this workflow is that you can work on today's studio without messing up your &quot;starting point&quot; for the next class, which is safely contained in a different branch called <code>studio4</code>.</p>
 <h3 id="studio-3-movie-of-the-day">Studio 3: Movie of the Day</h3>
-<p>Before you get started, fire up the Flicklist app using Google App Engine Launcher and visit the home page in a browser. You should see a page that looks like this.</p>
-<p><img src="images/walkthrough3-flicklist.png" alt="Walkthrough 3 version of Flicklist" /></p>
-<p>If you don't, make sure the app is running and check the URL.</p>
+<p>Before you get started, fire up the FlickList app using Google App Engine Launcher and visit the home page in a browser. You should see a page that looks like this.</p>
+<p><img src="images/walkthrough3-flicklist.png" alt="Walkthrough 3 version of FlickList" /></p>
+<p>If you don't see something like the above, make sure the app is running and check the URL.</p>
 <h5 id="your-task">Your Task</h5>
 <p>Currently, this app is kind of boring, because the movie of the day is always <em>The Big Lebowski</em>. What if, each time you visit the page, it randomly surprises you with a different movie? That would be much more exciting. Your job is to implement this random movie feature.</p>
 <p>In Atom, open up the <code>flicklist-python</code> folder, and then the <code>main.py</code> file. Notice that you have a couple of TODOs, noted by comments. Completing these will upgrade our app so that rather than displaying the same movie each time, instead it displays a random movie from a list. Here are some more details on what you need to do.</p>
