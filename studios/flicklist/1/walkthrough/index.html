@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Classes :: Unit 2: Web Fundamentals</title>
+        <title>FlickList 1 Walkthrough :: Unit 2: Web Fundamentals</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/highlight.dark.css">
@@ -70,12 +70,12 @@
                     <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
 
                         <ul class="nav nav-pills nav-stacked">
-                                                            <li class="active lc-button">
+                                                            <li class=" lc-button">
                                     <a href="http://education.launchcode.org/web-fundamentals/classes/">
                                         Classes
                                     </a>
                                 </li>
-                                                            <li class=" lc-button">
+                                                            <li class="active lc-button">
                                     <a href="http://education.launchcode.org/web-fundamentals/studios/">
                                         Studios
                                     </a>
@@ -111,91 +111,32 @@
 
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                                        <h1>Classes</h1>
-                    <table>
-<thead>
-<tr>
-<th>Class #</th>
-<th>Prep Work</th>
-<th>Studio</th>
-<th>Topics</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td><a href="../class-prep/1/">Prep Work</a></td>
-<td></td>
-<td>HTML, Git basics</td>
-</tr>
-<tr>
-<td>2</td>
-<td><a href="../class-prep/2/">Prep Work</a></td>
-<td><a href="../studios/headline-news/">Headline News</a></td>
-<td>HTML, CSS, Git branches</td>
-</tr>
-<tr>
-<td>3</td>
-<td><a href="../class-prep/3/">Prep Work</a></td>
-<td><a href="../studios/flicklist/1/">FlickList 1</a></td>
-<td>HTTP / how the web works, Git remote repositories</td>
-</tr>
-<tr>
-<td>4</td>
-<td><a href="../class-prep/4/">Prep Work</a></td>
-<td><a href="../studios/flicklist/2/">FlickList 2</a></td>
-<td>HTML forms and inputs</td>
-</tr>
-<tr>
-<td>5</td>
-<td><a href="../class-prep/5/">Prep Work</a></td>
-<td><a href="../studios/flicklist/3/">FlickList 3</a></td>
-<td>validating forms, redirecting, HTML escaping</td>
-</tr>
-<tr>
-<td>6</td>
-<td><a href="../class-prep/6/">Prep Work</a></td>
-<td></td>
-<td>(no new topics)</td>
-</tr>
-<tr>
-<td>7</td>
-<td><a href="../class-prep/7/">Prep Work</a></td>
-<td><a href="../studios/flicklist/4/">FlickList 4</a></td>
-<td>templates</td>
-</tr>
-<tr>
-<td>8</td>
-<td><a href="../class-prep/8/">Prep Work</a></td>
-<td><a href="../studios/flicklist/5/">FlickList 5</a></td>
-<td>Databases, SQL</td>
-</tr>
-<tr>
-<td>9</td>
-<td><a href="../class-prep/9/">Prep Work</a></td>
-<td><a href="../studios/flicklist/6/">FlickList 6</a></td>
-<td>GQL, Google App Engine Datastores</td>
-</tr>
-<tr>
-<td>10</td>
-<td><a href="../class-prep/10/">Prep Work</a></td>
-<td><a href="../studios/flicklist/7/">FlickList 7</a> (Walkthrough only)</td>
-<td>cookies, hashing</td>
-</tr>
-<tr>
-<td>11</td>
-<td><a href="../class-prep/11/">Prep Work</a></td>
-<td><a href="../studios/flicklist/8/">FlickList 8</a></td>
-<td>user authentication, password hashing</td>
-</tr>
-<tr>
-<td>12</td>
-<td><a href="../class-prep/12/">Prep Work</a></td>
-<td></td>
-<td>(no new topics)</td>
-</tr>
-</tbody>
-</table>
+                                        <h1>FlickList 1 Walkthrough</h1>
+                    <p><a href="..">&lt; Back to Overview Page</a></p>
+<h2 id="hello-movies">Hello, Movies!</h2>
+<p>In class, we'll walk through the <a href="#project-setup">setup</a> steps below, and discuss the core concepts of web applications:</p>
+<ul>
+<li>How is a dynamic web application different form a static website, and what can a dynamic web app do that a static site cannot?</li>
+<li>What exactly is the application, and how does it &quot;run&quot;?</li>
+<li>How do HTTP requests and responses work?</li>
+<li>GET and POST requests types</li>
+<li>Review of Python class syntax, and the <code>self</code> parameter</li>
+<li>Routes in a web application (i.e. how does a specific request get matched with a specific handler class based on the URL?)</li>
+</ul>
+<p>We'll also add a bit of code to display a new heading and a &quot;Movie of the Day&quot;, which is really just a hard-coded string. You will make this more interesting during the studio.</p>
+<hr />
+<h2 id="project-setup">Project setup</h2>
+<p>Let's do some setup work to get our project ready. We'll only have to do this once.</p>
+<h3 id="clone-the-repository">Clone the repository</h3>
+<p>The starter code for today's studio (and all the future FlickList studios) is contained within our <a href="https://github.com/LaunchCodeEducation/flicklist-python">FlickList repository page on GitHub</a>. You will need to <code>clone</code> this repository in order to obtain your own copy on your local machine.</p>
+<p>First, make sure you are in your <code>lc101/</code> folder. Then, clone our repository:</p>
+<pre><code class="language-nohighlight">cd YOUR/PATH/TO/lc101
+git clone https://github.com/LaunchCodeEducation/flicklist-python.git</code></pre>
+<p>This creates a copy of the repository on your laptop. You should now have a new folder in your directory called <code>flicklist-python/</code>.</p>
+<h3 id="create-new-app-engine-app">Create new App Engine app</h3>
+<p>Now, open the Google App Engine Launcher. Create a new app using the app ID <code>flicklist-python</code>. The application directory should be <em>one level above</em> the repository directory that was just created by cloning the repository. So, if your copy of the repository is in <code>/home/student/code-projects/flicklist-python</code>, then you would set the application directory to <code>/home/student/code-projects/</code>. In previous usage of Google App Engine Launcher, the tool created a new directory for us using the specified project ID. In this case, however, we want to use the directory that is already there. If we get the application ID and directory settings correct, Google App Engine will do this just like we want.</p>
+<p><img src="images/flicklist-gae.png" alt="flicklist-python in GAE" /></p>
+<p>Recall that you can set the port settings in the dialog to almost anything you like, as long as you know to access your app in the browser using the correct port. Here, we use 8000 and 8080 for admin and application ports, respectively.</p>
                                     </section>
 
             </div>

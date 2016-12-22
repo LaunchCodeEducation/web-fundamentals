@@ -112,67 +112,53 @@
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
                                         <h1>Studio: Flicklist 4</h1>
-                    <p>In this studio we will talk about incorporating forms into your app, so that users can provide input and your app can respond to their input.</p>
-<h2 id="walkthrough-4">Walkthrough 4</h2>
-<p>In our FlickList app, we will delete much of the previous &quot;Movie of the Day&quot; code, and start something new. Remember that ultimately our goal is to allow the user to keep a running &quot;watchlist&quot; of movies she plans on seeing. Today, we will create an app with a form that allows the user to &quot;add a movie&quot; to her watchlist. In the process, we will talk about:</p>
-<p><strong>Creating an HTML form</strong></p>
+                    <p>In this studio we will finally cast aside those cumbersome, error-prone HTML strings that are littering our <code>main.py</code> file, refactoring our code to use templates.</p>
+<h2 id="walkthrough">Walkthrough</h2>
+<p>In today's walkthrough, we will do most of the work of switching our project to use templates:</p>
 <ul>
-<li>the <code>&lt;input&gt;</code> tag
-<ul>
-<li>the <code>type</code> attribute</li>
-<li>the <code>name</code> attribute</li>
-</ul></li>
-<li>the <code>action</code> attribute</li>
-<li>the <code>method</code> attribute
-<ul>
-<li>GET vs POST</li>
-</ul></li>
-<li>the <code>&lt;label&gt;</code> tag</li>
+<li>
+<p>We will import a new library called <code>jinja2</code>, a templating engine.</p>
+</li>
+<li>
+<p>We will create a bunch of <code>.html</code> files to hold our content.</p>
+</li>
+<li>In our request handlers, we will render those templates into our HTTP response!</li>
 </ul>
-<p><strong>Responding to a form submission:</strong></p>
+<p>In the process, we will talk about:</p>
 <ul>
-<li>making a new <code>RequestHandler</code> subclass</li>
-<li>mapping it to a route on our app
+<li>
+<p>How to leave a &quot;blank space&quot; in your template for data to be inserted dynamically (e.g. the name of the movie the user wants to add).</p>
+</li>
+<li>
+<p>How to insert the data once we know what it is.</p>
+</li>
+<li>
+<p>We will also see the Jinja syntax for doing a few additional fancy (but important) things:</p>
 <ul>
-<li>this should match the <code>action</code> attribute on our form</li>
-<li>tuples</li>
-</ul></li>
-<li>accessing the data in the incoming request</li>
-<li>sending an appropriate response</li>
+<li>
+<p>How to loop over a list of items in a template.</p>
+</li>
+<li>How to use a conditional (if / else) in a template.</li>
 </ul>
-<p>Our app won't <em>really</em> be able to keep track of the user's movie list at this point. We will need a database to do that (coming up in a few weeks!). But for now, we'll just <em>pretend</em> the list exists.</p>
-<h2 id="studio-4">Studio 4</h2>
-<p>For Studio, your job is to provide another form that allows the user to &quot;cross off&quot; an item from her  Watchlist.</p>
+</li>
+<li>Finally, it is important to note that we will be doing all this in a manner somewhat different from the technique employed in the Udacity class's examples. They make heavy use of Python's <code>*args</code> and <code>**keyword_args</code> feature, which is very cool, and allows them to write somewhat slicker, more concise code for rendering templates.... BUT we don't want any of that to make templates seem unnecessarily complicated or confusing, so we will elect to write code that is slightly more repetitive here, in the interest of making it simpler to understand the essential concept for today: how to use a templating engine.</li>
+</ul>
+<h2 id="studio">Studio</h2>
+<p>For studio, you will finish up our refactoring so that we have fully migrated our entire web-app away from using ugly strings of HTML, and into the bright, shiny era of using templates instead.</p>
 <h3 id="checking-out-the-studio-code">Checking out the Studio code</h3>
 <p>Follow the <a href="../getting-the-code/">instructions for getting the code</a> in order to get the starter code for <code>studio4</code>.</p>
 <h4 id="your-task">Your Task</h4>
-<p>As mentioned above, your task is to implement a new feature for &quot;crossing off&quot; movies from the user's watchlist.</p>
-<p>Open up <code>main.py</code> in your text editor. You should see 4 <code># TODO</code> comments in the code:</p>
-<ol>
-<li>
-<p><strong>Add a form</strong>. On the <code>Index</code> handler, include another <code>&lt;form&gt;</code> below the previous one. It should say something like <code>"I want to cross off ___ from my Watchlist."</code>, where the blank is a text box in which the user can type to specify the movie she wants to cross off.</p>
-</li>
-<li>
-<p><strong>Handle the form Submission.</strong> Make another <code>RequestHandler</code> subclass called <code>CrossOffMovie</code>, and implement your subclass with the necessary code to handle incoming submissions and respond appropriately. You should display a confirmation message like:</p>
+<p>If you visit the web-app in your browser, you will find that the <code>/add</code> route is broken! Try typing in a movie and submitting the form, and you will encounter an &quot;Under construction...&quot; message.</p>
+<p>Your job is to get this page back up and running. The user should still see the same confirmation message as before:</p>
 <blockquote>
-<p><strike>Star Wars</strike> has been crossed off your Watchlist.</p>
+<p>The Matrix has been added to your Watchlist.</p>
 </blockquote>
-<p>You can use the <code>&lt;strike&gt;</code> tag to get that cool <strike>Strikethrough</strike> style of text.</p>
-</li>
-<li>
-<p><strong>Register your handler with the app.</strong> You will need to add a new url route for your app, and register your new handler as the one that should respond to incoming requests at that route.</p>
-</li>
-<li>
-<p><strong>Extra Credit: Use a dropdown instead of a text box.</strong> For deleting a movie from a pre-existing list, a text box does not really make sense, because the user could theoretically type anything, even something that is not even on her watchlist in the first place. A more sensible UI component would a dropdown, which only allows the user to choose from among a limited set of choices.</p>
-<p>Use the <code>&lt;select&gt;</code> and <code>&lt;option&gt;</code> tags to create a dropdown component where the only available choices are the movies that are currently in the user's Watchlist.</p>
-<p>Thus far, of course, there is no such thing as the user's &quot;real&quot; Watchlist, so you can just pretend. Simply hard-code a few of your favorite movies into the dropdown <em>as if</em> those movies make up the user's current watchlist.</p>
-</li>
+<p>Of course, there is one caveat: you are required to use a template. Your <code>main.py</code> file should not contain any HTML at all!</p>
+<ol>
+<li>Create a <code>.html</code> file inside your <code>/templates</code> directory, and add whatever HTML content needs to be added.</li>
+<li>In your <code>AddMovie</code> request handler class, use your template to render the response.</li>
 </ol>
-<h4 id="check-in-your-changes">Check in Your Changes</h4>
-<p>Before you leave, as always, you should <code>add</code> and <code>commit</code> your changes:</p>
-<pre><code>$ git add .
-$ git commit -m "implemented TODOs 1 and 2"</code></pre>
-<p>Obviously your commit message might be something different. The goal of the commit message is just to provide a useful description of the changes you have made. This will make it easier for collaborators and/or your future self to understand your project's development progress.</p>
+<p>For reference, you can look at our code at the bottom of the <code>post</code> method in the <code>CrossOffMovie</code> class, which renders the <code>templates/cross-off.html</code> template file (in addition to the header and footer templates).</p>
                                     </section>
 
             </div>

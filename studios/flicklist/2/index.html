@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Studio: Flicklist 11 :: Unit 2: Web Fundamentals</title>
+        <title>Studio: Flicklist 1 :: Unit 2: Web Fundamentals</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/highlight.dark.css">
@@ -111,51 +111,68 @@
 
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                                        <h1>Studio: Flicklist 11</h1>
-                    <p>Thus far, our webapp does not have a concept of user accounts built in. As a result, there is only one communal movie list, and all the users who visit our site work collaboratively on that list. That's kind of cool maybe, but our goal is a site where each user manages her own list, without interference from other users. That is exactly what we will do today!</p>
-<h2 id="walkthrough-11">Walkthrough 11</h2>
-<p>Today's Walkthrough starts with a significant amount of new code already written. At a high level, what the new code does is implement the existence of user accounts and registration, and ensure that users cannot see the main pages of the site unless they are logged in.</p>
-<p>That's a lot! We would have liked to write this code during the Walkthrough itself, but there is not enough time. Luckily, your upcoming Assignment will give you a similar chunk of starter code, so you won't be expected to write all this code yourself.</p>
-<p>Here is the agenda:</p>
+                                        <h1>Studio: Flicklist 1</h1>
+                    <p>In this studio we will talk about incorporating forms into your app, so that users can provide input and your app can respond to their input.</p>
+<h2 id="walkthrough">Walkthrough</h2>
+<p>In our FlickList app, we will delete much of the previous &quot;Movie of the Day&quot; code, and start something new. Remember that ultimately our goal is to allow the user to keep a running &quot;watchlist&quot; of movies she plans on seeing. Today, we will create an app with a form that allows the user to &quot;add a movie&quot; to her watchlist. In the process, we will talk about:</p>
+<p><strong>Creating an HTML form</strong></p>
 <ul>
-<li>We will spend a little time going over the new pieces of code:
+<li>the <code>&lt;input&gt;</code> tag
 <ul>
-<li>a <code>User</code> class to represent and save users in our database</li>
-<li>new routes and handlers: <code>Login</code>, <code>Logout</code>, and <code>Registration</code></li>
-<li>some new helper functions in our base parent <code>Handler</code> class</li>
-<li>some more lower-level helper functions in a separate file called <code>hashutils.py</code></li>
+<li>the <code>type</code> attribute</li>
+<li>the <code>name</code> attribute</li>
 </ul></li>
-<li>Next we will start coding. Our app at this point has user accounts and login, but users are still collaboratively editing the same list of movies. We need to fix that:
+<li>the <code>action</code> attribute</li>
+<li>the <code>method</code> attribute
 <ul>
-<li>We'll add a <code>.owner</code> field to the <code>Movie</code> class, so that each movie &quot;belongs to&quot; a specific user.</li>
-<li>We will update the <code>/ratings</code> page so that a user only sees a list of movies of which she is the owner.</li>
+<li>GET vs POST</li>
 </ul></li>
-<li>We will also start to implement a new page, <code>/recently-watched</code>, where users can see a list of &quot;trending&quot; movies, showing the most recent movies that people have been watching. Unlike the other page, this will not be individualized. It will be the same for everyone, showing the most recently watched movies by <em>any</em> user.</li>
+<li>the <code>&lt;label&gt;</code> tag</li>
 </ul>
-<h2 id="studio-11">Studio 11</h2>
-<p>Your task today is to fill a few of the small holes we have left, and to finish implementing the new &quot;recently watched movies&quot; page that we started during Walkthrough.</p>
+<p><strong>Responding to a form submission:</strong></p>
+<ul>
+<li>making a new <code>RequestHandler</code> subclass</li>
+<li>mapping it to a route on our app
+<ul>
+<li>this should match the <code>action</code> attribute on our form</li>
+<li>tuples</li>
+</ul></li>
+<li>accessing the data in the incoming request</li>
+<li>sending an appropriate response</li>
+</ul>
+<p>Our app won't <em>really</em> be able to keep track of the user's movie list at this point. We will need a database to do that (coming up in a few weeks!). But for now, we'll just <em>pretend</em> the list exists.</p>
+<h2 id="studio-1">Studio 1</h2>
+<p>For Studio, your job is to provide another form that allows the user to &quot;cross off&quot; an item from her  Watchlist.</p>
 <h3 id="checking-out-the-studio-code">Checking out the Studio code</h3>
-<p>Follow the <a href="../getting-the-code/">instructions for getting the code</a> in order to get the starter code for <code>studio3</code>.</p>
-<h3 id="your-tasks">Your Tasks</h3>
-<p>Below are 5 tasks. Most are just one or two lines of code, but the last one is a bit more involved.</p>
+<p>Follow the <a href="../getting-the-code/">instructions for getting the code</a> in order to get the starter code for <code>studio2</code>.</p>
+<h4 id="your-task">Your Task</h4>
+<p>As mentioned above, your task is to implement a new feature for &quot;crossing off&quot; movies from the user's watchlist.</p>
+<p>Open up <code>main.py</code> in your text editor. You should see 4 <code># TODO</code> comments in the code:</p>
 <ol>
 <li>
-<p><strong>Fix the Index handler</strong>. When the user visits the home page, she still sees <em>everybody's</em> unwatched movies. Fix it so that she only sees her own movies. Instead of a <code>GqlQuery</code>, you will need to use ORM methods like <code>all</code> and <code>filter</code>. For an example to reference, look at what we did during Walkthrough in <code>MovieRatings.get</code>.</p>
+<p><strong>Add a form</strong>. On the <code>Index</code> handler, include another <code>&lt;form&gt;</code> below the previous one. It should say something like <code>"I want to cross off ___ from my Watchlist."</code>, where the blank is a text box in which the user can type to specify the movie she wants to cross off.</p>
 </li>
 <li>
-<p><strong>Add a Logout link</strong>. The user needs a way of logging out when she is logged in. Simply add another link to our &quot;navigation menu&quot; at the top of <code>base.html</code></p>
+<p><strong>Handle the form Submission.</strong> Make another <code>RequestHandler</code> subclass called <code>CrossOffMovie</code>, and implement your subclass with the necessary code to handle incoming submissions and respond appropriately. You should display a confirmation message like:</p>
+<blockquote>
+<p><strike>Star Wars</strike> has been crossed off your Watchlist.</p>
+</blockquote>
+<p>You can use the <code>&lt;strike&gt;</code> tag to get that cool <strike>Strikethrough</strike> style of text.</p>
 </li>
 <li>
-<p><strong>Add a route for recently watched movies</strong>. This is the first of three tasks involved in finishing the implementation of the &quot;recently watched movies&quot; page. First, simply add to our app another route that hooks up to the <code>RecentlyWatchedMovies</code> handler we started during Walkthrough.</p>
+<p><strong>Register your handler with the app.</strong> You will need to add a new url route for your app, and register your new handler as the one that should respond to incoming requests at that route.</p>
 </li>
 <li>
-<p><strong>Render the template</strong>. Our current implementation simply responds with a raw string containing the titles of all the movies. Let's return some real HTML. Notice that we have created a new template called <code>recently-watched.html</code>. Edit the <code>RecentlyWatchedMovies.get</code> method so that it renders that template. Make sure you pass the list of movies into the template.</p>
+<p><strong>Extra Credit: Use a dropdown instead of a text box.</strong> For deleting a movie from a pre-existing list, a text box does not really make sense, because the user could theoretically type anything, even something that is not even on her watchlist in the first place. A more sensible UI component would a dropdown, which only allows the user to choose from among a limited set of choices.</p>
+<p>Use the <code>&lt;select&gt;</code> and <code>&lt;option&gt;</code> tags to create a dropdown component where the only available choices are the movies that are currently in the user's Watchlist.</p>
+<p>Thus far, of course, there is no such thing as the user's &quot;real&quot; Watchlist, so you can just pretend. Simply hard-code a few of your favorite movies into the dropdown <em>as if</em> those movies make up the user's current watchlist.</p>
 </li>
-<li><strong>Implement the template</strong>. Currently the template simply renders a header. Use your Jinja ninja skills to show the list of movies. Each list item should look something like this:
-<ul><li>
-    <strong>Jesse</strong> watched <strong>The Big Green</strong> and gave it a rating of <strong>*****</strong> stars.
-</li></ul></li>
 </ol>
+<h4 id="check-in-your-changes">Check in Your Changes</h4>
+<p>Before you leave, as always, you should <code>add</code> and <code>commit</code> your changes:</p>
+<pre><code>$ git add .
+$ git commit -m "implemented TODOs 1 and 2"</code></pre>
+<p>Obviously your commit message might be something different. The goal of the commit message is just to provide a useful description of the changes you have made. This will make it easier for collaborators and/or your future self to understand your project's development progress.</p>
                                     </section>
 
             </div>
