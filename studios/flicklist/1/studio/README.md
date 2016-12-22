@@ -7,7 +7,7 @@ currentMenu: studios
 
 Before you get started, fire up the FlickList app using Google App Engine Launcher and visit the home page in a browser. You should see a page that looks like this.
 
-![Walkthrough 1 version of FlickList](images/walkthrough1-flicklist.png)
+![Walkthrough 1 version of FlickList](../images/walkthrough1-flicklist.png)
 
 If you don't see something like the above, make sure the app is running and check the URL.
 
