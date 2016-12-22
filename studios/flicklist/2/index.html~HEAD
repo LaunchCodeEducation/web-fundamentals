@@ -4,7 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Studio: Flicklist 6 :: Unit 2: Web Fundamentals</title>
+<<<<<<< HEAD:studios/flicklist/7/index.html:studios/flicklist/7/index.html
+        <title> :: Unit 2: Web Fundamentals</title>
+=======
+        <title>Studio: Flicklist 4 :: Unit 2: Web Fundamentals</title>
+>>>>>>> f85af353188796268e293793f8d5252c0c59cb57:studios/flicklist/2/index.html:studios/flicklist/2/index.html
 
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/highlight.dark.css">
@@ -75,7 +79,7 @@
                                         Classes
                                     </a>
                                 </li>
-                                                            <li class="active lc-button">
+                                                            <li class=" lc-button">
                                     <a href="http://education.launchcode.org/web-fundamentals/studios/">
                                         Studios
                                     </a>
@@ -111,53 +115,73 @@
 
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                                        <h1>Studio: Flicklist 6</h1>
-                    <p>In this studio we will build persistance into our app. Finally, our hypothetical user will be able to add a new movie to the list, close the window and go eat a sandwich, forget what movie she wanted to watch, and then come running back to our site, and the same movie will still be faithfully sitting in her list so she can go stream it on our other awesome website, FlixNet.</p>
-<p>We'll start using a term and associated acronym that is common when connecting applications to databases, but isn't used in the Udactiy course: <strong>object-relational mapping (ORM)</strong>. Applications store information in the form of <em>objects</em> and databases store data in the form of <em>relational data</em> (in tables). An ORM library or module will often so much of the heavy lifting for us, when it comes to translating back and forth between these differing contexts.</p>
-<h2 id="walkthrough">Walkthrough</h2>
-<p>Between the last class and this one, we've made an important update to our app.</p>
+<<<<<<< HEAD:studios/flicklist/7/index.html:studios/flicklist/7/index.html
+                                        <h1></h1>
+                    <p><em>Coming Soon</em></p>
+=======
+                                        <h1>Studio: Flicklist 4</h1>
+                    <p>In this studio we will talk about incorporating forms into your app, so that users can provide input and your app can respond to their input.</p>
+<h2 id="walkthrough-4">Walkthrough 4</h2>
+<p>In our FlickList app, we will delete much of the previous &quot;Movie of the Day&quot; code, and start something new. Remember that ultimately our goal is to allow the user to keep a running &quot;watchlist&quot; of movies she plans on seeing. Today, we will create an app with a form that allows the user to &quot;add a movie&quot; to her watchlist. In the process, we will talk about:</p>
+<p><strong>Creating an HTML form</strong></p>
 <ul>
-<li>Base <code>Handler</code> class
+<li>the <code>&lt;input&gt;</code> tag
 <ul>
-<li>All handler classes that previously inherited from <code>webapp2.RequestHandler</code> now inherit from a base class called <code>Handler</code> (which itself inherits from <code>webapp2.RequestHandler</code>). We have dropped one method in there, <code>renderError</code>. This is nice because any of the subclasses can now use that method. And in the future we might add more methods here.</li>
+<li>the <code>type</code> attribute</li>
+<li>the <code>name</code> attribute</li>
 </ul></li>
+<li>the <code>action</code> attribute</li>
+<li>the <code>method</code> attribute
+<ul>
+<li>GET vs POST</li>
+</ul></li>
+<li>the <code>&lt;label&gt;</code> tag</li>
 </ul>
-<h3 id="during-walkthrough-9">During Walkthrough 9</h3>
-<p>During the walkthrough, we will lay the groundwork for storing data, and begin to adapt our app to use data from the database. Here are some of the tasks that will be carried out.</p>
+<p><strong>Responding to a form submission:</strong></p>
 <ul>
-<li>Import the <code>db</code> class from the <code>google.appengine.ext</code> module</li>
-<li>Create <code>Movie</code> model object
+<li>making a new <code>RequestHandler</code> subclass</li>
+<li>mapping it to a route on our app
 <ul>
-<li>with <code>db</code> properties <code>title</code>, <code>watched</code>, <code>rating</code> and <code>created</code></li>
+<li>this should match the <code>action</code> attribute on our form</li>
+<li>tuples</li>
 </ul></li>
-<li>On <code>AddMovie</code> handler, create a movie object, and use <code>put</code> ORM method to save it to the datastore
-<ul>
-<li>From the admin panel, observe that it was indeed saved</li>
-</ul></li>
-<li>On <code>Index</code> handler, don't use <code>getUnwatchedMovies()</code> function. Instead use a GqlQuery on the database
-<ul>
-<li>Result should be one item in the list, but with no title. Why not? Gotta go to the <code>frontpage.html</code> template and adjust to use <code>movie.title</code> instead of just <code>movie</code>.</li>
-</ul></li>
-<li>Implement persistant &quot;watching&quot;
-<ul>
-<li>In the <code>WatchedMovie</code> handler, update <code>movie.watched</code> property to <code>True</code></li>
-<li>On the <code>frontpage.html</code> template, use <code>movie.key().id()</code> as the value for each hidden input</li>
-</ul></li>
+<li>accessing the data in the incoming request</li>
+<li>sending an appropriate response</li>
 </ul>
-<h2 id="studio">Studio</h2>
-<p>Now that we have some database functionality wired into our application, let's continue to convert our app to use the database. Our next task is to implement persistent ratings, so a user can rate a movie and the information is stored in the database for later.</p>
+<p>Our app won't <em>really</em> be able to keep track of the user's movie list at this point. We will need a database to do that (coming up in a few weeks!). But for now, we'll just <em>pretend</em> the list exists.</p>
+<h2 id="studio-4">Studio 4</h2>
+<p>For Studio, your job is to provide another form that allows the user to &quot;cross off&quot; an item from her  Watchlist.</p>
 <h3 id="checking-out-the-studio-code">Checking out the Studio code</h3>
-<p>Follow the <a href="../getting-the-code/">instructions for getting the code</a> in order to get the starter code for <code>studio6</code>.</p>
-<h4 id="your-tasks">Your tasks</h4>
+<p>Follow the <a href="../getting-the-code/">instructions for getting the code</a> in order to get the starter code for <code>studio4</code>.</p>
+<h4 id="your-task">Your Task</h4>
+<p>As mentioned above, your task is to implement a new feature for &quot;crossing off&quot; movies from the user's watchlist.</p>
+<p>Open up <code>main.py</code> in your text editor. You should see 4 <code># TODO</code> comments in the code:</p>
 <ol>
-<li>In <code>MovieRatings.get</code> write a GQL query to select all the movies that have been watched
-<ul>
-<li>Extra credit: sort by creation date (most recent first).</li>
-</ul></li>
-<li>In <code>MovieRatings.post</code>, use the <code>Movie.get_by_id</code> ORM method to find the movie with the id specified by the form submission.</li>
-<li>In <code>MovieRatings.post</code>, update the movie's rating to the new rating specified by the form submission.</li>
-<li>In <code>rating-confirmation.html</code>, update the code so that it still works now that it is being given a movie <em>object</em>.</li>
+<li>
+<p><strong>Add a form</strong>. On the <code>Index</code> handler, include another <code>&lt;form&gt;</code> below the previous one. It should say something like <code>"I want to cross off ___ from my Watchlist."</code>, where the blank is a text box in which the user can type to specify the movie she wants to cross off.</p>
+</li>
+<li>
+<p><strong>Handle the form Submission.</strong> Make another <code>RequestHandler</code> subclass called <code>CrossOffMovie</code>, and implement your subclass with the necessary code to handle incoming submissions and respond appropriately. You should display a confirmation message like:</p>
+<blockquote>
+<p><strike>Star Wars</strike> has been crossed off your Watchlist.</p>
+</blockquote>
+<p>You can use the <code>&lt;strike&gt;</code> tag to get that cool <strike>Strikethrough</strike> style of text.</p>
+</li>
+<li>
+<p><strong>Register your handler with the app.</strong> You will need to add a new url route for your app, and register your new handler as the one that should respond to incoming requests at that route.</p>
+</li>
+<li>
+<p><strong>Extra Credit: Use a dropdown instead of a text box.</strong> For deleting a movie from a pre-existing list, a text box does not really make sense, because the user could theoretically type anything, even something that is not even on her watchlist in the first place. A more sensible UI component would a dropdown, which only allows the user to choose from among a limited set of choices.</p>
+<p>Use the <code>&lt;select&gt;</code> and <code>&lt;option&gt;</code> tags to create a dropdown component where the only available choices are the movies that are currently in the user's Watchlist.</p>
+<p>Thus far, of course, there is no such thing as the user's &quot;real&quot; Watchlist, so you can just pretend. Simply hard-code a few of your favorite movies into the dropdown <em>as if</em> those movies make up the user's current watchlist.</p>
+</li>
 </ol>
+<h4 id="check-in-your-changes">Check in Your Changes</h4>
+<p>Before you leave, as always, you should <code>add</code> and <code>commit</code> your changes:</p>
+<pre><code>$ git add .
+$ git commit -m "implemented TODOs 1 and 2"</code></pre>
+<p>Obviously your commit message might be something different. The goal of the commit message is just to provide a useful description of the changes you have made. This will make it easier for collaborators and/or your future self to understand your project's development progress.</p>
+>>>>>>> f85af353188796268e293793f8d5252c0c59cb57:studios/flicklist/2/index.html:studios/flicklist/2/index.html
                                     </section>
 
             </div>

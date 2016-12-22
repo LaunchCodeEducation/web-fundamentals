@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Studio: Flicklist 6 :: Unit 2: Web Fundamentals</title>
+        <title>FlickList 1 Walkthrough :: Unit 2: Web Fundamentals</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/highlight.dark.css">
@@ -111,53 +111,32 @@
 
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                                        <h1>Studio: Flicklist 6</h1>
-                    <p>In this studio we will build persistance into our app. Finally, our hypothetical user will be able to add a new movie to the list, close the window and go eat a sandwich, forget what movie she wanted to watch, and then come running back to our site, and the same movie will still be faithfully sitting in her list so she can go stream it on our other awesome website, FlixNet.</p>
-<p>We'll start using a term and associated acronym that is common when connecting applications to databases, but isn't used in the Udactiy course: <strong>object-relational mapping (ORM)</strong>. Applications store information in the form of <em>objects</em> and databases store data in the form of <em>relational data</em> (in tables). An ORM library or module will often so much of the heavy lifting for us, when it comes to translating back and forth between these differing contexts.</p>
-<h2 id="walkthrough">Walkthrough</h2>
-<p>Between the last class and this one, we've made an important update to our app.</p>
+                                        <h1>FlickList 1 Walkthrough</h1>
+                    <p><a href="..">&lt; Back to Overview Page</a></p>
+<h2 id="hello-movies">Hello, Movies!</h2>
+<p>In class, we'll walk through the <a href="#project-setup">setup</a> steps below, and discuss the core concepts of web applications:</p>
 <ul>
-<li>Base <code>Handler</code> class
-<ul>
-<li>All handler classes that previously inherited from <code>webapp2.RequestHandler</code> now inherit from a base class called <code>Handler</code> (which itself inherits from <code>webapp2.RequestHandler</code>). We have dropped one method in there, <code>renderError</code>. This is nice because any of the subclasses can now use that method. And in the future we might add more methods here.</li>
-</ul></li>
+<li>How is a dynamic web application different form a static website, and what can a dynamic web app do that a static site cannot?</li>
+<li>What exactly is the application, and how does it &quot;run&quot;?</li>
+<li>How do HTTP requests and responses work?</li>
+<li>GET and POST requests types</li>
+<li>Review of Python class syntax, and the <code>self</code> parameter</li>
+<li>Routes in a web application (i.e. how does a specific request get matched with a specific handler class based on the URL?)</li>
 </ul>
-<h3 id="during-walkthrough-9">During Walkthrough 9</h3>
-<p>During the walkthrough, we will lay the groundwork for storing data, and begin to adapt our app to use data from the database. Here are some of the tasks that will be carried out.</p>
-<ul>
-<li>Import the <code>db</code> class from the <code>google.appengine.ext</code> module</li>
-<li>Create <code>Movie</code> model object
-<ul>
-<li>with <code>db</code> properties <code>title</code>, <code>watched</code>, <code>rating</code> and <code>created</code></li>
-</ul></li>
-<li>On <code>AddMovie</code> handler, create a movie object, and use <code>put</code> ORM method to save it to the datastore
-<ul>
-<li>From the admin panel, observe that it was indeed saved</li>
-</ul></li>
-<li>On <code>Index</code> handler, don't use <code>getUnwatchedMovies()</code> function. Instead use a GqlQuery on the database
-<ul>
-<li>Result should be one item in the list, but with no title. Why not? Gotta go to the <code>frontpage.html</code> template and adjust to use <code>movie.title</code> instead of just <code>movie</code>.</li>
-</ul></li>
-<li>Implement persistant &quot;watching&quot;
-<ul>
-<li>In the <code>WatchedMovie</code> handler, update <code>movie.watched</code> property to <code>True</code></li>
-<li>On the <code>frontpage.html</code> template, use <code>movie.key().id()</code> as the value for each hidden input</li>
-</ul></li>
-</ul>
-<h2 id="studio">Studio</h2>
-<p>Now that we have some database functionality wired into our application, let's continue to convert our app to use the database. Our next task is to implement persistent ratings, so a user can rate a movie and the information is stored in the database for later.</p>
-<h3 id="checking-out-the-studio-code">Checking out the Studio code</h3>
-<p>Follow the <a href="../getting-the-code/">instructions for getting the code</a> in order to get the starter code for <code>studio6</code>.</p>
-<h4 id="your-tasks">Your tasks</h4>
-<ol>
-<li>In <code>MovieRatings.get</code> write a GQL query to select all the movies that have been watched
-<ul>
-<li>Extra credit: sort by creation date (most recent first).</li>
-</ul></li>
-<li>In <code>MovieRatings.post</code>, use the <code>Movie.get_by_id</code> ORM method to find the movie with the id specified by the form submission.</li>
-<li>In <code>MovieRatings.post</code>, update the movie's rating to the new rating specified by the form submission.</li>
-<li>In <code>rating-confirmation.html</code>, update the code so that it still works now that it is being given a movie <em>object</em>.</li>
-</ol>
+<p>We'll also add a bit of code to display a new heading and a &quot;Movie of the Day&quot;, which is really just a hard-coded string. You will make this more interesting during the studio.</p>
+<hr />
+<h2 id="project-setup">Project setup</h2>
+<p>Let's do some setup work to get our project ready. We'll only have to do this once.</p>
+<h3 id="clone-the-repository">Clone the repository</h3>
+<p>The starter code for today's studio (and all the future FlickList studios) is contained within our <a href="https://github.com/LaunchCodeEducation/flicklist-python">FlickList repository page on GitHub</a>. You will need to <code>clone</code> this repository in order to obtain your own copy on your local machine.</p>
+<p>First, make sure you are in your <code>lc101/</code> folder. Then, clone our repository:</p>
+<pre><code class="language-nohighlight">cd YOUR/PATH/TO/lc101
+git clone https://github.com/LaunchCodeEducation/flicklist-python.git</code></pre>
+<p>This creates a copy of the repository on your laptop. You should now have a new folder in your directory called <code>flicklist-python/</code>.</p>
+<h3 id="create-new-app-engine-app">Create new App Engine app</h3>
+<p>Now, open the Google App Engine Launcher. Create a new app using the app ID <code>flicklist-python</code>. The application directory should be <em>one level above</em> the repository directory that was just created by cloning the repository. So, if your copy of the repository is in <code>/home/student/code-projects/flicklist-python</code>, then you would set the application directory to <code>/home/student/code-projects/</code>. In previous usage of Google App Engine Launcher, the tool created a new directory for us using the specified project ID. In this case, however, we want to use the directory that is already there. If we get the application ID and directory settings correct, Google App Engine will do this just like we want.</p>
+<p><img src="images/flicklist-gae.png" alt="flicklist-python in GAE" /></p>
+<p>Recall that you can set the port settings in the dialog to almost anything you like, as long as you know to access your app in the browser using the correct port. Here, we use 8000 and 8080 for admin and application ports, respectively.</p>
                                     </section>
 
             </div>
