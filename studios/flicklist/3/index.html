@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Studio: Flicklist 3 :: Unit 2: Web Fundamentals</title>
+        <title>Studio: Flicklist 5 :: Unit 2: Web Fundamentals</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/highlight.dark.css">
@@ -111,67 +111,58 @@
 
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                                        <h1>Studio: Flicklist 3</h1>
-                    <p>This studio marks the beginning of our exploration of the mechanics and ideas involved in building full-stack web applications. The term <strong>full-stack</strong> simply means that we'll look at every aspect of web applications, from the pages that a user views and interacts with, to the Python code that decides how to handle user submissions and requests, to the database that stores information.</p>
-<p>Starting today, the majority of in-class sessions will revolve around building a class project together. Each day of class, we will add a little bit more onto the project: your instructor will live-code some new feature, and then for Studio you will be asked to add a little more.</p>
-<p>The mechanics of how you will work on Studios will be the same for nearly every class going forward, so we'll cover them in a bit more detail this time, as a proper introduction to this strategy.</p>
-<h3 id="flicklist">FlickList</h3>
-<p>Our app will be called <em>FlickList</em>, as in: a list of &quot;flicks&quot; or movies. It'll start out small, but within a few weeks it will have a lot of useful functionality that will allow users to create a list of movies they want to see, edit the list, mark movies as watched, and rate the movies they have watched.</p>
-<h3 id="project-setup">Project setup</h3>
-<p>Let's do some setup work to get our project ready. We'll only have to do this once.</p>
-<h4 id="clone-the-repository">Clone the repository</h4>
-<p>In a terminal, navigate to whichever directory you use to store your code projects. Leave the terminal open, and visit the <a href="https://github.com/LaunchCodeEducation/flicklist-python">FlickList repository page on GitHub</a>. Copy the clone URL from the &quot;Clone or download&quot; dropdown.</p>
-<p>Back in your terminal:</p>
-<pre><code>$ git clone [URL]</code></pre>
-<p>Where [URL] is replaced with the repository URL.</p>
-<p>This creates a copy of the repository on your laptop.</p>
-<h4 id="create-new-app-engine-app">Create new App Engine app</h4>
-<p>Now, open the Google App Engine Launcher. Create a new app using the app ID <code>flicklist-python</code>. The application directory should be <em>one level above</em> the repository directory that was just created by cloning the repository. So, if your copy of the repository is in <code>/home/student/code-projects/flicklist-python</code>, then you would set the application directory to <code>/home/student/code-projects/</code>. In previous usage of Google App Engine Launcher, the tool created a new directory for us using the specified project ID. In this case, however, we want to use the directory that is already there. If we get the application ID and directory settings correct, Google App Engine will do this just like we want.</p>
-<p><img src="images/flicklist-gae.png" alt="flicklist-python in GAE" /></p>
-<p>Recall that you can set the port settings in the dialog to almost anything you like, as long as you know to access your app in the browser using the correct port. Here, we uses 8000 and 8080 for admin and application ports, respectively.</p>
-<h3 id="walkthrough-3-hello-movies">Walkthrough 3: Hello, Movies!</h3>
-<p>In class, we'll walk through the steps to set up our new application that are outlined above. We'll discuss the dynamics of web applications:</p>
-<ul>
-<li>How is a dynamic web application different form a static website, and what can a dynamic web app do that a static site cannot?</li>
-<li>What exactly is the application, and how does it &quot;run&quot;?</li>
-<li>How do HTTP requests and responses work?</li>
-<li>GET and POST requests types</li>
-<li>Review of Python class syntax, and the <code>self</code> parameter</li>
-<li>Routes in a web appliction (i.e. how does a specific request get matched with a specific handler class based on the URL?)</li>
-</ul>
-<p>We'll also add a bit of code to display a new heading and a &quot;Movie of the Day&quot;, which is really just a hard-coded string. You will make this more interesting during the studio.</p>
-<h3 id="checking-out-the-studio-code">Checking out the Studio code</h3>
-<p>First, make sure you are in your <code>lc101/</code> folder. Then, clone our repository:</p>
-<pre><code class="language-nohighlight">git clone https://github.com/LaunchCodeEducation/flicklist-python.git</code></pre>
-<p>You should now have a new folder in your directory called <code>flicklist-python/</code>. Navigate into that folder:</p>
-<pre><code class="language-nohighlight">cd flicklist-python</code></pre>
-<p>We have already set up a bunch of &quot;jumping off&quot; points within this repository, one for each studio you will do.</p>
-<p>For today's studio, checkout the <code>studio3</code> branch:</p>
-<pre><code class="language-nohighlight">$ git checkout studio3
-Branch studio3 set up to track remote branch studio3 from origin.
-Switched to a new branch 'studio3'</code></pre>
-<p>This checks out a specific version of the code (called a <strong>branch</strong>) from the remote origin repository. Think of a branch as a parallel version of the main codebase in the repository. We can work here, make changes, and check them in without affecting the main codebase (usually called the <code>master</code> branch). The nice thing about this workflow is that you can work on today's studio without messing up your &quot;starting point&quot; for the next class, which is safely contained in a different branch called <code>studio4</code>.</p>
-<h3 id="studio-3-movie-of-the-day">Studio 3: Movie of the Day</h3>
-<p>Before you get started, fire up the FlickList app using Google App Engine Launcher and visit the home page in a browser. You should see a page that looks like this.</p>
-<p><img src="images/walkthrough3-flicklist.png" alt="Walkthrough 3 version of FlickList" /></p>
-<p>If you don't see something like the above, make sure the app is running and check the URL.</p>
-<h5 id="your-task">Your Task</h5>
-<p>Currently, this app is kind of boring, because the movie of the day is always <em>The Big Lebowski</em>. What if, each time you visit the page, it randomly surprises you with a different movie? That would be much more exciting. Your job is to implement this random movie feature.</p>
-<p>In Atom, open up the <code>flicklist-python</code> folder, and then the <code>main.py</code> file. Notice that you have a couple of TODOs, noted by comments. Completing these will upgrade our app so that rather than displaying the same movie each time, instead it displays a random movie from a list. Here are some more details on what you need to do.</p>
+                                        <h1>Studio: Flicklist 5</h1>
+                    <p>The big new concept for this studio is that of <em>validation</em>. Sometimes, the user submits data through a form that, for one reason or another, is not acceptable. In that case, we must tell them what they did wrong, and give them a chance to try again.</p>
+<h2 id="walkthrough-5">Walkthrough 5</h2>
+<p>The main things we will do during today's walkthrough are:</p>
 <ol>
-<li>Inside the <code>getRandomMovie</code> method, create a Python list that contains at least 5 movie title strings.</li>
-<li>In the same method, choose one of the titles randomly, and modify the return statement so that instead of the hard-coded value &quot;The Big Lebowski&quot;, it returns the randomly selected title. Here are some tips:
+<li>
+<p>First, we will write a function via which we can fetch the user's (pretend) current watchlist.</p>
 <ul>
-<li>Recall that we can generate random numbers in Python with <a href="https://docs.python.org/2/library/random.html">the <code>random</code> module</a>. Add <code>import random</code> to the top of <code>main.py</code> to make this module available to our code. Read the module documentation to determine which method within the module is best for the task at hand.</li>
-<li>Write your code so that if you were to add or remove some movies from your list, it will still randomly choose one, no matter how many items are in the list. In other words, your code should not contain a &quot;magic number&quot; like <code>5</code>.</li>
+<li>And then, rather than hard-code the movie titles directly into our dropdown menu, we will dynamically build the dropdown based on the  current list.</li>
+<li>In the process, we will see a new Python function, the <code>string.format</code> method.</li>
+</ul>
+</li>
+<li>
+<p>The main feature we will add is the inclusion of some validation on the <code>cross-off/</code> route handler:</p>
+<ul>
+<li>When the user wants to cross a movie off, we will make sure the movie is actually on the user's list in the first place.</li>
+<li>If not, we will <em>redirect</em> the user back to the home page.
+<ul>
+<li>And we will pass along a helpful error message as a <em>query parameter</em> in the URL
+<ul>
+<li>But spaces aren't allowed in URLs! So we'll need to <em>escape</em> the error message</li>
 </ul></li>
-<li>In addition to today's movie, add another section of the page that informs people what tomorrow's movie will be. Back in your <code>get</code> method, add another chunk of HTML to your response string. You can do the same basic thing again: an <code>&lt;h1&gt;</code> element, with a <code>&lt;p&gt;</code> element underneath it.</li>
+</ul></li>
+<li>Back on the homepage, we will display the error message, if it exists.</li>
+</ul>
+</li>
+<li>We will also answer the following question: Why is this back-end validation necessary? Doesn't the dropdown menu on the front-end already prevent the user from choosing a movie that isn't on their list?</li>
 </ol>
-<p>If you complete the steps above, you should see that the &quot;movie of the day&quot; changes each time you refresh the page!</p>
-<p>Hopefully this gives you some sense for the difference between a static web site and a dynamic web app running on a server. Even something as simple as our &quot;random movie of the day&quot; page would be impossible to implement as a static site. In order to dynamically build HTML content &quot;on the fly&quot;, like we did here, you need a programming language like Python running on the back-end.</p>
-<p>When you're done with your studio code (or even if you're not done, but you are about to pack up your computer), make sure to commit your changes:</p>
-<pre><code>$ git add .
-$ git commit -m "USEFUL MESSAGE"</code></pre>
+<h2 id="studio-5">Studio 5</h2>
+<p>For Studio, your job is to include some validation on the <code>/add</code> route, to make sure the app responds appropriately no matter what the user has typed into that form.</p>
+<h3 id="checking-out-the-studio-code">Checking out the Studio code</h3>
+<p>Follow the <a href="../getting-the-code/">instructions for getting the code</a> in order to get the starter code for <code>studio5</code>.</p>
+<h3 id="your-task">Your Task</h3>
+<p>There are three things that might go wrong:</p>
+<ol>
+<li>
+<p>The user might try to add a so-called &quot;movie&quot; whose title is something like <code>"&lt;button&gt;Hacker Apocalypse&lt;/button&gt;"</code>. You can try this now and see for yourself what happens... the confirmation page will actually contain a real button! That's not good.</p>
+<p>Use the <code>escape</code> function from the <code>cgi</code> module in order to ensure that the user's input is properly escaped from the HMTL context.</p>
+</li>
+<li>
+<p>The user might fail to type anything at all, and then click the <code>Add It</code> button. If the user does not specify a movie, then you should reject their form submission, and redirect them back to the home page, with an error message that says something like</p>
+<blockquote>
+<p>Please specify the name of the movie you want to add</p>
+</blockquote>
+</li>
+<li>
+<p>The user might try to add a movie that <a href="https://www.youtube.com/watch?v=dPxI4yOKdgc">sucks</a>. Indeed, your users don't always know what's in their best interest, and there are times when it is best to intervene. Near the top of your <code>main.py</code> file you will see a variable called <code>terrible_movies</code>, which defines a list of movies that should be absolutely forbidden. If the user tries to add one of the movies in that list, you should redirect them back to the homepage with an error message that says something like:</p>
+<blockquote>
+<p>Trust me, you don't want to add 'Nine Lives' to your Watchlist.</p>
+</blockquote>
+</li>
+</ol>
                                     </section>
 
             </div>

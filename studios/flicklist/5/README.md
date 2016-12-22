@@ -1,31 +1,31 @@
 ---
-title: 'Studio: Flicklist 5'
+title: 'Studio: FlickList 5'
 currentMenu: studios
 ---
 
-The big new concept for this studio is that of *validation*. Sometimes, the user submits data through a form that, for one reason or another, is not acceptable. In that case, we must tell them what they did wrong, and give them a chance to try again.
+You have started to learn about databases, but you haven't yet seen how to incorporate them into an app. So today, we'll simply add a few features onto our project, and get everything teed up for next class, when we will finally start persisting user data in a database.
 
-## Walkthrough 5
+Today we will expand our project so that users can actually view their list of movies. We will also introduce a second list view, representing the movies that the user has watched (crossed off). In this second view, users will be able to give each movie a rating between 1 and 5 stars.
 
-The main things we will do during today's walkthrough are:
+## Walkthrough
 
-1. First, we will write a function via which we can fetch the user's (pretend) current watchlist.
-	- And then, rather than hard-code the movie titles directly into our dropdown menu, we will dynamically build the dropdown based on the  current list.
-	- In the process, we will see a new Python function, the `string.format` method.
+Between the last studio and this one, we have modified our application in a few minor ways.
 
-2. The main feature we will add is the inclusion of some validation on the `cross-off/` route handler:
+- Responding to bad requests with a 400 error
+	- We don't bother giving a nice error message to a malicious user that submits a bad request, such as a request to cross off a movie that doesn't exist in our system. Instead, we send back an [HTTP 400 status code][400errors] and a very brief error message. We'll use this pattern going forward, only resonding to errors with helpful messages when it's the case that a well-meaning user made a mistake.
+- We have changed "cross off" semantics to "watched it" semantics. Instead of "crossing off a movie from your list", user is reporting that they "finished watching" that movie
+	- Rename `CrossOffMovie` handler to `WatchedMovie`, change route to `"/watched-it"`
+	- Change a bunch of variable names in `WatchedMovie.post` method and the `edit.html` template
+	- Change the confirmation template to `watched-it-confirmation.html`
+	- Change name of `getCurrentWatchlist()` function to `getUnwatwchedMovies()`
 
-	- When the user wants to cross a movie off, we will make sure the movie is actually on the user's list in the first place.
-	- If not, we will *redirect* the user back to the home page.
-		- And we will pass along a helpful error message as a *query parameter* in the URL
-			- But spaces aren't allowed in URLs! So we'll need to *escape* the error message
-	- Back on the homepage, we will display the error message, if it exists.
+During the walkthrough, we will implement these features:
 
-3. We will also answer the following question: Why is this back-end validation necessary? Doesn't the dropdown menu on the front-end already prevent the user from choosing a movie that isn't on their list?
+* A listing on the main page to display all unwatched movies.
+* Modify the "wathced-it" form so that instead of a dropdown, a button on each list item is displayed. Clicking the button will result in a confirmation message that the movie has been watched.
+* New list view for movies that have been watched. This will require us to create a new method `getWatchedMovies()` to return a (for now) hard-coded list of watched movies.
 
-## Studio 5
-
-For Studio, your job is to include some validation on the `/add` route, to make sure the app responds appropriately no matter what the user has typed into that form.
+## Studio
 
 ### Checking out the Studio code
 
@@ -33,20 +33,11 @@ Follow the [instructions for getting the code][get-the-code] in order to get the
 
 ### Your Task
 
-There are three things that might go wrong:
+Implement the feature where users can rate the movies they have watched.
 
-1. The user might try to add a so-called "movie" whose title is something like `"<button>Hacker Apocalypse</button>"`. You can try this now and see for yourself what happens... the confirmation page will actually contain a real button! That's not good.
+1. Make a confirmation template, to be displayed when the user rates a movie.
+2. Add a handler for form submission so that it renders the template. This should got in a `post` method in the `MovieRatings` handler class.
+3. Add forms for rating movies, one on each list item in the `ratings.html` template
 
-  Use the `escape` function from the `cgi` module in order to ensure that the user's input is properly escaped from the HMTL context.
-
-2. The user might fail to type anything at all, and then click the `Add It` button. If the user does not specify a movie, then you should reject their form submission, and redirect them back to the home page, with an error message that says something like
-
-	> Please specify the name of the movie you want to add
-
-3. The user might try to add a movie that [sucks][nine-lives-trailer]. Indeed, your users don't always know what's in their best interest, and there are times when it is best to intervene. Near the top of your `main.py` file you will see a variable called `terrible_movies`, which defines a list of movies that should be absolutely forbidden. If the user tries to add one of the movies in that list, you should redirect them back to the homepage with an error message that says something like:
-
-	> Trust me, you don't want to add 'Nine Lives' to your Watchlist.
-
-
-[nine-lives-trailer]: https://www.youtube.com/watch?v=dPxI4yOKdgc
+[400errors]: https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_Error
 [get-the-code]: ../getting-the-code/

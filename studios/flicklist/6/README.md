@@ -1,5 +1,5 @@
 ---
-title: 'Studio: Flicklist 9'
+title: 'Studio: Flicklist 6'
 currentMenu: studios
 ---
 
@@ -35,7 +35,7 @@ Now that we have some database functionality wired into our application, let's c
 
 ### Checking out the Studio code
 
-Follow the [instructions for getting the code][get-the-code] in order to get the starter code for `studio3`.
+Follow the [instructions for getting the code][get-the-code] in order to get the starter code for `studio6`.
 
 #### Your tasks
 
