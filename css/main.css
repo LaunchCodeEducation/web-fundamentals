@@ -275,3 +275,7 @@ input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gs
 .main .nav-pills > li > a:hover {
     background-color: inherit;
 }
+
+#page-sitemap #content ul {
+    list-style: none;
+}

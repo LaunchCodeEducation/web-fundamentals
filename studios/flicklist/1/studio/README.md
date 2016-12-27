@@ -31,7 +31,7 @@ Hopefully this gives you some sense for the difference between a static web site
 ### Commit Your Changes
 
 When you're done with your studio code (or even if you're not done, but you are about to pack up your computer), make sure to commit your changes:
-```
+```nohighlight
 $ git add .
 $ git commit -m "USEFUL MESSAGE"
 ```
