@@ -11,6 +11,7 @@ For this assignment, please follow along with the video tutorials below, and pro
 
 ### Submit
 
-To turn in your assignment and get credit, follow the instructions in [How to Submit][submission-instructions].
+To turn in your assignment and get credit, submit in the same manner that you did for [Fortune Cookie][fortune-cookie]. You'll need to create a new project on GitHub, connect it to your local repository, and then follow the instructions in [How to Submit][submission-instructions].
 
 [submission-instructions]: ../
+[fortune-cookie]: ../fortune-cookie/

@@ -18,7 +18,7 @@ Our app will be called *FlickList*, as in: a list of "flicks" or movies. It'll s
 
 During lecture, we will start the project, and talk about concepts along the way.
 
-[Walkthrough](./walkthrough)
+[Walkthrough](./walkthrough/)
 
 ---
 
@@ -26,6 +26,6 @@ During lecture, we will start the project, and talk about concepts along the way
 
 After lecture, you will work on your own (or with a classmate) to extend the project and pick up where lecture left off.
 
-[Studio](./studio)
+[Studio](./studio/)
 
 [get-the-code]: ../getting-the-code/

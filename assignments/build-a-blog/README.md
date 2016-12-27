@@ -13,7 +13,7 @@ Throughout the assignment, refer to the [demo app][build-a-blog].
 
 #### Setting up
 
-Create a new Google App Engine app called `build-a-blog`, and then set up a local Git repository and a remote repository on GitHub. See [Hello Google App Engine][hello-gae] for a refresher on that process.
+Create a new Google App Engine app called `build-a-blog`, and then set up a local Git repository and a remote repository on GitHub. See the [User Signup setup instructions][user-signup-setup] for a refresher on that process.
 
 #### List and Create Blog Posts
 
@@ -124,10 +124,11 @@ To turn in your assignment and get credit, follow the [submission instructions][
 
 
 [pset3]: https://classroom.udacity.com/courses/cs253/lessons/48198869/concepts/485084250923#
-[hello-gae]: ../../assignments/hello-google-app-engine
 [build-a-blog]: http://launchcode-build-a-blog.appspot.com/blog
 [build-a-blog-hacker]: http://launchcode-build-a-blog-hacker.appspot.com/blog
 [query-filtering]: https://sqlbolt.com/lesson/filtering_sorting_query_results
 [complex-routing]: http://webapp2.readthedocs.io/en/latest/guide/routing.html#extended-routes
 [regex-wiki]: https://en.wikipedia.org/wiki/Regular_expression
 [get_by_id]: https://cloud.google.com/appengine/docs/python/datastore/modelclass#Model_get_by_id
+[user-signup-setup]: ../user-signup/
+[submission-instructions]: ../
