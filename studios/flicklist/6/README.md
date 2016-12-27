@@ -9,12 +9,14 @@ We'll start using a term and associated acronym that is common when connecting a
 
 ## Walkthrough
 
+### Before the Walkthrough
+
 Between the last class and this one, we've made an important update to our app.
 
 - Base `Handler` class
   - All handler classes that previously inherited from `webapp2.RequestHandler` now inherit from a base class called `Handler` (which itself inherits from `webapp2.RequestHandler`). We have dropped one method in there, `renderError`. This is nice because any of the subclasses can now use that method. And in the future we might add more methods here.
 
-### During Walkthrough 9
+### During Walkthrough
 
 During the walkthrough, we will lay the groundwork for storing data, and begin to adapt our app to use data from the database. Here are some of the tasks that will be carried out.
 
@@ -37,7 +39,7 @@ Now that we have some database functionality wired into our application, let's c
 
 Follow the [instructions for getting the code][get-the-code] in order to get the starter code for `studio6`.
 
-#### Your tasks
+### Your Tasks
 
 1. In `MovieRatings.get` write a GQL query to select all the movies that have been watched
   - Extra credit: sort by creation date (most recent first).
