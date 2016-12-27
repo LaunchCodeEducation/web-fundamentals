@@ -7,6 +7,16 @@ The big new concept for this studio is that of *validation*. Sometimes, the user
 
 ## Walkthrough
 
+If you want to code along with today's (or any day's) Walkthrough, simply `checkout` the appropriate walkthrough branch:
+
+```nohighlight
+$ git checkout walkthrough3
+Branch walkthrough3 set up to track remote branch walkthrough3 from origin.
+Switched to a new branch 'walkthrough3'
+```
+
+> *NOTE:* Before doing this, you will want to make sure you do not have any uncommitted changes.
+
 The main things we will do during today's walkthrough are:
 
 1. First, we will write a function via which we can fetch the user's (pretend) current watchlist.
@@ -29,11 +39,19 @@ For Studio, your job is to include some validation on the `/add` route, to make 
 
 ### Checking out the Studio code
 
-Follow the [instructions for getting the code][get-the-code] in order to get the starter code for `studio3`.
+As usual, you should commit any uncommitted changes (if you have any), and then `checkout` today's studio branch:
+
+```nohighlight
+$ git checkout studio3
+Branch studio3 set up to track remote branch studio3 from origin.
+Switched to a new branch 'studio3'
+```
+
+Next time, we will start to ween you off of these specific commands, and simply refer you to [generic instructions for checking out the starter code][get-the-code].
 
 ### Your Task
 
-There are three things that might go wrong:
+As mentioned, your job is to provide more validation of the user's input. There are three things that might go wrong:
 
 1. The user might try to add a so-called "movie" whose title is something like `"<button>Hacker Apocalypse</button>"`. You can try this now and see for yourself what happens... the confirmation page will actually contain a real button! That's not good.
 

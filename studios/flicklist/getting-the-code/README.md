@@ -21,6 +21,8 @@ On branch studioM
 nothing to commit, working directory clean
 ```
 
+If you do have uncommitted changes, then make sure you commit them now, before moving on.
+
 Finally, checkout a new branch from the remote `origin/studioN` branch:
 
 ```nohighlight
