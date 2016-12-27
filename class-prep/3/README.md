@@ -25,14 +25,16 @@ So far you have been using Git locally on your own computer. We will now introdu
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
 Follow Along | eBook | [Tower Git: Introduction to Remote Repositories][tower-intro-remotes] | Just read this one article, not the entire *Part 3* chapter.
-Read | Article | [Flatiron: Git Remotes][flatiron-remotes] |
-Follow Along | Tutorial | [Flatiron: Git Remotes Codealong][flatiron-remotes-codealong] |
+Do | Tutorial | [Try Git][try-git] | This interactive website lets you type at a command-line in the browser, and will give you the chance to work hands-on with remotes, as well as getting more practice with the basics of Git.
+Read | Article | [Git SCM: Working with Remotes][scm-remotes] | This article talks about remote repositories and some of the main commands you will use to create them and stay synced up with them.
 Read | Article | (Optional) [Flatiron: Git Collaboration][flatiron-collab] | This article gives a good sense for the sorts of complex collaboration scenarios that you can maneuver by leveraging a good workflow with branches and remote repositories.
 
 [tower-intro-remotes]: https://www.git-tower.com/learn/git/ebook/en/command-line/remote-repositories/introduction#start
 [flatiron-remotes]: https://learn.co/lessons/git-remotes-with-github-readme
 [flatiron-remotes-codealong]: https://learn.co/lessons/git-remote-code-along
 [flatiron-collab]: https://learn.co/lessons/git-collaboration-readme
+[scm-remotes]: https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes
+[try-git]: https://try.github.io/
 
 [tower-part3]: https://www.git-tower.com/learn/git/ebook/en/command-line/remote-repositories/introduction#start
 
