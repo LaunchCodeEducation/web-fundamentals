@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Studio: Flicklist 3 :: Unit 2: Web Fundamentals</title>
+        <title>Studio: FlickList 3 :: Unit 2: Web Fundamentals</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/highlight.dark.css">
@@ -111,9 +111,16 @@
 
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                                        <h1>Studio: Flicklist 3</h1>
+                                        <h1>Studio: FlickList 3</h1>
                     <p>The big new concept for this studio is that of <em>validation</em>. Sometimes, the user submits data through a form that, for one reason or another, is not acceptable. In that case, we must tell them what they did wrong, and give them a chance to try again.</p>
 <h2 id="walkthrough">Walkthrough</h2>
+<p>If you want to code along with today's (or any day's) Walkthrough, simply <code>checkout</code> the appropriate walkthrough branch:</p>
+<pre><code class="language-nohighlight">$ git checkout walkthrough3
+Branch walkthrough3 set up to track remote branch walkthrough3 from origin.
+Switched to a new branch 'walkthrough3'</code></pre>
+<blockquote>
+<p><em>NOTE:</em> Before doing this, you will want to make sure you do not have any uncommitted changes.</p>
+</blockquote>
 <p>The main things we will do during today's walkthrough are:</p>
 <ol>
 <li>
@@ -142,9 +149,13 @@
 <h2 id="studio">Studio</h2>
 <p>For Studio, your job is to include some validation on the <code>/add</code> route, to make sure the app responds appropriately no matter what the user has typed into that form.</p>
 <h3 id="checking-out-the-studio-code">Checking out the Studio code</h3>
-<p>Follow the <a href="../getting-the-code/">instructions for getting the code</a> in order to get the starter code for <code>studio3</code>.</p>
+<p>As usual, you should commit any uncommitted changes (if you have any), and then <code>checkout</code> today's studio branch:</p>
+<pre><code class="language-nohighlight">$ git checkout studio3
+Branch studio3 set up to track remote branch studio3 from origin.
+Switched to a new branch 'studio3'</code></pre>
+<p>Next time, we will start to ween you off of these specific commands, and simply refer you to <a href="../getting-the-code/">generic instructions for checking out the starter code</a>.</p>
 <h3 id="your-task">Your Task</h3>
-<p>There are three things that might go wrong:</p>
+<p>As mentioned, your job is to provide more validation of the user's input. There are three things that might go wrong:</p>
 <ol>
 <li>
 <p>The user might try to add a so-called &quot;movie&quot; whose title is something like <code>"&lt;button&gt;Hacker Apocalypse&lt;/button&gt;"</code>. You can try this now and see for yourself what happens... the confirmation page will actually contain a real button! That's not good.</p>
