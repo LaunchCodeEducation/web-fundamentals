@@ -32,6 +32,7 @@ Read | Article | (Optional) [Flatiron: Git Collaboration][flatiron-collab] | Thi
 [tower-intro-remotes]: https://www.git-tower.com/learn/git/ebook/en/command-line/remote-repositories/introduction#start
 [flatiron-remotes]: https://learn.co/lessons/git-remotes-with-github-readme
 [flatiron-remotes-codealong]: https://learn.co/lessons/git-remote-code-along
+[flatiron-collab]: https://learn.co/lessons/git-collaboration-readme
 
 [tower-part3]: https://www.git-tower.com/learn/git/ebook/en/command-line/remote-repositories/introduction#start
 
