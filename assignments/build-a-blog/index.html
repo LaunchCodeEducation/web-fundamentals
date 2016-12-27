@@ -120,7 +120,7 @@
 </ul>
 <p>Throughout the assignment, refer to the <a href="http://launchcode-build-a-blog.appspot.com/blog">demo app</a>.</p>
 <h4 id="setting-up">Setting up</h4>
-<p>Create a new Google App Engine app called <code>build-a-blog</code>, and then set up a local Git repository and a remote repository on GitHub. See <a href="../../assignments/hello-google-app-engine">Hello Google App Engine</a> for a refresher on that process.</p>
+<p>Create a new Google App Engine app called <code>build-a-blog</code>, and then set up a local Git repository and a remote repository on GitHub. See the <a href="../user-signup/">User Signup setup instructions</a> for a refresher on that process.</p>
 <h4 id="list-and-create-blog-posts">List and Create Blog Posts</h4>
 <p>If you think about it for a minute, the behavior of creating a blog post with a title and body, saving it to the database, and displaying posts is essentially what we did in the AsciiChan example app. The main difference between the two is that the post submission form and post listings will be on separate pages. Go back to your code for AsciiChan and use it as a model to set up the beginnings of your blog.</p>
 <p>First, set up the blog so that the new post form and the post listing are on the same page, as with AsciiChan, and then separate those portions into separate routes, handler classes, and templates. For now, when a user submits a new post, redirect them to the main blog page.</p>
@@ -183,7 +183,7 @@
 <pre><code class="language-python">posts.count(offset=offset, limit=page_size)</code></pre>
 <p>Note that <code>posts.count()</code> returns the <em>total</em> number of entities, not just those queried.</p>
 <h3 id="submit">Submit</h3>
-<p>To turn in your assignment and get credit, follow the [submission instructions][submission-instructions].</p>
+<p>To turn in your assignment and get credit, follow the <a href="../">submission instructions</a>.</p>
 <blockquote>
 <p>Remember that you should ignore any Udacity instructions about hosting your app out on the internet and posting the link so they can grade it. You don't have to submit your work to Udacity.</p>
 </blockquote>
