@@ -1,5 +1,5 @@
 ---
-title: 'Studio: Flicklist 6'
+title: 'Studio: FlickList 6'
 currentMenu: studios
 ---
 
