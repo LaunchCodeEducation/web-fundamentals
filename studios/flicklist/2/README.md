@@ -1,5 +1,5 @@
 ---
-title: 'Studio: Flicklist 1'
+title: 'Studio: Flicklist 2'
 currentMenu: studios
 ---
 
@@ -28,7 +28,7 @@ In our FlickList app, we will delete much of the previous "Movie of the Day" cod
 
 Our app won't *really* be able to keep track of the user's movie list at this point. We will need a database to do that (coming up in a few weeks!). But for now, we'll just *pretend* the list exists.
 
-## Studio 1
+## Studio
 
 For Studio, your job is to provide another form that allows the user to "cross off" an item from her  Watchlist.
 

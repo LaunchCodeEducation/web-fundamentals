@@ -1,16 +1,31 @@
 ---
-title: User Signup
+title: 'Assignment: User Signup'
 currentMenu: assignments
 ---
 
 This assignment is all about incorporating forms into your web app, validating the user's input and providing useful feedback to the user when their input is rejected.
 
-
 ## Setting Up
 
 Create a new Google App Engine app called `user-signup`, and then initialize a local Git repository.
 
-## Doin Work
+Create a new repository named `user-signup` on GitHub, and copy the repository URL:
+
+![Copy repo URL](images/repo-url.png)
+
+Back in your terminal, connect your local repository to the remote repository:
+```nohighlight
+$ git remote add origin REPO_URL
+```
+
+You can verify that your remote repository has been properly configured by running:
+```nohighlight
+$ git remote -v
+origin	https://github.com/chrisbay/user-signup.git (fetch)
+origin	https://github.com/chrisbay/user-signup.git (push)
+```
+
+## Doing Work
 
 Your assignment is simply to complete Part 2 of CS253's Problem Set 2, specifically the item called [Quiz: User Signup][user-signup].
 
@@ -37,4 +52,4 @@ To turn in your assignment and get credit, follow the [submission instructions][
 [user-signup]: https://classroom.udacity.com/courses/cs253/lessons/48756009/concepts/485384170923#
 [caesar-example]: https://launchcode-demos.appspot.com/caesar
 [signup-example]: https://launchcode-demos.appspot.com/signup
-[hello-gae]: ../../assignments/hello-google-app-engine
+[submission-instructions]: ../

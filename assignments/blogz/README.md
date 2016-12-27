@@ -13,7 +13,7 @@ Throughout the assignment, refer to the [demo app][blogz-demo]. Feel free to cre
 
 LaunchCode staff has done a bit of work to get started on this project, so you'll start by checking out the code from GitHub. Visit the [repository page on GitHub][blogz-repo] and fork the project. Recall that this creats a copy of the project under your personal GitHub account.
 
-Then, clone your fork/copy to your machine and make a new App Engine app. This process is the same as the "Clone the repository" and "Create new App Engine app" sections of [Class 3 setup][class-3-setup], with your blogz page in place of the flicklist-python page, and with the app ID `blogz` in place of `flicklist-python`.
+Then, clone your fork/copy to your machine and make a new App Engine app. This process is the same as the "Clone the repository" and "Create new App Engine app" sections of [Flicklist 1 Walkthrough][flicklist1-walkthrough], with your blogz page in place of the flicklist-python page, and with the app ID `blogz` in place of `flicklist-python`.
 
 If you try to run the app at this point, you will enounter errors. We have left out some important code, which you'll be writing for this assignment.
 
@@ -119,7 +119,7 @@ To turn in your assignment and get credit, follow the [submission instructions][
 [blogz-demo]: http://blogz-demo.appspot.com/
 [blogz-demo-blog]: http://blogz-demo.appspot.com/blog
 [blogz-repo]: https://github.com/LaunchCodeEducation/blogz
-[class-3-setup]: ../class3/
+[flicklist1-walkthrough]: ../../studios/flicklist/1/walkthrough/
 [gae-query-class]: https://cloud.google.com/appengine/docs/python/datastore/queryclass
 [gae-query-filter]: https://cloud.google.com/appengine/docs/python/datastore/queryclass#Query_filter
 [starter-code-walkthrough]: https://youtu.be/KtPNiBUlqA0

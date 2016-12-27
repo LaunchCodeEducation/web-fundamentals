@@ -12,3 +12,5 @@ For this assignment, please follow along with the video tutorials below, and pro
 ### Submit
 
 To turn in your assignment and get credit, follow the [submission instructions][submission-instructions].
+
+[submission-instructions]: ../
