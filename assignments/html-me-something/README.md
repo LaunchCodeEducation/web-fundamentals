@@ -209,7 +209,7 @@ For the remainder of this course, you will use Github to submit your work. Here'
 
 	<img src="images/clone.png"/>
 
-	> *NOTE:* Alternatively, you can just type out `https://github.com/YOURUSERNAME/html-me-something` at the terminal.
+	> *NOTE:* Alternatively, you can just type out `https://github.com/YOURUSERNAME/html-me-something.git` at the terminal.
 
 	By running this command on the terminal, you are basically saying: *Hey local repo. Please meet your new friend, `origin`, a remote repo, whose url is `https://github...`*
 
