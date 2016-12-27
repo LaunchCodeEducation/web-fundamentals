@@ -38,7 +38,7 @@ For studio, you will finish up our refactoring so that we have fully migrated ou
 
 Follow the [instructions for getting the code][get-the-code] in order to get the starter code for `studio4`.
 
-#### Your Task
+### Your Task
 
 If you visit the web-app in your browser, you will find that the `/add` route is broken! Try typing in a movie and submitting the form, and you will encounter an "Under construction..." message.
 
