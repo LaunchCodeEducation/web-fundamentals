@@ -142,10 +142,32 @@
 </ul>
 <p>Our app won't <em>really</em> be able to keep track of the user's movie list at this point. We will need a database to do that (coming up in a few weeks!). But for now, we'll just <em>pretend</em> the list exists.</p>
 <h2 id="studio-1">Studio 1</h2>
-<p>For Studio, your job is to provide another form that allows the user to &quot;cross off&quot; an item from her  Watchlist.</p>
+<p>For Studio, your job is to provide another form that allows the user to &quot;cross off&quot; an item from her Watchlist.</p>
 <h3 id="checking-out-the-studio-code">Checking out the Studio code</h3>
-<p>Follow the <a href="../getting-the-code/">instructions for getting the code</a> in order to get the starter code for <code>studio2</code>.</p>
-<h4 id="your-task">Your Task</h4>
+<p>For this studio (and all subsequent studios), you will want to start at the exact place where your instructor left off at the end of the Walkthrough. But don't worry--you do not need to have finished the previous studio, nor do you need to have frantically copied each line of code that your instructor wrote just now. Thanks to the magic of Git branches, we have a system in place that will allow you start each studio with the correct starter code no matter what. Here's how:</p>
+<ol>
+<li>First, check your status and make sure you do not have any uncommitted changes:</li>
+</ol>
+<pre><code class="language-nohighlight">$ git status
+On branch studio1
+Your branch is up-to-date with 'origin/studio1'.
+nothing to commit, working directory clean</code></pre>
+<pre><code>If you *do* have uncommitted changes, make sure you `add` and `commit` them **right now**, before moving on.</code></pre>
+<ol start="2">
+<li>The start-point for today's studio is saved in its own separate branch. More generally, we have created one branch for <em>each and every</em> FlickList studio. Currently, you are on the <code>studio1</code> branch. To obtain today's starter code, you must switch to the <code>studio2</code> branch, using the <code>git checkout</code> command:</li>
+</ol>
+<pre><code class="language-nohighlight">$ git checkout studio2
+Branch studio2 set up to track remote branch studio2 from origin.
+Switched to a new branch 'studio2'</code></pre>
+<p>After switching, if you type <code>git branch</code> at the terminal, you will now see that there are two local branches, and you are currently on the <code>studio2</code> branch:</p>
+<pre><code class="language-nohighlight">$ git branch
+  studio1
+* studio2</code></pre>
+<p>And if you look again at your code in your text editor, you will see that the code has changed! You have been transported to the parallel universe of Studio 2.</p>
+<blockquote>
+<p><em>NOTE:</em> This is not a typical use of branches. More normally, you would have one master branch that represents the &quot;real&quot; or &quot;official&quot; version of your project. Then you would create small, temporary branches to fix a bug work on a new feature, and upon finishing the feature or bug-fix, you would <code>merge</code> back into the master branch and delete the temporary branch.</p>
+</blockquote>
+<h3 id="your-task">Your Task</h3>
 <p>As mentioned above, your task is to implement a new feature for &quot;crossing off&quot; movies from the user's watchlist.</p>
 <p>Open up <code>main.py</code> in your text editor. You should see 4 <code># TODO</code> comments in the code:</p>
 <ol>
@@ -168,7 +190,7 @@
 <p>Thus far, of course, there is no such thing as the user's &quot;real&quot; Watchlist, so you can just pretend. Simply hard-code a few of your favorite movies into the dropdown <em>as if</em> those movies make up the user's current watchlist.</p>
 </li>
 </ol>
-<h4 id="check-in-your-changes">Check in Your Changes</h4>
+<h3 id="check-in-your-changes">Check in Your Changes</h3>
 <p>Before you leave, as always, you should <code>add</code> and <code>commit</code> your changes:</p>
 <pre><code>$ git add .
 $ git commit -m "implemented TODOs 1 and 2"</code></pre>
