@@ -30,13 +30,44 @@ Our app won't *really* be able to keep track of the user's movie list at this po
 
 ## Studio 1
 
-For Studio, your job is to provide another form that allows the user to "cross off" an item from her  Watchlist.
+For Studio, your job is to provide another form that allows the user to "cross off" an item from her Watchlist.
 
 ### Checking out the Studio code
 
-Follow the [instructions for getting the code][get-the-code] in order to get the starter code for `studio2`.
+For this studio (and all subsequent studios), you will want to start at the exact place where your instructor left off at the end of the Walkthrough. But don't worry--you do not need to have finished the previous studio, nor do you need to have frantically copied each line of code that your instructor wrote just now. Thanks to the magic of Git branches, we have a system in place that will allow you start each studio with the correct starter code no matter what. Here's how:
 
-#### Your Task
+1. First, check your status and make sure you do not have any uncommitted changes:
+
+```nohighlight
+$ git status
+On branch studio1
+Your branch is up-to-date with 'origin/studio1'.
+nothing to commit, working directory clean
+```
+
+    If you *do* have uncommitted changes, make sure you `add` and `commit` them **right now**, before moving on.
+
+2. The start-point for today's studio is saved in its own separate branch. More generally, we have created one branch for *each and every* FlickList studio. Currently, you are on the `studio1` branch. To obtain today's starter code, you must switch to the `studio2` branch, using the `git checkout` command:
+
+```nohighlight
+$ git checkout studio2
+Branch studio2 set up to track remote branch studio2 from origin.
+Switched to a new branch 'studio2'
+```
+
+After switching, if you type `git branch` at the terminal, you will now see that there are two local branches, and you are currently on the `studio2` branch:
+
+```nohighlight
+$ git branch
+  studio1
+* studio2
+```
+
+And if you look again at your code in your text editor, you will see that the code has changed! You have been transported to the parallel universe of Studio 2.
+
+> *NOTE:* This is not a typical use of branches. More normally, you would have one master branch that represents the "real" or "official" version of your project. Then you would create small, temporary branches to fix a bug work on a new feature, and upon finishing the feature or bug-fix, you would `merge` back into the master branch and delete the temporary branch.
+
+### Your Task
 
 As mentioned above, your task is to implement a new feature for "crossing off" movies from the user's watchlist.
 
@@ -58,7 +89,7 @@ Open up `main.py` in your text editor. You should see 4 `# TODO` comments in the
 
   Thus far, of course, there is no such thing as the user's "real" Watchlist, so you can just pretend. Simply hard-code a few of your favorite movies into the dropdown *as if* those movies make up the user's current watchlist.
 
-#### Check in Your Changes
+### Check in Your Changes
 
 Before you leave, as always, you should `add` and `commit` your changes:
 
