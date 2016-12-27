@@ -1,5 +1,5 @@
 ---
-title: 'Studio: Flicklist 1'
+title: 'Studio: Flicklist 2'
 currentMenu: studios
 ---
 
@@ -28,7 +28,7 @@ In our FlickList app, we will delete much of the previous "Movie of the Day" cod
 
 Our app won't *really* be able to keep track of the user's movie list at this point. We will need a database to do that (coming up in a few weeks!). But for now, we'll just *pretend* the list exists.
 
-## Studio 1
+## Studio
 
 For Studio, your job is to provide another form that allows the user to "cross off" an item from her Watchlist.
 
@@ -38,34 +38,34 @@ For this studio (and all subsequent studios), you will want to start at the exac
 
 1. First, check your status and make sure you do not have any uncommitted changes:
 
-```nohighlight
-$ git status
-On branch studio1
-Your branch is up-to-date with 'origin/studio1'.
-nothing to commit, working directory clean
-```
+    ```nohighlight
+    $ git status
+    On branch studio1
+    Your branch is up-to-date with 'origin/studio1'.
+    nothing to commit, working directory clean
+    ```
 
     If you *do* have uncommitted changes, make sure you `add` and `commit` them **right now**, before moving on.
 
 2. The start-point for today's studio is saved in its own separate branch. More generally, we have created one branch for *each and every* FlickList studio. Currently, you are on the `studio1` branch. To obtain today's starter code, you must switch to the `studio2` branch, using the `git checkout` command:
 
-```nohighlight
-$ git checkout studio2
-Branch studio2 set up to track remote branch studio2 from origin.
-Switched to a new branch 'studio2'
-```
+    ```nohighlight
+    $ git checkout studio2
+    Branch studio2 set up to track remote branch studio2 from origin.
+    Switched to a new branch 'studio2'
+    ```
 
-After switching, if you type `git branch` at the terminal, you will now see that there are two local branches, and you are currently on the `studio2` branch:
+    After switching, if you type `git branch` at the terminal, you will now see that there are two local branches, and you are currently on the `studio2` branch:
 
-```nohighlight
-$ git branch
-  studio1
-* studio2
-```
+    ```nohighlight
+    $ git branch
+      studio1
+    * studio2
+    ```
 
-And if you look again at your code in your text editor, you will see that the code has changed! You have been transported to the parallel universe of Studio 2.
+    And if you look again at your code in your text editor, you will see that the code has changed! You have been transported to the parallel universe of Studio 2.
 
-> *NOTE:* This is not a typical use of branches. More normally, you would have one master branch that represents the "real" or "official" version of your project. Then you would create small, temporary branches to fix a bug work on a new feature, and upon finishing the feature or bug-fix, you would `merge` back into the master branch and delete the temporary branch.
+    > *NOTE:* This is not a typical use of branches. More normally, you would have one master branch that represents the "real" or "official" version of your project. Then you would create small, temporary branches to fix a bug work on a new feature, and upon finishing the feature or bug-fix, you would `merge` back into the master branch and delete the temporary branch.
 
 ### Your Task
 
