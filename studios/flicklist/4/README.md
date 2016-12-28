@@ -10,23 +10,16 @@ In this studio we will finally cast aside those cumbersome, error-prone HTML str
 In today's walkthrough, we will do most of the work of switching our project to use templates:
 
 - We will import a new library called `jinja2`, a templating engine.
-
 - We will create a bunch of `.html` files to hold our content.
-
 - In our request handlers, we will render those templates into our HTTP response!
 
 In the process, we will talk about:
 
 - How to leave a "blank space" in your template for data to be inserted dynamically (e.g. the name of the movie the user wants to add).
-
 - How to insert the data once we know what it is.
-
 - We will also see the Jinja syntax for doing a few additional fancy (but important) things:
-
     - How to loop over a list of items in a template.
-
     - How to use a conditional (if / else) in a template.
-
 - Finally, it is important to note that we will be doing all this in a manner somewhat different from the technique employed in the Udacity class's examples. They make heavy use of Python's `*args` and `**keyword_args` feature, which is very cool, and allows them to write somewhat slicker, more concise code for rendering templates.... BUT we don't want any of that to make templates seem unnecessarily complicated or confusing, so we will elect to write code that is slightly more repetitive here, in the interest of making it simpler to understand the essential concept for today: how to use a templating engine.
 
 
