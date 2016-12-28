@@ -174,7 +174,11 @@ Switched to a new branch 'studio2'</code></pre>
 <p>Open up <code>main.py</code> in your text editor. You should see 4 <code># TODO</code> comments in the code:</p>
 <ol>
 <li>
-<p><strong>Add a form</strong>. On the <code>Index</code> handler, include another <code>&lt;form&gt;</code> below the previous one. It should say something like <code>"I want to cross off ___ from my Watchlist."</code>, where the blank is a text box in which the user can type to specify the movie she wants to cross off.</p>
+<p><strong>Add a form</strong>. On the <code>Index</code> handler, include another <code>&lt;form&gt;</code> below the previous one. It should say something like:</p>
+<blockquote>
+<p>I want to cross off ___ from my Watchlist.</p>
+</blockquote>
+<p>where the blank is a text box in which the user can type to specify the movie she wants to cross off.</p>
 </li>
 <li>
 <p><strong>Handle the form Submission.</strong> Make another <code>RequestHandler</code> subclass called <code>CrossOffMovie</code>, and implement your subclass with the necessary code to handle incoming submissions and respond appropriately. You should display a confirmation message like:</p>
@@ -194,7 +198,7 @@ Switched to a new branch 'studio2'</code></pre>
 </ol>
 <h3 id="check-in-your-changes">Check in Your Changes</h3>
 <p>Before you leave, as always, you should <code>add</code> and <code>commit</code> your changes:</p>
-<pre><code>$ git add .
+<pre><code class="language-nohighlight">$ git add .
 $ git commit -m "implemented TODOs 1 and 2"</code></pre>
 <p>Obviously your commit message might be something different. The goal of the commit message is just to provide a useful description of the changes you have made. This will make it easier for collaborators and/or your future self to understand your project's development progress.</p>
                                     </section>
