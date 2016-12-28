@@ -2,7 +2,7 @@
 title: 'Class 11 Notes'
 ---
 
-## Before Walkthrough 11
+## During Walkthrough 7
 
 - a ton of new stuff, infrastructure for user accounts
     - `User` model
@@ -18,7 +18,7 @@ title: 'Class 11 Notes'
         - the `initialize` method, which comes from the parent class `webapp2.RequestHandler`. We use it to create a login wall around any pages that require login.
     - `hashutils.py`, a bunch of helper functions for hashing and salting stuff
 
-## During Walkthrough 11
+## During Walkthrough 8
   - First, we definitely do want to spend a little time going over the changes listed above.
   - Integrate "user accounts" concept into the the rest of the app
     - Add `owner` field to the `Movie` class
@@ -40,7 +40,7 @@ title: 'Class 11 Notes'
         - Dont wire in the new `/recently-watched` route
         - Don't implement the template
 
-## During Studio 11
+## During Studio 8
   1. Fill the hole from walkthrough on the `Index` handler: replace the old GQL query with a new ORM query that only gives back the unwatched movies of *the current user*.
   2. Add a navigation link in `base.html` so that a logged-in user can log out.
   3. Add the `/recently-watched` route to your app
