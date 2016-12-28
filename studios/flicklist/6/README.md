@@ -3,9 +3,9 @@ title: 'Studio: FlickList 6'
 currentMenu: studios
 ---
 
-In this studio we will build persistance into our app. Finally, our hypothetical user will be able to add a new movie to the list, close the window and go eat a sandwich, forget what movie she wanted to watch, and then come running back to our site, and the same movie will still be faithfully sitting in her list so she can go stream it on our other awesome website, FlixNet.
+In this studio we will build persistence into our app. Finally, our hypothetical user will be able to add a new movie to the list, close the window and go eat a sandwich, forget what movie she wanted to watch, and then come running back to our site, and the same movie will still be faithfully sitting in her list so she can go stream it on our other awesome website, FlixNet.
 
-We'll start using a term and associated acronym that is common when connecting applications to databases, but isn't used in the Udactiy course: **object-relational mapping (ORM)**. Applications store information in the form of *objects* and databases store data in the form of *relational data* (in tables). An ORM library or module will often so much of the heavy lifting for us, when it comes to translating back and forth between these differing contexts.
+We'll start using a term and associated acronym that is common when connecting applications to databases, but isn't used in the Udacity course: **object-relational mapping (ORM)**. Applications store information in the form of *objects* and databases store data in the form of *relational data* (in tables). An ORM library or module will often so much of the heavy lifting for us, when it comes to translating back and forth between these differing contexts.
 
 ## Walkthrough
 
