@@ -73,7 +73,11 @@ As mentioned above, your task is to implement a new feature for "crossing off" m
 
 Open up `main.py` in your text editor. You should see 4 `# TODO` comments in the code:
 
-1. **Add a form**. On the `Index` handler, include another `<form>` below the previous one. It should say something like `"I want to cross off ___ from my Watchlist."`, where the blank is a text box in which the user can type to specify the movie she wants to cross off.
+1. **Add a form**. On the `Index` handler, include another `<form>` below the previous one. It should say something like:
+
+    > I want to cross off ___ from my Watchlist.
+
+    where the blank is a text box in which the user can type to specify the movie she wants to cross off.
 
 2. **Handle the form Submission.** Make another `RequestHandler` subclass called `CrossOffMovie`, and implement your subclass with the necessary code to handle incoming submissions and respond appropriately. You should display a confirmation message like:
 
@@ -93,7 +97,7 @@ Open up `main.py` in your text editor. You should see 4 `# TODO` comments in the
 
 Before you leave, as always, you should `add` and `commit` your changes:
 
-```
+```nohighlight
 $ git add .
 $ git commit -m "implemented TODOs 1 and 2"
 ```
