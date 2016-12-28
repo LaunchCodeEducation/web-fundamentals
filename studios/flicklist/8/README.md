@@ -33,8 +33,7 @@ Below are 5 tasks. Most are just one or two lines of code, but the last one is a
 4. **Render the template**. Our current implementation simply responds with a raw string containing the titles of all the movies. Let's return some real HTML. Notice that we have created a new template called `recently-watched.html`. Edit the `RecentlyWatchedMovies.get` method so that it renders that template. Make sure you pass the list of movies into the template.
 
 5. **Implement the template**. Currently the template simply renders a header. Use your Jinja ninja skills to show the list of movies. Each list item should look something like this:
-    <ul><li>
-        <strong>Jesse</strong> watched <strong>The Big Green</strong> and gave it a rating of <strong>*****</strong> stars.
-    </li></ul>
+
+    > <strong>Jesse</strong> watched <strong>The Big Green</strong> and gave it a rating of <strong>*****</strong> stars.
 
 [get-the-code]: ../getting-the-code/
