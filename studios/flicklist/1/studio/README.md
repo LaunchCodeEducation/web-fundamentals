@@ -18,6 +18,7 @@ Currently, this app is kind of boring, because the movie of the day is always *T
 In Atom, open up the `flicklist-python` folder, and then the `main.py` file. Notice that you have a couple of TODOs, noted by comments. Completing these will upgrade our app so that rather than displaying the same movie each time, instead it displays a random movie from a list. Here are some more details on what you need to do:
 
 1. If you have not already cloned our starter-code repository and created a GAE project as outlined in the [Walkthrough Setup](../walkthrough/) instructions, go and do that now.
+
 1. Inside the `getRandomMovie` method, create a Python list that contains at least 5 movie title strings.
 
 1. In the same method, choose one of the titles randomly, and modify the return statement so that instead of the hard-coded value "The Big Lebowski", it returns the randomly selected title. Here are some tips:
