@@ -201,23 +201,25 @@ For the remainder of this course, you will use Github to submit your work. Here'
 	Use the command below, **but (keep reading below)** :
 
 	```nohighlight
-	$ git remote add origin URL
+	$ git remote add origin PASTE_REPO_URL_HERE
 	```
 
-	**...but** replace `URL` with the actual url for your remote Github repo, which you can obtain by clicking the `Clone or Download` button and then copying and pasting the associated url:
+	**...but** replace `PASTE_REPO_URL_HERE` with the actual url for your remote Github repo, which you can obtain by clicking the `Clone or Download` button and then copying and pasting the associated url:
 
-	<img src="images/clone.png"/>
+	![GitHub Clone Url](./images/github-clone-url.png)
 
 	> *NOTE:* Alternatively, you can just type out `https://github.com/YOURUSERNAME/html-me-something.git` at the terminal.
 
-	By running this command on the terminal, you are basically saying: *Hey local repo. Please meet your new friend, `origin`, a remote repo, whose url is `https://github...`*
+	By running this `git remote add ...` command on the terminal, you are basically saying:
 
-	> *NOTE* The name "origin" is simply a standard naming convention for the main remote repo associated with a local repo.
+    > "Hey local repo. Please meet your new friend, `origin`, a remote repo, whose url is `https://github.com/...`"
+
+	Note that the name "origin" is simply a standard naming convention for the main remote repo associated with a local repo.
 
 
 1. #### Push your local changes up to the remote
 
-	Your local repo is currently *ahead of* your remote repo by a few commits. Your remote is totally empty, while locally, on the other hand, you have added and edited a few files, and committed all those changes.
+	Your local repo is currently *ahead of* your remote repo by a few commits. Locally, you have added and edited a few files, and committed all those changes, whereas your remote repo is still entirely empty.
 
 	Use the `git push` command to "push" all your local changes up to the remote:
 
@@ -225,15 +227,15 @@ For the remainder of this course, you will use Github to submit your work. Here'
 	$ git push origin master
 	```
 
-	This command says: *Hey Git, please push all my local changes to the remote repo called `origin` (specifically, to its `master` branch).*
+	This command says:
 
-	> *NOTE:* We will talk about branches later, but for now, don't worry about it.
+    > "Hey Git, please push all my local changes to the remote repo called `origin` (specifically, to its `master` branch)."
 
 	If you now refresh the browser window on your Github page, you should see that your HTML and CSS files have appeared!
 
 ### Submit
 
-To turn in your assignment and get credit, follow the [submission instructions][submission-instructions].
+To finishing submitting and receive credit, follow steps 3 and 4 of the [submission instructions][submission-instructions] on the *Assignments List* page.
 
 ### Extra Credit: Host your Page using Github Pages
 
@@ -247,9 +249,11 @@ Github provides free hosting for any "static" web content (like this project). A
 
 	<img src="images/create-gh-pages.png"/>
 
-1. In any browser, you should now be able to visit `YOURUSERNAME.github.io/html-me-something` and see your web page!
+1. In any browser, you should now be able to visit `YOUR_USERNAME.github.io/html-me-something` and see your web page!
 
-1. Note that if you want to continue making edits and improvements to your page, and see those changes reflected at this url, you will need to make sure to `push` your changes to the `gh-pages` branch rather than `master`. So whenever you push, it should look like:
+1. Note that if you want to continue making edits and improvements to your page, and see those changes reflected at this url, you will need to make sure to `push` your changes to the `gh-pages` branch rather than `master`.
+
+    So whenever you push, it should look like:
 
 	```nohighlight
 	$ git push origin gh-pages
