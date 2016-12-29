@@ -7,7 +7,7 @@ currentMenu: studios
 
 ## Hello, Movies!
 
-In class, we'll walk through the [setup](#project-setup) steps below, and discuss the core concepts of web applications:
+In class, we'll walk through the [Project Setup](#project-setup) steps (see below), and discuss the core concepts of web applications:
 * How is a dynamic web application different form a static website, and what can a dynamic web app do that a static site cannot?
 * What exactly is the application, and how does it "run"?
 * How do HTTP requests and responses work?
@@ -21,7 +21,7 @@ We'll also add a bit of code to display a new heading and a "Movie of the Day", 
 
 ## Project setup
 
-Let's do some setup work to get our project ready. We'll only have to do this once.
+Let's do some setup work to get our project ready. We'll only have to do this once, today. Subsequent FlickList studios will require very little setup work.
 
 ### Clone the repository
 
