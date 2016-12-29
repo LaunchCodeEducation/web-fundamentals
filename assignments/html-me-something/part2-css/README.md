@@ -3,7 +3,7 @@ title: 'HTML Me Something, Part 2: CSS'
 currentMenu: assignments
 ---
 
-[< Back to Assignment page](..)
+[< Back to Overview page](..)
 
 In Part 2, you'll get comfortable with using CSS selectors and rules to dictate display, while keeping your styles separate from your content.
 
