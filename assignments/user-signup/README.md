@@ -46,7 +46,7 @@ Your page does not have to look exactly the same as their example (here's [our v
 
 1. For the username and email fields, you should preserve what the user typed, so they don't have to retype it. With the password fields, you should clear them, for security.
 
-1. **IMPORTANT:** In your solution, please *do not use templates.* For this assignment, the important concept is handling form submissions. We do not want you to be distracted by trying to use templates (that'll be next time!).
+1. *IMPORTANT:* In your solution, please **do not use templates.** For this assignment, the important concept is handling form submissions. We do not want you to be distracted by trying to use templates (that'll be next time!).
 
     Additionally, you may have noticed that Udacity provides a "solution" to the problem... you are free to look at their solution, but obviously you should not try copy it. Their solution makes use of templates, so copying it will be difficult anyway.
 
