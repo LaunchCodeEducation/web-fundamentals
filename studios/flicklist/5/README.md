@@ -9,6 +9,9 @@ Today we will expand our project so that users can actually view their list of m
 
 ## Walkthrough
 
+
+### Before the Walkthrough
+
 Between the last studio and this one, we have modified our application in a few minor ways.
 
 - Responding to bad requests with a 400 error
@@ -18,6 +21,8 @@ Between the last studio and this one, we have modified our application in a few 
 	- Change a bunch of variable names in `WatchedMovie.post` method and the `edit.html` template
 	- Change the confirmation template to `watched-it-confirmation.html`
 	- Change name of `getCurrentWatchlist()` function to `getUnwatwchedMovies()`
+
+### During the Walkthrough
 
 During the walkthrough, we will implement these features:
 
