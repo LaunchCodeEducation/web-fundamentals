@@ -13,8 +13,6 @@ Get an introduction to web developer tools in Google Chrome, and use them to ins
 
 Rather than a single studio, Flicklist is a progressive series of studios. Each studio builds on work done in the previous studio. Additionally, each studio begins with an instructor-led walkthrough to introduce new ideas.
 
-*Note:* Studios are numbered according to the class that each corresponds to, so we start at 3, end at 11, and skip one or two numbers in-between.
-
 ### Flicklist 1
 
 Project setup, responding to requests, generating random output
