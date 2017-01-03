@@ -57,7 +57,7 @@ th, td {
     text-align: left;
 }
 main {
-    margin-top: 90px;
+    margin-top: 65px;
 }
 
 section {
@@ -304,10 +304,32 @@ code {
 p {
     padding-top: 0.5em;
     padding-bottom: 0.5em;
-    color: #777;
     margin: 0;
 }
 
 #content {
-    padding: 3em;
+    padding: 2em 3em;
+}
+
+.nav-pills li, .lc-button {
+    font-family: "Adagio", serif;
+}
+
+.nav-pills li {
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.nav-pills > li.lc-button > a:hover {
+    background-color: rgb(42, 110, 183);
+    color: rgb(255, 255, 255);
+}
+
+.nav-pills > li.lc-button.active > a {
+    background-color: rgb(18, 74, 135);
+    color: rgb(255, 255, 255);
+}
+
+h1 {
+    margin: 0 0 13px 0;
 }
