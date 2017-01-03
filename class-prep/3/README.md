@@ -10,7 +10,7 @@ This section is a high-level overview of the technologies that bind the internet
 
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
-Do | Interactive Course | [CS253: Lesson 1 (second half)][lesson-1] | Start at the item called *Introducing URLs*, and continue until the end of the lesson. Stop when you get to *Problem Set 1*. <br> **NOTE:** If you are on Windows, you won't be able to do the item called *Quiz: Telnet Request*. You should just watch the "View Answer" video but skip the quiz.
+Do | Interactive Course | [CS253: Lesson 1 (second half)][lesson-1-second-half] | Start at the item called *Introducing URLs*, and continue until the end of the lesson. Stop when you get to *Problem Set 1*. <br> **NOTE:** If you are on Windows, you won't be able to do the item called *Quiz: Telnet Request*. You should just watch the "View Answer" video but skip the quiz.
 Read | Articles | - [The Web][how-the-web-works] <br> - [Servers][what-is-a-web-server] <br> - [HTTP Intro][http-basic-introduction] <br> - [HTTP GET][http-lets-get-it-on] <br> - [Response Codes][http-response-codes] <br> - [URLs][what-is-a-url] | These articles are a little dry, but a foundational knowledge of these topics is important for everything else you will encounter on your web development learning journey.
 Do | Setup | [Installing Google App Engine][installing-google-app-engine] | We will show you how to set up Google App Engine, a web app platform, and how to build a Hello World web app inside Google App Engine using a Python module called `webapp2`.
 Read | More Articles (optional) | - [The Internet][how-does-the-internet-work] <br> - [Domain Names][what-is-a-domain-name] <br> - [Project Structure][dealing-with-files] | This is optional, but if you are itching to learn more, these topics are also important.
@@ -38,7 +38,7 @@ Read | Article | (Optional) [Flatiron: Git Collaboration][flatiron-collab] | Thi
 
 [tower-part3]: https://www.git-tower.com/learn/git/ebook/en/command-line/remote-repositories/introduction#start
 
-[lesson-1]: https://classroom.udacity.com/courses/cs253/lessons/48737165/concepts/3136729170923#
+[lesson-1-second-half]: https://classroom.udacity.com/courses/cs253/lessons/48737165/concepts/487014040923#
 
 [how-the-web-works]: https://developer.mozilla.org/en-US/Learn/Getting_started_with_the_web/How_the_Web_works
 [http-basic-introduction]: https://dev.opera.com/articles/http-basic-introduction/
