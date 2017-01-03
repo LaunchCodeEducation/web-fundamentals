@@ -112,14 +112,25 @@
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
                                         <h1>Studio: FlickList 8</h1>
-                    <h2 id="walkthrough">Walkthrough</h2>
-<p>Our app at this point has user accounts and login, but users are still collaboratively editing the same list of movies. We need to fix that:</p>
+                    <p>Thus far, our webapp does not have a concept of user accounts built in. As a result, there is only one communal movie list, and all the users who visit our site work collaboratively on that list. That's kind of cool maybe, but our goal is a site where each user manages her own list, without interference from other users. That is exactly what we will do today!</p>
+<h2 id="walkthrough">Walkthrough</h2>
+<p>Today's Walkthrough starts with a significant amount of new code already written. At a high level, what the new code does is implement the existence of user accounts and registration, and ensure that users cannot see the main pages of the site unless they are logged in.</p>
+<p>That's a lot! We would have liked to write this code during the Walkthrough itself, but there is not enough time. Luckily, your upcoming Assignment will give you a similar chunk of starter code, so you won't be expected to write all this code yourself.</p>
+<p>Here is the agenda:</p>
+<ul>
+<li>We will spend a little time going over the new pieces of code:
+<ul>
+<li>a <code>User</code> class to represent and save users in our database</li>
+<li>new routes and handlers: <code>Login</code>, <code>Logout</code>, and <code>Registration</code></li>
+<li>some new helper functions in our base parent <code>Handler</code> class</li>
+<li>some more lower-level helper functions in a separate file called <code>hashutils.py</code></li>
+</ul></li>
+<li>Next we will start coding. Our app at this point has user accounts and login, but users are still collaboratively editing the same list of movies. We need to fix that:
 <ul>
 <li>We'll add a <code>.owner</code> field to the <code>Movie</code> class, so that each movie &quot;belongs to&quot; a specific user.</li>
-<li>We will update the <code>/ratings</code> page so that a user only sees a list of movies of which she is the owner.
-<ul>
-<li>We will also start to implement a new page, <code>/recently-watched</code>, where users can see a list of &quot;trending&quot; movies, showing the most recent movies that people have been watching. Unlike the other page, this will not be individualized. It will be the same for everyone, showing the most recently watched movies by <em>any</em> user.</li>
+<li>We will update the <code>/ratings</code> page so that a user only sees a list of movies of which she is the owner.</li>
 </ul></li>
+<li>We will also start to implement a new page, <code>/recently-watched</code>, where users can see a list of &quot;trending&quot; movies, showing the most recent movies that people have been watching. Unlike the other page, this will not be individualized. It will be the same for everyone, showing the most recently watched movies by <em>any</em> user.</li>
 </ul>
 <h2 id="studio">Studio</h2>
 <p>Your task today is to fill a few of the small holes we have left, and to finish implementing the new &quot;recently watched movies&quot; page that we started during Walkthrough.</p>
@@ -140,12 +151,10 @@
 <li>
 <p><strong>Render the template</strong>. Our current implementation simply responds with a raw string containing the titles of all the movies. Let's return some real HTML. Notice that we have created a new template called <code>recently-watched.html</code>. Edit the <code>RecentlyWatchedMovies.get</code> method so that it renders that template. Make sure you pass the list of movies into the template.</p>
 </li>
-<li>
-<p><strong>Implement the template</strong>. Currently the template simply renders a header. Use your Jinja ninja skills to show the list of movies. Each list item should look something like this:</p>
-<blockquote>
-<p><strong>Jesse</strong> watched <strong>The Big Green</strong> and gave it a rating of <strong>*****</strong> stars.</p>
-</blockquote>
-</li>
+<li><strong>Implement the template</strong>. Currently the template simply renders a header. Use your Jinja ninja skills to show the list of movies. Each list item should look something like this:
+<ul><li>
+    <strong>Jesse</strong> watched <strong>The Big Green</strong> and gave it a rating of <strong>*****</strong> stars.
+</li></ul></li>
 </ol>
                                     </section>
 
