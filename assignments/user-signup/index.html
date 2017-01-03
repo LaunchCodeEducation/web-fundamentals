@@ -112,38 +112,59 @@
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
                                         <h1>Assignment: User Signup</h1>
-                    <p>This assignment is all about incorporating forms into your web app, validating the user's input and providing useful feedback to the user when their input is rejected.</p>
+                    <p>Your assignment is simply to complete Part 2 of CS253's Problem Set 2, specifically the item called <a href="https://classroom.udacity.com/courses/cs253/lessons/48756009/concepts/485084220923#">Quiz: User Signup</a>.</p>
+<p>This assignment is all about incorporating forms into your web app, validating the user's input, and providing useful feedback to the user when their input is rejected.</p>
 <h2 id="setting-up">Setting Up</h2>
-<p>Create a new Google App Engine app called <code>user-signup</code>, and then initialize a local Git repository.</p>
-<p>Create a new repository named <code>user-signup</code> on GitHub, and copy the repository URL:</p>
+<p>First, set up your project by creating it, initializing a local Git repository, and connecting it to a remote repository on GitHub. Follow the steps below:</p>
+<ol>
+<li>
+<p>Create a new Google App Engine app called <code>user-signup</code>.</p>
+</li>
+<li>
+<p>At the command-line, use <code>git init</code> to initialize your project as a local Git repository.</p>
+</li>
+<li>
+<p>On GitHub, create a new repository named <code>user-signup</code>, and copy the repository URL:</p>
 <p><img src="images/repo-url.png" alt="Copy repo URL" /></p>
+</li>
+<li>
 <p>Back in your terminal, connect your local repository to the remote repository:</p>
-<pre><code class="language-nohighlight">$ git remote add origin REPO_URL</code></pre>
+<pre><code class="language-nohighlight">$ git remote add origin PASTE_REPO_URL_HERE</code></pre>
+</li>
+<li>
 <p>You can verify that your remote repository has been properly configured by running:</p>
 <pre><code class="language-nohighlight">$ git remote -v
 origin  https://github.com/chrisbay/user-signup.git (fetch)
 origin  https://github.com/chrisbay/user-signup.git (push)</code></pre>
+</li>
+</ol>
 <h2 id="doing-work">Doing Work</h2>
-<p>Your assignment is simply to complete Part 2 of CS253's Problem Set 2, specifically the item called <a href="https://classroom.udacity.com/courses/cs253/lessons/48756009/concepts/485384170923#">Quiz: User Signup</a>.</p>
 <p>Your page does not have to look exactly the same as their example (here's <a href="https://launchcode-demos.appspot.com/signup">our version</a>, by the way), but you must have all the same functionality. The notes underneath the video spell out exactly what is required, but here's a summary:</p>
 <ol>
-<li>If the user's form submission is not valid, you should reject it and display some feedback to inform them of what they did wrong. The following things should trigger an error:
+<li>
+<p>If the user's form submission is not valid, you should reject it and display some feedback to inform them of what they did wrong. The following things should trigger an error:</p>
 <ul>
 <li>The user does not enter a username</li>
 <li>The user's username is not valid -- for example, contains a space character. Full spec is included in the notes underneath the video.</li>
 <li>The user's password and password-confirmation do not match</li>
 <li>The user provides an email, but it's not a valid email.</li>
-</ul></li>
-<li>Each feedback message should be next to the field that it refers to.</li>
-<li>For the username and email fields, you should preserve what the user typed, so they don't have to retype it. With the password fields, you should clear them, for security.</li>
+</ul>
+</li>
+<li>
+<p>Each feedback message should be next to the field that it refers to.</p>
+</li>
+<li>
+<p>For the username and email fields, you should preserve what the user typed, so they don't have to retype it. With the password fields, you should clear them, for security.</p>
+</li>
+<li>
+<p><em>IMPORTANT:</em> In your solution, please <strong>do not use templates.</strong> For this assignment, the important concept is handling form submissions. We do not want you to be distracted by trying to use templates (that'll be next time!).</p>
+<p>Additionally, you may have noticed that Udacity provides a &quot;solution&quot; to the problem... you are free to look at their solution, but obviously you should not try copy it. Their solution makes use of templates, so copying it will be difficult anyway.</p>
+</li>
 </ol>
-<blockquote>
-<p>Note that Udacity provides a &quot;solution&quot; to the problem... you are free to look at their solution, but obviously you should not try copy it. In any case you will not find it very helpful, as they make use of templates, which you have not learned about yet.</p>
-</blockquote>
 <h3 id="submit">Submit</h3>
 <p>To turn in your assignment and get credit, follow the <a href="../">submission instructions</a>.</p>
 <blockquote>
-<p>Remember that you should ignore any Udacity instructions about hosting your app out on the internet and posting the link so they can grade it. You don't have to submit your work to Udacity, you just have to submit to LaunchCode by demoing your code to your TF.</p>
+<p><em>NOTE:</em> Remember that you should ignore any Udacity instructions about hosting your app out on the internet and posting the link so they can grade it. You don't have to submit your work to Udacity, you just have to submit to LaunchCode by demoing your code to your TF.</p>
 </blockquote>
                                     </section>
 

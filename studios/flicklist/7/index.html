@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title> :: Unit 2: Web Fundamentals</title>
+        <title>Studio: FlickList 7 :: Unit 2: Web Fundamentals</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/highlight.dark.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/main.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/custom.css">
     </head>
-    <body>
+    <body id='page-studio-flicklist-7'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -75,7 +75,7 @@
                                         Classes
                                     </a>
                                 </li>
-                                                            <li class=" lc-button">
+                                                            <li class="active lc-button">
                                     <a href="http://education.launchcode.org/web-fundamentals/studios/">
                                         Studios
                                     </a>
@@ -111,8 +111,25 @@
 
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                                        <h1></h1>
-                    <p><em>Coming Soon</em></p>
+                                        <h1>Studio: FlickList 7</h1>
+                    <p>Today's &quot;studio&quot; is unusual in that there is no activity that you, the student, must complete. The entire class will be an extended Walkthrough.</p>
+<p>You are encouraged to code along, which, as usual, you can do by checking out the <code>walkthrough7</code> branch:</p>
+<pre><code class="language-nohighlight">$ git checkout walkthrough7
+Branch walkthrough7 set up to track remote branch walkthrough7 from origin.
+Switched to a new branch 'walkthrough7'</code></pre>
+<p>But as usual, if you fall behind the instructor, don't stress about it. Just sit back and watch.</p>
+<h3 id="walkthrough">Walkthrough</h3>
+<p>Thus far, our web-app does not have a concept of user accounts built in. As a result, there is only one &quot;communal&quot; movie list, and all the users who visit our site work &quot;collaboratively&quot; on that list. That's kind of cool maybe, but our goal is a site where each user manages her own list, without interference from other users. That is exactly what we will do today!</p>
+<p>The goal today, at a high level, is to implement the existence of user accounts and registration, and ensure that users cannot see the main pages of the site unless they are logged in.</p>
+<p>More specifically, we will update our codebase with the following additions:</p>
+<ul>
+<li>A <code>User</code> class to represent and save users in our database.</li>
+<li>New routes and handlers: <code>Login</code>, <code>Logout</code>, and <code>Register</code>.</li>
+<li>New templates for the <code>Login</code> and <code>Register</code> pages.</li>
+<li>Some new helper functions in our base parent <code>Handler</code> class. These helper functions will preempt every request with a &quot;login wall&quot;, so that certain pages (such as <em>My WatchList</em>) cannot be accessed unless the user is logged in.</li>
+<li>A separate file with some more helper functions, lower-level utilities to help us with hashing and salting, so that we can encrypt and decrypt passwords.</li>
+</ul>
+<p>That's a lot! We would have liked to give you the chance to write some of this code yourself, but there is not enough time. Luckily, your upcoming Assignment will give you a similar chunk of starter code, so you won't be expected to write all this code on your own during the assignment.</p>
                                     </section>
 
             </div>

@@ -117,12 +117,8 @@
 <p>Best practices dictate that these should be kept as separate as possible. To that end, we'll build the HTML portion of our page first, and only afterwards will we add a few styles with CSS. This will help us avoid adding HTML elements simply to change the style of our page.</p>
 <h3 id="sections">Sections:</h3>
 <ul>
-<li>
-<p><a href="#getting-started">Getting Started</a></p>
-</li>
-<li>
-<p><a href="#getting-to-work">Getting to Work</a></p>
-</li>
+<li><a href="#getting-started">Getting Started</a></li>
+<li><a href="#getting-to-work">Getting to Work</a></li>
 <li><a href="#submitting-your-work">Submitting Your Work</a></li>
 </ul>
 <h2 id="getting-started">Getting started</h2>
@@ -257,31 +253,32 @@ nothing to commit, working directory clean</code></pre>
 <p>Now you have two repositories: the local one on your computer, and the remote one on Github. The next step is to sync them up.</p>
 <p>The first step to syncing them is to give your local repo a <em>reference to</em> the remote repo. Using the <code>git remote</code> command, you can inform your local repo about the existence of the remote one.</p>
 <p>Use the command below, <strong>but (keep reading below)</strong> :</p>
-<pre><code class="language-nohighlight">$ git remote add origin URL</code></pre>
-<p><strong>...but</strong> replace <code>URL</code> with the actual url for your remote Github repo, which you can obtain by clicking the <code>Clone or Download</code> button and then copying and pasting the associated url:</p>
-<img src="images/clone.png"/>
+<pre><code class="language-nohighlight">$ git remote add origin PASTE_REPO_URL_HERE</code></pre>
+<p><strong>...but</strong> replace <code>PASTE_REPO_URL_HERE</code> with the actual url for your remote Github repo, which you can obtain by clicking the <code>Clone or Download</code> button and then copying and pasting the associated url:</p>
+<p><img src="./images/github-clone-url.png" alt="GitHub Clone Url" /></p>
 <blockquote>
 <p><em>NOTE:</em> Alternatively, you can just type out <code>https://github.com/YOURUSERNAME/html-me-something.git</code> at the terminal.</p>
 </blockquote>
-<p>By running this command on the terminal, you are basically saying: <em>Hey local repo. Please meet your new friend, <code>origin</code>, a remote repo, whose url is <code>https://github...</code></em></p>
+<p>By running this <code>git remote add ...</code> command on the terminal, you are basically saying:</p>
 <blockquote>
-<p><em>NOTE</em> The name &quot;origin&quot; is simply a standard naming convention for the main remote repo associated with a local repo.</p>
+<p>&quot;Hey local repo. Please meet your new friend, <code>origin</code>, a remote repo, whose url is <code>https://github.com/...</code>&quot;</p>
 </blockquote>
+<p>Note that the name &quot;origin&quot; is simply a standard naming convention for the main remote repo associated with a local repo.</p>
 </li>
 <li>
 <h4 id="push-your-local-changes-up-to-the-remote">Push your local changes up to the remote</h4>
-<p>Your local repo is currently <em>ahead of</em> your remote repo by a few commits. Your remote is totally empty, while locally, on the other hand, you have added and edited a few files, and committed all those changes.</p>
+<p>Your local repo is currently <em>ahead of</em> your remote repo by a few commits. Locally, you have added and edited a few files, and committed all those changes, whereas your remote repo is still entirely empty.</p>
 <p>Use the <code>git push</code> command to &quot;push&quot; all your local changes up to the remote:</p>
 <pre><code class="language-nohighlight">$ git push origin master</code></pre>
-<p>This command says: <em>Hey Git, please push all my local changes to the remote repo called <code>origin</code> (specifically, to its <code>master</code> branch).</em></p>
+<p>This command says:</p>
 <blockquote>
-<p><em>NOTE:</em> We will talk about branches later, but for now, don't worry about it.</p>
+<p>&quot;Hey Git, please push all my local changes to the remote repo called <code>origin</code> (specifically, to its <code>master</code> branch).&quot;</p>
 </blockquote>
 <p>If you now refresh the browser window on your Github page, you should see that your HTML and CSS files have appeared!</p>
 </li>
 </ol>
 <h3 id="submit">Submit</h3>
-<p>To turn in your assignment and get credit, follow the <a href="../">submission instructions</a>.</p>
+<p>To finishing submitting and receive credit, follow steps 3 and 4 of the <a href="../">submission instructions</a> on the <em>Assignments List</em> page.</p>
 <h3 id="extra-credit-host-your-page-using-github-pages">Extra Credit: Host your Page using Github Pages</h3>
 <p>If you want to show off your hard work to all your friends, Github has a cool feature called <em>Github Pages</em> that makes this really easy.</p>
 <p>Github provides free hosting for any &quot;static&quot; web content (like this project). All you have to do is create a branch with the special designated name <code>gh-pages</code>.</p>
@@ -294,10 +291,11 @@ nothing to commit, working directory clean</code></pre>
 <img src="images/create-gh-pages.png"/>
 </li>
 <li>
-<p>In any browser, you should now be able to visit <code>YOURUSERNAME.github.io/html-me-something</code> and see your web page!</p>
+<p>In any browser, you should now be able to visit <code>YOUR_USERNAME.github.io/html-me-something</code> and see your web page!</p>
 </li>
 <li>
-<p>Note that if you want to continue making edits and improvements to your page, and see those changes reflected at this url, you will need to make sure to <code>push</code> your changes to the <code>gh-pages</code> branch rather than <code>master</code>. So whenever you push, it should look like:</p>
+<p>Note that if you want to continue making edits and improvements to your page, and see those changes reflected at this url, you will need to make sure to <code>push</code> your changes to the <code>gh-pages</code> branch rather than <code>master</code>.</p>
+<p>So whenever you push, it should look like:</p>
 <pre><code class="language-nohighlight">$ git push origin gh-pages</code></pre>
 </li>
 </ol>
