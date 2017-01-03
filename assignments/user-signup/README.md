@@ -51,7 +51,7 @@ Your page does not have to look exactly the same as their example (here's [our v
     Additionally, you may have noticed that Udacity provides a "solution" to the problem... you are free to look at their solution, but obviously you should not try copy it. Their solution makes use of templates, so copying it will be difficult anyway.
 
 
-### Submit
+## Submit
 
 To turn in your assignment and get credit, follow the [submission instructions][submission-instructions].
 
