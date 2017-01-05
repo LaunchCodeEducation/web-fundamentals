@@ -6,7 +6,8 @@ currentMenu: classes
 ### Setup
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
-Do | Create an account (Optional) | [Udacity Registration][sign-up] | **This is optional**. You might want to register for an account on Udacity, so that when you interact with the course content on [CS253: Web Development], the site remembers your progress.
+Do | Create an account (Optional) | [Udacity Registration][sign-up] | **This is optional**. You might want to register for an account on Udacity, so that when you interact with the course content on [CS253: Web Development][cs253], the site remembers your progress.
+Read | Web page | [About This Unit](../../about/) | Read about the structure of this unit. In particular, pay attention to the details about curriculum resources and how you should utilize them most effectively.
 
 ---
 
