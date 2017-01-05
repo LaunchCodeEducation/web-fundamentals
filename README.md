@@ -1,4 +1,4 @@
 ---
-title: 'Home'
+title: 'Home' 
 layout: home
 ---
