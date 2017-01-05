@@ -12,7 +12,7 @@ Task | Resource Type | Link | Instructions
 Do | Interactive Course | [Codecademy: HTML Basics][html-basics] | This section covers the very basics. You will already be familiar with most of it from your previous homework.
 Do | Interactive Course | [Codecademy: Build Your Own Webpage][byowp] | Here you will apply the concepts from the previous section into a small project.
 Do | Interactive Course | [Codecademy: HTML Basics II][html-basics-2] | In this section you will learn some new HTML tags like lists.
-Do | Interactive Course | [Codecademy: Social Netowrking Profile][social-networking-profile] | Here you will apply the concepts from the previous section into a small project.
+Do | Interactive Course | [Codecademy: Social Networking Profile][social-networking-profile] | Here you will apply the concepts from the previous section into a small project.
 
 ---
 
