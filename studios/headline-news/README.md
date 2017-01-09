@@ -17,6 +17,8 @@ Pick a news site ([The New York Times](http://www.nytimes.com/), for example), a
 
 ![Nelly / LC in NYT](lc-nelly-nyt.png)
 
+(Optional) Share your creation in the `#headline-news` channel on Slack, and see what others have created!
+
 ### Resources
 
 * [Using Chrome Developer Tools: Elements](https://www.youtube.com/watch?v=nV9PLPFTnkE)
