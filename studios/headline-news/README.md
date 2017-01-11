@@ -11,6 +11,15 @@ In this course, we will mostly use the Google Chrome as our browser. If you have
 
 Chrome's developer tools contain **a lot** of functionality, and we will only begin to touch on it here, learning about more if its functionality later in the unit. In this class, we'll learn about the tools available for working with HTML elements and CSS styles.
 
+## Walkthrough
+
+Prior to the studio, the instructor will lead the class through an overview of some basic functionality of Chrome's dev tools, including but not necessarily limited to:
+- How to open dev tools
+- Inspecting an element
+- Finding and editing CSS rules that are applied to an element
+- Modifying an element's HTML
+- The different between the content displayed when using "View Source" and what's in the Elements tab
+
 ## Making Headlines
 
 Pick a news site ([The New York Times](http://www.nytimes.com/), for example), and use Chrome Dev Tools to modify one of the main articles to use a picture and text of your choosing. You can have fun with this (see our example below) and take a screenshot to use for a practical joke, if you like.
