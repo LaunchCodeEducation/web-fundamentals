@@ -13,6 +13,7 @@ As we learn how web apps work, and how to build our own web apps, we'll be using
 #### Windows
 
 [Windows Installer](https://www.dropbox.com/s/ev9ln5o2krriy3t/GoogleAppEngine-1.9.40.msi?dl=1)
+
 [Windows Installer](https://media.githubusercontent.com/media/LaunchCodeEducation/web-fundamentals/master/class-prep/3/installing-google-app-engine/GoogleAppEngine-1.9.40.msi) * Alternative download link; use if downloading from the first URL is slow
 
 
@@ -24,6 +25,7 @@ As we learn how web apps work, and how to build our own web apps, we'll be using
 #### Mac
 
 [Mac Installer](https://www.dropbox.com/s/peh4xfcs2a7vqlb/GoogleAppEngineLauncher-1.9.38.dmg?dl=1)
+
 [Mac Installer](https://media.githubusercontent.com/media/LaunchCodeEducation/web-fundamentals/master/class-prep/3/installing-google-app-engine/GoogleAppEngineLauncher-1.9.38.dmg) * Alternative download link; use if downloading from the first URL is slow
 
 1. Download the installer file
