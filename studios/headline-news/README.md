@@ -7,7 +7,7 @@ currentMenu: studios
 
 As you've learned, debugging code is an essential part of coding. When it comes to working with web pages, browser developer tools are indispensible.
 
-In this course, we will mostly use the Google Chrome as our browser. If you haven't installed Chrome, you can get it from [Google](https://www.google.com/chrome/browser/desktop/). Other browsers have good developer tools as well (Firebox, in particular) but we're going to stick with Chrome. If you are more comfortable with another browser, you'll find that most of the developer tools functionality exists in other browsers' dev tools as well.
+In this course, we will mostly use Google Chrome as our browser. If you haven't installed Chrome, you can get it from [Google](https://www.google.com/chrome/browser/desktop/). Other browsers have good developer tools as well (Firebox, in particular) but we're going to stick with Chrome. If you are more comfortable with another browser, you'll find that most of the developer tools functionality exists in other browsers' dev tools as well.
 
 Chrome's developer tools contain **a lot** of functionality, and we will only begin to touch on it here, learning about more if its functionality later in the unit. In this class, we'll learn about the tools available for working with HTML elements and CSS styles.
 
@@ -18,7 +18,7 @@ Prior to the studio, the instructor will lead the class through an overview of s
 - Inspecting an element
 - Finding and editing CSS rules that are applied to an element
 - Modifying an element's HTML
-- The different between the content displayed when using "View Source" and what's in the Elements tab
+- The difference between the content displayed when using "View Source" and what's in the Elements tab
 
 ## Making Headlines
 
