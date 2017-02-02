@@ -123,3 +123,4 @@ To turn in your assignment and get credit, follow the [submission instructions][
 [gae-query-class]: https://cloud.google.com/appengine/docs/python/datastore/queryclass
 [gae-query-filter]: https://cloud.google.com/appengine/docs/python/datastore/queryclass#Query_filter
 [starter-code-walkthrough]: https://youtu.be/KtPNiBUlqA0
+[submission-instructions]: ../

@@ -20,7 +20,7 @@ The process for submitting your work is always the same:
 
 ---
 
-### HTML Me Something
+## HTML Me Something
 
 🐘 *Large Assignment*
 
@@ -30,7 +30,7 @@ Practice the basics of HTML and CSS by creating your own static webpage from scr
 
 ---
 
-### Fortune Cookie
+## Fortune Cookie
 
 🐹 *Small Assignment*
 
@@ -40,7 +40,7 @@ Code along to a video tutorial / lecture on the basics of creating a simple dyna
 
 ---
 
-### Web Caesar
+## Web Caesar
 
 🐹 *Small Assignment*
 
@@ -50,7 +50,7 @@ Code along to a video tutorial / lecture in which we build web-app that encrypts
 
 ---
 
-### User Signup
+## User Signup
 
 🐘 *Large Assignment*
 
@@ -60,7 +60,7 @@ Create a web-app that presents the user with a "sign up" form, and responds appr
 
 ---
 
-### Build-a-blog
+## Build-a-blog
 
 🐘 *Large Assignment*
 
