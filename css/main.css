@@ -2,35 +2,13 @@ html {
     position: relative;
     min-height: 100%;
 }
+
 body {
-    font-size: 16px;
-    line-height: 1.7;
-    color: #777;
+    line-height: 1.9em;
 }
 
-
-h1 {
-    font-size: 35px;
-}
-
-h2 {
-    font-size: 27px;
-}
-
-h3 {
-    font-size: 22px;
-}
-
-h4 {
-    font-size: 19px;
-}
-
-h5 {
-    font-size: 17px;
-}
-
-h6 {
-    font-size: 16px;
+#content p {
+    margin: 1.4em 0;
 }
 
 @media (min-width: 1200px) {
@@ -87,11 +65,6 @@ footer p {
 h2, h3, h4, h5, h6 {
     margin-top: 2em;
     color: rgb(52, 74, 95);
-}
-
-li {
-    padding-top: 0.1em;
-    padding-bottom: 0.1em;
 }
 
 #content img {
@@ -179,6 +152,11 @@ pre code {
 .navbar-nav > li > a {
 	padding-top: 20px;
 	padding-bottom: 20px;
+}
+
+a {
+    color: #5c93ce;
+    font-family: "Nexa";
 }
 
 /* Fix Google CSE button */
@@ -295,18 +273,12 @@ blockquote p {
 }
 
 code {
-    color: rgb(18, 74, 135);
-    background-color: rgb(232, 232, 232);
-}
-
-p {
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    margin: 0;
+    color: rgb(52, 74, 95);
+    background-color: rgb(240, 240, 240);
 }
 
 #content {
-    padding: 2em 3em;
+    padding: 2em 6%;
 }
 
 .nav-pills li, .lc-button {
@@ -333,14 +305,13 @@ h1 {
 }
 
 .navbar-brand {
-
-
     padding: 0;
     margin: 0;
 }
 
 .navbar-brand h1 {
-    font-family: "Nexa Light";
+    font-family: "Adagio";
+    color: #789;
     margin: 0;
     font-size: 18px;
     line-height: 72px;
