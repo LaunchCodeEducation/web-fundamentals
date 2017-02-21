@@ -12,7 +12,7 @@ As we learn how web apps work, and how to build our own web apps, we'll be using
 
 #### Windows
 
-[Windows Installer](https://www.dropbox.com/s/ev9ln5o2krriy3t/GoogleAppEngine-1.9.40.msi?dl=1)
+[Windows Installer](https://www.dropbox.com/s/czx5u65zix1569g/GoogleAppEngine-1.9.40.msi?dl=1)
 
 1. Download and run the installer. If downloading from the first URL is slow, try using the second link.
 2. Click the install screen, using all default options
@@ -20,7 +20,7 @@ As we learn how web apps work, and how to build our own web apps, we'll be using
 
 #### Mac
 
-[Mac Installer](https://www.dropbox.com/s/peh4xfcs2a7vqlb/GoogleAppEngineLauncher-1.9.38.dmg?dl=1)
+[Mac Installer](https://www.dropbox.com/s/ykjyqqun3k5oeav/GoogleAppEngineLauncher-1.9.38.dmg?dl=1)
 
 1. Download the installer file. If downloading from the first URL is slow, try using the second link.
 2. Open the installer .dmg file, and in the window that opens drag the Google App Engine Launcher icon to the Applications folder
