@@ -15,19 +15,66 @@
 
         <header class="navbar navbar-default navbar-fixed-top">
 
-            <a class="navbar-brand dabomb" href="http://education.launchcode.org/web-fundamentals/"></a>
+            <ul class="nav navbar-nav">
 
-            <a class="navbar-brand site-title" href="http://education.launchcode.org/web-fundamentals/">
-                <h1>Unit 2: Web Fundamentals</h1>
-            </a>
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+                        <ul class="dropdown-menu">
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/classes/">
+                                        Classes
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/studios/">
+                                        Studios
+                                    </a>
+                                </li>
+                                                            <li class="active lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/assignments/">
+                                        Assignments
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="https://www.udacity.com/course/web-development--cs253">
+                                        Udacity CS253
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/cheatsheets/">
+                                        Cheatsheets
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/issues/">
+                                        Issues
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/about/">
+                                        About this Unit
+                                    </a>
+                                </li>
+                                                        <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">Search This Site</a>
+                            </li>
+                        </ul>
+                    </li>
 
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">
-                      <span id="searchGlyph" class="glyphicon glyphicon-search"></span> <span class="hidden-sm hidden-md hidden-lg">Search</span>
-                    </a>
-                </li>
+                
             </ul>
+
+            <div>
+                <a class="navbar-brand site-title navbar-center" href="http://education.launchcode.org/web-fundamentals/">
+                    <h1>Unit 2: Web Fundamentals</h1>
+                </a>
+            </div>
+
+            <div class="nav navbar-nav navbar-right">
+                <a class="navbar-brand dabomb" href="http://education.launchcode.org/web-fundamentals/"></a>
+            </div>
 
         </header>
 
@@ -66,51 +113,7 @@
         <main class="container-fluid">
             <div class="row">
 
-                
-                    <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
-
-                        <ul class="nav nav-pills nav-stacked">
-                                                            <li class=" lc-button">
-                                    <a href="http://education.launchcode.org/web-fundamentals/classes/">
-                                        Classes
-                                    </a>
-                                </li>
-                                                            <li class=" lc-button">
-                                    <a href="http://education.launchcode.org/web-fundamentals/studios/">
-                                        Studios
-                                    </a>
-                                </li>
-                                                            <li class="active lc-button">
-                                    <a href="http://education.launchcode.org/web-fundamentals/assignments/">
-                                        Assignments
-                                    </a>
-                                </li>
-                                                            <li class=" lc-button">
-                                    <a href="https://www.udacity.com/course/web-development--cs253">
-                                        Udacity CS253
-                                    </a>
-                                </li>
-                                                            <li class=" lc-button">
-                                    <a href="http://education.launchcode.org/web-fundamentals/cheatsheets/">
-                                        Cheatsheets
-                                    </a>
-                                </li>
-                                                            <li class=" lc-button">
-                                    <a href="http://education.launchcode.org/web-fundamentals/issues/">
-                                        Issues
-                                    </a>
-                                </li>
-                                                            <li class=" lc-button">
-                                    <a href="http://education.launchcode.org/web-fundamentals/about/">
-                                        About this Unit
-                                    </a>
-                                </li>
-                                                    </ul>
-
-                    </nav>
-
-                
-                <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+                <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>HTML Me Something, Part I: HTML</h1>
                     <p><a href="..">&lt; Back to Overview page</a></p>
 <p>In Part 1, you will get comfortable with writing markup, and with separating content from design and layout.</p>
@@ -125,7 +128,7 @@
 </ul>
 <p>...and fill each element with some appropriate content. You can start by removing the snippet of HTML that you added during setup.</p>
 <h2 id="getting-to-work">Getting to Work</h2>
-<p>Your mission: Build a page that...</p>
+<p>Your mission: Build a page that:</p>
 <ul>
 <li>
 <p>Tells a story. This can be personal, or not. Funny, serious or neither. You can do whatever you like, but generally, it should be something in the range of 3-10 paragraphs or sections. <a href="http://education.launchcode.org/html-me-something/submissions/chrisbay/index-nocss.html">Here is an example</a>, and here are some other ideas:</p>
@@ -154,13 +157,13 @@
 <h3 id="notes-and-tips">Notes and Tips</h3>
 <ul>
 <li>
+<p>Use your browser developer tools to look at <a href="http://education.launchcode.org/html-me-something/submissions/chrisbay/index-nocss.html">the example page</a>], or to troubleshoot things that don't look right. You should mimic the document structure of this example, but <strong>do not just copy/paste!</strong> Use the example to learn how your HTML elements might be structured, and structure your own pages according to your own content's needs.</p>
+</li>
+<li>
 <p>Don't add any CSS yet. Really, we mean it! If you think your page looks boring now, that's okay. We'll get there soon enough.</p>
 </li>
 <li>
 <p>As you make changes, you will obviously want to see the results. To do so, simply re-save the file in your text editor, and then, over in your browser window, click Refresh.</p>
-</li>
-<li>
-<p>Use your browser developer tools to troubleshoot things that don't look right. You can also use the <em>View Source</em> option on your page and other pages on the web, to see what HTML is being used, and to get ideas.</p>
 </li>
 <li>Rely on reference sites linked on this page, and elsewhere online. We haven't taught you every detail about every tag here that you may want or need to use, and you're free to use tags that haven't been explicitly introduced in class. We've given you enough background to get started, and are intentionally leaving some of the learning up to you.</li>
 </ul>
@@ -169,7 +172,7 @@
 <p><em>Why again?</em></p>
 <p>The reason is that, since you have added a bunch of new HTML code, your <code>index.html</code> file is now in a very different state from how it looked the first time you committed it. You can see this by checking your status:</p>
 <pre><code class="language-nohighlight">$ git status
-On branch gh-pages
+On branch master
 Changes not staged for commit:
   (use "git add &lt;file&gt;..." to update what will be committed)
   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
@@ -195,9 +198,9 @@ no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
 $ git commit -m "Finished work on HTML page"</code></pre>
 <p>You might be wondering: <em>How do I know when it's time to pause working and do another commit?</em></p>
 <p>This is somewhat subjective, and ultimately up to you. The basic guiding principle is that you should pause and commit any time you have reached a natural stopping point and completed a coherent &quot;chunk of work&quot;.</p>
-<blockquote>
-<p><em>NOTE:</em> For assignments such as these, we lean on the side of very large &quot;chunks of work&quot;, so that you aren't overwhelmed with Git and can spend most of your time focusing on your code. But a more experienced Git user probably would have broken down this <em>Part 1</em> into a handful of smaller commits.</p>
-</blockquote>
+<aside class="aside-note">
+<p>For assignments such as these, we lean on the side of very large &quot;chunks of work&quot;, so that you aren't overwhelmed with Git and can spend most of your time focusing on your code. But a more experienced Git user probably would have broken down this <em>Part 1</em> into a handful of smaller commits.</p>
+</aside>
 <h2 id="done">Done!</h2>
 <p>Well done! Time to <a href="../part2-css">dive into some CSS</a>.</p>
                                     </section>
@@ -207,12 +210,14 @@ $ git commit -m "Finished work on HTML page"</code></pre>
 
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="http://education.launchcode.org/web-fundamentals/js/bootstrap.min.js"></script>
-        <script src="//yastatic.net/highlightjs/8.2/highlight.min.js"></script>
+        <script src="http://education.launchcode.org/web-fundamentals/js/highlight.pack.js"></script>
 
         <script>
             $(function() {
                 $("section>h1").wrap('<div class="page-header" />');
+
                 // Syntax highlighting
+                hljs.configure({ displayLabels: true });
                 hljs.initHighlightingOnLoad();
             });
         </script>

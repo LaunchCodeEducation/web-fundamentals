@@ -15,19 +15,66 @@
 
         <header class="navbar navbar-default navbar-fixed-top">
 
-            <a class="navbar-brand dabomb" href="http://education.launchcode.org/web-fundamentals/"></a>
+            <ul class="nav navbar-nav">
 
-            <a class="navbar-brand site-title" href="http://education.launchcode.org/web-fundamentals/">
-                <h1>Unit 2: Web Fundamentals</h1>
-            </a>
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+                        <ul class="dropdown-menu">
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/classes/">
+                                        Classes
+                                    </a>
+                                </li>
+                                                            <li class="active lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/studios/">
+                                        Studios
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/assignments/">
+                                        Assignments
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="https://www.udacity.com/course/web-development--cs253">
+                                        Udacity CS253
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/cheatsheets/">
+                                        Cheatsheets
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/issues/">
+                                        Issues
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/about/">
+                                        About this Unit
+                                    </a>
+                                </li>
+                                                        <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">Search This Site</a>
+                            </li>
+                        </ul>
+                    </li>
 
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">
-                      <span id="searchGlyph" class="glyphicon glyphicon-search"></span> <span class="hidden-sm hidden-md hidden-lg">Search</span>
-                    </a>
-                </li>
+                
             </ul>
+
+            <div>
+                <a class="navbar-brand site-title navbar-center" href="http://education.launchcode.org/web-fundamentals/">
+                    <h1>Unit 2: Web Fundamentals</h1>
+                </a>
+            </div>
+
+            <div class="nav navbar-nav navbar-right">
+                <a class="navbar-brand dabomb" href="http://education.launchcode.org/web-fundamentals/"></a>
+            </div>
 
         </header>
 
@@ -66,51 +113,7 @@
         <main class="container-fluid">
             <div class="row">
 
-                
-                    <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
-
-                        <ul class="nav nav-pills nav-stacked">
-                                                            <li class=" lc-button">
-                                    <a href="http://education.launchcode.org/web-fundamentals/classes/">
-                                        Classes
-                                    </a>
-                                </li>
-                                                            <li class="active lc-button">
-                                    <a href="http://education.launchcode.org/web-fundamentals/studios/">
-                                        Studios
-                                    </a>
-                                </li>
-                                                            <li class=" lc-button">
-                                    <a href="http://education.launchcode.org/web-fundamentals/assignments/">
-                                        Assignments
-                                    </a>
-                                </li>
-                                                            <li class=" lc-button">
-                                    <a href="https://www.udacity.com/course/web-development--cs253">
-                                        Udacity CS253
-                                    </a>
-                                </li>
-                                                            <li class=" lc-button">
-                                    <a href="http://education.launchcode.org/web-fundamentals/cheatsheets/">
-                                        Cheatsheets
-                                    </a>
-                                </li>
-                                                            <li class=" lc-button">
-                                    <a href="http://education.launchcode.org/web-fundamentals/issues/">
-                                        Issues
-                                    </a>
-                                </li>
-                                                            <li class=" lc-button">
-                                    <a href="http://education.launchcode.org/web-fundamentals/about/">
-                                        About this Unit
-                                    </a>
-                                </li>
-                                                    </ul>
-
-                    </nav>
-
-                
-                <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+                <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Studio: FlickList 1</h1>
                     <p>This studio marks the beginning of our exploration of the mechanics and ideas involved in building full-stack web applications. The term <strong>full-stack</strong> simply means that we'll look at every aspect of web applications, from the pages that a user views and interacts with, to the Python code that decides how to handle user submissions and requests, to the database that stores information.</p>
 <p>Starting today, the majority of in-class sessions will revolve around building a class project together. Each day of class, we will add a little bit more onto the project: your instructor will live-code some new feature, and then for Studio you will be asked to add a little more.</p>
@@ -131,12 +134,14 @@
 
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="http://education.launchcode.org/web-fundamentals/js/bootstrap.min.js"></script>
-        <script src="//yastatic.net/highlightjs/8.2/highlight.min.js"></script>
+        <script src="http://education.launchcode.org/web-fundamentals/js/highlight.pack.js"></script>
 
         <script>
             $(function() {
                 $("section>h1").wrap('<div class="page-header" />');
+
                 // Syntax highlighting
+                hljs.configure({ displayLabels: true });
                 hljs.initHighlightingOnLoad();
             });
         </script>
