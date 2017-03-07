@@ -123,7 +123,7 @@
 <ul>
 <li>Responding to bad requests with a 400 error
 <ul>
-<li>We don't bother giving a nice error message to a malicious user that submits a bad request, such as a request to cross off a movie that doesn't exist in our system. Instead, we send back an <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_Error">HTTP 400 status code</a> and a very brief error message. We'll use this pattern going forward, only resonding to errors with helpful messages when it's the case that a well-meaning user made a mistake.</li>
+<li>We don't bother giving a nice error message to a malicious user that submits a bad request, such as a request to cross off a movie that doesn't exist in our system. Instead, we send back an <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_Error" target="_blank">HTTP 400 status code</a> and a very brief error message. We'll use this pattern going forward, only resonding to errors with helpful messages when it's the case that a well-meaning user made a mistake.</li>
 </ul></li>
 <li>We have changed &quot;cross off&quot; semantics to &quot;watched it&quot; semantics. Instead of &quot;crossing off a movie from your list&quot;, user is reporting that they &quot;finished watching&quot; that movie
 <ul>
