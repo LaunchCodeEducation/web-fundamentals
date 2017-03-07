@@ -251,22 +251,13 @@ To finishing submitting and receive credit, follow steps 3 and 4 of the [submiss
 
 If you want to show off your hard work to all your friends, Github has a cool feature called *Github Pages* that makes this really easy.
 
-Github provides free hosting for any "static" web content (like this project). All you have to do is create a branch with the special designated name `gh-pages`.
+Github provides free hosting for any "static" web content (like this project). All you have to do is change a setting on your GitHub repository.
 
 1. In a browser, go to the Github page for your repository.
-
-1. Create a new branch called `gh-pages`:
-
-	<img src="images/create-gh-pages.png"/>
-
+1. Click on the *Settings* tab
+1. Scroll down to the *GitHub Pages* section and enable the feature by choosing your `master` branch from the dropdown. Hit *Save*.
+    ![Set GitHub Pages Branch](images/gh-pages-set-branch.png)
 1. In any browser, you should now be able to visit `YOUR_USERNAME.github.io/html-me-something` and see your web page!
 
-1. Note that if you want to continue making edits and improvements to your page, and see those changes reflected at this url, you will need to make sure to `push` your changes to the `gh-pages` branch rather than `master`.
-
-    So whenever you push, it should look like:
-
-	```nohighlight
-	$ git push origin gh-pages
-	```
 
 [submission-instructions]: ../

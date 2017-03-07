@@ -21,7 +21,7 @@ Stub out `index.html` with these basic elements:
 
 ## Getting to Work
 
-Your mission: Build a page that...
+Your mission: Build a page that:
 
 * Tells a story. This can be personal, or not. Funny, serious or neither. You can do whatever you like, but generally, it should be something in the range of 3-10 paragraphs or sections. [Here is an example](http://education.launchcode.org/html-me-something/submissions/chrisbay/index-nocss.html), and here are some other ideas:
 
@@ -42,11 +42,11 @@ Your mission: Build a page that...
 
 ### Notes and Tips
 
+* Use your browser developer tools to look at [the example page](http://education.launchcode.org/html-me-something/submissions/chrisbay/index-nocss.html)], or to troubleshoot things that don't look right. You should mimic the document structure of this example, but **do not just copy/paste!** Use the example to learn how your HTML elements might be structured, and structure your own pages according to your own content's needs.
+
 * Don't add any CSS yet. Really, we mean it! If you think your page looks boring now, that's okay. We'll get there soon enough.
 
 * As you make changes, you will obviously want to see the results. To do so, simply re-save the file in your text editor, and then, over in your browser window, click Refresh.
-
-* Use your browser developer tools to troubleshoot things that don't look right. You can also use the *View Source* option on your page and other pages on the web, to see what HTML is being used, and to get ideas.
 
 * Rely on reference sites linked on this page, and elsewhere online. We haven't taught you every detail about every tag here that you may want or need to use, and you're free to use tags that haven't been explicitly introduced in class. We've given you enough background to get started, and are intentionally leaving some of the learning up to you.
 
@@ -60,7 +60,7 @@ The reason is that, since you have added a bunch of new HTML code, your `index.h
 
 ```nohighlight
 $ git status
-On branch gh-pages
+On branch master
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
