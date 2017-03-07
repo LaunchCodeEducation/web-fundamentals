@@ -42,7 +42,7 @@ Your mission: Build a page that:
 
 ### Notes and Tips
 
-* Use your browser developer tools to look at [the example page](http://education.launchcode.org/html-me-something/submissions/chrisbay/index-nocss.html)], or to troubleshoot things that don't look right. You should mimic the document structure of this example, but **do not just copy/paste!** Use the example to learn how your HTML elements might be structured, and structure your own pages according to your own content's needs.
+* Use your browser developer tools to look at [the example page](http://education.launchcode.org/html-me-something/submissions/chrisbay/index-nocss.html), or to troubleshoot things that don't look right. You should mimic the document structure of this example, but **do not just copy/paste!** Use the example to learn how your HTML elements might be structured, and structure your own pages according to your own content's needs.
 * Don't add any CSS yet. Really, we mean it! If you think your page looks boring now, that's okay. We'll get there soon enough.
 * As you make changes, you will obviously want to see the results. To do so, simply re-save the file in your text editor, and then, over in your browser window, click Refresh.
 * Rely on reference sites linked on this page, and elsewhere online. We haven't taught you every detail about every tag here that you may want or need to use, and you're free to use tags that haven't been explicitly introduced in class. We've given you enough background to get started, and are intentionally leaving some of the learning up to you.
