@@ -11,7 +11,9 @@ We're going to plug this functional hole across the next two lessons by learning
 
 In the next lesson, we'll learn how to write code that allows our data to be stored in a database *without* using queries. We'll still need SQL to read data, though.
 
-*Note*: While we've suggested that you code along with the course videos already, we want to emphasize this point for the database lessons. Coding along with the examples in the videos will be essential to being able to properly tackle the next assignment. If you don't code along, you will be at an extreme disadvantage.
+<aside class="aside-note" markdown="1">
+While we've suggested that you code along with the course videos already, we want to emphasize this point for the database lessons. Coding along with the examples in the videos will be essential to being able to properly tackle the next assignment. If you don't code along, you will be at an extreme disadvantage.
+</aside>
 
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|

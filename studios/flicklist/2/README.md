@@ -65,7 +65,9 @@ For this studio (and all subsequent studios), you will want to start at the exac
 
     And if you look again at your code in your text editor, you will see that the code has changed! You have been transported to the parallel universe of Studio 2.
 
-    > *NOTE:* This is not a typical use of branches. More normally, you would have one master branch that represents the "real" or "official" version of your project. Then you would create small, temporary branches to fix a bug work on a new feature, and upon finishing the feature or bug-fix, you would `merge` back into the master branch and delete the temporary branch.
+    <aside class="aside-note" markdown="1">
+    Branches are generally used differently in projects. More typically, you would have one master branch that represents the "real" or "official" version of your project. Then you would create small, temporary branches to fix a bug work on a new feature, and upon finishing the feature or bug-fix, you would `merge` back into the master branch and delete the temporary branch.
+    </aside>
 
 ### Your Task
 

@@ -5,9 +5,11 @@ currentMenu: assignments
 
 This assignment will closely follow [Problem Set 3][pset3] from CS253. We'll provide more structured guidance than the problem set overview at Udacity, which is rather brief. So while you may find the overview useful, you only need to follow the instructions given here.
 
-*Note*: As with other problem sets for the Udacity course, an instructor's solution is provided within the course. If you are tempted use the provided solution as a shortcut to finishing this assignment, consider the following:
+<aside class="aside-warning" markdown="1">
+As with other problem sets for the Udacity course, an instructor's solution is provided within the course. If you are tempted use the provided solution as a shortcut to finishing this assignment, consider the following:
 * The instructor's solution uses several concepts we haven't learned yet, so not only will significant parts of it not make sense to you, but we'll easily be able to tell that you didn't write the code yourself.
 * We'll know if you copy the code from the instructor's solution, even if you go to pains to change parts of it. We're quick detectives when it comes to this kind of thing. We've provided a detailed guide below, covering the most difficult parts of the problem set. Let us be your guide, and you'll learn the material well without undue struggle.
+</aside>
 
 Throughout the assignment, refer to the [demo app][build-a-blog].
 

@@ -53,7 +53,9 @@ First, follow the steps below to create a folder for your project and initialize
     $ touch index.html
     ```
 
-    > *NOTE:* The filename `index.html` is just a standard convention for the name of the root page of a website.
+    <aside class="aside-note" markdown="1">
+    The filename `index.html` is a standard convention for the name of the root page of a website. Most web servers will treat `index.html` as the default file to load from a given directory.
+    </aside>
 
 1. Open up your new file in a text editor. Add a single line with the following HTML:
 
@@ -84,14 +86,18 @@ Now let's incorporate Git into the picture.
     Initialized empty Git repository in /Users/adalovelace/lc101/html-me-something/.git/
     ```
 
-    > Note that your name is (probably) something other than **adalovelace**.
+    <aside class="aside-note" markdown="1">
+    Your name is (probably) something other than **adalovelace**.
+    </aside>
 
     Now your project is a Git repository, which will enable you to to do all the magic Git powers:
 
     - using version-control to manage your changes
     - syncing your local repository with a remote repository on Github.com.
 
-    > *Note:* You only ever have to do the `git init` step once, at the beginning.
+    <aside class="aside-note" markdown="1">
+    You only ever have to do the `git init` step once, at the beginning.
+    </aside>
 
 	#### 1a. Check your status
 
@@ -189,7 +195,9 @@ For the remainder of this course, you will use Github to submit your work. Here'
 
     <img src="images/repo-name.png"/>
 
-    > *NOTE:* Instead of `LaunchCodeEducation`, you will see your own username.
+    <aside class="aside-note" markdown="1">
+    Instead of `LaunchCodeEducation`, you will see your own username.
+    </aside>
 
 
 1. #### Inform your local repo about the existence of your remote repo
@@ -208,7 +216,9 @@ For the remainder of this course, you will use Github to submit your work. Here'
 
 	![GitHub Clone Url](./images/github-clone-url.png)
 
-	> *NOTE:* Alternatively, you can just type out `https://github.com/YOURUSERNAME/html-me-something.git` at the terminal.
+	<aside class="aside-note" markdown="1">
+	Alternatively, you can just type out `https://github.com/YOURUSERNAME/html-me-something.git` at the terminal.
+	</aside>
 
 	By running this `git remote add ...` command on the terminal, you are basically saying:
 

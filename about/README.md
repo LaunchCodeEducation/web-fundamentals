@@ -29,7 +29,9 @@ You will also learn how to use a *version control system* (VCS), essentially a s
 
 The curriculum for this course centers primarily around an online class called [Udacity CS253: Web Development][udacity-course] (Udacity is an interactive learning site, similar to Codecademy). We will also provide links to additional supplementary resources where appropriate.
 
-> *NOTE:* While Unit 1 used Python 3, this unit uses Python 2. The reason for this is that much of our work will be done within a web application framework called webapp2, which relies on Python 2. There are quite a few differences between the two versions, but you won't encounter most of them. We discuss the relevant differences in the [Python 2 vs. 3 Cheatsheet](https://github.com/LaunchCodeEducation/cheatsheets/tree/master/python2vs3)
+<aside class="aside-warning" markdown="1">
+While Unit 1 used Python 3, this unit uses Python 2. The reason for this is that much of our work will be done within a web application framework called webapp2, which relies on Python 2. There are quite a few differences between the two versions, but you won't encounter most of them. We discuss the relevant differences in the [Python 2 vs. 3 Cheatsheet](https://github.com/LaunchCodeEducation/cheatsheets/tree/master/python2vs3)
+</aside>
 
 ### How to use the curriculum materials
 

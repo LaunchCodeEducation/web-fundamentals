@@ -4,9 +4,13 @@ title: Installing Google App Engine
 
 As we learn how web apps work, and how to build our own web apps, we'll be using Google App Engine. This tool will help us create and run web apps on our computers.
 
-*Note 1*: **Do not** watch or follow the video "Quiz: Google App Engine" under the heading "Problem Set 1 - Creating Your First Site" on the Udacity course. This video is a bit out-of-date and therefore likely to confuse you. Skip this video, follow the instructions here, and you'll be set.
+<aside class="aside-warning" markdown="1">
+**Do not** watch or follow the video "Quiz: Google App Engine" under the heading "Problem Set 1 - Creating Your First Site" on the Udacity course. This video is a bit out-of-date and therefore likely to confuse you. Skip this video, follow the instructions here, and you'll be set.
+</aside>
 
-*Note 2*: If you read any information from Udacity or Google that makes it seem like you need to *publish* or *host* your site on the Google App Engine platform, or that you need to sign up for a Google App Engine account with a credit card, **ignore it**. We'll only use Google App Engine to run our apps locally on our computers, and you do not need to publish your work remotely to the Google App Engine platform. When Udactiy prompts you to do so, and to submit your URL to them for grading, ignore it. We'll do our own grading. And we'll remind you of this a few more times.
+<aside class="aside-warning" markdown="1">
+If you read any information from Udacity or Google that makes it seem like you need to *publish* or *host* your site on the Google App Engine platform, or that you need to sign up for a Google App Engine account with a credit card, **ignore it**. We'll only use Google App Engine to run our apps locally on our computers, and you do not need to publish your work remotely to the Google App Engine platform. When Udactiy prompts you to do so, and to submit your URL to them for grading, ignore it. We'll do our own grading. And we'll remind you of this a few more times.
+</aside>
 
 ### Install Google App Engine (GAE)
 
@@ -17,6 +21,7 @@ As we learn how web apps work, and how to build our own web apps, we'll be using
 1. Download and run the installer. If downloading from the first URL is slow, try using the second link.
 2. Click the install screen, using all default options
 3. After the installer finishes running, select **Run the Installer** and **Finish**
+4. Configure GAE found your Python 2 installation by going to *Edit > Preferences* and setting the path to your Python 2 installation. Most likely, it's already in the default location, but some students may find that they need to set this path explicitly.
 
 #### Mac
 
@@ -39,5 +44,9 @@ Now that you have GAE installed on your laptop, let's learn how to use it by wal
 If you're using Linux, much of the video will not be precisely applicable since there isn't a GUI tool for using GAE. However, you may find some value in the discussion of common errors messages.
 
 [Watch: Google App Engine Walkthrough](https://www.youtube.com/watch?v=KSFaeLRZNE8)
+
+<aside class="aside-note" markdown="1">
+When creating GAE apps, the application name must be *lowercase*.
+</aside>
 
 [gae-on-linux]: linux.html

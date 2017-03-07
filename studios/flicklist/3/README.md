@@ -15,7 +15,9 @@ Branch walkthrough3 set up to track remote branch walkthrough3 from origin.
 Switched to a new branch 'walkthrough3'
 ```
 
-> *NOTE:* Before doing this, you will want to make sure you do not have any uncommitted changes.
+<aside class="aside-note" markdown="1">
+Before doing this, you will want to make sure you do not have any uncommitted changes.
+</aside>
 
 The main things we will do during today's walkthrough are:
 
