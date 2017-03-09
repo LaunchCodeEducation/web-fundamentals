@@ -255,7 +255,7 @@ Github provides free hosting for any "static" web content (like this project). A
 
 1. In a browser, go to the Github page for your repository.
 1. Click on the *Settings* tab
-1. Scroll down to the *GitHub Pages* section and enable the feature by choosing your `master` branch from the dropdown. Hit *Save*.
+1. Scroll down to the *GitHub Pages* section and enable the GitHub Pages feature by choosing your `master` branch from the dropdown. Hit *Save*.
     ![Set GitHub Pages Branch](images/gh-pages-set-branch.png)
 1. In any browser, you should now be able to visit `YOUR_USERNAME.github.io/html-me-something` and see your web page!
 
