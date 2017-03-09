@@ -261,3 +261,4 @@ Github provides free hosting for any "static" web content (like this project). A
 
 
 [submission-instructions]: ../
+[open-in-browser]: https://www.youtube.com/watch?v=It5P1hg44MQ
