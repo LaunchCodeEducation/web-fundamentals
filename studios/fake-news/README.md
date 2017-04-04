@@ -1,5 +1,5 @@
 ---
-title: 'Studio: Headline News'
+title: 'Studio: Fake News'
 currentMenu: studios
 ---
 
@@ -22,7 +22,7 @@ Prior to the studio, the instructor will lead the class through an overview of s
 
 ## Making Headlines
 
-Pick a news site ([The New York Times](http://www.nytimes.com/), for example), and use Chrome Dev Tools to modify one of the main articles to use a picture and text of your choosing. You can have fun with this (see our example below) and take a screenshot to use for a practical joke, if you like.
+Pick a news site ([The New York Times](https://www.nytimes.com/), for example), and use Chrome Dev Tools to modify one of the main articles to use a picture and text of your choosing. You can have fun with this (see our example below) and take a screenshot to use for a practical joke, if you like.
 
 ![Nelly / LC in NYT](lc-nelly-nyt.png)
 
@@ -32,7 +32,7 @@ When linking to an image, pay attention to the protocol -- either `http` or `htt
 If the site you are modifying was loaded over `https` and your image uses `http` then the image may not load properly. You should try to add `s` to the image protocol, and if that doesn't work, look for another image or modify a site that uses `http`.
 </aside>
 
-(Optional) Share your creation in the `#headline-news` channel on Slack, and see what others have created!
+(Optional) Share your creation in the `#fake-news` channel on Slack, and see what others have created!
 
 ### Resources
 

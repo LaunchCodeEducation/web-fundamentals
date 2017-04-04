@@ -6,7 +6,7 @@ currentMenu: classes
 Class # | Prep Work | Studio | Topics | Begin Assignment\*
 -----|-----------|----------|---------|------------------
 1 | [Prep Work](../class-prep/1/) | | HTML, Git basics | &nbsp;
-2 | [Prep Work](../class-prep/2/) | [Headline News](../studios/headline-news/) | HTML, CSS, Git branches | [HTML Me Something](../assignments/html-me-something/)
+2 | [Prep Work](../class-prep/2/) | [Fake News](../studios/fake-news/) | HTML, CSS, Git branches | [HTML Me Something](../assignments/html-me-something/)
 3 | [Prep Work](../class-prep/3/) | [FlickList 1](../studios/flicklist/1/) | HTTP / how the web works, Git remote repositories | [Fortune Cookie](../assignments/fortune-cookie/)
 4 | [Prep Work](../class-prep/4/) | [FlickList 2](../studios/flicklist/2/) | HTML forms and inputs | [Web Caesar](../assignments/web-caesar/)
 5 | [Prep Work](../class-prep/5/) | [FlickList 3](../studios/flicklist/3/) | validating forms, redirecting, HTML escaping | [User Signup](../assignments/user-signup/)
