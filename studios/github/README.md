@@ -17,7 +17,7 @@ TODO
 
 We are going to play a game. We will play it just like you'd play around a campfire, but on a web page.
 
-Find a new friend to play the game with.
+First, find a new friend to play the game with.
 
 ### Player 1
 
@@ -39,7 +39,7 @@ In that directory, open a new file `index.html` in the editor of your choice. Pa
 </html>
 ```
 
-Let's check that our html looks allright by opening it in a browser. The URL will look something like this: `file:///Users/cheryl/Development/fireside-story/index.html`.
+Let's check that our html looks okay by opening it in a browser. The URL will look something like this: `file:///Users/cheryl/Development/fireside-story/index.html`.
 
 TODO screenshot
 
@@ -57,6 +57,8 @@ Untracked files:
     index.html
 
 nothing added to commit but untracked files present (use "git add" to track)
+```
+```
 $ git add .
 $ git status
 On branch master
@@ -68,10 +70,14 @@ Changes to be committed:
 
     new file:   index.html
 
+```
+```
 $ git commit -m 'started story'
 [master (root-commit) e1c1719] started story
  1 file changed, 5 insertions(+)
   create mode 100644 index.html
+```
+```
 $ git log
 commit longuniquehashofdigitshere
 Author: Cheryl <cherylschaefer@gmail.com>
@@ -80,20 +86,141 @@ Date:   Wed Apr 5 10:55:56 2017 -0500
     started story
 ```
 
+Great! We've got our project going locally, but we're going to need to make it accessible for player 2 also. Let's push this project up to Github.
 
-Pick a news site ([The New York Times](https://www.nytimes.com/), for example), and use Chrome Dev Tools to modify one of the main articles to use a picture and text of your choosing. You can have fun with this (see our example below) and take a screenshot to use for a practical joke, if you like.
+Go to your Github profile in a web browser. Click on the + button to add a new repository (repo).
 
-![Nelly / LC in NYT](lc-nelly-nyt.png)
+TODO screenshot
 
-<aside class="aside-warning" markdown="1">
-When linking to an image, pay attention to the protocol -- either `http` or `https` -- of the site you are modifying, and of the image you are including. You can find the protocol at the beginning of the image URL.
+Fill in the name and description. Uncheck the "initialize with README" and Click Create.
 
-If the site you are modifying was loaded over `https` and your image uses `http` then the image may not load properly. You should try to add `s` to the image protocol, and if that doesn't work, look for another image or modify a site that uses `http`.
-</aside>
+TODO screenshot
 
-(Optional) Share your creation in the `#fake-news` channel on Slack, and see what others have created!
+Now go back to your terminal and follow the instructions shown on Github which should be very similar to this:
+
+```
+$ git remote add origin git@github.com:cherylschaefer/fireside-story.git
+$ git push origin master
+```
+
+Now you should be able to confirm that Github has the same version of the project you have locally. (File contents in browser match those in terminal.)
+
+### Player 2
+
+Clone the project down onto your computer by following these instructions.
+
+Go to player 1's github profile and find the fireside-story repo. Click on the green "Clone or download" button. Copy the url to your clipboard.
+
+TODO screenshot
+
+In your terminal, navigate to your development folder and clone down the repo. The command should look something like this.
+
+```
+git clone git@github.com:cherylschaefer/fireside-story.git
+```
+
+Now you can add a line to the story! Open the `index.html` file in your editor and add the next line of the story. Then commit your change.
+
+```
+$ git status
+$ git add index.html
+$ git commit -m 'added second line of story'
+```
+
+Now we need to push up your changes so player 1 can use them as well.
+
+```
+$ git push origin master
+TODO Error message
+```
+
+Great error message! It let us know exactly what went wrong - player 2 does not have security permissions to write to player 1's repo. Let's go fix that.
+
+### Player 1
+
+In your web browser, go to your fireside-story repo. Click the `Settings` button then click on `Collaborators`. Enter in player 2's Github username and click `Add Collaborator`.
+
+### Player 2
+
+You should receive an email invitation to receive permissions to this repo from player 1 through Github.
+
+Now let's go enter that command again to push up our code.
+
+```
+$ git push origin master
+TODO Success message
+```
+
+Both players should now see the second line of the story on Github in the browser.
+
+### Player 1
+
+Player 1 you might notice you don't have the second line on your computer. Go to the terminal and enter this command to pull that updated code in locally.
+
+```
+$ git pull origin master
+TODO message
+```
+
+Now go in your editor, add and commit a third line of story and push it up.
+
+### Player 2
+
+Player 2 you might notice now YOU don't have the third line on your computer. Go to the terminal and enter this command to pull that updated code in locally.
+
+```
+$ git pull origin master
+TODO message
+```
+
+Now go in your editor, add and commit a fourth line of story and push it up.
+
+You can both play like this for a while! But let's say player 2 wants to work a little extra on the project. You're not sure player 1 is keen on this change so let's put it in a branch.
+
+```
+$ git checkout -b add-styling
+TODO message
+```
+
+Open a new file, style.css and paste this code in:
+```
+body {
+  color: white;
+  background-color: black;
+}
+```
+
+Now link it in your `index.html`. It should look something like this:
+
+```html
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <p>It was a dark and stormy night...</p>
+    ... your content here
+  </body>
+</html>
+```
+
+Now stage and commit the new file and changes to the existing file.
+
+```
+$ git add .
+$ git commit -m 'added style.css'
+$ git push
+```
+
+You should both now be able to see a second branch appear in your repo in the browser. On your command line, you can type this command to see a list of the available branches: 
+
+```
+$ git branch
+```
+
+
+
 
 ### Resources
 
-* [Using Chrome Developer Tools: Elements](https://www.youtube.com/watch?v=nV9PLPFTnkE)
-* [Chrome DevTools Documentation](https://developers.google.com/web/tools/chrome-devtools/)
+* [Adding Another Person To Your Repository](https://help.github.com/articles/inviting-collaborators-to-a-personal-repository/)
