@@ -9,6 +9,12 @@ Get an introduction to web developer tools in Google Chrome, and use them to ins
 
 [Work on Fake News](fake-news/)
 
+## Github
+
+TODO
+
+[Work on Github](github/)
+
 ## Flicklist
 
 Rather than a single studio, Flicklist is a progressive series of studios. Each studio builds on work done in the previous studio. Additionally, each studio begins with an instructor-led walkthrough to introduce new ideas.
