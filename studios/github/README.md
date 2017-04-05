@@ -219,6 +219,64 @@ You should both now be able to see a second branch appear in your repo in the br
 $ git branch
 ```
 
+In your browser, go to the github project. Click on branches and the new branch name.
+
+TODO screenshot
+
+In the upper right-hand corner, click `Compare` to see a diff between this feature branch and the master branch.
+
+TODO screenshot
+
+If you are happy with your changes, click `Create a Pull Request`. Add some text in the description box to let player 1 know what you did and why.
+
+TODO screenshot
+
+### Player 1
+
+You will notice that you do not see this new `style.css` file locally. Type this command to see what branches are on your local coputer:
+
+```
+$ git branch
+TODO message
+```
+
+If you want to work with the branch before merging it in, you can do so by typing these commands:
+
+```
+$ git fetch
+TODO message
+```
+```
+$ git checkout add-styling
+TODO message
+```
+
+Make a change and commit to this branch if you'd like -- you will see that the pull request in Github is updated to reflect the changes you've added. The context in the description box is not though, so be sure to add comments to the pull request to explain what you did and why.
+
+To go back to the main branch type these commands:
+
+```
+$ git checkout master
+TODO message
+```
+
+You will see you no longer have those changes that are in the add-styling branch. Let's go merge those changes in.
+
+Go to the repo in Github. Click on `Pull Requests`. Explore here and see all the information Github shows you about the changes made.
+
+TODO screenshot
+
+When you're happy with the changes, merge them in. Click `Merge Pull Request` then `Confirm Merge`.
+
+TODO screenshot
+
+Now you will need to pull updates to your master branch locally.
+
+```
+$ git pull origin master
+```
+
+TODO lalalaaa both edit a file so merge conflicts arise
 
 
 
