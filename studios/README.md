@@ -11,7 +11,7 @@ Get an introduction to web developer tools in Google Chrome, and use them to ins
 
 ## Github
 
-TODO
+Learn how to create code together with a partner with a simple, fun story exercise.
 
 [Work on Github](github/)
 

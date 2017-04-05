@@ -39,46 +39,6 @@ In that directory, open a new file `index.html` in the editor of your choice. Pa
 </html>
 ```
 
-Let's check that our html looks allright by opening it in a browser. The URL will look something like this: `file:///Users/cheryl/Development/fireside-story/index.html`.
-
-TODO screenshot
-
-Let's stage and commit this file.
-
-```
-$ git status
-On branch master
-
-Initial commit
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-    index.html
-
-nothing added to commit but untracked files present (use "git add" to track)
-$ git add .
-$ git status
-On branch master
-
-Initial commit
-
-Changes to be committed:
-  (use "git rm --cached <file>..." to unstage)
-
-    new file:   index.html
-
-$ git commit -m 'started story'
-[master (root-commit) e1c1719] started story
- 1 file changed, 5 insertions(+)
-  create mode 100644 index.html
-$ git log
-commit longuniquehashofdigitshere
-Author: Cheryl <cherylschaefer@gmail.com>
-Date:   Wed Apr 5 10:55:56 2017 -0500
-
-    started story
-```
 
 
 Pick a news site ([The New York Times](https://www.nytimes.com/), for example), and use Chrome Dev Tools to modify one of the main articles to use a picture and text of your choosing. You can have fun with this (see our example below) and take a screenshot to use for a practical joke, if you like.
