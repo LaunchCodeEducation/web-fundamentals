@@ -106,6 +106,8 @@ $ git push origin master
 
 Now you should be able to confirm that Github has the same version of the project you have locally. (File contents in browser match those in terminal.)
 
+![A repository with one commit in Github](Repo1Commit.png)
+
 ### Player 2
 
 Clone the project down onto your computer by following these instructions.
@@ -140,6 +142,8 @@ Great error message! It let us know exactly what went wrong - player 2 does not 
 ### Player 1
 
 In your web browser, go to your fireside-story repo. Click the `Settings` button then click on `Collaborators`. Enter in player 2's Github username and click `Add Collaborator`.
+
+![Add a collaborator to your repo in Github](RepoSettingsAddCollaborator.png)
 
 ### Player 2
 
@@ -264,17 +268,24 @@ You will see you no longer have those changes that are in the add-styling branch
 
 Go to the repo in Github. Click on `Pull Requests`. Explore here and see all the information Github shows you about the changes made.
 
-TODO screenshot
+![PR Open in Github](RepoPR1.png)
 
 When you're happy with the changes, merge them in. Click `Merge Pull Request` then `Confirm Merge`.
 
-TODO screenshot
+![Merge a Pull Request in Github](RepoMergePR.png)
+![Confirm PR Merge in Github](PRConfirmMerge.png)
+
+You should see this screen to show success:
+
+![PR Merged in Github](PRMerged.png)
 
 Now you will need to pull updates to your master branch locally.
 
 ```
 $ git pull origin master
 ```
+
+Git is able to merge these files on its own.
 
 TODO lalalaaa both edit a file so merge conflicts arise
 
