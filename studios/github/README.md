@@ -11,11 +11,14 @@ In this studio, we will practice common git commands necessary when multiple peo
 
 ## Walkthrough
 
-TODO
+Help the students pair off for this exercise. Encourage them to post the stories they come up with in Slack.
+
 
 ## Fireside Story
 
 We are going to play a game. We will play it just like you'd play around a campfire, but on a web page.
+
+(Optional) Share your story in the `#fireside-story` channel on Slack, and see what others have created!
 
 First, find a new friend to play the game with.
 
@@ -40,8 +43,6 @@ In that directory, open a new file `index.html` in the editor of your choice. Pa
 ```
 
 Let's check that our html looks okay by opening it in a browser. The URL will look something like this: `file:///Users/cheryl/Development/fireside-story/index.html`.
-
-TODO screenshot
 
 Let's stage and commit this file.
 
@@ -87,11 +88,11 @@ Great! We've got our project going locally, but we're going to need to make it a
 
 Go to your Github profile in a web browser. Click on the + button to add a new repository (repo).
 
+TODO oops something is blocking the button in the screenshot
 ![Create a new repository in Github](CreateAGithubRepo.png)
 
-Fill in the name and description. Uncheck the "initialize with README" and Click Create.
+Fill in the name and description. Uncheck the "initialize with README" and Click Create Repository.
 
-TODO circle the middle set of directions in red
 ![Connecting to a repository in Github](StartingARepo.png)
 
 Now go back to your terminal and follow the instructions shown on Github which should be very similar to this:
@@ -101,7 +102,7 @@ $ git remote add origin git@github.com:cherylschaefer/fireside-story.git
 $ git push origin master
 ```
 
-Now you should be able to confirm that Github has the same version of the project you have locally. (File contents in browser match those in terminal.)
+Now you should be able to confirm that Github has the same version of the project you have locally. (File contents in browser match those in terminal.) Click around and see what is there. You can read all your code in the browser.
 
 ![A repository with one commit in Github](Repo1Commit.png)
 
@@ -119,7 +120,7 @@ In your terminal, navigate to your development folder and clone down the repo. T
 git clone git@github.com:cherylschaefer/fireside-story.git
 ```
 
-Now you can add a line to the story! Open the `index.html` file in your editor and add the next line of the story. Then commit your change.
+Now you can add a line to the story! Open the `index.html` file in your editor and add the next line of the story. Be creative -- the story can go anywhere! Just don't talk about what to write with your partner. Then commit your change.
 
 ```
 $ git status
@@ -146,6 +147,8 @@ In your web browser, go to your fireside-story repo. Click the `Settings` button
 
 You should receive an email invitation to receive permissions to this repo from player 1 through Github.
 
+![Invited to collaborate email in Github](InvitedToGithubRepo.png)
+
 Now let's go enter that command again to push up our code.
 
 ```
@@ -164,7 +167,7 @@ $ git pull origin master
 TODO message
 ```
 
-Now go in your editor, add and commit a third line of story and push it up.
+Now go in your editor, add and commit a third line of story and push it up. You can have your story go anywhere! Try to tie it in with what the other player wrote, without discussing with them any plans on where the story will go.
 
 ### Player 2
 
@@ -175,7 +178,7 @@ $ git pull origin master
 TODO message
 ```
 
-Now go in your editor, add and commit a fourth line of story and push it up.
+Now go in your editor, add and commit a fourth line of story and push it up. (Again, be creative, but no planning!)
 
 You can both play like this for a while! But let's say player 2 wants to work a little extra on the project. You're not sure player 1 is keen on this change so let's put it in a branch.
 
@@ -222,15 +225,17 @@ $ git branch
 
 In your browser, go to the github project. Click on branches and the new branch name.
 
-TODO screenshot
+![Branches in Github](branches.png)
+![Branch details in Github](branches-link.png)
 
-In the upper right-hand corner, click `Compare` to see a diff between this feature branch and the master branch.
+In the upper right-hand corner, click `Compare` to see a diff between this feature branch and the master branch without changing anything.
 
 TODO screenshot
 
 If you are happy with your changes, click `Create a Pull Request`. Add some text in the description box to let player 1 know what you did and why.
 
-TODO screenshot
+![Open a PR in Github](pr-details.png)
+![Create a PR in Github](pr-created.png)
 
 ### Player 1
 
@@ -287,6 +292,7 @@ Git is able to merge these files on its own.
 TODO lalalaaa both edit a file so merge conflicts arise
 
 
+(Optional) Share your story in the `#fireside-story` channel on Slack, and see what others have created!
 
 ### Resources
 
