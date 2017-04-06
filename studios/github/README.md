@@ -45,8 +45,7 @@ TODO screenshot
 
 Let's stage and commit this file.
 
-```
-$ git status
+<pre><code class="nohighlight" style="color: #333">$ git status
 On branch master
 
 Initial commit
@@ -54,11 +53,10 @@ Initial commit
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
-    index.html
+    <span style="color: red">index.html</span>
 
-nothing added to commit but untracked files present (use "git add" to track)
-```
-```
+nothing added to commit but untracked files present (use "git add" to track)</code></pre>
+<pre><code class="nohighlight" style="color: #333">
 $ git add .
 $ git status
 On branch master
@@ -68,9 +66,8 @@ Initial commit
 Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
 
-    new file:   index.html
-
-```
+    <span style="color: green">new file:   index.html</span>
+</code></pre>
 ```
 $ git commit -m 'started story'
 [master (root-commit) e1c1719] started story
