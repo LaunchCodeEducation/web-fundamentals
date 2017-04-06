@@ -301,6 +301,7 @@ $ git pull origin master
 
 Git is able to merge these files on its own.
 
+TODO Git blame - to see who wrote that line!
 TODO lalalaaa both edit a file so merge conflicts arise
 
 
