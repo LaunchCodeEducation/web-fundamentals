@@ -56,8 +56,7 @@ Untracked files:
     <span style="color: red">index.html</span>
 
 nothing added to commit but untracked files present (use "git add" to track)</code></pre>
-<pre><code class="nohighlight" style="color: #333">
-$ git add .
+<pre><code class="nohighlight" style="color: #333">$ git add .
 $ git status
 On branch master
 
@@ -67,21 +66,20 @@ Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
 
     <span style="color: green">new file:   index.html</span>
-</code></pre>
-```
+
 $ git commit -m 'started story'
 [master (root-commit) e1c1719] started story
  1 file changed, 5 insertions(+)
   create mode 100644 index.html
-```
-```
 $ git log
 commit longuniquehashofdigitshere
 Author: Cheryl <cherylschaefer@gmail.com>
 Date:   Wed Apr 5 10:55:56 2017 -0500
 
     started story
-```
+
+</code></pre>
+
 
 Great! We've got our project going locally, but we're going to need to make it accessible for player 2 also. Let's push this project up to Github.
 
@@ -91,12 +89,11 @@ Go to your Github profile in a web browser. Click on the + button to add a new r
 
 Fill in the name and description. Uncheck the "initialize with README" and Click Create.
 
-TODO circle the middle set of directions in red
 ![Connecting to a repository in Github](StartingARepo.png)
 
 Now go back to your terminal and follow the instructions shown on Github which should be very similar to this:
 
-```
+```bash
 $ git remote add origin git@github.com:cherylschaefer/fireside-story.git
 $ git push origin master
 ```
@@ -105,7 +102,7 @@ Now you should be able to confirm that Github has the same version of the projec
 
 ### Player 2
 
-Clone the project down onto your computer by following these instructions.
+Clone the project down onto your computer.
 
 Go to player 1's github profile and find the fireside-story repo. Click on the green "Clone or download" button. Copy the url to your clipboard.
 
@@ -113,23 +110,30 @@ TODO screenshot
 
 In your terminal, navigate to your development folder and clone down the repo. The command should look something like this.
 
-```
+```bash
 git clone git@github.com:cherylschaefer/fireside-story.git
 ```
 
 Now you can add a line to the story! Open the `index.html` file in your editor and add the next line of the story. Then commit your change.
 
-```
+```bash
 $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean
 $ git add index.html
 $ git commit -m 'added second line of story'
 ```
 
 Now we need to push up your changes so player 1 can use them as well.
 
-```
+```bash 
 $ git push origin master
-TODO Error message
+ERROR: Permission to cherylschaefer/fireside-story.git denied to player2.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
 ```
 
 Great error message! It let us know exactly what went wrong - player 2 does not have security permissions to write to player 1's repo. Let's go fix that.
@@ -144,9 +148,16 @@ You should receive an email invitation to receive permissions to this repo from 
 
 Now let's go enter that command again to push up our code.
 
-```
+```bash
 $ git push origin master
-TODO Success message
+Counting objects: 9, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 1.01 KiB | 0 bytes/s, done.
+Total 9 (delta 8), reused 0 (delta 0)
+remote: Resolving deltas: 100% (8/8), completed with 8 local objects.
+To git@github.com:player2/fireside-story.git
+   511239a..679de77  master -> master
 ```
 
 Both players should now see the second line of the story on Github in the browser.
