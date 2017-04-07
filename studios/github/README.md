@@ -16,6 +16,8 @@ Help the students pair off for this exercise. Encourage them to post the stories
 
 ## Fireside Story
 
+TODO Fire giphy
+
 We are going to play a game. We will play it just like you'd play around a campfire, but on a web page.
 
 (Optional) Share your story in the `#fireside-story` channel on Slack, and see what others have created!
@@ -42,7 +44,7 @@ In that directory, open a new file `index.html` in the editor of your choice. Pa
 </html>
 ```
 
-Let's check that our html looks okay by opening it in a browser. The URL will look something like this: `file:///Users/cheryl/Development/fireside-story/index.html`.
+Let's check that our html looks okay by opening it in a browser. You can do this by selecting File > Open File in your web browser, and navigating to the location of your new HTML file. The URL will look something like this: `file:///Users/cheryl/Development/fireside-story/index.html`.
 
 Let's stage and commit this file.
 
@@ -301,7 +303,6 @@ $ git pull origin master
 
 Git is able to merge these files on its own.
 
-TODO Git blame - to see who wrote that line!
 TODO lalalaaa both edit a file so merge conflicts arise
 
 
