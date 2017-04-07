@@ -36,13 +36,17 @@ Help the students pair off for this exercise. Encourage them to post the stories
 
 ## Fireside Story
 
+TODO Fire giphy
+
 We are going to play a game. We will play it just like you'd play around a campfire, but on a web page.
 
 First, find a new friend to play the game with.
 
 Feel free to share your story in the `#fireside-story` channel on Slack, and see what others have created!
 
-### Player 1
+#### Player 1
+
+### Create a New Repostory
 
 Navigate to your development folder. Follow these instructions to create a new project.
 
@@ -62,10 +66,7 @@ In that directory, open a new file `index.html` in the editor of your choice. Pa
 </html>
 ```
 
-Let's check that our html looks okay by opening it in a browser. In
-Firefox, select *File > Open File...*. Somewhere in the filesystem
-lies your `fireside-story` directory. Find it, and within it select
-`index.html`.
+Let's check that our html looks okay by opening it in a browser. You can do this by selecting File > Open File in your web browser, and navigating to the location of your new HTML file. The URL will look something like this: `file:///Users/cheryl/Development/fireside-story/index.html`.
 
 Once you've seen this file in the browser, let's stage and commit it. 
 
@@ -115,6 +116,8 @@ Date:   Wed Apr 5 10:55:56 2017 -0500
 
 Great! We've got our project going locally, but we're going to need to make it accessible for player 2 also. Let's push this project up to Github.
 
+### Share Your Repository On GitHub
+
 Go to your Github profile in a web browser. Click on the + button to add a new repository ('repo').
 
 TODO oops something is blocking the button in the screenshot
@@ -137,11 +140,13 @@ Now you should be able to confirm that Github has the same version of the projec
 
 ![A repository with one commit in Github](Repo1Commit.png)
 
-### Player 2
+#### Player 2
+
+### Clone A Project From GitHub
 
 Clone the project down onto your computer.
 
-Go to player 1's github profile and find the fireside-story repo. Click on the green "Clone or download" button. Copy the url to your clipboard.
+Go to player 1's github profile and find the fireside-story repo. Click on the green *Clone Or Download* button. Copy the url to your clipboard.
 
 TODO screenshot
 
@@ -175,13 +180,15 @@ and the repository exists.
 
 Great error message! It let us know exactly what went wrong - player 2 does not have security permissions to write to player 1's repo. Let's go fix that.
 
-### Player 1
+#### Player 1
 
-In your web browser, go to your fireside-story repo. Click the `Settings` button then click on `Collaborators`. Enter in player 2's Github username and click `Add Collaborator`.
+### Add A Collaborator To A GitHub Project
+
+In your web browser, go to your fireside-story repo. Click the *Settings* button then click on *Collaborators*. Enter in player 2's Github username and click *Add Collaborator*.
 
 ![Add a collaborator to your repo in Github](RepoSettingsAddCollaborator.png)
 
-### Player 2
+#### Player 2
 
 You should receive an email invitation to receive permissions to this repo from player 1 through Github.
 
@@ -203,7 +210,7 @@ To git@github.com:player2/fireside-story.git
 
 Both players should now see the second line of the story on Github in the browser.
 
-### Player 1
+#### Player 1
 
 Player 1 you might notice you don't have the second line on your computer. Go to the terminal and enter this command to pull that updated code in locally.
 
@@ -214,7 +221,7 @@ TODO message
 
 Now go in your editor, add and commit a third line of story and push it up. You can have your story go anywhere! Try to tie it in with what the other player wrote, without discussing with them any plans on where the story will go.
 
-### Player 2
+#### Player 2
 
 Player 2 you might notice now YOU don't have the third line on your computer. Go to the terminal and enter this command to pull that updated code in locally.
 
@@ -225,7 +232,9 @@ TODO message
 
 Now go in your editor, add and commit a fourth line of story and push it up. (Again, be creative, but no planning!)
 
-You can both play like this for a while! But let's say player 2 wants to work a little extra on the project. You're not sure player 1 is keen on this change so let's put it in a branch.
+You can both play like this for a while! But let's say player 2 wants to work a little extra on the project. You're not sure player 1 is keen on this change so let's put it in a branch. Branches are often used to organize new feature development.
+
+### Create a Branch In Git
 
 ```
 $ git checkout -b add-styling
@@ -268,6 +277,8 @@ You should both now be able to see a second branch appear in your repo in the br
 $ git branch
 ```
 
+### Create a Pull Request In GitHub
+
 In your browser, go to the github project. Click on branches and the new branch name.
 
 ![Branches in Github](branches.png)
@@ -282,7 +293,7 @@ If you are happy with your changes, click `Create a Pull Request`. Add some text
 ![Open a PR in Github](pr-details.png)
 ![Create a PR in Github](pr-created.png)
 
-### Player 1
+#### Player 1
 
 You will notice that you do not see this new `style.css` file locally. Type this command to see what branches are on your local coputer:
 
@@ -334,7 +345,6 @@ $ git pull origin master
 
 Git is able to merge these files on its own.
 
-TODO Git blame - to see who wrote that line!
 TODO lalalaaa both edit a file so merge conflicts arise
 
 
