@@ -11,22 +11,26 @@ In this studio, we will practice common git commands necessary when
 multiple people are developing on the same code base. Today, you will
 start out coding in tag-team shifts, and by the end you should have
 a good idea of how to both be working on the same code at the same
-time. You will:
+time. You will how to:
 
-- quickly add code in alternating pull/push cycles
-- create branches to isolate changes
-- create pull requests to move code between branches
+- **quickly add code in alternating pull/push cycles**
+- Add a Collaborator to Github Project
+- Sharing Repositories on GitHub
+- Create a Branch in Git 
+- Create a Pull Request in GitHub
 - resolve merge conflicts
 
 This lesson reinforces
 
+- creating new repositories
+- cloning others' repositories from github | Clone a Project from GitHub
 - git commit
 - git staging
 - git status
 
 ## Walkthrough
 
-Help students understand why Github is worth their study. A local git repo with one branch gives them the ability to move their code forward and backward in time. Working with branches on github allows multiple people to build features at the same time. 
+Help students understand why Github is worth their study. They already know how to use a local git repo with one branch - giving them the ability to move their code forward and backward in time. Working with branches on github allows multiple people to build features at the same time. 
 
 Help the students pair off for this exercise. Encourage them to post the stories they come up with in Slack.
 
