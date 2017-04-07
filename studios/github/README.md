@@ -89,7 +89,8 @@ Go to your Github profile in a web browser. Click on the + button to add a new r
 TODO oops something is blocking the button in the screenshot
 ![Create a new repository in Github](CreateAGithubRepo.png)
 
-Fill in the name and description. Uncheck the "initialize with README" and Click Create Repository.
+Fill in the name and description. 
+<aside class="aside-note" markdown="1">Uncheck the "initialize with README" and Click Create Repository.</aside>
 
 ![Connecting to a repository in Github](StartingARepo.png)
 
