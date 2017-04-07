@@ -7,20 +7,36 @@ currentMenu: studios
 
 Coding together allows you to work as a team so you can build bigger projects, faster.
 
-In this studio, we will practice common git commands necessary when multiple people are developing on the same code base.
+In this studio, we will practice common git commands necessary when
+multiple people are developing on the same code base. Today, you will
+start out coding in tag-team shifts, and by the end you should have
+a good idea of how to both be working on the same code at the same
+time. You will:
+
+- quickly add code in alternating pull/push cycles
+- create branches to isolate changes
+- create pull requests to move code between branches
+- resolve merge conflicts
+
+This lesson reinforces
+
+- git commit
+- git staging
+- git status
 
 ## Walkthrough
 
-Help the students pair off for this exercise. Encourage them to post the stories they come up with in Slack.
+Help students understand why Github is worth their study. A local git repo with one branch gives them the ability to move their code forward and backward in time. Working with branches on github allows multiple people to build features at the same time. 
 
+Help the students pair off for this exercise. Encourage them to post the stories they come up with in Slack.
 
 ## Fireside Story
 
 We are going to play a game. We will play it just like you'd play around a campfire, but on a web page.
 
-(Optional) Share your story in the `#fireside-story` channel on Slack, and see what others have created!
-
 First, find a new friend to play the game with.
+
+Feel free to share your story in the `#fireside-story` channel on Slack, and see what others have created!
 
 ### Player 1
 
@@ -42,9 +58,12 @@ In that directory, open a new file `index.html` in the editor of your choice. Pa
 </html>
 ```
 
-Let's check that our html looks okay by opening it in a browser. The URL will look something like this: `file:///Users/cheryl/Development/fireside-story/index.html`.
+Let's check that our html looks okay by opening it in a browser. In
+Firefox, select *File > Open File...*. Somewhere in the filesystem
+lies your `fireside-story` directory. Find it, and within it select
+`index.html`.
 
-Let's stage and commit this file.
+Once you've seen this file in the browser, let's stage and commit it. 
 
 <pre><code class="nohighlight" style="color: #333">$ git status
 On branch master
@@ -57,6 +76,9 @@ Untracked files:
     <span style="color: red">index.html</span>
 
 nothing added to commit but untracked files present (use "git add" to track)</code></pre>
+
+The file is not staged. Let's add everything in this directory. 
+
 <pre><code class="nohighlight" style="color: #333">$ git add .
 $ git status
 On branch master
@@ -68,25 +90,31 @@ Changes to be committed:
 
     <span style="color: green">new file:   index.html</span>
 
+</code></pre>
+
+We see that the file is staged. Let's commmit.
+
+```bash
 $ git commit -m 'started story'
 [master (root-commit) e1c1719] started story
  1 file changed, 5 insertions(+)
   create mode 100644 index.html
 $ git log
-commit longuniquehashofdigitshere
+commit 679de772612099c77891d2a3fab12af8db08b651
 Author: Cheryl <cherylschaefer@gmail.com>
 Date:   Wed Apr 5 10:55:56 2017 -0500
 
     started story
 
-</code></pre>
+```
 
 
 Great! We've got our project going locally, but we're going to need to make it accessible for player 2 also. Let's push this project up to Github.
 
-Go to your Github profile in a web browser. Click on the + button to add a new repository (repo).
+Go to your Github profile in a web browser. Click on the + button to add a new repository ('repo').
 
 TODO oops something is blocking the button in the screenshot
+
 ![Create a new repository in Github](CreateAGithubRepo.png)
 
 Fill in the name and description. 
