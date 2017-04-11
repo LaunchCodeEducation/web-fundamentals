@@ -30,6 +30,9 @@ menu:
         studios:
             text: Studios
             relativeUrl: studios/
+        tutorials:
+            text: Tutorials
+            relativeUrl: tutorials/
         assignments:
             text: Assignments
             relativeUrl: assignments/
