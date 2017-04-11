@@ -64,10 +64,6 @@ app.run()
 
 What's all this do?
 
-<aside class="aside-note" markdown="1">
-TODO: the language in the list below is probably not the right verbiage for Python. Get a Python-saavy reviewer.
-</aside>
-
 - `from flask import Flask`: this imports the Flask module from the subdirectory flask 
 - `app = Flask(__name__)`: this sets the global variable `app` to be the value returned by `Flask()`. `Flask()` is invoked with one argument, the special Python variable `__name__`.  Huh.
 
