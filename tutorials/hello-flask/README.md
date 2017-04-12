@@ -3,7 +3,7 @@ title: 'Hello Flask'
 currentMenu: tutorials
 ---
 
-# Build a Development Web Server
+## Build a Development Web Server
 
 In this tutorial, we'll configure and build a web server. The
 configuration will be the hard part. When we're done, we'll be able to
@@ -11,16 +11,24 @@ visit the server in our browser, and it will display this heartening message:
 
 ![Hello World screenshot](hello-world-browser-screenshot.png)
 
-## Founding your project and installing software
+### Founding your project and installing software
 
-Follow a part of the [Flask Mega Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world) about installing virtual environments. Go only from the header 'Installing Flask' through the paragraph starting with "Virtual environments can be activated and deactivated". Go ahead and activate your virtual environment:
+First make a directory for your project, and cd (change directory) into it:
 
-```bash
-$ source flask/bin/activate
-(flask) $
+```
+$ mkdir hello-flask
+$ cd hello-flask
 ```
 
-Our prompt changes to remind us of our "virtual environment". 
+To download the flask library, we're going to need a way to store
+libraries. So that this doesn't cause version mismatch issues with
+other versions of Python on your system - including system libraries
+which might be using Pything - we'll install a virtual environment and
+host all our libraries within it.
+
+- [MS Windows](ms-windows/)
+- [Mac](mac/)
+- [Linux](linux/)
 
 <aside class="aside-note" markdown="1">
 Here, we're using the term "virtual environment" loosely. Rather than starting a full virtual machine, we're really just changing the PATH environment variable, which controls the order of directories that bash searches for programs. 
@@ -36,18 +44,18 @@ Seeing `/home/dm/hello-flask/flask/bin` first in that list verifies that the act
 Now let's install some new software into the flask directory. Type:
 
 ```bash
-(flask) $ flask/bin/pip install flask
+(flask) $ pip install flask
 ```
 
 Flask downloads in an avalanch of diagnostic messages. If it's successful, we're ready to build our web server!
 
-## Build a webserver, line by line
+### Build a webserver, line by line
 
 In your text editor, create a new file named `main.py`. The name
 `main` isn't special, we just picked it. The suffix `.py` means it's a
 Python source file.
 
-Paste in this text.
+Type this in, and think about every line as you do:
 
 ```python
 from flask import Flask
@@ -64,13 +72,13 @@ app.run()
 
 What's all this do?
 
-- `from flask import Flask`: this imports the Flask module from the subdirectory flask 
-- `app = Flask(__name__)`: this sets the global variable `app` to be the value returned by `Flask()`. `Flask()` is invoked with one argument, the special Python variable `__name__`.  Huh.
+- `from flask import Flask`: this imports the `Flask` class from the `flask` module.
+- `app = Flask(__name__)`: app will be the object created by the constructor `Flask`. `__name__` is a variable controlled by Python that tells code what module it's in. 
 
-- `@app.route("/")`: this is a decorator that creates a mapping between the bit of the URL after the domain name - in this case the root, or  "/"  and the very next definition...
+- `@app.route("/")`: this is a decorator that creates a mapping between the path - in this case the root, or  "/"  and the very next definition...
 - `def index():`: Ah, familiar ground! We define `index` a function of zero variables
 - `  return "Hello World"`: ... and return a string literal.
-- `app.run()`: Pass control to the Flask object. The run function isn't expected to return.
+- `app.run()`: Pass control to the Flask object. The run function loops forever and never returns, so put it last.
 
 Here goes. Go to the shell and start things up. The output should look like:
 
@@ -84,4 +92,4 @@ From the computer running this process, point your browswer at http://localhost:
 
 ![Hello World screenshot](hello-world-browser-screenshot.png)
 
-If so: congrats! You've built a basic web server!
+If so: congrats! You've built a dynamic web app!
