@@ -3,11 +3,11 @@ title: Studios
 currentMenu: studios
 ---
 
-## Headline News
+## Fake News
 
 Get an introduction to web developer tools in Google Chrome, and use them to inspect and change the contents of a live web site.
 
-[Work on Headline News](headline-news/)
+[Work on Fake News](fake-news/)
 
 ## Flicklist
 
