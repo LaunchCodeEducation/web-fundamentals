@@ -6,7 +6,7 @@ currentMenu: classes
 Class # | Prep Work | Studio | Topics | Begin Assignment\*
 -----|-----------|----------|---------|------------------
 1 | [Prep Work](../class-prep/1/) | | HTML, Git basics | &nbsp;
-2 | [Prep Work](../class-prep/2/) | [Headline News](../studios/headline-news/) | HTML, CSS, Git branches | [HTML Me Something](../assignments/html-me-something/)
+2 | [Prep Work](../class-prep/2/) | [Fake News](../studios/fake-news/) | HTML, CSS, Git branches | [HTML Me Something](../assignments/html-me-something/)
 3 | [Prep Work](../class-prep/3/) | [FlickList 1](../studios/flicklist/1/) | HTTP / how the web works, Git remote repositories | [Fortune Cookie](../assignments/fortune-cookie/)
 4 | [Prep Work](../class-prep/4/) | [FlickList 2](../studios/flicklist/2/) | HTML forms and inputs | [Web Caesar](../assignments/web-caesar/)
 5 | [Prep Work](../class-prep/5/) | [FlickList 3](../studios/flicklist/3/) | validating forms, redirecting, HTML escaping | [User Signup](../assignments/user-signup/)
@@ -14,8 +14,10 @@ Class # | Prep Work | Studio | Topics | Begin Assignment\*
 7 | [Prep Work](../class-prep/7/) | [FlickList 4](../studios/flicklist/4/) | templates | &nbsp;
 8 | [Prep Work](../class-prep/8/) | [FlickList 5](../studios/flicklist/5/) | Databases, SQL | &nbsp;
 9 | [Prep Work](../class-prep/9/) | [FlickList 6](../studios/flicklist/6/) | GQL, Google App Engine Datastores | [Build-a-blog](../assignments/build-a-blog/)
-10 | [Prep Work](../class-prep/10/) | [FlickList 7](../studios/flicklist/7/) (Walkthrough only) | cookies, hashing | &nbsp;
-11 | [Prep Work](../class-prep/11/) | [FlickList 8](../studios/flicklist/8/) | user authentication, password hashing | [Blogz](../assignments/blogz)
-12 | [Prep Work](../class-prep/12/) | | (no new topics) | &nbsp;
+10 | [Prep Work](../class-prep/10/) | [FlickList 7](../studios/flicklist/7/) (Walkthrough only) | User Authentication | &nbsp;
+11 | [Prep Work](../class-prep/11/) | [FlickList 8](../studios/flicklist/8/) | Cookies | [Blogz](../assignments/blogz)
+12 | [Prep Work](../class-prep/12/) | [FlickList 9](../studios/flicklist/9/) | The Model-View-Controller Pattern | &nbsp;
+13 | [Prep Work](../class-prep/13/) | [FlickList 10](../studios/flicklist/10/) | Hashing | &nbsp;
+14 | [Prep Work](../class-prep/14/) | [FlickList 11](../studios/flicklist/11/)| Bootstrap | &nbsp;
 
 \* Check [learn.launchcode.org](https://learn.launchcode.org) for assignment due dates since these can vary by class section.
