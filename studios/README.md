@@ -15,37 +15,37 @@ Rather than a single studio, Flicklist is a progressive series of studios. Each 
 
 ### Flicklist 1
 
-Project setup, responding to requests, generating random output
+Project setup, responding to requests, generating random output.
 
 [Work on Flicklist 1](flicklist/1/)
 
 ### Flicklist 2
 
-Building forms, handling form submissions
+Building forms, handling form submissions.
 
 [Work on Flicklist 2](flicklist/2/)
 
 ### Flicklist 3
 
-Validating user-submitted data
+Validating user-submitted data.
 
 [Work on Flicklist 3](flicklist/3/)
 
 ### Flicklist 4
 
-Using templates to render views
+Using templates to render views.
 
 [Work on Flicklist 4](flicklist/4/)
 
 ### Flicklist 5
 
-Miscellaneous improvements such as responding to bad input and adding confirmation pages
+Miscellaneous improvements such as responding to bad input and adding confirmation pages.
 
 [Work on Flicklist 5](flicklist/5/)
 
 ### Flicklist 6
 
-Persisting user data to a database
+Persisting user data to a database.
 
 [Work on Flicklist 6](flicklist/6/)
 
@@ -53,12 +53,12 @@ Persisting user data to a database
 
 (Walkthrough only)
 
-Adding some utility functions.
+Add user registration and login form handling. Store new users in the database.
 
 [Work on Flicklist 7](flicklist/7/)
 
 ### Flicklist 8
 
-Add user authentication, add `owner` field to the model
+Add login and logout behaviors with cookies.
 
 [Work on Flicklist 8](flicklist/8/)
