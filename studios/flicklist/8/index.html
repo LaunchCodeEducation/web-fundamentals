@@ -115,49 +115,116 @@
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Studio: FlickList 8</h1>
-                    <h2 id="walkthrough">Walkthrough</h2>
-<p>Our app at this point has user accounts and login, but users are still collaboratively editing the same list of movies. We need to fix that:</p>
-<ul>
-<li>We'll add a <code>.owner</code> field to the <code>Movie</code> class, so that each movie &quot;belongs to&quot; a specific user.</li>
-<li>We will update the <code>/ratings</code> page so that a user only sees a list of movies of which she is the owner.
-<ul>
-<li>We will also start to implement a new page, <code>/recently-watched</code>, where users can see a list of &quot;trending&quot; movies, showing the most recent movies that people have been watching. Unlike the other page, this will not be individualized. It will be the same for everyone, showing the most recently watched movies by <em>any</em> user.</li>
-</ul></li>
-</ul>
+                    <p>This studio has a different structure than past Flicklist studios. Instead of watching an instructor-led walkthrough and then talking a problem on your own, you will work through a guided tutorial to add some new features to the application. This will allow us to work through some new components in a more structured way, learning as we go.</p>
 <h2 id="studio">Studio</h2>
-<p>Your task today is to fill a few of the small holes we have left, and to finish implementing the new &quot;recently watched movies&quot; page that we started during Walkthrough.</p>
+<p>In <a href="../7/">Flickslist 7</a>, we added registration and login functionality to the Flicklist app. However, that functionality wasn't very useful because our server-side application had no way to determine if a user had already logged in. We were only able to verify login credentials upon submission of the login form.</p>
+<p>Today, we'll enable a persistent logged-in state. In other words, once a user logs in, we'll have a way to &quot;remember&quot; that they were previously authenticated. We'll do this with cookies.</p>
 <h3 id="checking-out-the-studio-code">Checking out the Studio code</h3>
 <p>Follow the <a href="../getting-the-code/">instructions for getting the code</a> in order to get the starter code for <code>studio8</code>.</p>
+<p>Since last class featured on a walkthrough and no studio, spend a few minutes with the starter code to remind yourself what was added. That way, you'll be ready to jump right in.</p>
 <h3 id="your-tasks">Your Tasks</h3>
-<p>Below are 5 tasks. Most are just one or two lines of code, but the last one is a bit more involved.</p>
+<p>The entire set of functionality that we'll add today centers around cookies. In particular, we need to be able to easily read and set cookies. To that end, let's make this easy for each of our handlers.</p>
+<aside class="aside-warning">
+<p>We give you snippets of code throughout this activity. The point in doing so is <em>not</em> so that you can copy/paste them into your application. Doing so will result in the concepts going right in, and then right out of, your brain.</p>
+<p>Write each snippet, line, and character of code in this activity yourself, and think about what they're doing as you do so. You'll retain the concepts, and thank us later! And after all, how hard is it to type something that you've been given?</p>
+</aside>
+<h4 id="reading-and-setting-cookies">Reading and Setting Cookies</h4>
+<p>Let's create two methods, <code>read_cookie(self, name)</code> and <code>set_cookie(self, name, val)</code>, that will read and set cookie data.</p>
+<p>Where should they go? The ability to read and set cookies is something that should be accessible to every handler class. While we'll use cookies in a limited capacity in this studio, web applications should generally be able to use them in a wide variety of settings. So it seems like a good idea to put these methods in the <code>Handler</code> class that we created last time, and which all of our other handler classes now extend.</p>
+<h5 id="reading-cookies">Reading Cookies</h5>
+<p>We learned in the course prep work that we read cookies out of an incoming HTTP request. Furthermore, cookies consist of key/value pairs, and to read the cookie, we must ask for it by value, like this:</p>
+<pre><code class="language-python">val = self.request.cookies.get('my_cookie')</code></pre>
+<p>Here, <code>'my_cookie'</code> is the key of the cookie, and the value is stored in the variable <code>val</code>. If there is no cookie with that key, <code>val</code> will be <code>None</code>. Knowing this is enough to write <code>read_cookie</code>.</p>
+<p><strong>Task #1</strong>: Find the <code>Handler</code> class definition in <code>main.py</code> and add this method:</p>
+<pre><code class="language-python">def read_cookie(self, name):
+    return self.request.cookies.get(name)</code></pre>
+<h4 id="setting-cookies">Setting Cookies</h4>
+<p>Setting a cookie is only slightly more involved than reading one. There are a couple of major differences. First is that we'll need both the name and value of a cookie to set it. Second is that we set a cookie in the HTTP response headers, rather than working with an HTTP request. This is because cookies are stored in the user's browser, and our response header will function as an instruction to the browser to hold onto the piece of data for future requests.</p>
+<p>In general, to set the value of a cookie in a <code>Webapp2</code> handler class, we can do the following:</p>
+<pre><code class="language-python">self.response.headers.add('Set-Cookie', '%s=%s; Path=/' % (name, val))</code></pre>
+<p>This asks the user's browser to set a cookie with the key/value pair of <code>name</code>/<code>val</code>, and to send it to us on all future requests below the root path <code>/</code> of the application.</p>
+<p><strong>Task #2</strong>: With this knowledge, add a method <code>set_cookie(self, name, val)</code> in the <code>Handler</code> class that sets such a response header. The method should not return anything.</p>
+<h3 id="logging-in-a-user">Logging In a User</h3>
+<p>Now that we're able to read and write cookies within each of our handler classes, let's use this functionality to store a cookie that we'll be able to use later to check that the user has already logged in.</p>
+<p>On each incoming request, we want to be able to look for a cookie that will tell us that the person sending the request has already logged in. Furthermore, we'll want to know who that person is. In other words, we need to be able to easily determine which <code>User</code> object in the database represents their account.</p>
+<p>The best way to do this is by storing the ID associated with a given <code>User</code> object in a cookie. That way, when we retrieve the cookie we'll know exactly who they are.</p>
+<p><strong>Task #3</strong>: Within the <code>Handler</code> class, let's add a <code>login_user</code> method. Here are the steps to do so:</p>
 <ol>
-<li>
-<p><strong>Fix the Index handler</strong>. When the user visits the home page, she still sees <em>everybody's</em> unwatched movies. Fix it so that she only sees her own movies. Instead of a <code>GqlQuery</code>, you will need to use ORM methods like <code>all</code> and <code>filter</code>. For an example to reference, look at what we did during Walkthrough in <code>MovieRatings.get</code>.</p>
-</li>
-<li>
-<p><strong>Add a Logout link</strong>. The user needs a way of logging out when she is logged in. Simply add another link to our &quot;navigation menu&quot; at the top of <code>base.html</code></p>
-</li>
-<li>
-<p><strong>Add a route for recently watched movies</strong>. This is the first of three tasks involved in finishing the implementation of the &quot;recently watched movies&quot; page. First, simply add to our app another route that hooks up to the <code>RecentlyWatchedMovies</code> handler we started during Walkthrough.</p>
-</li>
-<li>
-<p><strong>Render the template</strong>. Our current implementation simply responds with a raw string containing the titles of all the movies. Let's return some real HTML. Notice that we have created a new template called <code>recently-watched.html</code>. Edit the <code>RecentlyWatchedMovies.get</code> method so that it renders that template. Make sure you pass the list of movies into the template.</p>
-</li>
-<li>
-<p><strong>Implement the template</strong>. Currently the template simply renders a header. Use your Jinja ninja skills to show the list of movies. Each list item should look something like this:</p>
-<blockquote>
-<p><strong>Jesse</strong> watched <strong>The Big Green</strong> and gave it a rating of <strong>*****</strong> stars.</p>
-</blockquote>
-</li>
+<li>Define the method as: <code>def login_user(self, user):</code>. The <code>user</code> parameter will be a <code>User</code> object.</li>
+<li>In the first line of the method, retrieve the ID of the user: <code>user_id = user.key().id()</code></li>
+<li>Set a new cookie with name <code>'user_id'</code> and value equal to the <code>user_id</code>, converted to a string. Do this by calling the method to created in the previous task.</li>
 </ol>
+<p>At this point, you can set a <code>user_id</code> cookie by calling <code>login_user</code>. But as of yet, we're not actually using this method.</p>
+<p><strong>Task #4</strong>: In the <code>Login</code> class, add a call to <code>self.login_user</code> in the <code>post</code> method, at the point at which you know a user has submitted the correct credentials.</p>
+<p>Now, a user that submits the correct login credentials will have a cookie set containing their <code>user_id</code>. Next, we'll look for this cookie in an incoming request to see if the request is from a logged-in user.</p>
+<h3 id="verifying-a-users-login-status">Verifying a User's Login Status</h3>
+<p>We'll want to check for a user's login status in nearly every request. There will some pages -- the Login and Register pages, for example -- that a user should not have to be logged in to view, but the majority of our pages will require users to log in. For now, let's look at how we can restrict access to <em>every</em> page on the site, and we'll open up access to a select few pages in the next task. So our basic problem is: How can we check, on every request, for a user's login cookie?</p>
+<p>One approach would be to write a method that checked for the cookie, and to then call that method within every <code>get</code> and <code>post</code> method. That would be very tedious, and we'd surely forget to call it at some point, exposing pages to users that aren't logged in. We can hear you exclaim, &quot;Surely, there must be a better way!&quot; Turns out, there is.</p>
+<p>As part of the <code>Webapp2</code> framework, each handler class can define a method <code>initialize</code> that will be run for every request that is received by that handler, just before our <code>get</code> and <code>post</code> methods are called. Furthermore, if we put this method in the <code>Handler</code> class, all of our other handler classes will have it as well! Neat, huh?</p>
+<p><strong>Task #5</strong>: This is a larger task, so let's break it up into steps:</p>
+<ol>
+<li>Within the <code>Handler</code> class, define an initialize method:
+<pre><code class="language-python">def initialize(self, *a, **kw):
+    webapp2.RequestHandler.initialize(self, *a, **kw)</code></pre>
+<p>This method will run for each incoming request. Since we're not totally sure what the built-in <code>initialize</code> method of <code>webapp2.RequestHandler</code> does -- if it does do anything, it's probably important -- let's make sure we call it first.</p></li>
+<li>Read the value of a cookie named <code>'user_id'</code> and store it in a variable named <code>user_id</code>.</li>
+<li>Check to see if the value read into <code>user_id</code> exists (in other words, is not <code>None</code>). If so, retrieve the <code>User</code> object that has the given id: <code>user = User.get_by_id(int(user_id))</code>. Then set <code>self.user = user</code> so that code run later on in the processing of the request will be able to access the user object as well.</li>
+<li>Otherwise, <code>user_id</code> will be <code>None</code> and we should redirect to the login page: <code>self.redirect('/login')</code>. This should be an <code>else</code> clause that goes with the <code>if</code> clause from step 3.</li>
+</ol>
+<aside class="aside-note">
+<p>The <code>initialize</code> method that we've written here is sometimes referred to as a <strong>request filter</strong>, since it allows for a specific action to be applied to all incoming requests -- or at least those to handlers extending <code>Handler</code>.</p>
+</aside>
+<aside class="aside-warning">
+<p>Upon completing this task, your code will be very, very broken. Don't worry, it's not your fault. We've guided down your path, and we'll fix it in a moment.</p>
+<p>But consider what would happen were you to try to run your app:</p>
+<ol>
+<li>You start up your app and try to request a page, say the the main page at the route <code>/</code>.</li>
+<li>Our fancy new <code>initialize</code> method would be called, to check for a <code>user_id</code> cookie.</li>
+<li>Upon finding such a cookie doesn't exist (we just added the code to set cookies, after all), you would be redirected to the login screen, <code>/login</code>.</li>
+<li>When the redirect request is received by the app, you would go back to step 2, thus kicking off a circular and inescapable sequence of requests.</li>
+</ol>
+</aside>
+<h3 id="allowing-access-to-select-pages">Allowing Access to Select Pages</h3>
+<p>Let's fix the issue that we just created. We'd like to allow <em>all</em> visitors to access the pages at <code>/login</code> and <code>/register</code>. After all, if we didn't, how could new users register? And how could existing users log in?</p>
+<p><strong>Task #6</strong>: Near the top of <code>main.py</code>, just below the definition of <code>terrible_movies</code>, define a new list named <code>allowed_routes</code> that contains the strings <code>'/login'</code> and <code>'/register'</code>. Back in the <code>initialize</code> method of the <code>Handler</code> class, modify the code that you wrote at the end of the previous task to only redirect the user to <code>/login</code> if the value of <code>self.request.path</code> is not in the <code>allowed_routes</code> list. This will require swapping your <code>else</code> for an <code>elif</code>.</p>
+<p>Upon completing this task, users that are not logged in will be directed to <code>/login</code> when trying to access a restricted page. The pages at <code>/login</code> and <code>/register</code> will be unrestricted (i.e. all users will be able to access them). And logged in users will be able to access any page within the site.</p>
+<h3 id="our-first-test">Our First Test</h3>
+<p>At this point, you should be able to fire up your application and test! In general, when making lots of changes to a program, we recommend testing as soon as your new code is expected to function. And we're at such a point right now. While we're not done implementing all of the features for today, the code you have now should run and work as advertised.</p>
+<p>Start up the application, and check that:</p>
+<ol>
+<li>When trying to access the root path <code>/</code>, you are redirected to the login screen.</li>
+<li>You are able to login with an existing account.</li>
+<li>If you don't have an account, or forgot your credentials, you can access <code>/register</code> to create a new one.</li>
+<li>After logging in, you are redirected to the root path <code>/</code>, with a welcome message (the code to do this was added in Studio 7).</li>
+<li>If you then access another page, such as <code>/ratings</code>, you are not asked to login, and are allowed to directly access the page.</li>
+</ol>
+<h3 id="logging-out-a-user">Logging Out a User</h3>
+<p>So far, we can log a user in, but not out. This turns out to be much simpler than the rest of the tasks we've taken on so far.</p>
+<p><strong>Task #7</strong></p>
+<ol>
+<li>In the <code>Handler</code> class, create a method <code>logout_user</code> that takes only one argument, <code>self</code>, and has only one line: <code>self.set_cookie('user_id', '')</code>. This will set the <code>user_id</code> cookie to be empty, so that the next time the user requests a page they are not recognized by our <code>initialize</code> method.</li>
+<li>Add a new route at the bottom of <code>main.py</code>: <code>('/logout', Logout)</code>.</li>
+<li>Create the handler class, <code>Logout</code>, referenced by the route from 2. It should extend <code>Handler</code>, just as our other handler classes do.</li>
+<li>Create a <code>get</code> method in the <code>Logout</code> class. It should look like this:
+<pre><code class="language-python">def get(self):
+    self.logout_user()
+    self.redirect('/login')</code></pre></li>
+<li>In the <code>base.html</code> template, add a third <code>&lt;li&gt;</code> element to the list of links:
+<pre><code class="language-html">&lt;li&gt;&lt;a href="/logout"&gt;Log Out&lt;/a&gt;&lt;/li&gt;</code></pre></li>
+</ol>
+<p>When you're done, test the change! You should be able to log in, click on the logout page, and then be forced to log in again before accessing <code>/</code>, <code>/add</code>, or other restricted pages.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Congratulations! You implemented code that allows for user login status to be managed with cookies. That's no small task for a new web programmer.</p>
+<p>You may notice one fatal issue with our application. While we can log in and log out, movie data is still being shared among all users. Furthermore, if you're even more astute, you've noticed that user passwords are being stored in plain text in the database. We'll tackle both of these issues in the next two studios.</p>
                                     </section>
 
             </div>
         </main>
 
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-        <script src="http://education.launchcode.org/web-fundamentals/js/bootstrap.min.js"></script>
-        <script src="http://education.launchcode.org/web-fundamentals/js/highlight.pack.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/web-fundamentals/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/web-fundamentals/js/highlight.pack.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/web-fundamentals/js/libgif.js"></script>
 
         <script>
             $(function() {
