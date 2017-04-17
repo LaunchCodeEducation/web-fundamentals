@@ -11,7 +11,7 @@ In [Flickslist 7](../7/), we added registration and login functionality to the F
 
 Today, we'll enable a persistent logged-in state. In other words, once a user logs in, we'll have a way to "remember" that they were previously authenticated. We'll do this with cookies.
 
-### Checking out the Studio code
+### Checking Out the Studio code
 
 Follow the [instructions for getting the code][get-the-code] in order to get the starter code for `studio8`.
 

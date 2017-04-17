@@ -11,6 +11,7 @@ As you work through the lesson materials, think about the applications you've be
 
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
+Read | Assignment | [Blogz](../assignments/blogz/) | Read the assignment specification in detail before coming to class. This will help you understand the context of the next studio, and give you a chance to ask questions about the assignment in class.
 Read | Article | [Model-view-controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) | Read Wikipedia's article on MVC
 Do | Exercise | N/A | Complete the thought-exercise below
 

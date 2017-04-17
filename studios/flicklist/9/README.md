@@ -3,7 +3,19 @@ title: 'Studio: FlickList 9'
 currentMenu: studios
 ---
 
-*Coming soon...*
+The structure of this studio is the same as that of the previous one: you will work through a guided tutorial to add some new features to the application.
+
+## Studio
+
+In this studio, we solve one of the issues left hanging in [FlickList 8](../8/). Namely, we're going to set up `Movie` classes so they can be owned by users.
+
+### Checking out the Studio code
+
+Follow the [instructions for getting the code][get-the-code] in order to get the starter code for `studio9`.
+
+### Your Tasks
+
+
 
 <!--
 ### Your Tasks
