@@ -480,6 +480,49 @@ You will need to do the same thing for the `index.html` file.
 Now commit again and push it up; you should not see an error message.
 
 
+#### Player 2
+
+Meanwhile, Player 2 is sitting home, minding their own business. A random `git status` seems reassuring:
+
+```bash
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean
+```
+
+Your local git thinks the status is quo. Little does it know that up at GitHub, the status is not quo. We'd find this out by doing either a `git fetch`, or if we just want the latest version of this branch, `git pull`:
+
+```bash
+$ git pull
+remote: Counting objects: 13, done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 13 (delta 4), reused 13 (delta 4), pack-reused 0
+Unpacking objects: 100% (13/13), done.
+From github.com:cherylschaefer/fireside-story
+   0c21659..e0de62d  master     -> origin/master
+Updating 0c21659..e0de62d
+Fast-forward
+ index.html | 3 ++-
+ style.css  | 4 ++--
+ 2 files changed, 4 insertions(+), 3 deletions(-)
+```
+
+Great Scott! Looks like Player 1 changed both `index.html` and `style.css`. Note that *player 2* didn't have to deal with the hassle of resolving merge conflicts. Since Player 1 blessed it with their human intervention, git assumes that the team is okay with the way they resolved it, and 'fast forwards' our local repo to be in sync with the upstream one. Let's look at one file to make sure:
+
+```bash
+$ cat style.css 
+body {
+  color: white;
+  background-color: black;
+  font-family: 'Sacramento', cursive;
+  font-size: 150%;
+  margin: 5em 25%;
+}
+```
+
+<aside class="aside-note" markdown="1">The unix `cat` command prints the contents of one or more file, con-`cat`-enated together. For short files, it's faster than firing up `less` or an editor.</aside>
+
 
 ### Resolving Merge Conflicts
 
