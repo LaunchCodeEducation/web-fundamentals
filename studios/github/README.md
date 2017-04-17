@@ -345,6 +345,125 @@ $ git pull origin master
 
 Git is able to merge these files on its own.
 
+#### Player 2
+
+Let's change something about the style file. Our html is looking pretty plain. Let's pick a nice font and add some margins. Paste in something like this:
+
+TODO Paste in code
+
+Commit your changes and push it up to GitHub. (If you don't remember how to do this, follow the instructions above.)
+
+Meanwhile...
+
+#### Player 1
+
+Let's change something about the style file. Our html is looking pretty plain. Let's pick a nice font and add some margins. Change it to look something like this:
+
+```
+body {
+  color: white;
+  background-color: black;
+  font-family: 'Sacramento', cursive;
+  font-size: 32px;
+  margin-top: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+```
+
+Don't forget to link the new font in your `index.html` file.
+
+`<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">`
+
+Commit your changes and push it up to GitHub. (If you forgot how, use the instructions above.) You should get an error message, how exciting!
+
+```
+$ git push
+
+To git@github.com:cherylschaefer/fireside-story.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'git@github.com:cherylschaefer/fireside-story.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+```
+
+Let's look around and see what's happening.
+
+```
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+nothing to commit, working directory clean
+```
+
+Let's pull these outstanding changes into our branch and resolve the errors.
+
+```
+$ git pull
+remote: Counting objects: 4, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 1), reused 4 (delta 1), pack-reused 0
+Unpacking objects: 100% (4/4), done.
+From github.com:cherylschaefer/fireside-story
+   7d7e42e..0c21659  master     -> origin/master
+Auto-merging style.css
+CONFLICT (content): Merge conflict in style.css
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+Git could not figure out how to merge files where it says `CONFLICT` so we will have to edit them ourselves. Let's start with `style.css`.
+
+```
+body {
+  color: white;
+<<<<<<< HEAD
+  background-color: black;
+  font-family: 'Sacramento', cursive;
+  font-size: 32px;
+  margin-top: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
+=======
+  background-color: #333;
+  font-size: 150%;
+  font-family: 'Satisfy', cursive;
+  margin: 5em 25%;
+>>>>>>> 0c2165931f5f668959bad92d2f744efb402e049d
+}
+```
+
+At the top and bottom, there is some code that could be merged without issue.
+`<<<<<<< HEAD` to `=======` is the version of the code that existed locally. 
+`=======` to `>>>>>>> 0c2165931f5f668959bad92d2f744efb402e049d` is the version of the code that was pulled in (the hash will be unique to the commit). 
+Let's unify our code -- make sure to remove the Git markers.
+
+```
+body {
+  color: white;
+  background-color: black;
+  font-family: 'Sacramento', cursive;
+  font-size: 150%;
+  margin: 5em 25%;
+}
+```
+
+You will need to do the same thing for the `index.html` file.
+
+Now commit again and push it up; you should not see an error message.
+
+
+
+### Resolving Merge Conflicts
+
+
+
 TODO lalalaaa both edit a file so merge conflicts arise
 
 
