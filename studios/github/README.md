@@ -479,8 +479,6 @@ body {
 ```
 
 You will need to do the same thing for the `index.html` file. Commit again and push it up; you should not see an error message.
-<br/>
-Now make more changes but let Player 1 push up first so Player 2 can practice resolving the merge conflict.
 
 
 
@@ -512,7 +510,7 @@ Fast-forward
  2 files changed, 4 insertions(+), 3 deletions(-)
 ```
 
-Great Scott! Looks like Player 1 changed both `index.html` and `style.css`. Note that *player 2* didn't have to deal with the hassle of resolving merge conflicts. Since Player 1 blessed it with their human intervention, git assumes that the team is okay with the way they resolved it, and 'fast forwards' our local repo to be in sync with the upstream one. Let's look at one file to make sure:
+Great Scott! Looks like Player 1 changed both `index.html` and `style.css`. Note that *player 2* didn't have to deal with the hassle of resolving merge conflicts. Since Player 1 intervened, git assumes that the team is okay with the way they resolved it, and 'fast forwards' our local repo to be in sync with the upstream one. Let's look at one file to make sure:
 
 ```bash
 $ cat style.css 
@@ -527,12 +525,13 @@ body {
 
 <aside class="aside-note" markdown="1">The unix `cat` command prints the contents of one or more file, con-`cat`-enated together. For short files, it's faster than firing up `less` or an editor.</aside>
 
-
-
+<br/>
+Now make more changes but let Player 1 push up first so Player 2 can practice resolving the merge conflict.
 
 (Optional) Share your story in the `#fireside-story` channel on Slack, and see what others have created!
 
 ### Resources
 
+TODO add a resource about branching
 * [Adding Another Person To Your Repository](https://help.github.com/articles/inviting-collaborators-to-a-personal-repository/)
 * [Resolving Conflicts In the Command Line](https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/)
