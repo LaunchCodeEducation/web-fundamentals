@@ -11,22 +11,20 @@ In this studio, we will practice common git commands necessary when
 multiple people are developing on the same code base. Today, you will
 start out coding in tag-team shifts, and by the end you should have
 a good idea of how to both be working on the same code at the same
-time. You will how to:
+time. You will learn how to:
 
-- **quickly add code in alternating pull/push cycles**
+- **Quickly add Code in Pull + Push Cycles**
 - Add a Collaborator to Github Project
 - Sharing Repositories on GitHub
 - Create a Branch in Git 
 - Create a Pull Request in GitHub
-- resolve merge conflicts
+- Resolve Merge Conflicts
 
 This lesson reinforces
 
-- creating new repositories
-- cloning others' repositories from github | Clone a Project from GitHub
-- git commit
-- git staging
-- git status
+- Creating Repositories
+- Cloning Repositories
+- Working with Git Concepts: Staging, Commits, and Status
 
 ## Walkthrough
 
@@ -35,8 +33,6 @@ Help students understand why Github is worth their study. They already know how 
 Help the students pair off for this exercise. Encourage them to post the stories they come up with in Slack.
 
 ## Fireside Story
-
-TODO Fire giphy
 
 We are going to play a game. We will play it just like you'd play around a campfire, but on a web page.
 
@@ -124,8 +120,9 @@ TODO oops something is blocking the button in the screenshot
 
 ![Create a new repository in Github](CreateAGithubRepo.png)
 
-Fill in the name and description. 
-<aside class="aside-note" markdown="1">Uncheck the "initialize with README" and Click Create Repository.</aside>
+Fill in the name and description. Uncheck the "initialize with README". Click *Create Repository*.
+
+<aside class="aside-warning" markdown="1">If you initialize with a README, in the next step Git will refuse to merge this repo with the local repo. There's ways around that, but it's faster and easier to just create an empty repo here. </aside>
 
 ![Connecting to a repository in Github](StartingARepo.png)
 
@@ -136,19 +133,17 @@ $ git remote add origin git@github.com:cherylschaefer/fireside-story.git
 $ git push origin master
 ```
 
-Now you should be able to confirm that Github has the same version of the project you have locally. (File contents in browser match those in terminal.) Click around and see what is there. You can read all your code in the browser.
+Now you should be able to confirm that Github has the same version of the project you have locally. (File contents in browser match those in terminal.) Click around and see what is there. You can read all your code through GitHub's web interface.
 
 ![A repository with one commit in Github](Repo1Commit.png)
 
 #### Player 2
 
-### Clone A Project From GitHub
+### Clone a Project from GitHub
 
-Clone the project down onto your computer.
+Go to player 1's github profile and find the fireside-story repo. Click on the green *Clone or download* button. Use SSH and not HTTPS. Copy the url to your clipboard.
 
-Go to player 1's github profile and find the fireside-story repo. Click on the green *Clone Or Download* button. Copy the url to your clipboard.
-
-TODO screenshot
+![Cloning a repository in Github](CloneRepo.png)
 
 In your terminal, navigate to your development folder and clone down the repo. The command should look something like this.
 
@@ -208,7 +203,7 @@ To git@github.com:player2/fireside-story.git
    511239a..679de77  master -> master
 ```
 
-Both players should now see the second line of the story on Github in the browser.
+Anyone reading the html through GitHub's browser interface should now see the new second line. 
 
 #### Player 1
 
@@ -216,21 +211,41 @@ Player 1 you might notice you don't have the second line on your computer. Go to
 
 ```
 $ git pull origin master
-TODO message
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From github.com:cherylschaefer/fireside-story
+   e0de62d..e851b7e  master     -> origin/master
+Updating e0de62d..e851b7e
+Fast-forward
+ index.html | 1 +
+ 1 file changed, 1 insertion(+)
 ```
 
-Now go in your editor, add and commit a third line of story and push it up. You can have your story go anywhere! Try to tie it in with what the other player wrote, without discussing with them any plans on where the story will go.
+Now go in your editor, add a third line of story and push it up. You can have your story go anywhere! Try to tie it in with what the other player wrote, without discussing with them any plans on where the story will go.
+
+Stage, commit and push your change. 
 
 #### Player 2
 
-Player 2 you might notice now YOU don't have the third line on your computer. Go to the terminal and enter this command to pull that updated code in locally.
+Player 2 you might notice now *you* don't have the third line on your computer. Go to the terminal and enter this command to pull that updated code in locally.
 
 ```
 $ git pull origin master
-TODO message
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From github.com:cherylschaefer/fireside-story
+   e851b7e..167684c  master     -> origin/master
+Updating e851b7e..167684c
+Fast-forward
+ index.html | 1 +
+ 1 file changed, 1 insertion(+)
 ```
 
-Now go in your editor, add and commit a fourth line of story and push it up. (Again, be creative, but no planning!)
+Now go in your editor, add and commit a fourth line of story and push it up. Again: be creative, but no planning!
 
 You can both play like this for a while! But let's say player 2 wants to work a little extra on the project. You're not sure player 1 is keen on this change so let's put it in a branch. Branches are often used to organize new feature development.
 
@@ -238,7 +253,7 @@ You can both play like this for a while! But let's say player 2 wants to work a 
 
 ```
 $ git checkout -b add-styling
-TODO message
+Switched to a new branch 'add-styling'
 ```
 
 Open a new file, style.css and paste this code in:
@@ -527,6 +542,8 @@ body {
 
 <br/>
 Now make more changes but let Player 1 push up first so Player 2 can practice resolving the merge conflict.
+
+If you have extra time, feel free to add more to your story.
 
 (Optional) Share your story in the `#fireside-story` channel on Slack, and see what others have created!
 
