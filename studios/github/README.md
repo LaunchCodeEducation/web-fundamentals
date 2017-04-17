@@ -349,7 +349,28 @@ Git is able to merge these files on its own.
 
 Let's change something about the style file. Our html is looking pretty plain. Let's pick a nice font and add some margins. Paste in something like this:
 
-TODO Paste in code
+Add another link to your `index.html` file, right by the first link:
+```html
+     <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet"> 
+```
+
+And spice up your `style.css` file to look like this:
+
+```css
+body {
+  color: white;
+  background-color: #333;
+  font-size: 150%;
+  font-family: 'Satisfy', cursive;
+  margin: 5em 25%;
+}
+```
+
+The result:
+
+![Satisfying!](AddSatisfyFont.png)
+
+
 
 Commit your changes and push it up to GitHub. (If you don't remember how to do this, follow the instructions above.)
 
