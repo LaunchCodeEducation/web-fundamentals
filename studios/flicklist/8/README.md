@@ -13,7 +13,15 @@ Today, we'll enable a persistent logged-in state. In other words, once a user lo
 
 ### Checking out the Studio code
 
-Follow the [instructions for getting the code][get-the-code] in order to get the starter code for `studio8`.
+Before getting the starter code for this studio, fetch updates from the main repository:
+
+```nohighlight
+$ git fetch origin
+```
+
+This will pull down any updates made by the LaunchCodeEducation team.
+
+Then, follow the [instructions for getting the code][get-the-code] in order to get the starter code for `studio8`.
 
 Since last class featured on a walkthrough and no studio, spend a few minutes with the starter code to remind yourself what was added. That way, you'll be ready to jump right in.
 
