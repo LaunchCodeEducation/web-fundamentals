@@ -440,8 +440,11 @@ body {
 ```
 
 At the top and bottom, there is some code that could be merged without issue.
+<br/>
 `<<<<<<< HEAD` to `=======` is the version of the code that existed locally. 
+<br/>
 `=======` to `>>>>>>> 0c2165931f5f668959bad92d2f744efb402e049d` is the version of the code that was pulled in (the hash will be unique to the commit). 
+<br/>
 Let's unify our code -- make sure to remove the Git markers.
 
 ```
@@ -454,17 +457,13 @@ body {
 }
 ```
 
-You will need to do the same thing for the `index.html` file.
-
-Now commit again and push it up; you should not see an error message.
-
-
-
-### Resolving Merge Conflicts
+You will need to do the same thing for the `index.html` file. Commit again and push it up; you should not see an error message.
+<br/>
+Now make more changes but let Player 1 push up first so Player 2 can practice resolving the merge conflict.
 
 
 
-TODO lalalaaa both edit a file so merge conflicts arise
+
 
 
 (Optional) Share your story in the `#fireside-story` channel on Slack, and see what others have created!
