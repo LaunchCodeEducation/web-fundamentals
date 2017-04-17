@@ -471,3 +471,4 @@ Now make more changes but let Player 1 push up first so Player 2 can practice re
 ### Resources
 
 * [Adding Another Person To Your Repository](https://help.github.com/articles/inviting-collaborators-to-a-personal-repository/)
+* [Resolving Conflicts In the Command Line](https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/)
