@@ -120,7 +120,10 @@
 <p>In <a href="../7/">Flickslist 7</a>, we added registration and login functionality to the Flicklist app. However, that functionality wasn't very useful because our server-side application had no way to determine if a user had already logged in. We were only able to verify login credentials upon submission of the login form.</p>
 <p>Today, we'll enable a persistent logged-in state. In other words, once a user logs in, we'll have a way to &quot;remember&quot; that they were previously authenticated. We'll do this with cookies.</p>
 <h3 id="checking-out-the-studio-code">Checking out the Studio code</h3>
-<p>Follow the <a href="../getting-the-code/">instructions for getting the code</a> in order to get the starter code for <code>studio8</code>.</p>
+<p>Before getting the starter code for this studio, fetch updates from the main repository:</p>
+<pre><code class="language-nohighlight">$ git fetch origin</code></pre>
+<p>This will pull down any updates made by the LaunchCodeEducation team.</p>
+<p>Then, follow the <a href="../getting-the-code/">instructions for getting the code</a> in order to get the starter code for <code>studio8</code>.</p>
 <p>Since last class featured on a walkthrough and no studio, spend a few minutes with the starter code to remind yourself what was added. That way, you'll be ready to jump right in.</p>
 <h3 id="your-tasks">Your Tasks</h3>
 <p>The entire set of functionality that we'll add today centers around cookies. In particular, we need to be able to easily read and set cookies. To that end, let's make this easy for each of our handlers.</p>
