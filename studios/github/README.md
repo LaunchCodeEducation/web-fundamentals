@@ -46,7 +46,7 @@ Feel free to share your story in the `#fireside-story` channel on Slack, and see
 
 Navigate to your development folder. Follow these instructions to create a new project.
 
-```
+```nohighlight
 $ mkdir fireside-story
 $ cd fireside-story
 $ git init
@@ -95,7 +95,7 @@ Changes to be committed:
 
 We see that the file is staged. Let's commmit.
 
-```bash
+```nohighlight
 $ git commit -m 'started story'
 [master (root-commit) e1c1719] started story
  1 file changed, 5 insertions(+)
@@ -128,7 +128,7 @@ Fill in the name and description. Uncheck the "initialize with README". Click *C
 
 Now go back to your terminal and follow the instructions shown on Github which should be very similar to this:
 
-```bash
+```nohighlight
 $ git remote add origin git@github.com:cherylschaefer/fireside-story.git
 $ git push origin master
 ```
@@ -147,13 +147,13 @@ Go to player 1's github profile and find the fireside-story repo. Click on the g
 
 In your terminal, navigate to your development folder and clone down the repo. The command should look something like this.
 
-```bash
+```nohighlight
 git clone git@github.com:cherylschaefer/fireside-story.git
 ```
 
 Now you can add a line to the story! Open the `index.html` file in your editor and add the next line of the story. Be creative -- the story can go anywhere! Just don't talk about what to write with your partner. Then commit your change.
 
-```bash
+```nohighlight
 $ git status
 On branch master
 Your branch is up-to-date with 'origin/master'.
@@ -164,7 +164,7 @@ $ git commit -m 'added second line of story'
 
 Now we need to push up your changes so player 1 can use them as well.
 
-```bash 
+```nohighlight 
 $ git push origin master
 ERROR: Permission to cherylschaefer/fireside-story.git denied to player2.
 fatal: Could not read from remote repository.
@@ -191,7 +191,7 @@ You should receive an email invitation to receive permissions to this repo from 
 
 Now let's go enter that command again to push up our code.
 
-```bash
+```nohighlight
 $ git push origin master
 Counting objects: 9, done.
 Delta compression using up to 4 threads.
@@ -209,7 +209,7 @@ Anyone reading the html through GitHub's browser interface should now see the ne
 
 Player 1 you might notice you don't have the second line on your computer. Go to the terminal and enter this command to pull that updated code in locally.
 
-```
+```nohighlight
 $ git pull origin master
 remote: Counting objects: 3, done.
 remote: Compressing objects: 100% (2/2), done.
@@ -231,7 +231,7 @@ Stage, commit and push your change.
 
 Player 2 you might notice now *you* don't have the third line on your computer. Go to the terminal and enter this command to pull that updated code in locally.
 
-```
+```nohighlight
 $ git pull origin master
 remote: Counting objects: 3, done.
 remote: Compressing objects: 100% (2/2), done.
@@ -251,12 +251,12 @@ You can both play like this for a while! But let's say player 2 wants to work a 
 
 ### Create a Branch In Git
 
-```
-$ git checkout -b add-styling
-Switched to a new branch 'add-styling'
+```nohighlight
+$ git checkout -b darker
+Switched to a new branch 'darker'
 ```
 
-Open a new file, style.css and paste this code in:
+Open a new file `style.css` and paste this code in:
 ```
 body {
   color: white;
@@ -264,7 +264,7 @@ body {
 }
 ```
 
-Now link it in your `index.html`. It should look something like this:
+Now link it in `index.html`. It should look something like this:
 
 ```html
 <html>
@@ -280,70 +280,78 @@ Now link it in your `index.html`. It should look something like this:
 
 Now stage and commit the new file and changes to the existing file.
 
-```
+```nohighlight
 $ git add .
 $ git commit -m 'added style.css'
-$ git push
+$ git push origin darker
 ```
 
 You should both now be able to see a second branch appear in your repo in the browser. On your command line, you can type this command to see a list of the available branches: 
 
-```
+```nohighlight
 $ git branch
+* darker
+  master
 ```
+
+Great! Now let's show the other player your work in GitHub and ask them to merge it in to the main branch.
 
 ### Create a Pull Request In GitHub
 
-In your browser, go to the github project. Click on branches and the new branch name.
+In your browser, go to the github project. Click on *branches* and the new branch name, *darker*.
 
-![Branches in Github](branches.png)
-![Branch details in Github](branches-link.png)
+![Branches Button in GitHub](BranchesButton.png)
+![Branches Page in GitHub](branches.png)
 
-In the upper right-hand corner, click `Compare` to see a diff between this feature branch and the master branch without changing anything.
-
-TODO screenshot
-
-If you are happy with your changes, click `Create a Pull Request`. Add some text in the description box to let player 1 know what you did and why.
+If you are happy with your changes, click *New Pull Request*. Add some text in the description box to let player 1 know what you did and why. 
 
 ![Open a PR in Github](pr-details.png)
+
+This is what an opened pull request looks like:
+
 ![Create a PR in Github](pr-created.png)
 
 #### Player 1
 
 You will notice that you do not see this new `style.css` file locally. Type this command to see what branches are on your local coputer:
 
-```
+```nohighlight
 $ git branch
-TODO message
+* master
 ```
 
 If you want to work with the branch before merging it in, you can do so by typing these commands:
 
-```
+```nohighlight
 $ git fetch
-TODO message
+...
+$ git branch
+  darker
+* master
 ```
-```
-$ git checkout add-styling
-TODO message
+```nohighlight
+$ git checkout darker
+Switched to branch 'darker'
+Your branch is up-to-date with 'origin/darker'.
 ```
 
 Make a change and commit to this branch if you'd like -- you will see that the pull request in Github is updated to reflect the changes you've added. The context in the description box is not though, so be sure to add comments to the pull request to explain what you did and why.
 
 To go back to the main branch type these commands:
 
-```
+```nohighlight
 $ git checkout master
-TODO message
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
 ```
 
-You will see you no longer have those changes that are in the add-styling branch. Let's go merge those changes in.
+You will see your files no longer have those changes that are in the darker branch. Let's go merge those changes in, so that the master branch adopts all the changes in the darker branch.
 
 Go to the repo in Github. Click on `Pull Requests`. Explore here and see all the information Github shows you about the changes made.
 
 ![PR Open in Github](RepoPR1.png)
 
-When you're happy with the changes, merge them in. Click `Merge Pull Request` then `Confirm Merge`.
+When you're happy with the changes, merge them in. Click *Merge Pull Request* then *Confirm Merge*.
 
 ![Merge a Pull Request in Github](RepoMergePR.png)
 ![Confirm PR Merge in Github](PRConfirmMerge.png)
@@ -354,11 +362,16 @@ You should see this screen to show success:
 
 Now you will need to pull updates to your master branch locally.
 
-```
+```nohighlight
+$ git branch master
 $ git pull origin master
 ```
 
 Git is able to merge these files on its own.
+
+### What happens if you both edit the same thing?
+
+### ![Git Merge Conflicts](git-merge.gif)
 
 #### Player 2
 
@@ -385,15 +398,13 @@ The result:
 
 ![Satisfying!](AddSatisfyFont.png)
 
-
-
-Commit your changes and push it up to GitHub. (If you don't remember how to do this, follow the instructions above.)
+Commit your changes and push it up to GitHub. If you don't remember how to do this, follow the instructions above. Make sure you're back in the `master` branch - if you're still in `darker`, then your changes will be isolated and we won't get the merge conflict you want to learn about. 
 
 Meanwhile...
 
 #### Player 1
 
-Let's change something about the style file. Our html is looking pretty plain. Let's pick a nice font and add some margins. Change it to look something like this:
+Let's change something about the style file that Player 2 just edited. Change it to look like this:
 
 ```
 body {
@@ -407,13 +418,15 @@ body {
 }
 ```
 
-Don't forget to link the new font in your `index.html` file.
-
-`<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">`
-
-Commit your changes and push it up to GitHub. (If you forgot how, use the instructions above.) You should get an error message, how exciting!
+Don't forget to link the new font in your `index.html` file, beside the other link:
 
 ```
+  <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+```
+
+Commit your changes to branch `master` and push it up to GitHub. You should get an error message, how exciting!
+
+```nohighlight
 $ git push
 
 To git@github.com:cherylschaefer/fireside-story.git
@@ -429,7 +442,7 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 Let's look around and see what's happening.
 
-```
+```nohighlight
 $ git status
 On branch master
 Your branch is ahead of 'origin/master' by 3 commits.
@@ -439,7 +452,7 @@ nothing to commit, working directory clean
 
 Let's pull these outstanding changes into our branch and resolve the errors.
 
-```
+```nohighlight
 $ git pull
 remote: Counting objects: 4, done.
 remote: Compressing objects: 100% (3/3), done.
@@ -493,15 +506,14 @@ body {
 }
 ```
 
-You will need to do the same thing for the `index.html` file. Commit again and push it up; you should not see an error message.
-
+You will need to do the same thing for the `index.html` file. You only need the link for *Sacramento*, not *Satisfy*. Commit again and push it up; you should not see an error message.
 
 
 #### Player 2
 
 Meanwhile, Player 2 is sitting home, minding their own business. A random `git status` seems reassuring:
 
-```bash
+```nohighlight
 $ git status
 On branch master
 Your branch is up-to-date with 'origin/master'.
@@ -510,7 +522,7 @@ nothing to commit, working directory clean
 
 Your local git thinks the status is quo. Little does it know that up at GitHub, the status is not quo. We'd find this out by doing either a `git fetch`, or if we just want the latest version of this branch, `git pull`:
 
-```bash
+```nohighlight
 $ git pull
 remote: Counting objects: 13, done.
 remote: Compressing objects: 100% (8/8), done.
@@ -525,10 +537,9 @@ Fast-forward
  2 files changed, 4 insertions(+), 3 deletions(-)
 ```
 
-Great Scott! Looks like Player 1 changed both `index.html` and `style.css`. Note that *player 2* didn't have to deal with the hassle of resolving merge conflicts. Since Player 1 intervened, git assumes that the team is okay with the way they resolved it, and 'fast forwards' our local repo to be in sync with the upstream one. Let's look at one file to make sure:
+Great Scott! Looks like Player 1 changed both `index.html` and `style.css`. Note that *player 2* didn't have to deal with the hassle of resolving merge conflicts. Since Player 1 intervened, git assumes that the team is okay with the way they resolved it, and **fast forwards** our local repo to be in sync with the upstream one. Let's look at `style.css` to make sure:
 
-```bash
-$ cat style.css 
+```css
 body {
   color: white;
   background-color: black;
@@ -538,14 +549,12 @@ body {
 }
 ```
 
-<aside class="aside-note" markdown="1">The unix `cat` command prints the contents of one or more file, con-`cat`-enated together. For short files, it's faster than firing up `less` or an editor.</aside>
-
 <br/>
 Now make more changes but let Player 1 push up first so Player 2 can practice resolving the merge conflict.
 
-If you have extra time, feel free to add more to your story.
+Merge conflicts are a part of developing in a team. Resolve them carefully, so that they don't cause bugs in your code.
 
-(Optional) Share your story in the `#fireside-story` channel on Slack, and see what others have created!
+*Optional*: share your story in the `#fireside-story` channel on Slack, and see what others have created!
 
 ### Resources
 
