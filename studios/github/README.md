@@ -28,7 +28,7 @@ This lesson reinforces
 
 ## Walkthrough
 
-Help students understand why Github is worth their study. They already know how to use a local git repo with one branch - giving them the ability to move their code forward and backward in time. Working with branches on github allows multiple people to build features at the same time. 
+Help students understand why Github is worth their study. They already know how to use a local git repo with one branch - giving them the ability to move their code forward and backward in time. Working with branches on github allows multiple people to build features at the same time. Pull Requests act as a checkpoint when code flows from branch to branch. 
 
 Help the students pair off for this exercise. Encourage them to post the stories they come up with in Slack.
 
