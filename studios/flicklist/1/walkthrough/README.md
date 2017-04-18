@@ -25,20 +25,18 @@ Let's do some setup work to get our project ready. We'll only have to do this on
 
 ### Clone the repository
 
-The starter code for today's studio (and all the future FlickList studios) is contained within our [FlickList repository page on GitHub](https://github.com/LaunchCodeEducation/flicklist-python). You will need to `clone` this repository in order to obtain your own copy on your local machine.
+The starter code for today's studio (and all the future FlickList studios) is contained within our [FlickList repository page on GitHub](https://github.com/LaunchCodeEducation/flicklist-flask). You will need to `clone` this repository in order to obtain your own copy on your local machine.
 
 First, make sure you are in your `lc101/` folder. Then, clone our repository:
 
 ```nohighlight
 cd YOUR/PATH/TO/lc101
-git clone https://github.com/LaunchCodeEducation/flicklist-python.git
+git clone https://github.com/LaunchCodeEducation/flicklist-flask.git
 ```
 
-This creates a copy of the repository on your laptop. You should now have a new folder in your directory called `flicklist-python/`.
+This creates a copy of the repository on your laptop. You should now have a new folder in your directory called `flicklist-flask/`. We have included a .gitignore file for you.
 
-### Create new App Engine app
-
-Now, open the Google App Engine Launcher. Create a new app using the app ID `flicklist-python`. The application directory should be *one level above* the repository directory that was just created by cloning the repository. So, if your copy of the repository is in `/home/student/code-projects/flicklist-python`, then you would set the application directory to `/home/student/code-projects/`. In previous usage of Google App Engine Launcher, the tool created a new directory for us using the specified project ID. In this case, however, we want to use the directory that is already there. If we get the application ID and directory settings correct, Google App Engine will do this just like we want.
+TODO
 
 ![flicklist-python in GAE](../images/flicklist-gae.png)
 
