@@ -558,6 +558,6 @@ Merge conflicts are a part of developing in a team. Resolve them carefully, so t
 
 ### Resources
 
-TODO add a resource about branching
+* [Git Branching - Basic Branching and Merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
 * [Adding Another Person To Your Repository](https://help.github.com/articles/inviting-collaborators-to-a-personal-repository/)
 * [Resolving Conflicts In the Command Line](https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/)
