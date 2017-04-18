@@ -43,6 +43,7 @@ Seeing `/home/dm/hello-flask/flask/bin` first in that list verifies that the act
 
 Now let's install some new software into the flask directory. Type:
 
+TODO On Mac it's `venv/bin/pip install flask`
 ```bash
 (flask) $ pip install flask
 ```
