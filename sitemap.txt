@@ -41,6 +41,7 @@ http://education.launchcode.org/web-fundamentals/studios/flicklist/8/index.html
 http://education.launchcode.org/web-fundamentals/studios/flicklist/8/notes.html
 http://education.launchcode.org/web-fundamentals/studios/flicklist/9/index.html
 http://education.launchcode.org/web-fundamentals/studios/flicklist/10/index.html
+http://education.launchcode.org/web-fundamentals/studios/flicklist/11/index.html
 http://education.launchcode.org/web-fundamentals/studios/flicklist/getting-the-code/index.html
 http://education.launchcode.org/web-fundamentals/studios/headline-news/index.html
 http://education.launchcode.org/web-fundamentals/studios/index.html

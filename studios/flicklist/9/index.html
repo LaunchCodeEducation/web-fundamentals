@@ -115,17 +115,36 @@
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Studio: FlickList 9</h1>
-                    <p><em>Coming soon...</em></p>
-<!--
-### Your Tasks
-Below are 5 tasks. Most are just one or two lines of code, but the last one is a bit more involved.
-1. **Fix the Index handler**. When the user visits the home page, she still sees *everybody's* unwatched movies. Fix it so that she only sees her own movies. Instead of a `GqlQuery`, you will need to use ORM methods like `all` and `filter`. For an example to reference, look at what we did during Walkthrough in `MovieRatings.get`.
-2. **Add a Logout link**. The user needs a way of logging out when she is logged in. Simply add another link to our "navigation menu" at the top of `base.html`
-3. **Add a route for recently watched movies**. This is the first of three tasks involved in finishing the implementation of the "recently watched movies" page. First, simply add to our app another route that hooks up to the `RecentlyWatchedMovies` handler we started during Walkthrough.
-4. **Render the template**. Our current implementation simply responds with a raw string containing the titles of all the movies. Let's return some real HTML. Notice that we have created a new template called `recently-watched.html`. Edit the `RecentlyWatchedMovies.get` method so that it renders that template. Make sure you pass the list of movies into the template.
-5. **Implement the template**. Currently the template simply renders a header. Use your Jinja ninja skills to show the list of movies. Each list item should look something like this:
-    > <strong>Jesse</strong> watched <strong>The Big Green</strong> and gave it a rating of <strong>*****</strong> stars.
-    -->
+                    <h2 id="walkthrough">Walkthrough</h2>
+<p>Our app at this point has user accounts and login, but users are still collaboratively editing the same list of movies. We need to fix that:</p>
+<ul>
+<li>We'll add a <code>.owner</code> field to the <code>Movie</code> class, so that each movie &quot;belongs to&quot; a specific user.</li>
+<li>We will update the <code>/ratings</code> page so that a user only sees a list of movies of which she is the owner.</li>
+<li>We will also start to implement a new page, <code>/recently-watched</code>, showing the most recent movies that people have been watching. Unlike the other page, this will not be individualized. It will be the same for everyone, showing the most recently watched movies by <em>all</em> users.</li>
+</ul>
+<h2 id="studio">Studio</h2>
+<p>Your task today is to fill a few of the small holes we have left, and to finish implementing the new &quot;recently watched movies&quot; page that we started during Walkthrough.</p>
+<h3 id="checking-out-the-studio-code">Checking out the Studio code</h3>
+<p>Follow the <a href="../getting-the-code/">instructions for getting the code</a> in order to get the starter code for <code>studio9</code>.</p>
+<h3 id="your-tasks">Your Tasks</h3>
+<p>Below are 5 tasks. Most are just one or two lines of code, but the last one is a bit more involved.</p>
+<ol>
+<li>
+<p><strong>Fix the Index handler</strong>. When the user visits the home page, she still sees <em>everybody's</em> unwatched movies. Fix it so that she only sees her own movies. Instead of a <code>GqlQuery</code>, you will need to use ORM methods like <code>all</code> and <code>filter</code>. For an example to reference, look at what we did during Walkthrough in <code>MovieRatings.get</code>.</p>
+</li>
+<li>
+<p><strong>Add a route for recently watched movies</strong>. This is the first of three tasks involved in finishing the implementation of the &quot;recently watched movies&quot; page. First, simply add to our app another route that hooks up to the <code>RecentlyWatchedMovies</code> handler we started during Walkthrough.</p>
+</li>
+<li>
+<p><strong>Render the template</strong>. Our current implementation simply responds with a raw string containing the titles of all the movies. Let's return some real HTML. Notice that we have created a new template called <code>recently-watched.html</code>. Edit the <code>RecentlyWatchedMovies.get</code> method so that it renders that template. Make sure you pass the list of movies into the template.</p>
+</li>
+<li>
+<p><strong>Implement the template</strong>. Currently the template simply renders a header. Use your Jinja ninja skills to show the list of movies. Each list item should look something like this:</p>
+<blockquote>
+<p><strong>Jesse</strong> watched <strong>The Big Green</strong> and gave it a rating of <strong>*****</strong> stars.</p>
+</blockquote>
+</li>
+</ol>
                                     </section>
 
             </div>
