@@ -12,7 +12,7 @@ In class, we'll walk through the [Project Setup](#project-setup) steps (see belo
 * What exactly is the application, and how does it "run"?
 * How do HTTP requests and responses work?
 * GET and POST requests types
-* Review of Python class syntax, and the `self` parameter
+* Review of Python class syntax, and the `self` parameter TODO Do we need to cover `self`? I removed it
 * Routes in a web application (i.e. how does a specific request get matched with a specific handler class based on the URL?)
 
 We'll also add a bit of code to display a new heading and a "Movie of the Day", which is really just a hard-coded string. You will make this more interesting during the studio.
@@ -36,7 +36,7 @@ git clone https://github.com/LaunchCodeEducation/flicklist-flask.git
 
 This creates a copy of the repository on your laptop. You should now have a new folder in your directory called `flicklist-flask/`. We have included a .gitignore file for you.
 
-TODO
+TODO using virtualenv and flask now instead of Google App Engine
 
 ![flicklist-python in GAE](../images/flicklist-gae.png)
 
