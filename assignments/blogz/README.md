@@ -9,7 +9,7 @@ We'll add authentication, so that users have to log in to create posts. Addition
 
 Throughout the assignment, refer to the [demo app][blogz-demo]. Feel free to create an account, make a post or two, and poke around.
 
-### Setting up
+## Setting Up
 
 LaunchCode staff has done a bit of work to get started on this project, so you'll start by checking out the code from GitHub. Visit the [repository page on GitHub][blogz-repo] and fork the project. Recall that this creats a copy of the project under your personal GitHub account.
 
@@ -19,27 +19,39 @@ If you try to run the app at this point, you will enounter errors. We have left 
 
 For an in-depth look at the starter code, watch the [walkthrough][starter-code-walkthrough].
 
-### Starter code
+## Starter code
 
 Review the starter code in the project. It is essentially the solution to the build-a-blog assignment, with a few notable additions. In particular, we've added most of the code necessary to allow users to create accounts and log in and out.
 
-##### User accounts
+### User accounts
 
 There are three handlers associated with user account actions: `SignupHandler`, `LoginHandler`, and `LogoutHandler`. Most of the code required to make these work properly is in place. You should read through it all, and hopefully you'll find much of it familiar.
 
-The `SignupHandler` should look familiar to you; it is essentially the solution to the Signup portion of the Formation problem set from earlier in the unit. The one notable update to `SignupHandler` is that when a user submits data that validates, we are now able to create a new `User` object to represent the user and store it in the database. Have a look at `SignupHandler` and the `User` model class to see how these work.
+The `SignupHandler` should look familiar to you; it is essentially the solution to the Signup portion of the User Signup problem set from earlier in the unit, and from Flicklist.
 
 The `User` class is in the file `models.py`, which also contains the `Post` model class. These classes represent a user of the site -- that is, somebody with an account -- and a blog post, respectively. We put our model classes in a separate file for organizational purposes, and then import them at the top of `main.py`.
 
-##### `hashutils.py`
+### hashutils.py
 
-Open up `hashutils.py`. Here you'll find code that should look familiar from recent lessons on cookies and hashing. In fact, much of this code is nearly identical to what you wrote in the quizzes for Lesson 4 in the Udacity course. In `main.py`, we've imported the `hashutils` module and used it to create and validate secure hashes for cookies and passwords in `SignupHandler` and `LoginHandler`.
+Open up `hashutils.py`. Here you'll find code that should look familiar from recent lessons on cookies and hashing. In fact, you likely wrote some of the exact same code for the quizzes for Lesson 4 in the Udacity course. In `main.py`, we've imported the `hashutils` module and used it to create and validate secure hashes for cookies and passwords in `SignupHandler` and `LoginHandler`.
 
-Read through the code in `hashutils.py`, as well as where it is used in `main.py`, to be sure you understand what these functions do, and how they're used for cookie and account management.
+<aside class="aside-note" markdown="1">
+Understanding hashing is hard. We haven't spend much time talking about it yet, but will do so in-depth in class 13. At this point, you don't need to understand the details of what the code in `hashutils.py` is doing so much as that it's there, and we'll explore it in more depth soon.
+</aside>
 
 That's a very quick, high-level introduction to the starter code. Spend some time with it, and when you're ready, dive into your tasks below.
 
-### Add login form
+## Your Tasks
+
+First, a message:
+
+<aside class="aside-warning" markdown="1">
+We'll cover some concepts related to the tasks below in the Flicklist 9 studio. If you haven't completed that, or are just reading this before the given class date, keep that in mind. All of the items below are doable before doing Flicklist 9, but having completed that studio will help.
+</aside>
+
+Ready? Great! Here we go...
+
+### Add Login Form
 
 Start up the app and visit the path `/signup`. Go ahead and fill out the form to create an account for yourself. There are two ways to verify that this worked:
 
@@ -62,19 +74,21 @@ If you then visit the path `/logout`, you'll be logged out. To allow users to lo
 
 Note that we have a `login.html` template and a `signup.html` template, but no `logout.html` template. It turns out that we don't need a template for logging out. Think about why this is the case. What makes logging out different from logging in, or creating an account?
 
-### Add `author` field to `Post`
+### Add author Field to the Post Class
 
 We saw above that our `models.py` file contains the two model classes for our application: `Post` and `User`. However, they are not yet linked in any way. If a `User` is able to create posts, and each post is created by a `User`, then there should be some explicit link between the two objects.
 
-Your task is to add an `author` field to the `Post` model class, so that each post will formaly belong to the user that created it. To do this, add the field as a `db.ReferenceProperty`, just as we did in the last Flicklist studio. This property should be required.
+Your task is to add an `author` field to the `Post` model class, so that each post will formally belong to the user that created it. To do this, add the field as a `db.ReferenceProperty`, just as we did in the last Flicklist studio. This property should be required.
 
 Once you've done this, create a new post or two, and visit the SDK Console to confirm that your new post has a value in the `author` column. This value will not make much sense (it's a string of various characters) but it's presence is enough to tell you that you did this part correctly.
 
 We can also see our posts via the "all posts" link (or, equivalently, the path `/blog`). We eventually want to be able to display only the posts written by a specific user. We'll tackle that in the next section.
 
-> If you create posts before adding the `author` field, such posts will break the main `/blog` page. Via the SDK Console, delete any posts that don't have a value in the `author` column.
+<aside class="aside-warning" markdown="1">
+If you create posts before adding the `author` field, such posts will break the main `/blog` page. Via the SDK Console, delete any posts that don't have a value in the `author` column.
+</aside>
 
-### Implement `get_posts_by_user`
+### Implement get_posts_by_user
 
 Near the top of `main.py` is the `BlogHandler` class, which each of our own handers extends. The `BlogHandler` includes some important utilities that we'll need to use throughout our app. In particular, it will help us fetch blog post data from the database.
 
@@ -86,7 +100,7 @@ The first method, `get_posts(self, limit, offset)`, fetches posts by all users f
 
 The code is written this way to enable us to implement "paging", where we display a limited number of posts per page, and allow the user to view subsequent pages. This behavior is useful when there are a large number of blog posts, and it is primarily implemented in `BlogIndexHandler`. `get_posts` uses the `Query` class from `google.appengine.ext.db`, which we encountered in the last Flicklist studio.
 
-Many application frameworks will make it possible for you to retrieve data either via a direct query (as we do in `get_user_by_name`) or via some special methods that it provides in an **object-relational mapping (ORM)** library. When dealing with more complicated queries, it's prefereable to use the ORM library since it can easily handle complicated filtering with big data sets, as well as object relationships. [Read more about the `Query` class][gae-query-class] in Google's documentation.
+Many application frameworks will make it possible for you to retrieve data either via a direct query (as we do in `get_user_by_name`) or via some special methods that it provides in an **object-relational mapping (ORM)** library. When dealing with more complicated queries, it's preferable to use the ORM library since it can easily handle complicated filtering with big data sets, as well as object relationships. [Read more about the `Query` class][gae-query-class] in Google's documentation.
 
 To allow visitors to view a user's blog (i.e. all posts from a given user), we need to finish implementing the `get_posts_by_user` method. We've started it for you, but you'll need to finish. You'll need to do something similar to `get_posts`, but you'll need to filter based on the `author` field. Refer to the [documentation for the `filter` method][gae-query-filter], as well as the last Flicklist studio.
 
@@ -94,27 +108,29 @@ If you've properly implemented this method, you will be able to use paths of the
 
 To test your code you should create a few posts under multiple user accounts, and check that they display properly when using the user-specific blog URLs.
 
-### Add author links
+### Add Author Links
 
 Now visitors can go to paths like `/blog/jesse` to see a specific user's blog posts. But how will they know that they can do this? We need to provide an intuitive way for visitors to find their way to these pages.
 
-#### Author links on post lists
+#### Author Links on Post Lists
 
 The `blog.html` template is where we list out several posts on a single page. It is rendered by `BlogIndexHandler`.
 
 Modify this template so that below each post is a link to the author's blog. Refer to the [demo app][blogz-demo-blog] to see precisely how this should look and work.
 
-#### Author links below individual post pages
+#### Author Links Below Individual Post Pages
 
 Like in the Build-a-blog assignment, post titles have permalinks which link to the unique page for each post. A path for such a link might look like `/blog/6192449487634432`. These pages use the `post.html` template and are handled by `ViewPostHandler`, and they currently display only the date that the post was written on, just below the post body. As above, modify this template to display the author, and link back to the author's blog page.
 
 When you're done with this task, you're ready to submit.
 
-### Submit
+## Submit
 
 To turn in your assignment and get credit, follow the [submission instructions][submission-instructions].
 
-> Remember that you should ignore any Udacity instructions about hosting your app out on the internet and posting the link so they can grade it. You don't have to submit your work to Udacity.
+<aside class="aside-note" markdown="1">
+Remember that you should ignore any Udacity instructions about hosting your app out on the internet and posting the link so they can grade it. You don't have to submit your work to Udacity.
+</aside>
 
 [blogz-demo]: http://blogz-demo.appspot.com/
 [blogz-demo-blog]: http://blogz-demo.appspot.com/blog

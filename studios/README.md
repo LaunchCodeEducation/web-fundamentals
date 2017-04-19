@@ -62,3 +62,9 @@ Add user registration and login form handling. Store new users in the database.
 Add login and logout behaviors with cookies.
 
 [Work on Flicklist 8](flicklist/8/)
+
+### Flicklist 9
+
+Allow users to own movies, and add "recently watched" functionality.
+
+[Work on Flicklist 9](flicklist/9/)
