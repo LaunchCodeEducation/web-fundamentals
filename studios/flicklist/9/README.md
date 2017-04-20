@@ -18,6 +18,12 @@ Your task today is to fill a few of the small holes we have left, and to finish 
 
 ### Checking out the Studio code
 
+Before getting the starter code for this studio, fetch updates from the main repository:
+
+```nohighlight
+$ git fetch origin
+```
+
 Follow the [instructions for getting the code][get-the-code] in order to get the starter code for `studio9`.
 
 ### Your Tasks
