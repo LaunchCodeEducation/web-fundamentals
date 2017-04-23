@@ -68,3 +68,9 @@ Add login and logout behaviors with cookies.
 Allow users to own movies, and add "recently watched" functionality.
 
 [Work on Flicklist 9](flicklist/9/)
+
+### Flicklist 10
+
+Securely store sensitive data by using hashing.
+
+[Work on Flicklist 10](flicklist/10/)
