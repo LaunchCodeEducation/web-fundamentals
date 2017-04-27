@@ -6,7 +6,7 @@ currentMenu: studios
 ## Walkthrough
 
 In today's walkthrough, your instructor will add a few Bootstrap features to Flicklist:
-- Add the Bootstrap CSS and JS files by adding header tags that reference the Bootstrap CDN.
+- Add the Bootstrap CSS and JS files, along with jQuery, by adding header elements that reference the Bootstrap and jQuery CDN resources.
 - Add a Navbar in `base.html` to dress up site navigation.
 - Use [Bootstrap's Grid System](http://getbootstrap.com/css/#grid) to add a single-column grid layout in `base.html` using `container`, `row`, and `col-md-*` classes.
 
