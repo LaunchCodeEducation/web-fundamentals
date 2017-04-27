@@ -74,3 +74,9 @@ Allow users to own movies, and add "recently watched" functionality.
 Securely store sensitive data by using hashing.
 
 [Work on Flicklist 10](flicklist/10/)
+
+### Flicklist 11
+
+Use Bootstrap to enhance the look of Flicklist.
+
+[Work on Flicklist 11](flicklist/11/)

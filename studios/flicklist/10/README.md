@@ -254,3 +254,5 @@ Once the code is working, you'll see that cookie values are stored in a format l
 ![Hashed cookie](images/hashed-cookie.png)
 
 Congratulations! You have just finished making your web application data secure.
+
+[get-the-code]: ../getting-the-code/
