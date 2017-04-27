@@ -94,3 +94,14 @@ From the computer running this process, point your browswer at http://localhost:
 ![Hello World screenshot](hello-world-browser-screenshot.png)
 
 If so: congrats! You've built a dynamic web app!
+
+You might see this error:
+
+```nohighlight
+Traceback (most recent call last):
+  File "main.py", line 1, in <module>
+    from flask import Flask
+ImportError: No module named flask
+```
+
+This means your virtualenv is not running. Enter this command to start it: `source venv/bin/activate` and then try again.
