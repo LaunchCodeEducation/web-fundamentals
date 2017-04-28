@@ -73,7 +73,7 @@ For this studio (and all subsequent studios), you will want to start at the exac
 
 As mentioned above, your task is to implement a new feature for "crossing off" movies from the user's watchlist.
 
-Open up `main.py` in your text editor. You should see 4 `# TODO` comments in the code:
+Open up `main.py` in your text editor. You should see 3 `# TODO` comments in the code:
 
 1. **Add a form**. On the `Index` handler, include another `<form>` below the previous one. It should say something like:
 
