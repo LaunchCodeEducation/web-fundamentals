@@ -33,13 +33,13 @@ Validating user-submitted data
 
 ### Flicklist 4
 
-Using templates to render views
+Using templates to render views including responding to bad input (validations) and confirmation pages.
 
 [Work on Flicklist 4](flicklist/4/)
 
 ### Flicklist 5
 
-Miscellaneous improvements such as responding to bad input and adding confirmation pages
+Miscellaneous improvements reinforcing validations and confirmation pages
 
 [Work on Flicklist 5](flicklist/5/)
 
