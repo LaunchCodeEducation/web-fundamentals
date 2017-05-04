@@ -3,7 +3,7 @@ title: 'Studio: FlickList 6'
 currentMenu: studios
 ---
 
-In this studio we will build persistence into our app. Finally, our hypothetical user will be able to add a new movie to the list, close the window and go eat a sandwich, forget what movie she wanted to watch, and then come running back to our site, and the same movie will still be faithfully sitting in her list so she can go stream it on our other awesome website, FlixNet.
+In this studio we will build persistence into our app. Finally, our hypothetical user will be able to add a new movie to the list, close the window and go eat a sandwich, forget what movie she wanted to watch, and then come running back to our site, and the same movie will still be faithfully sitting in her list so she can go stream it on our other awesome website, FlicksNet.
 
 We'll start using a term and associated acronym that is common when connecting applications to databases: **object-relational mapping (ORM)**. Applications store information in the form of *objects* and databases store data in the form of *relational data* (tables). An ORM library or module will often so much of the heavy lifting for us, when it comes to translating back and forth between these differing contexts.
 
@@ -94,5 +94,14 @@ Follow the [instructions for getting the code][get-the-code] in order to get the
 2. In `MovieRatings.post`, use the `Movie.get_by_id` ORM method to find the movie with the id specified by the form submission.
 3. In `MovieRatings.post`, update the movie's rating to the new rating specified by the form submission.
 4. In `rating-confirmation.html`, update the code so that it still works now that it is being given a movie *object*.
+
+<aside class="aside-note" markdown="1">
+If you want to test your queries in the mysql console, you can do so in the phpmyadmin interface. Go to the left tab and click on the database name *flicklist* then on the second-to-top row tab click *SQL*.
+<br/>
+For those of you accustomed to accessing this via the command line, you will need to specify which mysql to use with a command like:
+```
+/Applications/MAMP/Library/bin/mysql -uflicklist -p
+```
+</aside>
 
 [get-the-code]: ../getting-the-code/
