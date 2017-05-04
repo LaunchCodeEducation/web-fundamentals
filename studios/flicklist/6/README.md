@@ -111,7 +111,7 @@ Open up your browser, add one movie, cross it off.
 - Drop the table through phpmyadmin, so you can make an incompatible change
 - Reinitialize your database by reenacting the python repl session from the walkthrough again
 - Change `main.py`s behavior when a user rates a movie - actually store the rating
-- Display ratings
+- Display the ratings on the ratings page by prepopulating the select box with their old rating
 
 ### Give yourself a hand
 
