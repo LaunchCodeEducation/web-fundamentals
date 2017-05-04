@@ -36,47 +36,33 @@ Now if we fire up our app and view it, we see those movies in our watchlist! Yea
 
 Let's play with the app though and inventory what needs to be done. 
 
-- If we click on *I Watched It!*, and the return to the root and reload, that movie is still on our watchlist. The change isn't *persistent*
-- Similarly, adding movies to watchlist isn't persistent
-- Lastly, rating movies isn't persistent.
+- Adding movies to the watchlist isn't *persistent* - if we type in a name and click *Add it*, then go back and reload, nothing has changed.
+- Clicking on *I Watched It!* makes no persistant changes, either.
+- Rating movies isn't persistent. 
 
-We'll walk through the first two together, then you'll handle the last one on your own. 
+Today we will change all these to be persistent. We'll walk through the first two together, then you'll handle the last one on your own.
 
+### A List of Movie Instances
 
-__________
+Our next change is going to be a massive breaking change to our application. Up until now, we've been representing movies as strings of their names. The time has come to represent movies as instances of Movie. This will rip through our application, breaking lots of stuff. We'll rename lots of variables so it's clear when we're talking about Movies, and when we're talking about movie names. Follow along by either doing `git diff walkthrough6a walkthrough6b` or by [viewing the diffs on github](https://github.com/LaunchCodeEducation/flicklist-flask/compare/walkthrough6a...walkthrough6b)
 
-During the walkthrough, we will lay the groundwork for storing data, and begin to adapt our app to use data from the database. Here are some of the tasks that will be carried out.
+```python
+def getCurrentWatchlist():
+    # old: list of strings
+    return [movie.name for movie in Movie.query.all()]
 
-- Import the `db` class from the `google.appengine.ext` module
-- Create `Movie` model object
-  - with `db` properties `title`, `watched`, `rating` and `created` (actually not creating rating and created - save rating for their half)
-- On `AddMovie` handler, create a movie object, and use `put` ORM method to save it to the datastore
-  - From the admin panel, observe that it was indeed saved
-  - By hitting Reload on the main page, observe that it was indeed saved
-
-- On `Index` handler, don't use `getUnwatchedMovies()` function. Instead use a GqlQuery on the database
-  - Result should be one item in the list, but with no title. Why not? Gotta go to the `frontpage.html` template and adjust to use `movie.title` instead of just `movie`.
-- Implement persistant "watching"
-  - In the `WatchedMovie` handler, update `movie.watched` property to `True`
-  - On the `frontpage.html` template, use `movie.key().id()` as the value for each hidden input
-
-
-Build some movies in the table:
-
+def getCurrentWatchlist():
+    # new: list of Movie instances
+    return Movie.query.all()
 ```
-(flicklist) dm@black walkthrough6 ~/edu/flicklist-flask$ python
-Python 3.6.1 |Continuum Analytics, Inc.| (default, Mar 22 2017, 19:54:23) 
-[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux
-Type "help", "copyright", "credits" or "license" for more information.
->>> from main import db, Movie
-/home/dm/miniconda3/envs/flicklist/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py:839: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
-  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
->>> db.session.add(Movie('Mulan'))
->>> db.session.add(Movie('Rushmore'))
->>> db.session.add(Movie('Damsels in Distress'))
->>> db.session.commit()
->>>
-```
+
+Notice how we have to rework templates to call `movie.name` when we want a human-readable version of the movie name, and `movie.id` when we want to reference a specific row in our movie table.
+
+In this batch of changes, we've changed our most importat data structure - movies - and we've made it possible to add movies to the watch list from the web broweser. Hooray! Cool stuff! The world is our oyster. 
+
+### Watching Movies
+
+In the next batch of changes, we'll modify the *I Watched It!* button to change the database, and truly cross off the movie in the database, persistently. You can view them by running the command `git diff walkthrough6b walkthrough6-solution` or by [viewing the diffs on github](https://github.com/LaunchCodeEducation/flicklist-flask/compare/walkthrough6b...walkthrough6-solution). We also finish our transition from strings to Movies by modifying the ratings templates.
 
 
 ## Studio
@@ -89,11 +75,48 @@ Follow the [instructions for getting the code][get-the-code] in order to get the
 
 ### Your Tasks
 
-1. In `MovieRatings.get` write a GQL query to select all the movies that have been watched
-  - Extra credit: sort by creation date (most recent first).
-2. In `MovieRatings.post`, use the `Movie.get_by_id` ORM method to find the movie with the id specified by the form submission.
-3. In `MovieRatings.post`, update the movie's rating to the new rating specified by the form submission.
-4. In `rating-confirmation.html`, update the code so that it still works now that it is being given a movie *object*.
+1. install mamp 
+2. configure mysql
+3. install conda packages
+8. initialize your database
+4. run the existing flicklist
+5. modify flicklist to store movie ratings
+
+### Install mamp
+
+TODO
+
+### Configure mysql
+
+TODO add user flicklist pw MyNewPass, add matching database
+
+### Install conda packages
+
+```nohighlight
+(flicklist) $ conda install -c conda-forge flask-sqlalchemy
+(flicklist) $ conda install pymysql
+```
+
+### initialize your database
+
+Reenact the python repl session from the walkthrough.
+
+### Run the existing flicklist
+
+Open up your browser, add one movie, cross it off. 
+
+### Modify flicklist to store movie ratings
+
+- Change `main.py`'s Movie model to have a ratings column.
+- Drop the table through phpmyadmin, so you can make an incompatible change
+- Reinitialize your database by reenacting the python repl session from the walkthrough again
+- Change `main.py`s behavior when a user rates a movie - actually store the rating
+- Display ratings
+
+### Give yourself a hand
+
+If you made it this far, you've somehow completed a huge, challenging studio with a ton of hard concepts all at once. Congratulations!  And if you don't get it right away, don't give up - the authors did not either. Keep on trying: be *persistent*!
+
 
 <aside class="aside-note" markdown="1">
 If you want to test your queries in the mysql console, you can do so in the phpmyadmin interface. Go to the left tab and click on the database name *flicklist* then on the second-to-top row tab click *SQL*.
