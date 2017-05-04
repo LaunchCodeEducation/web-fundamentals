@@ -38,4 +38,13 @@ Follow the [instructions for getting the code][get-the-code] in order to get the
 3. In `MovieRatings.post`, update the movie's rating to the new rating specified by the form submission.
 4. In `rating-confirmation.html`, update the code so that it still works now that it is being given a movie *object*.
 
+<aside class="aside-note" markdown="1">
+If you want to test your queries in the mysql console, you can do so in the phpmyadmin interface. Go to the left tab and click on the database name *flicklist* then on the second-to-top row tab click *SQL*.
+<br/>
+For those of you accustomed to accessing this via the command line, you will need to specify which mysql to use with a command like:
+```
+/Applications/MAMP/Library/bin/mysql -uflicklist -p
+```
+</aside>
+
 [get-the-code]: ../getting-the-code/
