@@ -73,37 +73,50 @@ Now that we have some database functionality wired into our application, let's c
 
 Follow the [instructions for getting the code][get-the-code] in order to get the starter code for `studio6`.
 
+You should have already installed MAMP locally but if you need a refresher it is in [Class 8 Prep Work](/class-prep/8).
+
 ### Your Tasks
 
-1. install mamp 
-2. configure mysql
-3. install conda packages
-8. initialize your database
-4. run the existing flicklist
-5. modify flicklist to store movie ratings
+1. Create mysql user and database
+2. Install conda packages
+3. Initialize your database
+4. Run the existing flicklist
+5. Modify flicklist to store movie ratings
 
-### Install mamp
+### Create mysql user and database
 
-TODO
+Now we will need to create a database locally (on your computer). We will use the same names as we did in the walkthrough. go to phpMyAdmin in your browser and create a user named *flicklist* with the password *MyNewPass*. Check the box that says *Create database with same name and grant all privileges* then press the *Go* button in the bottom right-hand corner.
 
-### Configure mysql
-
-TODO add user flicklist pw MyNewPass, add matching database
+![Create User And Database in phpMyAdin](phpMyAdminCreateUserAndDatabase.png)
 
 ### Install conda packages
+
+Make sure your flask environment is activated before installing.
 
 ```nohighlight
 (flicklist) $ conda install -c conda-forge flask-sqlalchemy
 (flicklist) $ conda install pymysql
 ```
 
-### initialize your database
+### Initialize your database
 
-Reenact the python repl session from the walkthrough.
+Reenact the python repl session from the walkthrough. Here it is again:
+```
+(flicklist) $ python
+>>> from main import db, Movie
+/home/dm/miniconda3/envs/flicklist/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py:839: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+>>> db.create_all()
+>>> db.session.add(Movie('Mulan'))
+>>> db.session.add(Movie('Rushmore'))
+>>> db.session.add(Movie('Damsels in Distress'))
+>>> db.session.commit()
+>>> Movie.query.all()
+[<Movie 'Mulan'>, <Movie 'Rushmore'>, <Movie 'Damsels in Distress'>]
+```
 
 ### Run the existing flicklist
 
-Open up your browser, add one movie, cross it off. 
+Make sure your flask environment is activated and fire up your server first `$ python main.py`. In your browser, add one movie then cross it off. 
 
 ### Modify flicklist to store movie ratings
 
@@ -115,7 +128,7 @@ Open up your browser, add one movie, cross it off.
 
 ### Give yourself a hand
 
-If you made it this far, you've somehow completed a huge, challenging studio with a ton of hard concepts all at once. Congratulations!  And if you don't get it right away, don't give up - the authors did not either. Keep on trying: be *persistent*!
+If you made it this far, you've completed a challenging studio. Congratulations!  And if you don't get it right away, don't give up. Keep on trying: be *persistent*!
 
 
 <aside class="aside-note" markdown="1">
