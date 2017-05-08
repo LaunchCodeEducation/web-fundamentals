@@ -3,40 +3,65 @@ title: Class 8 Prep
 currentMenu: classes
 ---
 
-### Databases, Part I
+## Databases, Part 2
 
-Up to now, you may have had the feeling that the apps we're building in the lessons, studios, and assignments don't seem that useful. If you thought harder about it, you may have determined that this is true because we don't have a way to store data over long periods of time. Actually, we haven't been able to store data for more than the duration of a single HTTP request, say, by adding and element to a list.
+Now you should have a good grasp on basic SQL syntax and commands, as well as an understanding of how relational databases work. In this lesson, we'll install *MAMP* and learn how to use a **real** database on your computer through *phpMyAdmin*. We'll also expand our knowledge of SQL by working through some additional exercises at w3schools.  
 
-We're going to plug this functional hole across the next two lessons by learning how to store data in databases. In this lesson, we'll learn about **relational databases**, the most common way store data. We'll learn about tables, rows, and queries. We'll also learn how to read data from such databases in our web apps.
-
-In the next lesson, we'll learn how to write code that allows our data to be stored in a database *without* using queries. We'll still need SQL to read data, though.
-
-<aside class="aside-note" markdown="1">
-While we've suggested that you code along with the course videos already, we want to emphasize this point for the database lessons. Coding along with the examples in the videos will be essential to being able to properly tackle the next assignment. If you don't code along, you will be at an extreme disadvantage.
-</aside>
 
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
-Do | Exercises | [SQL Bolt][sql-bolt] | Complete exercises 1-5 (Lesson 5 is called "SQL Review: Simple SELECT Queries") at SQL Bolt. This will give you some basic practice with common queries. You'll learn a bit about SQL in an isolated setting, and then see how it can work in the context of a web application in the Udacity portion of the prep work.
-Do | Interactive Course | [CS253: Lesson 3][lesson-3] | Do the first 25 items of Lesson 3. Stop when you get to the item titled *Google App Engine Datastore*. Be sure to read the notes below for tips on new and/or potentially confusing concepts.
+Do | Exercises | [w3schools SQL Database][w3c-sql] | Do all the lessons under "SQL Database" from SQL Create DB through SQL Hosting. Some of this content will overlap with what you learned in the Khan Academy tutorials; that's okay--the more practice, the better! Be sure to understand primary and foreign keys!
 
-#### Notes
+### Install MAMP
 
-* The quizzes in this lesson use some Python syntax that is new and potentially confusing. Don't get discouraged or spend too much time trying to understand each and every such line or piece of syntax. We'll point out to you which things you should know, and the main lessons you should learn from the examples and quizzes. **If you get hung up on a quiz, skip to the answer, and make sure you understand the mechanics of what is happening.** A good way to do this is to type out the solution to the quiz, and make a comment for each line, describing what each line of code is doing.
-* In "Quiz: Implementing Tables in Python," the instructor uses syntax that is new to us to create a Class called `Link`. You don't need to grasp this syntax fully, though you can read about it in the official [Python documentation for `namedtuple`][namedtuple]. To do the quiz, just know that in the given code, `links` is a list of `Link` objects, and that each such object has the fields `id`, `submitter_id`, `submitted_time`, `votes`, `title`, and `url`. Thus, you can use syntax like `link.id` or `link.votes` to reference the associated fields for each `Link` object.
-* In "Quiz: Querying," approach the problem by making named `submissions` and adding each `link` object with `submitter_id` equal to the given value, `62443`. Once you have such a list, sort it by time using this snippet:
-    ```python
-    submissions.sort(key = lambda x: x.submitted_time)
-    ```
-    This is the only clean way to do this, and it uses a new Python construct called a **lambda**. If you're curious, you can [read about lambdas][lambdas], but they're not that important for us now. The main takeaway from this quiz should be how much work we would have to do to query and sort lots of lists in Python code. Such operations will be much easier with relational databases. If you get stuck on this quick, don't worry about it too much. This is one of those moments where the course introduces something new that we'd rather not have you wade through to learn at this point of the class. It's better to understand the idea that's being illustrated rather than the coding details for this one.
-* A few types of relational databases are mentioned as being common. To make this a bit more concrete for you, we'll point out that [runestone.launchcode.org][runestone.launchcode.org] uses Postgres, while [launchcode.org][launchcode.org] uses MySQL. You generally can't tell which database a website or web application is using without digging into its code.
-* In "Quiz: Databases in Python," we see `*` used again. It may not be obvious, but this is the exact same `*` syntax that we ran into in Class 7. The expression `link = link(*link_tuple)` says, "set `link` equal to a new `link` object created with the parameters in `link_tuple`". The important thing to notice here, is that the code is creating new `link` objects from the data queried from the relational database. This is the opposite of what's being done earlier in the quiz, to place the data from the `link` objects in the database.
+MAMP is a suite of tools useful for developers. The acronym MAMP stands for Mac / Apache / MySQL / PHP, and despite the first term, there is a version for Windows as well. While we won't use Apache and PHP directly, they'll provide us with an interface to work with our MySQL server, called *phpMyAdmin*.
 
+The first step in this lesson is to install MAMP onto your computer by following the instructions below for Windows or Mac.
 
-[lesson-3]: https://classroom.udacity.com/courses/cs253/lessons/48756013/concepts/487123160923#
-[namedtuple]: https://docs.python.org/2/library/collections.html#collections.namedtuple
-[lambdas]: http://www.secnetix.de/olli/Python/lambda_functions.hawk
-[runestone.launchcode.org]: https://runestone.launchcode.org/
-[launchcode.org]: https://www.launchcode.org/
-[w3c-sql]: http://www.w3schools.com/sql/default.asp
-[sql-bolt]: https://sqlbolt.com/
+<aside class="aside-note" markdown="1">
+If you use Linux, you should install, at a minimum, the MySQL 5.x package for your system. You might also install phpMyAdmin or another MySQL management application.
+</aside>
+
+#### Install MAMP--Windows
+
+1. Go to [MAMP.info][mamp] and download the Windows version of MAMP. Double click to install and allow it to make changes on the hard drive. 
+2. Close all other applications.
+3. Select English as the language.
+4. Uncheck the *MAMP PRO* box (do NOT download it).
+5. Accept the Terms/License.
+6. Keep the default destination of ``C:\MAMP``.
+7. Keep the default option to let it create a shortcut.
+8. Keep the default option to let it create desktop icon.
+9. Click the "Install" button. (Install takes around five minutes.)
+10. Click "Finish".
+11. Open MAMP and go to *Preferences...*, then click the *Ports* tab and click the "Set MAMP ports to default" button. Click OK and then click "Quit".
+12. Reopen MAMP, ignore it if there is a message about the ports, and click *Open start page.*
+13. In your browser you should now be at ``localhost:8888/MAMP/``. Select the dropdown menu under *Tools* and click on *phpMyAdmin*.
+14. Enter the username: "root" and the password: "root" to login. Now you are on the main phpMyAdmin page that you will use for this lesson's studio.
+
+<aside class="aside-note" markdown="1">
+You may get a permissions error when you try to open MAMP the first time. If you do, find ``MAMP.exe`` in the MAMP folder, right-click it and select "Properties". Then select "Security", then "Edit", and highlight "Users". Then click "Add", and if the box next to "write" under the column "allow" is not already selected, then select it and OK your way back out of the menus.
+</aside>
+
+<aside class="aside-note" markdown="1">
+If your Apache or MYSQL servers won't start (if neither, or only one, has a green box next to it), and make sure the options "Start Servers when starting MAMP" and "At startup open" are unchecked in *Preferences...*. Then click *Stop Servers*. Then Quit and reopen MAMP. Now press *Start Servers* and wait until both the boxes next to the servers turn green. Then you can *Open start page*.
+</aside>
+
+#### Install MAMP--Mac
+
+1. Go to [MAMP.info][mamp] and download the Mac version of MAMP.
+2. Drag and drop the downloaded file in Finder from Downloads to Applications. Then double click it.
+3. Click "continue" on the Introduction, Read Me, and License prompt screens, and Agree to the terms.
+4. Click "continue" on the Destination Select screen--it will install onto the hard drive.
+5. Click "install" on the Installation Type screen.
+6. Click "close" when the install has completed.
+7. Note that it will install in the Applications folder. Go into Applications, double click on the MAMP folder, then doubleclick on the MAMP icon in that folder.
+8. You'll get a "Warning" message. Be sure to **uncheck** the box next to "Check for MAMP PRO when starting MAMP" and then click the "Launch MAMP" button *NOT* the "Launch MAMP PRO" button.
+9. Go to *Preferences -> Ports* and click "Set MAMP ports to default" then click OK.
+10. Then go to *Preferences -> PHP* and select the Standard Version ``7.0.15`` (you will a php version older than `7.1.1` for phpMyAdmin to work properly). Then click OK.
+11. Click *Start Servers* and it should automatically open a web page. If it does not, click *Open WebStart page*.
+12. In your browser you should be on the MAMP localhost webpage. Select the dropdown menu under *Tools* and click on *phpMyAdmin*. You may or may not be prompted to enter a username and password. If you are prompted, use the word "root" for both.
+13. Now you are on the phpMyAdmin page you will use for this lesson's studio. 
+
+[mamp]: https://www.mamp.info/en/downloads/
+[w3c-sql]: https://www.w3schools.com/sql/sql_create_db.asp
