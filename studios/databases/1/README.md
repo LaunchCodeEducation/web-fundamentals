@@ -23,8 +23,23 @@ There seems to be a parallel relationship between the ``books`` and ``authors`` 
 If you need tips on how to do this, check out the w3school's brief lessons on [SQL Drop Table](https://www.w3schools.com/sql/sql_drop_table.asp), [SQL Create Table](https://www.w3schools.com/sql/sql_create_table.asp), and [SQL Foreign Key](https://www.w3schools.com/sql/sql_foreignkey.asp). Follow the MySQL syntax instructions where there is syntax variation between the major databases.
 </aside>
 
-This kind of table structure keeps our database clean. It keeps data specific to directors in the ``directors`` table, and data specific to each movie in the ``movies`` table and provides a link between the two tables. This is a "clean" design, because data such as what country the director of a movie is from isn't really an attribute of the movie, it's an attribute of the director. After all, you wouldn't put ``directors_country`` as a property of a Python ``movie`` object, would you? Hopefully not. :-) Yet we may want to know that information for a given movie, e.g., we may want to find all the movies since 2010 that have French directors. So we need to have a way of filtering movies based on attributes of directors, without cluttering up the ``movies`` table. Solving this challenge is what relational databases are all about, and Foreign Keys are the "key" (pun intended) to the solution.
+This kind of table structure keeps our database clean. It keeps data specific to directors in the ``directors`` table, and data specific to each movie in the ``movies`` table and provides a link between the two tables. This is a "clean" design, because data such as what country the director of a movie is from isn't really an attribute of the movie, it's an attribute of the director. After all, you wouldn't put ``directors_country`` as a property of a Python ``movie`` object, would you? Hopefully not. :-) 
+
+Still, we may want to know that information for a given movie, e.g., we may want to find all the movies since 2010 that have French directors. So we need to have a way of filtering movies based on attributes of directors, without cluttering up the ``movies`` table. Solving this challenge is what relational databases are all about, and Foreign Keys are the "key" (pun intended) to the solution.
 
 ## Studio
 
+For this studio, you'll practice writing the SQL queries to perform various data retrieval and manipuation tasks.
+
 ### Your Task: 
+
+Even though our database does not have entries in it, we can imagine that it does, and query it accordingly! Write the SQL commands to do the following:
+
+1. List all the titles of the movies in the database.
+2. List all the titles of the movies in the database in descending order of the year they were released.
+3. Insert a new record into the ``directors`` table for Jean-Pierre Jeunet whose country of origin is France.
+4. List the ``director_id`` for Jean-Pierre Jeunet.
+5. Insert a new record into the ``movies`` table for Amelie which was released in 2001 and directed by Jean-Pierre Jeunet. (*Hint:* use the id you got from the last query).
+6. List all columns for all records of the ``directors`` table in ascending alphabetical order of the director's country of origin.
+7. List the country of origin of the director of Amelie. (You could do this using either a join or a subquery. Write this query using a join.)
+8. List all the movies in the database along with each movie's director, ordered by the director's last name. (*Hint:* you'll want to use a join and choose the columns ``title``, ``first``, and ``last``).
