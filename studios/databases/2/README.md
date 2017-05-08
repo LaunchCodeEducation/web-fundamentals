@@ -1,10 +1,16 @@
 ---
-title: 'Studio: Database Part 2'
+title: 'Studio: Databases Part 2'
 currentMenu: studios
 ---
-# TO DO: add more to walkthrough, assignment (plus change 2nd picture--take new one of adding a user/db with name of movies?)
+TO DO: add more to walkthrough, assignment (plus change 2nd picture--take new one of adding a user/db with name of moviebuff?)
 
-## Getting Ready: Setting Up the Database
+## Walkthrough
+
+During lecture, we will start the project, and talk about concepts along the way.
+
+### Database Setup
+
+Let's start by setting up a new database for this project, with a new, associated user account.
 
 Start up MAMP. From the launcher window, select *Start Servers*. Once that button has turned green, choose *Open Start Page*. From the page that opens up in your browser, select *Tools > phpMyAdmin*.
 
@@ -20,5 +26,12 @@ And be sure to check the first checkbox under *Database for user account*. If yo
 
 ![Add user](images/mamp-add-user.png)
 
-## Walkthrough
+
+## Studio
+
+After lecture, you will work on your own (or with a classmate) to extend the project and pick up where lecture left off.
+
+### Your Task: 
+
+
 

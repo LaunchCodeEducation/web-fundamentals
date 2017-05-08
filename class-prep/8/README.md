@@ -16,13 +16,13 @@ Do | Exercises | [w3schools SQL Database][w3c-sql] | Do all the lessons under "S
 
 MAMP is a suite of tools useful for developers. The acronym MAMP stands for Mac / Apache / MySQL / PHP, and despite the first term, there is a version for Windows as well. While we won't use Apache and PHP directly, they'll provide us with an interface to work with our MySQL server, called *phpMyAdmin*.
 
-The first step in this lesson is to install MAMP onto your computer by following the instructions below for Windows or Mac.
+The first step in this lesson is to install MAMP onto your computer by following the instructions below for [Windows](#install-mamp-for-windows) or [Mac](#install-mamp-for-mac).
 
 <aside class="aside-note" markdown="1">
 If you use Linux, you should install, at a minimum, the MySQL 5.x package for your system. You might also install phpMyAdmin or another MySQL management application.
 </aside>
 
-#### Install MAMP--Windows
+#### Install MAMP for Windows
 
 1. Go to [MAMP.info][mamp] and download the Windows version of MAMP. Double click to install and allow it to make changes on the hard drive. 
 2. Close all other applications.
@@ -47,7 +47,7 @@ You may get a permissions error when you try to open MAMP the first time. If you
 If your Apache or MYSQL servers won't start (if neither, or only one, has a green box next to it), and make sure the options "Start Servers when starting MAMP" and "At startup open" are unchecked in *Preferences...*. Then click *Stop Servers*. Then Quit and reopen MAMP. Now press *Start Servers* and wait until both the boxes next to the servers turn green. Then you can *Open start page*.
 </aside>
 
-#### Install MAMP--Mac
+#### Install MAMP for Mac
 
 1. Go to [MAMP.info][mamp] and download the Mac version of MAMP.
 2. Drag and drop the downloaded file in Finder from Downloads to Applications. Then double click it.
