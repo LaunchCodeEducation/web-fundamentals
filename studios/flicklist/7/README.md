@@ -24,9 +24,10 @@ The goal today, at a high level, is to implement the existence of user accounts 
 More specifically, we will update our codebase with the following additions:
 
 - A `User` class to represent and save users in our database.
-- New routes and handlers: `Login`, `Logout`, and `Register`.
-- New templates for the `Login` and `Register` pages.
-- Some new helper functions in our base parent `Handler` class. These helper functions will preempt every request with a "login wall", so that certain pages (such as *My WatchList*) cannot be accessed unless the user is logged in.
+    - Today for simplicity's sake, we will just drop and re-create the database. In a later lesson, we will discuss migrations which is how to transform database schema without destroying the existing data.
+- A new route and template for `Login` and `Logout` which start and end sessions for a user.
+- A new route and template for `Register` which saves a new user.
+- Some new helper functions in our base parent `Handler` class. These helper functions will preempt every request with a "login wall", so that certain pages (such as *My WatchList*) cannot be accessed unless the user is logged in. ### TODO we removed that super class, we will need to add something like that here
 - A separate file with some more helper functions, lower-level utilities to help us with hashing and salting, so that we can encrypt and decrypt passwords.
 
 That's a lot! We would have liked to give you the chance to write some of this code yourself, but there is not enough time. Luckily, your upcoming Assignment will give you a similar chunk of starter code, so you won't be expected to write all this code on your own during the assignment.
