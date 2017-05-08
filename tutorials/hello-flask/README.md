@@ -23,7 +23,7 @@ $ cd hello-flask
 To download the flask library, we're going to need a way to store
 libraries. So that this doesn't cause version mismatch issues with
 other versions of Python on your system - including system libraries
-which might be using Pything - we'll install a virtual environment and
+which might be using Python - we'll install a virtual environment and
 host all our libraries within it.
 
 - [MS Windows](ms-windows/)
@@ -31,14 +31,14 @@ host all our libraries within it.
 - [Linux](linux/)
 
 <aside class="aside-note" markdown="1">
-Here, we're using the term "virtual environment" loosely. Rather than starting a full virtual machine, we're really just changing the PATH environment variable, which controls the order of directories that bash searches for programs. 
+Here, we're using the term "virtual environment" loosely. Rather than starting a full virtual machine, we're really just changing the PATH environment variable, which controls the order of directories that bash searches for programs.
 
 ```
 (flask) $ echo $PATH
 /home/dm/hello-flask/flask/bin:/home/dm/.rbenv/plugins/ruby-build/bin:/home/dm/.rbenv/shims:/home/dm/.rbenv/bin:/home/dm/bin:/home/dm/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin
 ```
 
-Seeing `/home/dm/hello-flask/flask/bin` first in that list verifies that the activation is doing it's job. 
+Seeing `/home/dm/hello-flask/flask/bin` first in that list verifies that the activation is doing it's job.
 </aside>
 
 Now let's install some new software into the flask directory. Type:
@@ -74,7 +74,7 @@ app.run()
 What's all this do?
 
 - `from flask import Flask`: this imports the `Flask` class from the `flask` module.
-- `app = Flask(__name__)`: app will be the object created by the constructor `Flask`. `__name__` is a variable controlled by Python that tells code what module it's in. 
+- `app = Flask(__name__)`: app will be the object created by the constructor `Flask`. `__name__` is a variable controlled by Python that tells code what module it's in.
 
 - `@app.route("/")`: this is a decorator that creates a mapping between the path - in this case the root, or  "/"  and the very next definition...
 - `def index():`: Ah, familiar ground! We define `index` a function of zero variables
