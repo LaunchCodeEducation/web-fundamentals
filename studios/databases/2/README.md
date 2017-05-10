@@ -116,7 +116,7 @@ Here are some of the things Sarah needs your help with:
 10. What is the first and last name of the person who viewed the last-viewed movie?
 
 
-#### Bonus Questions: For those who like a challenge!
+#### Bonus Missions
 
 11. Write the SQL query to display the DVDs that others have watched in order of most viewed to least viewed. What's the title of the most-viewed movie(s) in Sarah's collection? 
 
