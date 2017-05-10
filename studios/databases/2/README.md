@@ -31,7 +31,7 @@ Finally, press the small *Go* button at the bottom.
 
 You should see the database name `movie-buff` on the left side. Double click on it to go into that database. 
 
-Now, download this SQL file: [movie-buff.sql](downloads/movie-buff.sql)
+Now, download this SQL file: [movie-buff.sql](downloads/movie-buff.sql) TODO: CHRIS-MAKE THIS FILE DOWNLOADABLE!
 
 Then click the *Import* tab. Browse your computer to find the `movie-buff.sql` file you downloaded (on a Mac it may be `movie-buff.sql.txt`). Leave all the default selections as they are (the blue boxes with checkmarks), so your screen should look like this: 
 
