@@ -39,6 +39,11 @@ additions:
 - We'll modify our base template to display the username or links to login and register.
 - A 'login wall' that monitors requests of unlogged-in users, and prompts them to create an account if they're not logged in.
 - We'll modify our base template to display flashed messages, so that we can tell the user things like "you typed the wrong password"
+- Today for simplicity's sake, we will just drop and re-create the database. In a later lesson, we will discuss migrations which is how to transform database schema without destroying the existing data.
+
+
+
+
 
 That's a lot! We would have liked to give you the chance to write some of this code yourself, but there is not enough time. Luckily, your upcoming Assignment will give you a similar chunk of starter code, so you won't be expected to write all this code on your own during the assignment.
 
@@ -56,6 +61,21 @@ out, they could log back in using their existing email and password.
 ### Checking out the Studio code
 
 Follow the [instructions for getting the code][get-the-code] in order to get the starter code for `studio7`.
+
+### Create the 'user' DB table
+
+```nohighlight
+(flicklist) $ python
+>>> from main import db, User
+...
+>>> db.create_all()
+...
+>>> db.session.commit()
+User.query.all()
+...
+[]
+
+```
 
 ### Your Tasks
 
