@@ -62,3 +62,9 @@ Adding some utility functions.
 Add user authentication, add `owner` field to the model
 
 [Work on Flicklist 8](flicklist/8/)
+
+### Flicklist 9
+
+Password hashing
+
+[Work on Flicklist 9](flicklist/9/)
