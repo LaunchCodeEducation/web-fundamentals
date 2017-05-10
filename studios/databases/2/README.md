@@ -63,12 +63,35 @@ The purpose of this table is to keep track of "who watched what when". The *who*
 
 This kind of table is very common in relational database design. It has many virtues including that it clearly links the `movies` and `viewers` table together and it makes the database more maintainable. For instance, you might have chosen to make a `viewing` table where you actually list the movie title and the name of the viewer. But if you did that then anytime some of that information changes - say a friend gets married and changes last names - you would now have to update the name of the viewer in *both* the `viewers` table *and* the `viewings` table. With this design, any updates you make to either the `movies` or `viewers` table will be reflected automatically in the results from queries on the `viewings` table.
 
+Review this lesson from [Khan Academy](https://www.khanacademy.org/computing/computer-programming/sql/relational-queries-in-sql/a/splitting-data-into-related-tables) for a more in-depth explanation of why we break tables up this way.
+
+If you get stuck on any of the tasks below, you can review lessons in [Khan Academy](https://www.khanacademy.org/computing/computer-programming/sql) or [w3schools](https://www.w3schools.com/sql/default.asp) to get ideas and remind yourself of the proper syntax.
 
 ### Your Task: 
 
-Sarah created these tables and inserted all the data in them, but she needs your help to run some queries for her. You can use the *SQL* tab in the `movie-buff` databse to run queries. Just type your SQL statement(s) in the box and press the *Go* button.
+Sarah created these tables and inserted all the data into them, but she needs your help to run some queries. You can use the *SQL* tab in the `movie-buff` databse to run queries. Just type your SQL statement(s) in the box and press the *Go* button.
 
 ![SQL tab](images/sql.png)
+
+As an example, say Sarah wants to know the first and last names of any of her friends who borrowed one of her movies before 2010. 
+
+We know we'll want to use the `viewings` table, since that has the dates of when people have viewed her DVDs as well as their ids. And we know we want to use the `viewers` table since that has the first and last names of her friends. Since we want data from two tables, we know we'll likely need to use a `join`. We also know that the column in common between the two tables is the `viewer_id` column, so that will be what we join on. Our SQL statement will be:
+
+```sql
+SELECT DISTINCT viewers.first, viewers.last 
+FROM viewers
+JOIN viewings 
+ON viewers.viewer_id = viewings.viewer_id
+WHERE viewings.date_viewed < '2010-01-01'
+```
+
+In phpMyAdmin:
+
+![Sample query](images/sample-query.png)
+
+And the results:
+
+![Sample results](images/sample-results.png)
 
 Here are some of the things Sarah needs your help with:
 
