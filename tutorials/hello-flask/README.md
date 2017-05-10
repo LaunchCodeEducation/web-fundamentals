@@ -26,10 +26,6 @@ other versions of Python on your system - including system libraries
 which might be using Pything - we'll install a virtual environment and
 host all our libraries within it.
 
-- [MS Windows](ms-windows/)
-- [Mac](mac/)
-- [Linux](linux/)
-
 <aside class="aside-note" markdown="1">
 Here, we're using the term "virtual environment" loosely. Rather than starting a full virtual machine, we're really just changing the PATH environment variable, which controls the order of directories that bash searches for programs. 
 
@@ -37,18 +33,32 @@ Here, we're using the term "virtual environment" loosely. Rather than starting a
 (flask) $ echo $PATH
 /home/dm/hello-flask/flask/bin:/home/dm/.rbenv/plugins/ruby-build/bin:/home/dm/.rbenv/shims:/home/dm/.rbenv/bin:/home/dm/bin:/home/dm/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin
 ```
-
-Seeing `/home/dm/hello-flask/flask/bin` first in that list verifies that the activation is doing it's job. 
 </aside>
 
-Now let's install some new software into the flask directory. Type:
+To create a virtual environment with conda, we'll do the following:
 
-TODO On Mac it's `venv/bin/pip install flask`
-```bash
-(flask) $ pip install flask
-```
+1. In your hello-flask directory, create a virtual environment named `flicklist` like so:  
+`conda create -n "flicklist"`
 
-Flask downloads in an avalanch of diagnostic messages. If it's successful, we're ready to build our web server!
+![Create virtual environment](images/create-venv.png)
+
+2. Activate the virtual environment using `source activate flicklist`
+
+![Activate virtual environment](images/activate-flicklist.png)
+
+3. Install flask into your virtual environment with the command `conda install flask`
+
+![Install flask](images/install-flask.png)
+
+*Tip:* If you need to deactivate the virtual environment, use the command ``source deactivate``.
+
+![Deactivate virtual environment](images/deactivate-venv.png)
+
+<aside class="aside-note" markdown="1">
+The above pictures show how these commands will look in Git Bash. Mac Terminal will look slightly different. 
+</aside>
+
+Now we're ready to build our web server!
 
 ### Build a webserver, line by line
 
