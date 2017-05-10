@@ -75,6 +75,6 @@ Explore how tables in relational databases relate to each other and their simila
 
 ### Databases Part 2
 
-Import a ``.sql`` file and create a database on your computer. Use *phpMyAdmin* to make queries on your database tables.
+Import a `.sql` file and create a database on your computer. Use *phpMyAdmin* to make queries on your database tables.
 
 [Work on Databases Part 2](databases/2/)
