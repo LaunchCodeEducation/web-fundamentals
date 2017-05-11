@@ -30,16 +30,6 @@ Practice the basics of HTML and CSS by creating your own static webpage from scr
 
 ---
 
-## Fortune Cookie
-
-🐹 *Small Assignment*
-
-Code along to a video tutorial / lecture on the basics of creating a simple dynamic web-app using Google App Engine.
-
-[Work on Fortune Cookie](./fortune-cookie/)
-
----
-
 ## Web Caesar
 
 🐹 *Small Assignment*

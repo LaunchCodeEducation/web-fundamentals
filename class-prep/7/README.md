@@ -3,7 +3,7 @@ title: Class 7 Prep
 currentMenu: classes
 ---
 
-## Databases, Part I
+## Databases Part 1
 
 Up to now, you may have had the feeling that the apps we're building in the lessons, studios, and assignments don't seem that useful. If you thought harder about it, you may have determined that this is true because we don't have a way to store data over long periods of time. Actually, we haven't been able to store data for more than the duration of a single HTTP request, say, by adding an element to a list.
 

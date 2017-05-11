@@ -3,7 +3,7 @@ title: Class 8 Prep
 currentMenu: classes
 ---
 
-## Databases, Part 2
+## Databases Part 2
 
 Now you should have a good grasp on basic SQL syntax and commands, as well as an understanding of how relational databases work. In this lesson, we'll install *MAMP* and learn how to use a **real** database on your computer through *phpMyAdmin*. We'll also expand our knowledge of SQL by working through some additional exercises at w3schools.  
 
