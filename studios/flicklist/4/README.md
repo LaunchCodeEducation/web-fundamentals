@@ -9,7 +9,7 @@ In this studio we will finally cast aside those cumbersome, error-prone HTML str
 
 In today's walkthrough, we will do most of the work of switching our project to use templates:
 
-- We will import a new library called `jinja2`, a templating engine.
+- We will import `render_template` which will allow us to use `jinja2`, a templating engine.
 - We will create a bunch of `.html` files to hold our content.
 - In our request handlers, we will render those templates into our HTTP response!
 
@@ -44,7 +44,7 @@ Of course, there is one caveat: you are required to use a template. Your `main.p
 1. Create a `.html` file inside your `/templates` directory, and add whatever HTML content needs to be added.
 2. In your `AddMovie` request handler class, use your template to render the response.
 
-For reference, you can look at our code at the bottom of the `post` method in the `CrossOffMovie` class, which renders the `templates/cross-off.html` template file (in addition to the header and footer templates).
+For reference, you can look at our code at the bottom of the `post` method in the `watchMovie` class, which renders the `templates/watched-it.html` template file (in addition to the header and footer templates).
 
 
 [get-the-code]: ../getting-the-code/

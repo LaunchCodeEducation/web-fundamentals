@@ -24,8 +24,8 @@ The main things we will do during today's walkthrough are:
 1. First, we will write a function via which we can fetch the user's (pretend) current watchlist.
 	- And then, rather than hard-code the movie titles directly into our dropdown menu, we will dynamically build the dropdown based on the  current list.
 	- In the process, we will see a new Python function, the `string.format` method.
-2. The main feature we will add is the inclusion of some validation on the `cross-off/` route handler:
-	- When the user wants to cross a movie off, we will make sure the movie is actually on the user's list in the first place.
+2. The main feature we will add is the inclusion of some validation on the `watched-it/` route handler:
+	- When the user wants to take a movie they have watched off their list, we will make sure the movie is actually on the user's list in the first place.
 	- If not, we will *redirect* the user back to the home page.
 		- And we will pass along a helpful error message as a *query parameter* in the URL
 			- But spaces aren't allowed in URLs! So we'll need to *escape* the error message

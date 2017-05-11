@@ -39,13 +39,13 @@ Validating user-submitted data
 
 ### Flicklist 4
 
-Using templates to render views
+Using templates to render views including responding to bad input (validations) and confirmation pages.
 
 [Work on Flicklist 4](flicklist/4/)
 
 ### Flicklist 5
 
-Miscellaneous improvements such as responding to bad input and adding confirmation pages
+Miscellaneous improvements reinforcing validations and confirmation pages
 
 [Work on Flicklist 5](flicklist/5/)
 
@@ -75,7 +75,7 @@ Create and manipulate tables, as well as explore the parallels between Python ob
 
 ### Databases Part 1
 
-Explore how tables in relational databases relate to each other and their similarities to Python objects. Practice SQL queries. 
+Explore how tables in relational databases relate to each other and their similarities to Python objects. Practice SQL queries.
 
 [Work on Databases Part 1](databases/1/)
 
@@ -84,3 +84,9 @@ Explore how tables in relational databases relate to each other and their simila
 Import a `.sql` file and create a database on your computer. Use *phpMyAdmin* to make queries on your database tables.
 
 [Work on Databases Part 2](databases/2/)
+
+### Flicklist 9
+
+Password hashing
+
+[Work on Flicklist 9](flicklist/9/)
