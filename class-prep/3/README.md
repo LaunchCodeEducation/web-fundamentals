@@ -12,7 +12,7 @@ Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
 Do | Interactive Course | [CS253: Lesson 1 (second half)][lesson-1-second-half] | Start at the item called *Introducing URLs*, and continue until the end of the lesson. Stop when you get to *Problem Set 1*. <br> **NOTE:** If you are on Windows, you won't be able to do the item called *Quiz: Telnet Request*. You should just watch the "View Answer" video but skip the quiz.
 Read | Articles | - [The Web][how-the-web-works] <br> - [Servers][what-is-a-web-server] <br> - [HTTP Intro][http-basic-introduction] <br> - [HTTP GET][http-lets-get-it-on] <br> - [Response Codes][http-response-codes] <br> - [URLs][what-is-a-url] | These articles are a little dry, but a foundational knowledge of these topics is important for everything else you will encounter on your web development learning journey.
-Do | Setup | [Installing Google App Engine][installing-google-app-engine] | We will show you how to set up Google App Engine, a web app platform, and how to build a Hello World web app inside Google App Engine using a Python module called `webapp2`.
+Do | Setup | [Hello Flask](../../tutorials/hello-flask/) | Learn how to create and work in a virtual environment, and use the Flask library to build a web server in five lines of code.
 Read | More Articles (optional) | - [The Internet][how-does-the-internet-work] <br> - [Domain Names][what-is-a-domain-name] <br> - [Project Structure][dealing-with-files] | This is optional, but if you are itching to learn more, these topics are also important.
 
 [gae-walkthrough]: https://www.youtube.com/watch?v=KSFaeLRZNE8
@@ -51,4 +51,3 @@ Read | Article | (Optional) [Flatiron: Git Collaboration][flatiron-collab] | Thi
 [how-does-the-internet-work]: https://developer.mozilla.org/en-US/Learn/Common_questions/How_does_the_Internet_work
 [dealing-with-files]: https://developer.mozilla.org/en-US/Learn/Getting_started_with_the_web/Dealing_with_files
 
-[installing-google-app-engine]: ./installing-google-app-engine/
