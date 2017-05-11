@@ -13,9 +13,11 @@ Class # | Prep Work | Studio | Topics | Begin Assignment\*
 6 | [Prep Work](../class-prep/6/) | [FlickList 4](../studios/flicklist/4/) | templates | &nbsp;
 7 | [Prep Work](../class-prep/7/) | [Databases Part 1](../studios/databases/1/) | Databases and SQL | &nbsp;
 8 | [Prep Work](../class-prep/8/) | [Databases Part 2](../studios/databases/2/) | More on Databases and SQL | &nbsp;
-9 | [Prep Work](../class-prep/9/) | [FlickList 6](../studios/flicklist/6/) | GQL, Google App Engine Datastores | [Build-a-blog](../assignments/build-a-blog/)
-10 | [Prep Work](../class-prep/10/) | [FlickList 7](../studios/flicklist/7/) (Walkthrough only) | cookies, hashing | &nbsp;
-11 | [Prep Work](../class-prep/11/) | [FlickList 8](../studios/flicklist/8/) | user authentication, password hashing | [Blogz](../assignments/blogz)
-12 | [Prep Work](../class-prep/12/) | | (no new topics) | &nbsp;
+9 | [Prep Work](../class-prep/9/) | [FlickList 6](../studios/flicklist/6/) | Object-Relational Mapping | [Build-a-blog](../assignments/build-a-blog/)
+10 | [Prep Work](../class-prep/10/) | [FlickList 7](../studios/flicklist/7/) | User Authentication | &nbsp;
+11 | [Prep Work](../class-prep/11/) | | TBD | [Blogz](../assignments/blogz)
+12 | [Prep Work](../class-prep/12/) | [FlickList 8](../studios/flicklist/8/) | The Model-View-Controller Pattern | &nbsp;
+13 | [Prep Work](../class-prep/13/) | [FlickList 9](../studios/flicklist/9/) | Hashing | &nbsp;
+14 | [Prep Work](../class-prep/14/) | [FlickList 10](../studios/flicklist/10/)| Bootstrap | &nbsp;
 
 \* Check [learn.launchcode.org](https://learn.launchcode.org) for assignment due dates since these can vary by class section.
