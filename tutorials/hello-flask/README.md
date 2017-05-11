@@ -30,21 +30,21 @@ host all our libraries within it.
 Here, we're using the term "virtual environment" loosely. Rather than starting a full virtual machine, we're really just changing the PATH environment variable, which controls the order of directories that bash searches for programs.
 
 ```
-(flask) $ echo $PATH
+(hello-flask) $ echo $PATH
 /home/dm/hello-flask/flask/bin:/home/dm/.rbenv/plugins/ruby-build/bin:/home/dm/.rbenv/shims:/home/dm/.rbenv/bin:/home/dm/bin:/home/dm/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin
 ```
 </aside>
 
 To create a virtual environment with Conda, we'll do the following:
 
-1. In your hello-flask directory, create a virtual environment named `flicklist` like so:  
-`conda create -n "flicklist"`
+1. In your hello-flask directory, create a virtual environment named `hello-flask` like so:  
+`conda create -n hello-flask`
 
 ![Create virtual environment](images/create-venv.png)
 
-2. Activate the virtual environment using `source activate flicklist`
+2. Activate the virtual environment using `source activate hello-flask`
 
-![Activate virtual environment](images/activate-flicklist.png)
+![Activate virtual environment](images/activate-venv.png)
 
 3. Install flask into your virtual environment with the command `conda install flask`
 
