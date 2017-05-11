@@ -69,6 +69,18 @@ Add user authentication, add `owner` field to the model
 
 [Work on Flicklist 8](flicklist/8/)
 
+### Flicklist 9
+
+Password hashing
+
+[Work on Flicklist 9](flicklist/9/)
+
+### Flicklist 10
+
+Add Bootstrap to Flicklist to enhance the user interface
+
+[Work on Flicklist 10](flicklist/10/)
+
 ## Databases
 
 Create and manipulate tables, as well as explore the parallels between Python objects and database tables. Then make a real database locally and use it to perform SQL queries through *phpMyAdmin*.
@@ -84,9 +96,3 @@ Explore how tables in relational databases relate to each other and their simila
 Import a `.sql` file and create a database on your computer. Use *phpMyAdmin* to make queries on your database tables.
 
 [Work on Databases Part 2](databases/2/)
-
-### Flicklist 9
-
-Password hashing
-
-[Work on Flicklist 9](flicklist/9/)
