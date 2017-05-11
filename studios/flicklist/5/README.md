@@ -26,10 +26,9 @@ Follow the [instructions for getting the code][get-the-code] in order to get the
 
 Implement the feature where users can rate the movies they have watched.
 
-1. Make a `ratings.html` template and handler, which is an index of all movies that have been watched and are available to rate.
+1. Make a `ratings.html` template which is an index of all movies that have been watched and are available to rate. Add forms for rating movies, one on each list item in the `ratings.html` template.
 2. Make a `rating-confirmation.html` template, to be displayed when the user rates a movie they have watched.
-3. Add a handler for form submission so that it renders the template. This should got in a `post` method in the `MovieRatings` handler class.
-4. Add forms for rating movies, one on each list item in the `ratings.html` template
+3. Add code for form submission, it handle a `post` request to the `MovieRatings` method and render the template.
 
 [400errors]: https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_Error
 [get-the-code]: ../getting-the-code/
