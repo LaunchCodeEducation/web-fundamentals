@@ -49,9 +49,9 @@ git clone https://github.com/LaunchCodeEducation/flicklist-flask.git
 This creates a copy of the repository on your laptop. You should now have a new folder in your directory called `flicklist-flask/`. We have included a .gitignore file for you.
 
 
-#### VirtualEnv
+#### Virtual Environment
 
-We will be using the simple framework Flask along with VirtualEnv just like we did in the `Hello-Flask` exercise. You can go [Back to Hello Flask Page](../../tutorials/hello-flask/) to review those materials if needed.
+We will be using the simple framework Flask along with Conda's built in virtual environment just like we did in the `Hello Flask` exercise. You can go [Back to Hello Flask Page](../../../tutorials/hello-flask/) to review those materials if needed.
 
 ---
 

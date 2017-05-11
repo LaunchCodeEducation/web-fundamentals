@@ -35,7 +35,7 @@ Here, we're using the term "virtual environment" loosely. Rather than starting a
 ```
 </aside>
 
-To create a virtual environment with conda, we'll do the following:
+To create a virtual environment with Conda, we'll do the following:
 
 1. In your hello-flask directory, create a virtual environment named `flicklist` like so:  
 `conda create -n "flicklist"`
