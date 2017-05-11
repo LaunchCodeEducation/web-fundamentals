@@ -39,7 +39,7 @@ Even though our database does not have entries in it, we can imagine that it doe
 2. List all the titles of the movies in the database in descending order of the year they were released.
 3. Insert a new record into the `directors` table for Jean-Pierre Jeunet whose country of origin is France.
 4. List the `director_id` for Jean-Pierre Jeunet.
-5. Insert a new record into the `movies` table for Amelie which was released in 2001 and directed by Jean-Pierre Jeunet. (*Hint:* use the id you got from the last query).
+5. Insert a new record into the `movies` table for Amelie which was released in 2001 and directed by Jean-Pierre Jeunet. (*Hint:* Assume the id you got from the last query was "2" and use that).
 6. List all columns for all records of the `directors` table in ascending alphabetical order of the director's country of origin.
 7. List the country of origin of the director of Amelie. (You could do this using either a join or a subquery. Write this query using a join.)
 8. List all the movies in the database along with each movie's director, ordered by the director's last name. (*Hint:* you'll want to use a join and choose the columns `title`, `first`, and `last`).
