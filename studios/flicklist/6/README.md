@@ -85,7 +85,7 @@ You should have already installed MAMP locally but if you need a refresher it is
 
 ### Create mysql user and database
 
-Now we will need to create a database locally (on your computer). We will use the same names as we did in the walkthrough. go to phpMyAdmin in your browser and create a user named *flicklist* with the password *MyNewPass*. Check the box that says *Create database with same name and grant all privileges* then press the *Go* button in the bottom right-hand corner.
+Now we will need to create a database locally (on your computer). We will use the same names as we did in the walkthrough. Go to phpMyAdmin in your browser and create a user named *flicklist* with the password *MyNewPass*. Check the box that says *Create database with same name and grant all privileges* then press the *Go* button in the bottom right-hand corner.
 
 ![Create User And Database in phpMyAdin](phpMyAdminCreateUserAndDatabase.png)
 
