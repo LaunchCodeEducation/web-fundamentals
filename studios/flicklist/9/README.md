@@ -1,60 +1,68 @@
 ---
-title: 'Studio: FlickList 10'
+title: 'Studio: FlickList 9'
 currentMenu: studios
 ---
 
-Like Flicklist 8, this studio has a different structure than most Flicklist studios. Once again, you will work through a guided tutorial to add some new features to the application.
+## Walkthrough
+
+We've added all of the main user-facing features to the Flicklist
+application. One aspect of the application that users typically don't
+think about is security. That doesn't mean that as developers we
+shouldn't prioritize it. We must treat our users' data carefully, and
+do everything we can to prevent sensitive data from being
+exposed. We'll make our passwords secure in this studio using
+hashing. 
+
+We'll also clean up our code a bit and make it less complicated
+through a technique called *refactoring*.
+
+There's no presentation - let's get started!
 
 ## Studio
 
-We've added all of the main user-facing features to the Flicklist application. One aspect of the application that users typically don't think about is security. That doesn't mean that as developers we shouldn't prioritize it. We must treat our users' data carefully, and do everything we can to prevent sensitive data from being exposed. We'll make our passwords and cookies secure in this studio using hashing.
-
 ### Checking Out the Studio code
 
-Before getting the starter code for this studio, fetch updates from the main repository:
+Follow the [instructions for getting the code][get-the-code] in
+order to get the starter code for `studio9`.
 
-```nohighlight
-$ git fetch origin
-```
+### Hashing passwords
 
-This will pull down any updates made by the LaunchCodeEducation team.
+Passwords should be hashed when creating a new user account so that in
+the event of a security breach -- for example, a database break-in --
+it will be extremely difficult for anybody to unmask the passwords.
 
-Then, follow the [instructions for getting the code][get-the-code] in order to get the starter code for `studio10`.
+Recall that hashing uses one of many available algorithms to turn a
+string into a hexadecimal number. For example, with the *sha256
+algorithm*, "LaunchCode" becomes `fd433b1435c24ea70f918e6236d4185c18fa708754cec1dab86d931eb1273c71`.
 
-### Your tasks
+A hashing algorithm is useful for security purposes if it would be
+difficult to reverse the process and retrieve the original string.
 
-There are two types of data that we'll make more secure today: passwords and cookies.
+Generating a hash for a string is easy. Turning a hash back into the
+string that it came from should be very, very, very hard. The harder
+this reverse process is, the better the hash algorithm. Algorithms
+with this property are known as *one-way hash functions*.
 
-#### Hashing passwords
-
-Passwords should be hashed when creating a new user account so that in the event of a security breach -- for example, a database break-in -- it will be extremely difficult for anybody to unmask the passwords.
-
-Recall that hashing uses one of many available algorithms to turn a string into a hexadecimal number. For example, with the sha256 algorithm, "LaunchCode" becomes:
-
-```nohighlight
-fd433b1435c24ea70f918e6236d4185c18fa708754cec1dab86d931eb1273c71
-```
-
-The key concept that makes a given hashing algorithm useful for security purposes is that it is structured such that it is extremely difficult, and would take an incredibly large amount of time, to reverse the process and retrieve the original string.
-
-Generating a hash for a string is easy. Turning a hash back into the string that it came from should be very, very, very hard. The hard this reverse process is, the better the hash algorithm. Algorithms with this property are known as *one-way hash functions**.
-
-<aside class="aside-question" markdown="1">
-Would either of the Caesar or Vigenere ciphers make good hashing algorithms? Why or why not?
+<aside class="aside-question" markdown="1"> 
+  Would either of the Caesar or Vigenere ciphers make good hashing
+  algorithms? Why or why not?
 </aside>
 
-##### Encrypting passwords: make_pw_hash
+#### Encrypting passwords: hash_password
 
-Our first step is to enable hashing for new passwords.
+Our first step is to create a layer on top of sha256 that's
+appropriate for our User model. 
 
-Create a new file in the top directory of the `flicklist-python` project named `hashutils.py`. Define a new function:
+Create a new file in the top directory of the `flicklist-python`
+project named `hashutils.py`. Define a new function:
 
 ```python
-def make_pw_hash(name, pw, salt = None):
+def hash_password(name, pw, salt):
     # Not yet implemented
 ```
 
-We'll need a few modules to complete this method, so add these imports at the top of the file:
+We'll need a few modules to complete this method, so add these imports
+at the top of the file:
 
 ```python
 import random
@@ -63,196 +71,505 @@ import hashlib
 import hmac
 ```
 
-The function `make_pw_hash` should return a hash value for the given information. Recall from the prep work lessons that a good approach to creating a password hash is to incorporate additional data in the string to be hashed. In other words, we'll hash the result of concatenating each of the inputs to our function: `name + pw + salt`. Here, `name` will be the user's username, and `salt` will be a random string of characters. Hashing this longer string makes it even harder for somebody to reconstruct a password from a hash, since they'd need to know the username and salt as well.
-
-For each new user account, we will create a new salt. In such cases, the function will be called without the `salt` parameter. (Why we would pass in a salt will become clear in a bit.) So, the first thing to do is create a salt if one hasn't been provided:
-
-```python
-if not salt:
-    salt = ''.join(random.choice(string.letters) for x in xrange(5))
-```
-
-This code generates a string of five random letters to use as a salt.
-
-Once we have a salt, we can use `hashlib` to create and return the hash:
+The function `hash_password` should return a hash value for the given
+information. Recall from the prep work lessons that a good approach to
+creating a password hash is to incorporate additional data in the
+string to be hashed. In other words, we'll hash the result of
+concatenating each of the inputs to our function: `name + pw +
+salt`. Here, `name` will be the user's username, `pw` will be the
+password, and `salt` will be a random string of characters. Hashing
+this longer string makes it even harder for somebody to reconstruct a
+password from a hash, since they'd need to know the username and salt
+as well. Here's our first try:
 
 ```python
-h = hashlib.sha256(name + pw + salt).hexdigest()
-return '%s,%s' % (h, salt)
+def hash_password(name, pw, salt):
+    unencrypted_string = name + pw + salt
+    return hashlib.sha256(unencrypted_string).hexdigest()
 ```
 
-The complete function is:
+Let's understand what's being done. First, we ask `hashlib` to use the
+sha256 algorithm to hash the string `name + pw + salt`. That returns a
+python instance, which we can't store in the database. Calling
+`hexdigest()` turns it into a series of hexidecimal digits
+(0123456789abcdef) which is great for storing in database string
+columns.
 
-```python
-def make_pw_hash(name, pw, salt = None):
-    if not salt:
-        salt = ''.join(random.choice(string.letters) for x in xrange(5))
+<aside class="aside-question" markdown="1"> 
+You may have heard that hash values are essentially large
+integers. Why are we storing these huge strings when databases can
+just as easily store integers?
 
-    h = hashlib.sha256(name + pw + salt).hexdigest()
-    return '%s,%s' % (h, salt)
-```
+SQL integerss are typically just 31 bits, or below
+2,147,483,648. We need more, so we store them in long strings. So
+we go through all this rigamarole to convert hash keys
+(essentially huge integers) into strings. To be honest, it's a way
+to work around the limitations of SQL's int type. 
+</aside>
 
-Let's pause here to make sure we understand what's being done in the last two lines. First, we ask `hashlib` to use the sha256 algorithm to hash the string `name + pw + salt`. We then get the hexadecimal value of the hash and store it in `h`.
+So in short, we've taken the variable `unencrypted_string`, typically
+something like "dave@gmail.comMySecretPasswordjakkl", and hashed it to
+a longer gibberish string like
+`b52be2340e7627468f911dc6f552864eb8b2025a663263a21cb0f813e7353387`. 
 
-Finally, we return a string that contains both the hash and the salt, separated by a comma. Here's an example of what that might look like for the username "jenny" with password "coding is great!" and salt "fYnmA":
+Let's try it out:
 
 ```nohighlight
-"0cc3f792d89237146075c655cad7c56c84108f1d8cc58fb2be127316fb53fe9c,fYnmA"
+
+>>> hashlib.sha256('foo').hexdigest()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: Unicode-objects must be encoded before hashing
+>>>
+
 ```
 
-To get this value, we first joined the three strings to get "jennycoding is great!fYnmA", and then passed this value to the hash function. Storing the salt in the database alongside the hash in this way will allow us to verify a user's password. We will write the code to do that in a moment.
+Uniwhat? 
 
-First, however, let's start using `make_pw_hash` in our application!
-
-##### Hashing passwords for new users
-
-Back in `main.py`, import your `hashutils` module by adding this to the list of imports at the top: `import hashutils`.
-
-Within the `post` method of the `Register` handler, find the line where we create a new `User` object. It looks like this:
+Without thinking too hard, we google "python3 encode unicode for
+hash", and thanks to the [top-ranked StackOverflow response](http://stackoverflow.com/a/5292360/5158597), we add one
+more method call:
 
 ```python
-user = User(username=username, password=password)
+def hash_password(name, pw, salt):
+    unencrypted_string = name + pw + salt
+    return hashlib.sha256(unencrypted_string.encode('utf-8')).hexdigest()
 ```
 
-Make a new line above this one, and create a hash from the user's data:
+We smoke-test this and it works. 
+
+```nohighlight
+>>> import hashutils
+>>> hashutils.hash_password("dave@gmail.com", "MySecretPassword", hashutils.make_salt())
+'b52be2340e7627468f911dc6f552864eb8b2025a663263a21cb0f813e7353387'
+
+```
+
+Great. Let's keep moving. 
+
+Next up, let's talk about how we make our salts - random 5-letter
+strings. This is straight python using a list comprehension and the
+system constant `string.ascii_lowercase`:
+
+Add to `hashutils.py`:
+```python
+SALT_SIZE = 5
+
+def make_salt():
+    random_letters = [random.choice(string.ascii_lowercase) for i in range(SALT_SIZE)]
+    return ''.join(random_letters)
+```
+
+`''.join(...)` takes an array of strings and concatenates the
+results, returning a string. 
+
+We test our function `make_salt`, and see that it correclty returns a list of five random letters:
+
+```nohighlight
+>>> import hashutils
+>>> hashutils.make_salt()
+'cmigu'
+>>> hashutils.make_salt()
+'ohzef'
+>>> hashutils.make_salt()
+'loqfe'
+>>> hashutils.make_salt()
+'nlgzf'
+```
+Great! We've got the tools we need. Now it's time to use them.
+
+#### Hashing passwords for new users
+
+For each new user account, we will create a new salt. We'll store the
+salt in our database. We'll change `register` to also write the salt
+column, as well as storing a hashed password. Tab back into `main.py`
+and alter `register`:
 
 ```python
-pw_hash = hashutils.make_pw_hash(username, password)
+def register():
+    [...]
+        salt = hashutils.make_salt()
+        pw_hash = hashutils.hash_password(email, password, salt)
+        user = User(email=email, password=pw_hash, salt=salt)
+        db.session.add(user)
+    [...]
 ```
 
-Then, use `pw_hash` in place of `password` when creating the user:
+Once we drop and recreate the database, new users will now have their
+passwords hashed. If you tried to create and use a new account at this
+point, you'd be able to register, but you wouldn't be able to log in
+because there is no means of checking a hashed password. That's our
+next task.
 
-```python
-user = User(username=username, password=pw_hash)
-```
+### Validating hashed passwords
 
-That's it! New users will now have their passwords hashed. If you tried to create and use a new account at this point, you'd be able to register, but you wouldn't be able to log in because there is no means of checking a hashed password. That's our next task.
+#### authenticate
 
-#### Validating hashed passwords
-
-##### valid_pw
-
-In `hashutils.py`, let's add a new function that we can use to verify a user's password against a hash, to use when logging in. The function will need to:
+In `hashutils.py`, let's add a new function that we can use to verify
+a user's password against a hash, to use when logging in. The function
+will need to:
 
 1. Accept `name` and `password` parameters, representing the info submitted via the login form.
-2. Accept a hash `h`, representing the hash from the database stored under the record for the user with username `name`.
-3. Use `name`, `password`, and the salt portion of `h` -- recall that `h` will hold both the salt and the hash created during registration -- to create a new hash, say, `test_hash`.
-4. Compare `h` with `test_hash`. If they are equal, we'll be able to say with very, very, very high probability that the user's credentials are valid.
+2. Accept `salt` and `hashed_password` straight out of the database.
+that user. 
+3. Use the name, password, and salt to create a new hashed value, say
+`trial_hash`.
+4. Compare the stored hashed password with `trail_hash`. If they are equal, we'll be able to say with very, very, very high probability that the user's credentials are valid.
 
 <aside class="aside-question" markdown="1">
-Why might we not be able to be 100%, without-a-shadow-of-a-doubt, absolutely certain that the user's credentials are valid? And why is it okay for us to know be absolutely sure?
+Why might we not be able to be 100%, without-a-shadow-of-a-doubt, absolutely certain that the user's credentials are valid? And why is it okay for us to not be absolutely sure?
 </aside>
 
 Type (not paste!) this function into `hashutils.py`:
 
 ```python
-def valid_pw(name, pw, h):
-    salt = h.split(',')[1]
-    test_hash = make_pw_hash(name, pw, salt)
-    return h == test_hash
+def authenticate(name, pw, salt, hashed_pw):
+    trial_hash = hash_password(name, pw, salt)
+    return trial_hash == hashed_pw
 ```
 
-Go over each line of this function, and make sure that you understand how it accomplishes the steps outlined above.
+#### Using authenticate
 
-##### Using valid_pw
-
-Back in `main.py`, find the `post` method of the `Login` handler. Then focus in on the line where we check the user's password against the value stored under their username in the database. It looks like this:
+Back in `main.py`, find the `login` function. Then focus in on the
+line where we check the user's password against the value stored under
+their username in the database. It looks like this:
 
 ```python
-elif submitted_password != user.password:
+  if password == user.password:
 ```
 
-We need to modify this to use our fancy new `valid_pw` function. Replace this check with the following:
+We need to modify this to use our fancy new `authenticate` function. Replace this check with the following:
 
 ```python
-elif not hashutils.valid_pw(submitted_username, submitted_password, user.password):
+  if hashutils.authenticate(username, password, user.salt, user.password):
 ```
 
-This check now uses `hashutils.valid_pw` to check whether or not the submitted info hashes to the same value retrieved from the database in `user.password`.
+We offload the more complex test to our hashutils library. 
 
-#### Test user registration and login
+Make sure you understand how the two 'passwords' interact. The second
+parameter, `password` comes from the value they just typed into the
+form. It'll be something the user can remember, perhaps 
+'I love Lucy 6/31/2007'. The fourth parameter, `user.password` is the hashed string
+retrieved from the database, it'll look like
+'b52be2340e7627468f911dc6f552864eb8b2025a663263a21cb0f813e7353387'.
 
-All of the code needed to work with password hashes instead of plain-text passwords is now in place. Fire up your application and test that you can register a new user, and log that user in.
+### Test user registration and login
 
-From the GAE Launcher, open the SDK Console and select *Datastore Viewer*. There, you'll see your new user with a password hash stored in place
+All of the code needed to work with password hashes instead of
+plain-text passwords is now in place. Fire up your application and
+test that you can register a new user, and log that user in.
 
-<aside class="aside-warning" markdown="1">
-Any user accounts created before this point will no longer be able to log in! If you experience issues with such accounts and associated user data, an easy fix is to delete all data from the datastore and start over.
-</aside>
+When we tested it, we hit a bug:
 
-#### Hashing cookies
+```
+File "/home/dm/miniconda3/envs/flicklist/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 2755, in one
+raise orm_exc.NoResultFound("No row was found for one()")
+sqlalchemy.orm.exc.NoResultFound: No row was found for one()
+```
+What's happening here is that the browser still stores the session
+from the old version of the database. Flicklist sees that the user has
+a session, even if the session is nonsense for the current
+database. Theoretically at least, we wouldn't have this problem in
+production, but that seems risky. Let's solve it.
 
-Recall from the lesson on cookies that a mischievous individual can change the values of cookies in their browser, effectively allowing them to log in as another user if they can guess the `user_id` correctly. Currently, the `user_id` cookie is stored in an un-hashed fashion, and looks something like this in the browser:
+We'd like invalid sessions to be treated as no session at all. Let's
+modify our requireLogin function to require more logins - specifically
+requiring it for users with bad sessions.
 
-![Un-hashed cookie](images/unhashed-cookie.png)
+Right now we have:
 
-Note that numeric value of the cookie is the actual ID of the given user. This isn't good. Let's fix it by hashing our cookies!
-
-##### Some utility functions
-
-The functions that we need to enable hashing of cookies were written in lessons you've completed, so let's grab them from there:
-
-```python
-SECRET = 'czUv86iAN9GXA3MT'
-def hash_str(s):
-    return hmac.new(SECRET,s).hexdigest()
-
-def make_secure_val(s):
-    return '%s|%s' % (s, hash_str(s))
-
-def check_secure_val(h):
-    s = h.split('|')[0]
-    if h == make_secure_val(s):
-        return s
+```
+def requireLogin():
+    if not ('user' in session or request.endpoint in endpoints_without_login):
+        return redirect("/register")
 ```
 
-Let's look at what's happening here:
 
-- `SECRET` - This variable is a random string that will be used as the salt for hashing each one of our cookies. You can change this to another value, if you like. In fact, that would be much safer than leaving it as-is, since this secret value is publicly stored in the LaunchCodeEducation GitHub account!
-- `hash_str` - This function takes a string and uses the `hmac` library to create a hash of the string using the value of `SECRET`. We could have used `hashlib` here as we did with passwords, but as was noted in the lesson, using `hmac` is a bit more secure for the situation in which we're using the same salt to hash each value.
-- `make_secure_val` - This function takes a string and creates a new string, consisting of the string passed in alongside its hash (generated from `hash_str`), separated by `|`. This combined value is the value that we'll store in the actual cookie, and having both the raw string and its hash will allow us to verify the value of the cookie in the future.
-- `check_secure_val` - This function uses a technique similar to `valid_pw` to ensure that the value of a cookie is valid. In other words, it checks that when we have a cookie value like `val|hash_val`, the result of hashing `val` is the string `hash_val`. This ensures that nobody has changed `val`. If the check fails, then there is no return value, effectively returning `None`.
+In english, this if test is saying 'If they have a session or if
+they're going to an endpoint that doesn't require login'. Let's change
+that to be 'If they have a session that *refers to a real user* or if
+they're going to an endpoint that doesn't require login'.
 
-<aside class="aside-pro-tip" markdown="1">
-If you were writing code for a real-world system, you'd store `SECRET` somewhere else that was less accessible, such as in an environment variable on the server.
-</aside>
+How do we know if they're a real user? They are a real user if there's
+at least one user in the DB with their email address. After some
+thought, our second try looks like:
 
-Add these functions to `hashutils.py`.
-
-##### Setting and verifying hashed cookies
-
-We now need to update precisely two pieces of code to enable secure cookies in our application.
-
-Back in `main.py`, find the `set_cookie` method of the `Handler` class. Use `make_secure_val` to generate a new, secure value/hash pair for the value that you're about to set in the cookie:
-
-```python
-cookie_val = hashutils.make_secure_val(val)
+```
+def requireLogin():
+    if not (('user' in session and User.query.filter_by(email=session['user']).count() > 0) or request.endpoint in endpoints_without_login):
+        return redirect("/register")
 ```
 
-Then update the code that sets the cookie in the response headers. The final method should look like this:
+We try this out and it works. Hooray! But now this expression is
+getting quite hard to read. 
 
-```python
-def set_cookie(self, name, val):
-    cookie_val = hashutils.make_secure_val(val)
-    self.response.headers.add('Set-Cookie', '%s=%s; Path=/' % (name, cookie_val))
+
+## Refactoring
+
+When code gets hard to read, it gets hard to think about. When code
+gets hard to think about, it's hard to get right, and it's hard to
+change. 
+
+A programmer is speaking to the machine, but they're also speaking to
+programmers. Making this easy makes for better code.
+
+A *refactor* of code doesn't change what it does, but it changes how
+it reads. Here's a classic example:
+
+``` 
+function isred(s):
+    if s == 'red':
+        return True
+    else:
+        return False
+
+```
+The key insight is that the expression `s == 'red'` already returns
+True and False in the same circumstances as the whole function. So we
+can refactor the function thusly:
+
+```
+function isred(s):
+    return s == 'red'
 ```
 
-Now, in `read_cookie`, update the return statement to use `check_secure_val`:
+We've taken a five line function down to two lines. It's easier to
+read and faster to read.  
 
-```python
-return hashutils.check_secure_val(cookie_val)
+Let's refactor requireLogin to make the code easier to
+understand. Right now our test looks like:
+
+``` 
+if not (... or ...):
 ```
 
-Recall that if the cookie fails the check, meaning it has been tampered with, this will return `None`. In effect, this will be the same as if there was no such cookie at all.
+We'll not peek inside the dots yet, but let's give the dots
+descriptive names in the form of local variables:
 
-##### Test setting secure cookies
+#### Before:
 
-If you're logged in to the application, log out. Then try to log in again. If you're able to do so, then you know your updated code works because logging in uses setting and reading of cookie. If not, back up to the steps above to find where you went astray.
+```
+def requireLogin():
+    if not (('user' in session and User.query.filter_by(email=session['user']).count() > 0) or request.endpoint in endpoints_without_login):
+        return redirect("/register")
+```
+#### After:
 
-Once the code is working, you'll see that cookie values are stored in a format like this:
+```
+def requireLogin():
+    user_has_a_valid_session = 'user' in session and User.query.filter_by(email=session['user']).count() > 0
+    login_not_required = request.endpoint in endpoints_without_login
+    if not (user_has_a_valid_session or login_not_required):
+        return redirect("/register")
+```
 
-![Hashed cookie](images/hashed-cookie.png)
+Although this is longer, we argue it is a little better. We've
+introduced some local variables with some rather long names. The
+variable names have the force of a comment. They're actually better
+than a comment, because future programmers are more likely to read
+them.
 
-Congratulations! You have just finished making your web application data secure.
+We still have a way to go though to making this code readable,
+though. Let's keep our focus on the `if` test:
+
+#### Before:
+
+```
+    if not (user_has_a_valid_session or login_not_required):
+```
+
+De Morgan's Laws from formal logic that say that `not (... or ...)` is
+eqivalent to `(not ...) and (not ...)`. We're going to apply that to
+our test:
+
+#### After:
+
+```
+    if (not user_has_a_valid_session) and (not login_not_required):
+```
+
+This is still not clear. In fact, it seems like 
+`(not login_not_required)` is taunting us!  But just by saying this
+aloud in english, we realize that what we want is to invert
+`login_not_required` into `login_required`:
+
+#### Before:
+
+```
+    login_not_required = request.endpoint in endpoints_without_login
+    if (not user_has_a_valid_session) and (not login_not_required):
+```
+
+#### After:
+
+```
+    login_required = request.endpoint not in endpoints_without_login
+    if (not user_has_a_valid_session) and login_required:
+```
+
+This is coming along. Let's see if we can try the same thing on the
+first half of the `and`, replacing `(not user_has_a_valid_session)`
+with `user_has_no_valid_session`:
+
+#### Before:
+
+```
+def requireLogin():
+    user_has_no_valid_session = 'user' in session and User.query.filter_by(email=session['user']).count() > 0
+    login_required = request.endpoint not in endpoints_without_login
+    if (not user_has_no_valid_session) and login_required:
+        return redirect("/register")
+```
+
+#### After:
+
+```
+def requireLogin():
+    user_has_no_valid_session = not ('user' in session and User.query.filter_by(email=session['user']).count() > 0)
+    login_required = request.endpoint not in endpoints_without_login
+    if user_has_no_valid_session and login_required:
+        return redirect("/register")
+```
+
+Now our `if` test is so easy to read, even your boss can do it: 
+
+#### Good Work:
+
+```
+  if user_has_no_valid_session and login_required:
+```
+
+But we still have an issue with our `user_has_no_valid_session`
+variable. It's pretty hard to read. In fact, we just made it harder to
+read by adding the `not`. What to do?
+
+#### Before:
+
+```
+    user_has_no_valid_session = not ('user' in session and User.query.filter_by(email=session['user']).count() > 0)
+```
+
+We try applying the *other* version of De Morgan's laws - 
+`not (... and ...)` is the same as `(not ...) or (not ...)`, and have
+this:
+
+#### Middle:
+```
+    user_has_no_valid_session = (not 'user' in session) or (not User.query.filter_by(email=session['user']).count() > 0)
+```
+
+We smash the `not`'s down into each side of the `or`. For the left this
+looks like `(not 'user' in session)` => `('user' not in session)`. For
+the right we realize that the only count that's not greater than zero
+is zero, and so `(not (...) > 0)` => `(...) == 0`. 
+
+#### After:
+```
+    user_has_no_valid_session = 'user' not in session or User.query.filter_by(email=session['user']).count() == 0
+```
+
+And now we look at this and realize it's still hard to
+read. Sometimes, these algebraic refactors can only take us so far,
+and we have to actually reason about what the code is doing. 
+
+Stepping back, we would like to ditch the left hand side of the `or`
+entirely, but we need it to guard the right side, otherwise evaluating
+`session['user']` will throw an error when there's no user in session.
+
+We'd also like to store the right hand side in a local variable, but
+then we'd evaluate the unguarded expression `session['user']` and get an
+error when the user wasn't logged in. When local variables aren't good
+enough, it's time to consider making helper functions.
+
+We stare at this expression for a while. We also look at our other
+similar code. Eventually we decide to write this helper function:
+
+```
+def logged_in_user():
+    return 'user' in session and User.query.filter_by(email=session['user']).first()
+```
+
+This function returns a User instance, or None if there is none. It
+looks inside the session and the DB both to make that
+determination. Recall that the `.first()` method returns the first
+element from a bunch of SQLAlchemy query api results, or None if there
+were zero. Equipped with that knowledge, we rewrite thusly:
+
+```
+def requireLogin():
+    user_has_no_valid_session = not logged_in_user()
+    login_required = request.endpoint not in endpoints_without_login
+    if user_has_no_valid_session and login_required:
+        return redirect("/register")
+```
+
+This is great! But now the variable `user_has_no_valid_session` starts
+to look redundant. We erase it and inline it's value:
+
+
+```
+def requireLogin():
+    login_required = request.endpoint not in endpoints_without_login
+    if not logged_in_user() and login_required:
+        return redirect("/register")
+```
+
+Lastly, we rearrage the order of the arguments to `and`, because it
+reads a little better:
+
+
+#### The Grand Finish:
+
+```
+def requireLogin():
+    login_required = request.endpoint not in endpoints_without_login
+    if login_required and not logged_in_user():
+        return redirect("/register")
+```
+
+Let's sit back and reflect on how far we've come. When we started this
+refactor this is the code we had:
+
+#### The Bad Old Days:
+
+```
+def requireLogin():
+    if not (('user' in session and User.query.filter_by(email=session['user']).count() > 0) or request.endpoint in endpoints_without_login):
+        return redirect("/register")
+```
+Which code do you understand better?
+
+Additionally we've written this `logged_in_user` function, and we can
+go on a refactoring rampage through `main.py`, replacing three
+somewhat-hard-to-read occurrences of occurences of
+`User.query.filter_by(email=session['user']).one().id` with
+`logged_in_user().id`. The latter is much easier to read. So much so,
+we can do away with the local variables named `current_user_id`. For
+example, MovieRatings can go from:
+
+```
+def MovieRatings():
+    current_user_id = User.query.filter_by(email=session['user']).one().id
+    return render_template('ratings.html', movies = getWatchedMovies(current_user_id))
+```
+to:
+
+```
+def MovieRatings():
+    return render_template('ratings.html', movies = getWatchedMovies(logged_in_user().id))
+```
+
+There are entire books on refactoring and writing more readable
+code. It's a valuable skill to have, and it makes better software.
+
+## What we've done
+
+Our site appears to have no new features today, but we've improved it
+in two major ways
+
+1. Our security risks are lower
+2. Our code is easier to read
+
+We have finished the Python features of Flicklist. Congratulations!
 
 [get-the-code]: ../getting-the-code/
