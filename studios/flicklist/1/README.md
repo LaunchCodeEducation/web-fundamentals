@@ -26,7 +26,7 @@ In class, we'll walk through the [Project Setup](#project-setup) steps (see belo
 * How do HTTP requests and responses work?
 * GET and POST requests types
 * Review of Python class syntax
-* Routes in a web application (i.e. how does a specific request get matched with a specific handler class based on the URL?)
+* Routes in a web application (i.e. how does a specific request get matched with a specific method)
 
 We'll also add a bit of code to display a new heading and a "Movie of the Day", which is really just a hard-coded string. You will make this more interesting during the studio.
 

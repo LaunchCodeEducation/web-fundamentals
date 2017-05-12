@@ -11,7 +11,7 @@ In today's walkthrough, we will do most of the work of switching our project to 
 
 - We will import `render_template` which will allow us to use `jinja2`, a templating engine.
 - We will create a bunch of `.html` files to hold our content.
-- In our request handlers, we will render those templates into our HTTP response!
+- In our request methods, we will render those templates into our HTTP response!
 
 In the process, we will talk about:
 
@@ -42,7 +42,7 @@ Your job is to get this page back up and running. The user should still see the 
 Of course, there is one caveat: you are required to use a template. Your `main.py` file should not contain any HTML at all!
 
 1. Create a `.html` file inside your `/templates` directory, and add whatever HTML content needs to be added.
-2. In your `AddMovie` request handler class, use your template to render the response.
+2. In your `AddMovie` request method, use your template to render the response.
 
 For reference, you can look at our code at the bottom of the `post` method in the `watchMovie` class, which renders the `templates/watched-it.html` template file (in addition to the header and footer templates).
 
