@@ -559,8 +559,32 @@ def MovieRatings():
     return render_template('ratings.html', movies = getWatchedMovies(logged_in_user().id))
 ```
 
+If we look under the hood, we're essentially doing this replacement:
+#### Before:
+
+```
+    User.query.filter_by(email=session['user']).one().id
+```
+#### After (sort of):
+```
+    ('user' in session and User.query.filter_by(email=session['user']).first()).id
+```
+
+Can you justify this change? When it fails -- say by the user being
+absent from the DB -- will it fail in the same way? Will it still
+fail? Is that an ethical change to make?
+
+
+### Wrapping up Refactoring
+
+A refactor is a change that's mathematically certain not to introduce
+bugs, but accidents happen. Some IDEs include tools for automated
+refactoring. Once you're more developed, you'll use automated testing
+to verify that your refactorings don't introduce bugs.
+
 There are entire books on refactoring and writing more readable
-code. It's a valuable skill to have, and it makes better software.
+code. It's a valuable skill to have. It's an important part of the
+craft of programming. 
 
 ## What we've done
 
