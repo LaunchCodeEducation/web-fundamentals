@@ -47,7 +47,7 @@ If you want to use an image of your own that is not already available via the in
 
 *Optional:* Share your creation in the `#showcase` channel on Slack, and see what others have created!
 
-### Resources
+## Resources
 
 * [Using Firefox Developer Tools: Elements](https://www.youtube.com/watch?v=nV9PLPFTnkE)
 * [Firefox DevTools Documentation](https://developers.google.com/web/tools/Firefox-devtools/)

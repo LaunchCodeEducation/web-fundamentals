@@ -3,7 +3,7 @@ title: Class 2 Prep
 currentMenu: classes
 ---
 
-### HTML
+## HTML
 
 In the previous lesson of CS253, you learned a bit about HTML. Now get some more practice and reinforcement by going through these Codecademy tutorials:
 
@@ -16,7 +16,7 @@ Do | Interactive Course | [Codecademy: Social Networking Profile][social-network
 
 ---
 
-### CSS
+## CSS
 
 CSS is a language for customizing the visual style of your HTML content. In this course we will not be focusing very heavily on CSS, but it is important to at least know what it is and get a quick taste for how it works.
 
@@ -29,7 +29,7 @@ Do | Interactive Course | [Codecademy: Sorting Your Friends][sorting-your-friend
 
 ---
 
-### Git: Branches
+## Git: Branches
 
 Another important feature of Git is *branches*. In the upcoming in-class Studios, we will use Git branches as a way of managing different versions of the same running class project. That workflow, however, is not a typical use of branches. You actually will not be required to do extensive work with branches in this course, beyond the studios. But branches are an integral part of Git, and something you should know about now, because you will be using them once you become a Certified Pro in the near future.
 

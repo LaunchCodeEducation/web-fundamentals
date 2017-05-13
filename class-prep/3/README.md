@@ -4,7 +4,7 @@ currentMenu: classes
 ---
 
 
-### HTTP and the Internet
+## HTTP and the Internet
 
 This section is a high-level overview of the technologies that bind the internet together.
 
@@ -16,7 +16,7 @@ Do | Tutorial | [Hello Flask](../../tutorials/hello-flask/) | Learn how to creat
 Read | More Articles (optional) | - [The Internet][how-does-the-internet-work] <br> - [Domain Names][what-is-a-domain-name] <br> - [Project Structure][dealing-with-files] | This is optional, but if you are itching to learn more, these topics are also important.
 
 
-### Git: Remote Repositories
+## Git: Remote Repositories
 
 So far you have been using Git locally on your own computer. We will now introduce the concept of a "remote" repository, a Git repository that lives "in the cloud". A remote repo, hosted on a website such as Github.com, often functions as the central hub for a project, so that a developer can do work across multiple machines, or multiple developers can work collaboratively on the same project. In your upcoming assignments, you will use Github.com to submit your work.
 

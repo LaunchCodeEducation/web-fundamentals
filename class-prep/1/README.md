@@ -3,7 +3,7 @@ title: Class 1 Prep
 currentMenu: classes
 ---
 
-### Setup
+## Setup
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
 Read | Web page | [About This Unit](../../about/) | Read about the structure of this unit. In particular, pay attention to the details about curriculum resources and how you should utilize them most effectively.
@@ -11,7 +11,7 @@ Do | Software Install | [Mozilla.org](https://www.mozilla.org/en-US/firefox/new/
 
 ---
 
-### HTML
+## HTML
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
 Do | Interactive Course | [Lesson 1 (first half)][lesson-1] | Do the first 18 items. Stop when you get to the item called *Introducing URLs*.
@@ -22,7 +22,7 @@ Do | Interactive Course | [Lesson 1 (first half)][lesson-1] | Do the first 18 it
 
 ---
 
-### Git: Basics
+## Git: Basics
 
 Git is a "version control" system to help you manage your coding projects. These days, most professional programmers consider Git to be an essential aspect of their skill set. Throughout the rest of this course, we will try to integrate Git into your workflows to help you build up your comfort using this powerful tool. You will learn the basics of Git following along with an eBook, and you will use Git (and a website called Github) to submit your assignments.
 
