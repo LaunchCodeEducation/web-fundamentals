@@ -13,7 +13,7 @@ Read | Web page | [About This Unit](../../about/) | Read about the structure of 
 ## HTML
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
-Do | Interactive Course | [Intro to Web Dev][intro-to-web-dev] | Watch all videos in this playlist, and do the associated quizzes (pause after a quiz video to answer it before moving to the next video).
+Do | Video Lessons | [Intro to the Web][intro-to-web-dev] | Watch all videos in this playlist, and do the associated quizzes (pause after a quiz video to answer it before moving to the next video).
 
 [intro-to-web-dev]: https://www.youtube.com/playlist?list=PLs5n5nYB22fKTnh0l3f1AWjEJTEUufmcd
 
@@ -25,8 +25,7 @@ Git is a "version control" system to help you manage your coding projects. These
 
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
-Follow Along | eBook | [Tower Git: Appendix B - Command Line 101][tower-command-line] | Before getting started with Git, quickly go through this tutorial on using the command-line.
-Follow Along | eBook | [Tower Git: Part 1 - The Basics][tower-wivc] <br><br> You might also find the [Video Series][tower-vids] helpful. | Read and code along to all 7 articles within Part 1, starting with [What is Version Control?][tower-wivc] and finishing with [Working on Your Project][tower-woyp]. <br><br> Make sure you follow along on your own computer as you go. By the end, you should have Git installed on your computer, you should have a vague idea of what Git is, and you should have gotten some practice creating a repository and committing changes to it.
+Follow Along | eBook | [Tower Git: Part 1 - The Basics][tower-wivc] <br><br> You might also find the [Video Series][tower-vids] helpful. | Read and code along to all 7 articles within Part 1, starting with [What is Version Control?][tower-wivc] and finishing with [Working on Your Project][tower-woyp]. <br><br> Make sure you follow along on your own computer as you go. By the end, you should have Git installed on your computer, you should have a vague idea of what Git is, and you should have gotten some practice creating a repository and committing changes to it. *NOTE*: Mac users may install Git by typing `git` at a Terminal prompt, hitting Enter, and following the resulting macOS prompts to install Xcode tools.
 Do | Quiz | [Flatiron: Git Basics Quiz][flatiron-quiz] | Take this 2-minute quiz to test your understanding of the Git concepts you have learned so far.
 
 ---
@@ -53,7 +52,6 @@ For this class, our preferred browser will be Firefox. If you are already comfor
 6. A new Firefox browser window will appear and you'll get a choice whether to make this your default browser.
 7. Then you'll be prompted to create a Firefox account. This is optional.
 
-[tower-command-line]: https://www.git-tower.com/learn/git/ebook/en/command-line/appendix/command-line-101#start
 [tower-wivc]: https://www.git-tower.com/learn/git/ebook/en/command-line/basics/what-is-version-control#start
 [tower-woyp]: https://www.git-tower.com/learn/git/ebook/en/command-line/basics/working-on-your-project#start
 [tower-vids]: https://www.git-tower.com/learn/git/videos#episodes
