@@ -10,12 +10,10 @@ This section is a high-level overview of the technologies that bind the internet
 
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
-Do | Interactive Course | [Web Development][how-the-web-works-playlist] | Watch all the videos in the playlist. <br> **NOTE:** In the video "Response Headers - Web Development" from about 1:55 into it till the end of the video, he talks about telnet--*ignore this section*.
+Do | Interactive Course | [Web Development][how-the-web-works-playlist] | Watch all the videos in the playlist. <br> **NOTE:** In the video "Response Headers - Web Development" from about 1:55 into it till the end of the video, the instructor talks about telnet--*you do not need to follow along*.
 Read | Articles | - [The Web][how-the-web-works] <br> - [Servers][what-is-a-web-server] <br> - [HTTP Intro][http-basic-introduction] <br> - [HTTP GET][http-lets-get-it-on] <br> - [Response Codes][http-response-codes] <br> - [URLs][what-is-a-url] | These articles are a little dry, but a foundational knowledge of these topics is important for everything else you will encounter on your web development learning journey.
-Do | Setup | [Hello Flask](../../tutorials/hello-flask/) | Learn how to create and work in a virtual environment, and use the Flask library to build a web server in five lines of code.
+Do | Tutorial | [Hello Flask](../../tutorials/hello-flask/) | Learn how to create and work in a virtual environment, and use the Flask library to build a web application in five lines of code.
 Read | More Articles (optional) | - [The Internet][how-does-the-internet-work] <br> - [Domain Names][what-is-a-domain-name] <br> - [Project Structure][dealing-with-files] | This is optional, but if you are itching to learn more, these topics are also important.
-
-[gae-walkthrough]: https://www.youtube.com/watch?v=KSFaeLRZNE8
 
 
 ### Git: Remote Repositories
@@ -30,8 +28,6 @@ Read | Article | [Git SCM: Working with Remotes][scm-remotes] | This article tal
 Read | Article | (Optional) [Flatiron: Git Collaboration][flatiron-collab] | This article gives a good sense for the sorts of complex collaboration scenarios that you can maneuver by leveraging a good workflow with branches and remote repositories.
 
 [tower-intro-remotes]: https://www.git-tower.com/learn/git/ebook/en/command-line/remote-repositories/introduction#start
-[flatiron-remotes]: https://learn.co/lessons/git-remotes-with-github-readme
-[flatiron-remotes-codealong]: https://learn.co/lessons/git-remote-code-along
 [flatiron-collab]: https://learn.co/lessons/git-collaboration-readme
 [scm-remotes]: https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes
 [try-git]: https://try.github.io/
@@ -50,4 +46,3 @@ Read | Article | (Optional) [Flatiron: Git Collaboration][flatiron-collab] | Thi
 [what-is-a-domain-name]: https://developer.mozilla.org/en-US/Learn/Common_questions/What_is_a_domain_name
 [how-does-the-internet-work]: https://developer.mozilla.org/en-US/Learn/Common_questions/How_does_the_Internet_work
 [dealing-with-files]: https://developer.mozilla.org/en-US/Learn/Getting_started_with_the_web/Dealing_with_files
-
