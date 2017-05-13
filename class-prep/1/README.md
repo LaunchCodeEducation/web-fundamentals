@@ -13,7 +13,7 @@ Read | Web page | [About This Unit](../../about/) | Read about the structure of 
 ## HTML
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
-Do | Video Lessons | [Intro to the Web][intro-to-web-dev] | Watch all videos in this playlist, and do the associated quizzes (pause after a quiz video to answer it before moving to the next video).
+Do | Interactive Course | [Intro to the Web][intro-to-web-dev] | Watch all videos in this playlist, and do the associated quizzes (pause after a quiz video to answer it before moving to the next video).
 Do | Interactive Course | [Codecademy: HTML Basics][html-basics] | This section covers the very basics. You will already be familiar with most of it from your previous homework.
 Do | Interactive Course | [Codecademy: Build Your Own Webpage][byowp] | Here you will apply the concepts from the previous section into a small project.
 
