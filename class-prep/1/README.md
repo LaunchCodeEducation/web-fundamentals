@@ -6,8 +6,8 @@ currentMenu: classes
 ### Setup
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
-Do | Create an account (Optional) | [Udacity Registration][sign-up] | **This is optional**. You might want to register for an account on Udacity, so that when you interact with the course content on [CS253: Web Development][cs253], the site remembers your progress.
 Read | Web page | [About This Unit](../../about/) | Read about the structure of this unit. In particular, pay attention to the details about curriculum resources and how you should utilize them most effectively.
+Do | Software Install | [Mozilla.org](https://www.mozilla.org/en-US/firefox/new/) | In this course, we will mostly use Firefox as our browser. Other browsers have good developer tools as well (Chrome, in particular) but we're going to stick with Firefox. If you are more comfortable with another browser's developer tools, feel free to use them
 
 ---
 
