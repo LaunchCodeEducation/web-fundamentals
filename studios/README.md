@@ -9,11 +9,11 @@ Get an introduction to web developer tools in Google Chrome, and use them to ins
 
 [Work on Fake News](fake-news/)
 
-## Github
+## Fireside Story
 
 Learn how to create code together with a partner with a simple, fun story exercise.
 
-[Work on Github](github/)
+[Work on Fireside Story](fireside-story/)
 
 ## Flicklist
 

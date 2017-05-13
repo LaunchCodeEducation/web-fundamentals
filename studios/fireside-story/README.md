@@ -1,5 +1,5 @@
 ---
-title: 'Studio: Github'
+title: 'Studio: Fireside Story'
 currentMenu: studios
 ---
 
@@ -16,7 +16,7 @@ time. You will learn how to:
 - **Quickly add Code in Pull + Push Cycles**
 - Add a Collaborator to Github Project
 - Sharing Repositories on GitHub
-- Create a Branch in Git 
+- Create a Branch in Git
 - Create a Pull Request in GitHub
 - Resolve Merge Conflicts
 
@@ -28,21 +28,23 @@ This lesson reinforces
 
 ## Walkthrough
 
-Help students understand why Github is worth their study. They already know how to use a local git repo with one branch - giving them the ability to move their code forward and backward in time. Working with branches on github allows multiple people to build features at the same time. Pull Requests act as a checkpoint when code flows from branch to branch. 
+The instructor will discuss why Github is worth their study. You already know how to use a local git repository with one branch, giving you the ability to move your code forward and backward in time. Working with branches on GitHub allows multiple people to build features at the same time. Pull Requests act as a checkpoint when code flows from branch to branch.
 
-Help the students pair off for this exercise. Encourage them to post the stories they come up with in Slack.
+Students *must* pair off for this exercise. If you have trouble finding a partner, ask your TF for help.
 
-## Fireside Story
+## Studio
 
 We are going to play a game. We will play it just like you'd play around a campfire, but on a web page.
 
 First, find a new friend to play the game with.
 
-Feel free to share your story in the `#fireside-story` channel on Slack, and see what others have created!
+Feel free to share your story in the `#showcase` channel on Slack, and see what others have created!
+
+You and your partner will alternate tasks, so designate one of you as **Player 1** and the other as **Player 2**. Even when it is not your turn to complete a task, read and observe what your partner is doing to completed theirs. The steps here mimic how a real-world collaborative Git workflow can be used within a project.
 
 #### Player 1
 
-### Create a New Repostory
+### Create a New Repository
 
 Navigate to your development folder. Follow these instructions to create a new project.
 
@@ -64,7 +66,7 @@ In that directory, open a new file `index.html` in the editor of your choice. Pa
 
 Let's check that our html looks okay by opening it in a browser. You can do this by selecting File > Open File in your web browser, and navigating to the location of your new HTML file. The URL will look something like this: `file:///Users/cheryl/Development/fireside-story/index.html`.
 
-Once you've seen this file in the browser, let's stage and commit it. 
+Once you've seen this file in the browser, let's stage and commit it.
 
 <pre><code class="nohighlight" style="color: #333">$ git status
 On branch master
@@ -78,7 +80,7 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)</code></pre>
 
-The file is not staged. Let's add everything in this directory. 
+The file is not staged. Let's add everything in this directory.
 
 <pre><code class="nohighlight" style="color: #333">$ git add .
 $ git status
@@ -164,7 +166,7 @@ $ git commit -m 'added second line of story'
 
 Now we need to push up your changes so player 1 can use them as well.
 
-```nohighlight 
+```nohighlight
 $ git push origin master
 ERROR: Permission to cherylschaefer/fireside-story.git denied to player2.
 fatal: Could not read from remote repository.
@@ -203,7 +205,7 @@ To git@github.com:player2/fireside-story.git
    511239a..679de77  master -> master
 ```
 
-Anyone reading the html through GitHub's browser interface should now see the new second line. 
+Anyone reading the html through GitHub's browser interface should now see the new second line.
 
 #### Player 1
 
@@ -225,7 +227,7 @@ Fast-forward
 
 Now go in your editor, add a third line of story and push it up. You can have your story go anywhere! Try to tie it in with what the other player wrote, without discussing with them any plans on where the story will go.
 
-Stage, commit and push your change. 
+Stage, commit and push your change.
 
 #### Player 2
 
@@ -286,7 +288,7 @@ $ git commit -m 'added style.css'
 $ git push origin darker
 ```
 
-You should both now be able to see a second branch appear in your repo in the browser. On your command line, you can type this command to see a list of the available branches: 
+You should both now be able to see a second branch appear in your repo in the browser. On your command line, you can type this command to see a list of the available branches:
 
 ```nohighlight
 $ git branch
@@ -303,7 +305,7 @@ In your browser, go to the github project. Click on *branches* and the new branc
 ![Branches Button in GitHub](BranchesButton.png)
 ![Branches Page in GitHub](branches.png)
 
-If you are happy with your changes, click *New Pull Request*. Add some text in the description box to let player 1 know what you did and why. 
+If you are happy with your changes, click *New Pull Request*. Add some text in the description box to let player 1 know what you did and why.
 
 ![Open a PR in Github](pr-details.png)
 
@@ -379,7 +381,7 @@ Let's change something about the style file. Our html is looking pretty plain. L
 
 Add another link to your `index.html` file, right by the first link:
 ```html
-     <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet"> 
+     <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
 ```
 
 And spice up your `style.css` file to look like this:
@@ -398,7 +400,7 @@ The result:
 
 ![Satisfying!](AddSatisfyFont.png)
 
-Commit your changes and push it up to GitHub. If you don't remember how to do this, follow the instructions above. Make sure you're back in the `master` branch - if you're still in `darker`, then your changes will be isolated and we won't get the merge conflict you want to learn about. 
+Commit your changes and push it up to GitHub. If you don't remember how to do this, follow the instructions above. Make sure you're back in the `master` branch - if you're still in `darker`, then your changes will be isolated and we won't get the merge conflict you want to learn about.
 
 Meanwhile...
 
@@ -490,9 +492,9 @@ body {
 
 At the top and bottom, there is some code that could be merged without issue.
 <br/>
-`<<<<<<< HEAD` to `=======` is the version of the code that existed locally. 
+`<<<<<<< HEAD` to `=======` is the version of the code that existed locally.
 <br/>
-`=======` to `>>>>>>> 0c2165931f5f668959bad92d2f744efb402e049d` is the version of the code that was pulled in (the hash will be unique to the commit). 
+`=======` to `>>>>>>> 0c2165931f5f668959bad92d2f744efb402e049d` is the version of the code that was pulled in (the hash will be unique to the commit).
 <br/>
 Let's unify our code -- make sure to remove the Git markers.
 
