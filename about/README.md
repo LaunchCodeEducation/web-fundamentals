@@ -41,9 +41,7 @@ Each activity or resource (prep work, cheatsheets, studios, assignments) has bee
 
 In-class lessons and activities will assume that you have completed all of the prep work. If you skim or skip the prep work, you will find it difficult to participate in-class activities, and will find the assignments to be more difficult than they are intended to be.
 
-**Udacity lessons** will make up a large amount of prep work. **When watching these lessons, code along with the videos to reproduce the applications that the instructor builds.** Not only is this essential to fully learn these new concepts, but some assignments will rely on code that you have written while completing these lessons.
-
-**Articles and tutorials** supplement the Udacity content. Each article or tutorial covers material of varying importance and difficulty. Read the associated notes on the prep work pages to understand what you should take away from each resource.
+**Articles and tutorials** supplement the video content. Each article or tutorial covers material of varying importance and difficulty. Read the associated notes on the prep work pages to understand what you should take away from each resource.
 
 #### Studios
 
@@ -71,4 +69,3 @@ This curriculum assumes you have a solid foundation of procedural programming in
 - Data structures (incl. lists and dictionaries)
 - Classes and objects (incl. inheritance)
 
-[udacity-course]: https://www.udacity.com/course/web-development--cs253

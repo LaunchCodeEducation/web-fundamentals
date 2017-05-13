@@ -6,7 +6,6 @@ currentMenu: classes
 ### Setup
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
-Do | Create an account (Optional) | [Udacity Registration][sign-up] | **This is optional**. You might want to register for an account on Udacity, so that when you interact with the course content on [CS253: Web Development][cs253], the site remembers your progress.
 Read | Web page | [About This Unit](../../about/) | Read about the structure of this unit. In particular, pay attention to the details about curriculum resources and how you should utilize them most effectively.
 
 ---
@@ -14,11 +13,11 @@ Read | Web page | [About This Unit](../../about/) | Read about the structure of 
 ### HTML
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
-Do | Interactive Course | [Lesson 1 (first half)][lesson-1] | Do the first 18 items. Stop when you get to the item called *Introducing URLs*.
+Do | Interactive Course | [Intro to Web Dev][intro-to-web-dev] | Watch all videos in this playlist, and do the associated quizzes (pause after a quiz video to answer it before moving to the next video).
 
 [sign-up]: https://www.udacity.com/account/auth#!/signup
 [cs253]: https://www.udacity.com/course/web-development--cs253
-[lesson-1]: https://classroom.udacity.com/courses/cs253/lessons/48737165/concepts/3136729170923#
+[intro-to-web-dev]: https://www.youtube.com/playlist?list=PLs5n5nYB22fKTnh0l3f1AWjEJTEUufmcd
 
 ---
 
