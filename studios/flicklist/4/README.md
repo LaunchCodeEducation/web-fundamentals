@@ -19,9 +19,7 @@ In the process, we will talk about:
 - How to insert the data once we know what it is.
 - We will also see the Jinja syntax for doing a few additional fancy (but important) things:
     - How to loop over a list of items in a template.
-    - How to use a conditional (if / else) in a template.
-- Finally, it is important to note that we will be doing all this in a manner somewhat different from the technique employed in the Udacity class's examples. They make heavy use of Python's `*args` and `**keyword_args` feature, which is very cool, and allows them to write somewhat slicker, more concise code for rendering templates.... BUT we don't want any of that to make templates seem unnecessarily complicated or confusing, so we will elect to write code that is slightly more repetitive here, in the interest of making it simpler to understand the essential concept for today: how to use a templating engine.
-
+    - How to write a conditional statement in a template.
 
 ## Studio
 
