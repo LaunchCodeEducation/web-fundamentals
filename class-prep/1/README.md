@@ -37,10 +37,3 @@ Do | Quiz | [Flatiron: Git Basics Quiz][flatiron-quiz] | Take this 2-minute quiz
 [tower-woyp]: https://www.git-tower.com/learn/git/ebook/en/command-line/basics/working-on-your-project#start
 [tower-vids]: https://www.git-tower.com/learn/git/videos#episodes
 [flatiron-quiz]: https://learn.co/lessons/git-basics-quiz
-
-
-[what-is-version-control]: https://www.atlassian.com/git/tutorials/what-is-version-control
-[a-short-introduction-to-git]: http://blog.mwaysolutions.com/2015/07/16/a-short-introduction-to-git/
-[git-it-mac]: https://github.com/jlord/git-it-electron/releases/download/4.2.0/Git-it-Mac-x64.zip
-[git-it-linux]: https://github.com/jlord/git-it-electron/releases/download/4.2.0/Git-it-Linux-x64.zip
-[git-it-windows]: https://github.com/jlord/git-it-electron/releases/download/4.2.0/Git-it-Win-ia32.zip
