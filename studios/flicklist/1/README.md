@@ -77,7 +77,9 @@ git checkout studio1
 git pull origin studio1
 ```
 
-In Atom, open up the `flicklist-flask` folder, and then the `main.py` file. Notice that you have a couple of TODOs, noted by comments. Completing these will upgrade our app so that rather than displaying the same movie each time, instead it displays a random movie from a list. Here are some more details on what you need to do:
+In Visual Studio Code, open up the `flicklist-flask` folder, and then the `main.py` file. From the project directory, you can do this by running `code .`.
+
+Notice that you have a couple of TODOs, noted by comments. Completing these will upgrade our app so that rather than displaying the same movie each time, instead it displays a random movie from a list. Here are some more details on what you need to do:
 
 1. If you have not already cloned our starter-code repository and created a Flask project as outlined in the Walkthrough [Project Setup](#project-setup) instructions, go and do that now.
 
@@ -103,4 +105,3 @@ We recommend you commit often. Commit when you're done with your studio code, be
 $ git add .
 $ git commit -m "USEFUL MESSAGE"
 ```
-
