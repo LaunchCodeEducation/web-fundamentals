@@ -14,6 +14,8 @@ Read | Web page | [About This Unit](../../about/) | Read about the structure of 
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
 Do | Video Lessons | [Intro to the Web][intro-to-web-dev] | Watch all videos in this playlist, and do the associated quizzes (pause after a quiz video to answer it before moving to the next video).
+Do | Interactive Course | [Codecademy: HTML Basics][html-basics] | This section covers the very basics. You will already be familiar with most of it from your previous homework.
+Do | Interactive Course | [Codecademy: Build Your Own Webpage][byowp] | Here you will apply the concepts from the previous section into a small project.
 
 [intro-to-web-dev]: https://www.youtube.com/playlist?list=PLs5n5nYB22fKTnh0l3f1AWjEJTEUufmcd
 
@@ -57,3 +59,6 @@ For this class, our preferred browser will be Firefox. If you are already comfor
 [tower-vids]: https://www.git-tower.com/learn/git/videos#episodes
 [flatiron-quiz]: https://learn.co/lessons/git-basics-quiz
 [mozilla]: https://www.mozilla.org/en-US/firefox/new/
+
+[html-basics]: https://www.codecademy.com/en/courses/web-beginner-en-HZA3b/resume?curriculum_id=50579fb998b470000202dc8b
+[byowp]: https://www.codecademy.com/en/courses/web-beginner-en-LceTK/resume?curriculum_id=50579fb998b470000202dc8b
