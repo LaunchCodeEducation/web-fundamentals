@@ -11,7 +11,7 @@ For the examples below, we use `M` to indicate the previous studio number and `N
 
 **Don't forget to replace `N` with the appropriate studio number!**
 
-Navigate to your `flicklist-python` directory.
+Navigate to your `flicklist-flask` directory.
 
 Hopefully, you do not currently have any uncommitted changes--you should have committed them at the end of the day last time--but check just to make sure:
 

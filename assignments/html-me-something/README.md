@@ -9,7 +9,7 @@ There are two parts to this exercise, one focused on HTML and another focused on
 
 Best practices dictate that these should be kept as separate as possible. To that end, we'll build the HTML portion of our page first, and only afterwards will we add a few styles with CSS. This will help us avoid adding HTML elements simply to change the style of our page.
 
-### Sections:
+## Sections:
 
 - [Getting Started](#getting-started)
 - [Getting to Work](#getting-to-work)
@@ -24,7 +24,7 @@ First, follow the steps below to create a folder for your project and initialize
 1. Navigate into the parent folder where you keep all your course materials (e.g. `lc101/` or `code/`). Only you know where that folder lives in your file system, but you want to do something like:
 
     ```nohighlight
-    $ cd ~/Documents/lc101/
+    $ cd ~/lc101/
     ```
 
 1. Make a new folder for this assignment:
@@ -75,7 +75,7 @@ First, follow the steps below to create a folder for your project and initialize
 
 Now let's incorporate Git into the picture.
 
-1. #### Initialize the project as a Git repository.
+1. **Initialize the project as a Git repository.**
 
 	In your terminal, make sure you are inside your `html-me-something` folder, and then use the `git init` command to initialize that folder as a Git repository:
 
@@ -99,7 +99,7 @@ Now let's incorporate Git into the picture.
     You only ever have to do the `git init` step once, at the beginning.
     </aside>
 
-	#### 1a. Check your status
+1. **Check your status**
 
 	Back in the terminal, use the `git status` command to check the status of your newly created repo:
 
@@ -119,7 +119,7 @@ Now let's incorporate Git into the picture.
 
     This message says a lot of things, but for now, the most important point is that `index.html` is currently "untracked". We need to `add` and then `commit` the file so that Git can help us manage its changes.
 
-2. #### Add your work to the repo
+1. **Add your work to the repo**
 
 	Use the `git add` command to track your `index.html` file so that it will be staged for your next commit:
 
@@ -143,7 +143,7 @@ Now let's incorporate Git into the picture.
         new file:   index.html
     ```
 
-3. #### Commit
+1. **Commit**
 
 	Now you are ready to `commit` the changes you have staged.
 
@@ -183,7 +183,7 @@ Github.com is website that hosts Git repositories "in the cloud". A repository t
 
 For the remainder of this course, you will use Github to submit your work. Here's how:
 
-1. #### Create a repo on Github
+1. **Create a repo on Github**
 
     In a browser, visit [Github's website](http://github.com). Make sure you are logged onto your Github account (or create an account now if you have not already done so.)
 
@@ -200,7 +200,7 @@ For the remainder of this course, you will use Github to submit your work. Here'
     </aside>
 
 
-1. #### Inform your local repo about the existence of your remote repo
+1. **Inform your local repo about the existence of your remote repo**
 
 	Now you have two repositories: the local one on your computer, and the remote one on Github. The next step is to sync them up.
 
@@ -212,13 +212,15 @@ For the remainder of this course, you will use Github to submit your work. Here'
 	$ git remote add origin PASTE_REPO_URL_HERE
 	```
 
-	**...but** replace `PASTE_REPO_URL_HERE` with the actual url for your remote Github repo, which you can obtain by clicking the `Clone or Download` button and then copying and pasting the associated url:
+	**...but** replace `PASTE_REPO_URL_HERE` with the actual url for your remote Github repo, which you can obtain by copying and pasting the repository url:
 
 	![GitHub Clone Url](./images/github-clone-url.png)
 
-	<aside class="aside-note" markdown="1">
-	Alternatively, you can just type out `https://github.com/YOURUSERNAME/html-me-something.git` at the terminal.
-	</aside>
+    <aside class="aside-note" markdown="1">
+    Unless you've set up an SSH key on your computer and added it to your GitHub account, you should always select the HTTPS version of a repository URL.
+
+    If you're unsure about whether or not you've done this, you probably haven't.
+    </aside>
 
 	By running this `git remote add ...` command on the terminal, you are basically saying:
 
@@ -227,7 +229,7 @@ For the remainder of this course, you will use Github to submit your work. Here'
 	Note that the name "origin" is simply a standard naming convention for the main remote repo associated with a local repo.
 
 
-1. #### Push your local changes up to the remote
+1. **Push your local changes up to the remote**
 
 	Your local repo is currently *ahead of* your remote repo by a few commits. Locally, you have added and edited a few files, and committed all those changes, whereas your remote repo is still entirely empty.
 
@@ -237,7 +239,7 @@ For the remainder of this course, you will use Github to submit your work. Here'
 	$ git push origin master
 	```
 
-	This command says:
+	This command says, in essence:
 
     > "Hey Git, please push all my local changes to the remote repo called `origin` (specifically, to its `master` branch)."
 
@@ -245,7 +247,7 @@ For the remainder of this course, you will use Github to submit your work. Here'
 
 ### Submit
 
-To finishing submitting and receive credit, follow steps 3 and 4 of the [submission instructions][submission-instructions] on the *Assignments List* page.
+To finishing submitting and receive credit, follow steps 3 and 4 of the [submission instructions](../) on the *Assignments* page.
 
 ### Extra Credit: Host your Page using Github Pages
 
@@ -260,5 +262,4 @@ Github provides free hosting for any "static" web content (like this project). A
 1. In any browser, you should now be able to visit `YOUR_USERNAME.github.io/html-me-something` and see your web page!
 
 
-[submission-instructions]: ../
 [open-in-browser]: https://www.youtube.com/watch?v=It5P1hg44MQ
