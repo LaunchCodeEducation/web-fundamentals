@@ -6,15 +6,15 @@ currentMenu: classes
 ## Setup
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
-Read | Web page | [About This Unit](../../about/) | Read about the structure of this unit. In particular, pay attention to the details about curriculum resources and how you should utilize them most effectively.
+Read | Web page | [About This Unit](../../about/) | Read about the structure of this unit. In particular, pay attention to the details about curriculum resources and how you should utilize them effectively.
 
 ---
 
 ## HTML
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
-Do | Interactive Course | [Intro to the Web][intro-to-web-dev] | Watch all videos in this playlist, and do the associated quizzes (pause after a quiz video to answer it before moving to the next video).
-Do | Interactive Course | [Codecademy: HTML Basics][html-basics] | This section covers the very basics. You will already be familiar with most of it from your previous homework.
+Watch | Video Lessons | [Intro to the Web][intro-to-web-dev] | Watch all videos in this playlist, and do the associated quizzes (pause after a quiz video to answer it before moving to the next video).
+Do | Interactive Course | [Codecademy: HTML Basics][html-basics] | This section covers the very basics. You will already be familiar with most of it from the above videos.
 Do | Interactive Course | [Codecademy: Build Your Own Webpage][byowp] | Here you will apply the concepts from the previous section into a small project.
 
 [intro-to-web-dev]: https://www.youtube.com/playlist?list=PLs5n5nYB22fKTnh0l3f1AWjEJTEUufmcd
