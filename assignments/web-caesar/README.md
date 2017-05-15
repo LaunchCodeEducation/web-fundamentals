@@ -3,26 +3,269 @@ title: 'Assignment: Web Caesar'
 currentMenu: assignments
 ---
 
-1. Quickly familiarize yourself with the [Rot13 Quiz][rot13] from the Udacity class.
+In this assignment you'll implement a web-based version of the Caesar cipher that you wrote in Unit 1. It consists of the following sections:
 
-2. In the video tutorials below, we will go over our solution to a slightly more complicated version of that problem. Optionally, if you want to challenge yourself, you can attempt to solve the problem yourself before watching the solution.
+- [Git Repository Setup](#git-repository-setup)
+- [Creating a Virtual Environment](#creating-a-virtual-environment)
+- [Setting up a basic Flask app](#setting-up-a-basic-flask-app)
+- [Rendering a form](#rendering-a-form)
+- [Importing caesar code](#importing-caesar-code)
+- [Processing the form](#processing-the-form)
+- [Committing Your Work](#committing-your-work)
 
-    **IMPORTANT:** In order to receive credit, the project you ultimately submit *must solve our version* of the problem, as specified in the first video below.
+## Project and Repository Setup
 
-3. Follow along with the tutorial, and produce the same project yourself. The videos also include detailed explanations and digressions about what is happening.
+For this assignment, you will build the entire project from scratch. Future assignments will begin with some starter code, but you'll carry out each step of this assignment yourself.
 
+### Git repository setup
 
-[rot13]: https://classroom.udacity.com/courses/cs253/lessons/48756009/concepts/485384170923#
+From `~/lc101/`, create a new directory and initialize it as a Git repository.
 
----
+```nohighlight
+$ mkdir web-caesar
+$ cd web-caesar
+$ git init
+Initialized empty Git repository in /Users/chris/lc101/web-caesar/.git/
+```
 
+Now let's connect our local Git repository to a remote repository at GitHub. Visit [github.com](https://github.com/) and create a new repository from the menu at top-right.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/WNolcSkgnyc?list=PLs5n5nYB22fKReRAcO9TyF2OwnqvZTJlM" frameborder="0" allowfullscreen></iframe>
+<img src="images/new-repo.png" style="width:400px;" />
 
+Name the repository `web-caesar` and add a Python-specific `.gitignore` file.
 
-### Submit
+![Repository Settings](images/repo-settings.png)
 
-To turn in your assignment and get credit, submit in [the same manner that you did for Fortune Cookie][fortune-cookie]. You'll need to create a new project on GitHub and connect it to your local repository, and then follow the standard assignment instructions in [How to Submit][submission-instructions].
+After creating the repository, you'll be on the repository's home page. From there, copy the *Clone or Download* URL.
+
+<img src="images/clone-url.png" style="width:400px;" />
+
+Back in your terminal--be sure you're in the directory `~/lc101/web-caesar/`--connect your local repository to the new remote repository.
+
+```nohighlight
+$ git remote add origin https://github.com/chrisbay/web-caesar.git
+```
+
+You can verify the status of remote repository connections at any time by running `git remote -v`.
+
+```nohighlight
+$ git remote -v
+origin	https://github.com/chrisbay/web-caesar.git (fetch)
+origin	https://github.com/chrisbay/web-caesar.git (push)
+```
+
+### Creating a virtual environment
+
+Next, let's create a new virtual environment. We'll use this same environment for all future Unit 2 assignments, so we will give it the generic name `flask-env`.
+
+```nohighlight
+$ conda create -n flask-env
+Fetching package metadata .........
+Solving package specifications:
+Package plan for installation in environment /Users/chris/miniconda3/envs/flask-env:
+
+Proceed ([y]/n)? y
+
+#
+# To activate this environment, use:
+# > source activate flask-env
+#
+# To deactivate this environment, use:
+# > source deactivate flask-env
+#
+```
+
+<aside class="aside-note" markdown="1">
+Your environment may be located in a different, global location if you installed Miniconda for all users of your computer.
+</aside>
+
+Now activate the environment and install Flask.
+
+```nohighlight
+$ source activate flask-env
+(flask-env) $ conda install flask
+Fetching package metadata .........
+Solving package specifications: .
+
+Package plan for installation in environment /Users/chris/miniconda3/envs/flask-env:
+
+The following NEW packages will be INSTALLED:
+
+    click:        6.7-py36_0
+    flask:        0.12.1-py36_0
+    itsdangerous: 0.24-py36_0
+    jinja2:       2.9.6-py36_0
+    markupsafe:   0.23-py36_2
+    openssl:      1.0.2k-2
+    pip:          9.0.1-py36_1
+    python:       3.6.1-2
+    readline:     6.2-2
+    setuptools:   27.2.0-py36_0
+    sqlite:       3.13.0-0
+    tk:           8.5.18-0
+    werkzeug:     0.12.1-py36_0
+    wheel:        0.29.0-py36_0
+    xz:           5.2.2-1
+    zlib:         1.2.8-3
+
+Proceed ([y]/n)? y
+(flask-env) $
+```
+
+We'll have a single file in this project. Let's create it now.
+
+```nohighlight
+(flask-env) $ touch main.py
+```
+
+<aside class="aside-warning" markdown="1">
+When done working on this project, don't forget to either deactivate the virtual environment using `source deactivate`, or close your terminal window.
+</aside>
+
+## Your Tasks
+
+Open up the project in VS Code to get started: `code .`.
+
+### Setting up a basic Flask app
+
+We can start with the basic outline of the Hello, World app that you created previously. Go ahead and [grab the code from that tutorial](build-a-web-application-line-by-line). We recommend typing this code line-by-line until you're familiar with what each piece does. In fact, this is a good time to review the line-by-line explanation in the Hello, World tutorial!
+
+### Rendering a form
+
+Rather than display the "Hello World" message, we want our main view to display a form that looks like this.
+
+![Caesar Form](images/caesar-form.png)
+
+To do so, make a global variable named `form` above the `index` function, and set it's value to be the HTML displayed here.
+
+<script src="https://gist.github.com/chrisbay/b67a34a89639786a42e38fdbd0b6f4b9.js"></script>
+
+<aside class="aside-warning" markdown="1">
+Don't forget to enclose the form string in triple-quoutes `"""` so it can take up multiple lines.
+</aside>
+
+Now, fill out the body of the HTML string with a form that has these characteristics:
+
+1. The form uses the `POST` method.
+1. There are two inputs: a regular `input` with `type="text"` and a `textarea`.
+1. Set `name="rot"` on the `input` element and `name="text"` on the `textarea`.
+1. Has a label on the `input` element that looks something like the one in the screenshot above.
+1. The `input` element has the default value of 0.
+1. Has a submit button.
+
+In the `index` function, return the `form` variable.
+
+Now, start up your app and test:
+
+```nohighlight
+(flask-env) $ python main.py
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 955-679-937
+```
+
+You should see the form render, but submitting it will result in a "Method Not Allowed" error.
+
+### Importing caesar code
+
+Create a file for your Caesar cipher code: `touch caesar.py`. Now, either copy/paste your solution code from `caesar.py` from the Crypto assignment in Unit 1, or [grab ours](https://gist.github.com/chrisbay/496880de24bba4f532ed03211eff7294).
+
+In `main.py` import the `rotate_string` function from `caesar.py`:
+
+```python
+from caesar import rotate_string
+```
+
+We'll use this function in the next step.
+
+### Processing the form
+
+To process the form, define a new function `encrpyt` in `main.py`. Add an `@app.route` decorator to configure the function to receive requests at the root path `"/"`, and with `methods=['POST']`.
+
+When the form is submitted, the request will contain the parameters `rot` and `text`. In order to access these, we need Flask's `request` object. To import it, modify the topmost `import` statement to include this object.
+
+```python
+from flask import Flask, request
+```
+
+Within `encrypt`, store the values of these request parameters in local variables, converting data types as necessary. Then, encrypt the value of the `text` parameter using `rotate_string`. Return the encrypted string wrapped in `<h1>` tags.
+
+Before embarking on our final task, start up the application and test.
+
+### Rendering the form after encryption
+
+TODO - Implement `write_form`, render form after post, escape text with cgi.escape
+
+Start up your app, and test! The [Sanity Check](#sanity-check) section below contains some specific tests to look for.
+
+## Committing Your Work
+
+Let's wrap up by putting our file in the local Git repository. If you run `git status` you'll see that we have a directory that was created by Visual Studio Code.
+
+```nohighlight
+$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.vscode/
+	main.py
+  caesar.py
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+As before, we don't want to commit that `.vscode/` directory. So back in VS Code, add this line to the bottom of `.gitignore`:
+
+```nohighlight
+.vscode/
+```
+
+Then run `git status` again to see what's changed.
+
+```nohighlight
+$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.gitignore
+	main.py
+  caesar.py
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+Great! Now, add and commit the files.
+
+```nohighlight
+(flask-env) $ git add .
+(flask-env) $ git commit -m "Finish web caesar"
+[master (root-commit) 05bc1ae] inish web caesar
+ 2 files changed, 10 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 main.py
+```
+
+## Sanity Check
+
+Before turning in your work, make sure your application does the following:
+
+- After starting up the Flask application, a form with `input` and `textarea` elements is rendered when visiting `http://127.0.0.1:5000/`.
+- Submitting the form with a rotation integer and message results in the encrypted text being displayed. For example, rotating "The crow flies at midnight!" by 13 gives "Gur pebj syvrf ng zvqavtug!".
+- Rotation preserves spaces and punctuation.
+- Successively rotating by complementary amounts--e.g. 13 and 13, 10 and 16, 4 and 22, etc.--gives the same message that you started with.
+- Doing the above step with the message "</textarea>" works. In other words, when text is rotated into the string "</textarea>" it is properly escaped and displayed within the actual `textarea` element on the page.
+
+## Submit
+
+To turn in your assignment and get credit, follow the standard assignment instructions in [How to Submit][submission-instructions].
 
 [submission-instructions]: ../
-[fortune-cookie]: https://www.youtube.com/watch?v=Ef3wqVTZ3ms
