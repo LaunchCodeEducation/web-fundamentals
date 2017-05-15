@@ -9,7 +9,7 @@ As you've learned, debugging code is an essential part of coding. When it comes 
 
 In this course, we will mostly use Firefox as our browser. If you haven't installed Firefox, you can get it from [Mozilla](https://www.mozilla.org/en-US/firefox/new/). Other browsers have good developer tools as well (Chrome, in particular) but we're going to stick with Firefox. If you are more comfortable with another browser, you'll find that most of the developer tools functionality exists in other browsers' dev tools as well.
 
-Firefox's developer tools contain **a lot** of functionality, and we will only begin to touch on it here, learning about more if its functionality later in the unit. In this class, we'll learn about the tools available for working with HTML elements.
+Firefox's developer tools contain **a lot** of functionality, and we will only begin to touch on it here, learning more of its functionality later in the unit. In this class, we'll learn about the tools available for working with HTML elements.
 
 ## Walkthrough
 
@@ -17,7 +17,7 @@ Prior to the studio, the instructor will lead the class through an overview of s
 - How to open dev tools
 - Inspecting an HTML element
 - Modifying an element's HTML
-- The difference between the content displayed when using "View Source" and what's in the Inspector tab
+- The difference between the content displayed when using "View Source" and what's in the "Inspector" tab
 
 ## Making Headlines
 
@@ -36,7 +36,7 @@ If the site you are modifying was loaded over `https` and your image uses `http`
 <aside class="aside-pro-tip" markdown="1">
 If you want to use an image of your own that is not already available via the internet, here's how:
 - Upload the photo to a Dropbox account
-- View the photo on Dropbox.com and select *Share*, then *Get link*, then *Go to link*
+- View the photo on [Dropbox](https://www.dropbox.com/) and select *Share*, then *Get link*, then *Go to link*
 - You should now be viewing the image within Dropbox. Add `?raw=1` to the end of the URL in the location bar of your browser and hit Enter. The URL should look something like this:
     ```nohighlight
     https://www.dropbox.com/sc/qc3htnhv7fb3i2x/AAC5OzECOyBynstMDWawCZhxa?raw=1
@@ -49,4 +49,4 @@ If you want to use an image of your own that is not already available via the in
 ## Resources
 
 * [Using Firefox Developer Tools: Elements](https://www.youtube.com/watch?v=nV9PLPFTnkE)
-* [Firefox DevTools Documentation](https://developers.google.com/web/tools/Firefox-devtools/)
+* [Firefox DevTools Documentation](https://developer.mozilla.org/en-US/docs/Tools)
