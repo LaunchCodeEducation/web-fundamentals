@@ -6,8 +6,8 @@ currentMenu: classes
 Class # | Prep Work | Studio | Topics | Begin Assignment\*
 -----|-----------|----------|---------|------------------
 1 | [Prep Work](../class-prep/1/) | [Fake News](../studios/fake-news/) | HTML, Git basics | &nbsp;
-2 | [Prep Work](../class-prep/2/) | [Fireside Story](../studios/fireside-story/) | HTML, CSS, Git branches | [HTML Me Something](../assignments/html-me-something/)
-3 | [Prep Work](../class-prep/3/) | [FlickList 1](../studios/flicklist/1/) | HTTP / how the web works, Git remote repositories, Create a web app | &nbsp;
+2 | [Prep Work](../class-prep/2/) | [Fireside Story](../studios/fireside-story/) | HTML, CSS, Git branches and remote repositories | [HTML Me Something](../assignments/html-me-something/)
+3 | [Prep Work](../class-prep/3/) | [FlickList 1](../studios/flicklist/1/) | HTTP / how the web works, Create a web app | &nbsp;
 4 | Prep Work | [FlickList 2](../studios/flicklist/2/) | HTML forms and inputs | [Web Caesar](../assignments/web-caesar/)
 5 | Prep Work | [FlickList 3](../studios/flicklist/3/) | Validating forms, redirecting, HTML escaping | User Signup
 6 | Prep Work | [FlickList 4](../studios/flicklist/4/) | Templates | &nbsp;

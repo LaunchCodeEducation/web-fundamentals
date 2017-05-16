@@ -16,23 +16,6 @@ Do | Tutorial | [Hello Flask](../../tutorials/hello-flask/) | Learn how to creat
 Read | More Articles (optional) | - [The Internet][how-does-the-internet-work] <br> - [Domain Names][what-is-a-domain-name] | This is optional, but if you are itching to learn more, these topics are also important.
 
 
-## Git: Remote Repositories
-
-So far you have been using Git locally on your own computer. We will now introduce the concept of a "remote" repository, a Git repository that lives "in the cloud". A remote repo, hosted on a website such as Github.com, often functions as the central hub for a project, so that a developer can do work across multiple machines, or multiple developers can work collaboratively on the same project. In your upcoming assignments, you will use Github.com to submit your work.
-
-Task | Resource Type | Link | Instructions
-|----|---------------|------|-------------|
-Follow Along | eBook | [Tower Git: Introduction to Remote Repositories][tower-intro-remotes] | Just read this one article, not the entire *Part 3* chapter.
-Do | Tutorial | [Try Git][try-git] | This interactive website lets you type at a command-line in the browser, and will give you the chance to work hands-on with remotes, as well as getting more practice with the basics of Git.
-Read | Article | [Git SCM: Working with Remotes][scm-remotes] | This article talks about remote repositories and some of the main commands you will use to create them and stay synced up with them.
-Read | Article | (Optional) [Flatiron: Git Collaboration][flatiron-collab] | This article gives a good sense for the sorts of complex collaboration scenarios that you can maneuver by leveraging a good workflow with branches and remote repositories.
-
-[tower-intro-remotes]: https://www.git-tower.com/learn/git/ebook/en/command-line/remote-repositories/introduction#start
-[flatiron-collab]: https://learn.co/lessons/git-collaboration-readme
-[scm-remotes]: https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes
-[try-git]: https://try.github.io/
-
-[tower-part3]: https://www.git-tower.com/learn/git/ebook/en/command-line/remote-repositories/introduction#start
 
 [how-the-web-works-playlist]: https://www.youtube.com/playlist?list=PLs5n5nYB22fI1S93p2RnshUvcWLVJknWJ
 

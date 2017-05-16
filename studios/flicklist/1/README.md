@@ -94,7 +94,7 @@ Notice that you have a couple of TODOs, noted by comments. Completing these will
 
 If you complete the steps above, you should see that the "movie of the day" changes each time you refresh the page!
 
-Hopefully this gives you some sense for the difference between a static web site and a dynamic web app running on a server. Even something as simple as our "random movie of the day" page would be impossible to implement as a static site. In order to dynamically build HTML content "on the fly", like we did here, you need a programming language like Python running on the back-end.
+Hopefully this gives you some sense for the difference between a static web site and a dynamic web app running on a server. Even something as simple as our "random movie of the day" page would be impossible to implement as a static site. In order to dynamically build HTML content "on the fly", like we did here, you need a programming language like Python.
 
 ### Commit Your Changes
 
