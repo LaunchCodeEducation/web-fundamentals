@@ -6,7 +6,7 @@ currentMenu: studios
 
 This studio marks the beginning of our exploration of the mechanics and ideas involved in building full-stack web applications. The term **full-stack** simply means that we'll look at every aspect of web applications, from the pages that a user views and interacts with, to the Python code that decides how to handle user submissions and requests, to the database that stores information.
 
-Starting today, the majority of in-class sessions will revolve around building a class project together. Each day of class, we will add a little bit more onto the project: your instructor will live-code some new feature, and then for Studio you will be asked to add a little more.
+Starting today, the majority of in-class sessions will revolve around building a class project together. Each day of class, we will add a little bit more onto the project: your instructor will live-code some new feature, and then you will be asked to add a little more in the Studio.
 
 The mechanics of how you will work on Studios will be the same for nearly every class going forward, so we'll cover them in a bit more detail this time, as a proper introduction to this strategy.
 
@@ -21,19 +21,18 @@ During lecture, we will start the project, and talk about concepts along the way
 ### Hello, Movies!
 
 In class, we'll walk through the [Project Setup](#project-setup) steps (see below), and discuss the core concepts of web applications:
-* How is a dynamic web application different form a static website, and what can a dynamic web app do that a static site cannot?
-* What exactly is the application, and how does it "run"?
+* How is a dynamic web application different from a static website, and what can a dynamic web app do that a static site cannot?
+* What exactly is an application, and how does it "run"?
 * How do HTTP requests and responses work?
-* GET and POST requests types
-* Review of Python class syntax
-* Routes in a web application (i.e. how does a specific request get matched with a specific method)
+* What is the difference between GET and POST requests types, and when do we use each?
+* What are routes in a web application and how does a specific request get matched with a specific method?
 
-We'll also add a bit of code to display a new heading and a "Movie of the Day", which is really just a hard-coded string. You will make this more interesting during the studio.
+We'll also review Python class syntax and add a bit of code to display a new heading and a "Movie of the Day", which is really just a hard-coded string. You will make this more interesting during the studio.
 
 
 ### Project setup
 
-Let's do some setup work to get our project ready. We'll only have to do this once, today. Subsequent FlickList studios will require very little setup work.
+Let's do some setup work to get our project ready. We'll only have to do this once. Subsequent FlickList studios will require very little setup work.
 
 #### Clone the repository
 
@@ -63,7 +62,7 @@ Before you get started, fire up the FlickList app using `python main.py` and vis
 
 ![Walkthrough 1 Solution in Browser](walkthrough1-flicklist.png)
 
-If you don't see something like the above, make sure the venv is running and check the URL and port.
+If you don't see something like the above, make sure the virtual environment is running and check the URL and port.
 
 ### Your Task: Movie of the Day
 
@@ -86,7 +85,7 @@ Notice that you have a couple of TODOs, noted by comments. Completing these will
 2. Inside the `getRandomMovie` method, create a Python list that contains at least 5 movie title strings.
 
 3. In the same method, choose one of the titles randomly, and modify the return statement so that instead of the hard-coded value "The Big Lebowski", it returns the randomly selected title. Here are some tips:
-    * Recall that we can generate random numbers in Python with [the `random` module](https://docs.python.org/2/library/random.html). Add `import random` to the top of `main.py` to make this module available to our code. Read the module documentation to determine which method within the module is best for the task at hand.
+    * Recall that we can generate random numbers in Python with [the `random` module](https://docs.python.org/3.6/library/random.html). Add `import random` to the top of `main.py` to make this module available to our code. Read the module documentation to determine which method within the module is best for the task at hand.
     * Write your code so that if you were to add or remove some movies from your list, it will still randomly choose one, no matter how many items are in the list. In other words, your code should not contain a "magic number" like `5`.
 
 4. In addition to today's movie, add another section of the page that informs people what tomorrow's movie will be. Back in your `get` method, add another chunk of HTML to your response string. You can do the same basic thing again: an `<h1>` element, with an unordered list and list item elements underneath it.
