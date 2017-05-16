@@ -3,7 +3,7 @@ title: 'HTML Me Something, Part 2: CSS'
 currentMenu: assignments
 ---
 
-[< Back to Overview page](..)
+[< Back to Overview page](./)
 
 In Part 2, you'll get comfortable with using CSS selectors and rules to dictate display, while keeping your styles separate from your content.
 
@@ -11,18 +11,11 @@ In Part 2, you'll get comfortable with using CSS selectors and rules to dictate 
 
 1. Create a file named `styles.css` in your `html-me-something/` directory.
 
-2. **(This is optional.)** Add a normalization stylesheet (see the Resources section below; either of those will work). You can either put these normalization rules at the top of your `styles.css` or you can add another file in the same directory and link it in to your HTML doc. This will "reset" some of your browser's built-in (and often unsightly) styles so that you are starting with a cleaner slate when you add your own styles.
+2. **(This is optional.)** Add a normalization stylesheet (see the [Resources](#resources) section below; either of those will work). You can either put these normalization rules at the top of your `styles.css` or you can add another file in the same directory and link it in to your HTML doc. This will "reset" some of your browser's built-in (and often unsightly) styles so that you are starting with a cleaner slate when you add your own styles.
 
 ## Getting to Work
 
-Not much to say here; go ahead and start adding styles in your `styles.css` file!
-
-### Notes:
-
-* In order to see any visible change, make sure to link the stylesheet to your main document.
-* Feel free to check out our [styled example][styled-example] to see how we did things. Use "View Source" (by right-clicking anywhere on the page and selecting *View Source*).
-* Another thing you might find useful is your browser's [developer tools][dev-tools].
-* And be sure to use the [References](#references) section below as you go.
+Go ahead and start adding styles in your `styles.css` file!
 
 ### Requirements:
 
@@ -31,22 +24,29 @@ Here are some specific requirements you should fulfill:
     * Use at least one of each of the following types of selectors: [element](http://www.w3schools.com/cssref/sel_element.asp), [class](http://www.w3schools.com/cssref/sel_class.asp), [id](http://www.w3schools.com/cssref/sel_id.asp).
     * Don't break these rules:
         * At all costs, avoid adding HTML elements in order to achieve a specific visual effect.
-    	* Use document-level and inline styles sparingly, and only when absolutely necessary.
+        * Use document-level and inline styles sparingly, and only when absolutely necessary.
     * As before, be creative! Make your page look great, and don't settle for checking off the items above. Have a look at [CSS Zen Garden](http://www.csszengarden.com) for inspiration (use your browser's [developer tools][dev-tools] to see how those pages' styles are built).
+
+### Notes:
+
+* In order to see any visible change, make sure to link the stylesheet to your main document.
+* Feel free to check out our [styled example][styled-example] to see how we did things. Use "View Source" (by right-clicking anywhere on the page and selecting *View Source*).
+* Another thing you might find useful is your browser's [developer tools][dev-tools].
+* And be sure to use the Resources section below as you go.
 
 [styled-example]: http://education.launchcode.org/html-me-something/submissions/chrisbay/index.html
 
 [dev-tools]: https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools
 
-### Resources
+## Resources
 
-#### General CSS:
+### General CSS:
 * [w3schools CSS Reference](http://www.w3schools.com/css/default.asp)
 * [CSS Zen Garden](http://www.csszengarden.com)
 * (Advanced) [Specifics on CSS Specificity](https://css-tricks.com/specifics-on-css-specificity/)
 * (Advanced) [Specificity (MDN)](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity)
 
-#### CSS Normalization:
+### CSS Normalization:
 * [Eric Meyer's reset.css](http://meyerweb.com/eric/tools/css/reset/)
 * [normalize.css](http://necolas.github.io/normalize.css/)
 
