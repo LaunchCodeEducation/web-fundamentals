@@ -32,13 +32,13 @@
                                     </a>
                                 </li>
                                                             <li class=" lc-button">
-                                    <a href="http://education.launchcode.org/web-fundamentals/assignments/">
-                                        Assignments
+                                    <a href="http://education.launchcode.org/web-fundamentals/tutorials/">
+                                        Tutorials
                                     </a>
                                 </li>
                                                             <li class=" lc-button">
-                                    <a href="https://www.udacity.com/course/web-development--cs253">
-                                        Udacity CS253
+                                    <a href="http://education.launchcode.org/web-fundamentals/assignments/">
+                                        Assignments
                                     </a>
                                 </li>
                                                             <li class=" lc-button">
@@ -115,53 +115,97 @@
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Studio: FlickList 6</h1>
-                    <p>In this studio we will build persistence into our app. Finally, our hypothetical user will be able to add a new movie to the list, close the window and go eat a sandwich, forget what movie she wanted to watch, and then come running back to our site, and the same movie will still be faithfully sitting in her list so she can go stream it on our other awesome website, FlixNet.</p>
-<p>We'll start using a term and associated acronym that is common when connecting applications to databases, but isn't used in the Udacity course: <strong>object-relational mapping (ORM)</strong>. Applications store information in the form of <em>objects</em> and databases store data in the form of <em>relational data</em> (in tables). An ORM library or module will often so much of the heavy lifting for us, when it comes to translating back and forth between these differing contexts.</p>
+                    <p>In this studio we will build persistence into our app. Finally, our hypothetical user will be able to add a new movie to the list, close the window and go eat a sandwich, forget what movie she wanted to watch, and then come running back to our site, and the same movie will still be faithfully sitting in her list so she can go stream it on our other awesome website, FlicksNet.</p>
+<p>We'll start using a term and associated acronym that is common when connecting applications to databases: <strong>object-relational mapping (ORM)</strong>. Applications store information in the form of <em>objects</em> and databases store data in the form of <em>relational data</em> (tables). An ORM library or module will often so much of the heavy lifting for us, when it comes to translating back and forth between these differing contexts.</p>
 <h2 id="walkthrough">Walkthrough</h2>
-<h3 id="before-the-walkthrough">Before the Walkthrough</h3>
-<p>Between the last class and this one, we've made an important update to our app.</p>
+<p>Our first batch of changes will add code support our chosen ORM implementation, called SQLAlchemy. It'll teach SQLAlchemy about a new class we're making, called 'Movie', and lastly we'll hack our application so it can also be run as a type of library. This first bratch of changes is in the branch <code>walkthrough6a</code>, and you can see the differences from last time in the shell by typing <code>git diff walkthrough6 walkthrough6a</code>, or by <a href="https://github.com/LaunchCodeEducation/flicklist-flask/compare/walkthrough6...walkthrough6a" target="_blank">viewing them on github</a>.</p>
+<p>The most powerful line in this whole batch of changes is this:</p>
+<pre><code>def getCurrentWatchlist():
+    return [movie.name for movie in Movie.query.all()]
+</code></pre>
+<p>In order to make this work, we've got to have a movie table in our database. We'll do this through the python repl. We've trotted out the Python idiom of <code>if __name__ == "__main__":</code> to prevent <code>app.run()</code> from running when we load <code>main.py</code> as a module, now we can now safely import symbols from <code>main.py</code>:</p>
+<pre><code class="language-nohighlight">(flicklist) $ python
+&gt;&gt;&gt; from main import db, Movie
+/home/dm/miniconda3/envs/flicklist/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py:839: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+&gt;&gt;&gt; db.create_all()
+&gt;&gt;&gt; db.session.add(Movie('Mulan'))
+&gt;&gt;&gt; db.session.add(Movie('Rushmore'))
+&gt;&gt;&gt; db.session.add(Movie('Damsels in Distress'))
+&gt;&gt;&gt; db.session.commit()
+&gt;&gt;&gt; Movie.query.all()
+[&lt;Movie 'Mulan'&gt;, &lt;Movie 'Rushmore'&gt;, &lt;Movie 'Damsels in Distress'&gt;]
+</code></pre>
+<p>Now if we fire up our app and view it, we see those movies in our watchlist! Yeah!</p>
+<p>Let's play with the app though and inventory what needs to be done. </p>
 <ul>
-<li>Base <code>Handler</code> class
-<ul>
-<li>All handler classes that previously inherited from <code>webapp2.RequestHandler</code> now inherit from a base class called <code>Handler</code> (which itself inherits from <code>webapp2.RequestHandler</code>). We have dropped one method in there, <code>renderError</code>. This is nice because any of the subclasses can now use that method. And in the future we might add more methods here.</li>
-</ul></li>
+<li>Adding movies to the watchlist isn't <em>persistent</em> - if we type in a name and click <em>Add it</em>, then go back and reload, nothing has changed.</li>
+<li>Clicking on <em>I Watched It!</em> makes no persistant changes, either.</li>
+<li>Rating movies isn't persistent. </li>
 </ul>
-<h3 id="during-walkthrough">During Walkthrough</h3>
-<p>During the walkthrough, we will lay the groundwork for storing data, and begin to adapt our app to use data from the database. Here are some of the tasks that will be carried out.</p>
-<ul>
-<li>Import the <code>db</code> class from the <code>google.appengine.ext</code> module</li>
-<li>Create <code>Movie</code> model object
-<ul>
-<li>with <code>db</code> properties <code>title</code>, <code>watched</code>, <code>rating</code> and <code>created</code></li>
-</ul></li>
-<li>On <code>AddMovie</code> handler, create a movie object, and use <code>put</code> ORM method to save it to the datastore
-<ul>
-<li>From the admin panel, observe that it was indeed saved</li>
-</ul></li>
-<li>On <code>Index</code> handler, don't use <code>getUnwatchedMovies()</code> function. Instead use a GqlQuery on the database
-<ul>
-<li>Result should be one item in the list, but with no title. Why not? Gotta go to the <code>frontpage.html</code> template and adjust to use <code>movie.title</code> instead of just <code>movie</code>.</li>
-</ul></li>
-<li>Implement persistant &quot;watching&quot;
-<ul>
-<li>In the <code>WatchedMovie</code> handler, update <code>movie.watched</code> property to <code>True</code></li>
-<li>On the <code>frontpage.html</code> template, use <code>movie.key().id()</code> as the value for each hidden input</li>
-</ul></li>
-</ul>
+<p>Today we will change all these to be persistent. We'll walk through the first two together, then you'll handle the last one on your own.</p>
+<h3 id="a-list-of-movie-instances">A List of Movie Instances</h3>
+<p>Our next change is going to be a massive breaking change to our application. Up until now, we've been representing movies as strings of their names. The time has come to represent movies as instances of Movie. This will rip through our application, breaking lots of stuff. We'll rename lots of variables so it's clear when we're talking about Movies, and when we're talking about movie names. Follow along by either doing <code>git diff walkthrough6a walkthrough6b</code> or by <a href="https://github.com/LaunchCodeEducation/flicklist-flask/compare/walkthrough6a...walkthrough6b" target="_blank">viewing the diffs on github</a></p>
+<pre><code class="language-python">def getCurrentWatchlist():
+    # old: list of strings
+    return [movie.name for movie in Movie.query.all()]
+
+def getCurrentWatchlist():
+    # new: list of Movie instances
+    return Movie.query.all()</code></pre>
+<p>Notice how we have to rework templates to call <code>movie.name</code> when we want a human-readable version of the movie name, and <code>movie.id</code> when we want to reference a specific row in our movie table.</p>
+<p>In this batch of changes, we've changed our most importat data structure - movies - and we've made it possible to add movies to the watch list from the web broweser. Hooray! Cool stuff! The world is our oyster. </p>
+<h3 id="watching-movies">Watching Movies</h3>
+<p>In the next batch of changes, we'll modify the <em>I Watched It!</em> button to change the database, and truly cross off the movie in the database, persistently. You can view them by running the command <code>git diff walkthrough6b walkthrough6-solution</code> or by <a href="https://github.com/LaunchCodeEducation/flicklist-flask/compare/walkthrough6b...walkthrough6-solution" target="_blank">viewing the diffs on github</a>. We also finish our transition from strings to Movies by modifying the ratings templates.</p>
 <h2 id="studio">Studio</h2>
 <p>Now that we have some database functionality wired into our application, let's continue to convert our app to use the database. Our next task is to implement persistent ratings, so a user can rate a movie and the information is stored in the database for later.</p>
 <h3 id="checking-out-the-studio-code">Checking out the Studio code</h3>
 <p>Follow the <a href="../getting-the-code/">instructions for getting the code</a> in order to get the starter code for <code>studio6</code>.</p>
+<p>You should have already installed MAMP locally but if you need a refresher it is in <a href="/class-prep/8">Class 8 Prep Work</a>.</p>
 <h3 id="your-tasks">Your Tasks</h3>
 <ol>
-<li>In <code>MovieRatings.get</code> write a GQL query to select all the movies that have been watched
-<ul>
-<li>Extra credit: sort by creation date (most recent first).</li>
-</ul></li>
-<li>In <code>MovieRatings.post</code>, use the <code>Movie.get_by_id</code> ORM method to find the movie with the id specified by the form submission.</li>
-<li>In <code>MovieRatings.post</code>, update the movie's rating to the new rating specified by the form submission.</li>
-<li>In <code>rating-confirmation.html</code>, update the code so that it still works now that it is being given a movie <em>object</em>.</li>
+<li>Create mysql user and database</li>
+<li>Install conda packages</li>
+<li>Initialize your database</li>
+<li>Run the existing flicklist</li>
+<li>Modify flicklist to store movie ratings</li>
 </ol>
+<h3 id="create-mysql-user-and-database">Create mysql user and database</h3>
+<p>Now we will need to create a database locally (on your computer). We will use the same names as we did in the walkthrough. Go to phpMyAdmin in your browser and create a user named <em>flicklist</em> with the password <em>MyNewPass</em>. Check the box that says <em>Create database with same name and grant all privileges</em> then press the <em>Go</em> button in the bottom right-hand corner.</p>
+<p><img src="phpMyAdminCreateUserAndDatabase.png" alt="Create User And Database in phpMyAdin" /></p>
+<h3 id="install-conda-packages">Install conda packages</h3>
+<p>Make sure your flask environment is activated before installing.</p>
+<pre><code class="language-nohighlight">(flicklist) $ conda install -c conda-forge flask-sqlalchemy
+(flicklist) $ conda install pymysql</code></pre>
+<h3 id="initialize-your-database">Initialize your database</h3>
+<p>Reenact the python repl session from the walkthrough. Here it is again:</p>
+<pre><code>(flicklist) $ python
+&gt;&gt;&gt; from main import db, Movie
+/home/dm/miniconda3/envs/flicklist/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py:839: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+&gt;&gt;&gt; db.create_all()
+&gt;&gt;&gt; db.session.add(Movie('Mulan'))
+&gt;&gt;&gt; db.session.add(Movie('Rushmore'))
+&gt;&gt;&gt; db.session.add(Movie('Damsels in Distress'))
+&gt;&gt;&gt; db.session.commit()
+&gt;&gt;&gt; Movie.query.all()
+[&lt;Movie 'Mulan'&gt;, &lt;Movie 'Rushmore'&gt;, &lt;Movie 'Damsels in Distress'&gt;]</code></pre>
+<h3 id="run-the-existing-flicklist">Run the existing flicklist</h3>
+<p>Make sure your flask environment is activated and fire up your server first <code>$ python main.py</code>. In your browser, add one movie then cross it off. </p>
+<h3 id="modify-flicklist-to-store-movie-ratings">Modify flicklist to store movie ratings</h3>
+<ul>
+<li>Change <code>main.py</code>'s Movie model to have a ratings column.</li>
+<li>Drop the table through phpmyadmin, so you can make an incompatible change</li>
+<li>Reinitialize your database by reenacting the python repl session from the walkthrough again</li>
+<li>Change <code>main.py</code>s behavior when a user rates a movie - actually store the rating</li>
+<li>Display the ratings on the ratings page by prepopulating the select box with their old rating</li>
+</ul>
+<h3 id="give-yourself-a-hand">Give yourself a hand</h3>
+<p>If you made it this far, you've completed a challenging studio. Congratulations!  And if you don't get it right away, don't give up. Keep on trying: be <em>persistent</em>!</p>
+<aside class="aside-note">
+<p>If you want to test your queries in the mysql console, you can do so in the phpmyadmin interface. Go to the left tab and click on the database name <em>flicklist</em> then on the second-to-top row tab click <em>SQL</em>.
+<br>
+For those of you accustomed to accessing this via the command line, you will need to specify which mysql to use with a command like:</p>
+<pre><code>/Applications/MAMP/Library/bin/mysql -uflicklist -p</code></pre>
+</aside>
                                     </section>
 
             </div>

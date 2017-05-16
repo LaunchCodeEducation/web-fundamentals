@@ -32,13 +32,13 @@
                                     </a>
                                 </li>
                                                             <li class=" lc-button">
-                                    <a href="http://education.launchcode.org/web-fundamentals/assignments/">
-                                        Assignments
+                                    <a href="http://education.launchcode.org/web-fundamentals/tutorials/">
+                                        Tutorials
                                     </a>
                                 </li>
                                                             <li class=" lc-button">
-                                    <a href="https://www.udacity.com/course/web-development--cs253">
-                                        Udacity CS253
+                                    <a href="http://education.launchcode.org/web-fundamentals/assignments/">
+                                        Assignments
                                     </a>
                                 </li>
                                                             <li class=" lc-button">
@@ -134,8 +134,7 @@
 </ul>
 <p><strong>Responding to a form submission:</strong></p>
 <ul>
-<li>making a new <code>RequestHandler</code> subclass</li>
-<li>mapping it to a route on our app
+<li>map the request to a route on our app
 <ul>
 <li>this should match the <code>action</code> attribute on our form</li>
 <li>tuples</li>
@@ -174,24 +173,24 @@ Switched to a new branch 'studio2'</code></pre>
 </ol>
 <h3 id="your-task">Your Task</h3>
 <p>As mentioned above, your task is to implement a new feature for &quot;crossing off&quot; movies from the user's watchlist.</p>
-<p>Open up <code>main.py</code> in your text editor. You should see 4 <code># TODO</code> comments in the code:</p>
+<p>Open up <code>main.py</code> in your text editor. You should see 3 <code># TODO</code> comments in the code:</p>
 <ol>
 <li>
-<p><strong>Add a form</strong>. On the <code>Index</code> handler, include another <code>&lt;form&gt;</code> below the previous one. It should say something like:</p>
+<p><strong>Add a form</strong>. On the <code>Index</code> template, include another <code>&lt;form&gt;</code> below the previous one. It should say something like:</p>
 <blockquote>
 <p>I want to cross off ___ from my Watchlist.</p>
 </blockquote>
 <p>where the blank is a text box in which the user can type to specify the movie she wants to cross off.</p>
 </li>
 <li>
-<p><strong>Handle the form Submission.</strong> Make another <code>RequestHandler</code> subclass called <code>CrossOffMovie</code>, and implement your subclass with the necessary code to handle incoming submissions and respond appropriately. You should display a confirmation message like:</p>
+<p><strong>Handle the form Submission.</strong> Make another method called <code>CrossOffMovie</code> with the necessary code to handle incoming submissions and respond appropriately. You should display a confirmation message like:</p>
 <blockquote>
 <p><strike>Star Wars</strike> has been crossed off your Watchlist.</p>
 </blockquote>
 <p>You can use the <code>&lt;strike&gt;</code> tag to get that cool <strike>Strikethrough</strike> style of text.</p>
 </li>
 <li>
-<p><strong>Register your handler with the app.</strong> You will need to add a new url route for your app, and register your new handler as the one that should respond to incoming requests at that route.</p>
+<p><strong>Register a route to your method with the app.</strong> You will need to add a new url route for your app that should respond to incoming requests at that route.</p>
 </li>
 <li>
 <p><strong>Extra Credit: Use a dropdown instead of a text box.</strong> For deleting a movie from a pre-existing list, a text box does not really make sense, because the user could theoretically type anything, even something that is not even on her watchlist in the first place. A more sensible UI component would a dropdown, which only allows the user to choose from among a limited set of choices.</p>

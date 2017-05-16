@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Hello Flask :: Unit 2: Web Fundamentals</title>
+
+        <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/highlight.launchcode.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/main.css">
+        <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
+    </head>
+    <body id='page-hello-flask'>
+
+        <header class="navbar navbar-default navbar-fixed-top">
+
+            <ul class="nav navbar-nav">
+
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+                        <ul class="dropdown-menu">
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/classes/">
+                                        Classes
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/studios/">
+                                        Studios
+                                    </a>
+                                </li>
+                                                            <li class="active lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/tutorials/">
+                                        Tutorials
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/assignments/">
+                                        Assignments
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/cheatsheets/">
+                                        Cheatsheets
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/issues/">
+                                        Issues
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/about/">
+                                        About this Unit
+                                    </a>
+                                </li>
+                                                        <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">Search This Site</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                
+            </ul>
+
+            <div>
+                <a class="navbar-brand site-title navbar-center" href="http://education.launchcode.org/web-fundamentals/">
+                    <h1>Unit 2: Web Fundamentals</h1>
+                </a>
+            </div>
+
+            <div class="nav navbar-nav navbar-right">
+                <a class="navbar-brand dabomb" href="http://education.launchcode.org/web-fundamentals/"></a>
+            </div>
+
+        </header>
+
+        <!-- Search Modal -->
+        <div id="modalSearch" class="modal fade" role="dialog">
+           <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   <h4 class="modal-title">Search Unit 2: Web Fundamentals</h4>
+                </div>
+                <div class="modal-body">
+                    <script>
+                      (function() {
+                        var cx = "014657181352409571810:wecoswt6tpe";
+                        var gcse = document.createElement('script');
+                        gcse.type = 'text/javascript';
+                        gcse.async = true;
+                        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(gcse, s);
+                      })();
+                    </script>
+                    <gcse:search></gcse:search>
+                </div>
+                <div class="modal-footer">
+                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+           </div>
+        </div>
+
+        <main class="container-fluid">
+            <div class="row">
+
+                <section id="content" class="col-sm-offset-2 col-sm-8">
+                                        <h1>Hello Flask</h1>
+                    <h2 id="build-a-development-web-application">Build a Development Web Application</h2>
+<p>In this tutorial, we'll configure and build a web application. The
+configuration will be the hard part. When we're done, we'll be able to
+visit the server in our browser, and it will display this heartening message:</p>
+<p><img src="hello-world-browser-screenshot.png" alt="Hello World screenshot" /></p>
+<h3 id="founding-your-project-and-installing-software">Founding your project and installing software</h3>
+<p>Navigate to your <code>lc101</code> directory, make a directory for your project, and <code>cd</code> (change directory) into it:</p>
+<pre><code>$ mkdir hello-flask
+$ cd hello-flask</code></pre>
+<p>To download the flask library, we're going to need a way to store
+libraries. So that this doesn't cause version mismatch issues with
+other versions of Python on your system - including system libraries
+which might be using Python - we'll install a virtual environment and
+host all our libraries within it.</p>
+<aside class="aside-note">
+<p>Here, we're using the term &quot;virtual environment&quot; loosely. Rather than starting a full virtual machine, we're really just changing the PATH environment variable, which controls the order of directories that bash searches for programs.</p>
+<pre><code>(hello-flask) $ echo $PATH
+/home/dm/hello-flask/flask/bin:/home/dm/.rbenv/plugins/ruby-build/bin:/home/dm/.rbenv/shims:/home/dm/.rbenv/bin:/home/dm/bin:/home/dm/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin</code></pre>
+</aside>
+<p>To create a virtual environment with Conda, we'll do the following:</p>
+<ol>
+<li>In your <code>hello-flask/</code> directory, create a virtual environment named <code>hello-flask</code> like so:
+<code>conda create -n hello-flask</code></li>
+</ol>
+<p><img src="images/create-venv.png" alt="Create virtual environment" /></p>
+<ol start="2">
+<li>Activate the virtual environment using <code>source activate hello-flask</code></li>
+</ol>
+<p><img src="images/activate-venv.png" alt="Activate virtual environment" /></p>
+<ol start="3">
+<li>Install flask into your virtual environment with the command <code>conda install flask</code></li>
+</ol>
+<p><img src="images/install-flask.png" alt="Install flask" /></p>
+<p><em>Tip:</em> If you need to deactivate the virtual environment, use the command <code>source deactivate</code>.</p>
+<p><img src="images/deactivate-venv.png" alt="Deactivate virtual environment" /></p>
+<aside class="aside-note">
+<p>The above pictures show how these commands will look in Git Bash. Mac Terminal will look slightly different.</p>
+</aside>
+<p>Now we're ready to build our web application!</p>
+<h3 id="build-a-web-application-line-by-line">Build a web application, line by line</h3>
+<p>First, let's initialize this project as a Git repository.</p>
+<pre><code class="language-nohighlight">$ git init</code></pre>
+<p>From your <code>~/lc101/hello-flask/</code> directory, create a new file named <code>main.py</code> and then open up the project in Visual Studio Code.</p>
+<pre><code class="language-nohighlight">$ touch main.py
+$ code .</code></pre>
+<aside class="aside-note">
+<p>The name <code>main</code> isn't special, we just picked it. Since this will be the &quot;main&quot; file that will need to be run for our application to start up, it makes sense.</p>
+</aside>
+<p>Open <code>main.py</code> in the code editor. Then type this in, considering each line as you do:</p>
+<pre><code class="language-python">from flask import Flask
+
+app = Flask(__name__)
+app.config['DEBUG'] = True
+
+@app.route("/")
+def index():
+    return "Hello World"
+
+app.run()
+</code></pre>
+<p>What's all this do?</p>
+<ul>
+<li><code>from flask import Flask</code>: this imports the <code>Flask</code> class from the <code>flask</code> module.</li>
+<li><code>app = Flask(__name__)</code>: app will be the object created by the constructor <code>Flask</code>. <code>__name__</code> is a variable controlled by Python that tells code what module it's in.</li>
+<li><code>app.config['DEBUG'] = True</code>: the <code>DEBUG</code> configuration setting for the Flask application will be enabled. This enables some behaviors that are helpful when developing Flask apps, such as displaying errors in the browser, and ensuring file changes are reloaded while the server is running (aka &quot;host swapping&quot;)</li>
+<li><code>@app.route("/")</code>: this is a decorator that creates a mapping between the path - in this case the root, or  &quot;/&quot;, and the function that we're about to define</li>
+<li><code>def index():</code>: Ah, familiar ground! We define <code>index</code>, a function of zero variables</li>
+<li><code>return "Hello World"</code>: Our function returns a string literal.</li>
+<li><code>app.run()</code>: Pass control to the Flask object. The run function loops forever and never returns, so put it last. It carries out the responsibilities of a web server, listening for requests and sending responses over a network connection.</li>
+</ul>
+<p>Here goes. Go to your terminal and start things up. The output should look like:</p>
+<pre><code class="language-bash">$ python main.py
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)</code></pre>
+<p>From the computer running this process, point your browser at <a href="http://localhost:5000/" target="_blank">http://localhost:5000/</a> and see what's up. Maybe this?!</p>
+<p><img src="hello-world-browser-screenshot.png" alt="Hello World screenshot" /></p>
+<p>If so: congrats! You've built a dynamic web app!</p>
+<aside class="aside-note">
+<p>If that didn't work for you, refer to some common errors and fixes below, and carefully retrace the steps.</p>
+</aside>
+<p>Go back to the terminal and note that there's an extra line now:</p>
+<pre><code class="language-bash">$ python main.py
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+127.0.0.1 - - [10/Apr/2017 17:02:19] "GET / HTTP/1.1" 200 -</code></pre>
+<p>The HTTP request you made to the Flask application server has been logged. In particular, notice the request line, <code>GET / HTTP/1.1</code>, and response code of 200. Neat, huh?</p>
+<p>To stop the application, do as suggested in the terminal output and press <code>CTRL+C</code></p>
+<h3 id="committing-our-file">Committing Our File</h3>
+<p>Let's wrap up by putting our file in the local Git repository. If you run <code>git status</code> you'll see that we have a directory that was created by Visual Studio Code.</p>
+<pre><code class="language-nohighlight">$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+
+    .vscode/
+    main.py
+
+nothing added to commit but untracked files present (use "git add" to track)</code></pre>
+<p>We don't want to put this in our repository, so let's create a <code>.gitignore</code> file so we can, well, tell Git to ignore it.</p>
+<pre><code class="language-nohighlight">$ touch .gitignore</code></pre>
+<p>Back in VS Code, add this line to <code>.gitignore</code>:</p>
+<pre><code class="language-nohighlight">.vscode/</code></pre>
+<p>Then run <code>git status</code> again to see what's changed.</p>
+<pre><code class="language-nohighlight">$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+
+    .gitignore
+    main.py
+
+nothing added to commit but untracked files present (use "git add" to track)</code></pre>
+<p>Great! Now, add and commit the files.</p>
+<pre><code class="language-nohighlight">$ git add .
+$ git commit -m "Create Hello World app"
+[master (root-commit) 05bc1ae] Create Hello World app
+ 2 files changed, 10 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 main.py</code></pre>
+<h4 id="common-errors">Common Errors</h4>
+<p><em>Virtual environment not activated</em></p>
+<p>If you see this error:</p>
+<pre><code class="language-nohighlight">Traceback (most recent call last):
+  File "main.py", line 1, in &lt;module&gt;
+    from flask import Flask
+ImportError: No module named flask</code></pre>
+<p>This means your virtual environment was not activated. Enter this command to start it: <code>source activate hello-flask</code> and then try again.</p>
+<p><em>Trying to run the app from the wrong directory</em></p>
+<p>If you see this error:</p>
+<pre><code class="language-nohighlight">$ python main.py
+python: can't open file 'main.py': [Errno 2] No such file or directory</code></pre>
+<p>Then your working directory is something other than where you put the <code>main.py</code> file (which is most likely <code>~/lc101/hello-flask/</code>). Use <code>pwd</code> to figure out where you are, and adjust accordingly.</p>
+                                    </section>
+
+            </div>
+        </main>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/web-fundamentals/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/web-fundamentals/js/highlight.pack.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/web-fundamentals/js/libgif.js"></script>
+
+        <script>
+            $(function() {
+                $("section>h1").wrap('<div class="page-header" />');
+
+                // Syntax highlighting
+                hljs.configure({ displayLabels: true });
+                hljs.initHighlightingOnLoad();
+            });
+        </script>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', "UA-78748330-3", 'auto');
+            ga('send', 'pageview');
+
+        </script>
+
+    </body>
+</html>

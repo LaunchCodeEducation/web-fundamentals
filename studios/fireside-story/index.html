@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Studio: Fireside Story :: Unit 2: Web Fundamentals</title>
+
+        <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/highlight.launchcode.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/main.css">
+        <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
+    </head>
+    <body id='page-studio-fireside-story'>
+
+        <header class="navbar navbar-default navbar-fixed-top">
+
+            <ul class="nav navbar-nav">
+
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+                        <ul class="dropdown-menu">
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/classes/">
+                                        Classes
+                                    </a>
+                                </li>
+                                                            <li class="active lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/studios/">
+                                        Studios
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/tutorials/">
+                                        Tutorials
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/assignments/">
+                                        Assignments
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/cheatsheets/">
+                                        Cheatsheets
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/issues/">
+                                        Issues
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/about/">
+                                        About this Unit
+                                    </a>
+                                </li>
+                                                        <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">Search This Site</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                
+            </ul>
+
+            <div>
+                <a class="navbar-brand site-title navbar-center" href="http://education.launchcode.org/web-fundamentals/">
+                    <h1>Unit 2: Web Fundamentals</h1>
+                </a>
+            </div>
+
+            <div class="nav navbar-nav navbar-right">
+                <a class="navbar-brand dabomb" href="http://education.launchcode.org/web-fundamentals/"></a>
+            </div>
+
+        </header>
+
+        <!-- Search Modal -->
+        <div id="modalSearch" class="modal fade" role="dialog">
+           <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   <h4 class="modal-title">Search Unit 2: Web Fundamentals</h4>
+                </div>
+                <div class="modal-body">
+                    <script>
+                      (function() {
+                        var cx = "014657181352409571810:wecoswt6tpe";
+                        var gcse = document.createElement('script');
+                        gcse.type = 'text/javascript';
+                        gcse.async = true;
+                        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(gcse, s);
+                      })();
+                    </script>
+                    <gcse:search></gcse:search>
+                </div>
+                <div class="modal-footer">
+                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+           </div>
+        </div>
+
+        <main class="container-fluid">
+            <div class="row">
+
+                <section id="content" class="col-sm-offset-2 col-sm-8">
+                                        <h1>Studio: Fireside Story</h1>
+                    <h2 id="getting-ready-code-together">Getting Ready: Code Together</h2>
+<p>Coding together allows you to work as a team so you can build bigger projects, faster.</p>
+<p>In this studio, we will practice common git commands necessary when
+multiple people are developing on the same code base. Today, you will
+start out coding in tag-team shifts, and by the end you should have
+a good idea of how to both be working on the same code at the same
+time. You will learn how to:</p>
+<ul>
+<li>Quickly add Code in Pull + Push Cycles <em>(Important! This is the fundamental process we'll be practicing!)</em></li>
+<li>Add a Collaborator to a Github Project</li>
+<li>Sharing Repositories on GitHub</li>
+<li>Create a Branch in Git</li>
+<li>Create a Pull Request in GitHub</li>
+<li>Resolve Merge Conflicts</li>
+</ul>
+<p>This lesson reinforces</p>
+<ul>
+<li>Creating Repositories</li>
+<li>Cloning Repositories</li>
+<li>Working with Git Concepts: Staging, Commits, and Status</li>
+</ul>
+<h2 id="walkthrough">Walkthrough</h2>
+<p>The instructor will discuss why Github is worth their study. You already know how to use a local git repository with one branch, giving you the ability to move your code forward and backward in time. Working with branches on GitHub allows multiple people to build features at the same time. Pull Requests act as a checkpoint when code flows from branch to branch.</p>
+<p>Students <em>must</em> pair off for this exercise. If you have trouble finding a partner, ask your TF for help.</p>
+<h2 id="studio">Studio</h2>
+<p>We are going to play a game. We will play it just like you'd play around a campfire, but on a web page.</p>
+<p>First, find a new friend to play the game with.</p>
+<p>Feel free to share your story in the <code>#showcase</code> channel on Slack, and see what others have created!</p>
+<p>You and your partner will alternate tasks, so designate one of you as <strong>Player 1</strong> and the other as <strong>Player 2</strong>. Even when it is not your turn to complete a task, read and observe what your partner is doing to completed theirs. The steps here mimic how a real-world collaborative Git workflow can be used within a project.</p>
+<h4 id="player-1">Player 1</h4>
+<h3 id="create-a-new-repository">Create a New Repository</h3>
+<p>Navigate to your development folder. Follow these instructions to create a new project.</p>
+<pre><code class="language-nohighlight">$ mkdir fireside-story
+$ cd fireside-story
+$ git init</code></pre>
+<p>In that directory, open a new file <code>index.html</code> in the editor of your choice. Paste in this code:</p>
+<pre><code class="language-html">&lt;html&gt;
+  &lt;body&gt;
+    &lt;p&gt;It was a dark and stormy night...&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>Let's check that our html looks okay by opening it in a browser. You can do this by selecting File &gt; Open File in your web browser, and navigating to the location of your new HTML file. The URL will look something like this: <code>file:///Users/cheryl/Development/fireside-story/index.html</code>.</p>
+<p>Once you've seen this file in the browser, let's stage and commit it.</p>
+<pre><code class="nohighlight" style="color: #333">$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+    <span style="color: red">index.html</span>
+
+nothing added to commit but untracked files present (use "git add" to track)</file></code></pre>
+<p>The file is not staged. Let's add everything in this directory.</p>
+<pre><code class="nohighlight" style="color: #333">$ git add .
+$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+    <span style="color: green">new file:   index.html</span>
+
+</file></code></pre>
+<p>We see that the file is staged. Let's commmit.</p>
+<pre><code class="language-nohighlight">$ git commit -m 'started story'
+[master (root-commit) e1c1719] started story
+ 1 file changed, 5 insertions(+)
+  create mode 100644 index.html
+$ git log
+commit 679de772612099c77891d2a3fab12af8db08b651
+Author: Cheryl &lt;cherylschaefer@gmail.com&gt;
+Date:   Wed Apr 5 10:55:56 2017 -0500
+
+    started story
+</code></pre>
+<p>Great! We've got our project going locally, but we're going to need to make it accessible for player 2 also. Let's push this project up to Github.</p>
+<h3 id="share-your-repository-on-github">Share Your Repository On GitHub</h3>
+<p>Go to your Github profile in a web browser. Click on the + button to add a new repository ('repo').</p>
+<p><img src="CreateAGithubRepo.png" alt="Create a new repository in Github" /></p>
+<p>Fill in the name and description. Uncheck the &quot;initialize with README&quot;. Click <em>Create Repository</em>.</p>
+<aside class="aside-warning">
+<p>If you initialize with a README, in the next step Git will refuse to merge this repo with the local repo. There's ways around that, but it's faster and easier to just create an empty repo here. </p>
+</aside>
+<p><img src="StartingARepo.png" alt="Connecting to a repository in Github" /></p>
+<p>Now go back to your terminal and follow the instructions shown on Github which should be very similar to this:</p>
+<pre><code class="language-nohighlight">$ git remote add origin git@github.com:cherylschaefer/fireside-story.git
+$ git push origin master</code></pre>
+<p>Now you should be able to confirm that Github has the same version of the project you have locally. (File contents in browser match those in terminal.) Click around and see what is there. You can read all your code through GitHub's web interface.</p>
+<p><img src="Repo1Commit.png" alt="A repository with one commit in Github" /></p>
+<h4 id="player-2">Player 2</h4>
+<h3 id="clone-a-project-from-github">Clone a Project from GitHub</h3>
+<p>Go to player 1's github profile and find the fireside-story repo. Click on the green <em>Clone or download</em> button. Use SSH and not HTTPS. Copy the url to your clipboard.</p>
+<p><img src="CloneRepo.png" alt="Cloning a repository in Github" /></p>
+<p>In your terminal, navigate to your development folder and clone down the repo. The command should look something like this.</p>
+<pre><code class="language-nohighlight">git clone git@github.com:cherylschaefer/fireside-story.git</code></pre>
+<p>Now you can add a line to the story! Open the <code>index.html</code> file in your editor and add the next line of the story. Be creative -- the story can go anywhere! Just don't talk about what to write with your partner. Then commit your change.</p>
+<pre><code class="language-nohighlight">$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean
+$ git add index.html
+$ git commit -m 'added second line of story'</code></pre>
+<p>Now we need to push up your changes so player 1 can use them as well.</p>
+<pre><code class="language-nohighlight">$ git push origin master
+ERROR: Permission to cherylschaefer/fireside-story.git denied to player2.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.</code></pre>
+<p>Great error message! It let us know exactly what went wrong - player 2 does not have security permissions to write to player 1's repo. Let's go fix that.</p>
+<h4 id="player-1-1">Player 1</h4>
+<h3 id="add-a-collaborator-to-a-github-project">Add A Collaborator To A GitHub Project</h3>
+<p>In your web browser, go to your fireside-story repo. Click the <em>Settings</em> button then click on <em>Collaborators</em>. Enter in player 2's Github username and click <em>Add Collaborator</em>.</p>
+<p><img src="RepoSettingsAddCollaborator.png" alt="Add a collaborator to your repo in Github" /></p>
+<h4 id="player-2-1">Player 2</h4>
+<p>You should receive an email invitation to receive permissions to this repo from player 1 through Github.</p>
+<p><img src="InvitedToGithubRepo.png" alt="Invited to collaborate email in Github" /></p>
+<p>Now let's go enter that command again to push up our code.</p>
+<pre><code class="language-nohighlight">$ git push origin master
+Counting objects: 9, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 1.01 KiB | 0 bytes/s, done.
+Total 9 (delta 8), reused 0 (delta 0)
+remote: Resolving deltas: 100% (8/8), completed with 8 local objects.
+To git@github.com:player2/fireside-story.git
+   511239a..679de77  master -&gt; master</code></pre>
+<p>Anyone reading the html through GitHub's browser interface should now see the new second line.</p>
+<h4 id="player-1-2">Player 1</h4>
+<p>Player 1 you might notice you don't have the second line on your computer. Go to the terminal and enter this command to pull that updated code in locally.</p>
+<pre><code class="language-nohighlight">$ git pull origin master
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From github.com:cherylschaefer/fireside-story
+   e0de62d..e851b7e  master     -&gt; origin/master
+Updating e0de62d..e851b7e
+Fast-forward
+ index.html | 1 +
+ 1 file changed, 1 insertion(+)</code></pre>
+<p>Now go in your editor, add a third line of story and push it up. You can have your story go anywhere! Try to tie it in with what the other player wrote, without discussing with them any plans on where the story will go.</p>
+<p>Stage, commit and push your change.</p>
+<h4 id="player-2-2">Player 2</h4>
+<p>Player 2 you might notice now <em>you</em> don't have the third line on your computer. Go to the terminal and enter this command to pull that updated code in locally.</p>
+<pre><code class="language-nohighlight">$ git pull origin master
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From github.com:cherylschaefer/fireside-story
+   e851b7e..167684c  master     -&gt; origin/master
+Updating e851b7e..167684c
+Fast-forward
+ index.html | 1 +
+ 1 file changed, 1 insertion(+)</code></pre>
+<p>Now go in your editor, add and commit a fourth line of story and push it up. Again: be creative, but no planning!</p>
+<p>You can both play like this for a while! But let's say player 2 wants to work a little extra on the project. You're not sure player 1 is keen on this change so let's put it in a branch. Branches are often used to organize new feature development.</p>
+<h3 id="create-a-branch-in-git">Create a Branch In Git</h3>
+<pre><code class="language-nohighlight">$ git checkout -b darker
+Switched to a new branch 'darker'</code></pre>
+<p>Open a new file <code>style.css</code> and paste this code in:</p>
+<pre><code>body {
+  color: white;
+  background-color: black;
+}</code></pre>
+<p>Now link it in <code>index.html</code>. It should look something like this:</p>
+<pre><code class="language-html">&lt;html&gt;
+  &lt;head&gt;
+    &lt;link rel="stylesheet" type="text/css" href="style.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;It was a dark and stormy night...&lt;/p&gt;
+    ... your content here
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>Now stage and commit the new file and changes to the existing file.</p>
+<pre><code class="language-nohighlight">$ git add .
+$ git commit -m 'added style.css'
+$ git push origin darker</code></pre>
+<p>You should both now be able to see a second branch appear in your repo in the browser. On your command line, you can type this command to see a list of the available branches:</p>
+<pre><code class="language-nohighlight">$ git branch
+* darker
+  master</code></pre>
+<p>Great! Now let's show the other player your work in GitHub and ask them to merge it in to the main branch.</p>
+<h3 id="create-a-pull-request-in-github">Create a Pull Request In GitHub</h3>
+<p>In your browser, go to the github project. Click on <em>branches</em> and the new branch name, <em>darker</em>.</p>
+<p><img src="BranchesButton.png" alt="Branches Button in GitHub" />
+<img src="branches.png" alt="Branches Page in GitHub" /></p>
+<p>If you are happy with your changes, click <em>New Pull Request</em>. Add some text in the description box to let player 1 know what you did and why.</p>
+<p><img src="pr-details.png" alt="Open a PR in Github" /></p>
+<p>This is what an opened pull request looks like:</p>
+<p><img src="pr-created.png" alt="Create a PR in Github" /></p>
+<h4 id="player-1-3">Player 1</h4>
+<p>You will notice that you do not see this new <code>style.css</code> file locally. Type this command to see what branches are on your local coputer:</p>
+<pre><code class="language-nohighlight">$ git branch
+* master</code></pre>
+<p>If you want to work with the branch before merging it in, you can do so by typing these commands:</p>
+<pre><code class="language-nohighlight">$ git fetch
+...
+$ git branch
+  darker
+* master</code></pre>
+<pre><code class="language-nohighlight">$ git checkout darker
+Switched to branch 'darker'
+Your branch is up-to-date with 'origin/darker'.</code></pre>
+<p>Make a change and commit to this branch if you'd like -- you will see that the pull request in Github is updated to reflect the changes you've added. The context in the description box is not though, so be sure to add comments to the pull request to explain what you did and why.</p>
+<p>To go back to the main branch type these commands:</p>
+<pre><code class="language-nohighlight">$ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.</code></pre>
+<p>You will see your files no longer have those changes that are in the darker branch. Let's go merge those changes in, so that the master branch adopts all the changes in the darker branch.</p>
+<p>Go to the repo in Github. Click on <code>Pull Requests</code>. Explore here and see all the information Github shows you about the changes made.</p>
+<p><img src="RepoPR1.png" alt="PR Open in Github" /></p>
+<p>When you're happy with the changes, merge them in. Click <em>Merge Pull Request</em> then <em>Confirm Merge</em>.</p>
+<p><img src="RepoMergePR.png" alt="Merge a Pull Request in Github" />
+<img src="PRConfirmMerge.png" alt="Confirm PR Merge in Github" /></p>
+<p>You should see this screen to show success:</p>
+<p><img src="PRMerged.png" alt="PR Merged in Github" /></p>
+<p>Now you will need to pull updates to your master branch locally.</p>
+<pre><code class="language-nohighlight">$ git branch master
+$ git pull origin master</code></pre>
+<p>Git is able to merge these files on its own.</p>
+<h3 id="what-happens-if-you-both-edit-the-same-thing">What happens if you both edit the same thing?</h3>
+<h3><img src="git-merge.gif" alt="Git Merge Conflicts" /></h3>
+<h4 id="player-2-3">Player 2</h4>
+<p>Let's change something about the style file. Our html is looking pretty plain. Let's pick a nice font and add some margins. Paste in something like this:</p>
+<p>Add another link to your <code>index.html</code> file, right by the first link:</p>
+<pre><code class="language-html">     &lt;link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet"&gt;</code></pre>
+<p>And spice up your <code>style.css</code> file to look like this:</p>
+<pre><code class="language-css">body {
+  color: white;
+  background-color: #333;
+  font-size: 150%;
+  font-family: 'Satisfy', cursive;
+  margin: 5em 25%;
+}</code></pre>
+<p>The result:</p>
+<p><img src="AddSatisfyFont.png" alt="Satisfying!" /></p>
+<p>Commit your changes and push it up to GitHub. If you don't remember how to do this, follow the instructions above. Make sure you're back in the <code>master</code> branch - if you're still in <code>darker</code>, then your changes will be isolated and we won't get the merge conflict you want to learn about.</p>
+<p>Meanwhile...</p>
+<h4 id="player-1-4">Player 1</h4>
+<p>Let's change something about the style file that Player 2 just edited. Change it to look like this:</p>
+<pre><code>body {
+  color: white;
+  background-color: black;
+  font-family: 'Sacramento', cursive;
+  font-size: 32px;
+  margin-top: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
+}</code></pre>
+<p>Don't forget to link the new font in your <code>index.html</code> file, beside the other link:</p>
+<pre><code>  &lt;link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet"&gt;</code></pre>
+<p>Commit your changes to branch <code>master</code> and push it up to GitHub. You should get an error message, how exciting!</p>
+<pre><code class="language-nohighlight">$ git push
+
+To git@github.com:cherylschaefer/fireside-story.git
+ ! [rejected]        master -&gt; master (fetch first)
+error: failed to push some refs to 'git@github.com:cherylschaefer/fireside-story.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+</code></pre>
+<p>Let's look around and see what's happening.</p>
+<pre><code class="language-nohighlight">$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+nothing to commit, working directory clean</code></pre>
+<p>Let's pull these outstanding changes into our branch and resolve the errors.</p>
+<pre><code class="language-nohighlight">$ git pull
+remote: Counting objects: 4, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 1), reused 4 (delta 1), pack-reused 0
+Unpacking objects: 100% (4/4), done.
+From github.com:cherylschaefer/fireside-story
+   7d7e42e..0c21659  master     -&gt; origin/master
+Auto-merging style.css
+CONFLICT (content): Merge conflict in style.css
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.</code></pre>
+<p>Git could not figure out how to merge files where it says <code>CONFLICT</code> so we will have to edit them ourselves. Let's start with <code>style.css</code>.</p>
+<pre><code>body {
+  color: white;
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+  background-color: black;
+  font-family: 'Sacramento', cursive;
+  font-size: 32px;
+  margin-top: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
+=======
+  background-color: #333;
+  font-size: 150%;
+  font-family: 'Satisfy', cursive;
+  margin: 5em 25%;
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 0c2165931f5f668959bad92d2f744efb402e049d
+}</code></pre>
+<p>At the top and bottom, there is some code that could be merged without issue.
+<br/>
+<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> to <code>=======</code> is the version of the code that existed locally.
+<br/>
+<code>=======</code> to <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; 0c2165931f5f668959bad92d2f744efb402e049d</code> is the version of the code that was pulled in (the hash will be unique to the commit).
+<br/>
+Let's unify our code -- make sure to remove the Git markers.</p>
+<pre><code>body {
+  color: white;
+  background-color: black;
+  font-family: 'Sacramento', cursive;
+  font-size: 150%;
+  margin: 5em 25%;
+}</code></pre>
+<p>You will need to do the same thing for the <code>index.html</code> file. You only need the link for <em>Sacramento</em>, not <em>Satisfy</em>. Commit again and push it up; you should not see an error message.</p>
+<h4 id="player-2-4">Player 2</h4>
+<p>Meanwhile, Player 2 is sitting home, minding their own business. A random <code>git status</code> seems reassuring:</p>
+<pre><code class="language-nohighlight">$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean</code></pre>
+<p>Your local git thinks the status is quo. Little does it know that up at GitHub, the status is not quo. We'd find this out by doing either a <code>git fetch</code>, or if we just want the latest version of this branch, <code>git pull</code>:</p>
+<pre><code class="language-nohighlight">$ git pull
+remote: Counting objects: 13, done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 13 (delta 4), reused 13 (delta 4), pack-reused 0
+Unpacking objects: 100% (13/13), done.
+From github.com:cherylschaefer/fireside-story
+   0c21659..e0de62d  master     -&gt; origin/master
+Updating 0c21659..e0de62d
+Fast-forward
+ index.html | 3 ++-
+ style.css  | 4 ++--
+ 2 files changed, 4 insertions(+), 3 deletions(-)</code></pre>
+<p>Great Scott! Looks like Player 1 changed both <code>index.html</code> and <code>style.css</code>. Note that <em>player 2</em> didn't have to deal with the hassle of resolving merge conflicts. Since Player 1 intervened, git assumes that the team is okay with the way they resolved it, and <strong>fast forwards</strong> our local repo to be in sync with the upstream one. Let's look at <code>style.css</code> to make sure:</p>
+<pre><code class="language-css">body {
+  color: white;
+  background-color: black;
+  font-family: 'Sacramento', cursive;
+  font-size: 150%;
+  margin: 5em 25%;
+}</code></pre>
+<p><br/>
+Now make more changes but let Player 1 push up first so Player 2 can practice resolving the merge conflict.</p>
+<p>Merge conflicts are a part of developing in a team. Resolve them carefully, so that they don't cause bugs in your code.</p>
+<p><em>Optional</em>: share your story in the <code>#fireside-story</code> channel on Slack, and see what others have created!</p>
+<h3 id="resources">Resources</h3>
+<ul>
+<li><a href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging" target="_blank">Git Branching - Basic Branching and Merging</a></li>
+<li><a href="https://help.github.com/articles/inviting-collaborators-to-a-personal-repository/" target="_blank">Adding Another Person To Your Repository</a></li>
+<li><a href="https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/" target="_blank">Resolving Conflicts In the Command Line</a></li>
+</ul>
+                                    </section>
+
+            </div>
+        </main>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/web-fundamentals/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/web-fundamentals/js/highlight.pack.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/web-fundamentals/js/libgif.js"></script>
+
+        <script>
+            $(function() {
+                $("section>h1").wrap('<div class="page-header" />');
+
+                // Syntax highlighting
+                hljs.configure({ displayLabels: true });
+                hljs.initHighlightingOnLoad();
+            });
+        </script>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', "UA-78748330-3", 'auto');
+            ga('send', 'pageview');
+
+        </script>
+
+    </body>
+</html>

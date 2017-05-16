@@ -32,13 +32,13 @@
                                     </a>
                                 </li>
                                                             <li class=" lc-button">
-                                    <a href="http://education.launchcode.org/web-fundamentals/assignments/">
-                                        Assignments
+                                    <a href="http://education.launchcode.org/web-fundamentals/tutorials/">
+                                        Tutorials
                                     </a>
                                 </li>
                                                             <li class=" lc-button">
-                                    <a href="https://www.udacity.com/course/web-development--cs253">
-                                        Udacity CS253
+                                    <a href="http://education.launchcode.org/web-fundamentals/assignments/">
+                                        Assignments
                                     </a>
                                 </li>
                                                             <li class=" lc-button">
@@ -131,9 +131,9 @@ Switched to a new branch 'walkthrough3'</code></pre>
 <li>And then, rather than hard-code the movie titles directly into our dropdown menu, we will dynamically build the dropdown based on the  current list.</li>
 <li>In the process, we will see a new Python function, the <code>string.format</code> method.</li>
 </ul></li>
-<li>The main feature we will add is the inclusion of some validation on the <code>cross-off/</code> route handler:
+<li>The main feature we will add is the inclusion of some validation on the <code>watched-it/</code> route method:
 <ul>
-<li>When the user wants to cross a movie off, we will make sure the movie is actually on the user's list in the first place.</li>
+<li>When the user wants to take a movie they have watched off their list, we will make sure the movie is actually on the user's list in the first place.</li>
 <li>If not, we will <em>redirect</em> the user back to the home page.
 <ul>
 <li>And we will pass along a helpful error message as a <em>query parameter</em> in the URL

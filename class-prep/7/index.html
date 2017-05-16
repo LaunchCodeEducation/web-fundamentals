@@ -32,13 +32,13 @@
                                     </a>
                                 </li>
                                                             <li class=" lc-button">
-                                    <a href="http://education.launchcode.org/web-fundamentals/assignments/">
-                                        Assignments
+                                    <a href="http://education.launchcode.org/web-fundamentals/tutorials/">
+                                        Tutorials
                                     </a>
                                 </li>
                                                             <li class=" lc-button">
-                                    <a href="https://www.udacity.com/course/web-development--cs253">
-                                        Udacity CS253
+                                    <a href="http://education.launchcode.org/web-fundamentals/assignments/">
+                                        Assignments
                                     </a>
                                 </li>
                                                             <li class=" lc-button">
@@ -115,8 +115,13 @@
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Class 7 Prep</h1>
-                    <h3 id="templates">Templates</h3>
-<p>Thus far, on the back-end, we have managed HTML by storing it in big chunks, as strings, inside our Python code. You probably found this process tedious and annoying. Fortunately there is a much nicer way of constructing HTML content to send back to the client. Using what's called a <em>template</em> engine, we can specify our HTML as a &quot;template&quot; inside a regular <code>.html</code> file, and simply leave a few &quot;blank spaces&quot;, so to speak, wherever we want to place dynamically-generated content. Then our back-end code simply needs to &quot;fill in the blanks&quot;. In this lesson you will learn how to use a Python template engine called Jinja 2.</p>
+                    <h2 id="databases-part-1">Databases Part 1</h2>
+<p>Up to now, you may have had the feeling that the apps we're building in the lessons, studios, and assignments don't seem that useful. If you thought harder about it, you may have determined that this is true because we don't have a way to store data over long periods of time. Actually, we haven't been able to store data for more than the duration of a single HTTP request, say, by adding an element to a list.</p>
+<p>We're going to plug this functional hole across the next two lessons by learning how to store data in databases. In this lesson, we'll learn about <strong>relational databases</strong>, the most common way to store data, and <strong>SQL</strong>, the most common language used to access databases. We'll learn about tables, rows, and queries. We'll also learn about the similarities between Python objects and database tables.</p>
+<p>In the next lesson, we'll learn how to manipulate databases locally using <em>MAMP</em> and <em>phpMyAdmin</em>, and we'll also learn more complex operations on databases.</p>
+<aside class="aside-note">
+<p>It is imperative that you code along with the resources below in order to be ready to tackle the next assignment. If you don't code along, you will be at an extreme disadvantage.</p>
+</aside>
 <table>
 <thead>
 <tr>
@@ -130,19 +135,23 @@
 <tr>
 <td>Do</td>
 <td>Interactive Course</td>
-<td><a href="https://classroom.udacity.com/courses/cs253/lessons/48538421/concepts/487274210923#" target="_blank">CS253: Lesson 2a</a></td>
-<td>Do the entire lesson, 18 items in all. Be sure to read the notes below for tips on new and/or potentially confusing concepts.</td>
+<td><a href="https://www.khanacademy.org/computing/computer-programming/sql" target="_blank">Khan Academy: Intro to SQL</a></td>
+<td>Complete all the lessons in: SQL basics, More advanced SQL queries, Relational queries in SQL, and Modifying databases with SQL. This will give you an overview of how relational databases work as well as practice with common queries.</td>
+</tr>
+<tr>
+<td>Do</td>
+<td>Exercises</td>
+<td><a href="http://www.w3schools.com/sql/default.asp" target="_blank">w3schools SQL Tutorial</a></td>
+<td>Do all the lessons under &quot;SQL Tutorial&quot; from SQL Home through SQL Comments. Some of this content will overlap with what you learned in the Khan Academy tutorials; that's okay--the more practice, the better! Stop when you get to the lessons under &quot;SQL Databases&quot; as we will work through these in the next lesson. If you are running low on time, prioritize the lessons on SQL syntax and concepts that you are unfamiliar with or found confusing during the Khan Academy tutorials.</td>
+</tr>
+<tr>
+<td>Read</td>
+<td>Article</td>
+<td><a href="https://www.techonthenet.com/sql/joins.php" target="_blank">SQL: JOINS</a></td>
+<td>This Tech on the Net article is a worthwhile read if you find the idea of joins confusing. Joins are essential to understand and this article has Venn diagrams for the different joins, which is helpful for visualizing them.</td>
 </tr>
 </tbody>
 </table>
-<h4 id="notes">Notes</h4>
-<ul>
-<li>In the first lesson, &quot;Quiz: Writing a Basic Form,&quot; the instructor casually introduces some Python syntax that we haven't encountered before. In the <code>Handler</code> class, the first method looks like this:
-<pre><code class="language-python">def write(self, *a, **kw):
-    self.response.out.write(*a, **kw)</code></pre>
-<p>The arguments <code>*a</code> and <code>**kw</code> look different than anything we've seen, don't they? In Python, the symbols <code>*</code> and <code>**</code> can be used to represent <em>sets of arguments</em>, rather than just a single argument. We're goint to avoid using this new syntax in our studios, and you won't need it to complete studios or assignment. If you want to learn a bit about these special types of arguments, read the article <a href="https://pythontips.com/2013/08/04/args-and-kwargs-in-python-explained/" target="_blank"><code>*args and **kwargs in Python Explained</code></a>. (Note that the symbols <code>*</code> and <code>**</code> are the only important things here; we can use either <code>*a</code> or <code>*args</code> with the same result.)</p></li>
-<li>In the setup for &quot;Quiz: FizzBuzz,&quot; the instructor quickly explains the expression <code>n = n and int(n)</code> which is likely confusing. What he says is that this expression is the same as saying: if <code>n</code> exists and is not <code>None</code>, then set <code>n = int(n)</code>. Why do we do this? If we were to try something like <code>int("")</code> or <code>int(None)</code>, then Python would throw an error. So this check avoids that situation. But how does the check actually work? Read section 9.5 of the article, <a href="http://www.thomas-cokelaer.info/tutorials/python/boolean.html" target="_blank">Notes about booleans and logical operators</a> for a quick overview, and ask your instructor or TF if it's still confusing.</li>
-</ul>
                                     </section>
 
             </div>

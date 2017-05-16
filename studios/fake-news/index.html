@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Assignment: Fortune Cookie :: Unit 2: Web Fundamentals</title>
+        <title>Studio: Fake News :: Unit 2: Web Fundamentals</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-assignment-fortune-cookie'>
+    <body id='page-studio-fake-news'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -26,19 +26,19 @@
                                         Classes
                                     </a>
                                 </li>
-                                                            <li class=" lc-button">
+                                                            <li class="active lc-button">
                                     <a href="http://education.launchcode.org/web-fundamentals/studios/">
                                         Studios
                                     </a>
                                 </li>
-                                                            <li class="active lc-button">
-                                    <a href="http://education.launchcode.org/web-fundamentals/assignments/">
-                                        Assignments
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/tutorials/">
+                                        Tutorials
                                     </a>
                                 </li>
                                                             <li class=" lc-button">
-                                    <a href="https://www.udacity.com/course/web-development--cs253">
-                                        Udacity CS253
+                                    <a href="http://education.launchcode.org/web-fundamentals/assignments/">
+                                        Assignments
                                     </a>
                                 </li>
                                                             <li class=" lc-button">
@@ -114,11 +114,43 @@
             <div class="row">
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
-                                        <h1>Assignment: Fortune Cookie</h1>
-                    <p>For this assignment, please follow along with the video tutorials below, and produce the same project yourself. The videos also include detailed explanations and digressions about what is happening.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLs5n5nYB22fJZxETxSnSgdj-d-gTgtUfj" frameborder="0" allowfullscreen></iframe>
-<h3 id="submit">Submit</h3>
-<p>To turn in your assignment and get credit, follow the <a href="../">submission instructions</a>.</p>
+                                        <h1>Studio: Fake News</h1>
+                    <h2 id="getting-ready-developer-tools">Getting Ready: Developer Tools</h2>
+<p>As you've learned, debugging code is an essential part of coding. When it comes to working with web pages, browser developer tools are indispensable.</p>
+<p>In this course, we will mostly use Firefox as our browser. If you haven't installed Firefox, you can get it from <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">Mozilla</a>. Other browsers have good developer tools as well (Chrome, in particular) but we're going to stick with Firefox. If you are more comfortable with another browser, you'll find that most of the developer tools functionality exists in other browsers' dev tools as well.</p>
+<p>Firefox's developer tools contain <strong>a lot</strong> of functionality, and we will only begin to touch on it here, learning more of its functionality later in the unit. In this class, we'll learn about the tools available for working with HTML elements.</p>
+<h2 id="walkthrough">Walkthrough</h2>
+<p>Prior to the studio, the instructor will lead the class through an overview of some basic functionality of Firefox's dev tools, including but not necessarily limited to:</p>
+<ul>
+<li>How to open dev tools</li>
+<li>Inspecting an HTML element</li>
+<li>Modifying an element's HTML</li>
+<li>The difference between the content displayed when using &quot;View Source&quot; and what's in the &quot;Inspector&quot; tab</li>
+</ul>
+<h2 id="making-headlines">Making Headlines</h2>
+<p>Pick a news site (<a href="https://www.nytimes.com/" target="_blank">The New York Times</a>, for example), and use your browser's developer tools to modify one of the main articles to use a picture and text of your choosing.</p>
+<p>Have fun with this (see our example below), but be respectful of others and avoid overtly critical political or social commentary.</p>
+<p><img src="images/nelly-lc.png" alt="Sample Fake Article" /></p>
+<aside class="aside-warning">
+<p>When linking to an image, pay attention to the protocol -- either <code>http</code> or <code>https</code> -- of the site you are modifying, and of the image you are including. You can find the protocol at the beginning of the image URL.</p>
+<p>If the site you are modifying was loaded over <code>https</code> and your image uses <code>http</code> then the image may not load properly. You should try to add <code>s</code> to the image protocol, and if that doesn't work, look for another image or modify a site that uses <code>http</code>.</p>
+</aside>
+<aside class="aside-pro-tip">
+<p>If you want to use an image of your own that is not already available via the internet, here's how:</p>
+<ul>
+<li>Upload the photo to a Dropbox account</li>
+<li>View the photo on <a href="https://www.dropbox.com/" target="_blank">Dropbox</a> and select <em>Share</em>, then <em>Get link</em>, then <em>Go to link</em></li>
+<li>You should now be viewing the image within Dropbox. Add <code>?raw=1</code> to the end of the URL in the location bar of your browser and hit Enter. The URL should look something like this:
+<pre><code class="language-nohighlight">https://www.dropbox.com/sc/qc3htnhv7fb3i2x/AAC5OzECOyBynstMDWawCZhxa?raw=1</code></pre></li>
+<li>Copy the URL of the loaded image. You can use this URL within any HTML that you're editing.</li>
+</ul>
+</aside>
+<p><em>Optional:</em> Share your creation in the <code>#showcase</code> channel on Slack, and see what others have created!</p>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=nV9PLPFTnkE" target="_blank">Using Firefox Developer Tools: Elements</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Tools" target="_blank">Firefox DevTools Documentation</a></li>
+</ul>
                                     </section>
 
             </div>

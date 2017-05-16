@@ -31,14 +31,14 @@
                                         Studios
                                     </a>
                                 </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/tutorials/">
+                                        Tutorials
+                                    </a>
+                                </li>
                                                             <li class="active lc-button">
                                     <a href="http://education.launchcode.org/web-fundamentals/assignments/">
                                         Assignments
-                                    </a>
-                                </li>
-                                                            <li class=" lc-button">
-                                    <a href="https://www.udacity.com/course/web-development--cs253">
-                                        Udacity CS253
                                     </a>
                                 </li>
                                                             <li class=" lc-button">
@@ -118,7 +118,7 @@
                     <p>You've learned a bit of HTML and some CSS, but you have likely only used it in bits and pieces so far, adding or modifying content in exercises or pre-existing files. Here, you are going to take another step forward by building an entire page from scratch. You will also get some practice using Git.</p>
 <p>There are two parts to this exercise, one focused on HTML and another focused on CSS. HTML makes up the <em>structure and content</em> of web pages, while CSS dictates the <em>visual style</em>.</p>
 <p>Best practices dictate that these should be kept as separate as possible. To that end, we'll build the HTML portion of our page first, and only afterwards will we add a few styles with CSS. This will help us avoid adding HTML elements simply to change the style of our page.</p>
-<h3 id="sections">Sections:</h3>
+<h2 id="sections">Sections:</h2>
 <ul>
 <li><a href="#getting-started">Getting Started</a></li>
 <li><a href="#getting-to-work">Getting to Work</a></li>
@@ -130,7 +130,7 @@
 <ol>
 <li>
 <p>Navigate into the parent folder where you keep all your course materials (e.g. <code>lc101/</code> or <code>code/</code>). Only you know where that folder lives in your file system, but you want to do something like:</p>
-<pre><code class="language-nohighlight">$ cd ~/Documents/lc101/</code></pre>
+<pre><code class="language-nohighlight">$ cd ~/lc101/</code></pre>
 </li>
 <li>
 <p>Make a new folder for this assignment:</p>
@@ -161,7 +161,7 @@
 <p>Save your file.</p>
 </li>
 <li>
-<p>Finally, open up the file in a web browser. You can do this by selecting <em>File &gt; Open File</em> in your web browser, and navigating to the location of your new HTML file. If you get stuck on this, [here's a video][open-in-browser].</p>
+<p>Finally, open up the file in a web browser. You can do this by selecting <em>File &gt; Open File</em> in your web browser, and navigating to the location of your new HTML file. If you get stuck on this, <a href="https://www.youtube.com/watch?v=It5P1hg44MQ" target="_blank">here's a video</a>.</p>
 <p>You should see a blank white page with your name in the top-left corner.</p>
 </li>
 </ol>
@@ -169,7 +169,7 @@
 <p>Now let's incorporate Git into the picture.</p>
 <ol>
 <li>
-<h4 id="initialize-the-project-as-a-git-repository">Initialize the project as a Git repository.</h4>
+<p><strong>Initialize the project as a Git repository.</strong></p>
 <p>In your terminal, make sure you are inside your <code>html-me-something</code> folder, and then use the <code>git init</code> command to initialize that folder as a Git repository:</p>
 <pre><code class="language-nohighlight">$ pwd
 /Users/adalovelace/lc101/html-me-something
@@ -186,7 +186,9 @@ Initialized empty Git repository in /Users/adalovelace/lc101/html-me-something/.
 <aside class="aside-note">
 <p>You only ever have to do the <code>git init</code> step once, at the beginning.</p>
 </aside>
-<h4 id="1a-check-your-status">1a. Check your status</h4>
+</li>
+<li>
+<p><strong>Check your status</strong></p>
 <p>Back in the terminal, use the <code>git status</code> command to check the status of your newly created repo:</p>
 <pre><code class="language-nohighlight">$ git status
 On branch master
@@ -202,7 +204,7 @@ nothing added to commit but untracked files present (use "git add" to track)</co
 <p>This message says a lot of things, but for now, the most important point is that <code>index.html</code> is currently &quot;untracked&quot;. We need to <code>add</code> and then <code>commit</code> the file so that Git can help us manage its changes.</p>
 </li>
 <li>
-<h4 id="add-your-work-to-the-repo">Add your work to the repo</h4>
+<p><strong>Add your work to the repo</strong></p>
 <p>Use the <code>git add</code> command to track your <code>index.html</code> file so that it will be staged for your next commit:</p>
 <pre><code class="language-nohighlight">$ git add index.html</code></pre>
 <h4 id="2a-check-your-status">2a. Check your status</h4>
@@ -218,7 +220,7 @@ Changes to be committed:
     new file:   index.html</code></pre>
 </li>
 <li>
-<h4 id="commit">Commit</h4>
+<p><strong>Commit</strong></p>
 <p>Now you are ready to <code>commit</code> the changes you have staged.</p>
 <p>Go ahead and commit your changes, along with an appropriate message describing what you have changed:</p>
 <pre><code class="language-nohighlight">$ git commit -m "Created index.html file"</code></pre>
@@ -241,7 +243,7 @@ nothing to commit, working directory clean</code></pre>
 <p>For the remainder of this course, you will use Github to submit your work. Here's how:</p>
 <ol>
 <li>
-<h4 id="create-a-repo-on-github">Create a repo on Github</h4>
+<p><strong>Create a repo on Github</strong></p>
 <p>In a browser, visit <a href="http://github.com" target="_blank">Github's website</a>. Make sure you are logged onto your Github account (or create an account now if you have not already done so.)</p>
 <p>On your profile page, create a new repository by clicking the green <code>New</code> button on the right side of the screen:</p>
 <img src="images/new-repo.png"/>
@@ -252,15 +254,16 @@ nothing to commit, working directory clean</code></pre>
 </aside>
 </li>
 <li>
-<h4 id="inform-your-local-repo-about-the-existence-of-your-remote-repo">Inform your local repo about the existence of your remote repo</h4>
-<p>Now you have two repositories: the local one on your computer, and the remote one on Github. The next step is to sync them up.</p>
+<p><strong>Inform your local repo about the existence of your remote repo</strong></p>
+<p>Now you have two repositories: the local one on your computer, and the remote one on Github. Now you need to sync them up.</p>
 <p>The first step to syncing them is to give your local repo a <em>reference to</em> the remote repo. Using the <code>git remote</code> command, you can inform your local repo about the existence of the remote one.</p>
 <p>Use the command below, <strong>but (keep reading below)</strong> :</p>
 <pre><code class="language-nohighlight">$ git remote add origin PASTE_REPO_URL_HERE</code></pre>
-<p><strong>...but</strong> replace <code>PASTE_REPO_URL_HERE</code> with the actual url for your remote Github repo, which you can obtain by clicking the <code>Clone or Download</code> button and then copying and pasting the associated url:</p>
+<p><strong>...replace</strong> <code>PASTE_REPO_URL_HERE</code> with the actual url for your remote Github repo, which you can obtain by copying and pasting the repository url:</p>
 <p><img src="./images/github-clone-url.png" alt="GitHub Clone Url" /></p>
 <aside class="aside-note">
-<p>Alternatively, you can just type out <code>https://github.com/YOURUSERNAME/html-me-something.git</code> at the terminal.</p>
+<p>Unless you've set up an SSH key on your computer and added it to your GitHub account, you should always select the HTTPS version of a repository URL.</p>
+<p>If you're unsure about whether or not you've done this, you probably haven't.</p>
 </aside>
 <p>By running this <code>git remote add ...</code> command on the terminal, you are basically saying:</p>
 <blockquote>
@@ -269,11 +272,11 @@ nothing to commit, working directory clean</code></pre>
 <p>Note that the name &quot;origin&quot; is simply a standard naming convention for the main remote repo associated with a local repo.</p>
 </li>
 <li>
-<h4 id="push-your-local-changes-up-to-the-remote">Push your local changes up to the remote</h4>
+<p><strong>Push your local changes up to the remote</strong></p>
 <p>Your local repo is currently <em>ahead of</em> your remote repo by a few commits. Locally, you have added and edited a few files, and committed all those changes, whereas your remote repo is still entirely empty.</p>
 <p>Use the <code>git push</code> command to &quot;push&quot; all your local changes up to the remote:</p>
 <pre><code class="language-nohighlight">$ git push origin master</code></pre>
-<p>This command says:</p>
+<p>This command says, in essence:</p>
 <blockquote>
 <p>&quot;Hey Git, please push all my local changes to the remote repo called <code>origin</code> (specifically, to its <code>master</code> branch).&quot;</p>
 </blockquote>
@@ -281,7 +284,7 @@ nothing to commit, working directory clean</code></pre>
 </li>
 </ol>
 <h3 id="submit">Submit</h3>
-<p>To finishing submitting and receive credit, follow steps 3 and 4 of the [submission instructions][submission-instructions] on the <em>Assignments List</em> page.</p>
+<p>To finish submitting and receive credit, follow steps 3 and 4 of the <a href="../">submission instructions</a> on the <em>Assignments</em> page.</p>
 <h3 id="extra-credit-host-your-page-using-github-pages">Extra Credit: Host your Page using Github Pages</h3>
 <p>If you want to show off your hard work to all your friends, Github has a cool feature called <em>Github Pages</em> that makes this really easy.</p>
 <p>Github provides free hosting for any &quot;static&quot; web content (like this project). All you have to do is change a setting on your GitHub repository.</p>

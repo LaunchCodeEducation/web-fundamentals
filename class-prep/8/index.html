@@ -32,13 +32,13 @@
                                     </a>
                                 </li>
                                                             <li class=" lc-button">
-                                    <a href="http://education.launchcode.org/web-fundamentals/assignments/">
-                                        Assignments
+                                    <a href="http://education.launchcode.org/web-fundamentals/tutorials/">
+                                        Tutorials
                                     </a>
                                 </li>
                                                             <li class=" lc-button">
-                                    <a href="https://www.udacity.com/course/web-development--cs253">
-                                        Udacity CS253
+                                    <a href="http://education.launchcode.org/web-fundamentals/assignments/">
+                                        Assignments
                                     </a>
                                 </li>
                                                             <li class=" lc-button">
@@ -115,13 +115,8 @@
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Class 8 Prep</h1>
-                    <h3 id="databases-part-i">Databases, Part I</h3>
-<p>Up to now, you may have had the feeling that the apps we're building in the lessons, studios, and assignments don't seem that useful. If you thought harder about it, you may have determined that this is true because we don't have a way to store data over long periods of time. Actually, we haven't been able to store data for more than the duration of a single HTTP request, say, by adding and element to a list.</p>
-<p>We're going to plug this functional hole across the next two lessons by learning how to store data in databases. In this lesson, we'll learn about <strong>relational databases</strong>, the most common way store data. We'll learn about tables, rows, and queries. We'll also learn how to read data from such databases in our web apps.</p>
-<p>In the next lesson, we'll learn how to write code that allows our data to be stored in a database <em>without</em> using queries. We'll still need SQL to read data, though.</p>
-<aside class="aside-note">
-<p>While we've suggested that you code along with the course videos already, we want to emphasize this point for the database lessons. Coding along with the examples in the videos will be essential to being able to properly tackle the next assignment. If you don't code along, you will be at an extreme disadvantage.</p>
-</aside>
+                    <h2 id="databases-part-2">Databases Part 2</h2>
+<p>Now you should have a good grasp on basic SQL syntax and commands, as well as an understanding of how relational databases work. In this lesson, we'll install <em>MAMP</em> and learn how to use a <strong>real</strong> database on your computer through <em>phpMyAdmin</em>. We'll also expand our knowledge of SQL by working through some additional exercises at w3schools.  </p>
 <table>
 <thead>
 <tr>
@@ -135,27 +130,56 @@
 <tr>
 <td>Do</td>
 <td>Exercises</td>
-<td><a href="https://sqlbolt.com/" target="_blank">SQL Bolt</a></td>
-<td>Complete exercises 1-5 (Lesson 5 is called &quot;SQL Review: Simple SELECT Queries&quot;) at SQL Bolt. This will give you some basic practice with common queries. You'll learn a bit about SQL in an isolated setting, and then see how it can work in the context of a web application in the Udacity portion of the prep work.</td>
-</tr>
-<tr>
-<td>Do</td>
-<td>Interactive Course</td>
-<td><a href="https://classroom.udacity.com/courses/cs253/lessons/48756013/concepts/487123160923#" target="_blank">CS253: Lesson 3</a></td>
-<td>Do the first 25 items of Lesson 3. Stop when you get to the item titled <em>Google App Engine Datastore</em>. Be sure to read the notes below for tips on new and/or potentially confusing concepts.</td>
+<td><a href="https://www.w3schools.com/sql/sql_create_db.asp" target="_blank">w3schools SQL Database</a></td>
+<td>Do all the lessons under &quot;SQL Database&quot; from SQL Create DB through SQL Hosting. Some of this content will overlap with what you learned in the Khan Academy tutorials; that's okay--the more practice, the better! Be sure to understand primary and foreign keys!</td>
 </tr>
 </tbody>
 </table>
-<h4 id="notes">Notes</h4>
-<ul>
-<li>The quizzes in this lesson use some Python syntax that is new and potentially confusing. Don't get discouraged or spend too much time trying to understand each and every such line or piece of syntax. We'll point out to you which things you should know, and the main lessons you should learn from the examples and quizzes. <strong>If you get hung up on a quiz, skip to the answer, and make sure you understand the mechanics of what is happening.</strong> A good way to do this is to type out the solution to the quiz, and make a comment for each line, describing what each line of code is doing.</li>
-<li>In &quot;Quiz: Implementing Tables in Python,&quot; the instructor uses syntax that is new to us to create a Class called <code>Link</code>. You don't need to grasp this syntax fully, though you can read about it in the official <a href="https://docs.python.org/2/library/collections.html#collections.namedtuple" target="_blank">Python documentation for <code>namedtuple</code></a>. To do the quiz, just know that in the given code, <code>links</code> is a list of <code>Link</code> objects, and that each such object has the fields <code>id</code>, <code>submitter_id</code>, <code>submitted_time</code>, <code>votes</code>, <code>title</code>, and <code>url</code>. Thus, you can use syntax like <code>link.id</code> or <code>link.votes</code> to reference the associated fields for each <code>Link</code> object.</li>
-<li>In &quot;Quiz: Querying,&quot; approach the problem by making named <code>submissions</code> and adding each <code>link</code> object with <code>submitter_id</code> equal to the given value, <code>62443</code>. Once you have such a list, sort it by time using this snippet:
-<pre><code class="language-python">submissions.sort(key = lambda x: x.submitted_time)</code></pre>
-<p>This is the only clean way to do this, and it uses a new Python construct called a <strong>lambda</strong>. If you're curious, you can <a href="http://www.secnetix.de/olli/Python/lambda_functions.hawk" target="_blank">read about lambdas</a>, but they're not that important for us now. The main takeaway from this quiz should be how much work we would have to do to query and sort lots of lists in Python code. Such operations will be much easier with relational databases. If you get stuck on this quick, don't worry about it too much. This is one of those moments where the course introduces something new that we'd rather not have you wade through to learn at this point of the class. It's better to understand the idea that's being illustrated rather than the coding details for this one.</p></li>
-<li>A few types of relational databases are mentioned as being common. To make this a bit more concrete for you, we'll point out that <a href="https://runestone.launchcode.org/" target="_blank">runestone.launchcode.org</a> uses Postgres, while <a href="https://www.launchcode.org/" target="_blank">launchcode.org</a> uses MySQL. You generally can't tell which database a website or web application is using without digging into its code.</li>
-<li>In &quot;Quiz: Databases in Python,&quot; we see <code>*</code> used again. It may not be obvious, but this is the exact same <code>*</code> syntax that we ran into in Class 7. The expression <code>link = link(*link_tuple)</code> says, &quot;set <code>link</code> equal to a new <code>link</code> object created with the parameters in <code>link_tuple</code>&quot;. The important thing to notice here, is that the code is creating new <code>link</code> objects from the data queried from the relational database. This is the opposite of what's being done earlier in the quiz, to place the data from the <code>link</code> objects in the database.</li>
-</ul>
+<h3 id="install-mamp">Install MAMP</h3>
+<p>MAMP is a suite of tools useful for developers. The acronym MAMP stands for Mac / Apache / MySQL / PHP, and despite the first term, there is a version for Windows as well. While we won't use Apache and PHP directly, they'll provide us with an interface to work with our MySQL server, called <em>phpMyAdmin</em>.</p>
+<p>The first step in this lesson is to install MAMP onto your computer by following the instructions below for <a href="#install-mamp-for-windows">Windows</a> or <a href="#install-mamp-for-mac">Mac</a>.</p>
+<aside class="aside-note">
+<p>If you use Linux, you should install, at a minimum, the MySQL 5.x package for your system. You might also install phpMyAdmin or another MySQL management application.</p>
+</aside>
+<h4 id="install-mamp-for-windows">Install MAMP for Windows</h4>
+<ol>
+<li>Go to <a href="https://www.mamp.info/en/downloads/" target="_blank">MAMP.info</a> and download the Windows version of MAMP. Double click to install and allow it to make changes on the hard drive. </li>
+<li>Close all other applications.</li>
+<li>Select English as the language.</li>
+<li>Uncheck the <em>MAMP PRO</em> box (do NOT download it).</li>
+<li>Accept the Terms/License.</li>
+<li>Keep the default destination of <code>C:\MAMP</code>.</li>
+<li>Keep the default option to let it create a shortcut.</li>
+<li>Keep the default option to let it create desktop icon.</li>
+<li>Click the &quot;Install&quot; button. (Install takes around five minutes.)</li>
+<li>Click &quot;Finish&quot;.</li>
+<li>Open MAMP and go to <em>Preferences...</em>, then click the <em>Ports</em> tab and click the &quot;Set MAMP ports to default&quot; button. Click OK and then click &quot;Quit&quot;.</li>
+<li>Reopen MAMP, ignore it if there is a message about the ports, and click <em>Open start page.</em></li>
+<li>In your browser you should now be at <code>localhost:8888/MAMP/</code>. Select the dropdown menu under <em>Tools</em> and click on <em>phpMyAdmin</em>.</li>
+<li>Enter the username: &quot;root&quot; and the password: &quot;root&quot; to login. Now you are on the main phpMyAdmin page that you will use for this lesson's studio.</li>
+</ol>
+<aside class="aside-note">
+<p>You may get a permissions error when you try to open MAMP the first time. If you do, find <code>MAMP.exe</code> in the MAMP folder, right-click it and select &quot;Properties&quot;. Then select &quot;Security&quot;, then &quot;Edit&quot;, and highlight &quot;Users&quot;. Then click &quot;Add&quot;, and if the box next to &quot;write&quot; under the column &quot;allow&quot; is not already selected, then select it and OK your way back out of the menus.</p>
+</aside>
+<aside class="aside-note">
+<p>If your Apache or MYSQL servers won't start (if neither, or only one, has a green box next to it), and make sure the options &quot;Start Servers when starting MAMP&quot; and &quot;At startup open&quot; are unchecked in <em>Preferences...</em>. Then click <em>Stop Servers</em>. Then Quit and reopen MAMP. Now press <em>Start Servers</em> and wait until both the boxes next to the servers turn green. Then you can <em>Open start page</em>.</p>
+</aside>
+<h4 id="install-mamp-for-mac">Install MAMP for Mac</h4>
+<ol>
+<li>Go to <a href="https://www.mamp.info/en/downloads/" target="_blank">MAMP.info</a> and download the Mac version of MAMP.</li>
+<li>Drag and drop the downloaded file in Finder from Downloads to Applications. Then double click it.</li>
+<li>Click &quot;continue&quot; on the Introduction, Read Me, and License prompt screens, and Agree to the terms.</li>
+<li>Click &quot;continue&quot; on the Destination Select screen--it will install onto the hard drive.</li>
+<li>Click &quot;install&quot; on the Installation Type screen.</li>
+<li>Click &quot;close&quot; when the install has completed.</li>
+<li>Note that it will install in the Applications folder. Go into Applications, double click on the MAMP folder, then doubleclick on the MAMP icon in that folder.</li>
+<li>You'll get a &quot;Warning&quot; message. Be sure to <strong>uncheck</strong> the box next to &quot;Check for MAMP PRO when starting MAMP&quot; and then click the &quot;Launch MAMP&quot; button <em>NOT</em> the &quot;Launch MAMP PRO&quot; button.</li>
+<li>Go to <em>Preferences -&gt; Ports</em> and click &quot;Set MAMP ports to default&quot; then click OK.</li>
+<li>Then go to <em>Preferences -&gt; PHP</em> and select the Standard Version <code>7.0.15</code> (you will a php version older than <code>7.1.1</code> for phpMyAdmin to work properly). Then click OK.</li>
+<li>Click <em>Start Servers</em> and it should automatically open a web page. If it does not, click <em>Open WebStart page</em>.</li>
+<li>In your browser you should be on the MAMP localhost webpage. Select the dropdown menu under <em>Tools</em> and click on <em>phpMyAdmin</em>. You may or may not be prompted to enter a username and password. If you are prompted, use the word &quot;root&quot; for both.</li>
+<li>Now you are on the phpMyAdmin page you will use for this lesson's studio. </li>
+</ol>
                                     </section>
 
             </div>

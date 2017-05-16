@@ -32,13 +32,13 @@
                                     </a>
                                 </li>
                                                             <li class=" lc-button">
-                                    <a href="http://education.launchcode.org/web-fundamentals/assignments/">
-                                        Assignments
+                                    <a href="http://education.launchcode.org/web-fundamentals/tutorials/">
+                                        Tutorials
                                     </a>
                                 </li>
                                                             <li class=" lc-button">
-                                    <a href="https://www.udacity.com/course/web-development--cs253">
-                                        Udacity CS253
+                                    <a href="http://education.launchcode.org/web-fundamentals/assignments/">
+                                        Assignments
                                     </a>
                                 </li>
                                                             <li class=" lc-button">
@@ -115,40 +115,31 @@
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Studio: FlickList 5</h1>
-                    <p>You have started to learn about databases, but you haven't yet seen how to incorporate them into an app. So today, we'll simply add a few features onto our project, and get everything teed up for next class, when we will finally start persisting user data in a database.</p>
+                    <p>You have started to learn about databases, but you haven't yet seen how to incorporate them into an app. So today, we'll simply add a few features onto our project, and get everything teed up for the next studio, when we will finally start persisting user data in a database.</p>
 <p>Today we will expand our project so that users can actually view their list of movies. We will also introduce a second list view, representing the movies that the user has watched (crossed off). In this second view, users will be able to give each movie a rating between 1 and 5 stars.</p>
-<h2 id="walkthrough">Walkthrough</h2>
-<h3 id="before-the-walkthrough">Before the Walkthrough</h3>
-<p>Between the last studio and this one, we have modified our application in a few minor ways.</p>
-<ul>
-<li>Responding to bad requests with a 400 error
-<ul>
-<li>We don't bother giving a nice error message to a malicious user that submits a bad request, such as a request to cross off a movie that doesn't exist in our system. Instead, we send back an <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_Error" target="_blank">HTTP 400 status code</a> and a very brief error message. We'll use this pattern going forward, only resonding to errors with helpful messages when it's the case that a well-meaning user made a mistake.</li>
-</ul></li>
-<li>We have changed &quot;cross off&quot; semantics to &quot;watched it&quot; semantics. Instead of &quot;crossing off a movie from your list&quot;, user is reporting that they &quot;finished watching&quot; that movie
-<ul>
-<li>Rename <code>CrossOffMovie</code> handler to <code>WatchedMovie</code>, change route to <code>"/watched-it"</code></li>
-<li>Change a bunch of variable names in <code>WatchedMovie.post</code> method and the <code>edit.html</code> template</li>
-<li>Change the confirmation template to <code>watched-it-confirmation.html</code></li>
-<li>Change name of <code>getCurrentWatchlist()</code> function to <code>getUnwatwchedMovies()</code></li>
-</ul></li>
-</ul>
-<h3 id="during-the-walkthrough">During the Walkthrough</h3>
-<p>During the walkthrough, we will implement these features:</p>
-<ul>
-<li>A listing on the main page to display all unwatched movies.</li>
-<li>Modify the &quot;wathced-it&quot; form so that instead of a dropdown, a button on each list item is displayed. Clicking the button will result in a confirmation message that the movie has been watched.</li>
-<li>New list view for movies that have been watched. This will require us to create a new method <code>getWatchedMovies()</code> to return a (for now) hard-coded list of watched movies.</li>
-</ul>
+<p>There is no walkthrough portion of this studio. We leave each of these features to you to add.</p>
 <h2 id="studio">Studio</h2>
 <h3 id="checking-out-the-studio-code">Checking out the Studio code</h3>
 <p>Follow the <a href="../getting-the-code/">instructions for getting the code</a> in order to get the starter code for <code>studio5</code>.</p>
-<h3 id="your-task">Your Task</h3>
+<h3 id="your-tasks">Your Tasks</h3>
+<ul>
+<li>Modify the &quot;watched-it&quot; form in <code>edit.html</code> so that instead of a dropdown, a button on each list item is displayed. Clicking the button will result in a confirmation message that the movie has been watched. Within each list item, add a form:
+<pre><code class="language-html">&lt;form action="/watched-it" method="post"&gt;
+{{ movie }}
+&lt;input type="hidden" name="watched-movie" value="{{ movie }}"/&gt;
+&lt;input type="submit" value="I Watched it!"/&gt;
+&lt;/form&gt;</code></pre>
+<p>And remove the existing <code>&lt;select&gt;</code> element</p></li>
+</ul>
 <p>Implement the feature where users can rate the movies they have watched.</p>
 <ol>
-<li>Make a confirmation template, to be displayed when the user rates a movie.</li>
-<li>Add a handler for form submission so that it renders the template. This should got in a <code>post</code> method in the <code>MovieRatings</code> handler class.</li>
-<li>Add forms for rating movies, one on each list item in the <code>ratings.html</code> template</li>
+<li>Make a <code>ratings.html</code> template which is an index of all movies that have been watched and are available to rate. Add forms for rating movies, one on each list item in the <code>ratings.html</code> template. This will also require you to create:
+<ul>
+<li>A handler, <code>MovieRatings</code>, to display the template at <code>/ratings</code></li>
+<li>A method, <code>getWatchedMovies</code>, to get the list of watched. For now, create a hard-coded list with a few movie titles. We'll update this to pull from a database in a future studio.</li>
+</ul></li>
+<li>Make a <code>rating-confirmation.html</code> template, to be displayed when the user rates a movie they have watched.</li>
+<li>Add code for form submission, that handles a <code>post</code> request to the <code>MovieRatings</code> method and render the template.</li>
 </ol>
                                     </section>
 
