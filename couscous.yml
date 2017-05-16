@@ -39,6 +39,9 @@ menu:
         cheatsheets:
             text: Cheatsheets
             relativeUrl: cheatsheets/
+        objectives:
+            text: Objectives
+            relativeUrl: objectives/
         issues:
             text: Issues
             relativeUrl: issues/
