@@ -13,8 +13,8 @@ start out coding in tag-team shifts, and by the end you should have
 a good idea of how to both be working on the same code at the same
 time. You will learn how to:
 
-- **Quickly add Code in Pull + Push Cycles**
-- Add a Collaborator to Github Project
+- Quickly add Code in Pull + Push Cycles *(Important! This is the fundamental process we'll be practicing!)*
+- Add a Collaborator to a Github Project
 - Sharing Repositories on GitHub
 - Create a Branch in Git
 - Create a Pull Request in GitHub
