@@ -39,7 +39,7 @@ Code along to a video tutorial / lecture in which we build web-app that encrypts
 [Work on Web Caesar](./web-caesar/)
 
 ---
-
+<!--
 ## User Signup
 
 🐘 *Large Assignment*
@@ -67,3 +67,4 @@ Create a web-app that allows the user to create blog posts and browse and read p
 Expand upon the previous assignment by introducing user accounts, so that each blog post is associated with a particular user, and users must be logged in to create posts.
 
 [Work on Blogz](./blogz/)
+-->
