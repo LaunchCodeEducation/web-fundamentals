@@ -11,7 +11,10 @@ In this assignment you'll implement a web-based version of the Caesar cipher tha
 - [Rendering a form](#rendering-a-form)
 - [Importing caesar code](#importing-caesar-code)
 - [Processing the form](#processing-the-form)
+- [Rendering the form after encryption](#rendering-the-form-after-encryption)
 - [Committing Your Work](#committing-your-work)
+
+Your final application will function just like our [demo app](https://launchcode-demos.appspot.com/caesar).
 
 ## Project and Repository Setup
 
@@ -189,13 +192,43 @@ When the form is submitted, the request will contain the parameters `rot` and `t
 from flask import Flask, request
 ```
 
-Within `encrypt`, store the values of these request parameters in local variables, converting data types as necessary. Then, encrypt the value of the `text` parameter using `rotate_string`. Return the encrypted string wrapped in `<h1>` tags.
+Within `encrypt`, store the values of these request parameters in local variables, converting data types as necessary. Then, encrypt the value of the `text` parameter using `rotate_string`. Return the encrypted string wrapped in `<h1>` tags, to be rendered in the browser.
 
-Before embarking on our final task, start up the application and test.
+Before embarking on our final task, start up the application and test that everything you've done so far works. This is also a good time to commit your changes to your local Git repo.
 
 ### Rendering the form after encryption
 
-TODO - Implement `write_form`, render form after post, escape text with cgi.escape
+Our final task will be to modify the request handler functions so that the form is displayed again even after submission, with the encrypted string in our `<textarea>`, as in our [demo app](https://launchcode-demos.appspot.com/caesar).
+
+Look at your `encrypt` request handler function. Instead of returning the encrypted string, we want to insert it in the form. To do this, we need to specify within the global `form` string where the text should be inserted. We'll use Python's [`str.format` method](https://docs.python.org/3.6/library/stdtypes.html#str.format) for this.
+
+Modify the `form` variable in two ways:
+
+1. Add a placeholder `{0}` between the opening and closing `<textarea>` tags.
+2. Where the CSS rules are defined, "double up" the curly braces, which will prevent the `str.format` method from interpreting the curly braces as defining a text placeholder. For example, one rule will look like this:
+  ```html
+  textarea {{
+      margin: 10px 0;
+      width: 540px;
+      height: 120px;
+  }}
+  ```
+
+Within each of `index` and `encrypt`, rather than return the form string, return `form.format(...)`. The argument to this method call should be the empty string in the case of `index`, and it should be the encrypted string in the case of `encrypt`.
+
+Start up the application and test. Ensure that after submitting the form a first time, it is re-rendered with the encrypted string inside the text area.
+
+We're almost done, but there's one thing we need to fix. To see what this is, enter the string "&lt;/textarea&gt;" within the box, and enter 13 as the rotation amount. Submit the form You should see "&lt;/grkgnern&gt;" as the encrypted string.
+
+Now, re-enter 13 in the box, and submit again. Notice that there is no encrypted string this time, where we expected to see "&lt;/textarea&gt;" displayed. This is because our string was actually encrypted, but the browser interpreted the resulting string as closing out the `<textarea>` element. You can see this explicitly if you right-click on the page and select *View Source*.
+
+![Unescaped string](images/unescaped-textarea.png)
+
+See the `</textarea>` in red? That's the browser indicating to you that this particular closing tag doesn't have a matching opening tag. This is because the previous `</textarea>` tag, which was in fact our encrypted string, matched with the opening `<textarea>` tag.
+
+To fix this, let's ensure that we escape our encrypted string before inserting it within the page.
+
+Import the `cgi` module at the top of the file: `import cgi`. Then, where you call `form.format(...)` within `encrypt`, be sure to use `cgi.escape` to escape the encrypted string beforehand. To verify that this works, repeat the test above.
 
 Start up your app, and test! The [Sanity Check](#sanity-check) section below contains some specific tests to look for.
 
