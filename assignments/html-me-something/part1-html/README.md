@@ -3,7 +3,7 @@ title: 'HTML Me Something, Part I: HTML'
 currentMenu: assignments
 ---
 
-[< Back to Overview page](..)
+[< Back to Overview page](./)
 
 In Part 1, you will get comfortable with writing markup, and with separating content from design and layout.
 
@@ -99,4 +99,4 @@ For assignments such as these, we lean on the side of very large "chunks of work
 
 ## Done!
 
-Well done! Time to [dive into some CSS](../part2-css).
+Well done! Time to [dive into some CSS](part2-css/).
