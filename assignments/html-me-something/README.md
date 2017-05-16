@@ -65,11 +65,10 @@ First, follow the steps below to create a folder for your project and initialize
 
 1. Save your file.
 
-1. Finally, open up the file in a web browser. You can do this by selecting *File > Open File* in your web browser, and navigating to the location of your new HTML file. If you get stuck on this, [here's a video][open-in-browser].
+1. Finally, open up the file in a web browser. You can do this by selecting *File > Open File* in your web browser, and navigating to the location of your new HTML file. If you get stuck on this, [here's a video](https://www.youtube.com/watch?v=It5P1hg44MQ).
 
     You should see a blank white page with your name in the top-left corner.
 
-[open-in-browser]: https://www.youtube.com/watch?v=It5P1hg44MQ
 
 ### Use Git
 
@@ -202,7 +201,7 @@ For the remainder of this course, you will use Github to submit your work. Here'
 
 1. **Inform your local repo about the existence of your remote repo**
 
-	Now you have two repositories: the local one on your computer, and the remote one on Github. The next step is to sync them up.
+	Now you have two repositories: the local one on your computer, and the remote one on Github. Now you need to sync them up.
 
 	The first step to syncing them is to give your local repo a *reference to* the remote repo. Using the `git remote` command, you can inform your local repo about the existence of the remote one.
 
@@ -212,7 +211,7 @@ For the remainder of this course, you will use Github to submit your work. Here'
 	$ git remote add origin PASTE_REPO_URL_HERE
 	```
 
-	**...but** replace `PASTE_REPO_URL_HERE` with the actual url for your remote Github repo, which you can obtain by copying and pasting the repository url:
+	**...replace** `PASTE_REPO_URL_HERE` with the actual url for your remote Github repo, which you can obtain by copying and pasting the repository url:
 
 	![GitHub Clone Url](./images/github-clone-url.png)
 
@@ -247,7 +246,7 @@ For the remainder of this course, you will use Github to submit your work. Here'
 
 ### Submit
 
-To finishing submitting and receive credit, follow steps 3 and 4 of the [submission instructions](../) on the *Assignments* page.
+To finish submitting and receive credit, follow steps 3 and 4 of the [submission instructions](../) on the *Assignments* page.
 
 ### Extra Credit: Host your Page using Github Pages
 
@@ -262,4 +261,3 @@ Github provides free hosting for any "static" web content (like this project). A
 1. In any browser, you should now be able to visit `YOUR_USERNAME.github.io/html-me-something` and see your web page!
 
 
-[open-in-browser]: https://www.youtube.com/watch?v=It5P1hg44MQ
