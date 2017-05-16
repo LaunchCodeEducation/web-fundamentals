@@ -118,8 +118,6 @@ Great! We've got our project going locally, but we're going to need to make it a
 
 Go to your Github profile in a web browser. Click on the + button to add a new repository ('repo').
 
-TODO oops something is blocking the button in the screenshot
-
 ![Create a new repository in Github](CreateAGithubRepo.png)
 
 Fill in the name and description. Uncheck the "initialize with README". Click *Create Repository*.
