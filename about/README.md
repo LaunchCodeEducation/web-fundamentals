@@ -50,6 +50,9 @@ Cheatsheets attempt to consolidate large amounts of information into accessible 
 
 Assignments are the summit of your learning path for a given set of concepts. They are where you demonstrate that you understand and can independently utilize the concepts you've learned. The end-goal of LC101 is for you to be able to build your own projects from scratch, understanding each of the elements necessary to do so. To that end, assignments increase gradually in difficulty, and in the level of independence and problem solving required to complete them.
 
+### Objectives
+
+The learning objectives for each class are listed on the Objectives sheet. These will help you check your progress and make sure you are developing the skills and learning the concepts the class aims to impart.
 
 ## Prerequisites
 
