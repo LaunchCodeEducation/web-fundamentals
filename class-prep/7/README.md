@@ -3,23 +3,25 @@ title: Class 7 Prep
 currentMenu: classes
 ---
 
-### Templates
+## Databases Part 1
 
-Thus far, on the back-end, we have managed HTML by storing it in big chunks, as strings, inside our Python code. You probably found this process tedious and annoying. Fortunately there is a much nicer way of constructing HTML content to send back to the client. Using what's called a *template* engine, we can specify our HTML as a "template" inside a regular `.html` file, and simply leave a few "blank spaces", so to speak, wherever we want to place dynamically-generated content. Then our back-end code simply needs to "fill in the blanks". In this lesson you will learn how to use a Python template engine called Jinja 2.
+Up to now, you may have had the feeling that the apps we're building in the lessons, studios, and assignments don't seem that useful. If you thought harder about it, you may have determined that this is true because we don't have a way to store data over long periods of time. Actually, we haven't been able to store data for more than the duration of a single HTTP request, say, by adding an element to a list.
+
+We're going to plug this functional hole across the next two lessons by learning how to store data in databases. In this lesson, we'll learn about **relational databases**, the most common way to store data, and **SQL**, the most common language used to access databases. We'll learn about tables, rows, and queries. We'll also learn about the similarities between Python objects and database tables.
+
+In the next lesson, we'll learn how to manipulate databases locally using *MAMP* and *phpMyAdmin*, and we'll also learn more complex operations on databases.
+
+<aside class="aside-note" markdown="1">
+It is imperative that you code along with the resources below in order to be ready to tackle the next assignment. If you don't code along, you will be at an extreme disadvantage.
+</aside>
 
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
-Do | Interactive Course | [CS253: Lesson 2a][lesson-2a] | Do the entire lesson, 18 items in all. Be sure to read the notes below for tips on new and/or potentially confusing concepts.
+Do | Interactive Course | [Khan Academy: Intro to SQL][sql-khan] | Complete all the lessons in: SQL basics, More advanced SQL queries, Relational queries in SQL, and Modifying databases with SQL. This will give you an overview of how relational databases work as well as practice with common queries. 
+Do | Exercises | [w3schools SQL Tutorial][w3c-sql] | Do all the lessons under "SQL Tutorial" from SQL Home through SQL Comments. Some of this content will overlap with what you learned in the Khan Academy tutorials; that's okay--the more practice, the better! Stop when you get to the lessons under "SQL Databases" as we will work through these in the next lesson. If you are running low on time, prioritize the lessons on SQL syntax and concepts that you are unfamiliar with or found confusing during the Khan Academy tutorials.
+Read | Article | [SQL: JOINS][tech-net] | This Tech on the Net article is a worthwhile read if you find the idea of joins confusing. Joins are essential to understand and this article has Venn diagrams for the different joins, which is helpful for visualizing them.
 
-#### Notes
-* In the first lesson, "Quiz: Writing a Basic Form," the instructor casually introduces some Python syntax that we haven't encountered before. In the `Handler` class, the first method looks like this:
-    ```python
-    def write(self, *a, **kw):
-        self.response.out.write(*a, **kw)
-    ```
-    The arguments `*a` and `**kw` look different than anything we've seen, don't they? In Python, the symbols `*` and `**` can be used to represent *sets of arguments*, rather than just a single argument. We're goint to avoid using this new syntax in our studios, and you won't need it to complete studios or assignment. If you want to learn a bit about these special types of arguments, read the article [`*args and **kwargs in Python Explained`][python-args]. (Note that the symbols `*` and `**` are the only important things here; we can use either `*a` or `*args` with the same result.)
-* In the setup for "Quiz: FizzBuzz," the instructor quickly explains the expression `n = n and int(n)` which is likely confusing. What he says is that this expression is the same as saying: if `n` exists and is not `None`, then set `n = int(n)`. Why do we do this? If we were to try something like `int("")` or `int(None)`, then Python would throw an error. So this check avoids that situation. But how does the check actually work? Read section 9.5 of the article, [Notes about booleans and logical operators][boolean-evaluation] for a quick overview, and ask your instructor or TF if it's still confusing.
 
-[lesson-2a]: https://classroom.udacity.com/courses/cs253/lessons/48538421/concepts/487274210923#
-[python-args]: https://pythontips.com/2013/08/04/args-and-kwargs-in-python-explained/
-[boolean-evaluation]: http://www.thomas-cokelaer.info/tutorials/python/boolean.html
+[w3c-sql]: http://www.w3schools.com/sql/default.asp
+[sql-khan]: https://www.khanacademy.org/computing/computer-programming/sql
+[tech-net]: https://www.techonthenet.com/sql/joins.php

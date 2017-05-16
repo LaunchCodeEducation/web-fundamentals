@@ -3,38 +3,10 @@ title: Class 6 Prep
 currentMenu: classes
 ---
 
+## Templates
 
-### Keep Workin'
+Thus far, on the back-end, we have managed HTML by storing it in big chunks, as strings, inside our Python code. You probably found this process tedious and annoying. Fortunately there is a much nicer way of constructing HTML content to send back to the client. Using what's called a *template* engine, we can specify our HTML as a "template" inside a regular `.html` file, and simply leave a few "blank spaces", so to speak, wherever we want to place dynamically-generated content. Then our back-end code simply needs to "fill in the blanks". In this lesson you will learn how to use a Python template engine called Jinja 2.
 
-There is no additional prep work for this day. Use the extra time to work on your assignments, and to revisit any previous material that you would like to review.
-
-### Prep Work
-
-In class, we will do a free-form review session Q&A on whatever topics you want. **Come prepared with questions!** There are two main parts to this:
-
-1. Actually start the [User Signup][user-signup] assignment, if you haven't already. Trying and struggling and getting stuck is the only way you will realize which concepts you have questions about.
-2. Spend 15 - 30 minutes making a list of things you are stuck on or confused about.
-
-The more specific, the better. For example, if you just write down "Git", or some other umbrella topic, then you probably want to drill down a bit further into specific questions:
-
-> #### Questions:
-> - . . .
->
-> - Git
->
->    - Why do I need to `add` and also `commit`? What's the difference?
->
->    - What's the difference between Git and GitHub?
->
->    - . . . etc
-> - . . . etc
-
-Finally, in addition to answering questions, another thing your instructor can do during the review session is walk through some example demonstrations of whatever you want. So think about what sorts of problems you would like to see a walkthrough on:
-
-> #### Walkthrough Examples I Want to See
-> - How to handle a form submission inside the same handler class as the form itself (in studios it's always on a different handler class).
-> - . . . etc
-
-
-
-[user-signup]: ../../assignments/user-signup
+Task | Resource Type | Link | Instructions
+|----|---------------|------|-------------|
+Do | Interactive Lesson | [] |

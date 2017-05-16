@@ -9,9 +9,9 @@ In this studio we will finally cast aside those cumbersome, error-prone HTML str
 
 In today's walkthrough, we will do most of the work of switching our project to use templates:
 
-- We will import a new library called `jinja2`, a templating engine.
+- We will import `render_template` which will allow us to use `jinja2`, a templating engine.
 - We will create a bunch of `.html` files to hold our content.
-- In our request handlers, we will render those templates into our HTTP response!
+- In our request methods, we will render those templates into our HTTP response!
 
 In the process, we will talk about:
 
@@ -19,9 +19,7 @@ In the process, we will talk about:
 - How to insert the data once we know what it is.
 - We will also see the Jinja syntax for doing a few additional fancy (but important) things:
     - How to loop over a list of items in a template.
-    - How to use a conditional (if / else) in a template.
-- Finally, it is important to note that we will be doing all this in a manner somewhat different from the technique employed in the Udacity class's examples. They make heavy use of Python's `*args` and `**keyword_args` feature, which is very cool, and allows them to write somewhat slicker, more concise code for rendering templates.... BUT we don't want any of that to make templates seem unnecessarily complicated or confusing, so we will elect to write code that is slightly more repetitive here, in the interest of making it simpler to understand the essential concept for today: how to use a templating engine.
-
+    - How to write a conditional statement in a template.
 
 ## Studio
 
@@ -42,9 +40,9 @@ Your job is to get this page back up and running. The user should still see the 
 Of course, there is one caveat: you are required to use a template. Your `main.py` file should not contain any HTML at all!
 
 1. Create a `.html` file inside your `/templates` directory, and add whatever HTML content needs to be added.
-2. In your `AddMovie` request handler class, use your template to render the response.
+2. In your `AddMovie` request method, use your template to render the response.
 
-For reference, you can look at our code at the bottom of the `post` method in the `CrossOffMovie` class, which renders the `templates/cross-off.html` template file (in addition to the header and footer templates).
+For reference, you can look at our code at the bottom of the `post` method in the `watchMovie` class, which renders the `templates/watched-it.html` template file (in addition to the header and footer templates).
 
 
 [get-the-code]: ../getting-the-code/

@@ -19,8 +19,7 @@ In our FlickList app, we will delete much of the previous "Movie of the Day" cod
   - the `<label>` tag
 
 **Responding to a form submission:**
-  - making a new `RequestHandler` subclass
-  - mapping it to a route on our app
+  - map the request to a route on our app
     - this should match the `action` attribute on our form
     - tuples
   - accessing the data in the incoming request
@@ -73,21 +72,21 @@ For this studio (and all subsequent studios), you will want to start at the exac
 
 As mentioned above, your task is to implement a new feature for "crossing off" movies from the user's watchlist.
 
-Open up `main.py` in your text editor. You should see 4 `# TODO` comments in the code:
+Open up `main.py` in your text editor. You should see 3 `# TODO` comments in the code:
 
-1. **Add a form**. On the `Index` handler, include another `<form>` below the previous one. It should say something like:
+1. **Add a form**. On the `Index` template, include another `<form>` below the previous one. It should say something like:
 
     > I want to cross off ___ from my Watchlist.
 
     where the blank is a text box in which the user can type to specify the movie she wants to cross off.
 
-2. **Handle the form Submission.** Make another `RequestHandler` subclass called `CrossOffMovie`, and implement your subclass with the necessary code to handle incoming submissions and respond appropriately. You should display a confirmation message like:
+2. **Handle the form Submission.** Make another method called `CrossOffMovie` with the necessary code to handle incoming submissions and respond appropriately. You should display a confirmation message like:
 
   > <strike>Star Wars</strike> has been crossed off your Watchlist.
 
   You can use the `<strike>` tag to get that cool <strike>Strikethrough</strike> style of text.
 
-3. **Register your handler with the app.** You will need to add a new url route for your app, and register your new handler as the one that should respond to incoming requests at that route.
+3. **Register a route to your method with the app.** You will need to add a new url route for your app that should respond to incoming requests at that route.
 
 4. **Extra Credit: Use a dropdown instead of a text box.** For deleting a movie from a pre-existing list, a text box does not really make sense, because the user could theoretically type anything, even something that is not even on her watchlist in the first place. A more sensible UI component would a dropdown, which only allows the user to choose from among a limited set of choices.
 

@@ -12,12 +12,12 @@ As you work through the lesson materials, think about the applications you've be
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
 Read | Assignment | [Blogz](../../assignments/blogz/) | Read the assignment specification in detail before coming to class. This will help you understand the context of the next studio, and give you a chance to ask questions about the assignment in class.
-Read | Article | [Model-view-controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) | Read Wikipedia's article on MVC
+Read | Article | [MVC for Noobs](https://code.tutsplus.com/tutorials/mvc-for-noobs--net-10488) | Read this article on MVC. Don't worry if you do not totally understand the sections discussing cakePHP. This is just an example of how MVC can be implemented. Focus on the sections up to "OK, but Why a Framework"
 Do | Exercise | N/A | Complete the thought-exercise below
 
 ## Exercise
 
-Open up your `flicklist-python` project. Let's think about it in terms of the MVC organization.
+Open up your `flicklist-flask` project. Let's think about it in terms of the MVC organization.
 
 If you were to organize the application based on MVC principles, in which of the three components would you put:
 - Jinja templates

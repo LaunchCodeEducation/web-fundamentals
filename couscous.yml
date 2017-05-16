@@ -30,12 +30,12 @@ menu:
         studios:
             text: Studios
             relativeUrl: studios/
+        tutorials:
+            text: Tutorials
+            relativeUrl: tutorials/
         assignments:
             text: Assignments
             relativeUrl: assignments/
-        udacity:
-            text: Udacity CS253
-            absoluteUrl: https://www.udacity.com/course/web-development--cs253
         cheatsheets:
             text: Cheatsheets
             relativeUrl: cheatsheets/

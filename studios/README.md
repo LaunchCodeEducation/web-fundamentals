@@ -3,11 +3,17 @@ title: Studios
 currentMenu: studios
 ---
 
-## Headline News
+## Fake News
 
 Get an introduction to web developer tools in Google Chrome, and use them to inspect and change the contents of a live web site.
 
-[Work on Headline News](headline-news/)
+[Work on Fake News](fake-news/)
+
+## Fireside Story
+
+Learn how to create code together with a partner with a simple, fun story exercise.
+
+[Work on Fireside Story](fireside-story/)
 
 ## Flicklist
 
@@ -33,13 +39,13 @@ Validating user-submitted data.
 
 ### Flicklist 4
 
-Using templates to render views.
+Using templates to render views including responding to bad input (validations) and confirmation pages.
 
 [Work on Flicklist 4](flicklist/4/)
 
 ### Flicklist 5
 
-Miscellaneous improvements such as responding to bad input and adding confirmation pages.
+Miscellaneous improvements reinforcing validations and confirmation pages
 
 [Work on Flicklist 5](flicklist/5/)
 
@@ -65,18 +71,28 @@ Add login and logout behaviors with cookies.
 
 ### Flicklist 9
 
-Allow users to own movies, and add "recently watched" functionality.
+Password hashing
 
 [Work on Flicklist 9](flicklist/9/)
 
 ### Flicklist 10
 
-Securely store sensitive data by using hashing.
+Add Bootstrap to Flicklist to enhance the user interface
 
 [Work on Flicklist 10](flicklist/10/)
 
-### Flicklist 11
+## Databases
 
-Use Bootstrap to enhance the look of Flicklist.
+Create and manipulate tables, as well as explore the parallels between Python objects and database tables. Then make a real database locally and use it to perform SQL queries through *phpMyAdmin*.
 
-[Work on Flicklist 11](flicklist/11/)
+### Databases Part 1
+
+Explore how tables in relational databases relate to each other and their similarities to Python objects. Practice SQL queries.
+
+[Work on Databases Part 1](databases/1/)
+
+### Databases Part 2
+
+Import a `.sql` file and create a database on your computer. Use *phpMyAdmin* to make queries on your database tables.
+
+[Work on Databases Part 2](databases/2/)
