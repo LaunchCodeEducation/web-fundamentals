@@ -11,7 +11,7 @@ Class # | Prep Work | Studio | Topics | Begin Assignment\*
 4 | Prep Work | [FlickList 2](../studios/flicklist/2/) | HTML forms and inputs | [Web Caesar](../assignments/web-caesar/)
 5 | Prep Work | [FlickList 3](../studios/flicklist/3/) | Validating forms, redirecting, HTML escaping | User Signup
 6 | Prep Work | [FlickList 4](../studios/flicklist/4/) | Templates | &nbsp;
-7 | [Prep Work](../class-prep/7/) | [Databases Part 1](../studios/databases/1/) | Databases and SQL | &nbsp;
+7 | [Prep Work](../class-prep/7/) | [Databases Part 1](../studios/databases/1/) and [Flicklist 5](../studios/flicklist/5/) | Databases and SQL | &nbsp;
 8 | [Prep Work](../class-prep/8/) | [Databases Part 2](../studios/databases/2/) | More on Databases and SQL | &nbsp;
 9 | Prep Work | [FlickList 6](../studios/flicklist/6/) | Object-Relational Mapping | Build-a-blog
 10 | Prep Work | [FlickList 7](../studios/flicklist/7/) | User Authentication | &nbsp;
