@@ -218,20 +218,6 @@ Within each of `index` and `encrypt`, rather than return the form string, return
 
 Start up the application and test. Ensure that after submitting the form a first time, it is re-rendered with the encrypted string inside the text area.
 
-We're almost done, but there's one thing we need to fix. To see what this is, enter the string "&lt;/textarea&gt;" within the box, and enter 13 as the rotation amount. Submit the form You should see "&lt;/grkgnern&gt;" as the encrypted string.
-
-Now, re-enter 13 in the box, and submit again. Notice that there is no encrypted string this time, where we expected to see "&lt;/textarea&gt;" displayed. This is because our string was actually encrypted, but the browser interpreted the resulting string as closing out the `<textarea>` element. You can see this explicitly if you right-click on the page and select *View Source*.
-
-![Unescaped string](images/unescaped-textarea.png)
-
-See the `</textarea>` in red? That's the browser indicating to you that this particular closing tag doesn't have a matching opening tag. This is because the previous `</textarea>` tag, which was in fact our encrypted string, matched with the opening `<textarea>` tag.
-
-To fix this, let's ensure that we escape our encrypted string before inserting it within the page.
-
-Import the `cgi` module at the top of the file: `import cgi`. Then, where you call `form.format(...)` within `encrypt`, be sure to use `cgi.escape` to escape the encrypted string beforehand. To verify that this works, repeat the test above.
-
-Start up your app, and test! The [Sanity Check](#sanity-check) section below contains some specific tests to look for.
-
 ## Committing Your Work
 
 Let's wrap up by putting our file in the local Git repository. If you run `git status` you'll see that we have a directory that was created by Visual Studio Code.
@@ -295,7 +281,6 @@ Before turning in your work, make sure your application does the following:
 - Submitting the form with a rotation integer and message results in the encrypted text being displayed. For example, rotating "The crow flies at midnight!" by 13 gives "Gur pebj syvrf ng zvqavtug!".
 - Rotation preserves spaces and punctuation.
 - Successively rotating by complementary amounts--e.g. 13 and 13, 10 and 16, 4 and 22, etc.--gives the same message that you started with.
-- Doing the above step with the message "</textarea>" works. In other words, when text is rotated into the string "</textarea>" it is properly escaped and displayed within the actual `textarea` element on the page.
 
 ## Submit
 
