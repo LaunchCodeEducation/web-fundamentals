@@ -94,7 +94,16 @@ Listed below are the competencies you should demonstrate by the time you've comp
 
 ### Class 5
 
-*Coming Soon*
+- Describe why we must validate form submissions, even when providing limited options via a form
+- Describe common server error types by group (2xx, 3xx, 4xx, 5xx)
+- Explain why we receive a 405 error when submitting a form to a handler with a decorator like `@app.route('/')`
+- Describe the various ways that we can control and verify the data that users submit in an HTTP request: form restrictions, client-side validation, server-side validation
+- Validate request data based on numeric range or string length
+- Return error messages within an HTML page when form data doesn't validate
+- Use `str.format()` to create strings from templates and data values
+- Upon validation errors, render a form with valid data left in-place
+- Describe why HTML escaping is necessary when putting user data in a response
+- Return a redirect response
 
 ### Class 6
 
