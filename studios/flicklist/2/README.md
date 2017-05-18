@@ -29,13 +29,13 @@ Our app won't *really* be able to keep track of the user's movie list at this po
 
 ## Studio
 
-For Studio, your job is to provide another form that allows the user to "cross off" an item from her Watchlist.
+For the studio, your job is to provide another form that allows the user to "cross off" an item from her Watchlist.
 
 ### Checking out the Studio code
 
 For this studio (and all subsequent studios), you will want to start at the exact place where your instructor left off at the end of the Walkthrough. But don't worry--you do not need to have finished the previous studio, nor do you need to have frantically copied each line of code that your instructor wrote just now. Thanks to the magic of Git branches, we have a system in place that will allow you start each studio with the correct starter code no matter what. Here's how:
 
-1. First, check your status and make sure you do not have any uncommitted changes:
+1. First, in your `flicklist-flask` repository, check your status and make sure you do not have any uncommitted changes:
 
     ```nohighlight
     $ git status
@@ -80,7 +80,7 @@ Open up `main.py` in your text editor. You should see 3 `# TODO` comments in the
 
     where the blank is a text box in which the user can type to specify the movie she wants to cross off.
 
-2. **Handle the form Submission.** Make another method called `CrossOffMovie` with the necessary code to handle incoming submissions and respond appropriately. You should display a confirmation message like:
+2. **Handle the form submission.** Make another method called `CrossOffMovie` with the necessary code to handle incoming submissions and respond appropriately. You should display a confirmation message like:
 
   > <strike>Star Wars</strike> has been crossed off your Watchlist.
 
@@ -90,7 +90,7 @@ Open up `main.py` in your text editor. You should see 3 `# TODO` comments in the
 
 4. **Extra Credit: Use a dropdown instead of a text box.** For deleting a movie from a pre-existing list, a text box does not really make sense, because the user could theoretically type anything, even something that is not even on her watchlist in the first place. A more sensible UI component would a dropdown, which only allows the user to choose from among a limited set of choices.
 
-  Use the `<select>` and `<option>` tags to create a dropdown component where the only available choices are the movies that are currently in the user's Watchlist.
+  Use the `<select>` and `<option>` tags to create a dropdown component where the only available choices are the movies that are currently in the user's Watchlist. See [w3schools](https://www.w3schools.com/html/html_form_elements.asp) for more about this form element.
 
   Thus far, of course, there is no such thing as the user's "real" Watchlist, so you can just pretend. Simply hard-code a few of your favorite movies into the dropdown *as if* those movies make up the user's current watchlist.
 
