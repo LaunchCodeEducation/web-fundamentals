@@ -90,6 +90,7 @@ Listed below are the competencies you should demonstrate by the time you've comp
 - Use the `name` attribute of form inputs to name request parameters
 - Create handlers in Flask for GET and POST request types
 - Use the `value` attribute to specify the data value that is sent to the server upon form submission
+- Describe the differences between GET and POST, and what each request type should be used for
 
 ### Class 5
 

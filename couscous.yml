@@ -36,6 +36,9 @@ menu:
         assignments:
             text: Assignments
             relativeUrl: assignments/
+        videos:
+            text: Videos
+            relativeUrl: videos/
         cheatsheets:
             text: Cheatsheets
             relativeUrl: cheatsheets/
