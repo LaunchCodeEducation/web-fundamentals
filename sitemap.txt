@@ -12,6 +12,7 @@ http://education.launchcode.org/web-fundamentals/class-prep\1/index.html
 http://education.launchcode.org/web-fundamentals/class-prep\2/index.html
 http://education.launchcode.org/web-fundamentals/class-prep\3/index.html
 http://education.launchcode.org/web-fundamentals/class-prep\4/index.html
+http://education.launchcode.org/web-fundamentals/class-prep\4\review.html
 http://education.launchcode.org/web-fundamentals/class-prep\5/index.html
 http://education.launchcode.org/web-fundamentals/class-prep\6/index.html
 http://education.launchcode.org/web-fundamentals/class-prep\7/index.html
