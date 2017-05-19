@@ -42,6 +42,11 @@
                                     </a>
                                 </li>
                                                             <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/web-fundamentals/videos/">
+                                        Videos
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
                                     <a href="http://education.launchcode.org/web-fundamentals/cheatsheets/">
                                         Cheatsheets
                                     </a>
@@ -146,12 +151,14 @@ Initialized empty Git repository in /Users/chris/lc101/web-caesar/.git/</code></
 <p><img src="images/repo-settings.png" alt="Repository Settings" /></p>
 <p>After creating the repository, you'll be on the repository's home page. From there, copy the <em>Clone or Download</em> URL.</p>
 <img src="images/clone-url.png" style="width:400px;" />
-<p>Back in your terminal--be sure you're in the directory <code>~/lc101/web-caesar/</code>--connect your local repository to the new remote repository.</p>
+<p>Back in your terminal--be sure you're in the directory <code>~/lc101/web-caesar/</code>--connect your local repository to the new remote repository. Use your repository's url from GitHub, which should look like the one below (but probably not with the username <code>chrisbay</code>).</p>
 <pre><code class="language-nohighlight">$ git remote add origin https://github.com/chrisbay/web-caesar.git</code></pre>
 <p>You can verify the status of remote repository connections at any time by running <code>git remote -v</code>.</p>
 <pre><code class="language-nohighlight">$ git remote -v
 origin  https://github.com/chrisbay/web-caesar.git (fetch)
 origin  https://github.com/chrisbay/web-caesar.git (push)</code></pre>
+<p>Next, pull the remote to your local so that you'll have the <code>.gitignore</code> file on your computer:</p>
+<pre><code class="language-nohighlight">$ git pull origin master</code></pre>
 <h3 id="creating-a-virtual-environment">Creating a virtual environment</h3>
 <p>Next, let's create a new virtual environment. We'll use this same environment for all future Unit 2 assignments, so we will give it the generic name <code>flask-env</code>.</p>
 <pre><code class="language-nohighlight">$ conda create -n flask-env
@@ -208,7 +215,7 @@ Proceed ([y]/n)? y
 <h2 id="your-tasks">Your Tasks</h2>
 <p>Open up the project in VS Code to get started: <code>code .</code>.</p>
 <h3 id="setting-up-a-basic-flask-app">Setting up a basic Flask app</h3>
-<p>We can start with the basic outline of the Hello, World app that you created previously. Go ahead and <a href="build-a-web-application-line-by-line">grab the code from that tutorial</a>. We recommend typing this code line-by-line until you're familiar with what each piece does. In fact, this is a good time to review the line-by-line explanation in the Hello, World tutorial!</p>
+<p>We can start with the basic outline of the Hello, World app that you created previously. Go ahead and <a href="../../tutorials/hello-flask/#building-a-web-application-line-by-line">grab the code from that tutorial</a>. We recommend typing this code line-by-line until you're familiar with what each piece does. In fact, this is a good time to review the line-by-line explanation in the Hello, World tutorial!</p>
 <h3 id="rendering-a-form">Rendering a form</h3>
 <p>Rather than display the &quot;Hello World&quot; message, we want our main view to display a form that looks like this.</p>
 <p><img src="images/caesar-form.png" alt="Caesar Form" /></p>
@@ -260,13 +267,6 @@ Proceed ([y]/n)? y
 </ol>
 <p>Within each of <code>index</code> and <code>encrypt</code>, rather than return the form string, return <code>form.format(...)</code>. The argument to this method call should be the empty string in the case of <code>index</code>, and it should be the encrypted string in the case of <code>encrypt</code>.</p>
 <p>Start up the application and test. Ensure that after submitting the form a first time, it is re-rendered with the encrypted string inside the text area.</p>
-<p>We're almost done, but there's one thing we need to fix. To see what this is, enter the string &quot;&lt;/textarea&gt;&quot; within the box, and enter 13 as the rotation amount. Submit the form You should see &quot;&lt;/grkgnern&gt;&quot; as the encrypted string.</p>
-<p>Now, re-enter 13 in the box, and submit again. Notice that there is no encrypted string this time, where we expected to see &quot;&lt;/textarea&gt;&quot; displayed. This is because our string was actually encrypted, but the browser interpreted the resulting string as closing out the <code>&lt;textarea&gt;</code> element. You can see this explicitly if you right-click on the page and select <em>View Source</em>.</p>
-<p><img src="images/unescaped-textarea.png" alt="Unescaped string" /></p>
-<p>See the <code>&lt;/textarea&gt;</code> in red? That's the browser indicating to you that this particular closing tag doesn't have a matching opening tag. This is because the previous <code>&lt;/textarea&gt;</code> tag, which was in fact our encrypted string, matched with the opening <code>&lt;textarea&gt;</code> tag.</p>
-<p>To fix this, let's ensure that we escape our encrypted string before inserting it within the page.</p>
-<p>Import the <code>cgi</code> module at the top of the file: <code>import cgi</code>. Then, where you call <code>form.format(...)</code> within <code>encrypt</code>, be sure to use <code>cgi.escape</code> to escape the encrypted string beforehand. To verify that this works, repeat the test above.</p>
-<p>Start up your app, and test! The <a href="#sanity-check">Sanity Check</a> section below contains some specific tests to look for.</p>
 <h2 id="committing-your-work">Committing Your Work</h2>
 <p>Let's wrap up by putting our file in the local Git repository. If you run <code>git status</code> you'll see that we have a directory that was created by Visual Studio Code.</p>
 <pre><code class="language-nohighlight">$ git status
@@ -312,7 +312,6 @@ nothing added to commit but untracked files present (use "git add" to track)</co
 <li>Submitting the form with a rotation integer and message results in the encrypted text being displayed. For example, rotating &quot;The crow flies at midnight!&quot; by 13 gives &quot;Gur pebj syvrf ng zvqavtug!&quot;.</li>
 <li>Rotation preserves spaces and punctuation.</li>
 <li>Successively rotating by complementary amounts--e.g. 13 and 13, 10 and 16, 4 and 22, etc.--gives the same message that you started with.</li>
-<li>Doing the above step with the message &quot;</textarea>&quot; works. In other words, when text is rotated into the string &quot;</textarea>&quot; it is properly escaped and displayed within the actual <code>textarea</code> element on the page.</li>
 </ul>
 <h2 id="submit">Submit</h2>
 <p>To turn in your assignment and get credit, follow the standard assignment instructions in <a href="../">How to Submit</a>.</p>

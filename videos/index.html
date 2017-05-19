@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Class 11 Notes :: Unit 2: Web Fundamentals</title>
+        <title>Videos :: Unit 2: Web Fundamentals</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-class-11-notes'>
+    <body id='page-videos'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -41,7 +41,7 @@
                                         Assignments
                                     </a>
                                 </li>
-                                                            <li class=" lc-button">
+                                                            <li class="active lc-button">
                                     <a href="http://education.launchcode.org/web-fundamentals/videos/">
                                         Videos
                                     </a>
@@ -124,80 +124,9 @@
             <div class="row">
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
-                                        <h1>Class 11 Notes</h1>
-                    <h2 id="during-walkthrough-7">During Walkthrough 7</h2>
-<ul>
-<li>a ton of new stuff, infrastructure for user accounts
-<ul>
-<li><code>User</code> model
-<ul>
-<li>just two fields, username and password hash</li>
-</ul></li>
-<li>Registration
-<ul>
-<li><code>/registration</code> route and <code>Registration</code> handler</li>
-<li>the handler is kind of complicated, has a bunch of helpers for veryifying password and such</li>
-</ul></li>
-<li>Login / Logout
-<ul>
-<li><code>/login</code> route and <code>Login</code> handler</li>
-<li><code>/logout</code> route and <code>Logout</code> handler</li>
-</ul></li>
-<li>Add more methods to the base <code>Handler</code> class
-<ul>
-<li>helpers for logging in and out and managing cookies</li>
-<li>the <code>initialize</code> method, which comes from the parent class <code>webapp2.RequestHandler</code>. We use it to create a login wall around any pages that require login.</li>
-</ul></li>
-<li><code>hashutils.py</code>, a bunch of helper functions for hashing and salting stuff</li>
-</ul></li>
-</ul>
-<h2 id="during-walkthrough-8">During Walkthrough 8</h2>
-<ul>
-<li>First, we definitely do want to spend a little time going over the changes listed above.</li>
-<li>Integrate &quot;user accounts&quot; concept into the the rest of the app
-<ul>
-<li>Add <code>owner</code> field to the <code>Movie</code> class</li>
-<li>Update the <code>AddMovie</code> handler
-<ul>
-<li>When the new movie object is created, set its <code>.owner</code> to the current user</li>
-</ul></li>
-<li>Update the <code>MovieRatings</code> handler
-<ul>
-<li>When querying for watched movies, we need to filter for only the movies that belong to the currently logged-in user. We switch from using <code>GqlQuery("SELECT ... ")</code> to using ORM methods <code>all()</code> and <code>filter()</code>. I chained a few such method calls together into one line, but you might want to break it up into a few lines for clarity.</li>
-</ul></li>
-<li>Update <code>Index</code> handler
-<ul>
-<li>Actually, don't. Talk about how we are leaving a small hole for the students to fill during studio: namely, don't update the database query. So visiting <code>/</code> will still show a list of <em>everyone's</em> movies combined. The student will need to filter the query so that the user only sees their own movie list.</li>
-</ul></li>
-</ul></li>
-<li>Start to create another page at <code>/recently-watched</code> which will show the most recent ratings of <em>everyone</em> combined
-<ul>
-<li>Add <code>datetime_watched</code> field to <code>Movie</code> object
-<ul>
-<li>Need to do an import: <code>from datetime import datetime</code></li>
-</ul></li>
-<li>Update the <code>WatchedMovie</code> handler:
-<ul>
-<li>A movie has been watched, so set its <code>datetime_watched</code> field to <code>datetime.now()</code></li>
-</ul></li>
-<li>Create new handler <code>RecentlyWatchedMovies</code>
-<ul>
-<li>Implement <code>RecentlyWatchedMovies.get</code>. Query for all the watched movies, and sort by <code>datetime_watched</code>. Then run the query, but limit the result-set to 20 items.</li>
-<li>Display the titles of the movies in a rudimentary way, without using a template (student will have to do that).</li>
-<li>Leave a few other holes:</li>
-<li>Dont wire in the new <code>/recently-watched</code> route</li>
-<li>Don't implement the template</li>
-</ul></li>
-</ul></li>
-</ul>
-<h2 id="during-studio-8">During Studio 8</h2>
-<ol>
-<li>Fill the hole from walkthrough on the <code>Index</code> handler: replace the old GQL query with a new ORM query that only gives back the unwatched movies of <em>the current user</em>.</li>
-<li>Add a navigation link in <code>base.html</code> so that a logged-in user can log out.</li>
-<li>Add the <code>/recently-watched</code> route to your app</li>
-<li>In <code>RecentlyWatchedMovies.get</code> render the <code>recently-watched.html</code> template.</li>
-<li>Actually implement the <code>recently-watched.html</code> template.</li>
-</ol>
+                                        <h1>Videos</h1>
+                    <p><a href="working-with-html-forms/">Working with HTML Forms</a></p>
+<p><a href="forms-in-flask/">Displaying and Processing Forms in Flask</a></p>
                                     </section>
 
             </div>
