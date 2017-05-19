@@ -9,6 +9,6 @@ We have seen how to use HTML to display content to a user. But what if our site 
 
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
-Do | Interactive Lesson | [Working with HTML Forms](working-with-html-forms/) | Watch and code along with this video lesson on using HTML forms
-Do | Interactive Lesson | [Forms in Flask](forms-in-flask/) | Watch and code along with this video lesson that shows you how to display and process forms in Flask
+Do | Interactive Lesson | [Working with HTML Forms](../../videos/working-with-html-forms/) | Watch and code along with this video lesson on using HTML forms
+Do | Interactive Lesson | [Forms in Flask](../../videos/forms-in-flask/) | Watch and code along with this video lesson that shows you how to display and process forms in Flask
 Read | Article | [HTTP Methods: GET vs POST](https://www.w3schools.com/tags/ref_httpmethods.asp) | Read this article on the differences between GET and POST, and what each should be used for

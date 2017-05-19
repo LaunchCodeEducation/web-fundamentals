@@ -60,7 +60,7 @@ The above pictures show how these commands will look in Git Bash. Mac Terminal w
 
 Now we're ready to build our web application!
 
-### Build a web application, line by line
+### Building a web application line by line
 
 First, let's initialize this project as a Git repository.
 

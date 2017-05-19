@@ -43,7 +43,7 @@ After creating the repository, you'll be on the repository's home page. From the
 
 <img src="images/clone-url.png" style="width:400px;" />
 
-Back in your terminal--be sure you're in the directory `~/lc101/web-caesar/`--connect your local repository to the new remote repository.
+Back in your terminal--be sure you're in the directory `~/lc101/web-caesar/`--connect your local repository to the new remote repository. Use your repository's url from GitHub, which should look like the one below (but probably not with the username `chrisbay`).
 
 ```nohighlight
 $ git remote add origin https://github.com/chrisbay/web-caesar.git
@@ -55,6 +55,12 @@ You can verify the status of remote repository connections at any time by runnin
 $ git remote -v
 origin	https://github.com/chrisbay/web-caesar.git (fetch)
 origin	https://github.com/chrisbay/web-caesar.git (push)
+```
+
+Next, pull the remote to your local so that you'll have the `.gitignore` file on your computer:
+
+```nohighlight
+$ git pull origin master
 ```
 
 ### Creating a virtual environment
@@ -131,7 +137,7 @@ Open up the project in VS Code to get started: `code .`.
 
 ### Setting up a basic Flask app
 
-We can start with the basic outline of the Hello, World app that you created previously. Go ahead and [grab the code from that tutorial](build-a-web-application-line-by-line). We recommend typing this code line-by-line until you're familiar with what each piece does. In fact, this is a good time to review the line-by-line explanation in the Hello, World tutorial!
+We can start with the basic outline of the Hello, World app that you created previously. Go ahead and [grab the code from that tutorial](../../tutorials/hello-flask/#building-a-web-application-line-by-line). We recommend typing this code line-by-line until you're familiar with what each piece does. In fact, this is a good time to review the line-by-line explanation in the Hello, World tutorial!
 
 ### Rendering a form
 
