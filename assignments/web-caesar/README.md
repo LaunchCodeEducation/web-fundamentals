@@ -137,7 +137,7 @@ Open up the project in VS Code to get started: `code .`.
 
 ### Setting up a basic Flask app
 
-We can start with the basic outline of the Hello, World app that you created previously. Go ahead and [grab the code from that tutorial](build-a-web-application-line-by-line). We recommend typing this code line-by-line until you're familiar with what each piece does. In fact, this is a good time to review the line-by-line explanation in the Hello, World tutorial!
+We can start with the basic outline of the Hello, World app that you created previously. Go ahead and [grab the code from that tutorial](../../tutorials/hello-flask/#building-a-web-application-line-by-line). We recommend typing this code line-by-line until you're familiar with what each piece does. In fact, this is a good time to review the line-by-line explanation in the Hello, World tutorial!
 
 ### Rendering a form
 
