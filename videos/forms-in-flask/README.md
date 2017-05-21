@@ -51,6 +51,14 @@ http://localhost:5000/hello?first_name=Chris&last_name=Bay
 
 #### Accessing POST request parameters
 
+To enable a handler function to receive `POST` requests, we must add a `methods` parameter to the `@app.route` decorator:
+
+```python
+@app.route('/path', methods=['POST'])
+def my_handler():
+    # request handling code
+```
+
 A `POST` parameter can be accessed via `request.form`:
 
 ```python
