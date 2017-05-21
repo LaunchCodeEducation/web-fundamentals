@@ -12,3 +12,5 @@ Here are some review questions for you to solidify your knowledge of the concept
 3. Which attribute can you use to specify a default value to be sent to the server when a form is submitted?
 
 4. What are the differences between GET and POST requests? When do you want to use each? What attribute of the `form` element is used to specify the type of request you'll be making?
+
+5. Describe a situation in which each of the following HTTP status codes might be received by a browser: 200, 404, 405, 500

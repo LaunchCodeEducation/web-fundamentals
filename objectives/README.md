@@ -91,18 +91,19 @@ Listed below are the competencies you should demonstrate by the time you've comp
 - Create handlers in Flask for GET and POST request types
 - Use the `value` attribute to specify the data value that is sent to the server upon form submission
 - Describe the differences between GET and POST, and what each request type should be used for
+- Describe common HTTP status codes by group (2xx, 3xx, 4xx, 5xx)
+- Describe the common HTTP status codes: 200, 302, 400, 404, 405, 500
+- Explain why we receive a 405 error when submitting a form to a handler with a decorator like `@app.route('/')`
+- Use `str.format()` to create strings from template strings and data values
 
 ### Class 5
 
 - Describe why we must validate form submissions, even when providing limited options via a form
-- Describe common server error types by group (2xx, 3xx, 4xx, 5xx)
-- Explain why we receive a 405 error when submitting a form to a handler with a decorator like `@app.route('/')`
 - Describe the various ways that we can control and verify the data that users submit in an HTTP request: form restrictions, client-side validation, server-side validation
 - Validate request data based on numeric range or string length
-- Return error messages within an HTML page when form data doesn't validate
-- Use `str.format()` to create strings from templates and data values
+- Return descriptive error messages within an HTML page when form data doesn't validate
 - Upon validation errors, render a form with valid data left in-place
-- Describe why HTML escaping is necessary when putting user data in a response
+- Describe why HTML escaping is necessary when putting user-submitted data in a response
 - Return a redirect response
 
 ### Class 6
