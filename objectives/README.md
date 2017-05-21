@@ -100,6 +100,7 @@ Listed below are the competencies you should demonstrate by the time you've comp
 
 - Describe why we must validate form submissions, even when providing limited options via a form
 - Describe the various ways that we can control and verify the data that users submit in an HTTP request: form restrictions, client-side validation, server-side validation
+- Describe advantages and disadvantages of both client and server-side validation
 - Validate request data based on numeric range or string length
 - Return descriptive error messages within an HTML page when form data doesn't validate
 - Upon validation errors, render a form with valid data left in-place
@@ -108,7 +109,13 @@ Listed below are the competencies you should demonstrate by the time you've comp
 
 ### Class 6
 
-*Coming Soon*
+- Describe the benefits of using templates
+- Use the Jinja2 template environment
+- Use autoescaping within Jinja2 templates
+- Create stand-alone Jinja2 templates
+- Pass data from request handlers into templates
+- Create Jinja2 templates that use base templates and content blocks
+- Write conditionals and loops within Jinja2 templates
 
 ### Class 7
 
