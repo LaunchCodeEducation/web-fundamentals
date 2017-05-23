@@ -3,11 +3,17 @@ title: Videos
 currentMenu: videos
 ---
 
-## Forms and Validation
+## Forms
 
 [Working with HTML Forms](working-with-html-forms/)
 
 [Displaying and Processing Forms in Flask](forms-in-flask/)
+
+[HTML Form Inputs](form-inputs/)
+
+[Using str.format in Python](str-format/)
+
+## Server-Side Validation
 
 [Introduction to Validation](intro-to-validation/)
 
