@@ -74,7 +74,7 @@ As mentioned above, your task is to implement a new feature for "crossing off" m
 
 Open up `main.py` in your text editor. You should see 3 `# TODO` comments in the code:
 
-1. **Add a form**. On the `Index` template, include another `<form>` below the previous one. It should say something like:
+1. **Add a form**. On the Index page, include another `<form>` below the previous one (under `def index():`). It should say something like:
 
     > I want to cross off ___ from my Watchlist.
 

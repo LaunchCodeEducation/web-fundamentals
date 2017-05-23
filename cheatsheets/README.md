@@ -26,3 +26,8 @@ currentMenu: cheatsheets
 - [Git Basics](https://github.com/LaunchCodeEducation/cheatsheets/blob/master/git-basics)
 - [Tower Git Cheat Sheet](https://www.git-tower.com/blog/git-cheat-sheet/)
 - [Try Git](https://try.github.io/)
+
+## Other Web Resources:
+
+- [Jinja2 Documentation](http://jinja.pocoo.org/docs/2.9/)
+- [Flask Documentation](http://flask.pocoo.org/docs/0.12/)

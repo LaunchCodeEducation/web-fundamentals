@@ -58,7 +58,7 @@ We will be using the simple framework Flask along with Conda's built in virtual 
 
 After lecture, you will work on your own (or with a classmate) to extend the project and pick up where lecture left off.
 
-Before you get started, fire up the FlickList app using `python main.py` and visit the home page in a browser. You should see a page that looks like this. (The port number may be different.)
+Before you get started, checkout the walkthrough1 branch using `git checkout walkthrough1`. Then fire up the FlickList app using `python main.py` and visit the home page in a browser. You should see a page that looks like this. (The port number may be different.)
 
 ![Walkthrough 1 Solution in Browser](walkthrough1-flicklist.png)
 
