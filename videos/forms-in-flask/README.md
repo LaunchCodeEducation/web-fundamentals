@@ -1,5 +1,5 @@
 ---
-title: "Video Lesson: Displaying and Processing Forms in Flask"
+title: "Displaying and Processing Forms in Flask"
 currentMenu: videos
 ---
 

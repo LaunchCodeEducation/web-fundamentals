@@ -1,0 +1,6 @@
+---
+title: "Using HTTP Redirects"
+currentMenu: videos
+---
+
+<div class="youtube-wrapper"><iframe width="776" height="437" src="https://www.youtube-nocookie.com/embed/XPzRfb2Ky5s?rel=0" frameborder="0" allowfullscreen></iframe></div>
