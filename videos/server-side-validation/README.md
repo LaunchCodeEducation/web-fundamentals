@@ -7,4 +7,4 @@ currentMenu: videos
 
 ## Code
 
-View the [final code](https://github.com/LaunchCodeEducation/hello-flask/tree/08ad402cb901433d32879135f091a085fa9d25a0) from this lesson
+View the [final code](https://github.com/LaunchCodeEducation/hello-flask/blob/08ad402cb901433d32879135f091a085fa9d25a0/main.py) from this lesson
