@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Video Lesson: Displaying and Processing Forms in Flask :: Unit 2: Web Fundamentals</title>
+        <title>Displaying and Processing Forms in Flask :: Unit 2: Web Fundamentals</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-video-lesson-displaying-and-processing-forms-in-flask'>
+    <body id='page-displaying-and-processing-forms-in-flask'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -124,8 +124,38 @@
             <div class="row">
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
-                                        <h1>Video Lesson: Displaying and Processing Forms in Flask</h1>
+                                        <h1>Displaying and Processing Forms in Flask</h1>
                     <div class="youtube-wrapper"><iframe width="776" height="437" src="https://www.youtube-nocookie.com/embed/Tr5IU5CpJho?rel=0" frameborder="0" allowfullscreen></iframe></div>
+<h2 id="notes">Notes</h2>
+<p>As always, when staring to work on a Flask application, activate an appropriate virtual environment. Here, we do:</p>
+<pre><code class="language-nohighlight">$ source activate hello-flask</code></pre>
+<h3 id="working-with-forms">Working with forms</h3>
+<ul>
+<li>To create a form in a Python file, to be returned by a handler function in Flask, use triple-quotes <code>"""</code> to enclose strings that break across lines. This allows us to write large amounts of text (e.g. HTML) within a Python file.</li>
+<li>If this form is a global variable (i.e. it is defined outside of any function) then it can be used by multiple handler functions.</li>
+<li>By default, the <code>action</code> of a form is the same URL that the form is displayed at.</li>
+<li>By default, the <code>method</code> of a form is <code>GET</code>.</li>
+<li>The <code>name</code> attribute of a form element determines the key that will be used to pass the parameter to the server in the HTTP request. Thus, if an element has <code>name='first_name'</code> then the string <code>'first_name'</code> must be used to access the value of the form element on the server.</li>
+</ul>
+<h3 id="accessing-request-data">Accessing request data</h3>
+<p>Accessing both <code>GET</code> and <code>POST</code> parameters within Flask requires the <code>request</code> object provided by Flask:</p>
+<pre><code class="language-python">from flask import request</code></pre>
+<h4 id="accessing-get-request-parameters">Accessing GET request parameters</h4>
+<p>A query (or <code>GET</code> request) parameter can be accessed via <code>request.args</code>:</p>
+<pre><code class="language-python">form_value = request.args.get('param_name')</code></pre>
+<p><code>GET</code> parameters are passed in the HTTP request as part of the URL. More specifically, they make up the query string--the portion after <code>?</code>--which looked like this in the lesson:</p>
+<pre><code class="language-nohighlight">http://localhost:5000/hello?first_name=Chris</code></pre>
+<p>Here, the query string is <code>?first_name=Chris</code>. If there were multiple query parameters, they would be separated by the <code>&amp;</code> (ampersand) character.</p>
+<pre><code class="language-nohighlight">http://localhost:5000/hello?first_name=Chris&amp;last_name=Bay</code></pre>
+<h4 id="accessing-post-request-parameters">Accessing POST request parameters</h4>
+<p>To enable a handler function to receive <code>POST</code> requests, we must add a <code>methods</code> parameter to the <code>@app.route</code> decorator:</p>
+<pre><code class="language-python">@app.route('/path', methods=['POST'])
+def my_handler():
+    # request handling code</code></pre>
+<p>A <code>POST</code> parameter can be accessed via <code>request.form</code>:</p>
+<pre><code class="language-python">form_value = request.form['param_name']</code></pre>
+<h3 id="405---method-not-allowed">405 - Method Not Allowed</h3>
+<p>An HTTP status of 405 - Method Not Allowed will be received if a resource/path is requested that doesn't accept requests using the given method (usually, <code>GET</code> or <code>POST</code>). This can be a common mistake when setting up a form to <code>POST</code> to a given path, but failing to configure the handler function to accept <code>POST</code> requests.</p>
 <h2 id="code">Code</h2>
 <p>View the <a href="https://github.com/LaunchCodeEducation/hello-flask/tree/0b248600afdd34648c8b37ec866b0ca54dec9282" target="_blank">final code</a> from this lesson</p>
                                     </section>

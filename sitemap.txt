@@ -14,7 +14,9 @@ http://education.launchcode.org/web-fundamentals/class-prep\3/index.html
 http://education.launchcode.org/web-fundamentals/class-prep\4/index.html
 http://education.launchcode.org/web-fundamentals/class-prep\4\review.html
 http://education.launchcode.org/web-fundamentals/class-prep\5/index.html
+http://education.launchcode.org/web-fundamentals/class-prep\5\review.html
 http://education.launchcode.org/web-fundamentals/class-prep\6/index.html
+http://education.launchcode.org/web-fundamentals/class-prep\6\review.html
 http://education.launchcode.org/web-fundamentals/class-prep\7/index.html
 http://education.launchcode.org/web-fundamentals/class-prep\8/index.html
 http://education.launchcode.org/web-fundamentals/class-prep\9/index.html
@@ -48,6 +50,16 @@ http://education.launchcode.org/web-fundamentals/studios\flicklist\getting-the-c
 http://education.launchcode.org/web-fundamentals/tutorials/index.html
 http://education.launchcode.org/web-fundamentals/tutorials\hello-flask/index.html
 http://education.launchcode.org/web-fundamentals/videos/index.html
+http://education.launchcode.org/web-fundamentals/videos\form-inputs/index.html
 http://education.launchcode.org/web-fundamentals/videos\forms-in-flask/index.html
+http://education.launchcode.org/web-fundamentals/videos\html-escaping/index.html
+http://education.launchcode.org/web-fundamentals/videos\intro-to-validation/index.html
+http://education.launchcode.org/web-fundamentals/videos\jinja-variable-expressions/index.html
+http://education.launchcode.org/web-fundamentals/videos\redirects/index.html
+http://education.launchcode.org/web-fundamentals/videos\server-side-validation/index.html
+http://education.launchcode.org/web-fundamentals/videos\str-format/index.html
+http://education.launchcode.org/web-fundamentals/videos\task-list/index.html
+http://education.launchcode.org/web-fundamentals/videos\template-extensions/index.html
+http://education.launchcode.org/web-fundamentals/videos\using-jinja/index.html
 http://education.launchcode.org/web-fundamentals/videos\working-with-html-forms/index.html
 http://education.launchcode.org/web-fundamentals/sitemap.html

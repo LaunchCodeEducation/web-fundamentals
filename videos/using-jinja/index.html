@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Class 4 Prep Review :: Unit 2: Web Fundamentals</title>
+        <title>Using Jinja2 Templates in Flask :: Unit 2: Web Fundamentals</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-class-4-prep-review'>
+    <body id='page-using-jinja2-templates-in-flask'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -21,7 +21,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
                         <ul class="dropdown-menu">
-                                                            <li class="active lc-button">
+                                                            <li class=" lc-button">
                                     <a href="http://education.launchcode.org/web-fundamentals/classes/">
                                         Classes
                                     </a>
@@ -41,7 +41,7 @@
                                         Assignments
                                     </a>
                                 </li>
-                                                            <li class=" lc-button">
+                                                            <li class="active lc-button">
                                     <a href="http://education.launchcode.org/web-fundamentals/videos/">
                                         Videos
                                     </a>
@@ -124,23 +124,47 @@
             <div class="row">
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
-                                        <h1>Class 4 Prep Review</h1>
-                    <p>Here are some review questions for you to solidify your knowledge of the concepts covered in this class:</p>
+                                        <h1>Using Jinja2 Templates in Flask</h1>
+                    <div class="youtube-wrapper"><iframe width="776" height="437" src="https://www.youtube-nocookie.com/embed/exR1kxpd1cY?rel=0" frameborder="0" allowfullscreen></iframe></div>
+<h2 id="notes">Notes</h2>
+<p>In this video we learn how to make our code more maintainable and encapsulated by removing the long strings of HTML from our <code>main.py</code> and putting them into templates. We will do this using a Python templating engine called <a href="http://jinja.pocoo.org/docs/2.9/" target="_blank">Jinja2</a>. Here are the steps we'll follow: </p>
 <ol>
-<li>
-<p>When do you want to use the <code>name</code> and <code>id</code> attributes for an HTML element? What are the uses of each? Which one will a <code>label</code> element's <code>for</code> attribute reference? Which one will you use to access an element in your Flask app?</p>
-</li>
-<li>
-<p>What is the difference between a <code>radio</code> input type and a <code>checkbox</code> input type? Which would you use when you want a user to be able to select multiple options?</p>
-</li>
-<li>
-<p>Which attribute can you use to specify a default value to be sent to the server when a form is submitted?</p>
-</li>
-<li>
-<p>What are the differences between GET and POST requests? When do you want to use each? What attribute of the <code>form</code> element is used to specify the type of request you'll be making?</p>
-</li>
-<li>Describe a situation in which each of the following HTTP status codes might be received by a browser: 200, 404, 405, 500</li>
+<li><code>import os</code> and <code>import jinja2</code> in <code>main.py</code></li>
+<li>Create a directory named <code>templates</code> and then use <code>os</code> to make a new file system path to it that Jinja will use:
+<pre><code class="language-python">template_dir = os.path.join(os.path.dirname(__file__), 'templates')</code></pre></li>
+<li>Initialize the Jinja templating environment: 
+<pre><code class="language-python">jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir))</code></pre></li>
+<li>Extract the HTML string in the variable <code>form</code> and put it in a newly created <code>hello_form.html</code> file in the <code>templates</code> directory.</li>
+<li>In the <code>index</code> function, create a <code>template</code> variable that holds the template returned from Jinja's <code>get_template</code> function and then return the string that <code>template.render()</code> returns:
+<pre><code class="language-python">def index():
+template = jinja_env.get_template('hello_form.html')
+return template.render()</code></pre></li>
+<li>Extract the HTML string that <code>hello</code> returns from <code>main.py</code> and put it in a newly created <code>hello_greeting.html</code> file in the <code>templates</code> directory. Be sure to add the proper doctype and head/body tags.</li>
+<li>Repeat step 5 for the <code>hello</code> function, but this time pass an argument to <code>template.render</code> that matches a placeholder called <code>name</code> in the template itself:
+<pre><code class="language-python">def hello():
+first_name = request.form['first_name']
+template = jinja_env.get_template('hello_greeting.html')
+return template.render(name=first_name)</code></pre></li>
+<li>Protect your code from malicious users by adding HTML escaping via Jinja's <code>autoescape=True</code> option:
+<pre><code class="language-python">jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir), autoescape=True)</code></pre></li>
 </ol>
+<aside class="aside-note">
+<p>There is another, simpler way you can use Jinja2 in your Flask app. We wanted to show you first what goes on &quot;behind the scenes&quot; when you incorporate templates before showing you a shortcut. The shortcut is to use Flask's <code>render_template</code> function. When you use this, you can eliminate a lot of the code above. Here are the steps to using it:</p>
+<ol>
+<li>Import it:
+<pre><code class="language-python">from flask import Flask, request, redirect, render_template</code></pre>
+<p>This import statement <em>replaces</em> the code below:</p>
+<pre><code class="language-python">template_dir = os.path.join(os.path.dirname(__file__), 'templates')
+jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir))</code></pre></li>
+<li>Call <code>render_template</code>:
+<pre><code class="language-python">return render_template('hello_greeting.html', name=first_name)</code></pre>
+<p>This call to <code>render_template</code> <em>replaces</em> these two calls (using the <code>hello</code> function as an example):</p>
+<pre><code class="language-python">template = jinja_env.get_template('hello_greeting.html')
+return template.render(name=first_name)</code></pre></li>
+</ol>
+</aside>
+<h2 id="code">Code</h2>
+<p>View the <a href="https://github.com/LaunchCodeEducation/hello-flask/blob/3ed07a3ff5fa8e90ae8aa3f6f28acc4a97e99afa/main.py" target="_blank">final code</a> from this lesson.</p>
                                     </section>
 
             </div>

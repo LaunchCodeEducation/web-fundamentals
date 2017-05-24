@@ -125,60 +125,44 @@
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Assignment: User Signup</h1>
-                    <p>Your assignment is simply to complete Part 2 of CS253's Problem Set 2, specifically the item called <a href="https://classroom.udacity.com/courses/cs253/lessons/48756009/concepts/485084220923#" target="_blank">Quiz: User Signup</a>.</p>
-<p>This assignment is all about incorporating forms into your web app, validating the user's input, and providing useful feedback to the user when their input is rejected.</p>
-<h2 id="setting-up">Setting Up</h2>
-<p>First, set up your project by creating it, initializing a local Git repository, and connecting it to a remote repository on GitHub. Follow the steps below:</p>
+                    <p>Your assignment is simply to create a user signup form where users provide a username, password, and, optionally, an email address. You must have an additional field to verify the password (the user must retype it exactly). Then you will validate the input and either redirect them to a welcome page, or provide error information if any input is invalid.</p>
+<h2 id="project-setup">Project Setup</h2>
+<p>To get started on this assignment, first create a repo (local and remote) called <code>user-signup</code> and then activate your virtual environment using <code>source activate flask-env</code>. If you need reminders on how to set up a new repository, review the instuctions for <a href="../web-caesar/#git-repository-setup">Web Caesar</a>.</p>
+<p>Next, get your project file structure set up by adding a <code>main.py</code> file and adding a directory for the template files you will make below.</p>
+<pre><code class="language-nohighlight">(flask-env) $ touch main.py
+(flask-env) $ mkdir templates</code></pre>
+<h2 id="your-task">Your Task</h2>
+<p>Your page does not have to look exactly the same as <a href="https://launchcode-demos.appspot.com/signup" target="_blank">our version</a>, but you must have all the same functionality. Here's a summary of what is required:</p>
 <ol>
 <li>
-<p>Create a new Google App Engine app called <code>user-signup</code>.</p>
-</li>
-<li>
-<p>At the command-line, use <code>git init</code> to initialize your project as a local Git repository.</p>
-</li>
-<li>
-<p>On GitHub, create a new repository named <code>user-signup</code>, and copy the repository URL:</p>
-<p><img src="images/repo-url.png" alt="Copy repo URL" /></p>
-</li>
-<li>
-<p>Back in your terminal, connect your local repository to the remote repository:</p>
-<pre><code class="language-nohighlight">$ git remote add origin PASTE_REPO_URL_HERE</code></pre>
-</li>
-<li>
-<p>You can verify that your remote repository has been properly configured by running:</p>
-<pre><code class="language-nohighlight">$ git remote -v
-origin  https://github.com/chrisbay/user-signup.git (fetch)
-origin  https://github.com/chrisbay/user-signup.git (push)</code></pre>
-</li>
-</ol>
-<h2 id="doing-work">Doing Work</h2>
-<p>Your page does not have to look exactly the same as their example (here's <a href="https://launchcode-demos.appspot.com/signup" target="_blank">our version</a>, by the way), but you must have all the same functionality. The notes underneath the video spell out exactly what is required, but here's a summary:</p>
-<ol>
-<li>
-<p>If the user's form submission is not valid, you should reject it and display some feedback to inform them of what they did wrong. The following things should trigger an error:</p>
+<p>If the user's form submission is not valid, you should reject it and re-render the form with some feedback to inform the user of what they did wrong. The following things should trigger an error:</p>
 <ul>
-<li>The user does not enter a username</li>
-<li>The user's username is not valid -- for example, contains a space character. Full spec is included in the notes underneath the video.</li>
-<li>The user's password and password-confirmation do not match</li>
-<li>The user provides an email, but it's not a valid email.</li>
+<li>The user leaves any of the following fields empty: username, password, verify password.</li>
+<li>The user's username or password is not valid -- for example, it contains a space character or it consists of less than 3 characters or more than 20 characters (e.g., a username or password of &quot;me&quot; would be invalid). </li>
+<li>The user's password and password-confirmation do not match.</li>
+<li>The user provides an email, but it's not a valid email. Note: the email field may be left empty, but if there is content in it, then it must be validated. The criteria for a valid email address in this assignment are that it has a single <code>@</code>, a single <code>.</code>, contains no spaces, and is between 3 and 20 characters long.</li>
 </ul>
 </li>
 <li>
 <p>Each feedback message should be next to the field that it refers to.</p>
 </li>
 <li>
-<p>For the username and email fields, you should preserve what the user typed, so they don't have to retype it. With the password fields, you should clear them, for security.</p>
+<p>For the username and email fields, you should preserve what the user typed, so they don't have to retype it. With the password fields, you should clear them, for security reasons.</p>
 </li>
 <li>
-<p><em>IMPORTANT:</em> In your solution, please <strong>do not use templates.</strong> For this assignment, the important concept is handling form submissions. We do not want you to be distracted by trying to use templates (that'll be next time!).</p>
-<p>Additionally, you may have noticed that Udacity provides a &quot;solution&quot; to the problem... you are free to look at their solution, but obviously you should not try copy it. Their solution makes use of templates, so copying it will be difficult anyway.</p>
+<p>If all the input is valid, then you should redirect the user to a welcome page that uses the username input to display a welcome message of: &quot;Welcome, [username]!&quot;</p>
 </li>
+<li>Use templates (one for the index/home page and one for the welcome page) to render the HTML for your web app.</li>
 </ol>
 <h2 id="submit">Submit</h2>
 <p>To turn in your assignment and get credit, follow the <a href="../">submission instructions</a>.</p>
-<aside class="aside-warning">
-<p>Remember that you should ignore any Udacity instructions about hosting your app out on the internet and posting the link so they can grade it. You don't have to submit your work to Udacity, you just have to submit to LaunchCode by demoing your code to your TF.</p>
-</aside>
+<h2 id="bonus-missions">Bonus Missions</h2>
+<ol>
+<li>
+<p>Use a <a href="https://docs.python.org/3/library/re.html" target="_blank">Regular Expression</a> (also called a regex) to validate the input fields. See this article about <a href="https://en.wikipedia.org/wiki/Regular_expression" target="_blank">Regular Expressions</a> for more information.</p>
+</li>
+<li>If you haven't already, refactor your templates so that you are using a base template for the boilerplate HTML that is needed for both the home page and the welcome page, and template extensions for the additional HTML your app uses.</li>
+</ol>
                                     </section>
 
             </div>
