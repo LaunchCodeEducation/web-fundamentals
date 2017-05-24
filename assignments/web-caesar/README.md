@@ -18,7 +18,7 @@ Your final application will function just like our [demo app](https://launchcode
 
 ## Project and Repository Setup
 
-For this assignment, you will build the entire project from scratch. Future assignments will begin with some starter code, but you'll carry out each step of this assignment yourself.
+For this assignment, you will build the entire project from scratch. 
 
 ### Git repository setup
 
