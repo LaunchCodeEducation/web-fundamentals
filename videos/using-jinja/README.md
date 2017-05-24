@@ -38,6 +38,28 @@ def hello():
 jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir), autoescape=True)
 ```
 
+<aside class="aside-note" markdown="1">
+There is another, simpler way you can use Jinja2 in your Flask app. We wanted to show you first what goes on "behind the scenes" when you incorporate templates before showing you a shortcut. The shortcut is to use Flask's `render_template` function. When you use this, you can eliminate a lot of the code above. Here are the steps to using it:
+1. Import it:
+```python
+from flask import Flask, request, redirect, render_template
+```
+This import statement *replaces* the code below:
+```python
+template_dir = os.path.join(os.path.dirname(__file__), 'templates')
+jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir))
+```
+2. Call `render_template`:
+```python
+return render_template('hello_greeting.html', name=first_name)
+```
+This call to `render_template` *replaces* these two calls (using the `hello` function as an example):
+```python
+template = jinja_env.get_template('hello_greeting.html')
+return template.render(name=first_name)
+```
+</aside>
+
 ## Code
 
 View the [final code](https://github.com/LaunchCodeEducation/hello-flask/blob/3ed07a3ff5fa8e90ae8aa3f6f28acc4a97e99afa/main.py) from this lesson.
