@@ -1,5 +1,5 @@
 ---
-title: "Video Lesson: Working with HTML Forms"
+title: "Working with HTML Forms"
 currentMenu: videos
 ---
 

@@ -9,4 +9,8 @@ The bulk of this next section deals with validating input from the user. It is o
 
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
-Do | Interactive Lesson | [][] |
+Do | Interactive Lesson | [Introduction to Validation](../../videos/intro-to-validation/) | They hows and whys of data validation in web applications
+Do | Interactive Lesson | [Server-Side Validation](../../videos/server-side-validation/) | Validating user data submitted in a request
+Do | Interactive Lesson | [Using Redirects](../../videos/redirects/) | Returning redirect status codes in Flask handlers
+Do | Interactive Lesson | [HTML Escaping](../../videos/html-escaping/) | Prevent malicious code insertion using HTML escaping
+Do | Review | [Class 5 Prep Review](review.html) | Solidify your knowledge of the concepts covered in these lessons
