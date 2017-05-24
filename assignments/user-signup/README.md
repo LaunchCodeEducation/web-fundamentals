@@ -24,11 +24,11 @@ Your page does not have to look exactly the same as [our version][signup-example
   - The user leaves any of the following fields empty: username, password, verify password.
   - The user's username or password is not valid -- for example, it contains a space character or it consists of less than 3 characters or more than 20 characters (e.g., a username or password of "me" would be invalid). 
   - The user's password and password-confirmation do not match.
-  - The user provides an email, but it's not a valid email. Note: the email field may be left empty, but if there is content in it, then it must be validated. The criteria for a valid email address in this assignment are that it has a single `.`, a single `@`, contains no spaces, and is between 3 and 20 characters long.
+  - The user provides an email, but it's not a valid email. Note: the email field may be left empty, but if there is content in it, then it must be validated. The criteria for a valid email address in this assignment are that it has a single `@`, a single `.`, contains no spaces, and is between 3 and 20 characters long.
 
 1. Each feedback message should be next to the field that it refers to.
 
-1. For the username and email fields, you should preserve what the user typed, so they don't have to retype it. With the password fields, you should clear them, for security.
+1. For the username and email fields, you should preserve what the user typed, so they don't have to retype it. With the password fields, you should clear them, for security reasons.
 
 1. If all the input is valid, then you should redirect the user to a welcome page that uses the username input to display a welcome message of: "Welcome, [username]!"
 
