@@ -137,7 +137,7 @@
 <ul>
 <li>How to leave a &quot;blank space&quot; in your template for data to be inserted dynamically (e.g. the name of the movie the user wants to add).</li>
 <li>How to insert the data once we know what it is.</li>
-<li>We will also see the Jinja syntax for doing a few additional fancy (but important) things:
+<li>We will also see the Jinja syntax for doing a few additional, important things:
 <ul>
 <li>How to loop over a list of items in a template.</li>
 <li>How to write a conditional statement in a template.</li>
@@ -148,17 +148,17 @@
 <h3 id="checking-out-the-studio-code">Checking out the Studio code</h3>
 <p>Follow the <a href="../getting-the-code/">instructions for getting the code</a> in order to get the starter code for <code>studio4</code>.</p>
 <h3 id="your-task">Your Task</h3>
-<p>If you visit the web-app in your browser, you will find that the <code>/add</code> route is broken! Try typing in a movie and submitting the form, and you will encounter an &quot;Under construction...&quot; message.</p>
+<p>If you visit the web-app in your browser, you will find that the <code>/add</code> route is broken! Try typing in a movie and submitting the form, and you will encounter a &quot;Confirmation Message Under Construction...&quot; message.</p>
 <p>Your job is to get this page back up and running. The user should still see the same confirmation message as before:</p>
 <blockquote>
 <p>The Matrix has been added to your Watchlist.</p>
 </blockquote>
 <p>Of course, there is one caveat: you are required to use a template. Your <code>main.py</code> file should not contain any HTML at all!</p>
 <ol>
-<li>Create a <code>.html</code> file inside your <code>/templates</code> directory, and add whatever HTML content needs to be added.</li>
-<li>In your <code>AddMovie</code> request method, use your template to render the response.</li>
+<li>Create a file named <code>add-confirmation.html</code> inside your <code>/templates</code> directory, and add whatever HTML content needs to be added.</li>
+<li>In your <code>add_movie</code> request method, use your template to render the response.</li>
 </ol>
-<p>For reference, you can look at our code at the bottom of the <code>post</code> method in the <code>watchMovie</code> class, which renders the <code>templates/watched-it.html</code> template file (in addition to the header and footer templates).</p>
+<p>For reference, you can look at our code at the bottom of the <code>crossoff_movie</code> function, which renders the <code>templates/crossoff.html</code> template file (in addition to the header and footer templates).</p>
                                     </section>
 
             </div>
