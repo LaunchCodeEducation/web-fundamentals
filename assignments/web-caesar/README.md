@@ -178,9 +178,9 @@ You should see the form render, but submitting it will result in a "Method Not A
 
 ### Importing caesar code
 
-Create a file for your Caesar cipher code: `touch caesar.py`. Now, either copy/paste your solution code from `caesar.py` from the Crypto assignment in Unit 1, or [grab ours](https://gist.github.com/chrisbay/496880de24bba4f532ed03211eff7294).
+Create a file for your Caesar cipher code: `touch caesar.py`. Now, copy and paste our [Caesar solution code](https://gist.github.com/chrisbay/496880de24bba4f532ed03211eff7294) into this file.
 
-In `main.py` import the `rotate_string` function from `caesar.py`:
+Then, in `main.py`, import the `rotate_string` function from `caesar.py`:
 
 ```python
 from caesar import rotate_string
