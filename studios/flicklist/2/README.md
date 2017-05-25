@@ -13,19 +13,28 @@ In our FlickList app, we will delete much of the previous "Movie of the Day" cod
   - the `<input>` tag
     - the `type` attribute
     - the `name` attribute
+    - the `id` attribute
+  - the `<label>` tag
   - the `action` attribute
   - the `method` attribute
     - GET vs POST
-  - the `<label>` tag
 
 **Responding to a form submission:**
   - map the request to a route on our app
     - this should match the `action` attribute on our form
-    - tuples
   - accessing the data in the incoming request
   - sending an appropriate response
 
-Our app won't *really* be able to keep track of the user's movie list at this point. We will need a database to do that (coming up in a few weeks!). But for now, we'll just *pretend* the list exists.
+Our app won't *really* be able to keep track of the user's movie list at this point. We will need a database to do that (coming up in a few weeks!). But for now, we'll just *pretend* the stored list exists.
+
+Go ahead and get set up to code along with the instructor by checking out the `walkthrough2` branch. First check if you have any uncommitted changes in the `studio1` branch, and if you do, `add` and `commit` them.
+
+```nohighlight
+$ git status
+On branch studio1
+Your branch is up-to-date with 'origin/studio1'.
+nothing to commit, working directory clean
+```
 
 ## Studio
 
@@ -35,16 +44,7 @@ For the studio, your job is to provide another form that allows the user to "cro
 
 For this studio (and all subsequent studios), you will want to start at the exact place where your instructor left off at the end of the Walkthrough. But don't worry--you do not need to have finished the previous studio, nor do you need to have frantically copied each line of code that your instructor wrote just now. Thanks to the magic of Git branches, we have a system in place that will allow you start each studio with the correct starter code no matter what. Here's how:
 
-1. First, in your `flicklist-flask` repository, check your status and make sure you do not have any uncommitted changes:
-
-    ```nohighlight
-    $ git status
-    On branch studio1
-    Your branch is up-to-date with 'origin/studio1'.
-    nothing to commit, working directory clean
-    ```
-
-    If you *do* have uncommitted changes, make sure you `add` and `commit` them **right now**, before moving on.
+1. First, check your status and make sure you do not have any uncommitted changes. If you *do* have uncommitted changes, make sure you `add` and `commit` them **right now**, before moving on.
 
 2. The start-point for today's studio is saved in its own separate branch. More generally, we have created one branch for *each and every* FlickList studio. Currently, you are on the `studio1` branch. To obtain today's starter code, you must switch to the `studio2` branch, using the `git checkout` command:
 
