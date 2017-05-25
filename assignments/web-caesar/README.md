@@ -178,9 +178,9 @@ You should see the form render, but submitting it will result in a "Method Not A
 
 ### Importing caesar code
 
-Create a file for your Caesar cipher code: `touch caesar.py`. Now, either copy/paste your solution code from `caesar.py` from the Crypto assignment in Unit 1, or [grab ours](https://gist.github.com/chrisbay/496880de24bba4f532ed03211eff7294).
+Create a file for your Caesar cipher code: `touch caesar.py`. Now, copy and paste our [Caesar solution code](https://gist.github.com/chrisbay/496880de24bba4f532ed03211eff7294) into this file.
 
-In `main.py` import the `rotate_string` function from `caesar.py`:
+Then, in `main.py`, import the `rotate_string` function from `caesar.py`:
 
 ```python
 from caesar import rotate_string
@@ -208,7 +208,7 @@ Our final task will be to modify the request handler functions so that the form 
 
 Look at your `encrypt` request handler function. Instead of returning the encrypted string, we want to insert it in the form. To do this, we need to specify within the global `form` string where the text should be inserted. We'll use Python's [`str.format` method](https://docs.python.org/3.6/library/stdtypes.html#str.format) for this.
 
-Modify the `form` variable in two ways:
+Let's make two modifications to the `form` variable:
 
 1. Add a placeholder `{0}` between the opening and closing `<textarea>` tags.
 2. Where the CSS rules are defined, "double up" the curly braces, which will prevent the `str.format` method from interpreting the curly braces as defining a text placeholder. For example, one rule will look like this:
