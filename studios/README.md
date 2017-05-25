@@ -5,7 +5,7 @@ currentMenu: studios
 
 ## Fake News
 
-Get an introduction to web developer tools in Google Chrome, and use them to inspect and change the contents of a live web site.
+Get an introduction to web developer tools in Firefox, and use them to inspect and change the contents of a live web site.
 
 [Work on Fake News](fake-news/)
 
