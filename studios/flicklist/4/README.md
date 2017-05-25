@@ -40,7 +40,7 @@ Your job is to get this page back up and running. The user should still see the 
 Of course, there is one caveat: you are required to use a template. Your `main.py` file should not contain any HTML at all!
 
 1. Create a file named `add-confirmation.html` inside your `/templates` directory, and add whatever HTML content needs to be added.
-2. In your `add_movie` request method, use your template to render the response.
+2. In your `add_movie` function, use your template to render the response.
 
 For reference, you can look at our code at the bottom of the `crossoff_movie` function, which renders the `templates/crossoff.html` template file (in addition to the header and footer templates).
 
