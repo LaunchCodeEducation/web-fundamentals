@@ -248,7 +248,7 @@ For the remainder of this course, you will use Github to submit your work. Here'
 
 To finish submitting and receive credit, follow steps 3 and 4 of the [submission instructions](../) on the *Assignments* page.
 
-### Extra Credit: Host your Page using Github Pages
+## Bonus Mission
 
 If you want to show off your hard work to all your friends, Github has a cool feature called *Github Pages* that makes this really easy.
 
@@ -259,5 +259,3 @@ Github provides free hosting for any "static" web content (like this project). A
 1. Scroll down to the *GitHub Pages* section and enable the GitHub Pages feature by choosing your `master` branch from the dropdown. Hit *Save*.
     ![Set GitHub Pages Branch](images/gh-pages-set-branch.png)
 1. In any browser, you should now be able to visit `YOUR_USERNAME.github.io/html-me-something` and see your web page!
-
-
