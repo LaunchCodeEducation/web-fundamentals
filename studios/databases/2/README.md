@@ -25,15 +25,15 @@ And be sure to check the first checkbox under *Database for user account*. If yo
 
 ![Add user](images/mamp-user-add.png)
 
-Finally, press the small *Go* button at the bottom. 
+Finally, press the small *Go* button at the bottom.
 
 ### Import Tables From `.sql`
 
-You should see the database name `movie-buff` on the left side. Double click on it to go into that database. 
+You should see the database name `movie-buff` on the left side. Double click on it to go into that database.
 
-Now, download this SQL file: [movie-buff.sql](downloads/movie-buff.sql) TODO: CHRIS-MAKE THIS FILE DOWNLOADABLE!
+Now, download this SQL file: [movie-buff.sql](https://www.dropbox.com/s/7qc2gnpdtz9uivq/movie-buff.sql?dl=1).
 
-Then click the *Import* tab. Browse your computer to find the `movie-buff.sql` file you downloaded (on a Mac it may be `movie-buff.sql.txt`). Leave all the default selections as they are (the blue boxes with checkmarks), so your screen should look like this: 
+Then click the *Import* tab. Browse your computer to find the `movie-buff.sql` file you downloaded (on a Mac it may be `movie-buff.sql.txt`). Leave all the default selections as they are (the blue boxes with checkmarks), so your screen should look like this:
 
 ![Import sql](images/import.png)
 
@@ -49,17 +49,17 @@ You can click on the database `movie-buff` on the left side and it should now lo
 
 ## Studio
 
-Sarah has a very eclectic taste in movies, but her friends admire it. Over the years, they've borrowed a lot of her DVDs, and she's set up a database to keep track of who has watched what so that she can make better recommendations for them based on what they've seen so far. 
+Sarah has a very eclectic taste in movies, but her friends admire it. Over the years, they've borrowed a lot of her DVDs, and she's set up a database to keep track of who has watched what so that she can make better recommendations for them based on what they've seen so far.
 
 There are four tables in the `movie-buff` database: `movies`, `directors`, `viewers`, and `viewings`. You can check out the structure of these tables by going to the "Structure" tab in your database and choosing a table. This will show you the column names and data types.
 
 ![Table structure](images/structure.png)
 
-There is one table Sarah made that might not seem intuitive to have created: the `viewings` table. The structure of it is here: 
+There is one table Sarah made that might not seem intuitive to have created: the `viewings` table. The structure of it is here:
 
 ![Viewings table](images/viewings.png)
 
-The purpose of this table is to keep track of "who watched what when". The *who* is the `viewer_id`, which is a foreign key that references the `viewer_id` in the `viewers` table. The *what* is the `movie_id` which is a foreign key that references the `movie_id` in the `movies` table. And the *when* is of course the `date_viewed` column with a `date` data type. Each viewing of a movie by one of Sarah's friends is captured as a unique record. 
+The purpose of this table is to keep track of "who watched what when". The *who* is the `viewer_id`, which is a foreign key that references the `viewer_id` in the `viewers` table. The *what* is the `movie_id` which is a foreign key that references the `movie_id` in the `movies` table. And the *when* is of course the `date_viewed` column with a `date` data type. Each viewing of a movie by one of Sarah's friends is captured as a unique record.
 
 This kind of table is very common in relational database design. It has many virtues including that it clearly links the `movies` and `viewers` table together and it makes the database more maintainable. For instance, you might have chosen to make a `viewing` table where you actually list the movie title and the name of the viewer. But if you did that then anytime some of that information changes - say a friend gets married and changes last names - you would now have to update the name of the viewer in *both* the `viewers` table *and* the `viewings` table. With this design, any updates you make to either the `movies` or `viewers` table will be reflected automatically in the results from queries on the `viewings` table.
 
@@ -67,20 +67,20 @@ Review this lesson from [Khan Academy](https://www.khanacademy.org/computing/com
 
 If you get stuck on any of the tasks below, you can review lessons in [Khan Academy](https://www.khanacademy.org/computing/computer-programming/sql) or [w3schools](https://www.w3schools.com/sql/default.asp) to get ideas and remind yourself of the proper syntax.
 
-### Your Task: 
+### Your Task:
 
 Sarah created these tables and inserted all the data into them, but she needs your help to run some queries. You can use the *SQL* tab in the `movie-buff` databse to run queries. Just type your SQL statement(s) in the box and press the *Go* button.
 
 ![SQL tab](images/sql.png)
 
-As an example, say Sarah wants to know the first and last names of any of her friends who borrowed one of her movies before 2010. 
+As an example, say Sarah wants to know the first and last names of any of her friends who borrowed one of her movies before 2010.
 
 We know we'll want to use the `viewings` table, since that has the dates of when people have viewed her DVDs as well as their ids. And we know we want to use the `viewers` table since that has the first and last names of her friends. Since we want data from two tables, we know we'll likely need to use a `join`. We also know that the column in common between the two tables is the `viewer_id` column, so that will be what we join on. Our SQL statement will be:
 
 ```sql
-SELECT DISTINCT viewers.first, viewers.last 
+SELECT DISTINCT viewers.first, viewers.last
 FROM viewers
-JOIN viewings 
+JOIN viewings
 ON viewers.viewer_id = viewings.viewer_id
 WHERE viewings.date_viewed < '2010-01-01'
 ```
@@ -111,17 +111,15 @@ Here are some of the things Sarah needs your help with:
 
 8. What is the id of the last-viewed movie?
 
-9. What is the title of the first movie she loaned to a friend for viewing? 
+9. What is the title of the first movie she loaned to a friend for viewing?
 
 10. What is the first and last name of the person who viewed the last-viewed movie?
 
 
 #### Bonus Missions
 
-11. Write the SQL query to display the DVDs that others have watched in order of most viewed to least viewed. What's the title of the most-viewed movie(s) in Sarah's collection? 
+11. Write the SQL query to display the DVDs that others have watched in order of most viewed to least viewed. What's the title of the most-viewed movie(s) in Sarah's collection?
 
 12. Find the email of everyone who has watched "The Tango Lesson", so Sarah can email them and ask what they thought of it.
 
 13. Sarah is hosting a Kurosawa film festival soon and needs an email list to send out invites. What are the full names and emails of all her friends who have watched any movie by Akira Kurosawa?
-
-
