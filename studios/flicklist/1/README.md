@@ -27,7 +27,7 @@ In class, we'll walk through the [Project Setup](#project-setup) steps (see belo
 * What is the difference between GET and POST requests types, and when do we use each?
 * What are routes in a web application and how does a specific request get matched with a specific method?
 
-We'll also review Python class syntax and add a bit of code to display a new heading and a "Movie of the Day", which is really just a hard-coded string. You will make this more interesting during the studio.
+We'll add a bit of code to display a new heading and a "Movie of the Day", which is really just a hard-coded string. You will make this more interesting during the studio.
 
 
 ### Project setup
@@ -45,20 +45,22 @@ cd YOUR/PATH/TO/lc101
 git clone https://github.com/LaunchCodeEducation/flicklist-flask.git
 ```
 
-This creates a copy of the repository on your laptop. You should now have a new folder in your directory called `flicklist-flask/`. We have included a .gitignore file for you.
-
+This creates a copy of the repository on your laptop. You should now have a new folder in your directory called `flicklist-flask/`.
 
 #### Virtual Environment
 
-We will be using the simple framework Flask along with Conda's built in virtual environment just like we did in the `Hello Flask` exercise. You can go [Back to Hello Flask Page](../../../tutorials/hello-flask/) to review those materials if needed.
+We will be using the simple framework Flask along with Conda's built-in virtual environment just like we did in the `Hello Flask` exercise. You can go back to [Hello Flask Page](../../../tutorials/hello-flask/) to review those materials if needed.
 
 ---
 
 ## Studio
 
-After lecture, you will work on your own (or with a classmate) to extend the project and pick up where lecture left off.
+After lecture, you will work on your own (or with a classmate) to extend the project and pick up where the lecture left off.
 
-Before you get started, checkout the walkthrough1 branch using `git checkout walkthrough1`. Then fire up the FlickList app using `python main.py` and visit the home page in a browser. You should see a page that looks like this. (The port number may be different.)
+Before you get started, do the following: 
+1. Checkout the `walkthrough1` branch using `git checkout walkthrough1`. 
+2. Activate your virtual environment: `source activate hello-flask`. 
+3. Fire up the FlickList app using `python main.py` and visit the home page in a browser. You should see a page that looks like this. (The port number may be different.)
 
 ![Walkthrough 1 Solution in Browser](walkthrough1-flicklist.png)
 
@@ -68,17 +70,16 @@ If you don't see something like the above, make sure the virtual environment is 
 
 Currently, this app is kind of boring, because the movie of the day is always *The Big Lebowski*. What if, each time you visit the page, it randomly surprises you with a different movie? That would be much more exciting. Your job is to implement this random movie feature.
 
-First, let's make sure to check out the starter code we have provided for you. Navigate to your flicklist folder and then check out the current version of studio1 code:
+First, let's make sure to check out the starter code we have provided for you in the `studio1` branch:
 
 ```nohighlight
-cd YOUR/PATH/TO/lc101/flicklist-flask/
 git checkout studio1
 git pull origin studio1
 ```
 
 In Visual Studio Code, open up the `flicklist-flask` folder, and then the `main.py` file. From the project directory, you can do this by running `code .`.
 
-Notice that you have a couple of TODOs, noted by comments. Completing these will upgrade our app so that rather than displaying the same movie each time, instead it displays a random movie from a list. Here are some more details on what you need to do:
+Notice that you have a few **TODO**s, noted by comments. Completing these will upgrade our app so that rather than displaying the same movie each time, it instead displays a random movie from a list. Here are some more details on what you need to do:
 
 1. If you have not already cloned our starter-code repository and created a Flask project as outlined in the Walkthrough [Project Setup](#project-setup) instructions, go and do that now.
 
@@ -88,13 +89,13 @@ Notice that you have a couple of TODOs, noted by comments. Completing these will
     * Recall that we can generate random numbers in Python with [the `random` module](https://docs.python.org/3.6/library/random.html). Add `import random` to the top of `main.py` to make this module available to our code. Read the module documentation to determine which method within the module is best for the task at hand.
     * Write your code so that if you were to add or remove some movies from your list, it will still randomly choose one, no matter how many items are in the list. In other words, your code should not contain a "magic number" like `5`.
 
-4. In addition to today's movie, add another section of the page that informs people what tomorrow's movie will be. Back in your `get` method, add another chunk of HTML to your response string. You can do the same basic thing again: an `<h1>` element, with an unordered list and list item elements underneath it.
+4. In addition to today's movie, add another section to the page that informs people what tomorrow's movie will be. Back in your `index` method, add another chunk of HTML to your response string. You can do the same basic thing again: an `<h1>` element, with an unordered list (`<ul>`) and list item elements (`<li>`) within it.
 
     If the two randomly chosen movies happen to be the same, that is okay. You do not need to write extra code to ensure they are distinct. (But if you finish early and want an additional challenge, go for it.)
 
 If you complete the steps above, you should see that the "movie of the day" changes each time you refresh the page!
 
-Hopefully this gives you some sense for the difference between a static web site and a dynamic web app running on a server. Even something as simple as our "random movie of the day" page would be impossible to implement as a static site. In order to dynamically build HTML content "on the fly", like we did here, you need a programming language like Python.
+Hopefully this gives you some sense of the difference between a static web site and a dynamic web app running on a server. Even something as simple as our "random movie of the day" page would be impossible to implement as a static site. In order to dynamically build HTML content "on the fly", like we did here, you need a programming language like Python.
 
 ### Commit Your Changes
 
@@ -102,5 +103,5 @@ We recommend you commit often. Commit when you're done with your studio code, be
 
 ```nohighlight
 $ git add .
-$ git commit -m "USEFUL MESSAGE"
+$ git commit -m "Short, descriptive message here"
 ```
