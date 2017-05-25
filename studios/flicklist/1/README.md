@@ -83,13 +83,13 @@ Notice that you have a few **TODO**s, noted by comments. Completing these will u
 
 1. If you have not already cloned our starter-code repository and created a Flask project as outlined in the Walkthrough [Project Setup](#project-setup) instructions, go and do that now.
 
-2. Inside the `getRandomMovie` method, create a Python list that contains at least 5 movie title strings.
+2. Inside the `get_random_movie` function, create a Python list that contains at least 5 movie title strings.
 
-3. In the same method, choose one of the titles randomly, and modify the return statement so that instead of the hard-coded value "The Big Lebowski", it returns the randomly selected title. Here are some tips:
+3. In the same function, choose one of the titles randomly, and modify the return statement so that instead of the hard-coded value "The Big Lebowski", it returns the randomly selected title. Here are some tips:
     * Recall that we can generate random numbers in Python with [the `random` module](https://docs.python.org/3.6/library/random.html). Add `import random` to the top of `main.py` to make this module available to our code. Read the module documentation to determine which method within the module is best for the task at hand.
     * Write your code so that if you were to add or remove some movies from your list, it will still randomly choose one, no matter how many items are in the list. In other words, your code should not contain a "magic number" like `5`.
 
-4. In addition to today's movie, add another section to the page that informs people what tomorrow's movie will be. Back in your `index` method, add another chunk of HTML to your response string. You can do the same basic thing again: an `<h1>` element, with an unordered list (`<ul>`) and list item elements (`<li>`) within it.
+4. In addition to today's movie, add another section to the page that informs people what tomorrow's movie will be. Back in your `index` function, add another chunk of HTML to your response string. You can do the same basic thing again: an `<h1>` element, with an unordered list (`<ul>`) and list item elements (`<li>`) within it.
 
     If the two randomly chosen movies happen to be the same, that is okay. You do not need to write extra code to ensure they are distinct. (But if you finish early and want an additional challenge, go for it.)
 
