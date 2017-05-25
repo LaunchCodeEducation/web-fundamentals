@@ -29,5 +29,7 @@ currentMenu: cheatsheets
 
 ## Other Web Resources:
 
+- [How Browsers Work](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork)
+- [HTTP Introduction](https://www.httpwatch.com/httpgallery/)
 - [Jinja2 Documentation](http://jinja.pocoo.org/docs/2.9/)
 - [Flask Documentation](http://flask.pocoo.org/docs/0.12/)
