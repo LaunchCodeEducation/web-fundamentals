@@ -48,7 +48,7 @@ For the studio, your job is to provide another form that allows the user to "cro
 
 ### Checking out the Studio code
 
-For this studio (and all subsequent studios), you will want to start at the exact place where your instructor left off at the end of the Walkthrough. But don't worry--you do not need to have finished the previous studio, nor do you need to have frantically copied each line of code that your instructor wrote just now. Thanks to the magic of Git branches, we have a system in place that will allow you start each studio with the correct starter code no matter what. Here's how:
+For this studio (and all subsequent studios), you will want to start at the exact place where your instructor left off at the end of the Walkthrough. But don't worry--you do not need to have finished the previous studio, nor do you need to have frantically copied each line of code that your instructor wrote just now. Thanks to the magic of Git branches, we have a system in place that will allow you to start each studio with the correct starter code no matter what. Here's how:
 
 1. First, check your status and make sure you do not have any uncommitted changes. If you *do* have uncommitted changes, make sure you `add` and `commit` them **right now**, before moving on.
 
