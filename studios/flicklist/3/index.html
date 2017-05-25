@@ -127,7 +127,7 @@
                                         <h1>Studio: FlickList 3</h1>
                     <p>The big new concept for this studio is that of <em>validation</em>. Sometimes, the user submits data through a form that, for one reason or another, is not acceptable. In that case, we must tell them what they did wrong, and give them a chance to try again.</p>
 <h2 id="walkthrough">Walkthrough</h2>
-<p>If you want to code along with today's (or any day's) Walkthrough, simply <code>checkout</code> the appropriate walkthrough branch:</p>
+<p>If you want to code along with today's Walkthrough, simply <code>checkout</code> the appropriate <code>walkthrough</code> branch:</p>
 <pre><code class="language-nohighlight">$ git checkout walkthrough3
 Branch walkthrough3 set up to track remote branch walkthrough3 from origin.
 Switched to a new branch 'walkthrough3'</code></pre>
@@ -136,12 +136,12 @@ Switched to a new branch 'walkthrough3'</code></pre>
 </aside>
 <p>The main things we will do during today's walkthrough are:</p>
 <ol>
-<li>First, we will write a function via which we can fetch the user's (pretend) current watchlist.
+<li>Write a function via which we can fetch the user's (pretend) current watchlist.
 <ul>
-<li>And then, rather than hard-code the movie titles directly into our dropdown menu, we will dynamically build the dropdown based on the  current list.</li>
+<li>Rather than hard-code the movie titles directly into our dropdown menu, we will dynamically build the dropdown based on the current list.</li>
 <li>In the process, we will see a new Python function, the <code>str.format</code> method.</li>
 </ul></li>
-<li>The main feature we will add is the inclusion of some validation on the <code>watched-it/</code> route method:
+<li>The main feature we will add is the inclusion of some validation on the <code>crossoff/</code> route method:
 <ul>
 <li>When the user wants to take a movie they have watched off their list, we will make sure the movie is actually on the user's list in the first place.</li>
 <li>If not, we will <em>redirect</em> the user back to the home page.
@@ -156,7 +156,7 @@ Switched to a new branch 'walkthrough3'</code></pre>
 <li>We will also answer the following question: Why is this back-end validation necessary? Doesn't the dropdown menu on the front-end already prevent the user from choosing a movie that isn't on their list?</li>
 </ol>
 <h2 id="studio">Studio</h2>
-<p>For Studio, your job is to include some validation on the <code>/add</code> route, to make sure the app responds appropriately no matter what the user has typed into that form.</p>
+<p>For the Studio, your job is to include some validation on the <code>/add</code> route, to make sure the app responds appropriately no matter what the user has typed into that form.</p>
 <h3 id="checking-out-the-studio-code">Checking out the Studio code</h3>
 <p>As usual, you should commit any uncommitted changes (if you have any), and then <code>checkout</code> today's studio branch:</p>
 <pre><code class="language-nohighlight">$ git checkout studio3

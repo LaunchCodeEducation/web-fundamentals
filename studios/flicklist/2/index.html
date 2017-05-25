@@ -134,50 +134,57 @@
 <ul>
 <li>the <code>type</code> attribute</li>
 <li>the <code>name</code> attribute</li>
+<li>the <code>id</code> attribute</li>
 </ul></li>
+<li>the <code>&lt;label&gt;</code> tag</li>
 <li>the <code>action</code> attribute</li>
 <li>the <code>method</code> attribute
 <ul>
 <li>GET vs POST</li>
 </ul></li>
-<li>the <code>&lt;label&gt;</code> tag</li>
 </ul>
 <p><strong>Responding to a form submission:</strong></p>
 <ul>
 <li>map the request to a route on our app
 <ul>
 <li>this should match the <code>action</code> attribute on our form</li>
-<li>tuples</li>
 </ul></li>
 <li>accessing the data in the incoming request</li>
 <li>sending an appropriate response</li>
 </ul>
-<p>Our app won't <em>really</em> be able to keep track of the user's movie list at this point. We will need a database to do that (coming up in a few weeks!). But for now, we'll just <em>pretend</em> the list exists.</p>
+<p>Our app won't <em>really</em> be able to keep track of the user's movie list at this point. We will need a database to do that (coming up in a few weeks!). But for now, we'll just <em>pretend</em> the stored list exists.</p>
+<p>Go ahead and get ready to code along with the instructor by checking out the <code>walkthrough2</code> branch. First check if you have any uncommitted changes in the <code>studio1</code> branch, and if you do, <code>add</code> and <code>commit</code> them.</p>
+<pre><code class="language-nohighlight">$ git status
+On branch studio1
+Your branch is ahead of 'origin/studio1' by 3 commits.
+  (use "git push" to publish your local commits)
+nothing to commit, working tree clean
+</code></pre>
+<aside class="aside-note">
+<p>If you have added and committed code in your local repository, you will see a recommendation to <code>git push</code> your local commits. <em>Do not do this.</em> Normally, when you have your own remote repository set up, you will want to <code>push</code> your changes, but in this case, it would just try to <code>push</code> to the main repository owned by LaunchCode. The permission settings are such that you should not be able to <code>push</code>, so just know that you do not need to do so.</p>
+</aside>
 <h2 id="studio">Studio</h2>
 <p>For the studio, your job is to provide another form that allows the user to &quot;cross off&quot; an item from her Watchlist.</p>
 <h3 id="checking-out-the-studio-code">Checking out the Studio code</h3>
 <p>For this studio (and all subsequent studios), you will want to start at the exact place where your instructor left off at the end of the Walkthrough. But don't worry--you do not need to have finished the previous studio, nor do you need to have frantically copied each line of code that your instructor wrote just now. Thanks to the magic of Git branches, we have a system in place that will allow you start each studio with the correct starter code no matter what. Here's how:</p>
 <ol>
 <li>
-<p>First, in your <code>flicklist-flask</code> repository, check your status and make sure you do not have any uncommitted changes:</p>
-<pre><code class="language-nohighlight">$ git status
-On branch studio1
-Your branch is up-to-date with 'origin/studio1'.
-nothing to commit, working directory clean</code></pre>
-<p>If you <em>do</em> have uncommitted changes, make sure you <code>add</code> and <code>commit</code> them <strong>right now</strong>, before moving on.</p>
+<p>First, check your status and make sure you do not have any uncommitted changes. If you <em>do</em> have uncommitted changes, make sure you <code>add</code> and <code>commit</code> them <strong>right now</strong>, before moving on.</p>
 </li>
 <li>
-<p>The start-point for today's studio is saved in its own separate branch. More generally, we have created one branch for <em>each and every</em> FlickList studio. Currently, you are on the <code>studio1</code> branch. To obtain today's starter code, you must switch to the <code>studio2</code> branch, using the <code>git checkout</code> command:</p>
+<p>The start-point for today's studio is saved in its own separate branch. More generally, we have created one branch for <em>each and every</em> FlickList studio. Currently, you are on the <code>walkthrough2</code> branch. To obtain today's starter code, you must switch to the <code>studio2</code> branch, using the <code>git checkout</code> command:</p>
 <pre><code class="language-nohighlight">$ git checkout studio2
 Branch studio2 set up to track remote branch studio2 from origin.
 Switched to a new branch 'studio2'</code></pre>
-<p>After switching, if you type <code>git branch</code> at the terminal, you will now see that there are two local branches, and you are currently on the <code>studio2</code> branch:</p>
+<p>After switching, if you type <code>git branch</code> at the terminal, you will now see that there are four local branches, and you are currently on the <code>studio2</code> branch:</p>
 <pre><code class="language-nohighlight">$ git branch
   studio1
-* studio2</code></pre>
+* studio2
+  walkthrough1
+  walkthrough2</code></pre>
 <p>And if you look again at your code in your text editor, you will see that the code has changed! You have been transported to the parallel universe of Studio 2.</p>
 <aside class="aside-note">
-<p>Branches are generally used differently in projects. More typically, you would have one master branch that represents the &quot;real&quot; or &quot;official&quot; version of your project. Then you would create small, temporary branches to fix a bug work on a new feature, and upon finishing the feature or bug-fix, you would <code>merge</code> back into the master branch and delete the temporary branch.</p>
+<p>Branches are generally not used this way. More typically, you would have one <code>master</code> branch that represents the most stable or &quot;official&quot; version of your project. Then you would create small, temporary branches to fix a bug or work on a new feature, and upon finishing the feature or bug-fix, you would <code>merge</code> back into the master branch and delete the temporary branch.</p>
 </aside>
 </li>
 </ol>
@@ -186,24 +193,22 @@ Switched to a new branch 'studio2'</code></pre>
 <p>Open up <code>main.py</code> in your text editor. You should see 3 <code># TODO</code> comments in the code:</p>
 <ol>
 <li>
-<p><strong>Add a form</strong>. Include another <code>&lt;form&gt;</code> below the previous one (under <code>add_form</code>). It should say something like:</p>
+<p><strong>Add a form</strong>. Fill in the HTML string for <code>crossoff_form</code> so that it displays something like:</p>
 <blockquote>
 <p>I want to cross off ___ from my Watchlist.</p>
 </blockquote>
-<p>where the blank is a text box in which the user can type to specify the movie she wants to cross off.</p>
+<p>where the blank is an input text field in which the user can specify the movie she wants to cross off.</p>
 </li>
 <li>
-<p><strong>Handle the form submission.</strong> Make another method called <code>CrossOffMovie</code> with the necessary code to handle incoming submissions and respond appropriately. You should display a confirmation message like:</p>
+<p><strong>Handle the form submission.</strong> Fill in the function called <code>crossoff_movie</code> with the necessary code to handle incoming submissions and respond appropriately. You should display a confirmation message like:</p>
 <blockquote>
 <p><strike>Star Wars</strike> has been crossed off your Watchlist.</p>
 </blockquote>
-<p>You can use the <code>&lt;strike&gt;</code> tag to get that cool <strike>Strikethrough</strike> style of text.</p>
+<p>You can use the <code>&lt;strike&gt;</code> tag to get that cool <strike>Strikethrough</strike> style of text.<br />
+Directly above the function definition, you will need to add a new url route for your app that should respond to incoming requests at <code>/crossoff</code>.</p>
 </li>
 <li>
-<p><strong>Register a route to your method with the app.</strong> You will need to add a new url route for your app that should respond to incoming requests at that route.</p>
-</li>
-<li>
-<p><strong>Extra Credit: Use a dropdown instead of a text box.</strong> For deleting a movie from a pre-existing list, a text box does not really make sense, because the user could theoretically type anything, even something that is not even on her watchlist in the first place. A more sensible UI component would a dropdown, which only allows the user to choose from among a limited set of choices.</p>
+<p><strong>Use a dropdown instead of an input text field.</strong> For deleting a movie from a pre-existing list, an input field does not really make sense, because the user could theoretically type anything, even something that is not on her watchlist in the first place. A more sensible UI component would be a dropdown, which only allows the user to choose from among a limited set of choices.</p>
 <p>Use the <code>&lt;select&gt;</code> and <code>&lt;option&gt;</code> tags to create a dropdown component where the only available choices are the movies that are currently in the user's Watchlist. See <a href="https://www.w3schools.com/html/html_form_elements.asp" target="_blank">w3schools</a> for more about this form element.</p>
 <p>Thus far, of course, there is no such thing as the user's &quot;real&quot; Watchlist, so you can just pretend. Simply hard-code a few of your favorite movies into the dropdown <em>as if</em> those movies make up the user's current watchlist.</p>
 </li>
@@ -211,7 +216,7 @@ Switched to a new branch 'studio2'</code></pre>
 <h3 id="check-in-your-changes">Check in Your Changes</h3>
 <p>Before you leave, as always, you should <code>add</code> and <code>commit</code> your changes:</p>
 <pre><code class="language-nohighlight">$ git add .
-$ git commit -m "implemented TODOs 1 and 2"</code></pre>
+$ git commit -m "implemented TODOs"</code></pre>
 <p>Obviously your commit message might be something different. The goal of the commit message is just to provide a useful description of the changes you have made. This will make it easier for collaborators and/or your future self to understand your project's development progress.</p>
                                     </section>
 

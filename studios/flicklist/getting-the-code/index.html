@@ -130,7 +130,7 @@
 <p>For the examples below, we use <code>M</code> to indicate the previous studio number and <code>N</code> to indicate the current studio number. So if you were about to work on studio 4, you would substitute <code>studio4</code> for <code>studioN</code> in the examples below.</p>
 <p><strong>Don't forget to replace <code>N</code> with the appropriate studio number!</strong></p>
 <p>Navigate to your <code>flicklist-flask</code> directory.</p>
-<p>Hopefully, you do not currently have any uncommitted changes--you should have committed them at the end of the day last time--but check just to make sure:</p>
+<p>Check to make sure you do not currently have any uncommitted changes:</p>
 <pre><code class="language-nohighlight">$ git status
 On branch studioM
 nothing to commit, working directory clean</code></pre>
@@ -141,6 +141,8 @@ Branch studioN set up to track remote branch studioN from origin.
 Switched to a new branch 'studioN'</code></pre>
 <p>This checks out a specific version of the code (called a <strong>branch</strong>) from the remote origin repository. The remote branch is named <code>studioN</code>, and we are checking it out into a new, local branch, also named <code>studioN</code>.</p>
 <p>Think of a branch as a parallel version of the main codebase in the repository. We can work here, make changes, and check them in without affecting the main codebase (usually called the <code>master</code> branch).</p>
+<p>Then you will want to make sure you have the most up-to-date version of this branch by doing a <code>pull</code>:</p>
+<pre><code class="language-nohighlight">$ git pull origin studioN</code></pre>
                                     </section>
 
             </div>

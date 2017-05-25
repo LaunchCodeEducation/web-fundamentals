@@ -242,8 +242,8 @@ Proceed ([y]/n)? y
  * Debugger PIN: 955-679-937</code></pre>
 <p>You should see the form render, but submitting it will result in a &quot;Method Not Allowed&quot; error.</p>
 <h3 id="importing-caesar-code">Importing caesar code</h3>
-<p>Create a file for your Caesar cipher code: <code>touch caesar.py</code>. Now, either copy/paste your solution code from <code>caesar.py</code> from the Crypto assignment in Unit 1, or <a href="https://gist.github.com/chrisbay/496880de24bba4f532ed03211eff7294" target="_blank">grab ours</a>.</p>
-<p>In <code>main.py</code> import the <code>rotate_string</code> function from <code>caesar.py</code>:</p>
+<p>Create a file for your Caesar cipher code: <code>touch caesar.py</code>. Now, copy and paste our <a href="https://gist.github.com/chrisbay/496880de24bba4f532ed03211eff7294" target="_blank">Caesar solution code</a> into this file.</p>
+<p>Then, in <code>main.py</code>, import the <code>rotate_string</code> function from <code>caesar.py</code>:</p>
 <pre><code class="language-python">from caesar import rotate_string</code></pre>
 <p>We'll use this function in the next step.</p>
 <h3 id="processing-the-form">Processing the form</h3>
@@ -255,7 +255,7 @@ Proceed ([y]/n)? y
 <h3 id="rendering-the-form-after-encryption">Rendering the form after encryption</h3>
 <p>Our final task will be to modify the request handler functions so that the form is displayed again even after submission, with the encrypted string in our <code>&lt;textarea&gt;</code>, as in our <a href="https://launchcode-demos.appspot.com/caesar" target="_blank">demo app</a>.</p>
 <p>Look at your <code>encrypt</code> request handler function. Instead of returning the encrypted string, we want to insert it in the form. To do this, we need to specify within the global <code>form</code> string where the text should be inserted. We'll use Python's <a href="https://docs.python.org/3.6/library/stdtypes.html#str.format" target="_blank"><code>str.format</code> method</a> for this.</p>
-<p>Modify the <code>form</code> variable in two ways:</p>
+<p>Let's make two modifications to the <code>form</code> variable:</p>
 <ol>
 <li>Add a placeholder <code>{0}</code> between the opening and closing <code>&lt;textarea&gt;</code> tags.</li>
 <li>Where the CSS rules are defined, &quot;double up&quot; the curly braces, which will prevent the <code>str.format</code> method from interpreting the curly braces as defining a text placeholder. For example, one rule will look like this:

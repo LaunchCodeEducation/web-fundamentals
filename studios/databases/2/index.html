@@ -136,11 +136,11 @@
 <p>Set the <em>Host name</em> field to <em>Local</em> and set a password. For local development, it's acceptable to use a simple password. Just be sure that you don't use the same password on a production database if you deploy your application!</p>
 <p>And be sure to check the first checkbox under <em>Database for user account</em>. If you don't do this, you'll have to create a database and set permissions manually. The image below shows what your settings for this user should look like.</p>
 <p><img src="images/mamp-user-add.png" alt="Add user" /></p>
-<p>Finally, press the small <em>Go</em> button at the bottom. </p>
+<p>Finally, press the small <em>Go</em> button at the bottom.</p>
 <h3 id="import-tables-from">Import Tables From <code>.sql</code></h3>
-<p>You should see the database name <code>movie-buff</code> on the left side. Double click on it to go into that database. </p>
-<p>Now, download this SQL file: <a href="downloads/movie-buff.sql">movie-buff.sql</a> TODO: CHRIS-MAKE THIS FILE DOWNLOADABLE!</p>
-<p>Then click the <em>Import</em> tab. Browse your computer to find the <code>movie-buff.sql</code> file you downloaded (on a Mac it may be <code>movie-buff.sql.txt</code>). Leave all the default selections as they are (the blue boxes with checkmarks), so your screen should look like this: </p>
+<p>You should see the database name <code>movie-buff</code> on the left side. Double click on it to go into that database.</p>
+<p>Now, download this SQL file: <a href="https://www.dropbox.com/s/7qc2gnpdtz9uivq/movie-buff.sql?dl=1" target="_blank">movie-buff.sql</a>.</p>
+<p>Then click the <em>Import</em> tab. Browse your computer to find the <code>movie-buff.sql</code> file you downloaded (on a Mac it may be <code>movie-buff.sql.txt</code>). Leave all the default selections as they are (the blue boxes with checkmarks), so your screen should look like this:</p>
 <p><img src="images/import.png" alt="Import sql" /></p>
 <p>Now press the <em>Go</em> button at the bottom.</p>
 <p>Your screen will now look something like below:</p>
@@ -148,23 +148,23 @@
 <p>You can click on the database <code>movie-buff</code> on the left side and it should now look like this:</p>
 <p><img src="images/movie-buff-db.png" alt="movie-buff database" /></p>
 <h2 id="studio">Studio</h2>
-<p>Sarah has a very eclectic taste in movies, but her friends admire it. Over the years, they've borrowed a lot of her DVDs, and she's set up a database to keep track of who has watched what so that she can make better recommendations for them based on what they've seen so far. </p>
+<p>Sarah has a very eclectic taste in movies, but her friends admire it. Over the years, they've borrowed a lot of her DVDs, and she's set up a database to keep track of who has watched what so that she can make better recommendations for them based on what they've seen so far.</p>
 <p>There are four tables in the <code>movie-buff</code> database: <code>movies</code>, <code>directors</code>, <code>viewers</code>, and <code>viewings</code>. You can check out the structure of these tables by going to the &quot;Structure&quot; tab in your database and choosing a table. This will show you the column names and data types.</p>
 <p><img src="images/structure.png" alt="Table structure" /></p>
-<p>There is one table Sarah made that might not seem intuitive to have created: the <code>viewings</code> table. The structure of it is here: </p>
+<p>There is one table Sarah made that might not seem intuitive to have created: the <code>viewings</code> table. The structure of it is here:</p>
 <p><img src="images/viewings.png" alt="Viewings table" /></p>
-<p>The purpose of this table is to keep track of &quot;who watched what when&quot;. The <em>who</em> is the <code>viewer_id</code>, which is a foreign key that references the <code>viewer_id</code> in the <code>viewers</code> table. The <em>what</em> is the <code>movie_id</code> which is a foreign key that references the <code>movie_id</code> in the <code>movies</code> table. And the <em>when</em> is of course the <code>date_viewed</code> column with a <code>date</code> data type. Each viewing of a movie by one of Sarah's friends is captured as a unique record. </p>
+<p>The purpose of this table is to keep track of &quot;who watched what when&quot;. The <em>who</em> is the <code>viewer_id</code>, which is a foreign key that references the <code>viewer_id</code> in the <code>viewers</code> table. The <em>what</em> is the <code>movie_id</code> which is a foreign key that references the <code>movie_id</code> in the <code>movies</code> table. And the <em>when</em> is of course the <code>date_viewed</code> column with a <code>date</code> data type. Each viewing of a movie by one of Sarah's friends is captured as a unique record.</p>
 <p>This kind of table is very common in relational database design. It has many virtues including that it clearly links the <code>movies</code> and <code>viewers</code> table together and it makes the database more maintainable. For instance, you might have chosen to make a <code>viewing</code> table where you actually list the movie title and the name of the viewer. But if you did that then anytime some of that information changes - say a friend gets married and changes last names - you would now have to update the name of the viewer in <em>both</em> the <code>viewers</code> table <em>and</em> the <code>viewings</code> table. With this design, any updates you make to either the <code>movies</code> or <code>viewers</code> table will be reflected automatically in the results from queries on the <code>viewings</code> table.</p>
 <p>Review this lesson from <a href="https://www.khanacademy.org/computing/computer-programming/sql/relational-queries-in-sql/a/splitting-data-into-related-tables" target="_blank">Khan Academy</a> for a more in-depth explanation of why we break tables up this way.</p>
 <p>If you get stuck on any of the tasks below, you can review lessons in <a href="https://www.khanacademy.org/computing/computer-programming/sql" target="_blank">Khan Academy</a> or <a href="https://www.w3schools.com/sql/default.asp" target="_blank">w3schools</a> to get ideas and remind yourself of the proper syntax.</p>
 <h3 id="your-task">Your Task:</h3>
 <p>Sarah created these tables and inserted all the data into them, but she needs your help to run some queries. You can use the <em>SQL</em> tab in the <code>movie-buff</code> databse to run queries. Just type your SQL statement(s) in the box and press the <em>Go</em> button.</p>
 <p><img src="images/sql.png" alt="SQL tab" /></p>
-<p>As an example, say Sarah wants to know the first and last names of any of her friends who borrowed one of her movies before 2010. </p>
+<p>As an example, say Sarah wants to know the first and last names of any of her friends who borrowed one of her movies before 2010.</p>
 <p>We know we'll want to use the <code>viewings</code> table, since that has the dates of when people have viewed her DVDs as well as their ids. And we know we want to use the <code>viewers</code> table since that has the first and last names of her friends. Since we want data from two tables, we know we'll likely need to use a <code>join</code>. We also know that the column in common between the two tables is the <code>viewer_id</code> column, so that will be what we join on. Our SQL statement will be:</p>
-<pre><code class="language-sql">SELECT DISTINCT viewers.first, viewers.last 
+<pre><code class="language-sql">SELECT DISTINCT viewers.first, viewers.last
 FROM viewers
-JOIN viewings 
+JOIN viewings
 ON viewers.viewer_id = viewings.viewer_id
 WHERE viewings.date_viewed &lt; '2010-01-01'</code></pre>
 <p>In phpMyAdmin:</p>
@@ -198,14 +198,14 @@ WHERE viewings.date_viewed &lt; '2010-01-01'</code></pre>
 <p>What is the id of the last-viewed movie?</p>
 </li>
 <li>
-<p>What is the title of the first movie she loaned to a friend for viewing? </p>
+<p>What is the title of the first movie she loaned to a friend for viewing?</p>
 </li>
 <li>What is the first and last name of the person who viewed the last-viewed movie?</li>
 </ol>
 <h4 id="bonus-missions">Bonus Missions</h4>
 <ol start="11">
 <li>
-<p>Write the SQL query to display the DVDs that others have watched in order of most viewed to least viewed. What's the title of the most-viewed movie(s) in Sarah's collection? </p>
+<p>Write the SQL query to display the DVDs that others have watched in order of most viewed to least viewed. What's the title of the most-viewed movie(s) in Sarah's collection?</p>
 </li>
 <li>
 <p>Find the email of everyone who has watched &quot;The Tango Lesson&quot;, so Sarah can email them and ask what they thought of it.</p>

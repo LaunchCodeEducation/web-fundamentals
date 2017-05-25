@@ -127,38 +127,44 @@
                                         <h1>Using Jinja2 Templates in Flask</h1>
                     <div class="youtube-wrapper"><iframe width="776" height="437" src="https://www.youtube-nocookie.com/embed/exR1kxpd1cY?rel=0" frameborder="0" allowfullscreen></iframe></div>
 <h2 id="notes">Notes</h2>
-<p>In this video we learn how to make our code more maintainable and encapsulated by removing the long strings of HTML from our <code>main.py</code> and putting them into templates. We will do this using a Python templating engine called <a href="http://jinja.pocoo.org/docs/2.9/" target="_blank">Jinja2</a>. Here are the steps we'll follow: </p>
+<p>In this video we learn how to make our code more maintainable and encapsulated by removing the long strings of HTML from our <code>main.py</code> and putting them into templates. We will do this using a Python templating engine called <a href="http://jinja.pocoo.org/docs/2.9/" target="_blank">Jinja2</a>. Here are the steps we'll follow:</p>
 <ol>
 <li><code>import os</code> and <code>import jinja2</code> in <code>main.py</code></li>
-<li>Create a directory named <code>templates</code> and then use <code>os</code> to make a new file system path to it that Jinja will use:
-<pre><code class="language-python">template_dir = os.path.join(os.path.dirname(__file__), 'templates')</code></pre></li>
-<li>Initialize the Jinja templating environment: 
-<pre><code class="language-python">jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir))</code></pre></li>
+<li>Create a directory named <code>templates</code> and then use the imported <code>os</code> object to construct a string that contains the file path to this directory. Note that this path will be an <em>absolute</em> path in the filesystem on which the program is running.
+<pre><code class="language-python">template_dir = os.path.join(os.path.dirname(__file__),
+    'templates')</code></pre></li>
+<li>Initialize the Jinja templating environment, using the <code>template_dir</code>:
+<pre><code class="language-python">jinja_env = jinja2.Environment(
+    loader = jinja2.FileSystemLoader(template_dir))</code></pre></li>
 <li>Extract the HTML string in the variable <code>form</code> and put it in a newly created <code>hello_form.html</code> file in the <code>templates</code> directory.</li>
 <li>In the <code>index</code> function, create a <code>template</code> variable that holds the template returned from Jinja's <code>get_template</code> function and then return the string that <code>template.render()</code> returns:
 <pre><code class="language-python">def index():
-template = jinja_env.get_template('hello_form.html')
-return template.render()</code></pre></li>
+    template = jinja_env.get_template('hello_form.html')
+    return template.render()</code></pre></li>
 <li>Extract the HTML string that <code>hello</code> returns from <code>main.py</code> and put it in a newly created <code>hello_greeting.html</code> file in the <code>templates</code> directory. Be sure to add the proper doctype and head/body tags.</li>
 <li>Repeat step 5 for the <code>hello</code> function, but this time pass an argument to <code>template.render</code> that matches a placeholder called <code>name</code> in the template itself:
 <pre><code class="language-python">def hello():
-first_name = request.form['first_name']
-template = jinja_env.get_template('hello_greeting.html')
-return template.render(name=first_name)</code></pre></li>
+    first_name = request.form['first_name']
+    template = jinja_env.get_template('hello_greeting.html')
+    return template.render(name=first_name)</code></pre></li>
 <li>Protect your code from malicious users by adding HTML escaping via Jinja's <code>autoescape=True</code> option:
-<pre><code class="language-python">jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir), autoescape=True)</code></pre></li>
+<pre><code class="language-python">jinja_env = jinja2.Environment(
+    loader = jinja2.FileSystemLoader(template_dir), autoescape=True)</code></pre></li>
 </ol>
 <aside class="aside-note">
-<p>There is another, simpler way you can use Jinja2 in your Flask app. We wanted to show you first what goes on &quot;behind the scenes&quot; when you incorporate templates before showing you a shortcut. The shortcut is to use Flask's <code>render_template</code> function. When you use this, you can eliminate a lot of the code above. Here are the steps to using it:</p>
+<p>There is another, simpler way you can use Jinja2 in your Flask app. We wanted to show you first what goes on &quot;behind the scenes&quot; when you incorporate templates before showing you a shortcut--creating and configuring a template loader. The shortcut is to use Flask's <code>render_template</code> function. When you use this, you can eliminate a lot of the code above. Here are the steps to using it:</p>
 <ol>
 <li>Import it:
 <pre><code class="language-python">from flask import Flask, request, redirect, render_template</code></pre>
-<p>This import statement <em>replaces</em> the code below:</p>
-<pre><code class="language-python">template_dir = os.path.join(os.path.dirname(__file__), 'templates')
-jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir))</code></pre></li>
+<p>This import of <code>render_template</code> <em>replaces</em> the need to construct the <code>template_dir</code> variable and create a template loader, as we did with the following code:</p>
+<pre><code class="language-python">template_dir = os.path.join(os.path.dirname(__file__),
+    'templates')
+jinja_env = jinja2.Environment(
+    loader = jinja2.FileSystemLoader(template_dir), autoescape=True)</code></pre>
+<p>Note that using <code>render_template</code> requires you to put your templates in a directory named <code>templates</code>, while our initial, more hands-on approach allowed us to specify where our templates are located.</p></li>
 <li>Call <code>render_template</code>:
 <pre><code class="language-python">return render_template('hello_greeting.html', name=first_name)</code></pre>
-<p>This call to <code>render_template</code> <em>replaces</em> these two calls (using the <code>hello</code> function as an example):</p>
+<p>This call to <code>render_template</code> <em>replaces</em> the two calls below (using the <code>hello</code> function as an example):</p>
 <pre><code class="language-python">template = jinja_env.get_template('hello_greeting.html')
 return template.render(name=first_name)</code></pre></li>
 </ol>
