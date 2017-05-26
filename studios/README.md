@@ -45,7 +45,7 @@ Using templates to render views including responding to bad input (validations) 
 
 ### Flicklist 5
 
-Miscellaneous improvements reinforcing validations and confirmation pages
+Add feature for rating watched movies.
 
 [Work on Flicklist 5](flicklist/5/)
 
