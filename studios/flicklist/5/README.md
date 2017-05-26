@@ -35,5 +35,8 @@ Be sure to delete the "crossoff" form from `edit.hmtl` when you have completed t
   2. Make a `rating-confirmation.html` template, to be displayed when the user rates a movie they have crossed off.
     - You will also need to create a `rate_movie` function that handles a post request on `/rating-confirmation` and renders the `rating-confirmation` template.
 
+Here is a video demo of all the behavior your app should demonstrate at the completion of this Studio's tasks.
+<div class="youtube-wrapper"><iframe width="776" height="437" src="https://www.youtube-nocookie.com/embed/nZUD9068YJo" frameborder="0" allowfullscreen></iframe></div>
+
 [400errors]: https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_Error
 [get-the-code]: ../getting-the-code/
