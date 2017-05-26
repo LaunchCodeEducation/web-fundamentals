@@ -126,31 +126,39 @@
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Studio: FlickList 5</h1>
                     <p>You have started to learn about databases, but you haven't yet seen how to incorporate them into an app. So today, we'll simply add a few features onto our project, and get everything teed up for the next studio, when we will finally start persisting user data in a database.</p>
-<p>Today we will expand our project so that users can actually view their list of movies. We will also introduce a second list view, representing the movies that the user has watched (crossed off). In this second view, users will be able to give each movie a rating between 1 and 5 stars.</p>
+<p>Today we will introduce a second list view, representing the movies that the user has watched (crossed off). In this second view, users will be able to give each movie a rating between 1 and 5 stars.</p>
 <p>There is no walkthrough portion of this studio. We leave each of these features to you to add.</p>
 <h2 id="studio">Studio</h2>
 <h3 id="checking-out-the-studio-code">Checking out the Studio code</h3>
 <p>Follow the <a href="../getting-the-code/">instructions for getting the code</a> in order to get the starter code for <code>studio5</code>.</p>
 <h3 id="your-tasks">Your Tasks</h3>
 <ul>
-<li>Modify the &quot;watched-it&quot; form in <code>edit.html</code> so that instead of a dropdown, a button on each list item is displayed. Clicking the button will result in a confirmation message that the movie has been watched. Within each list item, add a form:
-<pre><code class="language-html">&lt;form action="/watched-it" method="post"&gt;
+<li>
+<p>Modify &quot;My Watchlist&quot; so that you eliminate the need for the &quot;crossoff&quot; form in <code>edit.html</code>. Now, next to every list item/movie listed in &quot;My Watchlist&quot; you should display a button that says &quot;I Watched it!&quot;. Clicking the button will result in a confirmation message that the movie has been watched. So you'll need to add a form within the <code>&lt;li&gt;</code> tags of &quot;My Watchlist&quot;:</p>
+<pre><code class="language-html">&lt;form action="/crossoff" method="post"&gt;
 {{ movie }}
-&lt;input type="hidden" name="watched-movie" value="{{ movie }}"/&gt;
+&lt;input type="hidden" name="crossed-off-movie" value="{{ movie }}"/&gt;
 &lt;input type="submit" value="I Watched it!"/&gt;
 &lt;/form&gt;</code></pre>
-<p>And remove the existing <code>&lt;select&gt;</code> element</p></li>
-</ul>
+<p>Be sure to delete the &quot;crossoff&quot; form from <code>edit.hmtl</code> when you have completed this particular task.</p>
+</li>
+<li>
 <p>Implement the feature where users can rate the movies they have watched.</p>
 <ol>
 <li>Make a <code>ratings.html</code> template which is an index of all movies that have been watched and are available to rate. Add forms for rating movies, one on each list item in the <code>ratings.html</code> template. This will also require you to create:
 <ul>
-<li>A handler, <code>MovieRatings</code>, to display the template at <code>/ratings</code></li>
-<li>A method, <code>getWatchedMovies</code>, to get the list of watched. For now, create a hard-coded list with a few movie titles. We'll update this to pull from a database in a future studio.</li>
+<li>A handler function, <code>movie_ratings</code>, to handle a <code>get</code> request and render the template at <code>/ratings</code></li>
+<li>A function, <code>get_watched_movies</code>, to get the list of crossed off movies. For now, create a hard-coded list with a few movie titles. We'll update this to pull from a database in the next studio.</li>
 </ul></li>
-<li>Make a <code>rating-confirmation.html</code> template, to be displayed when the user rates a movie they have watched.</li>
-<li>Add code for form submission, that handles a <code>post</code> request to the <code>MovieRatings</code> method and render the template.</li>
+<li>Make a <code>rating-confirmation.html</code> template, to be displayed when the user rates a movie they have crossed off.
+<ul>
+<li>You will also need to create a <code>rate_movie</code> function that handles a post request on <code>/rating-confirmation</code> and renders the <code>rating-confirmation</code> template.</li>
+</ul></li>
 </ol>
+</li>
+</ul>
+<p>Here is a video demo of all the behavior your app should demonstrate at the completion of this Studio's tasks.</p>
+<div class="youtube-wrapper"><iframe width="776" height="437" src="https://www.youtube-nocookie.com/embed/nZUD9068YJo" frameborder="0" allowfullscreen></iframe></div>
                                     </section>
 
             </div>
