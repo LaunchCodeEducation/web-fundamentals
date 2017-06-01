@@ -7,7 +7,11 @@ currentMenu: videos
 
 ## Notes
 
-In this video we'll create a To Do list app in order to practice using conditionals and loops in our templates. We'll also look at how to use a single handler to handle both `GET` and `POST` requests.
+In these two videos we'll create a To Do list app in order to practice using conditionals and loops in our templates. We'll also look at how to use a single handler to handle both `GET` and `POST` requests.
+
+<aside class="aside-note" markdown="1">
+If the second video in the playlist above does not autoplay, you can select that video using the hamburger icon in the top left of the YouTube screen.
+</aside>
 
 ## Code
 
