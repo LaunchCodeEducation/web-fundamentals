@@ -17,7 +17,7 @@ def getCurrentWatchlist():
     return [movie.name for movie in Movie.query.all()]
 
 ```
-In order to make this work, we've got to have a movie table in our database. We'll do this through the python shell. We've trotted out the Python idiom of `if __name__ == "__main__":` to prevent `app.run()` from running when we load `main.py` as a module, now we can now safely import symbols from `main.py`:
+In order to make this work, we've got to have a movie table in our database. We'll do this through the python shell. We've trotted out the Python idiom of `if __name__ == "__main__":` to prevent `app.run()` from running when we load `main.py` as a module, so now we can now safely import symbols from `main.py`:
 ```nohighlight
 (flicklist) $ python
 >>> from main import db, Movie
@@ -29,7 +29,6 @@ In order to make this work, we've got to have a movie table in our database. We'
 >>> db.session.commit()
 >>> Movie.query.all()
 [<Movie 'Mulan'>, <Movie 'Rushmore'>, <Movie 'Damsels in Distress'>]
-
 ```
 
 Now if we fire up our app and view it, we see those movies in our watchlist! Yeah!
