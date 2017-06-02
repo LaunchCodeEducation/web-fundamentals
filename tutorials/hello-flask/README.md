@@ -11,6 +11,11 @@ visit the server in our browser, and it will display this heartening message:
 
 ![Hello World screenshot](hello-world-browser-screenshot.png)
 
+<aside class="aside-note" markdown="1">
+A special note for Windows users. You will want to make sure to open up Git Bash as an *admin* from now on when you are working with Flask and virtual environments. To do this, right click on the shortcut for Git Bash and select *Run as administrator*. Then select *Yes* when you get a pop up box about allowing this app to make changes to your PC. You can also change the shortcut so that it defaults to *Run as administrator* by going to *Desktop->GitBash->Properties->Shortcut->Advanced* and then checking the box next to *Run as administrator*. 
+![run as admin](images/runas.png)
+</aside>
+
 ### Founding your project and installing software
 
 Navigate to your `lc101` directory, make a directory for your project, and `cd` (change directory) into it:
