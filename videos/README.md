@@ -32,3 +32,5 @@ currentMenu: videos
 [A Task List App](task-list/)
 
 [Template Extensions](template-extensions/)
+
+[Using render_template](render-template/)
