@@ -14,7 +14,7 @@ a good idea of how to both be working on the same code at the same
 time. You will learn how to:
 
 - Quickly add Code in Pull + Push Cycles *(Important! This is the fundamental process we'll be practicing!)*
-- Add a Collaborator to a Github Project
+- Add a Collaborator to a GitHub Project
 - Sharing Repositories on GitHub
 - Create a Branch in Git
 - Create a Pull Request in GitHub
@@ -28,7 +28,7 @@ This lesson reinforces
 
 ## Walkthrough
 
-The instructor will discuss why Github is worth their study. You already know how to use a local git repository with one branch, giving you the ability to move your code forward and backward in time. Working with branches on GitHub allows multiple people to build features at the same time. Pull Requests act as a checkpoint when code flows from branch to branch.
+The instructor will discuss why GitHub is worth their study. You already know how to use a local git repository with one branch, giving you the ability to move your code forward and backward in time. Working with branches on GitHub allows multiple people to build features at the same time. Pull Requests act as a checkpoint when code flows from branch to branch.
 
 Students *must* pair off for this exercise. If you have trouble finding a partner, ask your TF for help.
 
@@ -42,9 +42,13 @@ Feel free to share your story in the `#showcase` channel on Slack, and see what 
 
 You and your partner will alternate tasks, so designate one of you as **Player 1** and the other as **Player 2**. Even when it is not your turn to complete a task, read and observe what your partner is doing to completed theirs. The steps here mimic how a real-world collaborative Git workflow can be used within a project.
 
-#### Player 1
+<aside class="aside-warning" markdown="1">
+As you go through these steps, you'll be working with branches, and it's very likely that you will make changes to the code only to realize that you did so in the wrong branch. If this happens to you (and it has happened to all of us) you can use `git stash` to cleanly move your changes to another branch. Read about how to do so in our [Git Stash Tutorial](../../tutorials/git-stash/).
+</aside>
 
-### Create a New Repository
+### Step 1: Create a New Repository
+
+#### Player 1
 
 Navigate to your development folder. Follow these instructions to create a new project.
 
@@ -111,39 +115,44 @@ Date:   Wed Apr 5 10:55:56 2017 -0500
 
 ```
 
+Great! We've got our project going locally, but we're going to need to make it accessible for Player 2 also. Let's push this project up to GitHub.
 
-Great! We've got our project going locally, but we're going to need to make it accessible for player 2 also. Let's push this project up to Github.
+### Step 2: Share Your Repository On GitHub
 
-### Share Your Repository On GitHub
+#### Player 1
 
-Go to your Github profile in a web browser. Click on the + button to add a new repository ('repo').
+Go to your GitHub profile in a web browser. Click on the + button to add a new repository ('repo').
 
-![Create a new repository in Github](CreateAGithubRepo.png)
+![Create a new repository in GitHub](images/CreateAGithubRepo.png)
 
 Fill in the name and description. Uncheck the "initialize with README". Click *Create Repository*.
 
 <aside class="aside-warning" markdown="1">If you initialize with a README, in the next step Git will refuse to merge this repo with the local repo. There's ways around that, but it's faster and easier to just create an empty repo here. </aside>
 
-![Connecting to a repository in Github](StartingARepo.png)
+![Connecting to a repository in GitHub](images/StartingARepo.png)
 
-Now go back to your terminal and follow the instructions shown on Github which should be very similar to this:
+Now go back to your terminal and follow the instructions shown on GitHub which should be very similar to this:
 
 ```nohighlight
-$ git remote add origin git@github.com:cherylschaefer/fireside-story.git
+$ git remote add origin https://github.com:cherylschaefer/fireside-story.git
 $ git push origin master
 ```
 
-Now you should be able to confirm that Github has the same version of the project you have locally. (File contents in browser match those in terminal.) Click around and see what is there. You can read all your code through GitHub's web interface.
+<aside class="aside-warning" markdown="1">
+Unless you've set up an SSH key with GitHub, make sure you've selected the HTTPS clone URL. If you don't know whether or not you've done this, you almost certainly haven't.
+</aside>
 
-![A repository with one commit in Github](Repo1Commit.png)
+Now you should be able to confirm that GitHub has the same version of the project you have locally. (File contents in browser match those in terminal.) Click around and see what is there. You can read all your code through GitHub's web interface.
+
+![A repository with one commit in GitHub](images/Repo1Commit.png)
+
+### Step 3: Clone a Project from GitHub
 
 #### Player 2
 
-### Clone a Project from GitHub
+Go to Player 1's GitHub profile and find the fireside-story repo. Click on the green *Clone or download* button. Use SSH and not HTTPS. Copy the url to your clipboard.
 
-Go to player 1's github profile and find the fireside-story repo. Click on the green *Clone or download* button. Use SSH and not HTTPS. Copy the url to your clipboard.
-
-![Cloning a repository in Github](CloneRepo.png)
+![Cloning a repository in GitHub](images/CloneRepo.png)
 
 In your terminal, navigate to your development folder and clone down the repo. The command should look something like this.
 
@@ -162,7 +171,7 @@ $ git add index.html
 $ git commit -m 'added second line of story'
 ```
 
-Now we need to push up your changes so player 1 can use them as well.
+Now we need to push up your changes so Player 1 can use them as well.
 
 ```nohighlight
 $ git push origin master
@@ -173,21 +182,27 @@ Please make sure you have the correct access rights
 and the repository exists.
 ```
 
-Great error message! It let us know exactly what went wrong - player 2 does not have security permissions to write to player 1's repo. Let's go fix that.
+Great error message! It let us know exactly what went wrong - Player 2 does not have security permissions to write to Player 1's repo. Let's go fix that.
+
+### Step 4: Add A Collaborator To A GitHub Project
 
 #### Player 1
 
-### Add A Collaborator To A GitHub Project
+In your web browser, go to your `fireside-story` repo. Click the *Settings* button then click on *Collaborators*. Enter in Player 2's GitHub username and click *Add Collaborator*.
 
-In your web browser, go to your fireside-story repo. Click the *Settings* button then click on *Collaborators*. Enter in player 2's Github username and click *Add Collaborator*.
+![Add a collaborator to your repo in GitHub](images/RepoSettingsAddCollaborator.png)
 
-![Add a collaborator to your repo in Github](RepoSettingsAddCollaborator.png)
+### Step 5: Join the Project and Push
 
 #### Player 2
 
-You should receive an email invitation to receive permissions to this repo from player 1 through Github.
+You should receive an email invitation to join this repository. View and accept the invitation.
 
-![Invited to collaborate email in Github](InvitedToGithubRepo.png)
+<aside class="aside-note" markdown="1">
+If you don't see an email (it may take a few minutes to arrive in your inbox), check your Spam folder. If you still don't have an email, visit the repository page for the repo that Player 1 created (ask them for the link), and you'll see a notification at the top of the page.
+</aside>
+
+![Invited to collaborate email in GitHub](images/InvitedToGithubRepo.png)
 
 Now let's go enter that command again to push up our code.
 
@@ -203,11 +218,13 @@ To git@github.com:player2/fireside-story.git
    511239a..679de77  master -> master
 ```
 
-Anyone reading the html through GitHub's browser interface should now see the new second line.
+Anyone reading the HTML through GitHub's browser interface should now see the new second line.
+
+### Step 6: Pull Player 2's Line and Add Another Line
 
 #### Player 1
 
-Player 1 you might notice you don't have the second line on your computer. Go to the terminal and enter this command to pull that updated code in locally.
+Player 1 you might notice you don't have the second line of code in your copy of the project on your computer. Let's fix that. Go to the terminal and enter this command to pull down the updated code into your local Git repository.
 
 ```nohighlight
 $ git pull origin master
@@ -223,13 +240,15 @@ Fast-forward
  1 file changed, 1 insertion(+)
 ```
 
-Now go in your editor, add a third line of story and push it up. You can have your story go anywhere! Try to tie it in with what the other player wrote, without discussing with them any plans on where the story will go.
+Now, in your editor, add a third line to the story and. Then add, commit, and push it up.
 
-Stage, commit and push your change.
+You can have your story go anywhere! Try to tie it in with what the other player wrote, without discussing with them any plans on where the story will go.
+
+### Step 7: Do It Again: Pull, Change, and Push!
 
 #### Player 2
 
-Player 2 you might notice now *you* don't have the third line on your computer. Go to the terminal and enter this command to pull that updated code in locally.
+Player 2 you might notice now *you* don't have the third line on your computer. Go to the terminal and enter this command to pull in the changes that Player 1 just made.
 
 ```nohighlight
 $ git pull origin master
@@ -245,26 +264,37 @@ Fast-forward
  1 file changed, 1 insertion(+)
 ```
 
-Now go in your editor, add and commit a fourth line of story and push it up. Again: be creative, but no planning!
+Now add a fourth line of story. Again, be creative, but no planning!
 
-You can both play like this for a while! But let's say player 2 wants to work a little extra on the project. You're not sure player 1 is keen on this change so let's put it in a branch. Branches are often used to organize new feature development.
+Then add, commit, and push your change.
 
-### Create a Branch In Git
+You can both play like this for a while! Feel free to repeat this cycle a few times to add to the story.
+
+### Step 8: Create a Branch In Git
+
+This workflow is a common one in team development situations. You might wonder, however, if professional developers sit around waiting for their teammates to commit and push a change before embarking on additional work on their own. That would be a drag, and thankfully, there is a nice addition to this workflow that will allow for simultaneous work to be carried out in a reasonable way.
+
+#### Player 2
+
+While Player 1 is working on an addition to the store, let's make another change simultaneously. In order to do that, we'll create a new branch. Recall that a branch is a separate "copy" of the codebase that you can commit to without affecting code in the `master` branch.
 
 ```nohighlight
 $ git checkout -b darker
 Switched to a new branch 'darker'
 ```
 
-Open a new file `style.css` and paste this code in:
-```
+This command creates a new branch named `darker`, and switches your local repository to use that branch.
+
+Create a new file named `style.css` and add the following rules:
+
+```css
 body {
   color: white;
   background-color: black;
 }
 ```
 
-Now link it in `index.html`. It should look something like this:
+Then link it in `index.html`. It should look something like this:
 
 ```html
 <html>
@@ -278,15 +308,21 @@ Now link it in `index.html`. It should look something like this:
 </html>
 ```
 
-Now stage and commit the new file and changes to the existing file.
+Now stage and commit these changes.
 
 ```nohighlight
 $ git add .
-$ git commit -m 'added style.css'
+$ git commit -m 'Added style.css'
 $ git push origin darker
 ```
 
-You should both now be able to see a second branch appear in your repo in the browser. On your command line, you can type this command to see a list of the available branches:
+Note that the last command is a bit different than what we've used before (`git push origin master`). The final piece of this command is the name of the branch that we want Git to push up to the origin repository (that is, to GitHub).
+
+You should both now see a second branch present on the GitHub project page. To view branches on GitHub, select *Branches* from the navigation section just below the repository title.
+
+![Branches Button in GitHub](images/BranchesButton.png)
+
+In your terminal, you can type this command to see a list of the available branches:
 
 ```nohighlight
 $ git branch
@@ -294,26 +330,35 @@ $ git branch
   master
 ```
 
+Note that creating and being able to see a branch in your local repository via this command does *not* mean that the branch is on GitHub. You'll need to push the branch for it to appear on GitHub.
+
+<aside class="aside-note" markdown="1">
+The \* to the left of `darker` indicates that this is the active branch.
+</aside>
+
 Great! Now let's show the other player your work in GitHub and ask them to merge it in to the main branch.
 
-### Create a Pull Request In GitHub
+### Step 9: Create a Pull Request In GitHub
 
-In your browser, go to the github project. Click on *branches* and the new branch name, *darker*.
+#### Player 2
 
-![Branches Button in GitHub](BranchesButton.png)
-![Branches Page in GitHub](branches.png)
+If you haven't already, in your browser, go to the GitHub project and click on *Branches* and make sure you see the new branch name, *darker*.
 
-If you are happy with your changes, click *New Pull Request*. Add some text in the description box to let player 1 know what you did and why.
+![Branches Page in GitHub](images/branches.png)
 
-![Open a PR in Github](pr-details.png)
+Click *New Pull Request* to begin the process of requesting that your changes in the `darker` branch be incorporated into the `master` branch. Add some text in the description box to let Player 1 know what you did and why. Note that the branch selected in the `base` dropdown is the branch that you want to merge _into_, and the selected in the *compare* dropdown is the branch you want to merge _from_.
+
+![Open a PR in GitHub](images/pr-details.png)
 
 This is what an opened pull request looks like:
 
-![Create a PR in Github](pr-created.png)
+![Create a PR in GitHub](images/pr-created.png)
+
+### Step 10: Make a Change in the New Branch
 
 #### Player 1
 
-You will notice that you do not see this new `style.css` file locally. Type this command to see what branches are on your local coputer:
+You will notice that you do not see this new `style.css` file locally. Type this command to see what branches are on your local computer:
 
 ```nohighlight
 $ git branch
@@ -329,15 +374,16 @@ $ git branch
   darker
 * master
 ```
+
 ```nohighlight
 $ git checkout darker
 Switched to branch 'darker'
 Your branch is up-to-date with 'origin/darker'.
 ```
 
-Make a change and commit to this branch if you'd like -- you will see that the pull request in Github is updated to reflect the changes you've added. The context in the description box is not though, so be sure to add comments to the pull request to explain what you did and why.
+Make a change, commit, and push this branch--you will see that the pull request in GitHub is updated to reflect the changes you've added. The context in the description box is _not_ updated, however, so be sure to add comments to the pull request to explain what you did and why.
 
-To go back to the main branch type these commands:
+Now switch back to the `master` branch:
 
 ```nohighlight
 $ git checkout master
@@ -345,39 +391,56 @@ Switched to branch 'master'
 Your branch is up-to-date with 'origin/master'.
 ```
 
-You will see your files no longer have those changes that are in the darker branch. Let's go merge those changes in, so that the master branch adopts all the changes in the darker branch.
+You will see your files no longer have the changes made in the `darker` branch. Let's go merge those changes in, so that the `master` branch adopts all the changes in the `darker` branch.
 
-Go to the repo in Github. Click on `Pull Requests`. Explore here and see all the information Github shows you about the changes made.
+### Step 11: Merge the Pull Request
 
-![PR Open in Github](RepoPR1.png)
+#### Player 1
+
+Go to the repo in GitHub. Click on `Pull Requests`.
+
+![PR Open in GitHub](images/RepoPR1.png)
+
+Explore this page to see all the information GitHub shows you about the pull request.
+
+![Merge a Pull Request in GitHub](images/RepoMergePR.png)
 
 When you're happy with the changes, merge them in. Click *Merge Pull Request* then *Confirm Merge*.
 
-![Merge a Pull Request in Github](RepoMergePR.png)
-![Confirm PR Merge in Github](PRConfirmMerge.png)
+![Confirm PR Merge in GitHub](images/PRConfirmMerge.png)
 
-You should see this screen to show success:
+Upon a successful merge, you should see a screen similar to the following:
 
-![PR Merged in Github](PRMerged.png)
+![PR Merged in GitHub](images/PRMerged.png)
 
-Now you will need to pull updates to your master branch locally.
+The changes from `darker` are now in the `master` branch, but only in the remote repository on GitHub. You will need to pull ing updates to your master for them to be present locally.
 
 ```nohighlight
-$ git branch master
+$ git checkout master
 $ git pull origin master
 ```
 
 Git is able to merge these files on its own.
 
-### What happens if you both edit the same thing?
+### Step 12: Merge Conflicts!
 
-### ![Git Merge Conflicts](git-merge.gif)
+When collaborating on a project, things won't always go so smoothly. It's common for two people to make changes to the same line(s) of code, at roughly the same time, which will prevent Git from being able to merge the changes together.
+
+![Git Merge Conflicts](images/git-merge.gif)
+
+This isn't such a big scary deal. In fact, it's very common. To see how we can handle such a situation we'll intentionally create a situation that involves a merge conflict, and then resolve it.
 
 #### Player 2
 
-Let's change something about the style file. Our html is looking pretty plain. Let's pick a nice font and add some margins. Paste in something like this:
+Let's change something about the style file. Our HTML is looking pretty plain, so let's pick a nice font and add some margins.
 
-Add another link to your `index.html` file, right by the first link:
+First, switch back to the `master` branch.
+
+```nohighlight
+$ git checkout master
+```
+
+Let's change our font. To do so, add this link to your `index.html` file, right by the first stylesheet link:
 ```html
      <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
 ```
@@ -396,9 +459,9 @@ body {
 
 The result:
 
-![Satisfying!](AddSatisfyFont.png)
+![Satisfying!](images/AddSatisfyFont.png)
 
-Commit your changes and push it up to GitHub. If you don't remember how to do this, follow the instructions above. Make sure you're back in the `master` branch - if you're still in `darker`, then your changes will be isolated and we won't get the merge conflict you want to learn about.
+Stage and commit your changes and push them up to GitHub. If you don't remember how to do this, follow the instructions above. Make sure you're back in the `master` branch--if you're still in `darker`, then your changes will be isolated and we won't get the merge conflict you want to learn about.
 
 Meanwhile...
 
@@ -406,7 +469,7 @@ Meanwhile...
 
 Let's change something about the style file that Player 2 just edited. Change it to look like this:
 
-```
+```css
 body {
   color: white;
   background-color: black;
@@ -420,14 +483,21 @@ body {
 
 Don't forget to link the new font in your `index.html` file, beside the other link:
 
-```
+```html
   <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
 ```
 
-Commit your changes to branch `master` and push it up to GitHub. You should get an error message, how exciting!
+Commit your changes to branch `master`.
+
+
+### Step 13: Resolving Merge Conflicts
+
+#### Player 1
+
+ and push it up to GitHub. You should get an error message. How exciting!
 
 ```nohighlight
-$ git push
+$ git push origin master
 
 To git@github.com:cherylschaefer/fireside-story.git
  ! [rejected]        master -> master (fetch first)
@@ -437,18 +507,9 @@ hint: not have locally. This is usually caused by another repository pushing
 hint: to the same ref. You may want to first integrate the remote changes
 hint: (e.g., 'git pull ...') before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
-
 ```
 
-Let's look around and see what's happening.
-
-```nohighlight
-$ git status
-On branch master
-Your branch is ahead of 'origin/master' by 3 commits.
-  (use "git push" to publish your local commits)
-nothing to commit, working directory clean
-```
+There's a lot of jargon in that message, including some terminology we haven't encountered. However, the core of the message is indeed understandable to us: "Updates were rejected because the remote contains work that you do not have locally." In other words, somebody (Player 2, in this case), pushed changes to the same branch, and you don't have those changes on your computer. Git will not let you push to a branch in another repository unless you have incorporated all of the work present in that branch.
 
 Let's pull these outstanding changes into our branch and resolve the errors.
 
@@ -467,9 +528,11 @@ CONFLICT (content): Merge conflict in index.html
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-Git could not figure out how to merge files where it says `CONFLICT` so we will have to edit them ourselves. Let's start with `style.css`.
+Since Player 2 made changes to some of the same lines that you did, Git was unable to automatically merge the changes.
 
-```
+The specific locations where Git could not automatically merge files are indicated by the lines that begin with `CONFLICT`. You will have to edit these files yourself to incorporate Player 1's changes. Let's start with `style.css`.
+
+```css
 body {
   color: white;
 <<<<<<< HEAD
@@ -489,14 +552,14 @@ body {
 ```
 
 At the top and bottom, there is some code that could be merged without issue.
-<br/>
-`<<<<<<< HEAD` to `=======` is the version of the code that existed locally.
-<br/>
-`=======` to `>>>>>>> 0c2165931f5f668959bad92d2f744efb402e049d` is the version of the code that was pulled in (the hash will be unique to the commit).
-<br/>
-Let's unify our code -- make sure to remove the Git markers.
 
-```
+`<<<<<<< HEAD` to `=======` is the version of the code that existed locally. In other words, these are _your_ changes.
+
+`=======` to `>>>>>>> 0c2165931f5f668959bad92d2f744efb402e049d` indicates the changes that Player 1 made (the hash will be unique to the commit, so you'll see something slightly different here).
+
+Let's unify our code. Change the CSS to look like this, making sure to remove the Git markers so that only valid CSS remains in the file.
+
+```css
 body {
   color: white;
   background-color: black;
@@ -506,12 +569,13 @@ body {
 }
 ```
 
-You will need to do the same thing for the `index.html` file. You only need the link for *Sacramento*, not *Satisfy*. Commit again and push it up; you should not see an error message.
+You will need to do the same thing for the `index.html` file. You only need the link for the Sacramento font, not the Satisfy font. Then stage, commit, and push your changes; you should not see an error message this time.
 
+### Step 14: Pulling the Merged Code
 
 #### Player 2
 
-Meanwhile, Player 2 is sitting home, minding their own business. A random `git status` seems reassuring:
+Meanwhile, Player 2 is sitting at home, minding their own business. A random `git status` seems reassuring:
 
 ```nohighlight
 $ git status
@@ -537,7 +601,7 @@ Fast-forward
  2 files changed, 4 insertions(+), 3 deletions(-)
 ```
 
-Great Scott! Looks like Player 1 changed both `index.html` and `style.css`. Note that *player 2* didn't have to deal with the hassle of resolving merge conflicts. Since Player 1 intervened, git assumes that the team is okay with the way they resolved it, and **fast forwards** our local repo to be in sync with the upstream one. Let's look at `style.css` to make sure:
+Great Scott! Looks like Player 1 changed both `index.html` and `style.css`. Note that *Player 2* didn't have to deal with the hassle of resolving merge conflicts. Since Player 1 intervened, Git assumes that the team is okay with the way they resolved it, and **fast forwards** our local repo to be in sync with the remote one. Let's look at `style.css` to make sure:
 
 ```css
 body {
@@ -549,12 +613,18 @@ body {
 }
 ```
 
-<br/>
-Now make more changes but let Player 1 push up first so Player 2 can practice resolving the merge conflict.
+### Step 15: More Merge Conflicts!
 
-Merge conflicts are a part of developing in a team. Resolve them carefully, so that they don't cause bugs in your code.
+Let's turn the tables on the steps we just carried out, so Player 2 can practice resolving merge conflicts.
 
-*Optional*: share your story in the `#fireside-story` channel on Slack, and see what others have created!
+- *Players 1 and 2*: Confer to determine the particular lines in the code that you will both change. Make different changes in those places.
+- *Player 1*: Stage, commit, and push your changes.
+- *Player 2*: Try to pull in Player 1's changes, and notice that there are merge conflicts. Resolve these conflicts as we did above (ask Player 1 for help, if you're uncertain about the process). Then stage, commit, and push your changes.
+- *Player 1*: Pull in the changes that Player 2 pushed, including the resolved merge conflicts.
+
+Merge conflicts are a part of the process of team development. Resolve them carefully, so that they don't cause bugs in your code.
+
+*Optional*: share your story in the `#showcase` channel on Slack, and see what others have created!
 
 ### Resources
 
