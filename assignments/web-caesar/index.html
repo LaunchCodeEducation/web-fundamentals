@@ -138,7 +138,7 @@
 </ul>
 <p>Your final application will function just like our <a href="https://launchcode-demos.appspot.com/caesar" target="_blank">demo app</a>.</p>
 <h2 id="project-and-repository-setup">Project and Repository Setup</h2>
-<p>For this assignment, you will build the entire project from scratch. </p>
+<p>For this assignment, you will build the entire project from scratch.</p>
 <h3 id="git-repository-setup">Git repository setup</h3>
 <p>From <code>~/lc101/</code>, create a new directory and initialize it as a Git repository.</p>
 <pre><code class="language-nohighlight">$ mkdir web-caesar
@@ -222,7 +222,7 @@ Proceed ([y]/n)? y
 <p>To do so, make a global variable named <code>form</code> above the <code>index</code> function, and set it's value to be the HTML displayed here.</p>
 <script src="https://gist.github.com/chrisbay/b67a34a89639786a42e38fdbd0b6f4b9.js"></script>
 <aside class="aside-warning">
-<p>Don't forget to enclose the form string in triple-quoutes <code>"""</code> so it can take up multiple lines.</p>
+<p>Don't forget to enclose the form string in triple-quotes <code>"""</code> so it can take up multiple lines.</p>
 </aside>
 <p>Now, fill out the body of the HTML string with a form that has these characteristics:</p>
 <ol>
@@ -247,7 +247,7 @@ Proceed ([y]/n)? y
 <pre><code class="language-python">from caesar import rotate_string</code></pre>
 <p>We'll use this function in the next step.</p>
 <h3 id="processing-the-form">Processing the form</h3>
-<p>To process the form, define a new function <code>encrpyt</code> in <code>main.py</code>. Add an <code>@app.route</code> decorator to configure the function to receive requests at the root path <code>"/"</code>, and with <code>methods=['POST']</code>.</p>
+<p>To process the form, define a new function <code>encrypt</code> in <code>main.py</code>. Add an <code>@app.route</code> decorator to configure the function to receive requests at the root path <code>"/"</code>, and with <code>methods=['POST']</code>.</p>
 <p>When the form is submitted, the request will contain the parameters <code>rot</code> and <code>text</code>. In order to access these, we need Flask's <code>request</code> object. To import it, modify the topmost <code>import</code> statement to include this object.</p>
 <pre><code class="language-python">from flask import Flask, request</code></pre>
 <p>Within <code>encrypt</code>, store the values of these request parameters in local variables, converting data types as necessary. Then, encrypt the value of the <code>text</code> parameter using <code>rotate_string</code>. Return the encrypted string wrapped in <code>&lt;h1&gt;</code> tags, to be rendered in the browser.</p>
@@ -259,7 +259,7 @@ Proceed ([y]/n)? y
 <ol>
 <li>Add a placeholder <code>{0}</code> between the opening and closing <code>&lt;textarea&gt;</code> tags.</li>
 <li>Where the CSS rules are defined, &quot;double up&quot; the curly braces, which will prevent the <code>str.format</code> method from interpreting the curly braces as defining a text placeholder. For example, one rule will look like this:
-<pre><code class="language-html">textarea {{
+<pre><code class="language-css">textarea {{
   margin: 10px 0;
   width: 540px;
   height: 120px;
@@ -279,7 +279,7 @@ Untracked files:
 
     .vscode/
     main.py
-  caesar.py
+    caesar.py
 
 nothing added to commit but untracked files present (use "git add" to track)</code></pre>
 <p>As before, we don't want to commit that <code>.vscode/</code> directory. So back in VS Code, add this line to the bottom of <code>.gitignore</code>:</p>
@@ -295,13 +295,13 @@ Untracked files:
 
     .gitignore
     main.py
-  caesar.py
+    caesar.py
 
 nothing added to commit but untracked files present (use "git add" to track)</code></pre>
 <p>Great! Now, add and commit the files.</p>
 <pre><code class="language-nohighlight">(flask-env) $ git add .
 (flask-env) $ git commit -m "Finish web caesar"
-[master (root-commit) 05bc1ae] inish web caesar
+[master (root-commit) 05bc1ae] Finish web caesar
  2 files changed, 10 insertions(+)
  create mode 100644 .gitignore
  create mode 100644 main.py</code></pre>
