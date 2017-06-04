@@ -18,7 +18,7 @@ Your final application will function just like our [demo app](https://launchcode
 
 ## Project and Repository Setup
 
-For this assignment, you will build the entire project from scratch. 
+For this assignment, you will build the entire project from scratch.
 
 ### Git repository setup
 
@@ -150,7 +150,7 @@ To do so, make a global variable named `form` above the `index` function, and se
 <script src="https://gist.github.com/chrisbay/b67a34a89639786a42e38fdbd0b6f4b9.js"></script>
 
 <aside class="aside-warning" markdown="1">
-Don't forget to enclose the form string in triple-quoutes `"""` so it can take up multiple lines.
+Don't forget to enclose the form string in triple-quotes `"""` so it can take up multiple lines.
 </aside>
 
 Now, fill out the body of the HTML string with a form that has these characteristics:
@@ -190,7 +190,7 @@ We'll use this function in the next step.
 
 ### Processing the form
 
-To process the form, define a new function `encrpyt` in `main.py`. Add an `@app.route` decorator to configure the function to receive requests at the root path `"/"`, and with `methods=['POST']`.
+To process the form, define a new function `encrypt` in `main.py`. Add an `@app.route` decorator to configure the function to receive requests at the root path `"/"`, and with `methods=['POST']`.
 
 When the form is submitted, the request will contain the parameters `rot` and `text`. In order to access these, we need Flask's `request` object. To import it, modify the topmost `import` statement to include this object.
 
@@ -212,7 +212,7 @@ Let's make two modifications to the `form` variable:
 
 1. Add a placeholder `{0}` between the opening and closing `<textarea>` tags.
 2. Where the CSS rules are defined, "double up" the curly braces, which will prevent the `str.format` method from interpreting the curly braces as defining a text placeholder. For example, one rule will look like this:
-  ```html
+  ```css
   textarea {{
       margin: 10px 0;
       width: 540px;
@@ -237,9 +237,9 @@ Initial commit
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
-	.vscode/
-	main.py
-  caesar.py
+    .vscode/
+    main.py
+    caesar.py
 
 nothing added to commit but untracked files present (use "git add" to track)
 ```
@@ -261,9 +261,9 @@ Initial commit
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
-	.gitignore
-	main.py
-  caesar.py
+    .gitignore
+    main.py
+    caesar.py
 
 nothing added to commit but untracked files present (use "git add" to track)
 ```
@@ -273,7 +273,7 @@ Great! Now, add and commit the files.
 ```nohighlight
 (flask-env) $ git add .
 (flask-env) $ git commit -m "Finish web caesar"
-[master (root-commit) 05bc1ae] inish web caesar
+[master (root-commit) 05bc1ae] Finish web caesar
  2 files changed, 10 insertions(+)
  create mode 100644 .gitignore
  create mode 100644 main.py
