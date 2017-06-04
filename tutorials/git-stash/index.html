@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Tutorials :: Unit 2: Web Fundamentals</title>
+        <title>Moving Changes From One Git Branch to Another :: Unit 2: Web Fundamentals</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-tutorials'>
+    <body id='page-moving-changes-from-one-git-branch-to-another'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -124,13 +124,65 @@
             <div class="row">
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
-                                        <h1>Tutorials</h1>
-                    <h2 id="hello-flask">Hello Flask</h2>
-<p>Use the Flask library to build a web server in five lines of code.</p>
-<p><a href="hello-flask/">Work on Hello Flask</a></p>
-<h2 id="moving-changes-from-one-git-branch-to-another">Moving Changes From One Git Branch to Another</h2>
-<p>Use Git Stash to move uncommitted changes from one branch to another.</p>
-<p><a href="git-stash/">Read about Git Stash</a></p>
+                                        <h1>Moving Changes From One Git Branch to Another</h1>
+                    <p>When working with branches in Git, you will sometimes make some changes to your code only to realize that you are not working in the branch that you thought you were. Thankfully, this is easy to remedy, as long as you haven't committed the changes. This tutorial introduces the <code>stash</code> command of <code>git</code>, which allows you to easily move the changes to the correct branch.</p>
+<h2 id="the-situation">The Situation</h2>
+<p>We address the following situation:</p>
+<ul>
+<li>You have multiple branches in your local repository. For this tutorial, we'll work with <code>master</code> and <code>feature</code> branches.</li>
+<li>You are working in a given branch, and have saved some changes.</li>
+<li>Your changes <em>have not</em> been stages or committed.</li>
+<li>You want to move your changes to another branch.</li>
+</ul>
+<p>If this situation describes you, you're in luck! Let's fix it.</p>
+<h2 id="using-git-stash">Using Git Stash</h2>
+<p>Suppose you have a branch called <code>feature</code> that you want to work in. You've made some changes, and saved them, only to realize that you're in (Gasp!) the <code>master</code> branch.</p>
+<pre><code class="language-nohighlight">$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+
+    modified:   main.py
+
+no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
+<p>At this point, you might try to <code>git checkout feature</code>, and you might encounter this error:</p>
+<pre><code class="language-nohighlight">$ git checkout feature
+error: Your local changes to the following files would be overwritten by checkout:
+    main.py
+Please commit your changes or stash them before you switch branches.
+Aborting</code></pre>
+<p>This error results from the situation in which your <code>feature</code> branch has commits that your <code>master</code> branch doesn't, so Git can't move the un-staged changes you made in <code>master</code> cleanly over to <code>feature</code>.</p>
+<p>Take a deep breath. This is an easy one to remedy.</p>
+<p>Use <code>git stash</code> to put these changes off to the side for a moment.</p>
+<pre><code class="language-nohighlight">$ git stash
+Saved working directory and index state WIP on master: 1da4892 Introduce render_template
+HEAD is now at 1da4892 Introduce render_template</code></pre>
+<p>Your message will differ, based on the most recent commit that you made in the given branch.</p>
+<p>Note that your <code>master</code> branch is now &quot;clean&quot;.</p>
+<pre><code class="language-nohighlight">$ git status
+On branch master
+nothing to commit, working tree clean</code></pre>
+<p>Now, safely switch to the <code>feature</code> branch.</p>
+<pre><code class="language-nohighlight">$ git checkout feature
+Switched to branch 'feature'</code></pre>
+<p>And then pick up the changes that you stashed, and put them in the <code>feature</code> branch using <code>git stash pop</code>.</p>
+<pre><code class="language-nohighlight">$ git stash pop
+Auto-merging main.py
+On branch feature
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+
+    modified:   main.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (cb556d3734ed8675b6b81f5d4e37d003bd1bc6b9)</code></pre>
+<p>That's it! Carry on coding...</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.atlassian.com/git/tutorials/git-stash" target="_blank">Git Stash Tutorial</a></li>
+</ul>
                                     </section>
 
             </div>
