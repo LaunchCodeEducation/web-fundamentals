@@ -3,13 +3,11 @@ title: Cheat Sheets
 currentMenu: cheatsheets
 ---
 
-
 ## HTML Resources and Cheat Sheets:
 
 - [HTML5 Cheat Sheet](https://websitesetup.org/html5-cheat-sheet/)
 - [w3schools HTML reference](http://www.w3schools.com/tags/default.asp)
 - [Accessibility and HTML](https://www.codecademy.com/articles/accessibility)
-
 
 ## CSS Resources and Cheat Sheets:
 
@@ -20,9 +18,16 @@ currentMenu: cheatsheets
 - [Eric Meyer's reset.css](http://meyerweb.com/eric/tools/css/reset/)
 - [normalize.css](http://necolas.github.io/normalize.css/)
 
-
 ## Git Resources and Cheat Sheets:
 
 - [Git Basics](https://github.com/LaunchCodeEducation/cheatsheets/blob/master/git-basics)
 - [Tower Git Cheat Sheet](https://www.git-tower.com/blog/git-cheat-sheet/)
 - [Try Git](https://try.github.io/)
+
+## Other Resources:
+
+- [How Browsers Work](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork)
+- [HTTP Introduction](https://www.httpwatch.com/httpgallery/)
+- [Jinja2 Documentation](http://jinja.pocoo.org/docs/2.9/)
+- [Flask Documentation](http://flask.pocoo.org/docs/0.12/)
+- [Conda Cheat Sheet](https://conda.io/docs/_downloads/conda-cheatsheet.pdf)

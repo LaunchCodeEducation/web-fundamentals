@@ -17,7 +17,7 @@ In the process, we will talk about:
 
 - How to leave a "blank space" in your template for data to be inserted dynamically (e.g. the name of the movie the user wants to add).
 - How to insert the data once we know what it is.
-- We will also see the Jinja syntax for doing a few additional fancy (but important) things:
+- We will also see the Jinja syntax for doing a few additional, important things:
     - How to loop over a list of items in a template.
     - How to write a conditional statement in a template.
 
@@ -31,7 +31,7 @@ Follow the [instructions for getting the code][get-the-code] in order to get the
 
 ### Your Task
 
-If you visit the web-app in your browser, you will find that the `/add` route is broken! Try typing in a movie and submitting the form, and you will encounter an "Under construction..." message.
+If you visit the web-app in your browser, you will find that the `/add` route is broken! Try typing in a movie and submitting the form, and you will encounter a "Confirmation Message Under Construction..." message.
 
 Your job is to get this page back up and running. The user should still see the same confirmation message as before:
 
@@ -39,10 +39,10 @@ Your job is to get this page back up and running. The user should still see the 
 
 Of course, there is one caveat: you are required to use a template. Your `main.py` file should not contain any HTML at all!
 
-1. Create a `.html` file inside your `/templates` directory, and add whatever HTML content needs to be added.
-2. In your `AddMovie` request method, use your template to render the response.
+1. Create a file named `add-confirmation.html` inside your `/templates` directory, and add whatever HTML content needs to be added.
+2. In your `add_movie` function, use your template to render the response.
 
-For reference, you can look at our code at the bottom of the `post` method in the `watchMovie` class, which renders the `templates/watched-it.html` template file (in addition to the header and footer templates).
+For reference, you can look at our code at the bottom of the `crossoff_movie` function, which renders the `templates/crossoff.html` template file (in addition to the header and footer templates).
 
 
 [get-the-code]: ../getting-the-code/

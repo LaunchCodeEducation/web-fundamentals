@@ -93,10 +93,6 @@ You might be wondering: *How do I know when it's time to pause working and do an
 
 This is somewhat subjective, and ultimately up to you. The basic guiding principle is that you should pause and commit any time you have reached a natural stopping point and completed a coherent "chunk of work".
 
-<aside class="aside-note" markdown="1">
-For assignments such as these, we lean on the side of very large "chunks of work", so that you aren't overwhelmed with Git and can spend most of your time focusing on your code. But a more experienced Git user probably would have broken down this *Part 1* into a handful of smaller commits.
-</aside>
-
 ## Done!
 
 Well done! Time to [dive into some CSS](../part2-css/).

@@ -7,7 +7,7 @@ The big new concept for this studio is that of *validation*. Sometimes, the user
 
 ## Walkthrough
 
-If you want to code along with today's (or any day's) Walkthrough, simply `checkout` the appropriate walkthrough branch:
+If you want to code along with today's Walkthrough, simply `checkout` the appropriate `walkthrough` branch:
 
 ```nohighlight
 $ git checkout walkthrough3
@@ -21,10 +21,10 @@ Before doing this, you will want to make sure you do not have any uncommitted ch
 
 The main things we will do during today's walkthrough are:
 
-1. First, we will write a function via which we can fetch the user's (pretend) current watchlist.
-	- And then, rather than hard-code the movie titles directly into our dropdown menu, we will dynamically build the dropdown based on the  current list.
-	- In the process, we will see a new Python function, the `string.format` method.
-2. The main feature we will add is the inclusion of some validation on the `watched-it/` route method:
+1. Write a function via which we can fetch the user's (pretend) current watchlist.
+	- Rather than hard-code the movie titles directly into our dropdown menu, we will dynamically build the dropdown based on the current list.
+	- In the process, we will see a new Python function, the `str.format` method.
+2. The main feature we will add is the inclusion of some validation on the `crossoff/` route method:
 	- When the user wants to take a movie they have watched off their list, we will make sure the movie is actually on the user's list in the first place.
 	- If not, we will *redirect* the user back to the home page.
 		- And we will pass along a helpful error message as a *query parameter* in the URL
@@ -34,7 +34,7 @@ The main things we will do during today's walkthrough are:
 
 ## Studio
 
-For Studio, your job is to include some validation on the `/add` route, to make sure the app responds appropriately no matter what the user has typed into that form.
+For the Studio, your job is to include some validation on the `/add` route, to make sure the app responds appropriately no matter what the user has typed into that form.
 
 ### Checking out the Studio code
 

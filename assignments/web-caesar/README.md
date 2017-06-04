@@ -18,7 +18,7 @@ Your final application will function just like our [demo app](https://launchcode
 
 ## Project and Repository Setup
 
-For this assignment, you will build the entire project from scratch. Future assignments will begin with some starter code, but you'll carry out each step of this assignment yourself.
+For this assignment, you will build the entire project from scratch. 
 
 ### Git repository setup
 
@@ -43,7 +43,7 @@ After creating the repository, you'll be on the repository's home page. From the
 
 <img src="images/clone-url.png" style="width:400px;" />
 
-Back in your terminal--be sure you're in the directory `~/lc101/web-caesar/`--connect your local repository to the new remote repository.
+Back in your terminal--be sure you're in the directory `~/lc101/web-caesar/`--connect your local repository to the new remote repository. Use your repository's url from GitHub, which should look like the one below (but probably not with the username `chrisbay`).
 
 ```nohighlight
 $ git remote add origin https://github.com/chrisbay/web-caesar.git
@@ -55,6 +55,12 @@ You can verify the status of remote repository connections at any time by runnin
 $ git remote -v
 origin	https://github.com/chrisbay/web-caesar.git (fetch)
 origin	https://github.com/chrisbay/web-caesar.git (push)
+```
+
+Next, pull the remote to your local so that you'll have the `.gitignore` file on your computer:
+
+```nohighlight
+$ git pull origin master
 ```
 
 ### Creating a virtual environment
@@ -131,7 +137,7 @@ Open up the project in VS Code to get started: `code .`.
 
 ### Setting up a basic Flask app
 
-We can start with the basic outline of the Hello, World app that you created previously. Go ahead and [grab the code from that tutorial](build-a-web-application-line-by-line). We recommend typing this code line-by-line until you're familiar with what each piece does. In fact, this is a good time to review the line-by-line explanation in the Hello, World tutorial!
+We can start with the basic outline of the Hello, World app that you created previously. Go ahead and [grab the code from that tutorial](../../tutorials/hello-flask/#building-a-web-application-line-by-line). We recommend typing this code line-by-line until you're familiar with what each piece does. In fact, this is a good time to review the line-by-line explanation in the Hello, World tutorial!
 
 ### Rendering a form
 
@@ -172,9 +178,9 @@ You should see the form render, but submitting it will result in a "Method Not A
 
 ### Importing caesar code
 
-Create a file for your Caesar cipher code: `touch caesar.py`. Now, either copy/paste your solution code from `caesar.py` from the Crypto assignment in Unit 1, or [grab ours](https://gist.github.com/chrisbay/496880de24bba4f532ed03211eff7294).
+Create a file for your Caesar cipher code: `touch caesar.py`. Now, copy and paste our [Caesar solution code](https://gist.github.com/chrisbay/496880de24bba4f532ed03211eff7294) into this file.
 
-In `main.py` import the `rotate_string` function from `caesar.py`:
+Then, in `main.py`, import the `rotate_string` function from `caesar.py`:
 
 ```python
 from caesar import rotate_string
@@ -202,7 +208,7 @@ Our final task will be to modify the request handler functions so that the form 
 
 Look at your `encrypt` request handler function. Instead of returning the encrypted string, we want to insert it in the form. To do this, we need to specify within the global `form` string where the text should be inserted. We'll use Python's [`str.format` method](https://docs.python.org/3.6/library/stdtypes.html#str.format) for this.
 
-Modify the `form` variable in two ways:
+Let's make two modifications to the `form` variable:
 
 1. Add a placeholder `{0}` between the opening and closing `<textarea>` tags.
 2. Where the CSS rules are defined, "double up" the curly braces, which will prevent the `str.format` method from interpreting the curly braces as defining a text placeholder. For example, one rule will look like this:
@@ -217,20 +223,6 @@ Modify the `form` variable in two ways:
 Within each of `index` and `encrypt`, rather than return the form string, return `form.format(...)`. The argument to this method call should be the empty string in the case of `index`, and it should be the encrypted string in the case of `encrypt`.
 
 Start up the application and test. Ensure that after submitting the form a first time, it is re-rendered with the encrypted string inside the text area.
-
-We're almost done, but there's one thing we need to fix. To see what this is, enter the string "&lt;/textarea&gt;" within the box, and enter 13 as the rotation amount. Submit the form You should see "&lt;/grkgnern&gt;" as the encrypted string.
-
-Now, re-enter 13 in the box, and submit again. Notice that there is no encrypted string this time, where we expected to see "&lt;/textarea&gt;" displayed. This is because our string was actually encrypted, but the browser interpreted the resulting string as closing out the `<textarea>` element. You can see this explicitly if you right-click on the page and select *View Source*.
-
-![Unescaped string](images/unescaped-textarea.png)
-
-See the `</textarea>` in red? That's the browser indicating to you that this particular closing tag doesn't have a matching opening tag. This is because the previous `</textarea>` tag, which was in fact our encrypted string, matched with the opening `<textarea>` tag.
-
-To fix this, let's ensure that we escape our encrypted string before inserting it within the page.
-
-Import the `cgi` module at the top of the file: `import cgi`. Then, where you call `form.format(...)` within `encrypt`, be sure to use `cgi.escape` to escape the encrypted string beforehand. To verify that this works, repeat the test above.
-
-Start up your app, and test! The [Sanity Check](#sanity-check) section below contains some specific tests to look for.
 
 ## Committing Your Work
 
@@ -295,7 +287,6 @@ Before turning in your work, make sure your application does the following:
 - Submitting the form with a rotation integer and message results in the encrypted text being displayed. For example, rotating "The crow flies at midnight!" by 13 gives "Gur pebj syvrf ng zvqavtug!".
 - Rotation preserves spaces and punctuation.
 - Successively rotating by complementary amounts--e.g. 13 and 13, 10 and 16, 4 and 22, etc.--gives the same message that you started with.
-- Doing the above step with the message "</textarea>" works. In other words, when text is rotated into the string "</textarea>" it is properly escaped and displayed within the actual `textarea` element on the page.
 
 ## Submit
 

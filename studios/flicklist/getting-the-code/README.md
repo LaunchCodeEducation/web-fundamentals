@@ -13,7 +13,7 @@ For the examples below, we use `M` to indicate the previous studio number and `N
 
 Navigate to your `flicklist-flask` directory.
 
-Hopefully, you do not currently have any uncommitted changes--you should have committed them at the end of the day last time--but check just to make sure:
+Check to make sure you do not currently have any uncommitted changes:
 
 ```nohighlight
 $ git status
@@ -34,3 +34,9 @@ Switched to a new branch 'studioN'
 This checks out a specific version of the code (called a **branch**) from the remote origin repository. The remote branch is named `studioN`, and we are checking it out into a new, local branch, also named `studioN`.
 
 Think of a branch as a parallel version of the main codebase in the repository. We can work here, make changes, and check them in without affecting the main codebase (usually called the `master` branch).
+
+Then you will want to make sure you have the most up-to-date version of this branch by doing a `pull`:
+
+```nohighlight
+$ git pull origin studioN
+```

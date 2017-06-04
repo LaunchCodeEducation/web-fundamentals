@@ -19,6 +19,10 @@ Prior to the studio, the instructor will lead the class through an overview of s
 - Modifying an element's HTML
 - The difference between the content displayed when using "View Source" and what's in the "Inspector" tab
 
+<aside class="aside-note" markdown="1">
+The [full documentation](https://developer.mozilla.org/en-US/docs/Tools) for Firefox's developer tools covers these items, and much more.
+</aside>
+
 ## Making Headlines
 
 Pick a news site ([The New York Times](https://www.nytimes.com/), for example), and use your browser's developer tools to modify one of the main articles to use a picture and text of your choosing.
@@ -48,5 +52,5 @@ If you want to use an image of your own that is not already available via the in
 
 ## Resources
 
-* [Using Firefox Developer Tools: Elements](https://www.youtube.com/watch?v=nV9PLPFTnkE)
+* [Using Firefox's Page Inspector](https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector)
 * [Firefox DevTools Documentation](https://developer.mozilla.org/en-US/docs/Tools)

@@ -5,7 +5,7 @@ currentMenu: studios
 
 ## Fake News
 
-Get an introduction to web developer tools in Google Chrome, and use them to inspect and change the contents of a live web site.
+Get an introduction to web developer tools in Firefox, and use them to inspect and change the contents of a live web site.
 
 [Work on Fake News](fake-news/)
 
@@ -45,7 +45,7 @@ Using templates to render views including responding to bad input (validations) 
 
 ### Flicklist 5
 
-Miscellaneous improvements reinforcing validations and confirmation pages
+Add feature for rating watched movies.
 
 [Work on Flicklist 5](flicklist/5/)
 
