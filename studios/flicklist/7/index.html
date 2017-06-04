@@ -139,7 +139,7 @@ Switched to a new branch 'walkthrough7'</code></pre>
 in. As a result, there is only one &quot;communal&quot; movie list, and all the
 users who visit our site work &quot;collaboratively&quot; on that list. That's
 kind of cool maybe, but our goal is a site where each user manages her
-own list, without interference from other users. </p>
+own list, without interference from other users.</p>
 <p>The goal today, at a high level, is to implement the existence of user
 accounts and registration, and ensure that users cannot see the main
 pages of the site unless they are logged in.</p>
@@ -165,7 +165,7 @@ make those rules yourself.</p>
 a new account. It'd be neat if once users created accounts and logged
 out, they could log back in using their existing email and password.</p>
 <h3 id="checking-out-the-studio-code">Checking out the Studio code</h3>
-<p>Follow the [instructions for getting the code][get-the-code] in order to get the starter code for <code>studio7</code>.</p>
+<p>Follow the <a href="../getting-the-code/">instructions for getting the code</a> in order to get the starter code for <code>studio7</code>.</p>
 <h3 id="before-you-begin-create-the-user-db-table-locally">Before you begin: create the 'user' DB table locally</h3>
 <pre><code class="language-nohighlight">(flicklist) $ python
 &gt;&gt;&gt; from main import db, User
@@ -179,8 +179,8 @@ User.query.all()
 </code></pre>
 <h3 id="your-tasks">Your Tasks</h3>
 <ol>
-<li>When a user tries to create an account, but supplies different 'password' and 'verify' fields, redirect them back to '/register' and flash them a message about why thier attempt to create an account failed. </li>
-<li>Log out, and see what happens when you try to create a user that already exists. This happens because we passed the 'unique=True' keyword param to the User.email db.Column invocation. When we wear our DB Admin hats, we're happy to get this error, but when we wear our UX designer hats, we want something friendlier. Before creating an account, search the database for an existing account with that email. If it exists already, redirect them back to 'register' and tell them why their account creation failed. </li>
+<li>When a user tries to create an account, but supplies different 'password' and 'verify' fields, redirect them back to '/register' and flash them a message about why thier attempt to create an account failed.</li>
+<li>Log out, and see what happens when you try to create a user that already exists. This happens because we passed the 'unique=True' keyword param to the User.email db.Column invocation. When we wear our DB Admin hats, we're happy to get this error, but when we wear our UX designer hats, we want something friendlier. Before creating an account, search the database for an existing account with that email. If it exists already, redirect them back to 'register' and tell them why their account creation failed.</li>
 <li>Add a new route for '/login', that responds to GET and renders a 'login.html' template.</li>
 <li>Create the 'login.html' template, with form fields for email and password.</li>
 <li>Test out your new route - one problem you will notice is that you get redirected to the 'register.html' page. Change the login wall to allow this route through.</li>
