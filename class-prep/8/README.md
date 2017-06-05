@@ -55,10 +55,10 @@ If your Apache or MYSQL servers won't start (if neither, or only one, has a gree
 4. Click "continue" on the Destination Select screen--it will install onto the hard drive.
 5. Click "install" on the Installation Type screen.
 6. Click "close" when the install has completed.
-7. Note that it will install in the Applications folder. Go into Applications, double click on the MAMP folder, then doubleclick on the MAMP icon in that folder.
+7. Note that it will install in the Applications folder. Go into Applications, double click on the MAMP folder, then doubleclick on the MAMP icon in that folder. Note that the installer will install both MAMP and MAMP PRO, but we'll only be using MAMP, not MAMP PRO.
 8. You'll get a "Warning" message. Be sure to **uncheck** the box next to "Check for MAMP PRO when starting MAMP" and then click the "Launch MAMP" button *NOT* the "Launch MAMP PRO" button.
 9. Go to *Preferences -> Ports* and click "Set MAMP ports to default" then click OK.
-10. Then go to *Preferences -> PHP* and select the Standard Version ``7.0.15`` (you will a php version older than `7.1.1` for phpMyAdmin to work properly). Then click OK.
+10. Then go to *Preferences -> PHP* and select the Standard Version ``7.0.15`` (you will need a php version older than `7.1.1` for phpMyAdmin to work properly). Then click OK.
 11. Click *Start Servers* and it should automatically open a web page. If it does not, click *Open WebStart page*.
 12. In your browser you should be on the MAMP localhost webpage. Select the dropdown menu under *Tools* and click on *phpMyAdmin*. You may or may not be prompted to enter a username and password. If you are prompted, use the word "root" for both.
 13. Now you are on the phpMyAdmin page you will use for this lesson's studio. 
