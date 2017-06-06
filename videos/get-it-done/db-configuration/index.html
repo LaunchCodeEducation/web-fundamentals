@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Videos :: Unit 2: Web Fundamentals</title>
+        <title>Get It Done! Part 2: Database Configuration :: Unit 2: Web Fundamentals</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-videos'>
+    <body id='page-get-it-done-part-2-database-configuration'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -124,25 +124,62 @@
             <div class="row">
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
-                                        <h1>Videos</h1>
-                    <h2 id="forms">Forms</h2>
-<p><a href="working-with-html-forms/">Working with HTML Forms</a></p>
-<p><a href="forms-in-flask/">Displaying and Processing Forms in Flask</a></p>
-<p><a href="form-inputs/">HTML Form Inputs</a></p>
-<p><a href="str-format/">Using str.format in Python</a></p>
-<h2 id="server-side-validation">Server-Side Validation</h2>
-<p><a href="intro-to-validation/">Introduction to Validation</a></p>
-<p><a href="server-side-validation/">Server-Side Validation</a></p>
-<p><a href="redirects/">Using Redirects</a></p>
-<p><a href="html-escaping/">HTML Escaping</a></p>
-<h2 id="templating-with-jinja2">Templating With Jinja2</h2>
-<p><a href="using-jinja/">Using Jinja2 Templates in Flask</a></p>
-<p><a href="jinja-variable-expressions/">Variable Expressions in Jinja2</a></p>
-<p><a href="task-list/">A Task List App</a></p>
-<p><a href="template-extensions/">Template Extensions</a></p>
-<p><a href="render-template/">Using render_template</a></p>
-<h2 id="databases-in-flask">Databases in Flask</h2>
-<p><a href="get-it-done/">The Get It Done! App</a></p>
+                                        <h1>Get It Done! Part 2: Database Configuration</h1>
+                    <div class="youtube-wrapper"><iframe width="776" height="437" src="https://www.youtube-nocookie.com/embed/-bvlj_3Im6s?rel=0" frameborder="0" allowfullscreen></iframe></div>
+<h2 id="notes">Notes</h2>
+<p>Begin by starting MAMP, starting the servers, and going to phpMyAdmin.</p>
+<p>Now we'll create a new user and database for our <em>Get It Done!</em> application. A good design principle is that for each application you have one database; for each database, one user. This keeps privileges and permissions separated across applications. You can review the basic steps in written form <a href="../../../studios/databases/2/#database-setup">here</a>.</p>
+<p>If you don't already have <code>flask-env</code> activated, activate it now. Then run:</p>
+<pre><code class="language-nohighlight">conda install -c conda-forge flask-sqlalchemy</code></pre>
+<p>After this installation completes, run the following:</p>
+<aside class="aside-warning">
+<p>Windows Git Bash users will need to deactivate <code>flask-env</code> and close their terminal, then open a new Git Bash terminal before proceeding to use the install command below.    </p>
+</aside>
+<pre><code class="language-nohighlight">conda install pymysql</code></pre>
+<p>Now, amend your <code>main.py</code> by adding the following four lines:</p>
+<pre><code class="language-python">from flask_sqlalchemy import SQLAlchemy </code></pre>
+<pre><code class="language-python"># Note: the connection string after :// contains the following info:
+# user:password@server:portNumber/databaseName
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://get-it-done:beproductive@localhost:8889/get-it-done'</code></pre>
+<aside class="aside-pro-tip">
+<p>Two primary sources of bugs when running an application using a database are:</p>
+<ol>
+<li>The database is not running.</li>
+<li>The connection string is not correct.</li>
+</ol>
+<p>So if your application isn't working, be sure to check that you've started the MySQL server and that you have the correct information (especially port number, user and password) in the connection string!    </p>
+</aside>
+<pre><code class="language-python">app.config['SQLALCHEMY_ECHO'] = True</code></pre>
+<pre><code class="language-python">db = SQLAlchemy(app)</code></pre>
+<p>Next we'll continue modifying <code>main.py</code> and create a persistent class for database data: </p>
+<pre><code class="language-python">class Task(db.Model):
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(120))
+
+    def __init__(self, name):
+        self.name = name</code></pre>
+<p>Be sure to shield <code>app.run</code> by enclosing it in an <code>if</code> condition:</p>
+<pre><code class="language-python">if __name__ == '__main__':
+    app.run()</code></pre>
+<p>Back in the terminal, start a python shell by running the command <code>python</code>. Then run the command <code>db.create_all()</code>.</p>
+<p>Now run the following commands one at a time to add data to the database:</p>
+<pre><code class="language-nohighlight">&gt;&gt;&gt; new_task = Task('finish ORM lesson 2')
+&gt;&gt;&gt; db.session.add(new_task)
+&gt;&gt;&gt; another_task = Task('post lesson video')
+&gt;&gt;&gt; db.session.add(another_task)
+&gt;&gt;&gt; db.session.commit()</code></pre>
+<p>To get data from the database, run the following:</p>
+<pre><code class="language-nohighlight">&gt;&gt;&gt; tasks = Task.query.all()
+&gt;&gt;&gt; tasks[0].name</code></pre>
+<h2 id="code">Code</h2>
+<p>View the <a href="https://github.com/LaunchCodeEducation/get-it-done/tree/7e8a99b421e8c1564c65de1ef30865c64e708e6d" target="_blank">final code</a> for this lesson.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="http://www.sqlalchemy.org/" target="_blank">SQLAlchemy</a></li>
+<li><a href="http://flask-sqlalchemy.pocoo.org/2.1/" target="_blank">Flask SQLAlchemy</a></li>
+</ul>
                                     </section>
 
             </div>

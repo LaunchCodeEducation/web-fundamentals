@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Videos :: Unit 2: Web Fundamentals</title>
+        <title>Get It Done! Part 4: Changing a Model Class :: Unit 2: Web Fundamentals</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-videos'>
+    <body id='page-get-it-done-part-4-changing-a-model-class'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -124,25 +124,51 @@
             <div class="row">
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
-                                        <h1>Videos</h1>
-                    <h2 id="forms">Forms</h2>
-<p><a href="working-with-html-forms/">Working with HTML Forms</a></p>
-<p><a href="forms-in-flask/">Displaying and Processing Forms in Flask</a></p>
-<p><a href="form-inputs/">HTML Form Inputs</a></p>
-<p><a href="str-format/">Using str.format in Python</a></p>
-<h2 id="server-side-validation">Server-Side Validation</h2>
-<p><a href="intro-to-validation/">Introduction to Validation</a></p>
-<p><a href="server-side-validation/">Server-Side Validation</a></p>
-<p><a href="redirects/">Using Redirects</a></p>
-<p><a href="html-escaping/">HTML Escaping</a></p>
-<h2 id="templating-with-jinja2">Templating With Jinja2</h2>
-<p><a href="using-jinja/">Using Jinja2 Templates in Flask</a></p>
-<p><a href="jinja-variable-expressions/">Variable Expressions in Jinja2</a></p>
-<p><a href="task-list/">A Task List App</a></p>
-<p><a href="template-extensions/">Template Extensions</a></p>
-<p><a href="render-template/">Using render_template</a></p>
-<h2 id="databases-in-flask">Databases in Flask</h2>
-<p><a href="get-it-done/">The Get It Done! App</a></p>
+                                        <h1>Get It Done! Part 4: Changing a Model Class</h1>
+                    <div class="youtube-wrapper"><iframe width="776" height="437" src="https://www.youtube-nocookie.com/embed/UmCRcjKIqps?rel=0" frameborder="0" allowfullscreen></iframe></div>
+<h2 id="notes">Notes</h2>
+<p>In this lesson we'll improve the delete functionality of our app so that it uses a boolean flag to determine whether a task is completed or not, thus leaving the task in our database. This will allow us to also add a display for completed tasks.</p>
+<h3 id="improve-delete-functionality">Improve Delete Functionality</h3>
+<p>Add a boolean property to the <code>Task</code> class and set it to <code>False</code> in the constructor:</p>
+<pre><code class="language-python">    completed = db.Column(db.Boolean)
+
+    def __init__(self, name):
+        self.name = name
+        self.completed = False</code></pre>
+<p>Now fire up the Python shell in your terminal. You're going to drop and then re-create the table. <strong>Note:</strong> you will lose the data in the table:</p>
+<pre><code class="language-nohighlight">&gt;&gt;&gt; db.drop_all()
+&gt;&gt;&gt; db.create_all()</code></pre>
+<aside class="aside-pro-tip">
+<p>If you want to make a change to your model class and database structure without losing all your data, you can use <a href="https://flask-migrate.readthedocs.io/en/latest/" target="_blank">Flask-Migrate</a>. </p>
+</aside>
+<p>Back in <code>main.py</code> remove the code that deleted a task, and instead set its boolean value to <code>True</code>:</p>
+<pre><code class="language-python">@app.route('/delete-task', methods=['POST'])
+def delete_task():
+
+    task_id = int(request.form['task-id'])
+    task = Task.query.get(task_id)
+    task.completed = True
+    db.session.add(task)
+    db.session.commit()
+
+    return redirect('/')</code></pre>
+<p>Amend the <code>index</code> function so that it only gets tasks where the property <code>completed</code> has a value of <code>False</code>:</p>
+<pre><code class="language-python">    tasks = Task.query.filter_by(completed=False).all()</code></pre>
+<h3 id="display-completed-tasks">Display Completed Tasks</h3>
+<p>Add a variable to hold the completed tasks and pass this into the template:</p>
+<pre><code class="language-python">    completed_tasks = Task.query.filter_by(completed=True).all()
+    return render_template('todos.html', title="Get It Done!", 
+        tasks=tasks, completed_tasks=completed_tasks)</code></pre>
+<p>Create the HTML in the <code>todos.html</code> template to display the list of completed tasks:</p>
+<pre><code class="language-HTML">    &lt;hr /&gt;
+    &lt;h2&gt;Completed&lt;/h2&gt;
+    &lt;ul&gt;
+        {% for task in completed_tasks %}
+        &lt;li&gt;{{task.name}}&lt;/li&gt;
+        {% endfor %}
+    &lt;/ul&gt;</code></pre>
+<h2 id="code">Code</h2>
+<p>View the <a href="https://github.com/LaunchCodeEducation/get-it-done/tree/52ec146dc2f9943a011dd46d4a546b75703c226f" target="_blank">final code</a> for this lesson.</p>
                                     </section>
 
             </div>

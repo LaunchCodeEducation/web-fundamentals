@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Videos :: Unit 2: Web Fundamentals</title>
+        <title>Using render_template :: Unit 2: Web Fundamentals</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-videos'>
+    <body id='page-using-render_template'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -124,25 +124,32 @@
             <div class="row">
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
-                                        <h1>Videos</h1>
-                    <h2 id="forms">Forms</h2>
-<p><a href="working-with-html-forms/">Working with HTML Forms</a></p>
-<p><a href="forms-in-flask/">Displaying and Processing Forms in Flask</a></p>
-<p><a href="form-inputs/">HTML Form Inputs</a></p>
-<p><a href="str-format/">Using str.format in Python</a></p>
-<h2 id="server-side-validation">Server-Side Validation</h2>
-<p><a href="intro-to-validation/">Introduction to Validation</a></p>
-<p><a href="server-side-validation/">Server-Side Validation</a></p>
-<p><a href="redirects/">Using Redirects</a></p>
-<p><a href="html-escaping/">HTML Escaping</a></p>
-<h2 id="templating-with-jinja2">Templating With Jinja2</h2>
-<p><a href="using-jinja/">Using Jinja2 Templates in Flask</a></p>
-<p><a href="jinja-variable-expressions/">Variable Expressions in Jinja2</a></p>
-<p><a href="task-list/">A Task List App</a></p>
-<p><a href="template-extensions/">Template Extensions</a></p>
-<p><a href="render-template/">Using render_template</a></p>
-<h2 id="databases-in-flask">Databases in Flask</h2>
-<p><a href="get-it-done/">The Get It Done! App</a></p>
+                                        <h1>Using render_template</h1>
+                    <div class="youtube-wrapper"><iframe width="776" height="437" src="https://www.youtube.com/embed/Q9XQlGmLkOw" frameborder="0" allowfullscreen></iframe></div>
+<p>In this lesson we introduce a shortcut to rendering Jinja2 templates, using Flask's <code>render_template</code> function. We will refactor the <code>main.py</code> in our <code>hello-flask</code> directory to use this shortcut. When you use <code>render_template</code>, you can eliminate a lot of the code that we have been using. You can use this shortcut function as long as all your templates are in the <code>templates/</code> directory <em>and</em> you want a setting of <code>autoescape=True</code> (which is built into <code>render_template</code>).</p>
+<aside class="aside-warning">
+<p>You'll need to refactor your <code>hello-flask</code> code along with the video in order to code along with future video lessons!</p>
+</aside>
+<p>Here are the steps to using <code>render_template</code>:</p>
+<ol>
+<li>Import it:
+<pre><code class="language-python">from flask import Flask, request, redirect, render_template</code></pre>
+<p>This import of <code>render_template</code> <em>replaces</em> the need to import jinja2 and the need to construct the <code>template_dir</code> variable and create a template loader, as we did with the following code:</p>
+<pre><code class="language-python">template_dir = os.path.join(os.path.dirname(__file__),
+    'templates')
+jinja_env = jinja2.Environment(
+    loader = jinja2.FileSystemLoader(template_dir), autoescape=True)</code></pre>
+<p>Note that using <code>render_template</code> requires you to put your templates in a directory named <code>templates</code>, while our initial, more hands-on approach allowed us to specify where our templates are located.</p></li>
+<li>Call <code>render_template</code>:
+<pre><code class="language-python">return render_template('hello_greeting.html', name=first_name)</code></pre>
+<p>This call to <code>render_template</code> <em>replaces</em> the two calls below (using the <code>hello</code> function as an example):</p>
+<pre><code class="language-python">template = jinja_env.get_template('hello_greeting.html')
+return template.render(name=first_name)</code></pre></li>
+</ol>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="http://flask.pocoo.org/docs/0.12/api/#flask.render_template" target="_blank">flask.render_template</a></li>
+</ul>
                                     </section>
 
             </div>
