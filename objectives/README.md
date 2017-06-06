@@ -138,7 +138,15 @@ Listed below are the competencies you should demonstrate by the time you've comp
 
 ### Class 9
 
-*Coming Soon*
+* Install packages necessary for working with MySQL databases in Flask
+* Configure SQLAlchemy within a Flask application, using Flask-SQLAlchemy
+* Create a persistent class by extending `SQLAlchemy.Model`
+* Create simple properties of type integer, string, and Boolean
+* Create a primary key field on a persistent class
+* Use a Python shell to create database tables based on persistent classes
+* Store persistent classes using `SQLAlchemy.sesssion` and `SQLAlchemy.commit`
+* Query for persistent classes using `Model.query.all` and `Model.query.filter_by`
+* Destroy and recreate tables for persistent classes after updating a model class
 
 ### Class 10
 

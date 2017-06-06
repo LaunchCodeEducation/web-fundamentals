@@ -21,9 +21,9 @@ Stub out `index.html` with these basic elements:
 
 ## Getting to Work
 
-Your mission: Build a page that:
+Your mission is to build a page that:
 
-* Tells a story. This can be personal, or not. Funny, serious or neither. You can do whatever you like, but generally, it should be something in the range of 3-10 paragraphs or sections. [Here is an example](http://education.launchcode.org/html-me-something/submissions/chrisbay/index-nocss.html), and here are some other ideas:
+* Tells a story. This can be personal or impersonal, funny, serious or neither. You can do whatever you like, but generally, it should be something in the range of 3-10 paragraphs or sections. [Here is an example](http://education.launchcode.org/html-me-something/submissions/chrisbay/index-nocss.html), and here are some other ideas:
 
 	- Create a resume page that tells the story of your professional journey to-date, and where you want to go as a coder.
 	- Tell the story of a trip that you took.
@@ -34,18 +34,18 @@ Your mission: Build a page that:
 
 	- Uses each of the following structural HTML5 tags: `<p>`, `<header>`, `<footer>`, `<main>`, `<article>`. If you need to brush up on what each of these tags is used for, or if any of them are new to you, check out the [HTML tag reference](http://www.w3schools.com/tags/default.asp) at w3schools.
 
-	- Use at least one `<img>` tag (and hopefully more). When placing images in your page, put them in a new subfolder called `images` within your `html-me-something` directory.
+	- Uses at least one `<img>` tag (and hopefully more). When placing images in your page, put them in a new subfolder called `images` within your `html-me-something` directory.
 
-	- Uses at least one [HTML entity](http://www.w3schools.com/html/html_entities.asp). Hint: putting a copyright notice in your footer will afford you the opportunity to use &copy;, but you should also try to get creative here.
+	- Uses at least one [HTML entity](http://www.w3schools.com/html/html_entities.asp). Hint: putting a copyright notice in your footer will afford you the opportunity to use `&copy;`, but you should also try to get creative here.
 
-	- Gets creative. Don't stop with these items or tags. Have some ideas for your page, and make it great. And dig into the [w3schools HTML reference](http://www.w3schools.com/tags/default.asp) to learn more about other tags, their usage and attributes!
+	- Is creative. Don't stop with these items or tags. Have some ideas for your page, and make it great. And dig into the [w3schools HTML reference](http://www.w3schools.com/tags/default.asp) to learn more about other tags, their usage and attributes!
 
 ### Notes and Tips
 
-* Use your browser developer tools to look at [the example page](http://education.launchcode.org/html-me-something/submissions/chrisbay/index-nocss.html), or to troubleshoot things that don't look right. You should mimic the document structure of this example, but **do not just copy/paste!** Use the example to learn how your HTML elements might be structured, and structure your own pages according to your own content's needs.
+* Use your browser developer tools to look at [the example page](http://education.launchcode.org/html-me-something/submissions/chrisbay/index-nocss.html), or to troubleshoot things that don't look right. You can mimic the document structure of this example, but **do not just copy/paste!** Use the example to learn how your HTML elements might be structured, and structure your own page according to your own content's needs.
 * Don't add any CSS yet. Really, we mean it! If you think your page looks boring now, that's okay. We'll get there soon enough.
-* As you make changes, you will obviously want to see the results. To do so, simply re-save the file in your text editor, and then, over in your browser window, click Refresh.
-* Rely on reference sites linked on this page, and elsewhere online. We haven't taught you every detail about every tag here that you may want or need to use, and you're free to use tags that haven't been explicitly introduced in class. We've given you enough background to get started, and are intentionally leaving some of the learning up to you.
+* As you make changes, you will obviously want to see the results. To do so, simply re-save the file in your text editor, and then, over in your browser window, click Refresh (or use cmd+R on a Mac, ctrl+R on Windows).
+* Rely on reference sites linked on this page, and elsewhere online. We haven't taught you every detail about every tag that you may want or need to use, and you're free to use tags that haven't been explicitly introduced in class. We've given you enough background to get started, and are intentionally leaving some of the learning up to you.
 
 ## Add and Commit Your Changes on Git
 

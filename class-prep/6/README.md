@@ -15,4 +15,5 @@ Do | Interactive Lesson | [Using Jinja2 Templates in Flask](../../videos/using-j
 Do | Interactive Lesson | [Variable Expressions in Jinja2 Templates](../../videos/jinja-variable-expressions/) | Use variable expressions in Jinja2 templates
 Do | Interactive Lesson | [A Task List App](../../videos/task-list/) | Create a minimal task list that uses conditionals and loops in its template
 Do | Interactive Lesson | [Template Extensions](../../videos/template-extensions/) | Create base templates and template extensions
+Watch | Lesson | [Using render_template](../../videos/render-template) | Learn how to use the `flask.render_template` function to more easily render templates when using our most common template setup
 Do | Review | [Class 6 Prep Review](review.html) | Solidify your knowledge of the concepts covered in these lessons

@@ -89,7 +89,7 @@ Now let's incorporate Git into the picture.
     Your name is (probably) something other than **adalovelace**.
     </aside>
 
-    Now your project is a Git repository, which will enable you to to do all the magic Git powers:
+    Now your project is a Git repository, which will enable you to use all of the magic Git powers:
 
     - using version-control to manage your changes
     - syncing your local repository with a remote repository on Github.com.

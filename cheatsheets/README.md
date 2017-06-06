@@ -17,6 +17,7 @@ currentMenu: cheatsheets
 - [w3schools CSS Reference](https://www.w3schools.com/cssref/default.asp)
 - [Eric Meyer's reset.css](http://meyerweb.com/eric/tools/css/reset/)
 - [normalize.css](http://necolas.github.io/normalize.css/)
+- [cssreference.io: A Visual Guide to CSS](http://cssreference.io/)
 
 ## Git Resources and Cheat Sheets:
 
@@ -31,3 +32,6 @@ currentMenu: cheatsheets
 - [Jinja2 Documentation](http://jinja.pocoo.org/docs/2.9/)
 - [Flask Documentation](http://flask.pocoo.org/docs/0.12/)
 - [Conda Cheat Sheet](https://conda.io/docs/_downloads/conda-cheatsheet.pdf)
+- [SQLAlchemy](http://www.sqlalchemy.org/)
+- [Flask SQLAlchemy](http://flask-sqlalchemy.pocoo.org/2.1/)
+- [Flask-Migrate](https://flask-migrate.readthedocs.io/en/latest/)
