@@ -150,7 +150,12 @@ Listed below are the competencies you should demonstrate by the time you've comp
 
 ### Class 10
 
-*Coming Soon*
+* Create persistent `User` class
+* User flash messages to communicate with the user
+* Configure model objects to have one-to-many relationships
+* Use sessions to store state across requests
+* Use sessions to manage the state of a logged in user
+* Use `@app.before_request` to check for a logged in user
 
 ### Class 11
 
