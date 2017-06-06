@@ -121,10 +121,10 @@ In your browser, add one movie then cross it off.
 ### Modify FlickList to Store Movie Ratings
 
 - Change `main.py`'s `Movie` class to have a ratings property
-- Drop the table using the Python shell and the command `db.drop_all()` since you have just changed the model.
+- Drop the table using the Python shell. First, import `db` and `Movie` as we did above, then use the command `db.drop_all()` since you have just changed the model and therefore need to delete this table and create a new one.
 - Reinitialize your database and recreate the table by reenacting the [Python shell session](#initialize-your-database) again 
 - Change `main.py`s behavior so that when a user rates a movie it actually stores the rating using the column/property you just added
-- Display the stored ratings on the ratings page by pre-populating the select box with each movie's old rating (see the `TODO` in `ratings.html`), if there is a rating for the movie.
+- Display the stored ratings on the ratings page by pre-populating the select box with each movie's old rating, if there is a rating for the movie (see the `TODO` in `ratings.html`). The `selected` attribute of the `option` tag will come in handy. Read more about it at [w3schools](https://www.w3schools.com/tags/att_option_selected.asp).
 
 ### Give Yourself a Hand
 
