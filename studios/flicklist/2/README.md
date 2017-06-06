@@ -25,7 +25,7 @@ In our FlickList app, we will delete much of the previous "Movie of the Day" cod
   - accessing the data in the incoming request
   - sending an appropriate response
 
-Our app won't *really* be able to keep track of the user's movie list at this point. We will need a database to do that (coming up in a few weeks!). But for now, we'll just *pretend* the stored list exists.
+Our app won't *really* be able to keep track of the user's movie list at this point. We will need a database to do that (coming up in a few weeks!). But for now, we'll just *pretend* the stored list exists by hard-coding movie titles
 
 ## Studio
 
@@ -43,7 +43,7 @@ For this studio (and all subsequent studios), you will want to start at the exac
       (use "git push" to publish your local commits)
     nothing to commit, working tree clean
     ```
-    
+
     <aside class="aside-note" markdown="1">
     If you have added and committed code in your local repository, you will see a recommendation to `git push` your local commits. *Do not do this.* Normally, when you have your own remote repository set up, you will want to `push` your changes, but in this case, it would just try to `push` to the main repository owned by LaunchCode. The permission settings are such that you should not be able to `push`, so just know that you do not need to do so.
     </aside>
@@ -82,7 +82,7 @@ Open up `main.py` in your text editor. You should see 3 `# TODO` comments in the
 
     > I want to cross off ___ from my Watchlist.
 
-    where the blank is an input text field in which the user can specify the movie she wants to cross off.
+    where the blank is an input text field in which the user can type in the title of the movie she wants to cross off.
 
 2. **Handle the form submission.** Fill in the function called `crossoff_movie` with the necessary code to handle incoming submissions and respond appropriately. You should display a confirmation message like:
 
@@ -95,7 +95,7 @@ Open up `main.py` in your text editor. You should see 3 `# TODO` comments in the
 
   Use the `<select>` and `<option>` tags to create a dropdown component where the only available choices are the movies that are currently in the user's Watchlist. See [w3schools](https://www.w3schools.com/html/html_form_elements.asp) for more about this form element.
 
-  Thus far, of course, there is no such thing as the user's "real" Watchlist, so you can just pretend. Simply hard-code a few of your favorite movies into the dropdown *as if* those movies make up the user's current watchlist.
+  Thus far, of course, there is no such thing as the user's "real" Watchlist, so you can just pretend. Simply hard-code a few of your favorite movies into the dropdown *as if* those movies make up the user's current watchlist. In other words, the movies in the dropdown will be the same each time because they will be part of the `crossoff_form` string.
 
 ### Check in Your Changes
 
