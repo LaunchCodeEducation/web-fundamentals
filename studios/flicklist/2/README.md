@@ -27,21 +27,6 @@ In our FlickList app, we will delete much of the previous "Movie of the Day" cod
 
 Our app won't *really* be able to keep track of the user's movie list at this point. We will need a database to do that (coming up in a few weeks!). But for now, we'll just *pretend* the stored list exists.
 
-Go ahead and get ready to code along with the instructor by checking out the `walkthrough2` branch. First check if you have any uncommitted changes in the `studio1` branch, and if you do, `add` and `commit` them.
-
-```nohighlight
-$ git status
-On branch studio1
-Your branch is ahead of 'origin/studio1' by 3 commits.
-  (use "git push" to publish your local commits)
-nothing to commit, working tree clean
-
-```
-
-<aside class="aside-note" markdown="1">
-If you have added and committed code in your local repository, you will see a recommendation to `git push` your local commits. *Do not do this.* Normally, when you have your own remote repository set up, you will want to `push` your changes, but in this case, it would just try to `push` to the main repository owned by LaunchCode. The permission settings are such that you should not be able to `push`, so just know that you do not need to do so.
-</aside>
-
 ## Studio
 
 For the studio, your job is to provide another form that allows the user to "cross off" an item from her Watchlist.
@@ -50,7 +35,18 @@ For the studio, your job is to provide another form that allows the user to "cro
 
 For this studio (and all subsequent studios), you will want to start at the exact place where your instructor left off at the end of the Walkthrough. But don't worry--you do not need to have finished the previous studio, nor do you need to have frantically copied each line of code that your instructor wrote just now. Thanks to the magic of Git branches, we have a system in place that will allow you to start each studio with the correct starter code no matter what. Here's how:
 
-1. First, check your status and make sure you do not have any uncommitted changes. If you *do* have uncommitted changes, make sure you `add` and `commit` them **right now**, before moving on.
+1. First, check your status and make sure you do not have any uncommitted changes. If you *do* have uncommitted changes, make sure you `add` and `commit` them **right now**, before moving on. Checking Git's status after doing so will result in a message similar to this:
+    ```nohighlight
+    $ git status
+    On branch studio1
+    Your branch is ahead of 'origin/studio1' by 3 commits.
+      (use "git push" to publish your local commits)
+    nothing to commit, working tree clean
+    ```
+    
+    <aside class="aside-note" markdown="1">
+    If you have added and committed code in your local repository, you will see a recommendation to `git push` your local commits. *Do not do this.* Normally, when you have your own remote repository set up, you will want to `push` your changes, but in this case, it would just try to `push` to the main repository owned by LaunchCode. The permission settings are such that you should not be able to `push`, so just know that you do not need to do so.
+    </aside>
 
 2. The start-point for today's studio is saved in its own separate branch. More generally, we have created one branch for *each and every* FlickList studio. Currently, you are on the `walkthrough2` branch. To obtain today's starter code, you must switch to the `studio2` branch, using the `git checkout` command:
 
@@ -76,7 +72,7 @@ For this studio (and all subsequent studios), you will want to start at the exac
     Branches are generally not used this way. More typically, you would have one `master` branch that represents the most stable or "official" version of your project. Then you would create small, temporary branches to fix a bug or work on a new feature, and upon finishing the feature or bug-fix, you would `merge` back into the master branch and delete the temporary branch.
     </aside>
 
-### Your Task
+### Your Tasks
 
 As mentioned above, your task is to implement a new feature for "crossing off" movies from the user's watchlist.
 
@@ -92,7 +88,7 @@ Open up `main.py` in your text editor. You should see 3 `# TODO` comments in the
 
   > <strike>Star Wars</strike> has been crossed off your Watchlist.
 
-  You can use the `<strike>` tag to get that cool <strike>Strikethrough</strike> style of text.  
+  You can use the `<strike>` tag to get that cool <strike>Strikethrough</strike> style of text.
   Directly above the function definition, you will need to add a new url route for your app that should respond to incoming requests at `/crossoff`.
 
 3. **Use a dropdown instead of an input text field.** For deleting a movie from a pre-existing list, an input field does not really make sense, because the user could theoretically type anything, even something that is not on her watchlist in the first place. A more sensible UI component would be a dropdown, which only allows the user to choose from among a limited set of choices.
