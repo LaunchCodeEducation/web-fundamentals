@@ -35,3 +35,4 @@ currentMenu: cheatsheets
 - [SQLAlchemy](http://www.sqlalchemy.org/)
 - [Flask SQLAlchemy](http://flask-sqlalchemy.pocoo.org/2.1/)
 - [Flask-Migrate](https://flask-migrate.readthedocs.io/en/latest/)
+- [Sessions in Flask](http://flask.pocoo.org/docs/0.12/quickstart/#sessions)
