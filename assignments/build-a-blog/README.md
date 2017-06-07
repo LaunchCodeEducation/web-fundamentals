@@ -1,5 +1,5 @@
 ---
-title: 'Assignment: Build-a-blog'
+title: 'Assignment: Build-a-Blog'
 currentMenu: assignments
 ---
 
