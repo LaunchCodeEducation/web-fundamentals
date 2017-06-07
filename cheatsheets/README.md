@@ -37,3 +37,5 @@ currentMenu: cheatsheets
 - [Flask-Migrate](https://flask-migrate.readthedocs.io/en/latest/)
 - [Sessions in Flask](http://flask.pocoo.org/docs/0.12/quickstart/#sessions)
 - [Message Flashing in Flask](http://flask.pocoo.org/docs/0.12/quickstart/#message-flashing)
+- [One-to-Many Relationship in Flask-SQLAlchemy](http://flask-sqlalchemy.pocoo.org/2.1/models/#one-to-many-relationships)
+- [Creating and Dropping Tables](http://flask-sqlalchemy.pocoo.org/2.1/binds/#creating-and-dropping-tables)
