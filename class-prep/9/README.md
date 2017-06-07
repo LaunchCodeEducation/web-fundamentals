@@ -9,4 +9,4 @@ In the two last lessons, we learned about how relational databases such as MySQL
 
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
-Do | Interactive Lessons | [The Get It Done! App](../../videos/get-it-done/) | Code along with this set of lessons that demonstrate how to build a todo list app that uses a database
+Do | Interactive Lessons | [The Get It Done! App](../../videos/get-it-done/) | Code along with this set of lessons that demonstrate how to build a todo list app that uses a database. **Complete Parts 1-4**
