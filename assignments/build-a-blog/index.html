@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Assignment: Build-a-blog :: Unit 2: Web Fundamentals</title>
+        <title>Assignment: Build-a-Blog :: Unit 2: Web Fundamentals</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/highlight.launchcode.css">
@@ -124,84 +124,73 @@
             <div class="row">
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
-                                        <h1>Assignment: Build-a-blog</h1>
-                    <p>This assignment will closely follow <a href="https://classroom.udacity.com/courses/cs253/lessons/48198869/concepts/485084250923#" target="_blank">Problem Set 3</a> from CS253. We'll provide more structured guidance than the problem set overview at Udacity, which is rather brief. So while you may find the overview useful, you only need to follow the instructions given here.</p>
-<aside class="aside-warning">
-<p>As with other problem sets for the Udacity course, an instructor's solution is provided within the course. If you are tempted use the provided solution as a shortcut to finishing this assignment, consider the following:</p>
+                                        <h1>Assignment: Build-a-Blog</h1>
+                    <p>In this assignment, we will build a web app that displays blog posts on a main page and allows users to add new blog posts on a form page. After submitting a new blog entry on the form page, the user is redirected to a page that displays only that blog (rather than returning to the form page or to the main page). Each blog post has a title and a body. To get an idea what the finished project should look like and how it should function, check out this [video]:</p>
+<div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/xXuWBPSVd2U?rel=0" frameborder="0" allowfullscreen></iframe></div>
+<p>We'll build this app incrementally and refactor as needed along the way. The general steps we'll follow are:</p>
 <ul>
-<li>The instructor's solution uses several concepts we haven't learned yet, so not only will significant parts of it not make sense to you, but we'll easily be able to tell that you didn't write the code yourself.</li>
-<li>We'll know if you copy the code from the instructor's solution, even if you go to pains to change parts of it. We're quick detectives when it comes to this kind of thing. We've provided a detailed guide below, covering the most difficult parts of the problem set. Let us be your guide, and you'll learn the material well without undue struggle.</li>
+<li><a href="#project-setup">Project Setup</a></li>
+<li><a href="#list-and-create-blog-posts">List and Create Blog Posts</a></li>
+<li><a href="#display-individual-entries">Display Individual Entries</a>
+<ul>
+<li><a href="#use-case-1">Use Case 1</a></li>
+<li><a href="#use-case-2">Use Case 2</a></li>
+</ul></li>
+<li><a href="#bonus-missions">Bonus Missions</a></li>
 </ul>
-</aside>
-<p>Throughout the assignment, refer to the <a href="http://launchcode-build-a-blog.appspot.com/blog" target="_blank">demo app</a>.</p>
-<h4 id="setting-up">Setting up</h4>
-<p>Create a new Google App Engine app called <code>build-a-blog</code>, and then set up a local Git repository and a remote repository on GitHub. See the <a href="../user-signup/">User Signup setup instructions</a> for a refresher on that process.</p>
-<h4 id="list-and-create-blog-posts">List and Create Blog Posts</h4>
-<p>If you think about it for a minute, the behavior of creating a blog post with a title and body, saving it to the database, and displaying posts is essentially what we did in the AsciiChan example app. The main difference between the two is that the post submission form and post listings will be on separate pages. Go back to your code for AsciiChan and use it as a model to set up the beginnings of your blog.</p>
-<p>First, set up the blog so that the new post form and the post listing are on the same page, as with AsciiChan, and then separate those portions into separate routes, handler classes, and templates. For now, when a user submits a new post, redirect them to the main blog page.</p>
+<h2 id="project-setup">Project Setup</h2>
+<p>Create a new directory called <code>build-a-blog</code>, and then set up a local Git repository and a remote repository on GitHub. See the <a href="../web-caesar/#git-repository-setup">Web Caesar setup instructions</a> if you need to review that process. Then set up a user and database in <em>phpMyAdmin</em> for this project. We recommend you use the name <code>build-a-blog</code>, but the password is up to you. Just remember that you will need to put all of that info into your database connection string. For refreshers on these parts of the process, re-visit <a href="../../studios/flicklist/6/#create-mysql-user-and-database">FlickList 6</a> and <a href="../../videos/get-it-done/db-configuration">Database Configuration</a>. You'll also want to activate your <code>flask-env</code> virtual environment.</p>
+<h2 id="list-and-create-blog-posts">List and Create Blog Posts</h2>
+<p>If you think about it for a minute, the behavior of creating a blog post, saving it to the database, and displaying blog posts is essentially what we did with tasks in the <em>Get It Done!</em> example app. The main difference between the two is that the blog post submission form and blog post listings will be on separate pages in our <em>Build-a-Blog</em> app. Go back to your code for <em>Get It Done!</em>, or use <a href="https://github.com/LaunchCodeEducation/get-it-done/tree/52ec146dc2f9943a011dd46d4a546b75703c226f" target="_blank">ours</a>, and use it as a model to set up the beginnings of your blog app.</p>
+<p>First, set up the blog so that the &quot;add a new post&quot; form and the blog listings are on the same page, as with <em>Get It Done!</em>, and then separate those portions into separate routes, handler classes, and templates. For the moment, when a user submits a new post, redirect them to the main blog page.</p>
 <p>Make sure you can say the following about your app:</p>
 <ul>
-<li>The <code>/blog</code> route displays the 5 most recent posts. To limit the displayed posts in this way, you'll need to <a href="https://sqlbolt.com/lesson/filtering_sorting_query_results" target="_blank">filter the query results</a>.</li>
-<li>You have two templates, one for each of the main blog and new post views. Your templates extend a <code>base.html</code> template which includes some boilerplate HTML that will be used on each page, along with some styles to clean up your blog's visuals a bit (you can copy/paste the styles from the AsciiChan exercise).</li>
-<li>You're able to submit a new post at the <code>/newpost</code> route/view. After submitting a new post, your app displays the main blog page. Note that, as with the AsciiChan example, you will likely need to refresh the main blog page to see your new post listed.</li>
-<li>If either <strong>title</strong> or <strong>body</strong> is left empty in the new post form, the form is rendered again, with a helpful error message and any previously-entered content in the same form inputs.</li>
+<li>
+<p>The <code>/blog</code> route displays all the blog posts.</p>
+</li>
+<li>
+<p>You're able to submit a new post at the <code>/newpost</code> route. After submitting a new post, your app displays the main blog page. </p>
+</li>
+<li>
+<p>You have two templates, one each for the <code>/blog</code> (main blog listings) and <code>/newpost</code> (post new blog entry) views. Your templates should extend a <code>base.html</code> template which includes some boilerplate HTML that will be used on each page.</p>
+</li>
+<li>
+<p>In your <code>base.html</code> template, you have some <a href="https://www.w3schools.com/tags/tag_nav.asp" target="_blank">navigation links</a> that link to the blog home, and the add new blog page.</p>
+</li>
+<li>If either the <strong>blog title</strong> or <strong>blog body</strong> is left empty in the new post form, the form is rendered again, with a helpful error message and any previously-entered content in the same form inputs.</li>
 </ul>
-<p>When you can check each of these off, you're ready to dive in to the next step. Nice work!</p>
-<h4 id="display-individual-entry">Display Individual Entry</h4>
-<p>There are a few more behaviours that we need to implement. We'll go into details on each of these below.</p>
+<p>By the time you've checked off each of these, you're app should behave like this: </p>
+<div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/2m-hp1oy7NI?rel=0" frameborder="0" allowfullscreen></iframe></div>
+<p>Now you're ready to dive in to the next step. Nice work!</p>
+<h2 id="display-individual-entries">Display Individual Entries</h2>
+<p>Let's add the ability to view each blog all by itself on a webpage. Instead of creating multiple HTML files, one for each new blog post we create, we can use a single template to display a given blog's title and body. We'll designate which blog's data we want displayed by using a query param containing the id for that blog in the url. Then the request handler can dynamically grab the blog that corresponds to that id from the database and pass it to the template to generate the desired page.</p>
+<p>There are two use cases for this functionality:</p>
+<ul>
+<li>
+<p><strong>Use Case 1:</strong> We click on a blog entry's title on the main page and go to a blog's individual entry page.</p>
+</li>
+<li><strong>Use Case 2:</strong> After adding a new blog post, instead of going back to the main page, we go to that blog post's individual entry page.</li>
+</ul>
+<p>For both use cases we need to create the template for the page that will display an individual blog, so start by making that. All it need do is display a blog title and blog body. Next, we'll tackle the use cases one at a time. </p>
+<p>But first, a reminder! It's been a little while since we used query params and <code>GET</code> requests, so it will be a useful reference and review to look at the lesson <a href="../../videos/forms-in-flask">Forms in Flask</a>, especially the section <a href="../../videos/forms-in-flask/#accessing-get-request-parameters">Accessing Get Request Parameters</a>.</p>
+<h3 id="use-case-1">Use Case 1</h3>
+<p>One of the first and easiest changes is to make the header for the blog title on the home page be a link. But what url do we want it to link to? Well, this is the format that we want the url of a single blog entry to have: <code>./blog?id=6</code> (Here <em>6</em> is just one example of an id number for a blog post.) So using jinja2 templating syntax, how can you make sure that each blog entry that is generated on the main page has an <code>href</code> with a query parameter corresponding to its id?</p>
+<p>The next thing we need to determine is how we are going to handle an additional <code>GET</code> request on our homepage since we are already handling a <code>GET</code> request there. Of course, the difference is that in this use case it's a <code>GET</code> request <em>with query parameters</em>. So we'll want to handle the <code>GET</code> requests differently, returning a different template, depending on the contents (or lack thereof) of the dictionary <code>request.args</code>. </p>
+<p>Finally, we need to think about how the template is going to know which blog's data to display. The blog object will be passed into the template via <code>render_template</code>. What are the steps we need to take to get the right blog object (the one that has the id we'll get from the url) from the database and into the <code>render_template</code> function call?</p>
+<h3 id="use-case-2">Use Case 2</h3>
+<p>After solving Use Case 1, you should have the confidence to take on Use Case 2. For this use case, it's all in the timing. You've got to create a new database record for the blog entry that has just been submitted, but before redirecting, you need to grab the id for the record you just created. That way you'll know what url (i.e., what number to put on the right side of <code>?id=</code>) to redirect the user to after they submit their new entry. At the risk of spoiling all your fun, here's a <a href="https://stackoverflow.com/questions/8551952/how-to-get-last-record" target="_blank">stack overflow post</a> you may find helpful if you get stuck.</p>
+<p>At this point, your web app should display the functionality in the demo video below:</p>
+<div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/xXuWBPSVd2U?rel=0" frameborder="0" allowfullscreen></iframe></div>
+<h2 id="bonus-missions">Bonus Missions</h2>
+<p>Note: Be sure to commit and push your changes before proceeding to these extra tasks. That way you have a snapshot of your code when it met all the criteria above.</p>
 <ol>
-<li>Display a single blog post. When a URL of the form <code>/blog/[id]</code> (e.g. <code>/blog/42</code>) is requested, display the post with that <code>id</code>. Recall that every entity in the Google App Engine Datastore has a unique numeric ID; it's this ID that we're referring to here. A URL of this form is often referred to as a <strong>permalink</strong>.</li>
-<li>After a new post is created, redirect to the page for that post.</li>
-<li>On the main blog page, the title of a post links to its permalink.</li>
+<li>
+<p>Add a CSS stylesheet to improve the style of your app. You can read about how to do so <a href="https://stackoverflow.com/questions/22259847/application-not-picking-up-css-file-flask-python" target="_blank">here</a>. And know that clearing your browsing data (especially your cached images and files) can help if you run into problems with your display not reflecting changes you make to your CSS stylesheet.</p>
+</li>
+<li>Display the posts in order of most recent to the oldest (the opposite of the current order).</li>
 </ol>
-<h5 id="display-a-single-post">Display a single post</h5>
-<p>Let's break this up into steps. First, we'll set up the route.</p>
-<p>For each post, it would be unreasonable to create a new route just for that post. For example, for a post with an <code>id</code> of 6, we'd have to set up the route <code>('/blog/6', SomeHandler)</code>, and then the <code>SomeHandler</code> class would either be built to always display the post with <code>id</code> equal to 6, or it would have to somehow know which <code>id</code> we were asking for, and it's not clear how that <code>id</code> would be passed to the handler's <code>get</code> method. Furthermore, if we had 1000 blog posts, we'd have to create 1000 additional routes! Sounds like a drag.</p>
-<p>You might be thinking that we haven't learned how to create such &quot;dynamic&quot; routes, and you'd be right. Let's learn how to do it now.</p>
-<p>The Python web application frameowork we're building our applications within, <code>webapp2</code>, has some utilities for creating more complex routing scenarios. In our situation, we can set up a route like this:</p>
-<pre><code class="language-python">webapp2.Route('/blog/&lt;id:\d+&gt;', ViewPostHandler)</code></pre>
-<p>You can put this route next to your other routes in <code>main.py</code>. Note the use of the <code>webapp2.Route</code> class to enable this new behavior.</p>
-<p>This bit of code says that our route expects a URL path that starts with <code>/blog/</code> and ends with one or more digits (i.e. 0-9), and that we want to refer to the numeric portion as <code>id</code>. The <code>\d+</code> portion of the route is what specifies that we want one or more digits (<code>\d</code> means digit, <code>+</code> means &quot;at least one&quot;), and is an example of a <strong>regular expression</strong>. Regular expressions pop up all over programming, and while they can seem intimidating at first, they're incredibly useful. <a href="https://en.wikipedia.org/wiki/Regular_expression" target="_blank">Read a bit more about them</a>, if you're curious, and expect to see them again.</p>
-<p>Then, we can create our handler like this:</p>
-<pre><code class="language-python">class ViewPostHandler(webapp2.RequestHandler):
-    def get(self, id):
-        pass #replace this with some code to handle the request</code></pre>
-<p>This routing technique allows for dynamic routing, so that a GET request that looks like <code>/blog/6</code> is mapped to the <code>ViewPostHandler</code> and the <code>id</code> value 6 is passed into its <code>get</code> method. Note that the name of the <code>id</code> parameter in the <code>get</code> method matches the name that we gave the dynamic portion of the route above. If these don't match up, the value of the <code>id</code> won't be passed to the <code>get</code> method properly.</p>
-<p>You can read more about complex routing in the <a href="http://webapp2.readthedocs.io/en/latest/guide/routing.html#extended-routes" target="_blank"><code>webapp2</code> documentation</a>.</p>
-<p>Once you have set up this new dynamic route, and the corresponding handler and <code>get</code> method, you are ready to do a simple test. In the <code>get</code> method, simply print the value of the <code>id</code> parameter to the response. No need to use a template, or even any HTML, just <code>self.response.write()</code>. Then visit such a route in your browser (e.g. <code>/blog/42</code>). You should see something like this:</p>
-<p><img src="route-test.png" alt="simple route test" /></p>
-<p>If you don't, use any error messages to debug the issue, including those in the GAE logs.</p>
-<p>Now you can add code to <code>ViewPostHandler</code> to display a single post. Rather than use a query to fetch the post from the database, you can use <code>Post.get_by_id</code> to retrieve the post. Refer to the <a href="https://cloud.google.com/appengine/docs/python/datastore/modelclass#Model_get_by_id" target="_blank">GAE documentation on this method</a>. Be sure to check that there actually <em>is</em> a post with the given ID, and if not, display a helpful error message.</p>
-<p>In order to test your single post display, you'll need to know the ID of a post that you have created. A handy way to find out this info is to use the GAE console. From the GAE Launcher application, click on the &quot;SDK Console&quot; button. Alternatively, you can go to <code>http://localhost:8000/</code> in your browser. If your blog app has an <em>Admin Port</em> value other than 8000, use that instead (note that this is the Admin Port, not the regular application port; refer to the GAE Launcher to see the port values you set up for your build-a-blog app). From the GAE console, select &quot;Datastore Viewer&quot; from the menu, and you'll see a list of Post entities that you have created. Use one of the ID values to test your single post view.</p>
-<p>For example, with the entities in the screenshot below, you could test using the URL <code>http://localhost:8080/blog/5066549580791808</code>.</p>
-<p><img src="gae-console.png" alt="gae console" /></p>
-<p>Once you have the single post display working in conjunction with the permalinks (i.e. dynamic routes), you can proceed.</p>
-<h5 id="adding-permalinks-and-redirect">Adding permalinks and redirect</h5>
-<p>Let's go back to our main blog page -- the one that lists every post -- and add permalinks for each post that is displayed. To add a permalink to the post title, you'll only need to alter the template for the main blog display. The command <code>post.key().id()</code> will return the integer ID of the post, where <code>post</code> is a variable holding a <code>Post</code> entity. Use this to create the correct <code>href</code> value for the link.</p>
-<p>Next, modify the new post handler so that it redirects to the new post's permalink after the post is created. You'll need to use <code>post.key().id()</code> again. Be careful to only call this command <em>after</em> adding the newly-created post to the database with <code>post.put()</code>. If you don't, you'll get a nasty error.</p>
-<h4 id="hacker-features">Hacker Features</h4>
-<blockquote>
-<p>This section is optional, and is intended for those looking for an additional challenge. If you decide to tackle these extra challenges, be sure to commit and push your code before diving in, so you have a snapshot of your progress to this point.</p>
-</blockquote>
-<p>As you go, refer to the <a href="http://launchcode-build-a-blog-hacker.appspot.com/blog" target="_blank">demo hacker edition app</a>.</p>
-<p>Our blog has some great features, but it isn't easy to navigate, as you've probably noticed. Let's fix that.</p>
-<h5 id="navigation">Navigation</h5>
-<p>In your <code>base.html</code> template, add some navigation links that link to the blog home, and the new post page.</p>
-<h5 id="pagination">Pagination</h5>
-<p>Our main blog page currently only displays the 5 most recent posts. If we have more than 5 posts in our database, nobody will be able to read them!</p>
-<p>To fix that, write a new function (outside of any class, but still in <code>main.py</code>), <code>get_posts</code>, looks like this:</p>
-<pre><code class="language-python">def get_posts(limit, offset):
-    # TODO: query the database for posts, and return them</code></pre>
-<p>Refer to the aforementioned <a href="https://sqlbolt.com/lesson/filtering_sorting_query_results" target="_blank">query filtering reference</a> for help building the query. This function should return a list with at most <code>limit</code> posts in descending order by time created, and it should start with the post in position <code>offset</code>. For example, if there are 8 posts, <code>get_post(5, 5)</code> should return posts 6 through 8, by creation time. <code>get_posts(5, 0)</code> should return the 5 most recent posts.</p>
-<p>Then refeactor the handler for your main page to call <code>get_posts</code> with the appropriate parameters. Add code that allows the user to provide a GET query parameter named <code>page</code> that represents that page that they would like to view. When the user requests <code>/blog?page=1</code> they should see the 5 most recent posts (the same as when <code>/blog</code> is requested), when they request <code>/blog?page=2</code> the next 5 posts should be displayed, and so on.</p>
-<p>Modify your main blog page template to insert navigation links for next and previous pages. These links should only be visible when there is actually a next or previous page. For example, if we have 1 posts, then page 1 should display only a &quot;next&quot; link, page 2 should display both &quot;next&quot; and &quot;previous&quot; links, and page 3 should display only a &quot;previous&quot; link. You may find it helpful to use this snippet, which returns the number of posts in a page that starts at <code>offset</code> and has at most <code>page_size</code> results:</p>
-<pre><code class="language-python">posts.count(offset=offset, limit=page_size)</code></pre>
-<p>Note that <code>posts.count()</code> returns the <em>total</em> number of entities, not just those queried.</p>
-<h3 id="submit">Submit</h3>
-<p>To turn in your assignment and get credit, follow the <a href="../">submission instructions</a>.</p>
-<blockquote>
-<p>Remember that you should ignore any Udacity instructions about hosting your app out on the internet and posting the link so they can grade it. You don't have to submit your work to Udacity.</p>
-</blockquote>
+<h2 id="submit">Submit</h2>
+<p>To turn in your assignment and get credit, follow the <a href="../">submission instructions</a></p>
                                     </section>
 
             </div>
