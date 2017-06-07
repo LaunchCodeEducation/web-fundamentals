@@ -10,3 +10,4 @@ Picking up where we left off in class 9, we look at how we can create a class to
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
 Do | Interactive Lessons | [The Get It Done! App](../../videos/get-it-done/) | Code along with this set of lessons that demonstrates how to build a todo list app that uses a database and user authentication. **Complete Parts 5-9**
+Do | Review | [Class 10 Prep Review](review.html) | Solidify your knowledge of the concepts covered in these lessons
