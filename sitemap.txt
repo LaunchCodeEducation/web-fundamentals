@@ -22,6 +22,7 @@ http://education.launchcode.org/web-fundamentals/class-prep\8/index.html
 http://education.launchcode.org/web-fundamentals/class-prep\9/index.html
 http://education.launchcode.org/web-fundamentals/class-prep\9\review.html
 http://education.launchcode.org/web-fundamentals/class-prep\10/index.html
+http://education.launchcode.org/web-fundamentals/class-prep\10\review.html
 http://education.launchcode.org/web-fundamentals/class-prep\11/index.html
 http://education.launchcode.org/web-fundamentals/class-prep\12/index.html
 http://education.launchcode.org/web-fundamentals/class-prep\13/index.html
@@ -57,7 +58,12 @@ http://education.launchcode.org/web-fundamentals/videos\forms-in-flask/index.htm
 http://education.launchcode.org/web-fundamentals/videos\get-it-done/index.html
 http://education.launchcode.org/web-fundamentals/videos\get-it-done\changing-models/index.html
 http://education.launchcode.org/web-fundamentals/videos\get-it-done\db-configuration/index.html
+http://education.launchcode.org/web-fundamentals/videos\get-it-done\flash-messages/index.html
+http://education.launchcode.org/web-fundamentals/videos\get-it-done\login-register-handlers/index.html
 http://education.launchcode.org/web-fundamentals/videos\get-it-done\project-setup/index.html
+http://education.launchcode.org/web-fundamentals/videos\get-it-done\sessions/index.html
+http://education.launchcode.org/web-fundamentals/videos\get-it-done\user-model/index.html
+http://education.launchcode.org/web-fundamentals/videos\get-it-done\user-task-relationship/index.html
 http://education.launchcode.org/web-fundamentals/videos\get-it-done\using-persistent-classes/index.html
 http://education.launchcode.org/web-fundamentals/videos\html-escaping/index.html
 http://education.launchcode.org/web-fundamentals/videos\intro-to-validation/index.html

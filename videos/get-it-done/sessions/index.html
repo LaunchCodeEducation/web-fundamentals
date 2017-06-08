@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Studios :: Unit 2: Web Fundamentals</title>
+        <title>Get It Done! Part 7: Managing Login Using the Session :: Unit 2: Web Fundamentals</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-studios'>
+    <body id='page-get-it-done-part-7-managing-login-using-the-session'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -26,7 +26,7 @@
                                         Classes
                                     </a>
                                 </li>
-                                                            <li class="active lc-button">
+                                                            <li class=" lc-button">
                                     <a href="http://education.launchcode.org/web-fundamentals/studios/">
                                         Studios
                                     </a>
@@ -41,7 +41,7 @@
                                         Assignments
                                     </a>
                                 </li>
-                                                            <li class=" lc-button">
+                                                            <li class="active lc-button">
                                     <a href="http://education.launchcode.org/web-fundamentals/videos/">
                                         Videos
                                     </a>
@@ -124,53 +124,51 @@
             <div class="row">
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
-                                        <h1>Studios</h1>
-                    <h2 id="fake-news">Fake News</h2>
-<p>Get an introduction to web developer tools in Firefox, and use them to inspect and change the contents of a live web site.</p>
-<p><a href="fake-news/">Work on Fake News</a></p>
-<h2 id="fireside-story">Fireside Story</h2>
-<p>Learn how to create code together with a partner with a simple, fun story exercise.</p>
-<p><a href="fireside-story/">Work on Fireside Story</a></p>
-<h2 id="flicklist">Flicklist</h2>
-<p>Rather than a single studio, Flicklist is a progressive series of studios. Each studio builds on work done in the previous studio. Additionally, each studio begins with an instructor-led walkthrough to introduce new ideas.</p>
-<h3 id="flicklist-1">Flicklist 1</h3>
-<p>Project setup, responding to requests, generating random output.</p>
-<p><a href="flicklist/1/">Work on Flicklist 1</a></p>
-<h3 id="flicklist-2">Flicklist 2</h3>
-<p>Building forms, handling form submissions.</p>
-<p><a href="flicklist/2/">Work on Flicklist 2</a></p>
-<h3 id="flicklist-3">Flicklist 3</h3>
-<p>Validating user-submitted data.</p>
-<p><a href="flicklist/3/">Work on Flicklist 3</a></p>
-<h3 id="flicklist-4">Flicklist 4</h3>
-<p>Using templates to render views including responding to bad input (validations) and confirmation pages.</p>
-<p><a href="flicklist/4/">Work on Flicklist 4</a></p>
-<h3 id="flicklist-5">Flicklist 5</h3>
-<p>Add feature for rating watched movies.</p>
-<p><a href="flicklist/5/">Work on Flicklist 5</a></p>
-<h3 id="flicklist-6">Flicklist 6</h3>
-<p>Persisting movie data to a database.</p>
-<p><a href="flicklist/6/">Work on Flicklist 6</a></p>
-<h3 id="flicklist-7">Flicklist 7</h3>
-<p>Add user registration and login form handling. Store new users in the database.</p>
-<p><a href="flicklist/7/">Work on Flicklist 7</a></p>
-<h3 id="flicklist-8">Flicklist 8</h3>
-<p>Add login and logout behaviors with cookies.</p>
-<p><a href="flicklist/8/">Work on Flicklist 8</a></p>
-<h3 id="flicklist-9">Flicklist 9</h3>
-<p>Password hashing</p>
-<p><a href="flicklist/9/">Work on Flicklist 9</a></p>
-<h3 id="flicklist-10">Flicklist 10</h3>
-<p>Add Bootstrap to Flicklist to enhance the user interface</p>
-<p><a href="flicklist/10/">Work on Flicklist 10</a></p>
-<h2 id="databases">Databases</h2>
-<p>Create and manipulate tables, as well as explore the parallels between Python objects and database tables. Then make a real database locally and use it to perform SQL queries through <em>phpMyAdmin</em>.</p>
-<h3 id="databases-part-1">Databases Part 1</h3>
-<p>Explore how tables in relational databases relate to each other and their similarities to Python objects. Practice SQL queries.</p>
-<p><a href="databases/1/">Work on Databases Part 1</a></p>
-<h3 id="databases-part-2">Databases Part 2</h3>
-<p>Import a <code>.sql</code> file and create a database on your computer. Use <em>phpMyAdmin</em> to make queries on your database tables.</p>
-<p><a href="databases/2/">Work on Databases Part 2</a></p>
+                                        <h1>Get It Done! Part 7: Managing Login Using the Session</h1>
+                    <div class="youtube-wrapper"><iframe width="776" height="437" src="https://www.youtube-nocookie.com/embed/QjJ_pTZoWw0?rel=0" frameborder="0" allowfullscreen></iframe></div>
+<h2 id="notes">Notes</h2>
+<p>In this video lesson we learn how to enable our application to &quot;remember&quot; users via Flask's <code>session</code> object. A session is an object (specifically, a dictionary) that you can use to store data that is associated with a specific user so that it is available for use across multiple requests. We'll also learn how to &quot;forget&quot; a user using <code>session</code> and a logout route. </p>
+<p>Additionally, we'll learn how to create special functions that are not route-specific using the decorator <code>@app.before_request</code>. This allows us to do checks before handling incoming requests. </p>
+<p>Finally we'll add a <code>secret_key</code> to enable us to use the <code>session</code> object. </p>
+<ul>
+<li>
+<p>To begin, import the <code>session</code> object from Flask</p>
+</li>
+<li>
+<p>Use the session object with this syntax in the <code>login</code> and <code>register</code> functions: <code>session['email'] = email</code>. This creates a key called <code>email</code> that has a value of the user's email.</p>
+</li>
+<li>
+<p>Next we'll create a simple logout handler to delete this session key:</p>
+<pre><code class="language-python">@app.route('/logout', methods=['GET'])
+def logout():
+    del session['email']
+    return redirect('/')</code></pre>
+</li>
+<li>
+<p>Now we can check for whether this key is in the <code>session</code> object (and therefore if the user is logged in):</p>
+<pre><code class="language-python">@app.before_request
+def require_login():
+    allowed_routes = ['login', 'register']
+    if request.endpoint not in allowed_routes and 'email' not in session:
+        return redirect('/login')</code></pre>
+</li>
+<li>
+<p>We'll also need to add a secret key to our app in order to use the <code>session</code> object:</p>
+<pre><code class="language-python">app.secret_key = "#someSecretString"</code></pre>
+</li>
+<li>
+<p>And finally we'll add a logout link to the body of our <code>base.html</code>:</p>
+<pre><code class="language-HTML">    &lt;div&gt;
+        &lt;a href="./logout"&gt;log out&lt;/a&gt;
+    &lt;/div&gt;</code></pre>
+</li>
+</ul>
+<h2 id="code">Code</h2>
+<p>View the <a href="https://github.com/LaunchCodeEducation/get-it-done/tree/5e700d1c821c946f5d630cc5795a6c6354280824" target="_blank">final code</a> for this lesson.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="http://flask.pocoo.org/docs/0.12/quickstart/#sessions" target="_blank">Sessions in Flask</a></li>
+</ul>
                                     </section>
 
             </div>

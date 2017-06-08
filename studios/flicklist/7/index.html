@@ -125,45 +125,32 @@
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Studio: FlickList 7</h1>
-                    <p>Today we'll add <em>Users</em> to our application, and allow them to log in,
-log out, and create accounts. We'll learn how to store state in a
-user's session.  We'll learn about <em>flash messages</em>, which let us
-overlay messages onto the next page the user visits.</p>
-<p>You are encouraged to code along, which, as usual, you can do by
-checking out the <code>walkthrough7</code> branch:</p>
-<pre><code class="language-nohighlight">$ git checkout walkthrough7
-Branch walkthrough7 set up to track remote branch walkthrough7 from origin.
-Switched to a new branch 'walkthrough7'</code></pre>
+                    <p>Today we'll add <em>Users</em> to our application, and allow them to log in, log out, and create accounts. We'll learn how to store state in a user's session.  We'll learn about <em>flash messages</em>, which let us overlay messages onto the next page the user visits.</p>
+<p>You are encouraged to code along, which, as usual, you can do by checking out the <code>walkthrough7</code> branch.</p>
 <h2 id="walkthrough">Walkthrough</h2>
-<p>Thus far, our web-app does not have a concept of user accounts built
-in. As a result, there is only one &quot;communal&quot; movie list, and all the
-users who visit our site work &quot;collaboratively&quot; on that list. That's
-kind of cool maybe, but our goal is a site where each user manages her
-own list, without interference from other users.</p>
-<p>The goal today, at a high level, is to implement the existence of user
-accounts and registration, and ensure that users cannot see the main
-pages of the site unless they are logged in.</p>
-<p>More specifically, we will update our codebase with the following
-additions:</p>
+<p>Thus far, our web app does not have a concept of user accounts built in. As a result, there is only one &quot;communal&quot; movie list, and all the users who visit our site work &quot;collaboratively&quot; on that list. That's kind of cool, maybe, but our goal is a site where each user manages her own list, without interference from other users.</p>
+<p>The goal today, at a high level, is to implement the existence of user accounts and registration, and ensure that users cannot see the main pages of the site unless they are logged in.</p>
+<p>More specifically, in today's walkthough we will update our codebase with the following additions:</p>
 <ul>
-<li>A <code>User</code> class to represent and save users in our database.</li>
-<li>New routes and methods: <code>register</code> and <code>logout</code>.</li>
-<li>A new template for the <code>register</code> page.</li>
-<li>We'll modify our <code>base</code> template to display the username or links to login and register.</li>
-<li>A 'login wall' that monitors requests of unlogged-in users, and prompts them to create an account if they're not logged in.</li>
-<li>We'll further modify our <code>base</code> template to display flash messages, so that we can tell the user things like &quot;you typed the wrong password&quot;</li>
+<li>
+<p>A <code>User</code> class to represent and save users in our database.</p>
+</li>
+<li>
+<p>New routes and methods: <code>register</code> and <code>logout</code>.</p>
+</li>
+<li>
+<p>A new template for the <code>register</code> page.</p>
+</li>
+<li>
+<p>Our <code>base</code> template will display either the user's email or links to login and register.</p>
+</li>
+<li>
+<p>A 'login wall' that monitors requests of unlogged-in users, and prompts them to create an account if they're not logged in.</p>
+</li>
+<li>Our <code>base</code> template will display flash messages, so that we can tell the user things like &quot;that is not a valid email address&quot;.</li>
 </ul>
-<aside class="aside-note">
-<p>For simplicity's sake, today we will just drop and re-create the database. In a later lesson, we will discuss migrations which is how to transform database schema without destroying the existing data.</p>
-</aside>
 <h2 id="studio">Studio</h2>
-<p>You know how annoying it is to create new accounts on websites? It
-always seems like the name you want is taken, or the passowords must
-have 87 digits in them, or whatever? Congratulations, now you get to
-make those rules yourself.</p>
-<p>Also, right now the only way to log is is as a side-effect of creating
-a new account. It'd be neat if once users created accounts and logged
-out, they could log back in using their existing email and password.</p>
+<p>Right now the only way to login is as a side-effect of creating a new account. It'd be neat if once users created accounts and logged out, they could log back in using their existing email and password, so we'll implement that in this studio. We'll also add validation and authentication for the login process.</p>
 <h3 id="checking-out-the-studio-code">Checking out the Studio code</h3>
 <p>Follow the <a href="../getting-the-code/">instructions for getting the code</a> in order to get the starter code for <code>studio7</code>.</p>
 <h3 id="before-you-begin-create-the-user-db-table-locally">Before you begin: create the 'user' DB table locally</h3>
@@ -179,16 +166,22 @@ User.query.all()
 </code></pre>
 <h3 id="your-tasks">Your Tasks</h3>
 <ol>
-<li>When a user tries to create an account, but supplies different 'password' and 'verify' fields, redirect them back to '/register' and flash them a message about why thier attempt to create an account failed.</li>
-<li>Log out, and see what happens when you try to create a user that already exists. This happens because we passed the 'unique=True' keyword param to the User.email db.Column invocation. When we wear our DB Admin hats, we're happy to get this error, but when we wear our UX designer hats, we want something friendlier. Before creating an account, search the database for an existing account with that email. If it exists already, redirect them back to 'register' and tell them why their account creation failed.</li>
-<li>Add a new route for '/login', that responds to GET and renders a 'login.html' template.</li>
-<li>Create the 'login.html' template, with form fields for email and password.</li>
-<li>Test out your new route - one problem you will notice is that you get redirected to the 'register.html' page. Change the login wall to allow this route through.</li>
+<li>
+<p>When a user tries to create an account, but supplies different 'password' and 'verify' fields, redirect them back to <code>/register</code> and flash them a message about why their attempt to create an account failed.</p>
+</li>
+<li>
+<p>Log out, and see what happens when you try to create a user that already exists. This happens because we passed the <code>unique=True</code> keyword param to the <code>email = db.Column()</code> invocation in the <code>User</code> class. When we wear our DB Admin hats, we're happy to get this error, but when we wear our UX designer hats, we want something friendlier. Before creating an account, search the database for an existing account with that email. If it exists already, redirect them back to <code>/register</code> and tell them why their account creation failed.</p>
+</li>
+<li>
+<p>Add a new route for <code>/login</code>, that responds to GET and renders a <code>login.html</code> template; it also needs to respond to POST requests and provide error messages for failed login attempts or redirect to the main page if it is a successful login.</p>
+</li>
+<li>
+<p>Create the <code>login.html</code> template, with form fields for email and password.</p>
+</li>
+<li>Test out your new route - one problem you will notice is that you get redirected to the <code>register.html</code> page. Change the login wall to allow this route through.</li>
 </ol>
-<h3 id="retrospective">Retrospective</h3>
-<p>We've created users and managed the login and logout process. But the
-User model doesn't relate at all to our Movie model. In the next
-studio, we'll 'cross the streams' and store movies on a per-user basis.</p>
+<h2 id="retrospective">Retrospective</h2>
+<p>We've created users and managed the login and logout process. But the <code>User</code> model doesn't relate at all to our <code>Movie</code> model. In the next studio, we'll cross the streams and store movies on a per-user basis.</p>
                                     </section>
 
             </div>
