@@ -4,7 +4,7 @@ currentMenu: assignments
 ---
 
 
-In this assignment, we will build a web app that displays blog posts on a main page and allows users to add new blog posts on a form page. After submitting a new blog entry on the form page, the user is redirected to a page that displays only that blog (rather than returning to the form page or to the main page). Each blog post has a title and a body. To get an idea what the finished project should look like and how it should function, check out this [video]:
+In this assignment, we will build a web app that displays blog posts on a main page and allows users to add new blog posts on a form page. After submitting a new blog entry on the form page, the user is redirected to a page that displays only that blog (rather than returning to the form page or to the main page). Each blog post has a title and a body. To get an idea what the finished project should look like and how it should function, check out this video:
 
 <div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/xXuWBPSVd2U?rel=0" frameborder="0" allowfullscreen></iframe></div>
 

@@ -31,7 +31,7 @@ In this lesson we make the connection between user objects and task objects. Eac
      tasks = `db.relationship('Task', backref='owner')`
      ```
 
-- Since we've changed our model classes, we'll need to drop and create our tables again (using the Python shell commmands that should be familiar by now). Then create a user and a task object/record in the shell.
+- Since we've changed our model classes, we'll need to drop and create our tables again (using the Python shell commmands that should be familiar by now). Then create a user and a task object/record in the shell. If you need a reminder of this process, review the second and third bullet items [here](../../../studios/flicklist/6/#modify-flicklist-to-store-movie-ratings).
 
 - In the `POST` handler of the `index` function, add code to get the owner of the task so that you can pass that into the `Task` constructor. Also, you'll want to modify the code so that it only grabs tasks from the database that belong to the current user:
 

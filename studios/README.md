@@ -51,13 +51,11 @@ Add feature for rating watched movies.
 
 ### Flicklist 6
 
-Persisting user data to a database.
+Persisting movie data to a database.
 
 [Work on Flicklist 6](flicklist/6/)
 
 ### Flicklist 7
-
-(Walkthrough only)
 
 Add user registration and login form handling. Store new users in the database.
 
