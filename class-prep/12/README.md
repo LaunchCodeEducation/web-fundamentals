@@ -11,7 +11,6 @@ As you work through the lesson materials, think about the applications you've be
 
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
-Read | Assignment | [Blogz](../../assignments/blogz/) | Read the assignment specification in detail before coming to class. This will help you understand the context of the next studio, and give you a chance to ask questions about the assignment in class.
 Read | Article | [MVC for Noobs](https://code.tutsplus.com/tutorials/mvc-for-noobs--net-10488) | Read this article on MVC. Don't worry if you do not totally understand the sections discussing cakePHP. This is just an example of how MVC can be implemented. Focus on the sections up to "OK, but Why a Framework"
 Do | Exercise | N/A | Complete the thought-exercise below
 
