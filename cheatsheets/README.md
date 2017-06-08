@@ -25,13 +25,11 @@ currentMenu: cheatsheets
 - [Tower Git Cheat Sheet](https://www.git-tower.com/blog/git-cheat-sheet/)
 - [Try Git](https://try.github.io/)
 
-## Other Resources:
+## Flask and SQLAlchemy Resources:
 
-- [How Browsers Work](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork)
-- [HTTP Introduction](https://www.httpwatch.com/httpgallery/)
-- [Jinja2 Documentation](http://jinja.pocoo.org/docs/2.9/)
+- [Flask Mega-Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
+- [Flask Web Development Book](https://doc.lagout.org/programmation/python/Flask%20Web%20Development_%20Developing%20Web%20Applications%20with%20Python%20%5BGrinberg%202014-05-18%5D.pdf)
 - [Flask Documentation](http://flask.pocoo.org/docs/0.12/)
-- [Conda Cheat Sheet](https://conda.io/docs/_downloads/conda-cheatsheet.pdf)
 - [SQLAlchemy](http://www.sqlalchemy.org/)
 - [Flask SQLAlchemy](http://flask-sqlalchemy.pocoo.org/2.1/)
 - [Flask-Migrate](https://flask-migrate.readthedocs.io/en/latest/)
@@ -39,3 +37,10 @@ currentMenu: cheatsheets
 - [Message Flashing in Flask](http://flask.pocoo.org/docs/0.12/quickstart/#message-flashing)
 - [One-to-Many Relationship in Flask-SQLAlchemy](http://flask-sqlalchemy.pocoo.org/2.1/models/#one-to-many-relationships)
 - [Creating and Dropping Tables](http://flask-sqlalchemy.pocoo.org/2.1/binds/#creating-and-dropping-tables)
+
+## Other Resources:
+
+- [How Browsers Work](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork)
+- [HTTP Introduction](https://www.httpwatch.com/httpgallery/)
+- [Conda Cheat Sheet](https://conda.io/docs/_downloads/conda-cheatsheet.pdf)
+- [Jinja2 Documentation](http://jinja.pocoo.org/docs/2.9/)
