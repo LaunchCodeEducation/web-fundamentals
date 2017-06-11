@@ -41,15 +41,15 @@ Code along to a video tutorial / lecture in which we build web-app that encrypts
 Create a web-app that presents the user with a "sign up" form, and responds appropriately to the form submission, either by accepting it or by rejecting it and presenting helpful feedback so the user knows what they did wrong.
 
 [Work on User Signup](./user-signup/)
-<!--
+
 ---
 
-## Build-a-blog
+## Build-a-Blog
 
 Create a web-app that allows the user to create blog posts and browse and read previously-created posts.
 
 [Work on Build-a-blog](./build-a-blog/)
-
+<!--
 ---
 
 ### Blogz
