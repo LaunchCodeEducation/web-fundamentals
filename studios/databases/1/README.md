@@ -67,7 +67,7 @@ For this studio, you'll practice writing the SQL queries to perform various data
 
 ### Your Task:
 
-Even though our database does not have entries in it, we can imagine that it does, and query it accordingly! Referencing the table definitions above, write the SQL commands to do the following:
+Even though our database does not have entries in it, we can imagine that it does, and query it accordingly! Referencing the table definitions above, write the SQL commands to carry out each of the queries described below. Write your answers in a text/code editor.
 
 1. List all the titles of the movies in the database.
 
