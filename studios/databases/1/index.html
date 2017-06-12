@@ -127,7 +127,7 @@
                                         <h1>Studio: Databases Part 1</h1>
                     <p>This studio has two parts, corresponding to what you'll learn in classes 7 and 8, respectively. In the first part of this studio, we'll create and manipulate tables, as well as explore the parallels between Python objects and database tables. In the second part of this studio, we'll make a real database locally and use it to perform SQL queries through <em>phpMyAdmin</em>.</p>
 <h2 id="walkthrough">Walkthrough</h2>
-<p>Let's relate what you've been learning about SQL and databases to your work on FlickList. We'll start with a database called &quot;movie-buff&quot; and create two tables in it, <code>movies</code> and <code>directors</code>. Let's think about what kind of columns we want in our tables. For the <code>movies</code> table, it makes sense to have columns for the <code>title</code> of the movie, the year it was <code>released</code>, and who the <code>director</code> is. We're also going to want to have a unique <code>movie_id</code> column as the primary key, since there can be more than one movie with the same title.</p>
+<p>Let's relate what you've been learning about SQL and databases to your work on FlickList. We'll start with a database called &quot;movie-buff&quot; and create two tables in it, <code>movies</code> and <code>directors</code>. Let's think about what kind of columns we want in our tables. For the <code>movies</code> table, it makes sense to have columns for the <code>title</code> of the movie, the <code>year</code> it was released, and who the <code>director</code> is. We're also going to want to have a unique <code>movie_id</code> column as the primary key, since there can be more than one movie with the same title.</p>
 <p>Take the time now to think about what data types you might use for these columns (<code>INTEGER</code>, <code>VARCHAR</code>, <code>DATE</code>, etc.), then go ahead and write (or type) the SQL statement to create this table.</p>
 <p>As you were thinking about which data types to use for your table columns, you may have found yourself thinking, &quot;if this were a property of a Python object, what data type would I use?&quot; For instance, if I had a <code>movie</code> object in Python, and one of its properties was <code>title</code>, I would expect the data type for it to be a string, like &quot;The Year of Living Dangerously&quot;. And I would expect the year it was released to be an integer, and the name of the director to be another string. This conceptual overlap between databases and Python objects is very useful, and we will explore it further in class 9 when you look at ORM (Object-relational mapping). Here's how such a table could be created:</p>
 <pre><code class="language-sql">CREATE TABLE movies (
@@ -153,7 +153,7 @@
 CREATE TABLE movies (
     movie_id INTEGER PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(120),
-    released INTEGER,
+    year INTEGER,
     director_id INTEGER,
     FOREIGN KEY (director_id) REFERENCES directors(director_id)
 );</code></pre>
