@@ -49,12 +49,12 @@ Create a web-app that presents the user with a "sign up" form, and responds appr
 Create a web-app that allows the user to create blog posts and browse and read previously-created posts.
 
 [Work on Build-a-blog](./build-a-blog/)
-<!--
+
 ---
 
-### Blogz
+## Blogz
 
 Expand upon the previous assignment by introducing user accounts, so that each blog post is associated with a particular user, and users must be logged in to create posts.
 
 [Work on Blogz](./blogz/)
--->
+
