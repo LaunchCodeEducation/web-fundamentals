@@ -17,7 +17,7 @@ It is imperative that you code along with the resources below in order to be rea
 
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
-Do | Interactive Course | [Khan Academy: Intro to SQL][sql-khan] | Complete all the lessons in: SQL basics, More advanced SQL queries, Relational queries in SQL, and Modifying databases with SQL. This will give you an overview of how relational databases work as well as practice with common queries. 
+Do | Interactive Course | [Khan Academy: Intro to SQL][sql-khan] | Complete **all** the lessons in: _SQL basics_, _More advanced SQL queries_, _Relational queries in SQL_, and _Modifying databases with SQL_. This will give you an overview of how relational databases work as well as practice with common queries. 
 Do | Exercises | [w3schools SQL Tutorial][w3c-sql] | Do all the lessons under "SQL Tutorial" from SQL Home through SQL Comments. Some of this content will overlap with what you learned in the Khan Academy tutorials; that's okay--the more practice, the better! Stop when you get to the lessons under "SQL Databases" as we will work through these in the next lesson. If you are running low on time, prioritize the lessons on SQL syntax and concepts that you are unfamiliar with or found confusing during the Khan Academy tutorials.
 Read | Article | [SQL: JOINS][tech-net] | This Tech on the Net article is a worthwhile read if you find the idea of joins confusing. Joins are essential to understand and this article has Venn diagrams for the different joins, which is helpful for visualizing them.
 
