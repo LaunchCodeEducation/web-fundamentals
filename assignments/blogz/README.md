@@ -3,140 +3,201 @@ title: 'Assignment: Blogz'
 currentMenu: assignments
 ---
 
-For the last problem set, we built a blog. We were able to persist data in the datastore and retrieve that data for display. However, there are still some serious feature gaps. We're going to fill those in during this problem set.
+In the last problem set we built a blog. We were able to persist data in the database and retrieve that data for display. However, there are still some serious feature gaps. We're going to fill those in now.
 
-We'll add authentication, so that users have to log in to create posts. Additionally, users will have their own blogs, and visitors will be able to view an individual's blog on it's own, or a listing of all blog posts on the site. Finally, our site will be usable by the rest of the world!
+In this assignment, we'll refactor and expand our codebase to make this a multi-user blog site. We'll add authentication, so that users have to log in to create posts. Additionally, users will have their own blogs page, and visitors will be able to view blogs by author, or they can view all blog posts on the site by all authors. And we'll still maintain the ability to view an individual blog entry by itself.
 
-Throughout the assignment, refer to the [demo app][blogz-demo]. Feel free to create an account, make a post or two, and poke around.
+Throughout the assignment, refer to the [demo app][blogz-demo] which models the functionality your app will have by the end of the assignment. Feel free to create an account, make a post or two, and poke around. Note that some of the urls won't match the ones that you have exactly, since we will be using query parameters which were not used in the demo app.
 
-## Setting Up
+This assignment is the culmination of everything you've learned so far in Unit 2. Therefore, it is quite large and may seem like a lot of work. Just remember to take it one step at a time, and work on one task at a time. Some of these tasks we'll work through together, and some will be left to you to implement. Also, the video lessons for [Get It Done!](../../videos/get-it-done/) will be invaluable as you work through this assignment. If you forget how to do something or encounter a bug, reviewing those lessons will help you figure it out!
 
-LaunchCode staff has done a bit of work to get started on this project, so you'll start by checking out the code from GitHub. Visit the [repository page on GitHub][blogz-repo] and fork the project. Recall that this creats a copy of the project under your personal GitHub account.
+Here are the steps we'll take as we build our impressive blog app:
 
-Then, clone your fork/copy to your machine and make a new App Engine app. This process is the same as the "Clone the repository" and "Create new App Engine app" sections of [Flicklist 1 Walkthrough][flicklist1-walkthrough], with your blogz page in place of the flicklist-python page, and with the app ID `blogz` in place of `flicklist-python`.
+- [Project Setup](#project-setup)
+- [Overview of Improvements](#overview-of-improvements)
+    - [A Note About Use Cases](#a-note-about-use-cases)
+- [Add User Class](#add-user-class)
+- [Add Login and Signup Pages](#add-login-and-signup-pages)
+- [Add Logout Function and Navigation](#add-logout-function-and-navigation)
+- [Require Login](#require-login)
+- [Functionality Check](#functionality-check)
+- [Make a Home Page](#make-a-home-page)
+- [Create Dynamic User Pages](#create-dynamic-user-pages)
+- [Bonus Missions](#bonus-missions)
+    - [Add Pagination](#add-pagination)
+    - [Add Hashing](#add-hashing)
 
-If you try to run the app at this point, you will enounter errors. We have left out some important code, which you'll be writing for this assignment.
+## Project Setup
 
-For an in-depth look at the starter code, watch the [walkthrough][starter-code-walkthrough].
+Since this assignment is a continuation of *Build-a-Blog*, we'll want to use the files we created in that assignment, but we don't want to alter that repository. We want a separate repository called *Blogz*. To accomplish this, take the following steps:
 
-## Starter code
+1. At [GitHub.com](https://github.com/), create a new repository called `blogz`. Copy the URL for the repository.
+2. In your terminal, `cd` into your `build-a-blog` repository. Make sure you are on your `master` branch and that it is up to date and contains your working solution to the last assignment. 
+3. Push this to the new repository you created on GitHub using the URL you copied: `git push https://github.com/yourUSERNAME/blogz.git`.
+4. `cd` into your main development folder `LC101` (this will probably mean you just use `cd ..`).
+5. Clone the repo locally using the same URL as you used to push: `git clone https://github.com/yourUSERNAME/blogz.git`.
 
-Review the starter code in the project. It is essentially the solution to the build-a-blog assignment, with a few notable additions. In particular, we've added most of the code necessary to allow users to create accounts and log in and out.
-
-### User accounts
-
-There are three handlers associated with user account actions: `SignupHandler`, `LoginHandler`, and `LogoutHandler`. Most of the code required to make these work properly is in place. You should read through it all, and hopefully you'll find much of it familiar.
-
-The `SignupHandler` should look familiar to you; it is essentially the solution to the Signup portion of the User Signup problem set from earlier in the unit, and from Flicklist.
-
-The `User` class is in the file `models.py`, which also contains the `Post` model class. These classes represent a user of the site -- that is, somebody with an account -- and a blog post, respectively. We put our model classes in a separate file for organizational purposes, and then import them at the top of `main.py`.
-
-### hashutils.py
-
-Open up `hashutils.py`. Here you'll find code that should look familiar from recent lessons on cookies and hashing. In fact, you likely wrote some of the exact same code for the quizzes for Lesson 4 in the Udacity course. In `main.py`, we've imported the `hashutils` module and used it to create and validate secure hashes for cookies and passwords in `SignupHandler` and `LoginHandler`.
+Now you can `cd` into the `blogz` repo on your computer and start adding to and modifying it for this assignment!
 
 <aside class="aside-note" markdown="1">
-Understanding hashing is hard. We haven't spend much time talking about it yet, but will do so in-depth in class 13. At this point, you don't need to understand the details of what the code in `hashutils.py` is doing so much as that it's there, and we'll explore it in more depth soon.
+Be sure to activate your virtual environment once you `cd` into your new repo: `source activate flask-env`.    
 </aside>
 
-That's a very quick, high-level introduction to the starter code. Spend some time with it, and when you're ready, dive into your tasks below.
+One very important change we still need to make is to the database. We'll want to make a new database specific to this assignment, and then alter our database connection string in `main.py` so that it uses this database (and the associated user/password). So follow the instructions for [creating a new database](../../studios/flicklist/6/#create-mysql-user-and-database) using `blogz` as your user name and a password of your choice. Then change the connection string on this line of `main.py` so that it reflects this new database:
 
-## Your Tasks
+```python
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://blogz:password@localhost:8889/blogz'
+```
 
-First, a message:
+Then you'll need to initialize your new database: 
 
-<aside class="aside-warning" markdown="1">
-We'll cover some concepts related to the tasks below in the Flicklist 9 studio. If you haven't completed that, or are just reading this before the given class date, keep that in mind. All of the items below are doable before doing Flicklist 9, but having completed that studio will help.
+```nohighlight
+(flask-env) $ python
+from main import db, Blog
+db.create_all()
+db.session.commit()
+```
+
+## Overview of Improvements
+
+This is a high-level overview of the major differences between your *Build-a-Blog* app and the *Blogz* app you will create in this assignment. We will tackle one change at a time; this just serves as a quick checklist that you can review to make sure you've added the necessary changes.
+
+- We will add the following templates: `signup.html`, `login.html`, and `index.html`.
+
+- We will also add a `singleUser.html` template that will be used to display only the blogs associated with a single given author. It will be used when we dynamically generate a page using a `GET` request with a `user` query parameter on the `/blog` route (similar to how we dynamically generated individual blog entry pages in the last assignment).
+
+- We will add the following route handler functions: 'signup', 'login', and 'index'.
+
+- We'll have a `logout` function that handles a `POST` request to `/logout` and redirects the user to "/blog" after deleting the username from the session.
+
+- We will also, naturally, have to add a `User` class to make all this new functionality possible, which is what we'll tackle next after a brief explanation of use cases.
+
+### A Note About Use Cases
+
+*Use cases* help us break down our desired functionality into smaller, testable stories. Instead of just saying that we want our app to have a login feature, we further pare down what that means into example scenarios which we can then test one at a time. For instance, in this example we might break it down into the following three use cases:
+
+1. User enters a username that is stored in the database with the correct password and is redirected to the `/newpost` page with their username being stored in a session.
+2. User enters a username that is stored in the database with an incorrect password and is redirected to the `/login` page with a message that their password is incorrect.
+3. User tries to login with a username that is not stored in the database and is redirected to the `/login` page with a message that this username does not exist.
+
+This helps us define exactly what we want our app to do. It also makes it easier to break down our work into small, testable chunks. We will be using use cases informally in this assignment to make clear exactly what your app should do in different instances. If you want to learn more about how use cases are more formally used, read this [Usability.gov article](https://www.usability.gov/how-to-and-tools/methods/use-cases.html).
+
+## Add User Class
+
+To get started, the first thing we'll want to do is add a `User` class and associated table to our app. It should have the following properties: 
+
+- `id` which is an `Integer` primary key that auto-increments (just like the others you've created in class)
+- `username` which will be a `String` with a size of your choosing
+- `password` which will also be a `String` with a size of your choosing
+- `blogs` which signifies a relationship between the blog table and this user, thus binding this user with the blog posts they write.
+
+<aside class="aside-note" markdown="1">
+Feel free to reuse (with modifications) parts of the code from your *Get It Done!* app, or use [ours](https://github.com/LaunchCodeEducation/get-it-done/tree/d979a9991347431023d41abdd93891aedafc1f93) since there are many similarities between that app and this one. Just make sure to modify it so that it matches the naming and functionality suggested in the assignment instructions on this page. And note that, as we mentioned in the video lessons, storing passwords directly in the database is **NOT** a good practice. We only do so in those video lessons and in this assignment because we have not yet covered hashing, which will be the subject of Class 13.
 </aside>
 
-Ready? Great! Here we go...
+We'll also need to amend the `Blog` class in `main.py` (and in the database) so that it has a property called `owner_id` which is a foreign key linking the user's id to the blog post. And we'll need to amend the `Blog` constructor so that it takes in a user object (again, you can review the *Get It Done!* code for a reminder of how to do this). And think about what you'll need to do in your `/newpost` route handler function since there is a new parameter to consider when creating a blog entry.
 
-### Add Login Form
+After we make these changes to our code, we'll need to drop and re-create our tables using a Python shell. If you need a reminder of this process, review the second and third bullet items [here](../../studios/flicklist/6/#modify-flicklist-to-store-movie-ratings). Make sure to `from main import db, Blog, User` at the start of your shell session.
 
-Start up the app and visit the path `/signup`. Go ahead and fill out the form to create an account for yourself. There are two ways to verify that this worked:
+## Add Login and Signup Pages
 
-**Method 1:** You are redirected to the `/blog/newpost` page, and if you look at the cookies stored in your browser, you'll see one with the name `user_id`. To view your cookies, open up the developer tools in your browser, and type `document.cookie` in the console (you may see other cookies too).
+Let's make use of our new `User` class by enabling visitors to our web app to create an account and login. We'll need to make templates called `login.html` and `signup.html` and then create route handlers for them in `main.py`. With appropriate modifications, you'll be able to reuse a lot of the code you wrote for the *Get It Done*. The code from your *User Signup* app may also come in handy for some of the validation tasks.
 
-![document.cookies](document-cookies.png)
+Make sure the following use cases are fulfilled:
 
-**Method 2:** Visit the SDK Console for Google App Engine. Here's how to launch it from the GAE Launcher:
+- For `/login` page:
 
-![SDK Launcher](sdk-launcher.png)
+    - User enters a username that is stored in the database with the correct password and is redirected to the `/newpost` page with their username being stored in a session.
+    - User enters a username that is stored in the database with an incorrect password and is redirected to the `/login` page with a message that their password is incorrect.
+    - User tries to login with a username that is not stored in the database and is redirected to the `/login` page with a message that this username does not exist.
+    - User does not have an account and clicks "Create Account" and is directed to the `/signup` page.
 
-Then visit the "Datastore Viewer" link and select User from the Entity Kind dropdown, and hit List Entities to display all users. You should see a row for the user you just created.
+- For `/signup` page:
 
-![User entities](user-entities.png)
+    - User enters new, valid username, a valid password, and verifies password correctly and is redirected to the '/newpost' page with their username being stored in a session.
+    - User leaves any of the username, password, or verify fields blank and gets an error message that one or more fields are invalid. 
+    - User enters a username that already exists and gets an error message that username already exists.
+    - User enters different strings into the password and verify fields and gets an error message that the passwords do not match.
+    - User enters a password or username less than 3 characters long and gets either an invalid username or an invalid password message.
 
-If you then visit the path `/logout`, you'll be logged out. To allow users to log in and out conveniently, do the following:
-
-* Create a `login.html` template that extends `base.html`. It should contain a form with a username and password field, and a submit button. To figure out exactly what the field names should be, and how the form should be submitted, look at `LoginHandler` and note that its route is set up to be `/login`. The template will be passed a parameter named `error` in the case of a login error, such as incorrect password or username. Make sure to display this error somewhere in your template. You may use the CSS class `error` to have this message styled appropriately.
-* In `base.html` add links for logging in and logging out. The login link should take the user to the login form. The logout link should take the user to `/logout`, which will log the user out and redirect them to another page. You don't need to worry about only displaying these when a user is logged in, as many sites behave. These links will be visible for all site visitors, regardless of whether or not they are logged in.
-
-Note that we have a `login.html` template and a `signup.html` template, but no `logout.html` template. It turns out that we don't need a template for logging out. Think about why this is the case. What makes logging out different from logging in, or creating an account?
-
-### Add author Field to the Post Class
-
-We saw above that our `models.py` file contains the two model classes for our application: `Post` and `User`. However, they are not yet linked in any way. If a `User` is able to create posts, and each post is created by a `User`, then there should be some explicit link between the two objects.
-
-Your task is to add an `author` field to the `Post` model class, so that each post will formally belong to the user that created it. To do this, add the field as a `db.ReferenceProperty`, just as we did in the last Flicklist studio. This property should be required.
-
-Once you've done this, create a new post or two, and visit the SDK Console to confirm that your new post has a value in the `author` column. This value will not make much sense (it's a string of various characters) but it's presence is enough to tell you that you did this part correctly.
-
-We can also see our posts via the "all posts" link (or, equivalently, the path `/blog`). We eventually want to be able to display only the posts written by a specific user. We'll tackle that in the next section.
-
-<aside class="aside-warning" markdown="1">
-If you create posts before adding the `author` field, such posts will break the main `/blog` page. Via the SDK Console, delete any posts that don't have a value in the `author` column.
+<aside class="aside-note" markdown="1">
+In our demo app there is an input field for email. You can omit this from your code (and thus from both your `User` class and your `signup.html` template) since it is never used.
+Also, we'll leave it up to you whether to display error messages to the user using flash messages or by passing them to the template as you did in *User Signup*. If you decide to do flash messages, add the necessary code to `main.py` and `base.html`.
 </aside>
 
-### Implement get_posts_by_user
+## Add Logout Function and Navigation
 
-Near the top of `main.py` is the `BlogHandler` class, which each of our own handers extends. The `BlogHandler` includes some important utilities that we'll need to use throughout our app. In particular, it will help us fetch blog post data from the database.
+Now that users can login, we want to allow them to log out. To do so, you'll implement the same functionality you did in *Get It Done* and you'll add a link to your navigation in `base.html` with `href="/logout"` and a route handler function to `main.py` to handle that request. It should delete the username from the session and redirect to `/blog`.
 
-The first method, `get_posts(self, limit, offset)`, fetches posts by all users from the database so that:
+While we're adding navigation links, let's also add a link to `"/login"` and to `"/"`, which will take users to the page we'll build in `index.html` that will display a list of all the usernames. You can call that page "Home".
 
-* Posts are ordered by time created, in descending order (newest post first)
-* Only `limit` posts are returned. So if limit is 5, we get 5 posts back.
-* The posts that are returned start with post number `offset + 1`. In other words, if `offset` is 10 and `limit` is 5, we get posts 11-15.
+<aside class="aside-note" markdown="1">
+Note that we have a `login.html` template and a `signup.html` template, but no `logout.html` template. It turns out that we don't need a template for logging out. Think about why this is the case. What makes logging out different from logging in, or creating an account?    
+</aside>
 
-The code is written this way to enable us to implement "paging", where we display a limited number of posts per page, and allow the user to view subsequent pages. This behavior is useful when there are a large number of blog posts, and it is primarily implemented in `BlogIndexHandler`. `get_posts` uses the `Query` class from `google.appengine.ext.db`, which we encountered in the last Flicklist studio.
+## Require Login
 
-Many application frameworks will make it possible for you to retrieve data either via a direct query (as we do in `get_user_by_name`) or via some special methods that it provides in an **object-relational mapping (ORM)** library. When dealing with more complicated queries, it's preferable to use the ORM library since it can easily handle complicated filtering with big data sets, as well as object relationships. [Read more about the `Query` class][gae-query-class] in Google's documentation.
+Now that we have a `User` class and the ability for visitors to signup and login, we don't want just anyone to be able to post on our blog site. We want to require that users have an account and be logged in to be able to access the `/newpost` page. So we'll need the `session` object to work this magic. And don't forget the secret key!!
 
-To allow visitors to view a user's blog (i.e. all posts from a given user), we need to finish implementing the `get_posts_by_user` method. We've started it for you, but you'll need to finish. You'll need to do something similar to `get_posts`, but you'll need to filter based on the `author` field. Refer to the [documentation for the `filter` method][gae-query-filter], as well as the last Flicklist studio.
+And just as we did in the video lessons for *Get It Done*, we'll want to add a `require_login` function and decorate it with `@app.before_request`. The routes that we'll allow are: 'login', 'list_blogs' (or whatever you have named your route handler function for `/blog`), 'index', and 'signup'. We have not yet made the template or route handler for `/` and `index.html`, which corresponds to 'index' in the list above, but we'll add that shortly.
 
-If you've properly implemented this method, you will be able to use paths of the form `/blog/USERNAME` (substituting an actual username for USERNAME) to view recent posts by a specific user. We've done the work of displaying these posts, and properly handling the special URLs, in the routes section at the bottom of `main.py`, and in `BlogIndexHandler`.
+<aside class="aside-note" markdown="1">
+Note that when we use `request.endpoint` to match against our `allowed_routes` list, the `endpoint` is the name of the view *function*, not the url path. That is why in the list above we put `'login'` in the allowed_routes list, rather than `'/login'`. And if you have a different name for the view function for `/blog` than `list_blogs`, substitute your function name in the list we create above.
+</aside>
 
-To test your code you should create a few posts under multiple user accounts, and check that they display properly when using the user-specific blog URLs.
+If the user is trying to go to any route besides these **and** is not logged in (their username is not stored in a session), then we want to redirect them to the `/login` page.
 
-### Add Author Links
+## Functionality Check
 
-Now visitors can go to paths like `/blog/jesse` to see a specific user's blog posts. But how will they know that they can do this? We need to provide an intuitive way for visitors to find their way to these pages.
+At this point in the assignment, your app should also include the following functionality:
 
-#### Author Links on Post Lists
+- User is logged in and adds a new blog post, then is redirected to a page featuring the individual blog entry they just created (as in *Build-a-Blog*).
+- User visits the `/blog` page and sees a list of all blog entries by all users.
+- User clicks on the title of a blog entry on the `/blog` page and lands on the individual blog entry page.
+- User clicks "Logout" and is redirected to the `/blog` page and is unable to access the `/newpost` page (is redirected to `/login` page instead).
 
-The `blog.html` template is where we list out several posts on a single page. It is rendered by `BlogIndexHandler`.
+## Make a Home Page
 
-Modify this template so that below each post is a link to the author's blog. Refer to the [demo app][blogz-demo-blog] to see precisely how this should look and work.
+Now we can see a list of all blogs by all users on the `/blog` page, but what if a visitor to the site only wants to see the blogs for a particular author? To make that easy for the visitor, let's add a "Home" page that will live at the route `/` and will display a list of the usernames for all the authors on the site. Make a template called `index.html` that displays this list, and in `main.py` create a route handler function for it (named `index` so that it is included in the allowed routes we listed above).
 
-#### Author Links Below Individual Post Pages
+## Create Dynamic User Pages
 
-Like in the Build-a-blog assignment, post titles have permalinks which link to the unique page for each post. A path for such a link might look like `/blog/6192449487634432`. These pages use the `post.html` template and are handled by `ViewPostHandler`, and they currently display only the date that the post was written on, just below the post body. As above, modify this template to display the author, and link back to the author's blog page.
+Just as we created a page to dynamically display individual blog posts in [Build-a-Blog](../build-a-blog/#display-individual-entries), we'll create a page to dynamically display the posts of each individual user. We'll use a `GET` request on the `/blog` path with a query parameter of `?user=userId` where "userId" is the integer matching the id of the user whose posts we want to feature. And we'll need to create a template for this page.
 
-When you're done with this task, you're ready to submit.
+There are three ways that users can reach this page and they all require that we make some changes to our templates. We will need to display, as a link, the username of the author of each blog post in a tagline on the individual blog entry page and on the `/blog` page. (Check out our demo app and see the line "Written by..." underneath the body of the blog posts. Note that on the individual entry page the demo app also features the date the blog was written, but that is not required for this assignment. However, if you fulfilled the second bonus mission in [Build-a-Blog](../build-a-blog/#bonus-missions) using a `DateTime` column, then you can utilize that field here to make your display match the demo app's.) 
+
+<aside class="aside-note" markdown="1">
+Remember that each `Blog` object has an owner associated with it (passed to it in the constructor), so you can access the properties of that owner (such as `username`, or `id`) with dot notation.
+</aside>
+
+Then you'll have to amend the `/blog` route handler to render the correct template (either the one for the individual blog user page, or the one for the individual blog entry page) based on the arguments in the request (i.e., which name the query parameter has). If the query param is `user`, then you need to use the template for the individual user page and pass it a list of all the blogs associated with that user.
+
+We also need to change our `index.html` to make the list items of authors into anchor tags that will link to the individual blog user page. 
+
+Here are the relevant use cases:
+
+- User is on the `/` page ("Home" page) and clicks on an author's username in the list and lands on the individual blog user's page.
+- User is on the `/blog` page and clicks on the author's username in the tagline and lands on the individual blog user's page.
+- User is on the individual entry page (e.g., `/blog?id=1`) and clicks on the author's username in the tagline and lands on the individual blog user's page.
+
+## Bonus Missions
+
+Before embarking on these bonus missions, make sure to commit and push your working code to GitHub!
+
+### Add Pagination
+
+To limit the scrolling that users have to do if they visit a page with multiple blog posts on it, we'll implement pagination on our individual users page and our "all blogs" (`/blog`) page. The *Flask-SQLAlchemy* API makes this a fairly straightforward process. Review the documentation on pagination in the [Utilities](http://flask-sqlalchemy.pocoo.org/2.1/api/#utilities) section and also the [Models](http://flask-sqlalchemy.pocoo.org/2.1/api/#models), which describes a `paginate` method that is part of the class `flask.ext.sqlalchemy.BaseQuery`.
+
+We recommend limiting posts to 5 per page.
+
+### Add Hashing
+
+After completing the video lessons on hashing, come back to this assignment and refactor your code so that you utilize hashing instead of storing passwords directly.
 
 ## Submit
 
 To turn in your assignment and get credit, follow the [submission instructions][submission-instructions].
 
-<aside class="aside-note" markdown="1">
-Remember that you should ignore any Udacity instructions about hosting your app out on the internet and posting the link so they can grade it. You don't have to submit your work to Udacity.
-</aside>
-
 [blogz-demo]: http://blogz-demo.appspot.com/
 [blogz-demo-blog]: http://blogz-demo.appspot.com/blog
-[blogz-repo]: https://github.com/LaunchCodeEducation/blogz
-[flicklist1-walkthrough]: ../../studios/flicklist/1/walkthrough/
-[gae-query-class]: https://cloud.google.com/appengine/docs/python/datastore/queryclass
-[gae-query-filter]: https://cloud.google.com/appengine/docs/python/datastore/queryclass#Query_filter
-[starter-code-walkthrough]: https://youtu.be/KtPNiBUlqA0
 [submission-instructions]: ../
