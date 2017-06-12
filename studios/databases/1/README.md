@@ -7,7 +7,7 @@ This studio has two parts, corresponding to what you'll learn in classes 7 and 8
 
 ## Walkthrough
 
-Let's relate what you've been learning about SQL and databases to your work on FlickList. We'll start with a database called "movie-buff" and create two tables in it, `movies` and `directors`. Let's think about what kind of columns we want in our tables. For the `movies` table, it makes sense to have columns for the `title` of the movie, the year it was `released`, and who the `director` is. We're also going to want to have a unique `movie_id` column as the primary key, since there can be more than one movie with the same title.
+Let's relate what you've been learning about SQL and databases to your work on FlickList. We'll start with a database called "movie-buff" and create two tables in it, `movies` and `directors`. Let's think about what kind of columns we want in our tables. For the `movies` table, it makes sense to have columns for the `title` of the movie, the `year` it was released, and who the `director` is. We're also going to want to have a unique `movie_id` column as the primary key, since there can be more than one movie with the same title.
 
 Take the time now to think about what data types you might use for these columns (`INTEGER`, `VARCHAR`, `DATE`, etc.), then go ahead and write (or type) the SQL statement to create this table.
 
@@ -47,7 +47,7 @@ DROP TABLE movies;
 CREATE TABLE movies (
     movie_id INTEGER PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(120),
-    released INTEGER,
+    year INTEGER,
     director_id INTEGER,
     FOREIGN KEY (director_id) REFERENCES directors(director_id)
 );
