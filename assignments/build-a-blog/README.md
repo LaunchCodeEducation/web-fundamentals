@@ -27,6 +27,16 @@ If you think about it for a minute, the behavior of creating a blog post, saving
 
 First, set up the blog so that the "add a new post" form and the blog listings are on the same page, as with *Get It Done!*, and then separate those portions into separate routes, handler classes, and templates. For the moment, when a user submits a new post, redirect them to the main blog page.
 
+<aside class="aside-note" markdown="1">
+Once you have made a `Blog` class with the necessary properties (i.e., an `id`, `title`, and `body`), you'll need to initialize your database:
+```nohighlight
+(flask-env) $ python
+from main import db, Blog
+db.create_all()
+db.session.commit()
+```    
+</aside>
+
 Make sure you can say the following about your app:
 
 - The `/blog` route displays all the blog posts.
@@ -35,7 +45,7 @@ Make sure you can say the following about your app:
 
 - You have two templates, one each for the `/blog` (main blog listings) and `/newpost` (post new blog entry) views. Your templates should extend a `base.html` template which includes some boilerplate HTML that will be used on each page.
 
-- In your `base.html` template, you have some [navigation links](https://www.w3schools.com/tags/tag_nav.asp) that link to the blog home, and the add new blog page.
+- In your `base.html` template, you have some [navigation links](https://www.w3schools.com/tags/tag_nav.asp) that link to the main blog page and to the add new blog page.
 
 - If either the **blog title** or **blog body** is left empty in the new post form, the form is rendered again, with a helpful error message and any previously-entered content in the same form inputs.
 
@@ -81,7 +91,7 @@ Note: Be sure to commit and push your changes before proceeding to these extra t
 
 1. Add a CSS stylesheet to improve the style of your app. You can read about how to do so [here](https://stackoverflow.com/questions/22259847/application-not-picking-up-css-file-flask-python). And know that clearing your browsing data (especially your cached images and files) can help if you run into problems with your display not reflecting changes you make to your CSS stylesheet.
 
-2. Display the posts in order of most recent to the oldest (the opposite of the current order).
+2. Display the posts in order of most recent to the oldest (the opposite of the current order). You can either use the `id` property that has been created using auto-incrementing, or - a more sophisticated method - you can add a `DateTime` property to the `Blog` class (and drop and re-create the table) that will store the date the post was created in the database. For an example of an app with a DateTime column, check out this [quickstart guide](http://flask-sqlalchemy.pocoo.org/2.1/quickstart/#simple-relationships).
 
 ## Submit
 
