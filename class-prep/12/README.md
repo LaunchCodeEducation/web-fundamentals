@@ -20,7 +20,7 @@ Open up your `flicklist-flask` project. Let's think about it in terms of the MVC
 
 If you were to organize the application based on MVC principles, in which of the three components would you put:
 - Jinja templates
-- Handler classes and methods (e.g. `Index` and `AddMovie`)
+- Handler classes and methods (e.g. `index` and `add_movie`)
 - The `User` and `Movie` classes
 
 <aside class="aside-note" markdown="1">
