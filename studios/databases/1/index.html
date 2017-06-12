@@ -127,21 +127,45 @@
                                         <h1>Studio: Databases Part 1</h1>
                     <p>This studio has two parts, corresponding to what you'll learn in classes 7 and 8, respectively. In the first part of this studio, we'll create and manipulate tables, as well as explore the parallels between Python objects and database tables. In the second part of this studio, we'll make a real database locally and use it to perform SQL queries through <em>phpMyAdmin</em>.</p>
 <h2 id="walkthrough">Walkthrough</h2>
-<p>Let's relate what you've been learning about SQL and databases to your work on FlickList. We'll start with a database called &quot;movie-buff&quot; and create two tables in it, <code>movies</code> and <code>directors</code>. Let's think about what kind of columns we want in our tables. For the <code>movies</code> table, it makes sense to have columns for the <code>title</code> of the movie, the <code>year</code> it was released, and who the <code>director</code> is. We're also going to want to have a unique <code>movie_id</code> column as the primary key, since there can be more than one movie with the same title.</p>
-<p>Take the time now to think about what data types you might use for these columns (INTEGER, VARCHAR, DATE, etc.), then go ahead and write (or type) the SQL statement to create this table.</p>
-<p>As you were thinking about which data types to use for your table columns, you may have found yourself thinking, &quot;if this were a property of a Python object, what data type would I use?&quot; For instance, if I had a <code>movie</code> object in Python, and one of its properties was <code>title</code>, I would expect the data type for it to be a string, like &quot;The Year of Living Dangerously&quot;. And I would expect the year it was released to be an integer, and the name of the director to be another string. This conceptual overlap between databases and Python objects is very useful, and we will explore it further in class 9 when you look at ORM (Object-relational mapping).</p>
+<p>Let's relate what you've been learning about SQL and databases to your work on FlickList. We'll start with a database called &quot;movie-buff&quot; and create two tables in it, <code>movies</code> and <code>directors</code>. Let's think about what kind of columns we want in our tables. For the <code>movies</code> table, it makes sense to have columns for the <code>title</code> of the movie, the year it was <code>released</code>, and who the <code>director</code> is. We're also going to want to have a unique <code>movie_id</code> column as the primary key, since there can be more than one movie with the same title.</p>
+<p>Take the time now to think about what data types you might use for these columns (<code>INTEGER</code>, <code>VARCHAR</code>, <code>DATE</code>, etc.), then go ahead and write (or type) the SQL statement to create this table.</p>
+<p>As you were thinking about which data types to use for your table columns, you may have found yourself thinking, &quot;if this were a property of a Python object, what data type would I use?&quot; For instance, if I had a <code>movie</code> object in Python, and one of its properties was <code>title</code>, I would expect the data type for it to be a string, like &quot;The Year of Living Dangerously&quot;. And I would expect the year it was released to be an integer, and the name of the director to be another string. This conceptual overlap between databases and Python objects is very useful, and we will explore it further in class 9 when you look at ORM (Object-relational mapping). Here's how such a table could be created:</p>
+<pre><code class="language-sql">CREATE TABLE movies (
+    movie_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(120),
+    year INTEGER,
+    director VARCHAR(120)
+);</code></pre>
 <p>Next, let's think about what kind of properties we'd expect a <code>director</code> object in Python to have. It would probably have a <code>first</code> name, a <code>last</code> name, and maybe the <code>country</code> where the director was born. Thinking about what kind of data types we'd expect those properties to be, let's go ahead and write the SQL to create a table, <code>directors</code>, with the corresponding columns and appropriate data types. Also, be sure to have an <code>director_id</code> column so that we have a valid primary key.</p>
-<p>So far, you have the table <code>movies</code> with the columns <code>movie_id</code>, <code>title</code>, <code>year</code>, and <code>director</code>. You also have the table <code>directors</code> with the columns <code>director_id</code>, <code>first</code>, <code>last</code>, and <code>country</code>. Before we go further, let's take a moment to think about how these two tables relate to each other, and whether we may want to modify the column <code>director</code> in the <code>movies</code> table. Understanding the one-to-many relationship that is common among database tables will help us to come up with the best design for these two tables. Read <a href="http://www.databaseprimer.com/pages/relationship_1tox/" target="_blank">this article</a> to get an overview of the one-to-many concept in relational databases.</p>
-<p>There seems to be a parallel relationship between the <code>books</code> and <code>authors</code> tables in the article and our <code>movies</code> and <code>directors</code> tables. Following their example, we want to modify the <code>director</code> column in <code>movies</code> to become <code>director_id</code> and therefore to be an INTEGER instead of a VARCHAR (as that is the type we used earlier when we thought the director column would hold the name of a director). We also will want to make the <code>director_id</code> column a foreign key, so that it links directly to the <code>director_id</code> column of the <code>directors</code> table. Go ahead and write the SQL to drop the <code>movies</code> table we had created, and then write the SQL to create a new table with these changes. </p>
+<pre><code class="language-sql">CREATE TABLE directors (
+    director_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    first VARCHAR(120),
+    last VARCHAR(120),
+    country VARCHAR(120)
+);</code></pre>
+<p>Before we go further, let's take a moment to think about how these two tables relate to each other, and whether we may want to modify the column <code>director</code> in the <code>movies</code> table. Understanding the one-to-many relationship that is common among database tables will help us to come up with the best design for these two tables. A director may direct multiple movies, but each movie may only have one director.</p>
+<aside class="aside-note">
+<p>Read <a href="http://www.databaseprimer.com/pages/relationship_1tox/" target="_blank">this article</a> to get an overview of the one-to-many concept in relational databases.</p>
+</aside>
+<p>In order to reflect this relationship in the table definitions, let's modify the <code>director</code> column in <code>movies</code> to become <code>director_id</code> and therefore to be an <code>INTEGER</code> instead of a <code>VARCHAR</code> (as that is the type we used earlier when we thought the director column would hold the name of a director). We also will want to make the <code>director_id</code> column a foreign key, so that it links directly to the <code>director_id</code> column of the <code>directors</code> table. Go ahead and write the SQL to drop the <code>movies</code> table we had created, and then write the SQL to create a new table with these changes.</p>
+<pre><code class="language-sql">DROP TABLE movies;
+
+CREATE TABLE movies (
+    movie_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(120),
+    released INTEGER,
+    director_id INTEGER,
+    FOREIGN KEY (director_id) REFERENCES directors(director_id)
+);</code></pre>
 <aside class="aside-note">
 <p>If you need tips on how to do this, check out the w3school's brief lessons on <a href="https://www.w3schools.com/sql/sql_drop_table.asp" target="_blank">SQL Drop Table</a>, <a href="https://www.w3schools.com/sql/sql_create_table.asp" target="_blank">SQL Create Table</a>, and <a href="https://www.w3schools.com/sql/sql_foreignkey.asp" target="_blank">SQL Foreign Key</a>. Follow the MySQL syntax instructions where there is syntax variation between the major databases.</p>
 </aside>
-<p>This kind of table structure keeps our database clean. It keeps data specific to directors in the <code>directors</code> table, and data specific to each movie in the <code>movies</code> table and provides a link between the two tables. This is a &quot;clean&quot; design, because data such as what country the director of a movie is from isn't really an attribute of the movie, it's an attribute of the director. After all, you wouldn't put <code>directors_country</code> as a property of a Python <code>movie</code> object, would you? Hopefully not. :-) </p>
+<p>This kind of table structure keeps our database clean. It keeps data specific to directors in the <code>directors</code> table, and data specific to each movie in the <code>movies</code> table and provides a link between the two tables. This is a &quot;clean&quot; design, because data such as what country the director of a movie is from isn't really an attribute of the movie, it's an attribute of the director. After all, you wouldn't put <code>directors_country</code> as a property of a Python <code>movie</code> object, would you? Hopefully not. :-)</p>
 <p>Still, we may want to know that information for a given movie, e.g., we may want to find all the movies since 2010 that have French directors. So we need to have a way of filtering movies based on attributes of directors, without cluttering up the <code>movies</code> table. Solving this challenge is what relational databases are all about, and Foreign Keys are the &quot;key&quot; (pun intended) to the solution.</p>
 <h2 id="studio">Studio</h2>
-<p>For this studio, you'll practice writing the SQL queries to perform various data retrieval and manipuation tasks.</p>
+<p>For this studio, you'll practice writing the SQL queries to perform various data retrieval and manipulation tasks.</p>
 <h3 id="your-task">Your Task:</h3>
-<p>Even though our database does not have entries in it, we can imagine that it does, and query it accordingly! Write the SQL commands to do the following:</p>
+<p>Even though our database does not have entries in it, we can imagine that it does, and query it accordingly! Referencing the table definitions above, write the SQL commands to do the following:</p>
 <ol>
 <li>
 <p>List all the titles of the movies in the database.</p>
