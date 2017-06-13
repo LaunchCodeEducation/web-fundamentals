@@ -7,7 +7,7 @@ select title from movies;
 2. List all the titles of the movies in the database in descending order of the year they were released.
 
 ```sql
-select title from movies order by released desc;
+select title from movies order by year desc;
 ```
 
 3. Insert a new record into the `directors` table for Jean-Pierre Jeunet whose country of origin is France. (*Note:* Assume the column for `director_id` is auto incremented, so you don't need to put in a value for that column.)
