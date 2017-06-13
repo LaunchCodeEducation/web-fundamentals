@@ -3,38 +3,27 @@ title: 'Studio: FlickList 8'
 currentMenu: studios
 ---
 
-This studio has a different structure than past Flicklist studios. Instead of watching an instructor-led walkthrough and then talking a problem on your own, you will work through a guided tutorial to add some new features to the application. This will allow us to work through some new components in a more structured way, learning as we go.
+This studio has a different structure than past Flicklist studios. Instead of watching an instructor-led walkthrough and then tackling a problem on your own, you will be given tasks to add new features to the application straightaway. This will allow you to apply more of the concepts you've learned in class on your own.
 
 ## Studio
 
 Our app at this point has user accounts and login, but users are still collaboratively editing the same list of movies. We need to fix that:
-    - We'll add an `.owner` relationship to the `Movie` class, so that each movie "belongs to" a specific user.
-    - We will update the `/ratings` page so that a user only sees a list of movies of which she is the owner.
-
-Today, we'll enable a persistent logged-in state. In other words, once a user logs in, we'll have a way to "remember" that they were previously authenticated. We'll do this with cookies.
+    - We'll add relationships between the `Movie` and `User` classes, so that each movie "belongs to" a specific user.
+    - We'll refactor the *model* portion of the code so that it is cleaner and more reusable.
+    - We will update the `/` and `/ratings` page so that a user only sees a list of movies of which she is the owner.
 
 ### Checking Out the Studio code
 
-Before getting the starter code for this studio, fetch updates from the main repository:
-
-```nohighlight
-$ git fetch origin
-```
-
-Your task today is to fill a few of the small holes we have left, and to implement the a new "recently watched movies" page.
-
-Then, follow the [instructions for getting the code][get-the-code] in order to get the starter code for `studio8`.
-
-Since last class featured on a walkthrough and no studio, spend a few minutes with the starter code to remind yourself what was added. That way, you'll be ready to jump right in.
+Follow the [instructions for getting the code][get-the-code] in order to get the starter code for `studio8`.
 
 ### Your Tasks
 
-Note that we are no longer littering your studio code with `TODO`s. We've still provided a branch with the walkthrough code solution in it, but from now on you will have the discretion of choosing more implementation details yourself.
+Notice that we are no longer littering your studio code with `TODO`s. Your instructions for the tasks you need to fulfill will be here in this section.
 
-1. **Fix the Index method**. When the user visits the home page, she still sees *everybody's* unwatched movies. Fix it so that she only sees her own movies. Instead of a SQL query, you will need to use ORM methods like `filter_by`. For an example to reference, look at what we did during Walkthrough in `MovieRatings.get` or visit [the docs for SQLAlchemy](https://www.sqlalchemy.org/), the ORM we are using for this project.
+1. Add a `User` class to our `main.py`. Make sure that it has a column representing its relationship to the `Movie` class. And add a property to the `Movie` class that holds the id of the owner. Review the relevant [*Get it Done!* video lesson](../../../videos/get-it-done/user-task-relationship/) if you need a reminder of the process.
 
-2. **Implement a "recently watched movies" page**. This will be a new page at `/recently-watched` where users can see a list of "trending" movies. Your goal will be to implement this so that it is the same for everyone, showing the most recently watched movies by *any* user. Make a new method `RecentlyWatchedMovies` along with a new route and template. Use your Jinja ninja skills to show the list of movies. Don't forget to add a link so users know how to find the page. Each list item should look something like this:
+2. Given what you learned about the MVC pattern, refactor your code so that the `User` and `Movie` classes are moved to a file named `models.py`. For the code you put in `models.py` to work, you will need to import `db` from `main.py`. And now, in order for `main.py` to utilize the `User` and `Movie` classes, you will need to import them.
 
-You may notice one fatal issue with our application. While we can log in and log out, movie data is still being shared among all users. Furthermore, if you're even more astute, you've noticed that user passwords are being stored in plain text in the database. We'll tackle both of these issues in the next two studios.
+3. When the user visits the `/` and `/ratings` pages showing the unwatched and watched movies, she still sees *everybody's* movies. Fix it so that she only sees *her own* unwatched and watched movies. 
 
 [get-the-code]: ../getting-the-code/
