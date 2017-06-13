@@ -127,7 +127,7 @@
                                         <h1>Assignment: User Signup</h1>
                     <p>Your assignment is simply to create a user signup form where users provide a username, password, and, optionally, an email address. You must have an additional field to verify the password (the user must retype it exactly). Then you will validate the input and either redirect them to a welcome page, or provide error information if any input is invalid.</p>
 <h2 id="project-setup">Project Setup</h2>
-<p>To get started on this assignment, first create a repo (local and remote) called <code>user-signup</code> and then activate your virtual environment using <code>source activate flask-env</code>. If you need reminders on how to set up a new repository, review the instuctions for <a href="../web-caesar/#git-repository-setup">Web Caesar</a>.</p>
+<p>To get started on this assignment, first create a repo (local and remote) called <code>user-signup</code> and then activate your virtual environment using <code>source activate flask-env</code>. If you need reminders on how to set up a new repository, review the instructions for <a href="../web-caesar/#git-repository-setup">Web Caesar</a>.</p>
 <p>Next, get your project file structure set up by adding a <code>main.py</code> file and adding a directory for the template files you will make below.</p>
 <pre><code class="language-nohighlight">(flask-env) $ touch main.py
 (flask-env) $ mkdir templates</code></pre>
@@ -138,7 +138,7 @@
 <p>If the user's form submission is not valid, you should reject it and re-render the form with some feedback to inform the user of what they did wrong. The following things should trigger an error:</p>
 <ul>
 <li>The user leaves any of the following fields empty: username, password, verify password.</li>
-<li>The user's username or password is not valid -- for example, it contains a space character or it consists of less than 3 characters or more than 20 characters (e.g., a username or password of &quot;me&quot; would be invalid). </li>
+<li>The user's username or password is not valid -- for example, it contains a space character or it consists of less than 3 characters or more than 20 characters (e.g., a username or password of &quot;me&quot; would be invalid).</li>
 <li>The user's password and password-confirmation do not match.</li>
 <li>The user provides an email, but it's not a valid email. Note: the email field may be left empty, but if there is content in it, then it must be validated. The criteria for a valid email address in this assignment are that it has a single <code>@</code>, a single <code>.</code>, contains no spaces, and is between 3 and 20 characters long.</li>
 </ul>
@@ -155,7 +155,7 @@
 <li>Use templates (one for the index/home page and one for the welcome page) to render the HTML for your web app.</li>
 </ol>
 <aside class="aside-note">
-<p>While we've covered how to specify different input types than just <code>text</code> (e.g., <code>password</code> and <code>email</code>), and normally you will want to use these when they are appropriate, for this assignment <strong>do not use these</strong>. Instead, just use <code>text</code>. This will enable us to check that the server side validation is working by letting errors through the client side.</p>
+<p>While we've covered how to specify different input types than just <code>text</code> (e.g., <code>password</code> and <code>email</code>), for this assignment <strong>do not use the email input type</strong>. Instead, just use <code>text</code>, which does not do any client-side validation. This will enable us to check that the server side validation is working by letting errors through the client side. You should, however, use <code>type='password'</code> for the password and password verification inputs, to hide the characters typed (this input type does not included any additional validation).</p>
 </aside>
 <h2 id="submit">Submit</h2>
 <p>To turn in your assignment and get credit, follow the <a href="../">submission instructions</a>.</p>
