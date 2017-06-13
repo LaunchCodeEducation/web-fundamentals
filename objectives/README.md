@@ -174,6 +174,8 @@ Listed below are the competencies you should demonstrate by the time you've comp
 
 ### Class 13
 
+#### Hashing
+
 * Explain what two-way encryption is, and why it is not ideal for storing sensitive user data, such as passwords
 * Explain what a one-way hash is, and why it presents greater security for storing sensitive user data
 * Describe the characteristics of a good one-way hash function
