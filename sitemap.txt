@@ -26,6 +26,7 @@ http://education.launchcode.org/web-fundamentals/class-prep\10\review.html
 http://education.launchcode.org/web-fundamentals/class-prep\11/index.html
 http://education.launchcode.org/web-fundamentals/class-prep\11\review.html
 http://education.launchcode.org/web-fundamentals/class-prep\12/index.html
+http://education.launchcode.org/web-fundamentals/class-prep\12\review.html
 http://education.launchcode.org/web-fundamentals/class-prep\13/index.html
 http://education.launchcode.org/web-fundamentals/class-prep\14/index.html
 http://education.launchcode.org/web-fundamentals/classes/index.html
