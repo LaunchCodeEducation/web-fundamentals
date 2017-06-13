@@ -150,7 +150,7 @@ Listed below are the competencies you should demonstrate by the time you've comp
 
 ### Class 10
 
-* Create persistent `User` class
+* Create a persistent `User` class
 * User flash messages to communicate with the user
 * Configure model objects to have one-to-many relationships
 * Use sessions to store state across requests
@@ -159,7 +159,14 @@ Listed below are the competencies you should demonstrate by the time you've comp
 
 ### Class 11
 
-*Coming Soon*
+#### Cookies and Sessions
+
+* Describe the data format of cookies
+* Describe how a server-side application can set a cookie in a browser
+* Describe how a browser sends cookies to a server-side application
+* Describe the security risks posed by cookies
+* Set and access cookie values in Flask
+* Describe how session data is stored within cookies
 
 ### Class 12
 
@@ -167,7 +174,15 @@ Listed below are the competencies you should demonstrate by the time you've comp
 
 ### Class 13
 
-*Coming Soon*
+#### Hashing
+
+* Explain what two-way encryption is, and why it is not ideal for storing sensitive user data, such as passwords
+* Explain what a one-way hash is, and why it presents greater security for storing sensitive user data
+* Describe the characteristics of a good one-way hash function
+* Write code that uses a provided hash function to hash sensitive data
+* Use salting to increase the security of a one-way hash
+* Verify passwords by comparing hash values
+* Describe how hashing can be used to prevent cookie tampering
 
 ### Class 14
 
