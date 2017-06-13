@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Class 11 Prep :: Unit 2: Web Fundamentals</title>
+        <title>Cookie-Based Sessions :: Unit 2: Web Fundamentals</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-class-11-prep'>
+    <body id='page-cookie-based-sessions'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -21,7 +21,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
                         <ul class="dropdown-menu">
-                                                            <li class="active lc-button">
+                                                            <li class=" lc-button">
                                     <a href="http://education.launchcode.org/web-fundamentals/classes/">
                                         Classes
                                     </a>
@@ -41,7 +41,7 @@
                                         Assignments
                                     </a>
                                 </li>
-                                                            <li class=" lc-button">
+                                                            <li class="active lc-button">
                                     <a href="http://education.launchcode.org/web-fundamentals/videos/">
                                         Videos
                                     </a>
@@ -124,53 +124,12 @@
             <div class="row">
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
-                                        <h1>Class 11 Prep</h1>
-                    <h2 id="cookies-and-sessions">Cookies and Sessions</h2>
-<p>This lesson focuses on on <strong>cookies</strong>, which are small pieces of data stored as key/value pairs in the browser. As web developers, we can ask a user's browser to store a cookie for us, and each time that user visits our site in the future, they'll pass the cookie data in the request.</p>
-<p>Cookies are part of the furniture of the Internet. You've surely heard the term before, even if you didn't know precisely what it referred to. Chances are you've &quot;cleared your cookies&quot; at some point to fix a problem with a website, or to ensure you didn't remain logged into a website on a public computer. Today, you learn about how these tiny but essential pieces of data actually work!</p>
-<p>Additionally, we'll also learn how cookies can be used to enable sessions, as we've been using them to access user-specific data on the server-side.</p>
-<table>
-<thead>
-<tr>
-<th>Task</th>
-<th>Resource Type</th>
-<th>Link</th>
-<th>Instructions</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Watch</td>
-<td>Video Lessons</td>
-<td><a href="https://www.youtube.com/playlist?list=PLs5n5nYB22fLqBWEGW0dBh_yIHdzYlpEz" target="_blank">Cookies</a></td>
-<td>Watch all videos in the playlist</td>
-</tr>
-<tr>
-<td>Watch</td>
-<td>Video Lesson</td>
-<td><a href="../../videos/cookies-in-flask/">Cookies in Flask</a></td>
-<td>Explore the dynamics of cookies, along with how they can be explicitly used in Flask</td>
-</tr>
-<tr>
-<td>Watch</td>
-<td>Video Lesson</td>
-<td><a href="../../videos/cookie-based-sessions/">Cookie-Based Sessions</a></td>
-<td>Learn how cookies are used for session management</td>
-</tr>
-<tr>
-<td>Read</td>
-<td>Article</td>
-<td><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview#Basic_aspects_of_HTTP" target="_blank">An Overview of HTTP</a></td>
-<td>This article should be familiar, as it was part of the prep work for class 3. However, this is a good time to revisit it, as aspects of it should make much more sense in the context of cookies. In fact, we've linked you directly to the section that discuses HTTP state and cookies. Enjoy!</td>
-</tr>
-<tr>
-<td>Do</td>
-<td>Review</td>
-<td><a href="review.html">Class 11 Prep Review</a></td>
-<td>Solidify your knowledge of the concepts covered in these lessons</td>
-</tr>
-</tbody>
-</table>
+                                        <h1>Cookie-Based Sessions</h1>
+                    <div class="youtube-wrapper"><iframe width="776" height="437" src="https://www.youtube-nocookie.com/embed/mJzjlqONvFc?rel=0" frameborder="0" allowfullscreen></iframe></div>
+<h2 id="notes">Notes</h2>
+<p>This lesson examines what is going on behind the scenes when we use our <code>session</code> object in Flask.</p>
+<h2 id="reference">Reference</h2>
+<p>In case you're curious about the JavaScript decoding function used in the video, <code>atob()</code>, you can read up on it <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowBase64/Base64_encoding_and_decoding" target="_blank">here</a>.</p>
                                     </section>
 
             </div>

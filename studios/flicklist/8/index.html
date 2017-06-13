@@ -125,29 +125,44 @@
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Studio: FlickList 8</h1>
-                    <p>This studio has a different structure than past Flicklist studios. Instead of watching an instructor-led walkthrough and then talking a problem on your own, you will work through a guided tutorial to add some new features to the application. This will allow us to work through some new components in a more structured way, learning as we go.</p>
+                    <p>This studio has a different structure than past Flicklist studios. Instead of watching an instructor-led walkthrough and then tackling a problem on your own, you will be given tasks to add new features to the application straightaway. This will allow you to apply more of the concepts you've learned in class on your own.</p>
 <h2 id="studio">Studio</h2>
 <p>Our app at this point has user accounts and login, but users are still collaboratively editing the same list of movies. We need to fix that:</p>
 <ul>
-<li>We'll add an <code>.owner</code> relationship to the <code>Movie</code> class, so that each movie &quot;belongs to&quot; a specific user.</li>
-<li>We will update the <code>/ratings</code> page so that a user only sees a list of movies of which she is the owner.</li>
+<li>We'll add relationships between the <code>Movie</code> and <code>User</code> classes, so that each movie &quot;belongs to&quot; a specific user.</li>
+<li>We'll refactor the code so that it is cleaner and more reusable, in line with the <em>MVC</em> pattern.</li>
+<li>We will update the <code>/</code> and <code>/ratings</code> page so that a user only sees a list of movies of which she is the owner.</li>
 </ul>
-<p>Today, we'll enable a persistent logged-in state. In other words, once a user logs in, we'll have a way to &quot;remember&quot; that they were previously authenticated. We'll do this with cookies.</p>
 <h3 id="checking-out-the-studio-code">Checking Out the Studio code</h3>
-<p>Before getting the starter code for this studio, fetch updates from the main repository:</p>
-<pre><code class="language-nohighlight">$ git fetch origin</code></pre>
-<p>Your task today is to fill a few of the small holes we have left, and to implement the a new &quot;recently watched movies&quot; page.</p>
-<p>Then, follow the <a href="../getting-the-code/">instructions for getting the code</a> in order to get the starter code for <code>studio8</code>.</p>
-<p>Since last class featured on a walkthrough and no studio, spend a few minutes with the starter code to remind yourself what was added. That way, you'll be ready to jump right in.</p>
+<p>Follow the <a href="../getting-the-code/">instructions for getting the code</a> in order to get the starter code for <code>studio8</code>.</p>
 <h3 id="your-tasks">Your Tasks</h3>
-<p>Note that we are no longer littering your studio code with <code>TODO</code>s. We've still provided a branch with the walkthrough code solution in it, but from now on you will have the discretion of choosing more implementation details yourself.</p>
+<p>Notice that we are no longer littering your studio code with <code>TODO</code>s. Your instructions for the tasks you need to fulfill will be here in this section.</p>
 <ol>
 <li>
-<p><strong>Fix the Index method</strong>. When the user visits the home page, she still sees <em>everybody's</em> unwatched movies. Fix it so that she only sees her own movies. Instead of a SQL query, you will need to use ORM methods like <code>filter_by</code>. For an example to reference, look at what we did during Walkthrough in <code>MovieRatings.get</code> or visit <a href="https://www.sqlalchemy.org/" target="_blank">the docs for SQLAlchemy</a>, the ORM we are using for this project.</p>
+<p>Add a column to the <code>User</code> class representing its relationship to the <code>Movie</code> class. And add a property to the <code>Movie</code> class that holds the id of the owner. Review the relevant <a href="../../../videos/get-it-done/user-task-relationship/"><em>Get it Done!</em> video lesson</a> if you need a reminder of the process. Remember that you will have to drop and re-create tables after making these changes. While you're in the python session that does this, make sure to manually add a user to the database (since you lost all the records you added previously after dropping the tables).</p>
 </li>
-<li><strong>Implement a &quot;recently watched movies&quot; page</strong>. This will be a new page at <code>/recently-watched</code> where users can see a list of &quot;trending&quot; movies. Your goal will be to implement this so that it is the same for everyone, showing the most recently watched movies by <em>any</em> user. Make a new method <code>RecentlyWatchedMovies</code> along with a new route and template. Use your Jinja ninja skills to show the list of movies. Don't forget to add a link so users know how to find the page. Each list item should look something like this:</li>
+<li>
+<p>Given what you learned about the MVC pattern, refactor your code accordingly:</p>
+<ul>
+<li><strong>Model:</strong>  Move the <code>User</code> and <code>Movie</code> classes to a file named <code>models.py</code>. Then refactor out the app and database configuration code to a file named <code>app.py</code>. Specifically, the <code>app.py</code> file will have these 7 lines:</li>
+</ul>
+<pre><code class="language-python">from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
+app = Flask(__name__)
+app.config['DEBUG'] = True      # displays runtime errors in the browser, too
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://flicklist:MyNewPass@localhost:8889/flicklist'
+app.config['SQLALCHEMY_ECHO'] = True
+
+db = SQLAlchemy(app)</code></pre>
+<ul>
+<li><strong>View:</strong> Your view code is already contained in your template files; no need to do anything further.</li>
+<li><strong>Controller:</strong> Now the code that remains in your <code>main.py</code> file is the controller code.</li>
+<li><strong>Add import code:</strong> You will need to import <code>db</code> from <code>app.py</code> in the <code>models.py</code> file in order for the code in that file to function. And now, in order for <code>main.py</code> to utilize the <code>User</code> and <code>Movie</code> classes, you will need to import them into <code>main.py</code>. Finally, you will need to import <code>app</code> and <code>db</code> from <code>app.py</code> into <code>main.py</code>.</li>
+</ul>
+</li>
+<li>When the user visits the <code>/</code> and <code>/ratings</code> pages showing the unwatched and watched movies, she still sees <em>everybody's</em> movies. Fix it so that she only sees <em>her own</em> unwatched and watched movies. Also, you'll need to change the code to add a movie to the watchlist so that you assign an <code>owner</code> to the <code>movie</code> object.</li>
 </ol>
-<p>You may notice one fatal issue with our application. While we can log in and log out, movie data is still being shared among all users. Furthermore, if you're even more astute, you've noticed that user passwords are being stored in plain text in the database. We'll tackle both of these issues in the next two studios.</p>
                                     </section>
 
             </div>

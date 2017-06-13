@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title> :: Unit 2: Web Fundamentals</title>
+        <title>Class 11 Prep Review :: Unit 2: Web Fundamentals</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body>
+    <body id='page-class-11-prep-review'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -21,7 +21,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
                         <ul class="dropdown-menu">
-                                                            <li class=" lc-button">
+                                                            <li class="active lc-button">
                                     <a href="http://education.launchcode.org/web-fundamentals/classes/">
                                         Classes
                                     </a>
@@ -124,47 +124,26 @@
             <div class="row">
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
-                                        <h1></h1>
-                    <ol>
-<li>List all the titles of the movies in the database.</li>
+                                        <h1>Class 11 Prep Review</h1>
+                    <p>Here are some review questions for you to solidify your knowledge of the concepts covered in this class:</p>
+<ol>
+<li>
+<p>Since HTTP is stateless, how is state preserved across requests?</p>
+</li>
+<li>
+<p>What data type does <code>request.cookies.get()</code> return?</p>
+</li>
+<li>
+<p>Describe how cookie-based sessions work in Flask.</p>
+</li>
+<li>
+<p>Can you set a cookie for a different domain?</p>
+</li>
+<li>
+<p>If you do not set an <code>expires</code> parameter when will your cookie expire?</p>
+</li>
+<li>Define a <code>cookie</code> and describe why they are useful.</li>
 </ol>
-<pre><code class="language-sql">select title from movies;</code></pre>
-<ol start="2">
-<li>List all the titles of the movies in the database in descending order of the year they were released.</li>
-</ol>
-<pre><code class="language-sql">select title from movies order by released desc;</code></pre>
-<ol start="3">
-<li>Insert a new record into the <code>directors</code> table for Jean-Pierre Jeunet whose country of origin is France. (<em>Note:</em> Assume the column for <code>director_id</code> is auto incremented, so you don't need to put in a value for that column.)</li>
-</ol>
-<pre><code class="language-sql">insert into directors (first, last, country)
-    values ('Jean-Pierre', 'Jeunet', 'France');</code></pre>
-<ol start="4">
-<li>List the <code>director_id</code> for Jean-Pierre Jeunet.</li>
-</ol>
-<pre><code class="language-sql">select director_id from directors
-    where first='Jean-Pierre' and last='Jeunet';</code></pre>
-<ol start="5">
-<li>Insert a new record into the <code>movies</code> table for Amelie which was released in 2001 and directed by Jean-Pierre Jeunet. (<em>Hint:</em> Assume the id you got from the last query was &quot;2&quot; and use that. And, like question 3, assume the <code>movie_id</code> column is auto incremented).</li>
-</ol>
-<pre><code class="language-sql">insert into movies (title, released, director_id)
-    values ('Amelie', 2001, 2);</code></pre>
-<ol start="6">
-<li>List all columns for all records of the <code>directors</code> table in ascending alphabetical order of the director's country of origin.</li>
-</ol>
-<pre><code class="language-sql">select * from directors
-    order by country asc;</code></pre>
-<ol start="7">
-<li>List the country of origin of the director of Amelie. (You could do this using either a join or a subquery. Use a join.)</li>
-</ol>
-<pre><code class="language-sql">select country from directors
-    inner join movies on directors.director_id=movies.director_id
-    where movies.title='Amelie';</code></pre>
-<ol start="8">
-<li>List all the movies in the database along with each movie's director, ordered by the director's last name in ascending order. (<em>Hint:</em> you'll want to use a join and choose the columns <code>title</code>, <code>first</code>, and <code>last</code>).</li>
-</ol>
-<pre><code class="language-sql">select title, first, last from movies
-    inner join directors on directors.director_id=movies.director_id
-    order by directors.last asc;</code></pre>
                                     </section>
 
             </div>
