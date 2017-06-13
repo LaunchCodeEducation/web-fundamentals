@@ -35,7 +35,7 @@ Your page does not have to look exactly the same as [our version][signup-example
 1. Use templates (one for the index/home page and one for the welcome page) to render the HTML for your web app.
 
 <aside class="aside-note" markdown="1">
-While we've covered how to specify different input types than just `text` (e.g., `password` and `email`), and normally you will want to use these when they are appropriate, for this assignment **do not use these**. Instead, just use `text`. This will enable us to check that the server side validation is working by letting errors through the client side.
+While we've covered how to specify different input types than just `text` (e.g., `password` and `email`), for this assignment **do not use the email input type**. Instead, just use `text`, which does not do any client-side validation. This will enable us to check that the server side validation is working by letting errors through the client side. You should, however, use `type='password'` for the password and password verification inputs, to hide the characters typed (this input type does not included any additional validation).
 </aside>
 
 ## Submit
