@@ -154,11 +154,12 @@
 <h3 id="a-list-of-movie-instances">A List of Movie Instances</h3>
 <p>Our next change is going to be a massive breaking change to our application. Up until now, we've been representing movies as strings of their names. The time has come to represent movies as instances of the <code>Movie</code> class. This will rip through our application, breaking lots of stuff. We'll rename lots of variables so it's clear when we're talking about a <code>Movie</code> object, and when we're talking about a movie name (a property of <code>Movie</code> objects). You can explicitly see our changes by running <code>git diff walkthrough6a walkthrough6b</code>.</p>
 <p>For example, notice how we update our <code>get_current_watchlist</code> function to get a list of <code>Movie</code> objects from the database rather than return a list of strings, as we did previously.</p>
+<p>Our code previously returned a list of strings:</p>
 <pre><code class="language-python">def get_current_watchlist():
     # old: list of strings
-    return [movie.name for movie in Movie.query.all()]
-
-def get_current_watchlist():
+    return [movie.name for movie in Movie.query.all()]</code></pre>
+<p>And we refactored it to return a list of <code>Movie</code> objects:</p>
+<pre><code class="language-python">def get_current_watchlist():
     # new: list of Movie instances
     return Movie.query.all()</code></pre>
 <p>And notice how we have to rework the templates to call <code>.name</code> on the model object when we want a human-readable version of the movie name, and <code>.id</code> when we want to reference a specific row in our movie table.</p>
@@ -184,6 +185,9 @@ def get_current_watchlist():
 <p><img src="phpMyAdminCreateUserAndDatabase.png" alt="Create User And Database in phpMyAdin" /></p>
 <h3 id="initialize-your-database">Initialize Your Database</h3>
 <p>Make sure your flask environment is activated. <strong>For this and future Studios</strong> we'll use the <code>flask-env</code> virtual environment that was created while you coded along with the video lessons. Since you already installed the necessary conda packages in the <a href="../../../videos/get-it-done/db-configuration">Database Configuration</a> lesson, your <code>flask-env</code> is ready to use SQLAlchemy.</p>
+<aside class="aside-warning">
+<p>If you did not install <code>flask-sqlalchemy</code> and <code>pymysql</code> into your virtual environment, stop and do so now using the instructions linked above.</p>
+</aside>
 <p>Reenact the python shell session from the walkthrough. Here it is again:</p>
 <pre><code class="language-nohighlight">(flask-env) $ python
 &gt;&gt;&gt; from main import db, Movie
@@ -203,7 +207,7 @@ def get_current_watchlist():
 <ul>
 <li>Change <code>main.py</code>'s <code>Movie</code> class to have a ratings property. Make this a string property, since it will hold values <code>'*'</code>, <code>'**'</code>, <code>'***'</code>, and so on.</li>
 <li>Drop the <code>movie</code> table using the Python shell. After starting up the shoell, import <code>db</code> and <code>Movie</code> as we did above, then use the command <code>db.drop_all()</code>. Since you have just changed the model, we'll need to recreate the table from scratch.</li>
-<li>Reinitialize your database by running <code>db.create_al()</code>, as we did above.</li>
+<li>Reinitialize your database by running <code>db.create_all()</code>, as we did above.</li>
 <li>Update <code>get_watched_movies</code> to return all unwatched movies in the database, as a list of <code>Movie</code> objects. It currently returns a static list of movies.</li>
 <li>Refactor the <code>rating.html</code> template so that it works when <code>movies</code> is a list of <code>Movie</code> objects, rather than a list of strings.</li>
 <li>Change the behavior of the <code>rate_movie</code> function in <code>main.py</code> so that when a user rates a movie it actually stores the rating using the column/property you just added.</li>
