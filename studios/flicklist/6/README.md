@@ -49,11 +49,16 @@ Our next change is going to be a massive breaking change to our application. Up 
 
 For example, notice how we update our `get_current_watchlist` function to get a list of `Movie` objects from the database rather than return a list of strings, as we did previously.
 
+Our code previously returned a list of strings:
+
 ```python
 def get_current_watchlist():
     # old: list of strings
     return [movie.name for movie in Movie.query.all()]
+```
 
+And we refactored it to return a list of `Movie` objects:
+```python
 def get_current_watchlist():
     # new: list of Movie instances
     return Movie.query.all()
@@ -124,7 +129,7 @@ In your browser, add one movie then cross it off.
 
 - Change `main.py`'s `Movie` class to have a ratings property. Make this a string property, since it will hold values `'*'`, `'**'`, `'***'`, and so on.
 - Drop the `movie` table using the Python shell. After starting up the shoell, import `db` and `Movie` as we did above, then use the command `db.drop_all()`. Since you have just changed the model, we'll need to recreate the table from scratch.
-- Reinitialize your database by running `db.create_al()`, as we did above.
+- Reinitialize your database by running `db.create_all()`, as we did above.
 - Update `get_watched_movies` to return all unwatched movies in the database, as a list of `Movie` objects. It currently returns a static list of movies.
 - Refactor the `rating.html` template so that it works when `movies` is a list of `Movie` objects, rather than a list of strings.
 - Change the behavior of the `rate_movie` function in `main.py` so that when a user rates a movie it actually stores the rating using the column/property you just added.
