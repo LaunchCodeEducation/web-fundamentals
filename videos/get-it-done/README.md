@@ -15,6 +15,8 @@ This series of lessons demonstrates how to use object-relational mapping tools t
 
 [Part 4: Changing a Model Class](changing-models/)
 
+Read an [annotated version](https://www.codesplain.io/chrisbay/get_it_done%21_-_parts_1-4) of the `main.py` file created in the lessons above.
+
 ## User Objects and Relationships
 
 [Part 5: User Model](user-model/)
