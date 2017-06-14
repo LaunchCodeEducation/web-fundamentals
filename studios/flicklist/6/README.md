@@ -45,9 +45,9 @@ Today we will change all these functionalities to be persistent. We'll walk thro
 
 ### A List of Movie Instances
 
-Our next change is going to be a massive breaking change to our application. Up until now, we've been representing movies as strings of their names. The time has come to represent movies as instances of Movie. This will rip through our application, breaking lots of stuff. We'll rename lots of variables so it's clear when we're talking about a `Movie` objects, and when we're talking about a movie name (a property of `Movie` objects). Follow along by doing `git diff walkthrough6a walkthrough6b`.
+Our next change is going to be a massive breaking change to our application. Up until now, we've been representing movies as strings of their names. The time has come to represent movies as instances of the `Movie` class. This will rip through our application, breaking lots of stuff. We'll rename lots of variables so it's clear when we're talking about a `Movie` object, and when we're talking about a movie name (a property of `Movie` objects). You can explicitly see our changes by running `git diff walkthrough6a walkthrough6b`.
 
-For example, notice how we switch from getting a list of strings from the database to getting a list of `Movie` objects.
+For example, notice how we update our `get_current_watchlist` function to get a list of `Movie` objects from the database rather than return a list of strings, as we did previously.
 
 ```python
 def get_current_watchlist():
@@ -65,7 +65,7 @@ In this batch of changes, we've changed our most important data structure and we
 
 ### Watching Movies
 
-In the next batch of changes, we'll modify the *I Watched It!* button to change the database, and truly cross off the movie in the database, persistently. You can view these changes by running the command `git diff walkthrough6b studio6`. We also finish our transition from strings to Movies by modifying the ratings templates.
+In the next batch of changes, we'll modify the *I Watched It!* button to change the database, and truly cross off the movie in the database, persistently. You can view these changes by running the command `git diff walkthrough6b studio6`. We also finish our transition from strings to `Movie` objects by modifying the ratings templates.
 
 ## Studio
 
@@ -79,9 +79,11 @@ You should have already installed MAMP locally but if you need a refresher it is
 
 ### Your Tasks
 
+Here's an outline of the steps we'll take. We provide additional details below.
+
 1. Create MySQL user and database
 2. Initialize your database
-3. Run the existing flicklist
+3. Run the flicklist application
 4. Modify flicklist to store movie ratings
 
 ### Create MySQL User and Database
