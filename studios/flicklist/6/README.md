@@ -13,7 +13,7 @@ For today's walkthrough, we'll be looking at three different branches. On the `w
 
 The most powerful line in this whole batch of changes is this:
 
-```
+```python
 def get_current_watchlist():
     return [movie.name for movie in Movie.query.all()]
 ```
@@ -33,7 +33,7 @@ Your instructor has already created a user and database for `flicklist` in their
 [<Movie 'Mulan'>, <Movie 'Rushmore'>, <Movie 'Damsels in Distress'>]
 ```
 
-Now when we fire up the app and view it, we see those movies in the watchlist! 
+Now when we fire up the app and view it, we see those movies in the watchlist!
 
 But we've still got some work to do to fully utilize our new database capabilities. In particular:
 
@@ -86,7 +86,7 @@ You should have already installed MAMP locally but if you need a refresher it is
 
 ### Create MySQL User and Database
 
-Now we will need to create a database locally (on your computer). We will use the same names as we did in the walkthrough. 
+Now we will need to create a database locally (on your computer). We will use the same names as we did in the walkthrough.
 
 Make sure your servers are running with MAMP. Go to *phpMyAdmin* in your browser and create a user named *flicklist* with the password *MyNewPass*. Check the box that says *Create database with same name and grant all privileges* then press the *Go* button in the bottom right-hand corner.
 
@@ -98,7 +98,7 @@ Make sure your flask environment is activated. **For this and future Studios** w
 
 Reenact the python shell session from the walkthrough. Here it is again:
 
-```
+```nohighlight
 (flask-env) $ python
 >>> from main import db, Movie
 /home/dm/miniconda3/envs/flicklist/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py:839: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
@@ -113,8 +113,8 @@ Reenact the python shell session from the walkthrough. Here it is again:
 
 ### Run the Existing FlickList
 
-Exit the Python shell and start the *FlickList* program by running this command in the terminal:  
-`python main.py`. 
+Exit the Python shell and start the *FlickList* program by running this command in the terminal:
+`python main.py`.
 
 In your browser, add one movie then cross it off.
 
@@ -122,7 +122,7 @@ In your browser, add one movie then cross it off.
 
 - Change `main.py`'s `Movie` class to have a ratings property
 - Drop the table using the Python shell. First, import `db` and `Movie` as we did above, then use the command `db.drop_all()` since you have just changed the model and therefore need to delete this table and create a new one.
-- Reinitialize your database and recreate the table by reenacting the [Python shell session](#initialize-your-database) again 
+- Reinitialize your database and recreate the table by reenacting the [Python shell session](#initialize-your-database) again
 - Change `main.py`s behavior so that when a user rates a movie it actually stores the rating using the column/property you just added
 - Display the stored ratings on the ratings page by pre-populating the select box with each movie's old rating, if there is a rating for the movie (see the `TODO` in `ratings.html`). The `selected` attribute of the `option` tag will come in handy. Read more about it at [w3schools](https://www.w3schools.com/tags/att_option_selected.asp).
 
@@ -135,7 +135,7 @@ If you made it this far, you've completed a challenging studio. Congratulations!
 If you want to test your queries in the MySQL console, you can do so in the phpMyAdmin interface. Go to the left tab and click on the database name *flicklist* then on the second-to-top row tab click *SQL*.
 <br/>
 For those of you accustomed to accessing this via the command line, you will need to specify which mysql to use with a command like:
-```
+```nohighlight
 /Applications/MAMP/Library/bin/mysql -uflicklist -p
 ```
 </aside>
