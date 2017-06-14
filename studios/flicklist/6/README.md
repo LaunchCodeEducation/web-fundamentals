@@ -103,6 +103,10 @@ Make sure your servers are running with MAMP. Go to *phpMyAdmin* in your browser
 
 Make sure your flask environment is activated. **For this and future Studios** we'll use the `flask-env` virtual environment that was created while you coded along with the video lessons. Since you already installed the necessary conda packages in the [Database Configuration](../../../videos/get-it-done/db-configuration) lesson, your `flask-env` is ready to use SQLAlchemy.
 
+<aside class="aside-warning" markdown="1">
+If you did not install `flask-sqlalchemy` and `pymysql` into your virtual environment, stop and do so now using the instructions linked above.
+</aside>
+
 Reenact the python shell session from the walkthrough. Here it is again:
 
 ```nohighlight
