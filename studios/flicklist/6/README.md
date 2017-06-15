@@ -132,7 +132,7 @@ In your browser, add one movie then cross it off.
 ### Modify FlickList to Store Movie Ratings
 
 - Change `main.py`'s `Movie` class to have a ratings property. Make this a string property, since it will hold values `'*'`, `'**'`, `'***'`, and so on.
-- Drop the `movie` table using the Python shell. After starting up the shoell, import `db` and `Movie` as we did above, then use the command `db.drop_all()`. Since you have just changed the model, we'll need to recreate the table from scratch.
+- Drop the `movie` table using the Python shell. After starting up the shell, import `db` and `Movie` as we did above, then use the command `db.drop_all()`. Since you have just changed the model, we'll need to recreate the table from scratch.
 - Reinitialize your database by running `db.create_all()`, as we did above.
 - Update `get_watched_movies` to return all unwatched movies in the database, as a list of `Movie` objects. It currently returns a static list of movies.
 - Refactor the `rating.html` template so that it works when `movies` is a list of `Movie` objects, rather than a list of strings.

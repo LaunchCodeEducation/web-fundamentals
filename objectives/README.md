@@ -159,8 +159,6 @@ Listed below are the competencies you should demonstrate by the time you've comp
 
 ### Class 11
 
-#### Cookies and Sessions
-
 * Describe the data format of cookies
 * Describe how a server-side application can set a cookie in a browser
 * Describe how a browser sends cookies to a server-side application
@@ -170,11 +168,12 @@ Listed below are the competencies you should demonstrate by the time you've comp
 
 ### Class 12
 
-*Coming Soon*
+* Describe the respective responsibilities of the model, view, and controller aspects of an application 
+* Explain why MVC is a useful pattern for designers
+* Describe the way communication works in MVC - with whom does each component communicate
+* Identify to which components of MVC the technologies you have been using so far relate
 
 ### Class 13
-
-#### Hashing
 
 * Explain what two-way encryption is, and why it is not ideal for storing sensitive user data, such as passwords
 * Explain what a one-way hash is, and why it presents greater security for storing sensitive user data
@@ -186,4 +185,7 @@ Listed below are the competencies you should demonstrate by the time you've comp
 
 ### Class 14
 
-*Coming Soon*
+* Explain what makes a website "responsive" and how Bootstrap helps accomplish this responsiveness
+* Describe how you can incorporate Bootstrap in your website - what files do you need to include, how do you use Bootstrap classes, etc.
+* Explain what are Bootstrap "themes" and how you utilize them
+* Describe some of the HTML elements that Bootstrap can be applied to and how adding a Bootstrap class to these elements will affect their design 
