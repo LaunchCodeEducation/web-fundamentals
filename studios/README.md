@@ -63,7 +63,7 @@ Add user registration and login form handling. Store new users in the database.
 
 ### Flicklist 8
 
-Add login and logout behaviors with cookies.
+Relate the `User` and `Movie` classes so that users have their own unique movie lists.
 
 [Work on Flicklist 8](flicklist/8/)
 
