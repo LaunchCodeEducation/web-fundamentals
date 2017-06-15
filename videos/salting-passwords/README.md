@@ -11,6 +11,8 @@ View the [final code](https://github.com/LaunchCodeEducation/get-it-done/tree/99
 
 ## References
 
+- [Rainbow Table (Wikipedia)](https://en.wikipedia.org/wiki/Rainbow_table)
+- [Downloadable Rainbow Tables](http://rainbowtables.shmoo.com/)
 - [Salt (Wikipedia)](https://en.wikipedia.org/wiki/Salt_(cryptography))
 - [bcrypt (Wikipedia)](https://en.wikipedia.org/wiki/Bcrypt)
 - [scrypt (Wikipedia)](https://en.wikipedia.org/wiki/Scrypt)
