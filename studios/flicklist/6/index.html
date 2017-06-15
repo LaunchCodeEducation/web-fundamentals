@@ -206,7 +206,7 @@
 <h3 id="modify-flicklist-to-store-movie-ratings">Modify FlickList to Store Movie Ratings</h3>
 <ul>
 <li>Change <code>main.py</code>'s <code>Movie</code> class to have a ratings property. Make this a string property, since it will hold values <code>'*'</code>, <code>'**'</code>, <code>'***'</code>, and so on.</li>
-<li>Drop the <code>movie</code> table using the Python shell. After starting up the shoell, import <code>db</code> and <code>Movie</code> as we did above, then use the command <code>db.drop_all()</code>. Since you have just changed the model, we'll need to recreate the table from scratch.</li>
+<li>Drop the <code>movie</code> table using the Python shell. After starting up the shell, import <code>db</code> and <code>Movie</code> as we did above, then use the command <code>db.drop_all()</code>. Since you have just changed the model, we'll need to recreate the table from scratch.</li>
 <li>Reinitialize your database by running <code>db.create_all()</code>, as we did above.</li>
 <li>Update <code>get_watched_movies</code> to return all unwatched movies in the database, as a list of <code>Movie</code> objects. It currently returns a static list of movies.</li>
 <li>Refactor the <code>rating.html</code> template so that it works when <code>movies</code> is a list of <code>Movie</code> objects, rather than a list of strings.</li>
