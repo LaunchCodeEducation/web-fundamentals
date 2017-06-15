@@ -17,7 +17,7 @@ Class # | Prep Work | Studio | Topics | Begin Assignment\* | Objectives
 10 | [Prep Work](../class-prep/10/)| [FlickList 7](../studios/flicklist/7/) | User Objects, Authentication, and Relationships | &nbsp; | [Objectives](../objectives/#class-10)
 11 | [Prep Work](../class-prep/11/) | | Cookies | [Blogz](../assignments/blogz/) | [Objectives](../objectives/#class-11)
 12 | [Prep Work](../class-prep/12/) | [FlickList 8](../studios/flicklist/8/) | The Model-View-Controller Pattern | &nbsp; | [Objectives](../objectives/#class-12)
-13 | Prep Work | [FlickList 9](../studios/flicklist/9/) | Hashing | &nbsp; | [Objectives](../objectives/#class-13)
+13 | [Prep Work](../class-prep/13/) | [FlickList 9](../studios/flicklist/9/) | Hashing Passwords | &nbsp; | [Objectives](../objectives/#class-13)
 14 | [Prep Work](../class-prep/14/) | [FlickList 10](../studios/flicklist/10/)| Bootstrap | &nbsp; | [Objectives](../objectives/#class-14)
 
 \* Check [learn.launchcode.org](https://learn.launchcode.org) for assignment due dates since these can vary by class section.

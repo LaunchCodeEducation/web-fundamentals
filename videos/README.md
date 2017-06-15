@@ -38,3 +38,11 @@ currentMenu: videos
 ## Databases in Flask
 
 [The Get It Done! App](get-it-done/)
+
+## Hashing Passwords
+
+[Introduction to Hashing](intro-to-hashing/)
+
+[Hashing Passwords](hashing-passwords/)
+
+[Salting Passwords](salting-passwords/)
