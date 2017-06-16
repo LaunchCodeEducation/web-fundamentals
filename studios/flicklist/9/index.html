@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Studio: FlickList 10 :: Unit 2: Web Fundamentals</title>
+        <title>Studio: FlickList 9 :: Unit 2: Web Fundamentals</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/web-fundamentals/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-studio-flicklist-10'>
+    <body id='page-studio-flicklist-9'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -124,139 +124,34 @@
             <div class="row">
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
-                                        <h1>Studio: FlickList 10</h1>
-                    <p>Like Flicklist 8, this studio has a different structure than most Flicklist studios. Once again, you will work through a guided tutorial to add some new features to the application.</p>
+                                        <h1>Studio: FlickList 9</h1>
+                    <p>Like Flicklist 8, this studio has a different structure than most Flicklist studios. Once again, we will omit the walkthrough and let you get to work immediately on the Studio. </p>
 <h2 id="studio">Studio</h2>
-<p>We've added all of the main user-facing features to the Flicklist application. One aspect of the application that users typically don't think about is security. That doesn't mean that as developers we shouldn't prioritize it. We must treat our users' data carefully, and do everything we can to prevent sensitive data from being exposed. We'll make our passwords and cookies secure in this studio using hashing.</p>
+<p>We've added all of the main user-facing features to the Flicklist application. One aspect of the application that users typically don't think about is security. But we as developers should prioritize it. We must treat our users' data carefully, and do everything we can to prevent sensitive data from being exposed. We'll make our passwords secure in this studio using hashing.</p>
 <h3 id="checking-out-the-studio-code">Checking Out the Studio code</h3>
-<p>Before getting the starter code for this studio, fetch updates from the main repository:</p>
-<pre><code class="language-nohighlight">$ git fetch origin</code></pre>
-<p>This will pull down any updates made by the LaunchCodeEducation team.</p>
-<p>Then, follow the <a href="../getting-the-code/">instructions for getting the code</a> in order to get the starter code for <code>studio10</code>.</p>
+<p>Follow the <a href="../getting-the-code/">instructions for getting the code</a> in order to get the starter code for <code>studio9</code>. As usual, remember to start up your MAMP servers and activate <code>flask-env</code>.</p>
 <h3 id="your-tasks">Your tasks</h3>
-<p>There are two types of data that we'll make more secure today: passwords and cookies.</p>
-<h4 id="hashing-passwords">Hashing passwords</h4>
-<p>Passwords should be hashed when creating a new user account so that in the event of a security breach -- for example, a database break-in -- it will be extremely difficult for anybody to unmask the passwords.</p>
+<p>Passwords should be hashed when creating a new user account so that in the event of a security breach - for example, a database break-in - it will be extremely difficult for anybody to unmask the passwords.</p>
 <p>Recall that hashing uses one of many available algorithms to turn a string into a hexadecimal number. For example, with the sha256 algorithm, &quot;LaunchCode&quot; becomes:</p>
 <pre><code class="language-nohighlight">fd433b1435c24ea70f918e6236d4185c18fa708754cec1dab86d931eb1273c71</code></pre>
 <p>The key concept that makes a given hashing algorithm useful for security purposes is that it is structured such that it is extremely difficult, and would take an incredibly large amount of time, to reverse the process and retrieve the original string.</p>
-<p>Generating a hash for a string is easy. Turning a hash back into the string that it came from should be very, very, very hard. The hard this reverse process is, the better the hash algorithm. Algorithms with this property are known as *one-way hash functions**.</p>
-<aside class="aside-question">
-<p>Would either of the Caesar or Vigenere ciphers make good hashing algorithms? Why or why not?</p>
-</aside>
-<h5 id="encrypting-passwords-make_pw_hash">Encrypting passwords: make_pw_hash</h5>
-<p>Our first step is to enable hashing for new passwords.</p>
-<p>Create a new file in the top directory of the <code>flicklist-python</code> project named <code>hashutils.py</code>. Define a new function:</p>
-<pre><code class="language-python">def make_pw_hash(name, pw, salt = None):
-    # Not yet implemented</code></pre>
-<p>We'll need a few modules to complete this method, so add these imports at the top of the file:</p>
-<pre><code class="language-python">import random
-import string
-import hashlib
-import hmac</code></pre>
-<p>The function <code>make_pw_hash</code> should return a hash value for the given information. Recall from the prep work lessons that a good approach to creating a password hash is to incorporate additional data in the string to be hashed. In other words, we'll hash the result of concatenating each of the inputs to our function: <code>name + pw + salt</code>. Here, <code>name</code> will be the user's username, and <code>salt</code> will be a random string of characters. Hashing this longer string makes it even harder for somebody to reconstruct a password from a hash, since they'd need to know the username and salt as well.</p>
-<p>For each new user account, we will create a new salt. In such cases, the function will be called without the <code>salt</code> parameter. (Why we would pass in a salt will become clear in a bit.) So, the first thing to do is create a salt if one hasn't been provided:</p>
-<pre><code class="language-python">if not salt:
-    salt = ''.join(random.choice(string.letters) for x in xrange(5))</code></pre>
-<p>This code generates a string of five random letters to use as a salt.</p>
-<p>Once we have a salt, we can use <code>hashlib</code> to create and return the hash:</p>
-<pre><code class="language-python">h = hashlib.sha256(name + pw + salt).hexdigest()
-return '%s,%s' % (h, salt)</code></pre>
-<p>The complete function is:</p>
-<pre><code class="language-python">def make_pw_hash(name, pw, salt = None):
-    if not salt:
-        salt = ''.join(random.choice(string.letters) for x in xrange(5))
-
-    h = hashlib.sha256(name + pw + salt).hexdigest()
-    return '%s,%s' % (h, salt)</code></pre>
-<p>Let's pause here to make sure we understand what's being done in the last two lines. First, we ask <code>hashlib</code> to use the sha256 algorithm to hash the string <code>name + pw + salt</code>. We then get the hexadecimal value of the hash and store it in <code>h</code>.</p>
-<p>Finally, we return a string that contains both the hash and the salt, separated by a comma. Here's an example of what that might look like for the username &quot;jenny&quot; with password &quot;coding is great!&quot; and salt &quot;fYnmA&quot;:</p>
-<pre><code class="language-nohighlight">"0cc3f792d89237146075c655cad7c56c84108f1d8cc58fb2be127316fb53fe9c,fYnmA"</code></pre>
-<p>To get this value, we first joined the three strings to get &quot;jennycoding is great!fYnmA&quot;, and then passed this value to the hash function. Storing the salt in the database alongside the hash in this way will allow us to verify a user's password. We will write the code to do that in a moment.</p>
-<p>First, however, let's start using <code>make_pw_hash</code> in our application!</p>
-<h5 id="hashing-passwords-for-new-users">Hashing passwords for new users</h5>
-<p>Back in <code>main.py</code>, import your <code>hashutils</code> module by adding this to the list of imports at the top: <code>import hashutils</code>.</p>
-<p>Within the <code>post</code> method of the <code>Register</code> handler, find the line where we create a new <code>User</code> object. It looks like this:</p>
-<pre><code class="language-python">user = User(username=username, password=password)</code></pre>
-<p>Make a new line above this one, and create a hash from the user's data:</p>
-<pre><code class="language-python">pw_hash = hashutils.make_pw_hash(username, password)</code></pre>
-<p>Then, use <code>pw_hash</code> in place of <code>password</code> when creating the user:</p>
-<pre><code class="language-python">user = User(username=username, password=pw_hash)</code></pre>
-<p>That's it! New users will now have their passwords hashed. If you tried to create and use a new account at this point, you'd be able to register, but you wouldn't be able to log in because there is no means of checking a hashed password. That's our next task.</p>
-<h4 id="validating-hashed-passwords">Validating hashed passwords</h4>
-<h5 id="valid_pw">valid_pw</h5>
-<p>In <code>hashutils.py</code>, let's add a new function that we can use to verify a user's password against a hash, to use when logging in. The function will need to:</p>
+<p>Generating a hash for a string is easy. Turning a hash back into the string that it came from should be very, very, very hard. The harder this reverse process is, the better the hash algorithm. Algorithms with this property are known as <em>one-way hash functions</em>.</p>
+<p>Review the code added in the <a href="../../../class-prep/13/">video lessons for Class 13</a> if you forget how to implement any of the steps below:</p>
 <ol>
-<li>Accept <code>name</code> and <code>password</code> parameters, representing the info submitted via the login form.</li>
-<li>Accept a hash <code>h</code>, representing the hash from the database stored under the record for the user with username <code>name</code>.</li>
-<li>Use <code>name</code>, <code>password</code>, and the salt portion of <code>h</code> -- recall that <code>h</code> will hold both the salt and the hash created during registration -- to create a new hash, say, <code>test_hash</code>.</li>
-<li>Compare <code>h</code> with <code>test_hash</code>. If they are equal, we'll be able to say with very, very, very high probability that the user's credentials are valid.</li>
+<li>Create a new file in the top directory of the <code>flicklist-flask</code> project named <code>hashutils.py</code>. Include the necessary imports and define the three functions you'll need: <code>make_salt</code>, <code>make_pw_hash</code>, and <code>check_pw_hash</code>.</li>
 </ol>
-<aside class="aside-question">
-<p>Why might we not be able to be 100%, without-a-shadow-of-a-doubt, absolutely certain that the user's credentials are valid? And why is it okay for us to know be absolutely sure?</p>
-</aside>
-<p>Type (not paste!) this function into <code>hashutils.py</code>:</p>
-<pre><code class="language-python">def valid_pw(name, pw, h):
-    salt = h.split(',')[1]
-    test_hash = make_pw_hash(name, pw, salt)
-    return h == test_hash</code></pre>
-<p>Go over each line of this function, and make sure that you understand how it accomplishes the steps outlined above.</p>
-<h5 id="using-valid_pw">Using valid_pw</h5>
-<p>Back in <code>main.py</code>, find the <code>post</code> method of the <code>Login</code> handler. Then focus in on the line where we check the user's password against the value stored under their username in the database. It looks like this:</p>
-<pre><code class="language-python">elif submitted_password != user.password:</code></pre>
-<p>We need to modify this to use our fancy new <code>valid_pw</code> function. Replace this check with the following:</p>
-<pre><code class="language-python">elif not hashutils.valid_pw(submitted_username, submitted_password, user.password):</code></pre>
-<p>This check now uses <code>hashutils.valid_pw</code> to check whether or not the submitted info hashes to the same value retrieved from the database in <code>user.password</code>.</p>
-<h4 id="test-user-registration-and-login">Test user registration and login</h4>
-<p>All of the code needed to work with password hashes instead of plain-text passwords is now in place. Fire up your application and test that you can register a new user, and log that user in.</p>
-<p>From the GAE Launcher, open the SDK Console and select <em>Datastore Viewer</em>. There, you'll see your new user with a password hash stored in place</p>
-<aside class="aside-warning">
-<p>Any user accounts created before this point will no longer be able to log in! If you experience issues with such accounts and associated user data, an easy fix is to delete all data from the datastore and start over.</p>
-</aside>
-<h4 id="hashing-cookies">Hashing cookies</h4>
-<p>Recall from the lesson on cookies that a mischievous individual can change the values of cookies in their browser, effectively allowing them to log in as another user if they can guess the <code>user_id</code> correctly. Currently, the <code>user_id</code> cookie is stored in an un-hashed fashion, and looks something like this in the browser:</p>
-<p><img src="images/unhashed-cookie.png" alt="Un-hashed cookie" /></p>
-<p>Note that numeric value of the cookie is the actual ID of the given user. This isn't good. Let's fix it by hashing our cookies!</p>
-<h5 id="some-utility-functions">Some utility functions</h5>
-<p>The functions that we need to enable hashing of cookies were written in lessons you've completed, so let's grab them from there:</p>
-<pre><code class="language-python">SECRET = 'czUv86iAN9GXA3MT'
-def hash_str(s):
-    return hmac.new(SECRET,s).hexdigest()
-
-def make_secure_val(s):
-    return '%s|%s' % (s, hash_str(s))
-
-def check_secure_val(h):
-    s = h.split('|')[0]
-    if h == make_secure_val(s):
-        return s</code></pre>
-<p>Let's look at what's happening here:</p>
-<ul>
-<li><code>SECRET</code> - This variable is a random string that will be used as the salt for hashing each one of our cookies. You can change this to another value, if you like. In fact, that would be much safer than leaving it as-is, since this secret value is publicly stored in the LaunchCodeEducation GitHub account!</li>
-<li><code>hash_str</code> - This function takes a string and uses the <code>hmac</code> library to create a hash of the string using the value of <code>SECRET</code>. We could have used <code>hashlib</code> here as we did with passwords, but as was noted in the lesson, using <code>hmac</code> is a bit more secure for the situation in which we're using the same salt to hash each value.</li>
-<li><code>make_secure_val</code> - This function takes a string and creates a new string, consisting of the string passed in alongside its hash (generated from <code>hash_str</code>), separated by <code>|</code>. This combined value is the value that we'll store in the actual cookie, and having both the raw string and its hash will allow us to verify the value of the cookie in the future.</li>
-<li><code>check_secure_val</code> - This function uses a technique similar to <code>valid_pw</code> to ensure that the value of a cookie is valid. In other words, it checks that when we have a cookie value like <code>val|hash_val</code>, the result of hashing <code>val</code> is the string <code>hash_val</code>. This ensures that nobody has changed <code>val</code>. If the check fails, then there is no return value, effectively returning <code>None</code>.</li>
-</ul>
 <aside class="aside-pro-tip">
-<p>If you were writing code for a real-world system, you'd store <code>SECRET</code> somewhere else that was less accessible, such as in an environment variable on the server.</p>
+<p>Look at the <code>hashutils.py</code> file you created in the Class 13 video lessons. Was there any application-specific code in that file? Can you reuse it as is, instead of creating these three functions again? Or do you need to make any modifications to it in order to reuse it in your <code>flicklist-flask</code> project?     </p>
 </aside>
-<p>Add these functions to <code>hashutils.py</code>.</p>
-<h5 id="setting-and-verifying-hashed-cookies">Setting and verifying hashed cookies</h5>
-<p>We now need to update precisely two pieces of code to enable secure cookies in our application.</p>
-<p>Back in <code>main.py</code>, find the <code>set_cookie</code> method of the <code>Handler</code> class. Use <code>make_secure_val</code> to generate a new, secure value/hash pair for the value that you're about to set in the cookie:</p>
-<pre><code class="language-python">cookie_val = hashutils.make_secure_val(val)</code></pre>
-<p>Then update the code that sets the cookie in the response headers. The final method should look like this:</p>
-<pre><code class="language-python">def set_cookie(self, name, val):
-    cookie_val = hashutils.make_secure_val(val)
-    self.response.headers.add('Set-Cookie', '%s=%s; Path=/' % (name, cookie_val))</code></pre>
-<p>Now, in <code>read_cookie</code>, update the return statement to use <code>check_secure_val</code>:</p>
-<pre><code class="language-python">return hashutils.check_secure_val(cookie_val)</code></pre>
-<p>Recall that if the cookie fails the check, meaning it has been tampered with, this will return <code>None</code>. In effect, this will be the same as if there was no such cookie at all.</p>
-<h5 id="test-setting-secure-cookies">Test setting secure cookies</h5>
-<p>If you're logged in to the application, log out. Then try to log in again. If you're able to do so, then you know your updated code works because logging in uses setting and reading of cookie. If not, back up to the steps above to find where you went astray.</p>
-<p>Once the code is working, you'll see that cookie values are stored in a format like this:</p>
-<p><img src="images/hashed-cookie.png" alt="Hashed cookie" /></p>
-<p>Congratulations! You have just finished making your web application data secure.</p>
+<ol start="2">
+<li>
+<p>Make sure you import these functions from <code>hashutils.py</code> into the necessary files, now that you have refactored your code following the <em>MVC</em> pattern. Which function(s) do you need to import to <code>main.py</code>? Which to <code>models.py</code>?</p>
+</li>
+<li>
+<p>Change your code in the <code>User</code> class so that you are storing in the database a password hash rather than the password the user entered. Since you changed a property in one of your model classes, you will need to drop and recreate your tables in the Python shell and create a new user (register one) and new movie data for you to test your application's functionality.</p>
+</li>
+<li>Modify your <code>login</code> function so that it compares two hashes rather than two password strings.</li>
+</ol>
                                     </section>
 
             </div>

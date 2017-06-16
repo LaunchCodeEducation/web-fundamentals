@@ -28,6 +28,7 @@ http://education.launchcode.org/web-fundamentals/class-prep\11\review.html
 http://education.launchcode.org/web-fundamentals/class-prep\12/index.html
 http://education.launchcode.org/web-fundamentals/class-prep\12\review.html
 http://education.launchcode.org/web-fundamentals/class-prep\13/index.html
+http://education.launchcode.org/web-fundamentals/class-prep\13\review.html
 http://education.launchcode.org/web-fundamentals/class-prep\14/index.html
 http://education.launchcode.org/web-fundamentals/classes/index.html
 http://education.launchcode.org/web-fundamentals/index.html
@@ -69,11 +70,14 @@ http://education.launchcode.org/web-fundamentals/videos\get-it-done\sessions/ind
 http://education.launchcode.org/web-fundamentals/videos\get-it-done\user-model/index.html
 http://education.launchcode.org/web-fundamentals/videos\get-it-done\user-task-relationship/index.html
 http://education.launchcode.org/web-fundamentals/videos\get-it-done\using-persistent-classes/index.html
+http://education.launchcode.org/web-fundamentals/videos\hashing-passwords/index.html
 http://education.launchcode.org/web-fundamentals/videos\html-escaping/index.html
+http://education.launchcode.org/web-fundamentals/videos\intro-to-hashing/index.html
 http://education.launchcode.org/web-fundamentals/videos\intro-to-validation/index.html
 http://education.launchcode.org/web-fundamentals/videos\jinja-variable-expressions/index.html
 http://education.launchcode.org/web-fundamentals/videos\redirects/index.html
 http://education.launchcode.org/web-fundamentals/videos\render-template/index.html
+http://education.launchcode.org/web-fundamentals/videos\salting-passwords/index.html
 http://education.launchcode.org/web-fundamentals/videos\server-side-validation/index.html
 http://education.launchcode.org/web-fundamentals/videos\str-format/index.html
 http://education.launchcode.org/web-fundamentals/videos\task-list/index.html
