@@ -156,7 +156,7 @@ db.session.commit()</code></pre>
 <p>The <code>/blog</code> route displays all the blog posts.</p>
 </li>
 <li>
-<p>You're able to submit a new post at the <code>/newpost</code> route. After submitting a new post, your app displays the main blog page. </p>
+<p>You're able to submit a new post at the <code>/newpost</code> route. After submitting a new post, your app displays the main blog page.</p>
 </li>
 <li>
 <p>You have two templates, one each for the <code>/blog</code> (main blog listings) and <code>/newpost</code> (post new blog entry) views. Your templates should extend a <code>base.html</code> template which includes some boilerplate HTML that will be used on each page.</p>
@@ -166,7 +166,7 @@ db.session.commit()</code></pre>
 </li>
 <li>If either the <strong>blog title</strong> or <strong>blog body</strong> is left empty in the new post form, the form is rendered again, with a helpful error message and any previously-entered content in the same form inputs.</li>
 </ul>
-<p>By the time you've checked off each of these, you're app should behave like this: </p>
+<p>By the time you've checked off each of these, you're app should behave like this:</p>
 <div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/2m-hp1oy7NI?rel=0" frameborder="0" allowfullscreen></iframe></div>
 <p>Now you're ready to dive in to the next step. Nice work!</p>
 <h2 id="display-individual-entries">Display Individual Entries</h2>
@@ -178,14 +178,17 @@ db.session.commit()</code></pre>
 </li>
 <li><strong>Use Case 2:</strong> After adding a new blog post, instead of going back to the main page, we go to that blog post's individual entry page.</li>
 </ul>
-<p>For both use cases we need to create the template for the page that will display an individual blog, so start by making that. All it need do is display a blog title and blog body. Next, we'll tackle the use cases one at a time. </p>
+<p>For both use cases we need to create the template for the page that will display an individual blog, so start by making that. All it need do is display a blog title and blog body. Next, we'll tackle the use cases one at a time.</p>
 <p>But first, a reminder! It's been a little while since we used query params and <code>GET</code> requests, so it will be a useful reference and review to look at the lesson <a href="../../videos/forms-in-flask">Forms in Flask</a>, especially the section <a href="../../videos/forms-in-flask/#accessing-get-request-parameters">Accessing Get Request Parameters</a>.</p>
 <h3 id="use-case-1">Use Case 1</h3>
 <p>One of the first and easiest changes is to make the header for the blog title on the home page be a link. But what url do we want it to link to? Well, this is the format that we want the url of a single blog entry to have: <code>./blog?id=6</code> (Here <em>6</em> is just one example of an id number for a blog post.) So using jinja2 templating syntax, how can you make sure that each blog entry that is generated on the main page has an <code>href</code> with a query parameter corresponding to its id?</p>
-<p>The next thing we need to determine is how we are going to handle an additional <code>GET</code> request on our homepage since we are already handling a <code>GET</code> request there. Of course, the difference is that in this use case it's a <code>GET</code> request <em>with query parameters</em>. So we'll want to handle the <code>GET</code> requests differently, returning a different template, depending on the contents (or lack thereof) of the dictionary <code>request.args</code>. </p>
+<p>The next thing we need to determine is how we are going to handle an additional <code>GET</code> request on our homepage since we are already handling a <code>GET</code> request there. Of course, the difference is that in this use case it's a <code>GET</code> request <em>with query parameters</em>. So we'll want to handle the <code>GET</code> requests differently, returning a different template, depending on the contents (or lack thereof) of the dictionary <code>request.args</code>.</p>
 <p>Finally, we need to think about how the template is going to know which blog's data to display. The blog object will be passed into the template via <code>render_template</code>. What are the steps we need to take to get the right blog object (the one that has the id we'll get from the url) from the database and into the <code>render_template</code> function call?</p>
 <h3 id="use-case-2">Use Case 2</h3>
-<p>After solving Use Case 1, you should have the confidence to take on Use Case 2. For this use case, it's all in the timing. You've got to create a new database record for the blog entry that has just been submitted, but before redirecting, you need to grab the id for the record you just created. That way you'll know what url (i.e., what number to put on the right side of <code>?id=</code>) to redirect the user to after they submit their new entry. At the risk of spoiling all your fun, here's a <a href="https://stackoverflow.com/questions/8551952/how-to-get-last-record" target="_blank">stack overflow post</a> you may find helpful if you get stuck.</p>
+<p>After solving Use Case 1, you should have the confidence to take on Use Case 2. For this use case, it's all in the timing. You've got to create a new database record for the blog entry that has just been submitted, but before redirecting, you need to grab the id for the record you just created. That way you'll know what url (i.e., what number to put on the right side of <code>?id=</code>) to redirect the user to after they submit their new entry.</p>
+<aside class="aside-hint">
+<p>When you create a new blog post object, it doesn't immediately have an id that is not <code>None</code>. However, after running <code>db.session.commit()</code>, SQLAlchemy will populate the <code>id</code> property of the object to be the value auto-generated by the database upon insert. In other words, after you commit, you can get the id by using the <code>id</code> property of the object you just saved.</p>
+</aside>
 <p>At this point, your web app should display the functionality in the demo video below:</p>
 <div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/xXuWBPSVd2U?rel=0" frameborder="0" allowfullscreen></iframe></div>
 <h2 id="bonus-missions">Bonus Missions</h2>
