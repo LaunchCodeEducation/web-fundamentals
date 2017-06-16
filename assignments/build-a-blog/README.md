@@ -34,14 +34,14 @@ Once you have made a `Blog` class with the necessary properties (i.e., an `id`, 
 from main import db, Blog
 db.create_all()
 db.session.commit()
-```    
+```
 </aside>
 
 Make sure you can say the following about your app:
 
 - The `/blog` route displays all the blog posts.
 
-- You're able to submit a new post at the `/newpost` route. After submitting a new post, your app displays the main blog page. 
+- You're able to submit a new post at the `/newpost` route. After submitting a new post, your app displays the main blog page.
 
 - You have two templates, one each for the `/blog` (main blog listings) and `/newpost` (post new blog entry) views. Your templates should extend a `base.html` template which includes some boilerplate HTML that will be used on each page.
 
@@ -49,7 +49,7 @@ Make sure you can say the following about your app:
 
 - If either the **blog title** or **blog body** is left empty in the new post form, the form is rendered again, with a helpful error message and any previously-entered content in the same form inputs.
 
-By the time you've checked off each of these, you're app should behave like this: 
+By the time you've checked off each of these, you're app should behave like this:
 
 <div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/2m-hp1oy7NI?rel=0" frameborder="0" allowfullscreen></iframe></div>
 
@@ -65,21 +65,25 @@ There are two use cases for this functionality:
 
 - **Use Case 2:** After adding a new blog post, instead of going back to the main page, we go to that blog post's individual entry page.
 
-For both use cases we need to create the template for the page that will display an individual blog, so start by making that. All it need do is display a blog title and blog body. Next, we'll tackle the use cases one at a time. 
+For both use cases we need to create the template for the page that will display an individual blog, so start by making that. All it need do is display a blog title and blog body. Next, we'll tackle the use cases one at a time.
 
 But first, a reminder! It's been a little while since we used query params and `GET` requests, so it will be a useful reference and review to look at the lesson [Forms in Flask](../../videos/forms-in-flask), especially the section [Accessing Get Request Parameters](../../videos/forms-in-flask/#accessing-get-request-parameters).
 
-### Use Case 1 
+### Use Case 1
 
 One of the first and easiest changes is to make the header for the blog title on the home page be a link. But what url do we want it to link to? Well, this is the format that we want the url of a single blog entry to have: `./blog?id=6` (Here *6* is just one example of an id number for a blog post.) So using jinja2 templating syntax, how can you make sure that each blog entry that is generated on the main page has an `href` with a query parameter corresponding to its id?
 
-The next thing we need to determine is how we are going to handle an additional `GET` request on our homepage since we are already handling a `GET` request there. Of course, the difference is that in this use case it's a `GET` request *with query parameters*. So we'll want to handle the `GET` requests differently, returning a different template, depending on the contents (or lack thereof) of the dictionary `request.args`. 
+The next thing we need to determine is how we are going to handle an additional `GET` request on our homepage since we are already handling a `GET` request there. Of course, the difference is that in this use case it's a `GET` request *with query parameters*. So we'll want to handle the `GET` requests differently, returning a different template, depending on the contents (or lack thereof) of the dictionary `request.args`.
 
 Finally, we need to think about how the template is going to know which blog's data to display. The blog object will be passed into the template via `render_template`. What are the steps we need to take to get the right blog object (the one that has the id we'll get from the url) from the database and into the `render_template` function call?
 
-### Use Case 2 
+### Use Case 2
 
-After solving Use Case 1, you should have the confidence to take on Use Case 2. For this use case, it's all in the timing. You've got to create a new database record for the blog entry that has just been submitted, but before redirecting, you need to grab the id for the record you just created. That way you'll know what url (i.e., what number to put on the right side of `?id=`) to redirect the user to after they submit their new entry. At the risk of spoiling all your fun, here's a [stack overflow post](https://stackoverflow.com/questions/8551952/how-to-get-last-record) you may find helpful if you get stuck.
+After solving Use Case 1, you should have the confidence to take on Use Case 2. For this use case, it's all in the timing. You've got to create a new database record for the blog entry that has just been submitted, but before redirecting, you need to grab the id for the record you just created. That way you'll know what url (i.e., what number to put on the right side of `?id=`) to redirect the user to after they submit their new entry.
+
+<aside class="aside-hint" markdown="1">
+When you create a new blog post object, it doesn't immediately have an id that is not `None`. However, after running `db.session.commit()`, SQLAlchemy will populate the `id` property of the object to be the value auto-generated by the database upon insert. In other words, after you commit, you can get the id by using the `id` property of the object you just saved.
+</aside>
 
 At this point, your web app should display the functionality in the demo video below:
 
@@ -96,5 +100,3 @@ Note: Be sure to commit and push your changes before proceeding to these extra t
 ## Submit
 
 To turn in your assignment and get credit, follow the [submission instructions](../)
-
-
