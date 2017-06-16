@@ -5,10 +5,9 @@ currentMenu: studios
 
 ## Walkthrough
 
-In today's walkthrough, your instructor will add a few Bootstrap features to Flicklist:
-- Add the Bootstrap CSS and JS files, along with jQuery, by adding header elements that reference the Bootstrap and jQuery CDN resources.
-- Add a Navbar in `base.html` to dress up site navigation.
-- Use [Bootstrap's Grid System](http://getbootstrap.com/css/#grid) to add a single-column grid layout in `base.html` using `container`, `row`, and `col-md-*` classes.
+In today's walkthrough, your instructor will add a couple Bootstrap features to Flicklist:
+- Add to your `base.html` the Bootstrap CSS and JS files, along with jQuery, by adding header elements that reference the Bootstrap and jQuery CDN resources. 
+- Add a Navbar to dress up site navigation. You can add this to your `base.html` or to the individual templates. Think about the pros and cons to each approach.
 
 ## Studio
 
@@ -16,13 +15,7 @@ You're about to embark on a creative Bootstrap adventure! Let's get ready.
 
 ### Checking out the Studio code
 
-Before getting the starter code for this studio, fetch updates from the main repository:
-
-```nohighlight
-$ git fetch origin
-```
-
-Follow the [instructions for getting the code][get-the-code] in order to get the starter code for `studio11`.
+Follow the [instructions for getting the code][get-the-code] in order to get the starter code for `studio10`.
 
 ### Your Tasks
 
@@ -37,8 +30,7 @@ Which ones you add are up to you, but here are some suggestions:
 #### Alerts
 
 [Bootstrap Alerts](http://getbootstrap.com/components/#alerts) allow you to draw attention to and provide meaningful context to important messages. Following the example code, add one or more alerts. Here are a few places where Flicklist currently displays alert-like messages:
-- Validation errors from form submission. *Note:* You'll probably want to move the location of these messages to above the form for optimal display. You also will likely want to use a conditional to check for the existence of errors, so you don't end up with an empty alert box.
-- Confirmations: `add-confirmation.html`, `watched-it-confirmation.html`, `rating-confirmation.html`
+- Validation errors from form submission. *Note:* If you haven't already, you'll probably want to move the location of these messages to above the form for optimal display. You also will likely want to use a conditional to check for the existence of errors, so you don't end up with an empty alert box.
 
 #### Glyphicons
 
@@ -52,11 +44,9 @@ Find a few glyphicons that can improve the look of Flicklist. We think `glphyico
 
 [Bootstrap Forms](http://getbootstrap.com/css/#forms) are part of the CSS component of Bootstrap, and provide a set of classes to make form layouts and form elements look nice, clean, and readable. Using the examples in the documentation, add some Bootstrap form styles to some or all of the site's forms: login, register, ratings, and add movie.
 
-When adding the Form classes, you'll want to replace the table-based form layout that we've been using with the div-based layout that you see in the Bootstrap documentation examples.
+#### Grid System
 
-#### Tables
-
-Consider converting the display of movie lists -- on the "My List" and "My Ratings" pages -- to use tables to display movies. Then you can use [Bootstrap Table styles](http://getbootstrap.com/css/#tables) to improve on the crummy default styling for tables!
+Use [Bootstrap's Grid System](http://getbootstrap.com/css/#grid) to add grid layouts using `container`, `row`, and `col-md-*` classes. Understanding and utilizing the grid system is at the heart of creating responsive design with Bootstrap.
 
 ## Show Off Your Work!
 
