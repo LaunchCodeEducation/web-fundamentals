@@ -7,8 +7,6 @@ In the last problem set we built a blog. We were able to persist data in the dat
 
 In this assignment, we'll refactor and expand our codebase to make this a multi-user blog site. We'll add authentication, so that users have to log in to create posts. Additionally, users will have their own blogs page, and visitors will be able to view blogs by author, or they can view all blog posts on the site by all authors. And we'll still maintain the ability to view an individual blog entry by itself.
 
-Throughout the assignment, refer to the [demo app][blogz-demo] which models the functionality your app will have by the end of the assignment. Feel free to create an account, make a post or two, and poke around. Note that some of the urls won't match the ones that you have exactly, since we will be using query parameters which were not used in the demo app.
-
 This assignment is the culmination of everything you've learned so far in Unit 2. Therefore, it is quite large and may seem like a lot of work. Just remember to take it one step at a time, and work on one task at a time. Some of these tasks we'll work through together, and some will be left to you to implement. Also, the video lessons for [Get It Done!](../../videos/get-it-done/) will be invaluable as you work through this assignment. If you forget how to do something or encounter a bug, reviewing those lessons will help you figure it out!
 
 Here are the steps we'll take as we build our impressive blog app:
@@ -32,7 +30,7 @@ Here are the steps we'll take as we build our impressive blog app:
 Since this assignment is a continuation of *Build-a-Blog*, we'll want to use the files we created in that assignment, but we don't want to alter that repository. We want a separate repository called *Blogz*. To accomplish this, take the following steps:
 
 1. At [GitHub.com](https://github.com/), create a new repository called `blogz`. Copy the URL for the repository.
-2. In your terminal, `cd` into your `build-a-blog` repository. Make sure you are on your `master` branch and that it is up to date and contains your working solution to the last assignment. 
+2. In your terminal, `cd` into your `build-a-blog` repository. Make sure you are on your `master` branch and that it is up to date and contains your working solution to the last assignment.
 3. Push this to the new repository you created on GitHub using the URL you copied: `git push https://github.com/yourUSERNAME/blogz.git`.
 4. `cd` into your main development folder `LC101` (this will probably mean you just use `cd ..`).
 5. Clone the repo locally using the same URL as you used to push: `git clone https://github.com/yourUSERNAME/blogz.git`.
@@ -40,7 +38,7 @@ Since this assignment is a continuation of *Build-a-Blog*, we'll want to use the
 Now you can `cd` into the `blogz` repo on your computer and start adding to and modifying it for this assignment!
 
 <aside class="aside-note" markdown="1">
-Be sure to activate your virtual environment once you `cd` into your new repo: `source activate flask-env`.    
+Be sure to activate your virtual environment once you `cd` into your new repo: `source activate flask-env`.
 </aside>
 
 One very important change we still need to make is to the database. We'll want to make a new database specific to this assignment, and then alter our database connection string in `main.py` so that it uses this database (and the associated user/password). So follow the instructions for [creating a new database](../../studios/flicklist/6/#create-mysql-user-and-database) using `blogz` as your user name and a password of your choice. Then change the connection string on this line of `main.py` so that it reflects this new database:
@@ -49,7 +47,7 @@ One very important change we still need to make is to the database. We'll want t
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://blogz:password@localhost:8889/blogz'
 ```
 
-Then you'll need to initialize your new database: 
+Then you'll need to initialize your new database:
 
 ```nohighlight
 (flask-env) $ python
@@ -84,7 +82,7 @@ This helps us define exactly what we want our app to do. It also makes it easier
 
 ## Add User Class
 
-To get started, the first thing we'll want to do is add a `User` class and associated table to our app. It should have the following properties: 
+To get started, the first thing we'll want to do is add a `User` class and associated table to our app. It should have the following properties:
 
 - `id` which is an `Integer` primary key that auto-increments (just like the others you've created in class)
 - `username` which will be a `String` with a size of your choosing
@@ -115,14 +113,13 @@ Make sure the following use cases are fulfilled:
 - For `/signup` page:
 
     - User enters new, valid username, a valid password, and verifies password correctly and is redirected to the '/newpost' page with their username being stored in a session.
-    - User leaves any of the username, password, or verify fields blank and gets an error message that one or more fields are invalid. 
+    - User leaves any of the username, password, or verify fields blank and gets an error message that one or more fields are invalid.
     - User enters a username that already exists and gets an error message that username already exists.
     - User enters different strings into the password and verify fields and gets an error message that the passwords do not match.
     - User enters a password or username less than 3 characters long and gets either an invalid username or an invalid password message.
 
 <aside class="aside-note" markdown="1">
-In our demo app there is an input field for email. You can omit this from your code (and thus from both your `User` class and your `signup.html` template) since it is never used.
-Also, we'll leave it up to you whether to display error messages to the user using flash messages or by passing them to the template as you did in *User Signup*. If you decide to do flash messages, add the necessary code to `main.py` and `base.html`.
+We leave it up to you whether to display error messages to the user using flash messages or by passing them to the template as you did in *User Signup*. If you decide to do flash messages, add the necessary code to `main.py` and `base.html`.
 </aside>
 
 ## Add Logout Function and Navigation
@@ -132,7 +129,7 @@ Now that users can login, we want to allow them to log out. To do so, you'll imp
 While we're adding navigation links, let's also add a link to `"/login"` and to `"/"`, which will take users to the page we'll build in `index.html` that will display a list of all the usernames. You can call that page "Home".
 
 <aside class="aside-note" markdown="1">
-Note that we have a `login.html` template and a `signup.html` template, but no `logout.html` template. It turns out that we don't need a template for logging out. Think about why this is the case. What makes logging out different from logging in, or creating an account?    
+Note that we have a `login.html` template and a `signup.html` template, but no `logout.html` template. It turns out that we don't need a template for logging out. Think about why this is the case. What makes logging out different from logging in, or creating an account?
 </aside>
 
 ## Require Login
@@ -164,7 +161,13 @@ Now we can see a list of all blogs by all users on the `/blog` page, but what if
 
 Just as we created a page to dynamically display individual blog posts in [Build-a-Blog](../build-a-blog/#display-individual-entries), we'll create a page to dynamically display the posts of each individual user. We'll use a `GET` request on the `/blog` path with a query parameter of `?user=userId` where "userId" is the integer matching the id of the user whose posts we want to feature. And we'll need to create a template for this page.
 
-There are three ways that users can reach this page and they all require that we make some changes to our templates. We will need to display, as a link, the username of the author of each blog post in a tagline on the individual blog entry page and on the `/blog` page. (Check out our demo app and see the line "Written by..." underneath the body of the blog posts. Note that on the individual entry page the demo app also features the date the blog was written, but that is not required for this assignment. However, if you fulfilled the second bonus mission in [Build-a-Blog](../build-a-blog/#bonus-missions) using a `DateTime` column, then you can utilize that field here to make your display match the demo app's.) 
+There are three ways that users can reach this page and they all require that we make some changes to our templates. We will need to display, as a link, the username of the author of each blog post in a tagline on the individual blog entry page and on the `/blog` page.
+
+<img alt="Written by" src="written-by.png" style="width:400px;"/>
+
+<aside class="aside-pro-tip" markdown="1">
+If you fulfilled the second bonus mission in [Build-a-Blog](../build-a-blog/#bonus-missions) using a `DateTime` column, then you can include that date in the same line.
+</aside>
 
 <aside class="aside-note" markdown="1">
 Remember that each `Blog` object has an owner associated with it (passed to it in the constructor), so you can access the properties of that owner (such as `username`, or `id`) with dot notation.
@@ -172,7 +175,7 @@ Remember that each `Blog` object has an owner associated with it (passed to it i
 
 Then you'll have to amend the `/blog` route handler to render the correct template (either the one for the individual blog user page, or the one for the individual blog entry page) based on the arguments in the request (i.e., which name the query parameter has). If the query param is `user`, then you need to use the template for the individual user page and pass it a list of all the blogs associated with that user.
 
-We also need to change our `index.html` to make the list items of authors into anchor tags that will link to the individual blog user page. 
+We also need to modify our `index.html`. For each author name listed, add a link to the author's individual blog user page.
 
 Here are the relevant use cases:
 
@@ -198,6 +201,4 @@ After completing the video lessons on hashing, come back to this assignment and 
 
 To turn in your assignment and get credit, follow the [submission instructions][submission-instructions].
 
-[blogz-demo]: http://blogz-demo.appspot.com/
-[blogz-demo-blog]: http://blogz-demo.appspot.com/blog
 [submission-instructions]: ../
