@@ -34,6 +34,10 @@ def check_pw_hash(password, hash):
     return False
 ```
 
+<aside class="aside-note" markdown="1">
+In the video, when we say "let's optionally let the user provide a salt", we are using the term *user* to refer to the calling program; we are not referring to the person utilizing the app. 
+</aside>
+
 ## Code
 
 View the [final code](https://github.com/LaunchCodeEducation/get-it-done/tree/997bcbfa4e8d95f06840988ca1497d02e337ce9d) from this lesson.

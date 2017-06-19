@@ -93,7 +93,11 @@ At this point, your web app should display the functionality in the demo video b
 
 Note: Be sure to commit and push your changes before proceeding to these extra tasks. That way you have a snapshot of your code when it met all the criteria above.
 
-1. Add a CSS stylesheet to improve the style of your app. You can read about how to do so [here](https://stackoverflow.com/questions/22259847/application-not-picking-up-css-file-flask-python). And know that clearing your browsing data (especially your cached images and files) can help if you run into problems with your display not reflecting changes you make to your CSS stylesheet.
+1. Add a CSS stylesheet to improve the style of your app. You can read about how to do so [here](https://stackoverflow.com/questions/22259847/application-not-picking-up-css-file-flask-python). 
+
+<aside class="aside-warning" markdown="1">
+Know that clearing your browsing data (specifically your cached images and files) will help if you run into problems with your browser not reflecting/displaying changes you make to your CSS stylesheet.
+</aside>
 
 2. Display the posts in order of most recent to the oldest (the opposite of the current order). You can either use the `id` property that has been created using auto-incrementing, or - a more sophisticated method - you can add a `DateTime` property to the `Blog` class (and drop and re-create the table) that will store the date the post was created in the database. For an example of an app with a DateTime column, check out this [quickstart guide](http://flask-sqlalchemy.pocoo.org/2.1/quickstart/#simple-relationships).
 
