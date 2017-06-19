@@ -30,6 +30,9 @@ Here are the steps we'll take as we build our impressive blog app:
 Since this assignment is a continuation of *Build-a-Blog*, we'll want to use the files we created in that assignment, but we don't want to alter that repository. We want a separate repository called *Blogz*. To accomplish this, take the following steps:
 
 1. At [GitHub.com](https://github.com/), create a new repository called `blogz`. Copy the URL for the repository.
+    <aside class="aside-warning" markdown="1">
+    When creating the repository, be sure that you **do not** initialize it with a README, .gitignore, or license file. Doing so will make step 3 below more difficult.
+    </aside>
 2. In your terminal, `cd` into your `build-a-blog` repository. Make sure you are on your `master` branch and that it is up to date and contains your working solution to the last assignment.
 3. Push this to the new repository you created on GitHub using the URL you copied: `git push https://github.com/yourUSERNAME/blogz.git`.
 4. `cd` into your main development folder `LC101` (this will probably mean you just use `cd ..`).
