@@ -5,7 +5,7 @@ currentMenu: classes
 
 ## Cookies and Sessions
 
-This lesson focuses on on **cookies**, which are small pieces of data stored as key/value pairs in the browser. As web developers, we can ask a user's browser to store a cookie for us, and each time that user visits our site in the future, they'll pass the cookie data in the request.
+This lesson focuses on **cookies**, which are small pieces of data stored as key/value pairs in the browser. As web developers, we can ask a user's browser to store a cookie for us, and each time that user visits our site in the future, they'll pass the cookie data in the request.
 
 Cookies are part of the furniture of the Internet. You've surely heard the term before, even if you didn't know precisely what it referred to. Chances are you've "cleared your cookies" at some point to fix a problem with a website, or to ensure you didn't remain logged into a website on a public computer. Today, you learn about how these tiny but essential pieces of data actually work!
 
