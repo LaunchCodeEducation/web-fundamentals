@@ -44,3 +44,4 @@ currentMenu: cheatsheets
 - [HTTP Introduction](https://www.httpwatch.com/httpgallery/)
 - [Conda Cheat Sheet](https://conda.io/docs/_downloads/conda-cheatsheet.pdf)
 - [Jinja2 Documentation](http://jinja.pocoo.org/docs/2.9/)
+- [Web Design in 4 Minutes](http://jgthms.com/web-design-in-4-minutes/)
