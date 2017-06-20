@@ -182,10 +182,10 @@ db.session.commit()</code></pre>
 <p>We will also add a <code>singleUser.html</code> template that will be used to display only the blogs associated with a single given author. It will be used when we dynamically generate a page using a <code>GET</code> request with a <code>user</code> query parameter on the <code>/blog</code> route (similar to how we dynamically generated individual blog entry pages in the last assignment).</p>
 </li>
 <li>
-<p>We will add the following route handler functions: 'signup', 'login', and 'index'.</p>
+<p>We will add the following route handler functions: <code>signup</code>, <code>login</code>, and <code>index</code>.</p>
 </li>
 <li>
-<p>We'll have a <code>logout</code> function that handles a <code>POST</code> request to <code>/logout</code> and redirects the user to &quot;/blog&quot; after deleting the username from the session.</p>
+<p>We'll have a <code>logout</code> function that handles a <code>POST</code> request to <code>/logout</code> and redirects the user to <code>/blog</code> after deleting the username from the session.</p>
 </li>
 <li>We will also, naturally, have to add a <code>User</code> class to make all this new functionality possible, which is what we'll tackle next after a brief explanation of use cases.</li>
 </ul>
@@ -262,13 +262,9 @@ db.session.commit()</code></pre>
 <p>Now we can see a list of all blogs by all users on the <code>/blog</code> page, but what if a visitor to the site only wants to see the blogs for a particular author? To make that easy for the visitor, let's add a &quot;Home&quot; page that will live at the route <code>/</code> and will display a list of the usernames for all the authors on the site. Make a template called <code>index.html</code> that displays this list, and in <code>main.py</code> create a route handler function for it (named <code>index</code> so that it is included in the allowed routes we listed above).</p>
 <h2 id="create-dynamic-user-pages">Create Dynamic User Pages</h2>
 <p>Just as we created a page to dynamically display individual blog posts in <a href="../build-a-blog/#display-individual-entries">Build-a-Blog</a>, we'll create a page to dynamically display the posts of each individual user. We'll use a <code>GET</code> request on the <code>/blog</code> path with a query parameter of <code>?user=userId</code> where &quot;userId&quot; is the integer matching the id of the user whose posts we want to feature. And we'll need to create a template for this page.</p>
-<p>There are three ways that users can reach this page and they all require that we make some changes to our templates. We will need to display, as a link, the username of the author of each blog post in a tagline on the individual blog entry page and on the <code>/blog</code> page. Check out our [demo app][blogz-demo] and see the line &quot;Written by...&quot; underneath the body of the blog posts.</p>
+<p>There are three ways that users can reach this page and they all require that we make some changes to our templates. We will need to display, as a link, the username of the author of each blog post in a tagline on the individual blog entry page and on the <code>/blog</code> page. Check out our <a href="http://blogz-demo.appspot.com/" target="_blank">demo app</a> and see the line &quot;Written by...&quot; underneath the body of the blog posts.</p>
 <aside class="aside-pro-tip">
 <p>If you fulfilled the second bonus mission in <a href="../build-a-blog/#bonus-missions">Build-a-Blog</a> using a <code>DateTime</code> column, then you can utilize that field here to also note when each post was created, alongside the author.</p>
-</aside>
-<img alt="Written by" src="written-by.png" style="width:400px;" />
-<aside class="aside-pro-tip">
-<p>If you fulfilled the second bonus mission in <a href="../build-a-blog/#bonus-missions">Build-a-Blog</a> using a <code>DateTime</code> column, then you can include that date in the same line.</p>
 </aside>
 <aside class="aside-note">
 <p>Remember that each <code>Blog</code> object has an owner associated with it (passed to it in the constructor), so you can access the properties of that owner (such as <code>username</code>, or <code>id</code>) with dot notation.</p>
@@ -289,7 +285,7 @@ db.session.commit()</code></pre>
 <h3 id="add-hashing">Add Hashing</h3>
 <p>After completing the video lessons on hashing, come back to this assignment and refactor your code so that you utilize hashing instead of storing passwords directly.</p>
 <h2 id="submit">Submit</h2>
-<p>To turn in your assignment and get credit, follow the [submission instructions][submission-instructions].</p>
+<p>To turn in your assignment and get credit, follow the <a href="../">submission instructions</a>.</p>
                                     </section>
 
             </div>
