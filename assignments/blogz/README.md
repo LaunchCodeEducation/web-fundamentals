@@ -69,9 +69,9 @@ This is a high-level overview of the major differences between your *Build-a-Blo
 
 - We will also add a `singleUser.html` template that will be used to display only the blogs associated with a single given author. It will be used when we dynamically generate a page using a `GET` request with a `user` query parameter on the `/blog` route (similar to how we dynamically generated individual blog entry pages in the last assignment).
 
-- We will add the following route handler functions: 'signup', 'login', and 'index'.
+- We will add the following route handler functions: `signup`, `login`, and `index`.
 
-- We'll have a `logout` function that handles a `POST` request to `/logout` and redirects the user to "/blog" after deleting the username from the session.
+- We'll have a `logout` function that handles a `POST` request to `/logout` and redirects the user to `/blog` after deleting the username from the session.
 
 - We will also, naturally, have to add a `User` class to make all this new functionality possible, which is what we'll tackle next after a brief explanation of use cases.
 
@@ -166,16 +166,10 @@ Now we can see a list of all blogs by all users on the `/blog` page, but what if
 
 Just as we created a page to dynamically display individual blog posts in [Build-a-Blog](../build-a-blog/#display-individual-entries), we'll create a page to dynamically display the posts of each individual user. We'll use a `GET` request on the `/blog` path with a query parameter of `?user=userId` where "userId" is the integer matching the id of the user whose posts we want to feature. And we'll need to create a template for this page.
 
-There are three ways that users can reach this page and they all require that we make some changes to our templates. We will need to display, as a link, the username of the author of each blog post in a tagline on the individual blog entry page and on the `/blog` page. Check out our [demo app][blogz-demo] and see the line "Written by..." underneath the body of the blog posts.
+There are three ways that users can reach this page and they all require that we make some changes to our templates. We will need to display, as a link, the username of the author of each blog post in a tagline on the individual blog entry page and on the `/blog` page. Check out our [demo app](http://blogz-demo.appspot.com/) and see the line "Written by..." underneath the body of the blog posts.
 
 <aside class="aside-pro-tip" markdown="1">
 If you fulfilled the second bonus mission in [Build-a-Blog](../build-a-blog/#bonus-missions) using a `DateTime` column, then you can utilize that field here to also note when each post was created, alongside the author.
-</aside>
-
-<img alt="Written by" src="written-by.png" style="width:400px;" />
-
-<aside class="aside-pro-tip" markdown="1">
-If you fulfilled the second bonus mission in [Build-a-Blog](../build-a-blog/#bonus-missions) using a `DateTime` column, then you can include that date in the same line.
 </aside>
 
 <aside class="aside-note" markdown="1">
@@ -208,7 +202,7 @@ After completing the video lessons on hashing, come back to this assignment and 
 
 ## Submit
 
-To turn in your assignment and get credit, follow the [submission instructions][submission-instructions].
+To turn in your assignment and get credit, follow the [submission instructions](../).
 
 [submission-instructions]: ../
 [blogz-demo]: http://blogz-demo.appspot.com/

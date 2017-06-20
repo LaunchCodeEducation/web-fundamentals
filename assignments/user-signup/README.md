@@ -30,7 +30,7 @@ Your page does not have to look exactly the same as [our version][signup-example
 
 1. For the username and email fields, you should preserve what the user typed, so they don't have to retype it. With the password fields, you should clear them, for security reasons.
 
-1. If all the input is valid, then you should redirect the user to a welcome page that uses the username input to display a welcome message of: "Welcome, [username]!"
+1. If all the input is valid, then you should show the user a welcome page that uses the username input to display a welcome message of: "Welcome, [username]!"
 
 1. Use templates (one for the index/home page and one for the welcome page) to render the HTML for your web app.
 
