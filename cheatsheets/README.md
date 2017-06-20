@@ -45,3 +45,4 @@ currentMenu: cheatsheets
 - [Conda Cheat Sheet](https://conda.io/docs/_downloads/conda-cheatsheet.pdf)
 - [Jinja2 Documentation](http://jinja.pocoo.org/docs/2.9/)
 - [Web Design in 4 Minutes](http://jgthms.com/web-design-in-4-minutes/)
+- [SQL Joins Diagram](https://www.codeproject.com/KB/database/Visual_SQL_Joins/Visual_SQL_JOINS_orig.jpg)
