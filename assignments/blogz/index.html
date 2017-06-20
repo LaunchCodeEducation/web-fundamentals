@@ -127,6 +127,7 @@
                                         <h1>Assignment: Blogz</h1>
                     <p>In the last problem set we built a blog. We were able to persist data in the database and retrieve that data for display. However, there are still some serious feature gaps. We're going to fill those in now.</p>
 <p>In this assignment, we'll refactor and expand our codebase to make this a multi-user blog site. We'll add authentication, so that users have to log in to create posts. Additionally, users will have their own blogs page, and visitors will be able to view blogs by author, or they can view all blog posts on the site by all authors. And we'll still maintain the ability to view an individual blog entry by itself.</p>
+<p>Throughout the assignment, refer to the <a href="http://blogz-demo.appspot.com/" target="_blank">demo app</a> which models the functionality your app will have by the end of the assignment. Feel free to create an account, make a post or two, and poke around. Note that some of the urls won't match the ones that you have exactly, since we will be using query parameters which were not used in the demo app.</p>
 <p>This assignment is the culmination of everything you've learned so far in Unit 2. Therefore, it is quite large and may seem like a lot of work. Just remember to take it one step at a time, and work on one task at a time. Some of these tasks we'll work through together, and some will be left to you to implement. Also, the video lessons for <a href="../../videos/get-it-done/">Get It Done!</a> will be invaluable as you work through this assignment. If you forget how to do something or encounter a bug, reviewing those lessons will help you figure it out!</p>
 <p>Here are the steps we'll take as we build our impressive blog app:</p>
 <ul>
@@ -261,8 +262,11 @@ db.session.commit()</code></pre>
 <p>Now we can see a list of all blogs by all users on the <code>/blog</code> page, but what if a visitor to the site only wants to see the blogs for a particular author? To make that easy for the visitor, let's add a &quot;Home&quot; page that will live at the route <code>/</code> and will display a list of the usernames for all the authors on the site. Make a template called <code>index.html</code> that displays this list, and in <code>main.py</code> create a route handler function for it (named <code>index</code> so that it is included in the allowed routes we listed above).</p>
 <h2 id="create-dynamic-user-pages">Create Dynamic User Pages</h2>
 <p>Just as we created a page to dynamically display individual blog posts in <a href="../build-a-blog/#display-individual-entries">Build-a-Blog</a>, we'll create a page to dynamically display the posts of each individual user. We'll use a <code>GET</code> request on the <code>/blog</code> path with a query parameter of <code>?user=userId</code> where &quot;userId&quot; is the integer matching the id of the user whose posts we want to feature. And we'll need to create a template for this page.</p>
-<p>There are three ways that users can reach this page and they all require that we make some changes to our templates. We will need to display, as a link, the username of the author of each blog post in a tagline on the individual blog entry page and on the <code>/blog</code> page.</p>
-<img alt="Written by" src="written-by.png" style="width:400px;"/>
+<p>There are three ways that users can reach this page and they all require that we make some changes to our templates. We will need to display, as a link, the username of the author of each blog post in a tagline on the individual blog entry page and on the <code>/blog</code> page. Check out our [demo app][blogz-demo] and see the line &quot;Written by...&quot; underneath the body of the blog posts.</p>
+<aside class="aside-pro-tip">
+<p>If you fulfilled the second bonus mission in <a href="../build-a-blog/#bonus-missions">Build-a-Blog</a> using a <code>DateTime</code> column, then you can utilize that field here to also note when each post was created, alongside the author.</p>
+</aside>
+<img alt="Written by" src="written-by.png" style="width:400px;" />
 <aside class="aside-pro-tip">
 <p>If you fulfilled the second bonus mission in <a href="../build-a-blog/#bonus-missions">Build-a-Blog</a> using a <code>DateTime</code> column, then you can include that date in the same line.</p>
 </aside>
