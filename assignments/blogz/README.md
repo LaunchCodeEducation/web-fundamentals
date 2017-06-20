@@ -7,6 +7,8 @@ In the last problem set we built a blog. We were able to persist data in the dat
 
 In this assignment, we'll refactor and expand our codebase to make this a multi-user blog site. We'll add authentication, so that users have to log in to create posts. Additionally, users will have their own blogs page, and visitors will be able to view blogs by author, or they can view all blog posts on the site by all authors. And we'll still maintain the ability to view an individual blog entry by itself.
 
+Throughout the assignment, refer to the [demo app][blogz-demo] which models the functionality your app will have by the end of the assignment. Feel free to create an account, make a post or two, and poke around. Note that some of the urls won't match the ones that you have exactly, since we will be using query parameters which were not used in the demo app.
+
 This assignment is the culmination of everything you've learned so far in Unit 2. Therefore, it is quite large and may seem like a lot of work. Just remember to take it one step at a time, and work on one task at a time. Some of these tasks we'll work through together, and some will be left to you to implement. Also, the video lessons for [Get It Done!](../../videos/get-it-done/) will be invaluable as you work through this assignment. If you forget how to do something or encounter a bug, reviewing those lessons will help you figure it out!
 
 Here are the steps we'll take as we build our impressive blog app:
@@ -164,9 +166,13 @@ Now we can see a list of all blogs by all users on the `/blog` page, but what if
 
 Just as we created a page to dynamically display individual blog posts in [Build-a-Blog](../build-a-blog/#display-individual-entries), we'll create a page to dynamically display the posts of each individual user. We'll use a `GET` request on the `/blog` path with a query parameter of `?user=userId` where "userId" is the integer matching the id of the user whose posts we want to feature. And we'll need to create a template for this page.
 
-There are three ways that users can reach this page and they all require that we make some changes to our templates. We will need to display, as a link, the username of the author of each blog post in a tagline on the individual blog entry page and on the `/blog` page.
+There are three ways that users can reach this page and they all require that we make some changes to our templates. We will need to display, as a link, the username of the author of each blog post in a tagline on the individual blog entry page and on the `/blog` page. Check out our [demo app][blogz-demo] and see the line "Written by..." underneath the body of the blog posts.
 
-<img alt="Written by" src="written-by.png" style="width:400px;"/>
+<aside class="aside-pro-tip" markdown="1">
+If you fulfilled the second bonus mission in [Build-a-Blog](../build-a-blog/#bonus-missions) using a `DateTime` column, then you can utilize that field here to also note when each post was created, alongside the author.
+</aside>
+
+<img alt="Written by" src="written-by.png" style="width:400px;" />
 
 <aside class="aside-pro-tip" markdown="1">
 If you fulfilled the second bonus mission in [Build-a-Blog](../build-a-blog/#bonus-missions) using a `DateTime` column, then you can include that date in the same line.
@@ -205,3 +211,4 @@ After completing the video lessons on hashing, come back to this assignment and 
 To turn in your assignment and get credit, follow the [submission instructions][submission-instructions].
 
 [submission-instructions]: ../
+[blogz-demo]: http://blogz-demo.appspot.com/
