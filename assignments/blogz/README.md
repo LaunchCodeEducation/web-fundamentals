@@ -56,9 +56,8 @@ Then you'll need to initialize your new database:
 
 ```nohighlight
 (flask-env) $ python
-from main import db, Blog
+from main import db
 db.create_all()
-db.session.commit()
 ```
 
 ## Overview of Improvements
