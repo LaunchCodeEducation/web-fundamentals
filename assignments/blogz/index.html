@@ -169,9 +169,8 @@
 <pre><code class="language-python">app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://blogz:password@localhost:8889/blogz'</code></pre>
 <p>Then you'll need to initialize your new database:</p>
 <pre><code class="language-nohighlight">(flask-env) $ python
-from main import db, Blog
-db.create_all()
-db.session.commit()</code></pre>
+from main import db
+db.create_all()</code></pre>
 <h2 id="overview-of-improvements">Overview of Improvements</h2>
 <p>This is a high-level overview of the major differences between your <em>Build-a-Blog</em> app and the <em>Blogz</em> app you will create in this assignment. We will tackle one change at a time; this just serves as a quick checklist that you can review to make sure you've added the necessary changes.</p>
 <ul>
