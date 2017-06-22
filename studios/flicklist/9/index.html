@@ -125,27 +125,28 @@
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Studio: FlickList 9</h1>
-                    <p>Like Flicklist 8, this studio has a different structure than most Flicklist studios. Once again, we will omit the walkthrough and let you get to work immediately on the Studio. </p>
+                    <p>Like Flicklist 8, this studio has a different structure than most Flicklist studios. Once again, we will omit the walkthrough and let you get to work immediately on the Studio.</p>
 <h2 id="studio">Studio</h2>
 <p>We've added all of the main user-facing features to the Flicklist application. One aspect of the application that users typically don't think about is security. But we as developers should prioritize it. We must treat our users' data carefully, and do everything we can to prevent sensitive data from being exposed. We'll make our passwords secure in this studio using hashing.</p>
 <h3 id="checking-out-the-studio-code">Checking Out the Studio code</h3>
 <p>Follow the <a href="../getting-the-code/">instructions for getting the code</a> in order to get the starter code for <code>studio9</code>. As usual, remember to start up your MAMP servers and activate <code>flask-env</code>.</p>
 <h3 id="your-tasks">Your tasks</h3>
-<p>Passwords should be hashed when creating a new user account so that in the event of a security breach - for example, a database break-in - it will be extremely difficult for anybody to unmask the passwords.</p>
+<p>Passwords should be hashed when creating a new user account so that in the event of a security breach--for example, a database break-in--it will be extremely difficult for anybody to unmask the passwords.</p>
 <p>Recall that hashing uses one of many available algorithms to turn a string into a hexadecimal number. For example, with the sha256 algorithm, &quot;LaunchCode&quot; becomes:</p>
 <pre><code class="language-nohighlight">fd433b1435c24ea70f918e6236d4185c18fa708754cec1dab86d931eb1273c71</code></pre>
 <p>The key concept that makes a given hashing algorithm useful for security purposes is that it is structured such that it is extremely difficult, and would take an incredibly large amount of time, to reverse the process and retrieve the original string.</p>
 <p>Generating a hash for a string is easy. Turning a hash back into the string that it came from should be very, very, very hard. The harder this reverse process is, the better the hash algorithm. Algorithms with this property are known as <em>one-way hash functions</em>.</p>
-<p>Review the code added in the <a href="../../../class-prep/13/">video lessons for Class 13</a> if you forget how to implement any of the steps below:</p>
+<p>Review the code added in the <a href="../../../class-prep/13/">video lessons for Class 13</a> if you are fuzzy on how to implement any of the steps below:</p>
 <ol>
 <li>Create a new file in the top directory of the <code>flicklist-flask</code> project named <code>hashutils.py</code>. Include the necessary imports and define the three functions you'll need: <code>make_salt</code>, <code>make_pw_hash</code>, and <code>check_pw_hash</code>.</li>
 </ol>
 <aside class="aside-pro-tip">
-<p>Look at the <code>hashutils.py</code> file you created in the Class 13 video lessons. Was there any application-specific code in that file? Can you reuse it as is, instead of creating these three functions again? Or do you need to make any modifications to it in order to reuse it in your <code>flicklist-flask</code> project?     </p>
+<p>Look at the <code>hashutils.py</code> file you created in the Class 13 video lessons. Upon reviewing it, you should notice that there isn't anything specific to the Get It Done app in the functions in <code>hashutils.py</code>. Thus, you may re-code the same functions.</p>
+<p>Rather than copy/paste, however, you should write each line of code yourself. This will give you the opportunity to consider each step of each of the functions.</p>
 </aside>
 <ol start="2">
 <li>
-<p>Make sure you import these functions from <code>hashutils.py</code> into the necessary files, now that you have refactored your code following the <em>MVC</em> pattern. Which function(s) do you need to import to <code>main.py</code>? Which to <code>models.py</code>?</p>
+<p>Make sure you import the functions from <code>hashutils.py</code> into the necessary files, now that you have refactored your code following the <em>MVC</em> pattern. Which function(s) do you need to import to <code>main.py</code>? Which to <code>models.py</code>?</p>
 </li>
 <li>
 <p>Change your code in the <code>User</code> class so that you are storing in the database a password hash rather than the password the user entered. Since you changed a property in one of your model classes, you will need to drop and recreate your tables in the Python shell and create a new user (register one) and new movie data for you to test your application's functionality.</p>
