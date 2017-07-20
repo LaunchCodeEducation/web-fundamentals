@@ -49,7 +49,7 @@ Make sure you can say the following about your app:
 
 - If either the **blog title** or **blog body** is left empty in the new post form, the form is rendered again, with a helpful error message and any previously-entered content in the same form inputs.
 
-By the time you've checked off each of these, you're app should behave like this:
+By the time you've checked off each of these, your app should behave like this:
 
 <div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/2m-hp1oy7NI?rel=0" frameborder="0" allowfullscreen></iframe></div>
 
