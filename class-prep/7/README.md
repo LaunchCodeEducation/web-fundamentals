@@ -17,11 +17,18 @@ It is imperative that you code along with the resources below in order to be rea
 
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
-Do | Interactive Course | [Khan Academy: Intro to SQL][sql-khan] | Complete **all** the lessons in: _SQL basics_, _More advanced SQL queries_, _Relational queries in SQL_, and _Modifying databases with SQL_. This will give you an overview of how relational databases work as well as practice with common queries. 
-Do | Exercises | [w3schools SQL Tutorial][w3c-sql] | Do all the lessons under "SQL Tutorial" from SQL Home through SQL Comments. Some of this content will overlap with what you learned in the Khan Academy tutorials; that's okay--the more practice, the better! Stop when you get to the lessons under "SQL Databases" as we will work through these in the next lesson. If you are running low on time, prioritize the lessons on SQL syntax and concepts that you are unfamiliar with or found confusing during the Khan Academy tutorials.
+Do | Exercises | [w3schools SQL Tutorial][w3c-sql] | Do all the lessons under _SQL Tutorial_ from "SQL Home" through "SQL Comments". Stop when you get to the lessons under _SQL Databases_ as we will work through most of these in the next lesson (and a *select* few are featured below - pun intended).
+Do | Interactive Course | [Khan Academy: Intro to SQL][sql-khan] | Complete all the lessons in: _SQL basics_, _More advanced SQL queries_, and _Relational queries in SQL_. This will give you an overview of how relational databases work as well as practice with common queries. Some of this content will overlap with what you learned in the **w3schools tutorial** above; that's okay - the added explanations and practice should help. Note that the UI is not wonderful, and the syntax checker can be finicky. Make sure you remember to use a semicolon **;** to end **all** of your statements.
+Do | Exercise | [Create Table][w3c-create] | A brief explanation of how to create tables.
+Do | Exercise | [Drop Table][w3c-drop] | A brief explanation of how to drop tables.
+Do | Exercise | [Foreign Key][w3c-foreign-key] | A brief explanation of foreign keys.
 Read | Article | [SQL: JOINS][tech-net] | This Tech on the Net article is a worthwhile read if you find the idea of joins confusing. Joins are essential to understand and this article has Venn diagrams for the different joins, which is helpful for visualizing them.
+Read | Article | [One-to-Many Relationships][database-primer] | This article will help you get an overview of the one-to-many concept in relational databases. We will explore this further in the studio.
 
-
+[w3c-drop]: https://www.w3schools.com/sql/sql_drop_table.asp 
+[w3c-create]: https://www.w3schools.com/sql/sql_create_table.asp
+[w3c-foreign-key]: https://www.w3schools.com/sql/sql_foreignkey.asp
 [w3c-sql]: http://www.w3schools.com/sql/default.asp
 [sql-khan]: https://www.khanacademy.org/computing/computer-programming/sql
 [tech-net]: https://www.techonthenet.com/sql/joins.php
+[database-primer]: http://www.databaseprimer.com/pages/relationship_1tox/
