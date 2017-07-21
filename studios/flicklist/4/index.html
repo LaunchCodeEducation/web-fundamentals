@@ -159,6 +159,20 @@
 <li>In your <code>add_movie</code> function, use your template to render the response.</li>
 </ol>
 <p>For reference, you can look at our code at the bottom of the <code>crossoff_movie</code> function, which renders the <code>templates/crossoff.html</code> template file (in addition to the header and footer templates).</p>
+<p>There are two more tasks that remain:</p>
+<ol>
+<li>
+<p>Modify the <code>edit.html</code> file to display the watchlist in an unordered list with bullets in front of each movie.</p>
+</li>
+<li>
+<p>Change <code>get_current_watchlist</code> to return <code>[]</code>. This simulates a user with an empty watchlist. Now, modify <code>edit.html</code> to make sense in such a situation:</p>
+<ol>
+<li>Hide the <code>&lt;h2&gt;My Watchlist&lt;/h2&gt;</code> and it's unordered list.</li>
+<li>Hide the crossoff form, since there are no movies to cross off. </li>
+</ol>
+<p>Once you've tested your code to make sure it handles an empty watchlist, then you can change <code>get_current_watchlist</code> back to the list of hard-coded movies.</p>
+</li>
+</ol>
                                     </section>
 
             </div>

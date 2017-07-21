@@ -138,7 +138,7 @@
 </ul>
 <p>Your final application will function just like our <a href="https://launchcode-demos.appspot.com/caesar" target="_blank">demo app</a>.</p>
 <h2 id="project-and-repository-setup">Project and Repository Setup</h2>
-<p>For this assignment, you will build the entire project from scratch.</p>
+<p>For this assignment, you will build the entire project from scratch. It is <strong>essential</strong> that you follow each of these steps <em>in order</em> and make sure that you are executing every command <strong>in the order shown below</strong>!</p>
 <h3 id="git-repository-setup">Git repository setup</h3>
 <p>From <code>~/lc101/</code>, create a new directory and initialize it as a Git repository.</p>
 <pre><code class="language-nohighlight">$ mkdir web-caesar
@@ -151,7 +151,7 @@ Initialized empty Git repository in /Users/chris/lc101/web-caesar/.git/</code></
 <p><img src="images/repo-settings.png" alt="Repository Settings" /></p>
 <p>After creating the repository, you'll be on the repository's home page. From there, copy the <em>Clone or Download</em> URL.</p>
 <img src="images/clone-url.png" style="width:400px;" />
-<p>Back in your terminal--be sure you're in the directory <code>~/lc101/web-caesar/</code>--connect your local repository to the new remote repository. Use your repository's url from GitHub, which should look like the one below (but probably not with the username <code>chrisbay</code>).</p>
+<p>Back in your terminal--be sure you're in the directory <code>~/lc101/web-caesar/</code>--connect your local repository to the new remote repository. Use your repository's url from GitHub, which should look like the one below (but obviously <strong>not</strong> with the username <code>chrisbay</code>).</p>
 <pre><code class="language-nohighlight">$ git remote add origin https://github.com/chrisbay/web-caesar.git</code></pre>
 <p>You can verify the status of remote repository connections at any time by running <code>git remote -v</code>.</p>
 <pre><code class="language-nohighlight">$ git remote -v
@@ -178,7 +178,7 @@ Proceed ([y]/n)? y
 <aside class="aside-note">
 <p>Your environment may be located in a different, global location if you installed Miniconda for all users of your computer.</p>
 </aside>
-<p>Now activate the environment and install Flask.</p>
+<p>Now <strong>activate the environment</strong> and install Flask. If you don't activate the environment before installing Flask, when you go to run your program you will get the error: <code>ModuleNotFoundError: No module named ‘flask’</code>.</p>
 <pre><code class="language-nohighlight">$ source activate flask-env
 (flask-env) $ conda install flask
 Fetching package metadata .........
@@ -219,7 +219,7 @@ Proceed ([y]/n)? y
 <h3 id="rendering-a-form">Rendering a form</h3>
 <p>Rather than display the &quot;Hello World&quot; message, we want our main view to display a form that looks like this.</p>
 <p><img src="images/caesar-form.png" alt="Caesar Form" /></p>
-<p>To do so, make a global variable named <code>form</code> above the <code>index</code> function, and set it's value to be the HTML displayed here.</p>
+<p>To do so, make a global variable named <code>form</code> above the <code>@app.route("/")</code>decorator preceding the <code>index</code> function, and set it's value to be the HTML displayed here.</p>
 <script src="https://gist.github.com/chrisbay/b67a34a89639786a42e38fdbd0b6f4b9.js"></script>
 <aside class="aside-warning">
 <p>Don't forget to enclose the form string in triple-quotes <code>"""</code> so it can take up multiple lines.</p>
