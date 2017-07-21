@@ -24,6 +24,8 @@ Do | Exercise | [Drop Table][w3c-drop] | A brief explanation of how to drop tabl
 Do | Exercise | [Foreign Key][w3c-foreign-key] | A brief explanation of foreign keys.
 Read | Article | [SQL: JOINS][tech-net] | This Tech on the Net article is a worthwhile read if you find the idea of joins confusing. Joins are essential to understand and this article has Venn diagrams for the different joins, which is helpful for visualizing them.
 Read | Article | [One-to-Many Relationships][database-primer] | This article will help you get an overview of the one-to-many concept in relational databases. We will explore this further in the studio.
+Read | Article | [Data Types in MySQL][data-types] | This article will help you understand the common data types in MySQL.
+
 
 [w3c-drop]: https://www.w3schools.com/sql/sql_drop_table.asp 
 [w3c-create]: https://www.w3schools.com/sql/sql_create_table.asp
@@ -32,3 +34,4 @@ Read | Article | [One-to-Many Relationships][database-primer] | This article wil
 [sql-khan]: https://www.khanacademy.org/computing/computer-programming/sql
 [tech-net]: https://www.techonthenet.com/sql/joins.php
 [database-primer]: http://www.databaseprimer.com/pages/relationship_1tox/
+[data-types]: https://www.techonthenet.com/mysql/datatypes.php
