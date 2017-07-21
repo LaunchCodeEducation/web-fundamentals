@@ -44,5 +44,15 @@ Of course, there is one caveat: you are required to use a template. Your `main.p
 
 For reference, you can look at our code at the bottom of the `crossoff_movie` function, which renders the `templates/crossoff.html` template file (in addition to the header and footer templates).
 
+There are two more tasks that remain:
+
+1. Modify the `edit.html` file to display the watchlist in an unordered list with bullets in front of each movie.
+
+2. Change `get_current_watchlist` to return `[]`. This simulates a user with an empty watchlist. Now, modify `edit.html` to make sense in such a situation:
+
+    1. Hide the `<h2>My Watchlist</h2>` and it's unordered list.
+    2. Hide the crossoff form, since there are no movies to cross off. 
+
+    Once you've tested your code to make sure it handles an empty watchlist, then you can change `get_current_watchlist` back to the list of hard-coded movies.
 
 [get-the-code]: ../getting-the-code/
