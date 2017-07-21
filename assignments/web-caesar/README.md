@@ -18,7 +18,7 @@ Your final application will function just like our [demo app](https://launchcode
 
 ## Project and Repository Setup
 
-For this assignment, you will build the entire project from scratch.
+For this assignment, you will build the entire project from scratch. It is **essential** that you follow each of these steps *in order* and make sure that you are executing every command **in the order shown below**!
 
 ### Git repository setup
 
@@ -43,7 +43,7 @@ After creating the repository, you'll be on the repository's home page. From the
 
 <img src="images/clone-url.png" style="width:400px;" />
 
-Back in your terminal--be sure you're in the directory `~/lc101/web-caesar/`--connect your local repository to the new remote repository. Use your repository's url from GitHub, which should look like the one below (but probably not with the username `chrisbay`).
+Back in your terminal--be sure you're in the directory `~/lc101/web-caesar/`--connect your local repository to the new remote repository. Use your repository's url from GitHub, which should look like the one below (but obviously **not** with the username `chrisbay`).
 
 ```nohighlight
 $ git remote add origin https://github.com/chrisbay/web-caesar.git
@@ -88,7 +88,7 @@ Proceed ([y]/n)? y
 Your environment may be located in a different, global location if you installed Miniconda for all users of your computer.
 </aside>
 
-Now activate the environment and install Flask.
+Now **activate the environment** and install Flask. If you don't activate the environment before installing Flask, when you go to run your program you will get the error: `ModuleNotFoundError: No module named ‘flask’`.
 
 ```nohighlight
 $ source activate flask-env
