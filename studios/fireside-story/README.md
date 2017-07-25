@@ -368,7 +368,7 @@ $ git branch
 If you want to work with the branch before merging it in, you can do so by typing these commands:
 
 ```nohighlight
-$ git fetch
+$ git fetch origin darker
 ...
 $ git branch
   darker
