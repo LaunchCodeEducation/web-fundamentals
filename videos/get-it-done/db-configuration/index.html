@@ -133,9 +133,12 @@
 <pre><code class="language-nohighlight">conda install -c conda-forge flask-sqlalchemy</code></pre>
 <p>After this installation completes, run the following:</p>
 <aside class="aside-warning">
-<p>Windows Git Bash users will need to deactivate <code>flask-env</code> and close their terminal, then open a new Git Bash terminal before proceeding to use the install command below.    </p>
+<p>Windows Git Bash users will need to deactivate <code>flask-env</code> and close their terminal, then open a new Git Bash terminal, navigate to this directory, and activate <code>flask-env</code> again before proceeding to use the install command below.    </p>
 </aside>
 <pre><code class="language-nohighlight">conda install pymysql</code></pre>
+<aside class="aside-warning">
+<p>And again it is advisable for Windows Git Bash to close their terminal, then open a new Git Bash terminal, navigate to this directory and activate <code>flask-env</code> before continuing.  </p>
+</aside>
 <p>Now, amend your <code>main.py</code> by adding the following four lines:</p>
 <pre><code class="language-python">from flask_sqlalchemy import SQLAlchemy </code></pre>
 <pre><code class="language-python"># Note: the connection string after :// contains the following info:
