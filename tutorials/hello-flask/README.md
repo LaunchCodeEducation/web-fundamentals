@@ -63,6 +63,10 @@ To create a virtual environment with Conda, we'll do the following:
 The above pictures show how these commands will look in Git Bash. Mac Terminal will look slightly different.
 </aside>
 
+<aside class="aside-warning" markdown="1">
+Windows Git Bash doesn't always play nice with Conda installs. It is recommended that you close and re-open your Git Bash terminal after doing any Conda install. In this case, after you re-open the terminal, navigate to your `hello-flask/` directory, activate the virtual environment again with `source activate hello-flask` and proceed with the instructions below. Closing and reopening Git Bash will solve many problems you may encounter (and following all of our instructions step by step and to the letter will prevent many problems, too).    
+</aside>
+
 Now we're ready to build our web application!
 
 ### Building a web application line by line

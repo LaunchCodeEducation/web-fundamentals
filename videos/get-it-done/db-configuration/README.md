@@ -20,12 +20,16 @@ conda install -c conda-forge flask-sqlalchemy
 After this installation completes, run the following:
 
 <aside class="aside-warning" markdown="1">
-Windows Git Bash users will need to deactivate `flask-env` and close their terminal, then open a new Git Bash terminal before proceeding to use the install command below.    
+Windows Git Bash users will need to deactivate `flask-env` and close their terminal, then open a new Git Bash terminal, navigate to this directory, and activate `flask-env` again before proceeding to use the install command below.    
 </aside>
 
 ```nohighlight
 conda install pymysql
 ```
+
+<aside class="aside-warning" markdown="1">
+And again it is advisable for Windows Git Bash to close their terminal, then open a new Git Bash terminal, navigate to this directory and activate `flask-env` before continuing.  
+</aside>
 
 Now, amend your `main.py` by adding the following four lines:
 

@@ -121,6 +121,10 @@ Proceed ([y]/n)? y
 (flask-env) $
 ```
 
+<aside class="aside-warning" markdown="1">
+Windows Git Bash users should deactivate `flask-env` and close their terminal, then open a new Git Bash terminal, navigate to this directory again, and activate `flask-env` before proceeding with this assignment.    
+</aside>
+
 We'll have a single file in this project. Let's create it now.
 
 ```nohighlight
