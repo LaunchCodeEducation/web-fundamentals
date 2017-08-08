@@ -413,7 +413,7 @@ Upon a successful merge, you should see a screen similar to the following:
 
 ![PR Merged in GitHub](images/PRMerged.png)
 
-The changes from `darker` are now in the `master` branch, but only in the remote repository on GitHub. You will need to pull ing updates to your master for them to be present locally.
+The changes from `darker` are now in the `master` branch, but only in the remote repository on GitHub. You will need to pull the updates to your master for them to be present locally.
 
 ```nohighlight
 $ git checkout master
