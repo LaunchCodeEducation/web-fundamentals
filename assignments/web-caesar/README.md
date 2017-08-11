@@ -149,7 +149,7 @@ Rather than display the "Hello World" message, we want our main view to display 
 
 ![Caesar Form](images/caesar-form.png)
 
-To do so, make a global variable named `form` above the `@app.route("/")`decorator preceding the `index` function, and set it's value to be the HTML displayed here.
+To do so, make a global variable named `form` above the `@app.route("/")`decorator preceding the `index` function, and set its value to be the HTML displayed here.
 
 <script src="https://gist.github.com/chrisbay/b67a34a89639786a42e38fdbd0b6f4b9.js"></script>
 
