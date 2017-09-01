@@ -16,6 +16,11 @@ A special note for Windows users. You will want to make sure to open up Git Bash
 ![run as admin](images/runas.png)
 </aside>
 
+<aside class="aside-warning" markdown="1">
+A special note for Mac users. Make sure that your terminal is using bash. If it is using zsh, tcsh, or any other shell script, switch it to bash in order for the instructions below to work properly. You can see what kind of shell you are using by looking at the title bar of your terminal. Visit [this link](http://osxdaily.com/2012/03/21/change-shell-mac-os-x) for guidance on changing your shell. 
+</aside>
+
+
 ### Founding your project and installing software
 
 Navigate to your `lc101` directory, make a directory for your project, and `cd` (change directory) into it:
