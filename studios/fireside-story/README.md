@@ -150,14 +150,14 @@ Now you should be able to confirm that GitHub has the same version of the projec
 
 #### Player 2
 
-Go to Player 1's GitHub profile and find the fireside-story repo. Click on the green *Clone or download* button. Use SSH and not HTTPS. Copy the url to your clipboard.
+Go to Player 1's GitHub profile and find the fireside-story repo. Click on the green *Clone or download* button. Please use HTTPS (not SSH). Copy the url to your clipboard.
 
-![Cloning a repository in GitHub](images/CloneRepo.png)
+![Cloning a repository in GitHub](images/CloneRepo2.png)
 
 In your terminal, navigate to your development folder and clone down the repo. The command should look something like this.
 
 ```nohighlight
-git clone git@github.com:cherylschaefer/fireside-story.git
+git clone https://github.com/cherylschaefer/fireside-story.git
 ```
 
 Now you can add a line to the story! Open the `index.html` file in your editor and add the next line of the story. Be creative -- the story can go anywhere! Just don't talk about what to write with your partner. Then commit your change.
@@ -276,7 +276,7 @@ This workflow is a common one in team development situations. You might wonder, 
 
 #### Player 2
 
-While Player 1 is working on an addition to the store, let's make another change simultaneously. In order to do that, we'll create a new branch. Recall that a branch is a separate "copy" of the codebase that you can commit to without affecting code in the `master` branch.
+While Player 1 is working on an addition to the story, let's make another change simultaneously. In order to do that, we'll create a new branch. Recall that a branch is a separate "copy" of the codebase that you can commit to without affecting code in the `master` branch.
 
 ```nohighlight
 $ git checkout -b darker
