@@ -227,10 +227,10 @@ $ git push origin master</code></pre>
 <p><img src="images/Repo1Commit.png" alt="A repository with one commit in GitHub" /></p>
 <h3 id="step-3-clone-a-project-from-github">Step 3: Clone a Project from GitHub</h3>
 <h4 id="player-2">Player 2</h4>
-<p>Go to Player 1's GitHub profile and find the fireside-story repo. Click on the green <em>Clone or download</em> button. Use SSH and not HTTPS. Copy the url to your clipboard.</p>
-<p><img src="images/CloneRepo.png" alt="Cloning a repository in GitHub" /></p>
+<p>Go to Player 1's GitHub profile and find the fireside-story repo. Click on the green <em>Clone or download</em> button. Please use HTTPS (not SSH). Copy the url to your clipboard.</p>
+<p><img src="images/CloneRepo2.png" alt="Cloning a repository in GitHub" /></p>
 <p>In your terminal, navigate to your development folder and clone down the repo. The command should look something like this.</p>
-<pre><code class="language-nohighlight">git clone git@github.com:cherylschaefer/fireside-story.git</code></pre>
+<pre><code class="language-nohighlight">git clone https://github.com/cherylschaefer/fireside-story.git</code></pre>
 <p>Now you can add a line to the story! Open the <code>index.html</code> file in your editor and add the next line of the story. Be creative -- the story can go anywhere! Just don't talk about what to write with your partner. Then commit your change.</p>
 <pre><code class="language-nohighlight">$ git status
 On branch master
@@ -304,7 +304,7 @@ Fast-forward
 <h3 id="step-8-create-a-branch-in-git">Step 8: Create a Branch In Git</h3>
 <p>This workflow is a common one in team development situations. You might wonder, however, if professional developers sit around waiting for their teammates to commit and push a change before embarking on additional work on their own. That would be a drag, and thankfully, there is a nice addition to this workflow that will allow for simultaneous work to be carried out in a reasonable way.</p>
 <h4 id="player-2-3">Player 2</h4>
-<p>While Player 1 is working on an addition to the store, let's make another change simultaneously. In order to do that, we'll create a new branch. Recall that a branch is a separate &quot;copy&quot; of the codebase that you can commit to without affecting code in the <code>master</code> branch.</p>
+<p>While Player 1 is working on an addition to the story, let's make another change simultaneously. In order to do that, we'll create a new branch. Recall that a branch is a separate &quot;copy&quot; of the codebase that you can commit to without affecting code in the <code>master</code> branch.</p>
 <pre><code class="language-nohighlight">$ git checkout -b darker
 Switched to a new branch 'darker'</code></pre>
 <p>This command creates a new branch named <code>darker</code>, and switches your local repository to use that branch.</p>
