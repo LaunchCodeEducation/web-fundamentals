@@ -50,7 +50,7 @@ There are two more tasks that remain:
 
 2. Change `get_current_watchlist` to return `[]`. This simulates a user with an empty watchlist. Now, modify `edit.html` to make sense in such a situation:
 
-    1. Hide the `<h2>My Watchlist</h2>` and it's unordered list.
+    1. Hide the `<h2>My Watchlist</h2>` and its unordered list.
     2. Hide the crossoff form, since there are no movies to cross off. 
 
     Once you've tested your code to make sure it handles an empty watchlist, then you can change `get_current_watchlist` back to the list of hard-coded movies.
