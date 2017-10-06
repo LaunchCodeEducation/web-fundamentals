@@ -135,7 +135,7 @@ In your browser, add one movie then cross it off.
 - Drop the `movie` table using the Python shell. After starting up the shell, import `db` and `Movie` as we did above, then use the command `db.drop_all()`. Since you have just changed the model, we'll need to recreate the table from scratch.
 - Reinitialize your database by running `db.create_all()`, as we did above.
 - Update `get_watched_movies` to return all unwatched movies in the database, as a list of `Movie` objects. It currently returns a static list of movies.
-- Refactor the `rating.html` template so that it works when `movies` is a list of `Movie` objects, rather than a list of strings.
+- Refactor the `ratings.html` template so that it works when `movies` is a list of `Movie` objects, rather than a list of strings.
 - Change the behavior of the `rate_movie` function in `main.py` so that when a user rates a movie it actually stores the rating using the column/property you just added.
 - Display the stored ratings on the ratings page by pre-populating the select box with each movie's old rating, if there is a rating for the movie (see the `TODO` in `ratings.html`). The `selected` attribute of the `option` tag will come in handy. Read more about it at [w3schools](https://www.w3schools.com/tags/att_option_selected.asp).
 
