@@ -80,7 +80,7 @@ Now that we have some database functionality wired into our application, let's c
 
 Follow the [instructions for getting the code][get-the-code] in order to get the starter code for `studio6`.
 
-You should have already installed MAMP locally but if you need a refresher it is in [Class 8 Prep Work](/class-prep/8).
+You should have already installed MAMP locally but if you need a refresher it is in [Class 8 Prep Work](../../../class-prep/8).
 
 ### Your Tasks
 
