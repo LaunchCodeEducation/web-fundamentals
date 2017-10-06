@@ -209,7 +209,7 @@
 <li>Drop the <code>movie</code> table using the Python shell. After starting up the shell, import <code>db</code> and <code>Movie</code> as we did above, then use the command <code>db.drop_all()</code>. Since you have just changed the model, we'll need to recreate the table from scratch.</li>
 <li>Reinitialize your database by running <code>db.create_all()</code>, as we did above.</li>
 <li>Update <code>get_watched_movies</code> to return all unwatched movies in the database, as a list of <code>Movie</code> objects. It currently returns a static list of movies.</li>
-<li>Refactor the <code>rating.html</code> template so that it works when <code>movies</code> is a list of <code>Movie</code> objects, rather than a list of strings.</li>
+<li>Refactor the <code>ratings.html</code> template so that it works when <code>movies</code> is a list of <code>Movie</code> objects, rather than a list of strings.</li>
 <li>Change the behavior of the <code>rate_movie</code> function in <code>main.py</code> so that when a user rates a movie it actually stores the rating using the column/property you just added.</li>
 <li>Display the stored ratings on the ratings page by pre-populating the select box with each movie's old rating, if there is a rating for the movie (see the <code>TODO</code> in <code>ratings.html</code>). The <code>selected</code> attribute of the <code>option</code> tag will come in handy. Read more about it at <a href="https://www.w3schools.com/tags/att_option_selected.asp" target="_blank">w3schools</a>.</li>
 </ul>
