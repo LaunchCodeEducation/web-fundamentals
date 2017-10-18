@@ -3,6 +3,8 @@ title: Class 12 Prep
 currentMenu: classes
 ---
 
+## The MVC Pattern
+
 When working with web applications, there are a few widely-used approaches to organizing code to increase maintainability and flexibility, and separate responsibilities. Arguably the most important and widely-used of these is the **Model-View-Controller (MVC)** pattern.
 
 MVC is a **design pattern**, which means that it is an approach to structuring code that can be applied in different languages and different settings. Lots of web frameworks in a variety of languages enable the easy creation of MVC applications, and MVC is even used in mobile and desktop applications.
