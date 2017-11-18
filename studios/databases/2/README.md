@@ -69,7 +69,7 @@ If you get stuck on any of the tasks below, you can review lessons in [Khan Acad
 
 ### Your Task:
 
-Sarah created these tables and inserted all the data into them, but she needs your help to run some queries. You can use the *SQL* tab in the `movie-buff` databse to run queries. Just type your SQL statement(s) in the box and press the *Go* button.
+Sarah created these tables and inserted all the data into them, but she needs your help to run some queries. You can use the *SQL* tab in the `movie-buff` database to run queries. Just type your SQL statement(s) in the box and press the *Go* button.
 
 ![SQL tab](images/sql.png)
 

@@ -10,7 +10,8 @@ Now you should have a good grasp on basic SQL syntax and commands, as well as an
 
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
-Do | Exercises | [w3schools SQL Database][w3c-sql] | Do all the lessons under "SQL Database" from SQL Create DB through SQL Hosting. Some of this content will overlap with what you learned in the Khan Academy tutorials; that's okay--the more practice, the better! Be sure to understand primary and foreign keys!
+Do | Exercises | [w3schools SQL Database][w3c-sql] | Do all the lessons under _SQL Database_ from "SQL Create DB" through "SQL Hosting". Note that you will have already covered the lessons on Drop Table, Create Table, and Foreign Keys int the Class 7 Prep.
+Do | Interactive Course | [Khan Academy: Intro to SQL][sql-khan] | Complete all the lessons in: _Modifying databases with SQL_. Some of this content will overlap with what you learned in the **w3schools tutorial** above; that's okay - the added explanations and practice should help. Note that the UI is not wonderful, and the syntax checker can be finicky. Make sure you remember to use ";" to end **all** of your statements.
 
 ### Install MAMP
 
@@ -18,9 +19,7 @@ MAMP is a suite of tools useful for developers. The acronym MAMP stands for Mac 
 
 The first step in this lesson is to install MAMP onto your computer by following the instructions below for [Windows](#install-mamp-for-windows) or [Mac](#install-mamp-for-mac).
 
-<aside class="aside-note" markdown="1">
-If you use Linux, you should install, at a minimum, the MySQL 5.x package for your system. You might also install phpMyAdmin or another MySQL management application.
-</aside>
+If you use Linux, you should install, at a minimum, the MySQL 5.x package for your system. You might also install phpMyAdmin or another MySQL management application. For further help on **LAMP** installation (LAMP is the Linux equivalent of MAMP), check out [How To Ubuntu][ubuntu] or [Bitnami][bitnami].
 
 #### Install MAMP for Windows
 
@@ -65,3 +64,6 @@ If your Apache or MYSQL servers won't start (if neither, or only one, has a gree
 
 [mamp]: https://www.mamp.info/en/downloads/
 [w3c-sql]: https://www.w3schools.com/sql/sql_create_db.asp
+[bitnami]: https://bitnami.com/stack/lamp/installer
+[ubuntu]: http://howtoubuntu.org/how-to-install-lamp-on-ubuntu
+[sql-khan]: https://www.khanacademy.org/computing/computer-programming/sql
