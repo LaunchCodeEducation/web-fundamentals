@@ -166,7 +166,9 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://get-it-done:beproductiv
 <p>Be sure to shield <code>app.run</code> by enclosing it in an <code>if</code> condition:</p>
 <pre><code class="language-python">if __name__ == '__main__':
     app.run()</code></pre>
-<p>Back in the terminal, start a python shell by running the command <code>python</code>. Then run the command <code>db.create_all()</code>.</p>
+<p>Back in the terminal, start a python shell by running the command <code>python</code>. Then import <code>db</code> and create the tables:</p>
+<pre><code class="language-nohighlight">&gt; from main import db
+&gt; db.create_all()</code></pre>
 <p>Now run the following commands one at a time to add data to the database:</p>
 <pre><code class="language-nohighlight">&gt;&gt;&gt; new_task = Task('finish ORM lesson 2')
 &gt;&gt;&gt; db.session.add(new_task)
