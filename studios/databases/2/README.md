@@ -5,7 +5,7 @@ currentMenu: studios
 
 ## Walkthrough
 
-In this studio we'll be working in MAMP using the tool *phpMyAdmin*. We'll create a new user account and associated database for our movie-buffs project. Then we'll import a `.sql` file and get the tables we'll use from that. Then we'll perform some queries on that data.
+In this studio we'll be working in MAMP using the tool *phpMyAdmin*. We'll create a new user account and associated database for our movie-buff project. Then we'll import a `.sql` file and get the tables we'll use from that. Then we'll perform some queries on that data.
 
 ### Database Setup
 
