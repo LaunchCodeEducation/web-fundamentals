@@ -79,7 +79,12 @@ if __name__ == '__main__':
     app.run()
 ```
 
-Back in the terminal, start a python shell by running the command `python`. Then run the command `db.create_all()`.
+Back in the terminal, start a python shell by running the command `python`. Then import `db` and create the tables:
+
+```nohighlight
+> from main import db
+> db.create_all()
+```
 
 Now run the following commands one at a time to add data to the database:
 
