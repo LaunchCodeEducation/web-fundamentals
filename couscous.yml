@@ -3,7 +3,7 @@ template:
     # directory: ../Template-Light
 
 # Base URL of the published website
-baseUrl: http://education.launchcode.org/web-fundamentals
+baseUrl: https://education.launchcode.org/web-fundamentals
 
 # Used to link to the GitHub project
 github:
