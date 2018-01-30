@@ -82,7 +82,7 @@ if __name__ == '__main__':
 Back in the terminal, start a python shell by running the command `python`. Then import `db` and create the tables:
 
 ```nohighlight
-> from main import db
+> from main import db,Task
 > db.create_all()
 ```
 
