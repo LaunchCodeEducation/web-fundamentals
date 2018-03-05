@@ -9,7 +9,7 @@ currentMenu: videos
 
 Begin by starting MAMP, starting the servers, and going to phpMyAdmin.
 
-Now we'll create a new user and database for our *Get It Done!* application. A good design principle is that for each application you have one database; for each database, one user. This keeps privileges and permissions separated across applications. You can review the basic steps in written form [here](../../../studios/databases/2/#database-setup).
+Now we'll create a new user and database for our *Get It Done!* application. A good design principle is that for each application you have one database, for each database, one user. This keeps privileges and permissions separated across applications. You can review the basic steps in written form [here](../../../studios/databases/2/#database-setup).
 
 If you don't already have `flask-env` activated, activate it now. Then run:
 
