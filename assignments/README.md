@@ -38,7 +38,7 @@ Code along to a video tutorial / lecture in which we build web-app that encrypts
 
 ## User Signup
 
-Create a web-app that presents the user with a "sign up" form, and responds appropriately to the form submission, either by accepting it or by rejecting it and presenting helpful feedback so the user knows what they did wrong.
+Create a web-app that presents the user with a "sign up" form and responds appropriately to the form submission, either by accepting it or by rejecting it and presenting helpful feedback so the user knows what they did wrong.
 
 [Work on User Signup](./user-signup/)
 
@@ -57,4 +57,3 @@ Create a web-app that allows the user to create blog posts and browse and read p
 Expand upon the previous assignment by introducing user accounts, so that each blog post is associated with a particular user, and users must be logged in to create posts.
 
 [Work on Blogz](./blogz/)
-
