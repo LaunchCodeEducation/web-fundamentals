@@ -555,7 +555,7 @@ At the top and bottom, there is some code that could be merged without issue.
 
 `<<<<<<< HEAD` to `=======` is the version of the code that existed locally. In other words, these are _your_ changes.
 
-`=======` to `>>>>>>> 0c2165931f5f668959bad92d2f744efb402e049d` indicates the changes that Player 1 made (the hash will be unique to the commit, so you'll see something slightly different here).
+`=======` to `>>>>>>> 0c2165931f5f668959bad92d2f744efb402e049d` indicates the changes that Player 2 made (the hash will be unique to the commit, so you'll see something slightly different here).
 
 Let's unify our code. Change the CSS to look like this, making sure to remove the Git markers so that only valid CSS remains in the file.
 
@@ -624,7 +624,7 @@ Let's turn the tables on the steps we just carried out, so Player 2 can practice
 
 Merge conflicts are a part of the process of team development. Resolve them carefully, so that they don't cause bugs in your code.
 
-*Optional*: share your story in the `#showcase` channel on Slack, and see what others have created!
+*Optional*: Share your story in the `#showcase` channel on Slack, and see what others have created!
 
 ### Resources
 
