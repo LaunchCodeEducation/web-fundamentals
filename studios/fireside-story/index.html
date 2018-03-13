@@ -464,7 +464,7 @@ Automatic merge failed; fix conflicts and then commit the result.</code></pre>
 }</code></pre>
 <p>At the top and bottom, there is some code that could be merged without issue.</p>
 <p><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> to <code>=======</code> is the version of the code that existed locally. In other words, these are <em>your</em> changes.</p>
-<p><code>=======</code> to <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; 0c2165931f5f668959bad92d2f744efb402e049d</code> indicates the changes that Player 1 made (the hash will be unique to the commit, so you'll see something slightly different here).</p>
+<p><code>=======</code> to <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; 0c2165931f5f668959bad92d2f744efb402e049d</code> indicates the changes that Player 2 made (the hash will be unique to the commit, so you'll see something slightly different here).</p>
 <p>Let's unify our code. Change the CSS to look like this, making sure to remove the Git markers so that only valid CSS remains in the file.</p>
 <pre><code class="language-css">body {
   color: white;
@@ -511,7 +511,7 @@ Fast-forward
 <li><em>Player 1</em>: Pull in the changes that Player 2 pushed, including the resolved merge conflicts.</li>
 </ul>
 <p>Merge conflicts are a part of the process of team development. Resolve them carefully, so that they don't cause bugs in your code.</p>
-<p><em>Optional</em>: share your story in the <code>#showcase</code> channel on Slack, and see what others have created!</p>
+<p><em>Optional</em>: Share your story in the <code>#showcase</code> channel on Slack, and see what others have created!</p>
 <h3 id="resources">Resources</h3>
 <ul>
 <li><a href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging" target="_blank">Git Branching - Basic Branching and Merging</a></li>
