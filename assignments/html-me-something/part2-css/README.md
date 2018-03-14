@@ -90,4 +90,4 @@ It is usually a good idea to check first (using `git status`) before running `gi
 
 ## Done!
 
-You are ready to submit! Go back to the [Assignment page](../..) and follow the submission instructions there.
+You are ready to submit! Go back to the [Assignment page](..) and follow the submission instructions there.
