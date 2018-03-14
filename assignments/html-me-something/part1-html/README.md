@@ -95,4 +95,4 @@ This is somewhat subjective, and ultimately up to you. The basic guiding princip
 
 ## Done!
 
-Well done! Time to [dive into some CSS](./part2-css/).
+Well done! Time to [dive into some CSS](../part2-css/).
