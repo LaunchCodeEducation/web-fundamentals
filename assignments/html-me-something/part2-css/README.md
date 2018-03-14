@@ -3,7 +3,7 @@ title: 'HTML Me Something, Part 2: CSS'
 currentMenu: assignments
 ---
 
-[< Back to Overview page](..)
+[< Back to Overview page](../html-me-something)
 
 In Part 2, you'll get comfortable with using CSS selectors and rules to dictate display, while keeping your styles separate from your content.
 
@@ -90,4 +90,4 @@ It is usually a good idea to check first (using `git status`) before running `gi
 
 ## Done!
 
-You are ready to submit! Go back to the [Assignment page](..) and follow the submission instructions there.
+You are ready to submit! Go back to the [Assignment page](../html-me-something) and follow the submission instructions there.
