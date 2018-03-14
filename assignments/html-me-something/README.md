@@ -168,9 +168,9 @@ Congrats! You are officially up and running with a version-controlled project.
 
 Now it's time to build out your page! Dive into each of the two parts below:
 
-[Part 1: HTML](./part1-html)
+[Part 1: HTML](./part1-html/)
 
-[Part 2: CSS](./part2-css)
+[Part 2: CSS](./part2-css/)
 
 ## Submitting your work
 
