@@ -10,7 +10,7 @@ Now you should have a good grasp on basic SQL syntax and commands, as well as an
 
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
-Do | Exercises | [w3schools SQL Database][w3c-sql] | Do all the lessons under _SQL Database_ from "SQL Create DB" through "SQL Hosting". Note that you will have already covered the lessons on Drop Table, Create Table, and Foreign Keys int the Class 7 Prep.
+Do | Exercises | [w3schools SQL Database][w3c-sql] | Do all the lessons under _SQL Database_ from "SQL Create DB" through "SQL Hosting". Note that you will have already covered the lessons on Drop Table, Create Table, and Foreign Keys in the Class 7 Prep.
 Do | Interactive Course | [Khan Academy: Intro to SQL][sql-khan] | Complete all the lessons in: _Modifying databases with SQL_. Some of this content will overlap with what you learned in the **w3schools tutorial** above; that's okay - the added explanations and practice should help. Note that the UI is not wonderful, and the syntax checker can be finicky. Make sure you remember to use ";" to end **all** of your statements.
 
 ### Install MAMP
@@ -23,7 +23,7 @@ If you use Linux, you should install, at a minimum, the MySQL 5.x package for yo
 
 #### Install MAMP for Windows
 
-1. Go to [MAMP.info][mamp] and download the Windows version of MAMP. Double click to install and allow it to make changes on the hard drive. 
+1. Go to [MAMP.info][mamp] and download the Windows version of MAMP. Double click to install and allow it to make changes on the hard drive.
 2. Close all other applications.
 3. Select English as the language.
 4. Uncheck the *MAMP PRO* box (do NOT download it).
@@ -54,13 +54,13 @@ If your Apache or MYSQL servers won't start (if neither, or only one, has a gree
 4. Click "continue" on the Destination Select screen--it will install onto the hard drive.
 5. Click "install" on the Installation Type screen.
 6. Click "close" when the install has completed.
-7. Note that it will install in the Applications folder. Go into Applications, double click on the MAMP folder, then doubleclick on the MAMP icon in that folder. Note that the installer will install both MAMP and MAMP PRO, but we'll only be using MAMP, not MAMP PRO.
+7. Note that it will install in the Applications folder. Go into Applications, double click on the MAMP folder, then double-click on the MAMP icon in that folder. Note that the installer will install both MAMP and MAMP PRO, but we'll only be using MAMP, not MAMP PRO.
 8. You'll get a "Warning" message. Be sure to **uncheck** the box next to "Check for MAMP PRO when starting MAMP" and then click the "Launch MAMP" button *NOT* the "Launch MAMP PRO" button.
 9. Go to *Preferences -> Ports* and click "Set MAMP ports to default" then click OK.
 10. Then go to *Preferences -> PHP* and select the Standard Version ``7.0.15`` (you will need a php version older than `7.1.1` for phpMyAdmin to work properly). Then click OK.
 11. Click *Start Servers* and it should automatically open a web page. If it does not, click *Open WebStart page*.
 12. In your browser you should be on the MAMP localhost webpage. Select the dropdown menu under *Tools* and click on *phpMyAdmin*. You may or may not be prompted to enter a username and password. If you are prompted, use the word "root" for both.
-13. Now you are on the phpMyAdmin page you will use for this lesson's studio. 
+13. Now you are on the phpMyAdmin page you will use for this lesson's studio.
 
 [mamp]: https://www.mamp.info/en/downloads/
 [w3c-sql]: https://www.w3schools.com/sql/sql_create_db.asp
