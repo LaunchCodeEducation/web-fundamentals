@@ -160,7 +160,12 @@ In your terminal, navigate to your development folder and clone down the repo. T
 git clone https://github.com/cherylschaefer/fireside-story.git
 ```
 
-Now you can add a line to the story! Open the `index.html` file in your editor and add the next line of the story. Be creative -- the story can go anywhere! Just don't talk about what to write with your partner. Then commit your change.
+Now you can add a line to the story! Navigate to the project directory from the command line and open the `index.html` file in your editor to add the next line of the story using the following commands:
+```nohighlight
+cd fireside-story
+code .
+```
+ Be creative -- the story can go anywhere! Just don't talk about what to write with your partner. Then commit your change.
 
 ```nohighlight
 $ git status
