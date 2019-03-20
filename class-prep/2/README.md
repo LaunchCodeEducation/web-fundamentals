@@ -10,7 +10,7 @@ CSS is a language for customizing the visual style of your HTML content. In this
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
 Do | Interactive Course | [Codecademy: Learn CSS][learn-css] | Learn about using CSS to style HTML pages. Complete only the free (non-Pro) sections.
-Do | Interactive Coruse | [Codecademy: Make a Website][make-a-website] | Use your HTML and CSS knowledge to bring it all together to build a website. Complete only the free (non-Pro) sections, and skip the final lesson on Bootstrap.
+Do | Interactive Course | [Codecademy: Make a Website][make-a-website] | Use your HTML and CSS knowledge to bring it all together to build a website. Complete only the free (non-Pro) sections, and skip the final lesson on Bootstrap.
 
 ---
 
