@@ -23,7 +23,7 @@ If you use Linux, you should install, at a minimum, the MySQL 5.x package for yo
 
 #### Install MAMP for Windows
 
-1. Go to [MAMP.info][mamp] and download the Windows version of MAMP. Double click to install and allow it to make changes on the hard drive.
+1. Go to [MAMP.info][mamp-old-downloads] and download a 3.x version of the Windows installer for MAMP. Double click to install and allow it to make changes on the hard drive. *Note:* Recent 4.x versions of MAMP have had issues on some Windows installs. We *highly* recommend using a 3.x version at the current time.
 2. Close all other applications.
 3. Select English as the language.
 4. Uncheck the *MAMP PRO* box (do NOT download it).
@@ -63,6 +63,7 @@ If your Apache or MYSQL servers won't start (if neither, or only one, has a gree
 13. Now you are on the phpMyAdmin page you will use for this lesson's studio.
 
 [mamp]: https://www.mamp.info/en/downloads/
+[mamp-old-downloads]: https://www.mamp.info/en/downloads/older-versions/
 [w3c-sql]: https://www.w3schools.com/sql/sql_create_db.asp
 [bitnami]: https://bitnami.com/stack/lamp/installer
 [ubuntu]: http://howtoubuntu.org/how-to-install-lamp-on-ubuntu
