@@ -36,7 +36,6 @@ https://education.launchcode.org/web-fundamentals/issues/index.html
 https://education.launchcode.org/web-fundamentals/objectives/index.html
 https://education.launchcode.org/web-fundamentals/studios/databases/1/index.html
 https://education.launchcode.org/web-fundamentals/studios/databases/2/index.html
-https://education.launchcode.org/web-fundamentals/studios/fake-news/index.html
 https://education.launchcode.org/web-fundamentals/studios/fireside-story/index.html
 https://education.launchcode.org/web-fundamentals/studios/flicklist/1/index.html
 https://education.launchcode.org/web-fundamentals/studios/flicklist/2/index.html
@@ -52,6 +51,7 @@ https://education.launchcode.org/web-fundamentals/studios/flicklist/10/index.htm
 https://education.launchcode.org/web-fundamentals/studios/flicklist/11/index.html
 https://education.launchcode.org/web-fundamentals/studios/flicklist/getting-the-code/index.html
 https://education.launchcode.org/web-fundamentals/studios/index.html
+https://education.launchcode.org/web-fundamentals/studios/making-headlines/index.html
 https://education.launchcode.org/web-fundamentals/tutorials/git-stash/index.html
 https://education.launchcode.org/web-fundamentals/tutorials/hello-flask/index.html
 https://education.launchcode.org/web-fundamentals/tutorials/index.html
