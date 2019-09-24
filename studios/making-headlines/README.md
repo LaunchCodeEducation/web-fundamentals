@@ -1,5 +1,5 @@
 ---
-title: 'Studio: Fake News'
+title: 'Studio: Making Headlines'
 currentMenu: studios
 ---
 
@@ -14,6 +14,7 @@ Firefox's developer tools contain **a lot** of functionality, and we will only b
 ## Walkthrough
 
 Prior to the studio, the instructor will lead the class through an overview of some basic functionality of Firefox's dev tools, including but not necessarily limited to:
+
 - How to open dev tools
 - Inspecting an HTML element
 - Modifying an element's HTML
@@ -29,7 +30,7 @@ Pick a news site ([The New York Times](https://www.nytimes.com/), for example), 
 
 Have fun with this (see our example below), but be respectful of others and avoid overtly critical political or social commentary.
 
-![Sample Fake Article](images/nelly-lc.png)
+![Sample Fake Article](images/making-headlines-screenshot.png)
 
 <aside class="aside-warning" markdown="1">
 When linking to an image, pay attention to the protocol -- either `http` or `https` -- of the site you are modifying, and of the image you are including. You can find the protocol at the beginning of the image URL.
